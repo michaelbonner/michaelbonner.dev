@@ -47,7 +47,7 @@ export default function Home() {
             </div>
             <div className="mt-4">
               <Image
-                className="rounded-lg w-full h-auto transition-all mix-blend-luminosity hover:mix-blend-normal"
+                className="bg-gray-300 rounded-lg w-full h-auto transition-all mix-blend-luminosity hover:mix-blend-normal"
                 src="/images/on-the-beach.jpg"
                 width="2066 "
                 height=" 1378"
@@ -94,9 +94,13 @@ export default function Home() {
           <div className="lg:mt-32">
             <h2 className="text-3xl mt-16">Tools I use</h2>
             <ul className="mt-4 pl-12 list-outside list-disc text-lg lg:grid lg:grid-cols-4 gap-x-4 gap-y-2">
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>PHP</li>
               <li>Serverless</li>
               <li>Next.js</li>
               <li>Gatsby</li>
+              <li>GraphQL</li>
               <li>Laravel</li>
               <li>MongoDB</li>
               <li>MySQL</li>
