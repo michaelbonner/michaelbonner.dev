@@ -1,0 +1,12 @@
+[[redirects]]
+  from = "https://michaelwbonner.com/*"
+  to = "https://michaelbonner.dev/:splat"
+  force = true
+  [redirects.headers]
+    X-From = "Netlify"
+[[redirects]]
+  from = "https://michaelwbonner.netlify.com/*"
+  to = "https://michaelbonner.dev/:splat"
+  force = true
+  [redirects.headers]
+    X-From = "Netlify"
