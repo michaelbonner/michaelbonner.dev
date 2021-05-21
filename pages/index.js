@@ -23,16 +23,16 @@ export default function Home() {
                 web developer in Salt Lake, UT. I run a small agency with some
                 friends called{" "}
                 <a
-                  className="font-medium leading-none border-b-4 border-gray-300 hover:border-gray-400 transition-all transform hover:-translate-y-1 inline-block"
+                  className="font-medium lg:leading-none border-b-4 border-gray-300 hover:border-gray-400 transition-all transform hover:-translate-y-1 lg:inline-block"
                   href="https://bootpackdigital.com/"
                 >
                   Bootpack Digital
                 </a>
                 .
               </h1>
-              <div className="inline-block">
+              <div className="lg:inline-block my-8 lg:my-0">
                 <a
-                  className="my-8 flex space-x-2 text-2xl border-b-2 border-gray-300 hover:border-gray-400 transition-all transform hover:-translate-y-1"
+                  className="my-8 lg:flex space-x-2 text-2xl border-b-2 border-gray-300 hover:border-gray-400 transition-all transform hover:-translate-y-1"
                   href="https://github.com/michaelbonner"
                 >
                   <span>See what I'm up to on GitHub</span>
@@ -42,7 +42,7 @@ export default function Home() {
             </div>
             <div className="mt-4">
               <Image
-                className="rounded-lg w-full h-auto transition-all lg:mix-blend-luminosity hover:mix-blend-normal"
+                className="rounded-lg w-full h-auto transition-all mix-blend-luminosity hover:mix-blend-normal"
                 src="/images/on-the-beach.jpg"
                 width="2066 "
                 height=" 1378"
@@ -101,7 +101,7 @@ export default function Home() {
           </div>
           <div className="lg:mt-32">
             <h2 className="text-3xl mt-16">Get in touch</h2>
-            <ul className="mt-4 pl-12 list-outside list-disc text-lg lg:grid lg:grid-cols-4 gap-x-4 gap-y-2">
+            <ul className="mt-6 pl-4 text-lg lg:grid lg:grid-cols-4 gap-x-4 gap-y-2">
               <li>
                 <div className="flex">
                   <a
@@ -109,7 +109,7 @@ export default function Home() {
                     href="http://linkedin.com/me/michaelbonner"
                   >
                     <SiLinkedin />
-                    <span>LinkedIn</span>
+                    <span className="pt-1">LinkedIn</span>
                   </a>
                   <span className="flex-1"></span>
                 </div>
@@ -121,7 +121,7 @@ export default function Home() {
                     href="https://www.instagram.com/michael__bonner"
                   >
                     <SiInstagram />
-                    <span>Instagram</span>
+                    <span className="pt-1">Instagram</span>
                   </a>
                   <span className="flex-1"></span>
                 </div>
