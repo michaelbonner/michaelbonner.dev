@@ -18,17 +18,22 @@ export default function Home() {
         <div className="pt-8">
           <div className="lg:flex lg:pt-24">
             <div>
-              <h1 className="text-5xl leading-relaxed tracking-wide lg:pr-8">
-                Hi! I'm <span className="font-medium">Michael Bonner</span>, a
-                web developer in Salt Lake, UT. I run a small agency with some
-                friends called{" "}
-                <a
-                  className="font-medium lg:leading-none border-b-4 border-gray-300 hover:border-gray-400 transition-all transform hover:-translate-y-1 lg:inline-block"
-                  href="https://bootpackdigital.com/"
-                >
-                  Bootpack Digital
-                </a>
-                .
+              <h1 className="leading-relaxed text-4xl tracking-wide lg:pr-8">
+                Hi! I'm{" "}
+                <span className="font-medium whitespace-nowrap">
+                  Michael Bonner
+                </span>
+                , a web developer in Salt City Lake, Utah. I run a small agency
+                with some friends called{" "}
+                <span className="whitespace-nowrap">
+                  <a
+                    className="font-medium lg:leading-none border-b-4 border-gray-300 hover:border-gray-400 transition-all transform hover:-translate-y-1 lg:inline-block"
+                    href="https://bootpackdigital.com/"
+                  >
+                    Bootpack Digital
+                  </a>
+                  .
+                </span>
               </h1>
               <div className="lg:inline-block my-8 lg:my-0">
                 <a
