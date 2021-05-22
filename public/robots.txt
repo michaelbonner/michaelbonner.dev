@@ -1,2 +1,9 @@
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://michaelbonner.dev/
+
+# Sitemaps
+Sitemap: https://michaelbonner.dev/sitemap.xml
