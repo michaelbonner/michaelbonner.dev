@@ -21,7 +21,7 @@ export default function Home() {
                 with some friends called{" "}
                 <span className="whitespace-nowrap">
                   <a
-                    className="font-medium lg:leading-none border-b-4 border-gray-300 hover:border-gray-400 transition-all transform hover:-translate-y-1 lg:inline-block"
+                    className="font-medium lg:leading-none border-b-4 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1 lg:inline-block"
                     href="https://bootpackdigital.com/"
                   >
                     Bootpack Digital
@@ -31,15 +31,34 @@ export default function Home() {
               </h1>
               <div className="lg:inline-block my-8 lg:my-0">
                 <a
-                  className="my-8 lg:flex space-x-2 text-2xl border-b-2 border-gray-300 hover:border-gray-400 transition-all transform hover:-translate-y-1"
+                  className="my-8 md:flex space-x-2 text-2xl border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1"
                   href="https://github.com/michaelbonner"
                 >
                   <span>See what I'm up to on GitHub</span>
                   <SiGithub />
                 </a>
               </div>
+              <div className="text-xl lg:pr-8 leading-relaxed">
+                <p className="mt-4">
+                  I started making websites in high school back in 2003. I found
+                  a copy of my first site and{` `}
+                  <a
+                    className="my-8 text-lg border-b border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
+                    href="https://tuff.michaelbonner.dev/"
+                  >
+                    put it up here
+                  </a>
+                  . Epic, right? From there I made websites for people I knew,
+                  then people they knew, and so on. Making websites was
+                  definitely my thing. Since then I've worked at a few places
+                  making websites, web applications, and mobile apps; was a
+                  director at a digital agency, and taught a boot camp for the
+                  University of Utah. I love what I do, and I'm always down to
+                  chat about it.
+                </p>
+              </div>
             </div>
-            <div className="mt-4">
+            <div className="mt-8 lg:mt-4">
               <Image
                 className="bg-gray-300 rounded-lg w-full h-auto transition-all mix-blend-luminosity hover:mix-blend-normal"
                 src="/images/on-the-beach.jpg"
@@ -53,7 +72,7 @@ export default function Home() {
             <ul className="mt-4 pl-12 list-outside list-disc text-lg lg:grid lg:grid-cols-4 gap-x-4 gap-y-2">
               <li className="lg:pr-8">
                 <a
-                  className="inline border-b-2 border-gray-300 hover:border-gray-400 transition-all"
+                  className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
                   href="https://herekidswin.com/"
                 >
                   Primary Children's Hospital: Here Kids Win
@@ -61,7 +80,7 @@ export default function Home() {
               </li>
               <li className="lg:pr-8">
                 <a
-                  className="inline border-b-2 border-gray-300 hover:border-gray-400 transition-all"
+                  className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
                   href="https://wasatchcovers.com/"
                 >
                   Wasatch Covers
@@ -69,7 +88,7 @@ export default function Home() {
               </li>
               <li className="lg:pr-8">
                 <a
-                  className="inline border-b-2 border-gray-300 hover:border-gray-400 transition-all"
+                  className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
                   href="https://ravensfilmworks.com/"
                 >
                   Ravens Film Works
@@ -77,7 +96,7 @@ export default function Home() {
               </li>
               <li className="lg:pr-8">
                 <a
-                  className="inline border-b-2 border-gray-300 hover:border-gray-400 transition-all"
+                  className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
                   href="https://pas.nef1.org/"
                 >
                   NEF Programs Administration System
@@ -110,8 +129,8 @@ export default function Home() {
               <li>
                 <div className="flex">
                   <a
-                    className="flex space-x-1 justify-start items-center border-b-2 border-gray-300 hover:border-gray-400 transition-all"
-                    href="http://linkedin.com/me/michaelbonner"
+                    className="flex space-x-1 justify-start items-center border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
+                    href="https://www.linkedin.com/in/michaelbonner/"
                   >
                     <SiLinkedin />
                     <span className="pt-1">LinkedIn</span>
@@ -122,7 +141,7 @@ export default function Home() {
               <li>
                 <div className="flex">
                   <a
-                    className="flex space-x-1 justify-start items-center border-b-2 border-gray-300 hover:border-gray-400 transition-all"
+                    className="flex space-x-1 justify-start items-center border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
                     href="https://www.instagram.com/michael__bonner"
                   >
                     <SiInstagram />
