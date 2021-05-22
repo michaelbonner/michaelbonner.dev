@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 
 const Layout = ({ children, description, title }) => {
@@ -9,6 +10,17 @@ const Layout = ({ children, description, title }) => {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <header className="pt-12 px-8 container mx-auto">
+        <nav className="flex justify-end space-x-4 text-xl">
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+          <Link href="/blog">
+            <a>Blog</a>
+          </Link>
+        </nav>
+      </header>
 
       {children}
 

@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Image from "next/image";
 import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
 import Layout from "../components/layout";
@@ -11,7 +10,7 @@ export default function Home() {
     >
       <main className="container mx-auto px-8 py-12 flex items-center">
         <div className="pt-8">
-          <div className="lg:flex lg:pt-24">
+          <div className="lg:flex lg:pt-16">
             <div>
               <h1 className="leading-relaxed text-4xl tracking-wide lg:pr-8">
                 Hi! I'm{" "}

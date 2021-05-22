@@ -13,5 +13,5 @@ module.exports = {
       mixBlendMode: ["hover"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
