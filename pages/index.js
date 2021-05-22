@@ -60,6 +60,7 @@ export default function Home() {
             </div>
             <div className="mt-8 lg:mt-4">
               <Image
+                alt="Mike on the beach"
                 className="bg-gray-300 rounded-lg w-full h-auto transition-all mix-blend-luminosity hover:mix-blend-normal"
                 src="/images/on-the-beach.jpg"
                 width="2066 "
