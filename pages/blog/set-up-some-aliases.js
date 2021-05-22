@@ -39,7 +39,7 @@ export default function SetUpSomeAliases() {
             </p>
             <p>
               Once you identify which file to edit, all you need to do is add
-              the following:
+              something like the following:
             </p>
             <pre>alias gs='git status'</pre>
             <p>
@@ -52,16 +52,9 @@ export default function SetUpSomeAliases() {
               {`
 # general
 alias ll='ls -la'
-alias zshrc='vim ~/.zshrc'
 alias hosts='sudo vim /etc/hosts'
 alias dev='cd ~/Development'
 alias projects='cd ~/Development/projects'
-alias nef='cd ~/Development/nef'
-alias willow-creek='cd ~/Development/willow-creek/willow-creek-app'
-alias wc='cd ~/Development/willow-creek/willow-creek-app'
-alias leash='cd ~/Development/leash'
-alias wasatch='cd ~/Development/wasatch'
-alias kyf='cd ~/Development/projects/kyf'
 
 # git
 alias mylog='git log --author="Michael Bonner" --pretty=format:"%aD : %s"'
@@ -99,7 +92,7 @@ alias grpo='git remote prune origin'
 # laravel
 alias pa='sail artisan'
 alias mfs='sail artisan queue:clear; sail artisan migrate:fresh --seed'
-alias cda='composer dump-autoload'
+alias cda='sail composer dump-autoload'
 alias sail='./vendor/bin/sail'
 alias sa='sail artisan'
 
@@ -121,8 +114,7 @@ alias nrb='npm run build'
 alias unit="./vendor/bin/phpunit"
 alias sf='sudo mdutil -E /'
 alias vapor='php vendor/bin/vapor'
-#alias c='code .'
-alias c='open . -a /Applications/Visual\ Studio\ Code.app'
+alias c='code .'
 alias ploys='./bin/deploy-staging.sh'
 alias ployp='./bin/deploy-production.sh'
 alias st='open . -a /Applications/Sourcetree.app'
