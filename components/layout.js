@@ -4,7 +4,7 @@ import React from "react";
 
 const Layout = ({ children, description, title }) => {
   return (
-    <div className="font-serif bg-gray-200 text-gray-800">
+    <div className="font-serif bg-gray-200 text-gray-800 min-h-screen">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
