@@ -1,19 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
 import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
+import Layout from "../components/layout";
 
 export default function Home() {
   return (
-    <div className="font-serif bg-gray-200 text-gray-800">
-      <Head>
-        <title>Michael Bonner | Developer in Salt Lake, UT</title>
-        <meta
-          name="description"
-          content="Hi, I'm Michael Bonner. I'm a web developer in Salt Lake UT"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+    <Layout
+      title="Michael Bonner | Developer in Salt Lake, UT"
+      description="Hi, I'm Michael Bonner. I'm a web developer in Salt Lake UT"
+    >
       <main className="container mx-auto px-8 py-12 flex items-center">
         <div className="pt-8">
           <div className="lg:flex lg:pt-24">
@@ -139,17 +134,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-
-      <footer className="container mx-auto p-8 pt-12">
-        &copy; {new Date().getFullYear()} by Michael Bonner.{" "}
-        <a
-          className="underline"
-          href="https://github.com/michaelbonner/michaelwbonner.com"
-        >
-          Github
-        </a>
-        .
-      </footer>
-    </div>
+    </Layout>
   );
 }
