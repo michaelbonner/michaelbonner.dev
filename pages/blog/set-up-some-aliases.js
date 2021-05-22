@@ -15,7 +15,7 @@ export default function SetUpSomeAliases() {
               </h1>
             </div>
           </div>
-          <div className="lg:mt-32 text-lg prose prose max-w-5xl">
+          <div className="lg:mt-32 text-lg prose max-w-5xl">
             <p>Bash aliases are amazing, just set them up.</p>
             <h2>What are bash aliases?</h2>
             <p>
