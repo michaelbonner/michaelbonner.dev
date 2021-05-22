@@ -90,7 +90,9 @@ export default function Home() {
             <ul className="mt-4 pl-12 list-outside list-disc text-lg lg:grid lg:grid-cols-4 gap-x-4 gap-y-2">
               <li>JavaScript</li>
               <li>TypeScript</li>
+              <li>Node.js</li>
               <li>PHP</li>
+              <li>AWS</li>
               <li>Serverless</li>
               <li>Next.js</li>
               <li>Gatsby</li>
