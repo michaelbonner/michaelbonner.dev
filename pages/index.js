@@ -104,6 +104,17 @@ export default function Home() {
                   digital agency, and taught a boot camp for the University of
                   Utah. I love what I do, and I'm always down to chat about it.
                 </p>
+                <p className="mt-4">
+                  Also, I really like podcasts so I made a site to keep track of
+                  the podcasts I listen to. You can{" "}
+                  <a
+                    className="my-8 text-lg border-b border-gray-400 hover:text-blue-800 hover:border-blue-400 transition-colors"
+                    href="https://podcasts.michaelbonner.dev/"
+                  >
+                    check that out here
+                  </a>
+                  .
+                </p>
               </div>
             </div>
           </div>
