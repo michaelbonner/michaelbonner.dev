@@ -1,6 +1,45 @@
 import Image from "next/image";
 import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
+import { HiLink } from "react-icons/hi";
 import Layout from "../components/layout";
+
+const projects = [
+  {
+    title: `Primary Children's Hospital: Here Kids Win`,
+    url: `https://herekidswin.com/`,
+    github: `https://github.com/FaktoryUtah/primary-childrens-stories`,
+  },
+  {
+    title: `Wasatch Covers`,
+    url: `https://wasatchcovers.com/`,
+  },
+  {
+    title: `Ravens Film Works`,
+    url: `https://ravensfilmworks.com/`,
+    github: `https://github.com/michaelbonner/ravens`,
+  },
+  {
+    title: `NEF Programs Administration System`,
+    url: `https://pas.nef1.org/`,
+  },
+];
+
+const tools = [
+  "JavaScript",
+  "TypeScript",
+  "Node",
+  "PHP",
+  "AWS",
+  "Serverless",
+  "Next",
+  "Gatsby",
+  "GraphQL",
+  "Laravel",
+  "MongoDB",
+  "MySQL",
+  "WordPress",
+  "Shopify",
+];
 
 export default function Home() {
   return (
@@ -10,14 +49,23 @@ export default function Home() {
     >
       <main className="container mx-auto px-8 py-12 flex items-center">
         <div className="pt-8">
-          <div className="lg:flex lg:pt-16">
-            <div>
+          <div className="lg:flex lg:flex-row-reverse lg:pt-16">
+            <div className="w-full lg:w-1/3 mt-8 lg:mt-4">
+              <Image
+                alt="Mike on the beach"
+                className="bg-indigo-300 bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:mix-blend-normal"
+                src="/images/on-the-beach.jpg"
+                width="600"
+                height="400"
+              />
+            </div>
+            <div className="mt-8 lg:mt-0 w-full lg:w-2/3 lg:pr-8">
               <h1 className="leading-relaxed text-4xl tracking-wide lg:pr-8">
                 Hi! I'm{" "}
                 <span className="font-medium whitespace-nowrap">
                   Michael Bonner
                 </span>
-                , a web developer in Salt City Lake, Utah. I run a small agency
+                , a web developer in Salt Lake City, Utah. I run a small agency
                 with some friends called{" "}
                 <span className="whitespace-nowrap">
                   <a
@@ -35,93 +83,79 @@ export default function Home() {
                   href="https://github.com/michaelbonner"
                 >
                   <span>See what I'm up to on GitHub</span>
-                  <SiGithub />
+                  <SiGithub className="hidden lg:inline-block" />
                 </a>
               </div>
-              <div className="text-xl lg:pr-8 leading-relaxed">
+              <div className="text-xl leading-relaxed">
                 <p className="mt-4">
-                  I started making websites in high school back in 2003. I found
-                  a copy of my first site and{` `}
+                  I started making websites in high school back in 2003. I
+                  actually found a copy of my first site and{` `}
                   <a
-                    className="my-8 text-lg border-b border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
+                    className="my-8 text-lg border-b border-gray-400 hover:text-blue-800 hover:border-blue-400 transition-colors"
                     href="https://tuff.michaelbonner.dev/"
                   >
                     put it up here
                   </a>
-                  . Epic, right? From there I made websites for people I knew,
-                  then people they knew, and so on. Making websites was
-                  definitely my thing. Since then I've worked at a few places
-                  making websites, web applications, and mobile apps; was a
-                  director at a digital agency, and taught a boot camp for the
-                  University of Utah. I love what I do, and I'm always down to
-                  chat about it.
+                  . Epic, right? Don't miss the days of GeoCities. From there I
+                  made websites for people I knew, then people they knew, and so
+                  on. Making websites was definitely my thing. Since then I have
+                  worked at a handful of places making websites, web
+                  applications, and mobile apps. I also was a director at a
+                  digital agency, and taught a boot camp for the University of
+                  Utah. I love what I do, and I'm always down to chat about it.
                 </p>
               </div>
-            </div>
-            <div className="mt-8 lg:mt-4 aspect-w-6 aspect-h-4">
-              <Image
-                alt="Mike on the beach"
-                className="bg-indigo-300 bg-opacity-100 rounded-lg w-full h-auto transition-all mix-blend-luminosity hover:mix-blend-normal"
-                src="/images/on-the-beach.jpg"
-                width="2066 "
-                height=" 1378"
-              />
             </div>
           </div>
           <div className="lg:mt-32">
             <h2 className="text-3xl mt-16">Projects I'm proud of</h2>
-            <ul className="mt-4 pl-12 list-outside list-disc text-lg lg:grid lg:grid-cols-4 gap-x-4 gap-y-2">
-              <li className="lg:pr-8">
-                <a
-                  className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
-                  href="https://herekidswin.com/"
-                >
-                  Primary Children's Hospital: Here Kids Win
-                </a>
-              </li>
-              <li className="lg:pr-8">
-                <a
-                  className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
-                  href="https://wasatchcovers.com/"
-                >
-                  Wasatch Covers
-                </a>
-              </li>
-              <li className="lg:pr-8">
-                <a
-                  className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
-                  href="https://ravensfilmworks.com/"
-                >
-                  Ravens Film Works
-                </a>
-              </li>
-              <li className="lg:pr-8">
-                <a
-                  className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
-                  href="https://pas.nef1.org/"
-                >
-                  NEF Programs Administration System
-                </a>
-              </li>
+            <ul className="mt-8 text-lg lg:grid lg:grid-cols-2 gap-x-4 gap-y-12">
+              {projects.map((project) => {
+                return (
+                  <li className="ml-8" key={project.title}>
+                    <p className="mb-2">
+                      <a
+                        className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors text-xl"
+                        href={project.url}
+                      >
+                        {project.title}
+                      </a>
+                    </p>
+                    <div className="flex justify-start space-x-4">
+                      {project.url && (
+                        <p>
+                          <a
+                            className="flex space-x-1 border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors text-base"
+                            href={project.url}
+                          >
+                            <HiLink className="text-xl" />
+                            <span>View Project</span>
+                          </a>
+                        </p>
+                      )}
+                      {project.github && (
+                        <p>
+                          <a
+                            className="flex space-x-1 border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors text-base"
+                            href={project.github}
+                          >
+                            <SiGithub className="text-xl" />
+                            <span>Source</span>
+                          </a>
+                        </p>
+                      )}
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className="lg:mt-32">
             <h2 className="text-3xl mt-16">Tools I use</h2>
             <ul className="mt-4 pl-12 list-outside list-disc text-lg lg:grid lg:grid-cols-4 gap-x-4 gap-y-2">
-              <li>JavaScript</li>
-              <li>TypeScript</li>
-              <li>Node.js</li>
-              <li>PHP</li>
-              <li>AWS</li>
-              <li>Serverless</li>
-              <li>Next.js</li>
-              <li>Gatsby</li>
-              <li>GraphQL</li>
-              <li>Laravel</li>
-              <li>MongoDB</li>
-              <li>MySQL</li>
-              <li>WordPress</li>
-              <li>Shopify</li>
+              {tools.map((tool) => {
+                return <li key={tool}>{tool}</li>;
+              })}
             </ul>
           </div>
           <div className="lg:mt-32">
@@ -130,7 +164,7 @@ export default function Home() {
               <li>
                 <div className="flex">
                   <a
-                    className="flex space-x-1 justify-start items-center border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
+                    className="flex space-x-1 justify-start items-center border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors"
                     href="https://www.linkedin.com/in/michaelbonner/"
                   >
                     <SiLinkedin />
@@ -142,7 +176,7 @@ export default function Home() {
               <li>
                 <div className="flex">
                   <a
-                    className="flex space-x-1 justify-start items-center border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all"
+                    className="flex space-x-1 justify-start items-center border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors"
                     href="https://www.instagram.com/michael__bonner"
                   >
                     <SiInstagram />

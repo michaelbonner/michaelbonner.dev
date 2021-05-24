@@ -28,9 +28,9 @@ const Layout = ({ children, description, title }) => {
         &copy; {new Date().getFullYear()} by Michael Bonner.{" "}
         <a
           className="underline"
-          href="https://github.com/michaelbonner/michaelwbonner.com"
+          href="https://github.com/michaelbonner/michaelbonner.dev"
         >
-          Github
+          Source for this site
         </a>
         .
       </footer>
