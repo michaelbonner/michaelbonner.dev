@@ -23,5 +23,11 @@
         "phpunit",
         "ployp",
         "sourcetree"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "titleBar.activeForeground": "#1E3A8A",
+        "titleBar.inactiveForeground": "#1E3A8ACC",
+        "titleBar.activeBackground": "#60A5FA",
+        "titleBar.inactiveBackground": "#60A5FACC"
+    }
 }
