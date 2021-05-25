@@ -12,31 +12,39 @@ const Layout = ({ children, description, title }) => {
       </Head>
 
       <header className="pt-12 px-8 container mx-auto">
-        <nav className="flex justify-end space-x-4 text-xl">
+        <nav className="flex justify-end space-x-6 text-xl">
           <Link href="/">
-            <a>Home</a>
+            <a className="text-xl border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1">
+              Home
+            </a>
           </Link>
           <Link href="/blog">
-            <a>Blog</a>
+            <a className="text-xl border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1">
+              Blog
+            </a>
           </Link>
         </nav>
       </header>
 
       {children}
 
-      <footer className="lg:flex lg:flex-row-reverse justify-between container mx-auto p-8 bg-gray-400 lg:bg-transparent bg-opacity-30">
-        <nav className="flex justify-center lg:justify-end space-x-4 text-xl pb-8 lg:py-0">
+      <footer className="lg:flex lg:items-center lg:flex-row-reverse justify-between container mx-auto p-8">
+        <nav className="flex justify-center lg:justify-end space-x-6 text-xl pb-8 lg:py-0">
           <Link href="/">
-            <a>Home</a>
+            <a className="text-xl border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1">
+              Home
+            </a>
           </Link>
           <Link href="/blog">
-            <a>Blog</a>
+            <a className="text-xl border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1">
+              Blog
+            </a>
           </Link>
         </nav>
         <p className="text-center lg:text-left">
           &copy; {new Date().getFullYear()} by Michael Bonner.{" "}
           <a
-            className="underline block lg:inline"
+            className="border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1 inline-block lg:inline"
             href="https://github.com/michaelbonner/michaelbonner.dev"
           >
             Source for this site
