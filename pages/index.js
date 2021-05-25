@@ -123,7 +123,7 @@ export default function Home() {
             <ul className="mt-8 text-lg lg:grid lg:grid-cols-2 gap-x-4 gap-y-12">
               {projects.map((project) => {
                 return (
-                  <li className="ml-8" key={project.title}>
+                  <li className="ml-4 lg:ml-8 mt-8 lg:mt-0" key={project.title}>
                     <p className="mb-2">
                       <a
                         className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors text-xl"
