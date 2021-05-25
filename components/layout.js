@@ -24,15 +24,24 @@ const Layout = ({ children, description, title }) => {
 
       {children}
 
-      <footer className="container mx-auto p-8 pt-12">
-        &copy; {new Date().getFullYear()} by Michael Bonner.{" "}
-        <a
-          className="underline"
-          href="https://github.com/michaelbonner/michaelbonner.dev"
-        >
-          Source for this site
-        </a>
-        .
+      <footer className="lg:flex lg:flex-row-reverse justify-between container mx-auto p-8 bg-gray-400 lg:bg-transparent bg-opacity-30">
+        <nav className="flex justify-center lg:justify-end space-x-4 text-xl pb-8 lg:py-0">
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+          <Link href="/blog">
+            <a>Blog</a>
+          </Link>
+        </nav>
+        <p className="text-center lg:text-left">
+          &copy; {new Date().getFullYear()} by Michael Bonner.{" "}
+          <a
+            className="underline block lg:inline"
+            href="https://github.com/michaelbonner/michaelbonner.dev"
+          >
+            Source for this site
+          </a>
+        </p>
       </footer>
     </div>
   );
