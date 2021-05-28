@@ -47,7 +47,7 @@ const Layout = ({ children, description, title }) => {
             className="border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1 inline-block lg:inline"
             href="https://github.com/michaelbonner/michaelbonner.dev"
           >
-            Source for this site
+            Check out the source for this site
           </a>
         </p>
       </footer>
