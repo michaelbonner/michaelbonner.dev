@@ -52,7 +52,7 @@ export default function Home() {
           <div className="lg:flex lg:flex-row-reverse lg:pt-16">
             <div className="w-full lg:w-1/3 mt-8 lg:mt-4">
               <Image
-                alt="Mike on the beach"
+                alt="Michael Bonner photo"
                 className="bg-indigo-300 bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:mix-blend-normal"
                 src="/images/on-the-beach.jpg"
                 width="600"
