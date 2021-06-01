@@ -99,9 +99,9 @@ export default function Home() {
                   . Epic, right? Don't miss the days of GeoCities. From there I
                   made websites for people I knew, then people they knew, and so
                   on. Making websites was definitely my thing. Since then I have
-                  worked at a handful of places making websites, web
-                  applications, and mobile apps. I also was a director at a
-                  digital agency, and taught a boot camp for the University of
+                  worked at a handful of places making websites, web apps, and
+                  mobile apps. I also was a director at a digital agency for
+                  several years, and taught a boot camp for the University of
                   Utah. I love what I do, and I'm always down to chat about it.
                 </p>
                 <p className="mt-4">
