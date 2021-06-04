@@ -40,6 +40,11 @@ const Layout = ({ children, description, title }) => {
               Blog
             </a>
           </Link>
+          <Link href="/uses">
+            <a className="text-xl border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1">
+              Uses
+            </a>
+          </Link>
         </nav>
         <p className="text-center lg:text-left">
           &copy; {new Date().getFullYear()} by Michael Bonner.{" "}
