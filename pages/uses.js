@@ -33,6 +33,16 @@ export default function Uses() {
               <HiLink />
               <span>VS Code</span>
             </A>
+            <span>Terminal:</span>
+            <A href="https://iterm2.com/">
+              <HiLink />
+              <span>iTerm2</span>
+            </A>
+            <span>Shell:</span>
+            <A href="https://ohmyz.sh/">
+              <HiLink />
+              <span>oh my zsh</span>
+            </A>
             <span>Editor Font:</span>
             <A href="https://fonts.google.com/specimen/Source+Code+Pro">
               <HiLink />
