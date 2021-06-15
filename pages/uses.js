@@ -7,6 +7,7 @@ const A = ({ href, children }) => {
       className="flex space-x-1 items-center underline"
       href={href}
       target="_blank"
+      rel="noreferrer"
     >
       {children}
     </a>
@@ -21,9 +22,9 @@ export default function Uses() {
     >
       <main className="container mx-auto px-8 py-12">
         <h1 className="leading-relaxed text-4xl tracking-wide lg:pr-8 max-w-3xl">
-          Hi! I'm{" "}
+          Hi! I&apos;m{" "}
           <span className="font-medium whitespace-nowrap">Michael Bonner</span>,
-          and here's some of the stuff I use
+          and here&apos;s some of the stuff I use
         </h1>
         <div className="text-lg">
           <h2 className="mt-8 text-2xl">Software</h2>
@@ -63,7 +64,7 @@ export default function Uses() {
               <HiLink />
               <span>Paste</span>
             </A>
-            <span>Just check it out, it's awesome</span>
+            <span>Just check it out, it&apos;s awesome</span>
             <A href="https://webcatalog.app/">
               <HiLink />
               <span>Webcatalog</span>
@@ -75,13 +76,13 @@ export default function Uses() {
             <span>Computer:</span>
             <A href="https://www.apple.com/shop/buy-mac/macbook-pro/13-inch-space-gray-apple-m1-chip-with-8-core-cpu-and-8-core-gpu-512gb#">
               <HiLink />
-              <span>MacBook Pro 13" M1</span>
+              <span>MacBook Pro 13&quot; M1</span>
             </A>
 
             <span>Display:</span>
             <A href="https://www.amazon.com/Samsung-U32J590-32-Inch-LED-Lit-Monitor/dp/B07CS3JGPC/ref=sr_1_2?crid=2PDUXL1TLDEI9&dchild=1&keywords=samsung%2B4k%2B32%2Binch%2Bmonitor&qid=1622763845&sprefix=samsung%2B4k%2B32%2Caps%2C217&sr=8-2&th=1">
               <HiLink />
-              <span>Samsung 32" 4k</span>
+              <span>Samsung 32&quot; 4k</span>
             </A>
 
             <span>Webcam:</span>

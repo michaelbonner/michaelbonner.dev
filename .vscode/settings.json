@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "alias",
+        "apos",
         "cpath",
         "csvg",
         "gclean",
@@ -22,7 +23,9 @@
         "pcqsf",
         "phpunit",
         "ployp",
-        "sourcetree"
+        "sourcetree",
+        "streamcam",
+        "webcatalog"
     ],
     "workbench.colorCustomizations": {
         "titleBar.activeForeground": "#1E3A8A",

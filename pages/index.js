@@ -2,6 +2,7 @@ import Image from "next/image";
 import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
 import { HiLink } from "react-icons/hi";
 import Layout from "../components/layout";
+import pictureOfMe from "../public/images/on-the-beach.jpg";
 
 const projects = [
   {
@@ -54,14 +55,15 @@ export default function Home() {
               <Image
                 alt="Michael Bonner photo"
                 className="bg-indigo-300 bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:mix-blend-normal"
-                src="/images/on-the-beach.jpg"
-                width="600"
                 height="400"
+                placeholder="blur"
+                src={pictureOfMe}
+                width="600"
               />
             </div>
             <div className="mt-8 lg:mt-0 w-full lg:w-2/3 lg:pr-8">
               <h1 className="leading-relaxed text-4xl tracking-wide lg:pr-8">
-                Hi! I'm{" "}
+                Hi! I&apos;m{" "}
                 <span className="font-medium whitespace-nowrap">
                   Michael Bonner
                 </span>
@@ -82,7 +84,7 @@ export default function Home() {
                   className="my-8 md:flex space-x-2 text-2xl border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1"
                   href="https://github.com/michaelbonner"
                 >
-                  <span>See what I'm up to on GitHub</span>
+                  <span>See what I&apos;m up to on GitHub</span>
                   <SiGithub className="hidden lg:inline-block" />
                 </a>
               </div>
@@ -96,13 +98,14 @@ export default function Home() {
                   >
                     put it up here
                   </a>
-                  . Epic, right? Don't miss the days of GeoCities. From there I
-                  made websites for people I knew, then people they knew, and so
-                  on. Making websites was definitely my thing. Since then I have
-                  worked at a handful of places making websites, web apps, and
-                  mobile apps. I also was a director at a digital agency for
-                  several years, and taught a boot camp for the University of
-                  Utah. I love what I do, and I'm always down to chat about it.
+                  . Epic, right? Don&apos;t miss the days of GeoCities. From
+                  there I made websites for people I knew, then people they
+                  knew, and so on. Making websites was definitely my thing.
+                  Since then I have worked at a handful of places making
+                  websites, web apps, and mobile apps. I also was a director at
+                  a digital agency for several years, and taught a boot camp for
+                  the University of Utah. I love what I do, and I&apos;m always
+                  down to chat about it.
                 </p>
                 <p className="mt-4">
                   Also, I really like podcasts so I made a site to keep track of
@@ -119,7 +122,7 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:mt-32">
-            <h2 className="text-3xl mt-16">Projects I'm proud of</h2>
+            <h2 className="text-3xl mt-16">Projects I&apos;m proud of</h2>
             <ul className="mt-8 text-lg lg:grid lg:grid-cols-2 gap-x-4 gap-y-12">
               {projects.map((project) => {
                 return (

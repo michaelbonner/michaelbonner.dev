@@ -28,9 +28,9 @@ export default function SetUpSomeAliases() {
             </p>
             <h2>How to set them up</h2>
             <p>
-              First, identify which version of shell you're using and where it's
-              configuration file is. Usually, on a mac, it's in a file at{" "}
-              <code>~/.bash_profile</code>. I use zsh, so mine is at{" "}
+              First, identify which version of shell you&apos;re using and where
+              &apos;s configuration file is. Usually, on a mac, it&apos;s in a
+              file at <code>~/.bash_profile</code>. I use zsh, so mine is at{" "}
               <code>~/.zshrc</code>. An easy way to test is to add a sample
               alias, and try executing it after refreshing the shell or sourcing
               your config file. <code>e.g. source ~/.zshrc</code>. I keep my
@@ -41,7 +41,7 @@ export default function SetUpSomeAliases() {
               Once you identify which file to edit, all you need to do is add
               something like the following:
             </p>
-            <pre>alias gs='git status'</pre>
+            <pre>alias gs=&apos;git status&apos;</pre>
             <p>
               In the above example, `gs` is the text you will type, and the text
               in the quotes is the command that will be executed.
