@@ -8,6 +8,7 @@ const Layout = ({ children, description, title }) => {
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="theme-color" content="#6B7280" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
