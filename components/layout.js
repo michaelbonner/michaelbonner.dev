@@ -12,7 +12,12 @@ const Layout = ({ children, description, title }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="pt-12 px-8 container mx-auto">
+      <header className="flex justify-between pt-12 px-8 container mx-auto">
+        <Link href={`/`}>
+          <a className="text-2xl font-medium border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1">
+            Michael Bonner
+          </a>
+        </Link>
         <nav className="flex justify-end space-x-6 text-xl">
           <Link href="/">
             <a className="text-xl border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1">
