@@ -44,13 +44,13 @@ const otherThings = [
   {
     title: `Days Until`,
     description: `You ever wanted a site to just tell you how many days until a specific date. Well here you go. Really I just needed something easy to start building Svelte projects.`,
-    url: `https://days-until.vercel.app/`,
+    url: `https://days-until.michaelbonner.dev/`,
     github: `https://github.com/michaelbonner/days-until`,
   },
   {
     title: `Cookie Parser`,
     description: `Now you don't have to wonder what all the cookies on a site mean. Just copy and paste the cookies string and the site will tell you what cookies are present with links to learn more.`,
-    url: `https://cookie-parser.vercel.app/`,
+    url: `https://cookie-parser.michaelbonner.dev/`,
     github: `https://github.com/michaelbonner/cookie-parser`,
   },
 ];
