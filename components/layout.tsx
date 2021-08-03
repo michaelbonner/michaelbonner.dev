@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Layout = ({
   children,
@@ -8,12 +8,26 @@ const Layout = ({
   title,
   ogImage = "https://michaelbonner.dev/og-image.jpg",
 }) => {
+  useEffect(() => {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    let hue = 208;
+
+    setInterval(() => {
+      if (hue >= 360) {
+        hue = hue + 1 - 360;
+      } else {
+        hue += 1;
+      }
+      meta.setAttribute("content", `hsl(${hue}, 50%, 30%)`);
+    }, 40);
+  }, []);
+
   return (
     <div className="font-serif bg-gray-200 text-gray-800 min-h-screen bg-opacity-80">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta name="theme-color" content="#6B7280" />
+        <meta name="theme-color" content="hsl(208, 50%, 30%)" />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content={title} />
         <meta property="og:image" content={ogImage} />
