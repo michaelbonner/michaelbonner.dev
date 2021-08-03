@@ -3,6 +3,7 @@ import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
 import { HiLink } from "react-icons/hi";
 import Layout from "../components/layout";
 import pictureOfMe from "../public/images/on-the-beach.jpg";
+import { useEffect } from "react";
 
 const projects = [
   {
@@ -75,6 +76,19 @@ const tools = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    let hue = 0;
+
+    setInterval(() => {
+      if (hue >= 360) {
+        hue = hue + 2 - 360;
+      } else {
+        hue += 2;
+      }
+      meta.setAttribute("content", `hsl(${hue}, 50%, 30%)`);
+    }, 48);
+  }, []);
   return (
     <Layout
       title="Michael Bonner | Developer in Salt Lake, UT"
