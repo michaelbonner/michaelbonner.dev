@@ -13,7 +13,7 @@ const Layout = ({
     let hue = 208;
 
     const interval = setInterval(() => {
-      meta.setAttribute("content", `hsl(${(hue += 1)}, 50%, 30%)`);
+      meta.setAttribute("content", `hsl(${(hue -= 1)}, 50%, 30%)`);
     }, 40);
 
     return () => clearInterval(interval);
