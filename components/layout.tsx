@@ -12,14 +12,11 @@ const Layout = ({
     const meta = document.querySelector('meta[name="theme-color"]');
     let hue = 208;
 
-    setInterval(() => {
-      if (hue >= 360) {
-        hue = hue + 1 - 360;
-      } else {
-        hue += 1;
-      }
-      meta.setAttribute("content", `hsl(${hue}, 50%, 30%)`);
+    const interval = setInterval(() => {
+      meta.setAttribute("content", `hsl(${(hue += 1)}, 50%, 30%)`);
     }, 40);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
