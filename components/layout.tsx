@@ -6,7 +6,7 @@ const Layout = ({
   children,
   description,
   title,
-  ogImage = "/og-image.jpg",
+  ogImage = "https://michaelbonner.dev/og-image.jpg",
 }) => {
   return (
     <div className="font-serif bg-gray-200 text-gray-800 min-h-screen bg-opacity-80">
@@ -19,7 +19,10 @@ const Layout = ({
         <meta property="og:image" content={ogImage} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <link rel="apple-touch-icon" href="/icon.png" />
+        <link
+          rel="apple-touch-icon"
+          href="https://michaelbonner.dev/icon.png"
+        />
       </Head>
 
       <header className="flex justify-between pt-12 px-8 container mx-auto">
