@@ -2,7 +2,12 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
-const Layout = ({ children, description, title }) => {
+const Layout = ({
+  children,
+  description,
+  title,
+  ogImage = "/og-image.jpg",
+}) => {
   return (
     <div className="font-serif bg-gray-200 text-gray-800 min-h-screen bg-opacity-80">
       <Head>
@@ -10,6 +15,11 @@ const Layout = ({ children, description, title }) => {
         <meta name="description" content={description} />
         <meta name="theme-color" content="#6B7280" />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content={title} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <link rel="apple-touch-icon" href="/icon.png" />
       </Head>
 
       <header className="flex justify-between pt-12 px-8 container mx-auto">
