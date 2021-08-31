@@ -64,7 +64,7 @@ const tools = [
   "PHP",
   "AWS",
   "Serverless",
-  "Next",
+  "Next.js",
   "Gatsby",
   "GraphQL",
   "Laravel",
