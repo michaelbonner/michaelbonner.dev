@@ -67,9 +67,12 @@ const tools = [
   "Next.js",
   "Gatsby",
   "GraphQL",
+  "Prisma",
+  "Apollo",
   "Laravel",
   "MongoDB",
   "MySQL",
+  "PosgreSQL",
   "WordPress",
   "Shopify",
 ];
@@ -78,7 +81,7 @@ export default function Home() {
   return (
     <Layout
       title="Michael Bonner | Developer in Salt Lake, UT"
-      description="Hi, I'm Michael Bonner. I'm a web developer in Salt Lake UT"
+      description="Hi, I'm Michael Bonner. I'm a web developer in Salt Lake UT that specializes in business efficiency applications, APIs, and integrations."
     >
       <main className="container mx-auto px-8 py-12 flex items-center">
         <div className="pt-8">
