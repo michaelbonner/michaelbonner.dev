@@ -72,7 +72,7 @@ const tools = [
   "Laravel",
   "MongoDB",
   "MySQL",
-  "PosgreSQL",
+  "PostgreSQL",
   "WordPress",
   "Shopify",
 ];
