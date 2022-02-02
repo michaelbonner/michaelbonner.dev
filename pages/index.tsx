@@ -30,6 +30,12 @@ const projects = [
 ];
 const otherThings = [
   {
+    title: `Lazy Uncle`,
+    description: `I have a lot of people in my family, and sometimes it's hard to keep track of their birthdays and how old they are. Lazy Uncle makes it a little easier. Give it a shot and let me know what you think.`,
+    url: `https://www.lazyuncle.net/`,
+    github: `https://github.com/michaelbonner/lazy-uncle`,
+  },
+  {
     title: `Podcasts I Listen To`,
     description: `I am really into podcasts, and people ask what podcasts they should listen to. I built this site to make it easier to share the really good ones.`,
     url: `https://podcasts.michaelbonner.dev/`,
