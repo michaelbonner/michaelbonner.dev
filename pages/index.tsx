@@ -59,6 +59,12 @@ const otherThings = [
     url: `https://cookie-parser.michaelbonner.dev/`,
     github: `https://github.com/michaelbonner/cookie-parser`,
   },
+  {
+    title: `Random String Generator`,
+    description: `I got tired of Googling for a site and getting a bunch of cruft I don't need when trying to generate a random string, so I built a dead simple replacement.`,
+    url: `https://random-string-generator.michaelbonner.dev/`,
+    github: `https://github.com/michaelbonner/random-string-generator`,
+  },
 ];
 
 const tools = [
