@@ -23,6 +23,11 @@ const projects = [
     github: `https://github.com/michaelbonner/ravens`,
   },
   {
+    title: `Blackthorn Software`,
+    description: `I'm part of a team building a web application that helps companies manage their projects, people, and assets in a way that's easy to use and intuitive.`,
+    url: `https://blackthornsoftware.com/`,
+  },
+  {
     title: `NEF Programs Administration System`,
     description: `Big ol' platform to administer all of their programs. Can't show you the code for security reasons, but I'm really proud of it so I wanted to at least put it here. 😆`,
     url: `https://pas.nef1.org/`,
