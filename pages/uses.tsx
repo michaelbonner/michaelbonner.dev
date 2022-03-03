@@ -45,9 +45,9 @@ export default function Uses() {
               <span>oh my zsh</span>
             </A>
             <span>Editor Font:</span>
-            <A href="https://fonts.google.com/specimen/Source+Code+Pro">
+            <A href="https://github.com/tonsky/FiraCode">
               <HiLink />
-              <span>Source Code Pro</span>
+              <span>Fira Code</span>
             </A>
             <span>Local server:</span>
             <A href="https://laravel.com/docs/8.x/sail">
@@ -74,9 +74,9 @@ export default function Uses() {
           <h2 className="mt-8 text-2xl">Hardware</h2>
           <div className="mt-4 grid grid-cols-2 max-w-xl">
             <span>Computer:</span>
-            <A href="https://www.apple.com/shop/buy-mac/macbook-pro/13-inch-space-gray-apple-m1-chip-with-8-core-cpu-and-8-core-gpu-512gb#">
+            <A href="https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-space-gray-10-core-cpu-16-core-gpu-1tb">
               <HiLink />
-              <span>MacBook Pro 13&quot; M1</span>
+              <span>MacBook Pro 14&quot; M1 Pro</span>
             </A>
 
             <span>Display:</span>
@@ -99,9 +99,9 @@ export default function Uses() {
               </span>
             </A>
             <span>Headphones:</span>
-            <A href="https://www.sony.com/et/electronics/headband-headphones/wh-1000xm4">
+            <A href="https://www.apple.com/airpods-max/">
               <HiLink />
-              <span>Sony WH-1000XM4</span>
+              <span>AirPods Max</span>
             </A>
           </div>
         </div>
