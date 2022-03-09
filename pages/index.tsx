@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import pictureOfMe from "../public/images/on-the-beach.jpg";
 import { classes } from "../styles/classes";
 import { classNames } from "../styles/classNames";
+import H2 from "../components/elements/H2";
 
 const projects = [
   {
@@ -184,7 +185,7 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:mt-32">
-            <h2 className="text-3xl mt-16">Projects I&apos;m proud of</h2>
+            <H2>Projects I&apos;m proud of</H2>
             <ul className="mt-8 text-lg lg:grid lg:grid-cols-2 gap-x-8 gap-y-12">
               {projects.map((project) => {
                 return (
@@ -234,7 +235,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="lg:mt-32">
-            <h2 className="text-3xl mt-16">Things I&apos;ve built for fun</h2>
+            <H2>Things I&apos;ve built for fun</H2>
             <ul className="mt-8 text-lg lg:grid lg:grid-cols-2 gap-x-8 gap-y-12">
               {otherThings.map((project) => {
                 return (
@@ -284,7 +285,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="lg:mt-32">
-            <h2 className="text-3xl mt-16">Tools I use</h2>
+            <H2>Tools I use</H2>
             <ul className="mt-4 pl-12 list-outside list-disc text-lg lg:grid lg:grid-cols-4 gap-x-4 gap-y-2">
               {tools.map((tool) => {
                 return <li key={tool}>{tool}</li>;
@@ -292,7 +293,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="lg:mt-32">
-            <h2 className="text-3xl mt-16">Get in touch</h2>
+            <H2>Get in touch</H2>
             <ul className="mt-6 pl-4 text-lg lg:grid lg:grid-cols-4 gap-x-4 gap-y-2">
               <li>
                 <div className="flex">
