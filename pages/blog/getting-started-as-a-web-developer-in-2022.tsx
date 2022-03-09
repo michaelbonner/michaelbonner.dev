@@ -8,7 +8,7 @@ export default function SetUpSomeAliases() {
       description="Getting started as a web developer is hard; hopefully I can help a little bit."
     >
       <main className="container mx-auto px-8 py-12 flex items-center">
-        <div className="max-w-3xl prose">
+        <div className="w-full max-w-3xl prose">
           <div className="pt-8">
             <div className="lg:pt-24">
               <div>
@@ -53,7 +53,7 @@ export default function SetUpSomeAliases() {
                 learning the basics the old fashioned way.
               </p>
               <figure>
-                <a href="https://tuff.michaelbonner.dev/">
+                <a className="break-all" href="https://tuff.michaelbonner.dev/">
                   <Image
                     src="/images/tuff-website-screenshot.png"
                     alt="Tuff website screenshot"
@@ -66,10 +66,19 @@ export default function SetUpSomeAliases() {
                 </figcaption>
               </figure>
               <p>
-                Learn basic <a href="https://www.w3schools.com/html/">HTML</a>{" "}
-                and <a href="https://www.w3schools.com/css/">CSS</a>. Codecademy
-                (
-                <a href="https://www.codecademy.com/catalog/language/html-css">
+                Learn basic{" "}
+                <a className="break-all" href="https://www.w3schools.com/html/">
+                  HTML
+                </a>{" "}
+                and{" "}
+                <a className="break-all" href="https://www.w3schools.com/css/">
+                  CSS
+                </a>
+                . Codecademy (
+                <a
+                  className="break-all"
+                  href="https://www.codecademy.com/catalog/language/html-css"
+                >
                   codecademy.com
                 </a>
                 ) has really good interactive tutorials to get you started.
@@ -79,7 +88,7 @@ export default function SetUpSomeAliases() {
               </p>
               <p>
                 Download Visual Studio Code (
-                <a href="https://code.visualstudio.com/">
+                <a className="break-all" href="https://code.visualstudio.com/">
                   https://code.visualstudio.com/
                 </a>
                 ) and start making files. VS Code will help you find syntax
@@ -90,12 +99,15 @@ export default function SetUpSomeAliases() {
                 launch it. For real, just launch it. Get that thing out there.
                 You can host your site using Netlify for free. Just zip it up
                 and launch it. (
-                <a href="https://app.netlify.com/drop">
+                <a className="break-all" href="https://app.netlify.com/drop">
                   https://app.netlify.com/drop
                 </a>
                 ) Tell your friends about your new site. Tell your parents about
                 it. Tell me about it.{` `}(
-                <a href="https://www.linkedin.com/in/michaelbonner/">
+                <a
+                  className="break-all"
+                  href="https://www.linkedin.com/in/michaelbonner/"
+                >
                   https://www.linkedin.com/in/michaelbonner/
                 </a>
                 )
@@ -119,7 +131,10 @@ export default function SetUpSomeAliases() {
               </p>
               <h2>Get to the next level</h2>
               <figure>
-                <a href="https://github.com/michaelbonner/michaelbonner.dev">
+                <a
+                  className="break-all"
+                  href="https://github.com/michaelbonner/michaelbonner.dev"
+                >
                   <Image
                     alt="michaelbonner.dev github screenshot"
                     src="/images/michaelbonner-dev-github-screenshot.png"
@@ -133,8 +148,10 @@ export default function SetUpSomeAliases() {
               </figure>
               <p>
                 Learn Git. (
-                <a href="https://lab.github.com/">https://lab.github.com/</a>)
-                Git is a tool to keep track of changes to your code. It allows
+                <a className="break-all" href="https://lab.github.com/">
+                  https://lab.github.com/
+                </a>
+                ) Git is a tool to keep track of changes to your code. It allows
                 you to see what changes you made over time and roll things back
                 if you need to. You can create branches to keep new ideas
                 separate from production ready code, and then merge it back in
@@ -149,14 +166,17 @@ export default function SetUpSomeAliases() {
                 user interactions, and many run javascript on the server to
                 interface with the database. Wes Bos has a great course to get
                 you started. (
-                <a href="https://javascript30.com/">
+                <a className="break-all" href="https://javascript30.com/">
                   https://javascript30.com/
                 </a>
                 )
               </p>
               <p>
                 Keep learning. Watch tutorials. Listen to podcasts (
-                <a href="https://podcasts.michaelbonner.dev/">
+                <a
+                  className="break-all"
+                  href="https://podcasts.michaelbonner.dev/"
+                >
                   https://podcasts.michaelbonner.dev/
                 </a>
                 ). Read blogs. Find developer subreddits. There is so much to
@@ -203,7 +223,9 @@ export default function SetUpSomeAliases() {
                   "https://davidwalsh.name/",
                 ].map((site) => (
                   <li key={site}>
-                    <a href={site}>{site}</a>
+                    <a className="break-all" href={site}>
+                      {site}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -212,7 +234,10 @@ export default function SetUpSomeAliases() {
                 a great way to learn faster. My friend Steven has done a great
                 job advancing his knowledge and network specifically by posting
                 what he learns. Check out his stuff (
-                <a href="https://medium.com/@steven_creates">
+                <a
+                  className="break-all"
+                  href="https://medium.com/@steven_creates"
+                >
                   https://medium.com/@steven_creates
                 </a>
                 ).
@@ -252,7 +277,10 @@ export default function SetUpSomeAliases() {
                 your career path and give you some advice.
               </p>
               <p>
-                <a href="https://www.linkedin.com/in/michaelbonner/">
+                <a
+                  className="break-all"
+                  href="https://www.linkedin.com/in/michaelbonner/"
+                >
                   https://www.linkedin.com/in/michaelbonner/
                 </a>
               </p>
