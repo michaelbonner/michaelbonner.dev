@@ -55,10 +55,7 @@ export default function SetUpSomeAliases() {
                 learning the basics the old fashioned way.
               </p>
               <figure>
-                <a
-                  className={classes.bodyLink}
-                  href="https://tuff.michaelbonner.dev/"
-                >
+                <a href="https://tuff.michaelbonner.dev/">
                   <Image
                     src="/images/tuff-website-screenshot.png"
                     alt="Tuff website screenshot"
@@ -148,10 +145,7 @@ export default function SetUpSomeAliases() {
               </p>
               <h2>Get to the next level</h2>
               <figure>
-                <a
-                  className={classes.bodyLink}
-                  href="https://github.com/michaelbonner/michaelbonner.dev"
-                >
+                <a href="https://github.com/michaelbonner/michaelbonner.dev">
                   <Image
                     alt="michaelbonner.dev github screenshot"
                     src="/images/michaelbonner-dev-github-screenshot.png"
