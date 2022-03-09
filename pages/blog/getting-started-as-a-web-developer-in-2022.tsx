@@ -144,29 +144,7 @@ export default function SetUpSomeAliases() {
                 the time to learn it.
               </p>
               <p>
-                Now that you have a decent base, spend some more time working
-                through tutorials. Here&apos;s a few tutorial sites I really
-                like.
-              </p>
-              <ul>
-                <li>
-                  <a href="https://www.freecodecamp.org/learn">
-                    https://www.freecodecamp.org/learn
-                  </a>
-                </li>
-                <li>
-                  <a href="https://wesbos.com/courses">
-                    https://wesbos.com/courses
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.leveluptutorials.com/">
-                    https://www.leveluptutorials.com/
-                  </a>
-                </li>
-              </ul>
-              <p>
-                Keep learning. Listen to podcasts (
+                Keep learning. Watch tutorials. Listen to podcasts (
                 <a href="https://podcasts.michaelbonner.dev/">
                   https://podcasts.michaelbonner.dev/
                 </a>
@@ -174,62 +152,47 @@ export default function SetUpSomeAliases() {
                 learn. Find areas your passionate about and learn as much as you
                 can.
               </p>
+              <p>Some good tutorial sites to learn web development things:</p>
+              <ul>
+                {[
+                  "https://www.freecodecamp.org/learn",
+                  "https://wesbos.com/courses",
+                  "https://www.leveluptutorials.com/",
+                ].map((link) => (
+                  <li key={link}>
+                    <a href={link}>{link}</a>
+                  </li>
+                ))}
+              </ul>
               <p>Some good subreddits to learn web development things:</p>
               <ul>
-                <li>
-                  <a href="https://www.reddit.com/r/css">
-                    https://www.reddit.com/r/css
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.reddit.com/r/javascript">
-                    https://www.reddit.com/r/javascript
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.reddit.com/r/node">
-                    https://www.reddit.com/r/node
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.reddit.com/r/reactjs">
-                    https://www.reddit.com/r/reactjs
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.reddit.com/r/SyntaxFM">
-                    https://www.reddit.com/r/SyntaxFM
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.reddit.com/r/tailwindcss">
-                    https://www.reddit.com/r/tailwindcss
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.reddit.com/r/webdev">
-                    https://www.reddit.com/r/webdev
-                  </a>
-                </li>
+                {[
+                  "r/css",
+                  "r/javascript",
+                  "r/nextjs",
+                  "r/node",
+                  "r/reactjs",
+                  "r/SyntaxFM",
+                  "r/tailwindcss",
+                  "r/webdev",
+                ].map((subreddit) => (
+                  <li key={subreddit}>
+                    <a href="https://www.reddit.com/">r/css</a>
+                  </li>
+                ))}
               </ul>
               <p>Some good sites to learn web development things:</p>
               <ul>
-                <li>
-                  <a href="https://blog.hubspot.com/website/website-development">
-                    https://blog.hubspot.com/website/website-development
-                  </a>
-                </li>
-                <li>
-                  <a href="https://css-tricks.com/">https://css-tricks.com/</a>
-                </li>
-                <li>
-                  <a href="https://davidwalsh.name/">
-                    https://davidwalsh.name/
-                  </a>
-                </li>
-                <li>
-                  <a href="https://dev.to/">https://dev.to/</a>
-                </li>
+                {[
+                  "https://css-tricks.com/",
+                  "https://blog.hubspot.com/website/website-development",
+                  "https://dev.to/",
+                  "https://davidwalsh.name/",
+                ].map((site) => (
+                  <li key={site}>
+                    <a href={site}>{site}</a>
+                  </li>
+                ))}
               </ul>
               <p>
                 Learn out loud. Writing and/or streaming about what you learn is
