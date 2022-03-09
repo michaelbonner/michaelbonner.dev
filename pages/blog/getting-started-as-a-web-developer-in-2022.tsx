@@ -144,6 +144,17 @@ export default function SetUpSomeAliases() {
                 the time to learn it.
               </p>
               <p>
+                Learn Javascript. Javascript is the programming language of the
+                internet. Almost every site you use uses Javascript to enable
+                user interactions, and many run javascript on the server to
+                interface with the database. Wes Bos has a great course to get
+                you started. (
+                <a href="https://javascript30.com/">
+                  https://javascript30.com/
+                </a>
+                )
+              </p>
+              <p>
                 Keep learning. Watch tutorials. Listen to podcasts (
                 <a href="https://podcasts.michaelbonner.dev/">
                   https://podcasts.michaelbonner.dev/
@@ -165,7 +176,7 @@ export default function SetUpSomeAliases() {
                 ))}
               </ul>
               <p>Some good subreddits to learn web development things:</p>
-              <ul>
+              <ul className="flex flex-wrap gap-x-4 gap-y-2 list-none">
                 {[
                   "r/css",
                   "r/javascript",
@@ -176,8 +187,10 @@ export default function SetUpSomeAliases() {
                   "r/tailwindcss",
                   "r/webdev",
                 ].map((subreddit) => (
-                  <li key={subreddit}>
-                    <a href="https://www.reddit.com/">r/css</a>
+                  <li className="p-0" key={subreddit}>
+                    <a href={`https://www.reddit.com/${subreddit}`}>
+                      {subreddit}
+                    </a>
                   </li>
                 ))}
               </ul>
