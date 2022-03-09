@@ -100,7 +100,7 @@ export default function SetUpSomeAliases() {
                   className={classes.bodyLink}
                   href="https://code.visualstudio.com/"
                 >
-                  https://code.visualstudio.com/
+                  code.visualstudio.com/
                 </a>
                 ) and start making files. VS Code will help you find syntax
                 errors in your code and make it easier to fix them.
@@ -114,7 +114,7 @@ export default function SetUpSomeAliases() {
                   className={classes.bodyLink}
                   href="https://app.netlify.com/drop"
                 >
-                  https://app.netlify.com/drop
+                  app.netlify.com/drop
                 </a>
                 ) Tell your friends about your new site. Tell your parents about
                 it. Tell me about it.{` `}(
@@ -122,7 +122,7 @@ export default function SetUpSomeAliases() {
                   className={classes.bodyLink}
                   href="https://www.linkedin.com/in/michaelbonner/"
                 >
-                  https://www.linkedin.com/in/michaelbonner/
+                  linkedin.com/in/michaelbonner/
                 </a>
                 )
               </p>
@@ -160,7 +160,7 @@ export default function SetUpSomeAliases() {
               <p>
                 Learn Git. (
                 <a className={classes.bodyLink} href="https://lab.github.com/">
-                  https://lab.github.com/
+                  lab.github.com/
                 </a>
                 ) Git is a tool to keep track of changes to your code. It allows
                 you to see what changes you made over time and roll things back
@@ -181,7 +181,7 @@ export default function SetUpSomeAliases() {
                   className={classes.bodyLink}
                   href="https://javascript30.com/"
                 >
-                  https://javascript30.com/
+                  javascript30.com/
                 </a>
                 )
               </p>
@@ -191,7 +191,7 @@ export default function SetUpSomeAliases() {
                   className={classes.bodyLink}
                   href="https://podcasts.michaelbonner.dev/"
                 >
-                  https://podcasts.michaelbonner.dev/
+                  podcasts.michaelbonner.dev/
                 </a>
                 ). Read blogs. Find developer subreddits. There is so much to
                 learn. Find areas you&apos;re passionate about and learn as much
@@ -205,7 +205,9 @@ export default function SetUpSomeAliases() {
                   "https://www.leveluptutorials.com/",
                 ].map((link) => (
                   <li key={link}>
-                    <a href={link}>{link}</a>
+                    <a href={link}>
+                      {link.replace(/https:\/\/([\w]{3}[.])?/g, "")}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -238,7 +240,7 @@ export default function SetUpSomeAliases() {
                 ].map((site) => (
                   <li key={site}>
                     <a className={classes.bodyLink} href={site}>
-                      {site}
+                      {site.replace(/https:\/\/([\w]{3}[.])?/g, "")}
                     </a>
                   </li>
                 ))}
@@ -252,7 +254,7 @@ export default function SetUpSomeAliases() {
                   className={classes.bodyLink}
                   href="https://medium.com/@steven_creates"
                 >
-                  https://medium.com/@steven_creates
+                  medium.com/@steven_creates
                 </a>
                 ).
               </p>
@@ -295,7 +297,7 @@ export default function SetUpSomeAliases() {
                   className={classes.bodyLink}
                   href="https://www.linkedin.com/in/michaelbonner/"
                 >
-                  https://www.linkedin.com/in/michaelbonner/
+                  linkedin.com/in/michaelbonner/
                 </a>
               </p>
             </div>
