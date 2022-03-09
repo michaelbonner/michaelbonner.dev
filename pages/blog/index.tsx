@@ -30,7 +30,7 @@ export default function Blog() {
       description="Just writing down some things"
     >
       <main className="relative pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-        <div className="relative max-w-7xl mx-auto">
+        <div className="container mx-auto px-8 py-12">
           <div className="prose dark:prose-invert max-w-3xl">
             <h1>Web Developer Blog</h1>
             <p>
@@ -38,7 +38,7 @@ export default function Blog() {
               write down, so I do from time to time.
             </p>
           </div>
-          <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+          <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
             {articles.map((article) => (
               <div
                 key={article.title}
