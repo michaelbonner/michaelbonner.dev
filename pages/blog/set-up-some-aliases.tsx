@@ -7,49 +7,51 @@ export default function SetUpSomeAliases() {
       description="Aliases can speed up your development and help you focus on code"
     >
       <main className="container mx-auto px-8 py-12 flex items-center">
-        <div className="pt-8">
-          <div className="lg:pt-24">
-            <div>
-              <h1 className="leading-relaxed text-4xl tracking-wide lg:pr-8">
-                Set up some aliases
-              </h1>
+        <div className="max-w-3xl prose">
+          <div className="pt-8">
+            <div className="lg:pt-24">
+              <div>
+                <h1 className="leading-relaxed text-4xl tracking-wide lg:pr-8">
+                  Set up some aliases
+                </h1>
+              </div>
             </div>
-          </div>
-          <div className="lg:mt-32 text-lg prose max-w-5xl">
-            <p>Bash aliases are amazing, just set them up.</p>
-            <h2>What are bash aliases?</h2>
-            <p>
-              Bash aliases are shortcuts. They reduce the key strokes, and
-              increase efficiency. You just type a short, easy to remember
-              shortcut, and bash will execute the full command. Why type out{" "}
-              <code>git status</code> when you could type <code>gs</code>? Whey
-              type out <code>git checkout origin master</code> when you could
-              just type <code>gcm</code>?
-            </p>
-            <h2>How to set them up</h2>
-            <p>
-              First, identify which version of shell you&apos;re using and where
-              &apos;s configuration file is. Usually, on a mac, it&apos;s in a
-              file at <code>~/.bash_profile</code>. I use zsh, so mine is at{" "}
-              <code>~/.zshrc</code>. An easy way to test is to add a sample
-              alias, and try executing it after refreshing the shell or sourcing
-              your config file. <code>e.g. source ~/.zshrc</code>. I keep my
-              aliases in a file at <code>~/.aliases</code> and then add{" "}
-              <code>source ~/.aliases</code> to my <code>~/.zshrc</code>.
-            </p>
-            <p>
-              Once you identify which file to edit, all you need to do is add
-              something like the following:
-            </p>
-            <pre>alias gs=&apos;git status&apos;</pre>
-            <p>
-              In the above example, `gs` is the text you will type, and the text
-              in the quotes is the command that will be executed.
-            </p>
-            <h2>My aliases</h2>
-            <p>Here are the aliases that I use</p>
-            <pre className="whitespace-pre-wrap">
-              {`
+            <div className="lg:mt-32 text-lg prose max-w-5xl">
+              <p>Bash aliases are amazing, just set them up.</p>
+              <h2>What are bash aliases?</h2>
+              <p>
+                Bash aliases are shortcuts. They reduce the key strokes, and
+                increase efficiency. You just type a short, easy to remember
+                shortcut, and bash will execute the full command. Why type out{" "}
+                <code>git status</code> when you could type <code>gs</code>?
+                Whey type out <code>git checkout origin master</code> when you
+                could just type <code>gcm</code>?
+              </p>
+              <h2>How to set them up</h2>
+              <p>
+                First, identify which version of shell you&apos;re using and
+                where &apos;s configuration file is. Usually, on a mac,
+                it&apos;s in a file at <code>~/.bash_profile</code>. I use zsh,
+                so mine is at <code>~/.zshrc</code>. An easy way to test is to
+                add a sample alias, and try executing it after refreshing the
+                shell or sourcing your config file.{" "}
+                <code>e.g. source ~/.zshrc</code>. I keep my aliases in a file
+                at <code>~/.aliases</code> and then add{" "}
+                <code>source ~/.aliases</code> to my <code>~/.zshrc</code>.
+              </p>
+              <p>
+                Once you identify which file to edit, all you need to do is add
+                something like the following:
+              </p>
+              <pre>alias gs=&apos;git status&apos;</pre>
+              <p>
+                In the above example, `gs` is the text you will type, and the
+                text in the quotes is the command that will be executed.
+              </p>
+              <h2>My aliases</h2>
+              <p>Here are the aliases that I use</p>
+              <pre className="whitespace-pre-wrap">
+                {`
 # general
 alias ll='ls -la'
 alias hosts='sudo vim /etc/hosts'
@@ -120,7 +122,8 @@ alias ployp='./bin/deploy-production.sh'
 alias st='open . -a /Applications/Sourcetree.app'
 alias da='SwitchAudioSource -t input -s "Yeti X" && SwitchAudioSource -t output -s "Mike’s Beats"'
 `}
-            </pre>
+              </pre>
+            </div>
           </div>
         </div>
       </main>
