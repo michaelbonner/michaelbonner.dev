@@ -133,14 +133,15 @@ export default function SetUpSomeAliases() {
               </figure>
               <p>
                 Learn Git. (
-                <a href="https://lab.github.com/">https://lab.github.com/</a>
-                ). Git is a tool to keep track of changes to your code. It
-                allows you to see what changes you made over time and roll
-                things back if you need to. You can create branches to keep new
-                ideas separate from production ready code. You can have your
-                website automatically deploy when you push your code. Everybody
-                uses Git, and you&apos;ll lose out on job opportunities if you
-                don&apos;t.
+                <a href="https://lab.github.com/">https://lab.github.com/</a>)
+                Git is a tool to keep track of changes to your code. It allows
+                you to see what changes you made over time and roll things back
+                if you need to. You can create branches to keep new ideas
+                separate from production ready code, and then merge it back in
+                when you are ready. You can have your website automatically
+                deploy when you push your code. Everybody uses Git, and
+                you&apos;ll lose out on job opportunities if you don&apos;t take
+                the time to learn it.
               </p>
               <p>
                 Now that you have a decent base, spend some more time working
