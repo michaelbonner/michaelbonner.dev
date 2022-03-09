@@ -220,13 +220,14 @@ export default function SetUpSomeAliases() {
               <h2>Get your first job as a web developer</h2>
               <p>
                 Look at job sites and find what skills companies are looking
-                for, and then learn the skills for the job you want. It
-                won&apos;t happen overnight, but over time you&apos;ll become a
-                better developer. Exposure to new languages and frameworks will
-                help you teach your brain to learn quickly. Be okay with being
-                stuck on something. Go for a walk and come back to it. That
-                frustration is part of the learning process, there&apos;s no way
-                around it.
+                for, and then learn the skills for the job you want. A lot of
+                technologies in web development are open source and free to use.
+                Learning them won&apos;t happen overnight, but over time
+                you&apos;ll become a better developer. Exposure to new languages
+                and frameworks will help you teach your brain to learn quickly.
+                Be okay with being stuck on something. Go for a walk and come
+                back to it. That frustration is part of the learning process,
+                there&apos;s no way around it.
               </p>
               <p>
                 <strong>Be honest in interviews</strong>. If you don&apos;t know
