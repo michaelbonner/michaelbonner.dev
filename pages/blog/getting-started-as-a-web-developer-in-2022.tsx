@@ -131,15 +131,15 @@ export default function SetUpSomeAliases() {
                 The best way to learn is to find things you want to build and
                 get to work. It&apos;s a lot easier to learn when you&apos;re
                 solving a problem <em>you want</em> to solve. Look for tutorials
-                about how to do the exact thing your stuck on. Keep your
+                about how to do the exact thing you are stuck on. Keep your
                 appetite small to begin with and let your curiosity carry you.
               </p>
               <p>
                 Find local businesses that don&apos;t have a web presence and
                 build them a site. Even if it&apos;s free. Get as much
                 experience as you can building all the sites you can. When
-                you&apos;re done with the site put your name with a link to you
-                at the bottom. Could be a link to your LinkedIn, or your
+                you&apos;re done with the site put your name at the bottom with
+                a link to find you. Could be a link to your LinkedIn, or your
                 Instagram, or some way for people to get in touch with you. If
                 you do good work people will notice and reach out.
               </p>
@@ -194,8 +194,8 @@ export default function SetUpSomeAliases() {
                   https://podcasts.michaelbonner.dev/
                 </a>
                 ). Read blogs. Find developer subreddits. There is so much to
-                learn. Find areas your passionate about and learn as much as you
-                can.
+                learn. Find areas you&apos;re passionate about and learn as much
+                as you can.
               </p>
               <p>Some good tutorial sites to learn web development things:</p>
               <ul>
