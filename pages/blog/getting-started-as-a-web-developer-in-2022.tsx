@@ -19,11 +19,25 @@ export default function SetUpSomeAliases() {
             </div>
             <div className="lg:mt-32 text-lg prose max-w-5xl">
               <p>
+                TL;DR: Learn the absolute basics, and build as much as you can.
+              </p>
+              <hr className="border-gray-300 mx-16" />
+              <p>
                 Getting started as a web developer is hard; hopefully I can help
                 a little bit. Keep in mind this is only my opinion, you should
                 find other people&apos;s opinions as well. I have found things
                 that work for me, but I could be completely wrong on what works
                 for you.
+              </p>
+              <p>
+                Real quick note about boot camps: I taught a couple cohorts for
+                the University of Utah and had a good experience and made great
+                connections. Several students found work as web software
+                engineers and are now gainfully employed. If you think that will
+                help you and you have the money, go for it. But don&apos;t think
+                a boot camp is a substitute for grinding your way through the
+                learning process. It&apos;s a slog either way. This post is
+                specifically for those people who want to learn on their own.
               </p>
               <h2>
                 Find something simple you want to build, and force yourself to
@@ -34,25 +48,53 @@ export default function SetUpSomeAliases() {
                 My first public website was a dumb thing for my friends in high
                 school. It was lame, but I was really excited about it. I made
                 changes to it all the time. It got me excited to build more
-                websites. Find something like that.
+                websites. Find something like that. It might be tempting to use
+                an online website builder, but I think you&apos;ll be better off
+                learning the basics the old fashioned way.
               </p>
+              <figure>
+                <a href="https://tuff.michaelbonner.dev/">
+                  <Image
+                    src="/images/tuff-website-screenshot.png"
+                    alt="Tuff website screenshot"
+                    width={1400}
+                    height={1040}
+                  />
+                </a>
+                <figcaption className="text-center">
+                  See how cringey that thing is?
+                </figcaption>
+              </figure>
               <p>
-                Learn basic HTML and CSS. Codecademy (
+                Learn basic <a href="https://www.w3schools.com/html/">HTML</a>{" "}
+                and <a href="https://www.w3schools.com/css/">CSS</a>. Codecademy
+                (
                 <a href="https://www.codecademy.com/catalog/language/html-css">
                   codecademy.com
                 </a>
                 ) has really good interactive tutorials to get you started.
                 Trudge through it, and then build your small idea. It
-                doesn&apos;t have to be pretty, it just needs to work.
+                doesn&apos;t have to be pretty, it just needs to display some
+                text.
+              </p>
+              <p>
+                Download Visual Studio Code (
+                <a href="https://code.visualstudio.com/">
+                  https://code.visualstudio.com/
+                </a>
+                ) and start making files. VS Code will help you find syntax
+                errors in your code and make it easier to fix them.
               </p>
               <p>
                 Launch your first website. Even if you first site is horrible,
-                launch it. For real, just launch it. Get that thing out there. I
-                use a deployment platform called Vercel (
-                <a href="https://vercel.com">vercel.com</a>) that lets you host
-                a simple website for free. Just zip it up and launch it. Tell
-                your friends about it. Tell your parents about it. Tell me about
-                it.{` `}(
+                launch it. For real, just launch it. Get that thing out there.
+                You can host your site using Netlify for free. Just zip it up
+                and launch it. (
+                <a href="https://app.netlify.com/drop">
+                  https://app.netlify.com/drop
+                </a>
+                ) Tell your friends about your new site. Tell your parents about
+                it. Tell me about it.{` `}(
                 <a href="https://www.linkedin.com/in/michaelbonner/">
                   https://www.linkedin.com/in/michaelbonner/
                 </a>
@@ -76,16 +118,29 @@ export default function SetUpSomeAliases() {
                 you do good work people will notice and reach out.
               </p>
               <h2>Get to the next level</h2>
+              <figure>
+                <a href="https://github.com/michaelbonner/michaelbonner.dev">
+                  <Image
+                    alt="michaelbonner.dev github screenshot"
+                    src="/images/michaelbonner-dev-github-screenshot.png"
+                    width="1400"
+                    height="970"
+                  />
+                </a>
+                <figcaption className="text-center">
+                  A screenshot of the Github repository for this website
+                </figcaption>
+              </figure>
               <p>
                 Learn Git. (
-                <a href="https://www.codecademy.com/learn/learn-git">
-                  https://www.codecademy.com/learn/learn-git
-                </a>
+                <a href="https://lab.github.com/">https://lab.github.com/</a>
                 ). Git is a tool to keep track of changes to your code. It
                 allows you to see what changes you made over time and roll
                 things back if you need to. You can create branches to keep new
-                ideas separate from production ready code. Everybody uses Git,
-                and you&apos;ll lose out on job opportunities if you don&apos;t.
+                ideas separate from production ready code. You can have your
+                website automatically deploy when you push your code. Everybody
+                uses Git, and you&apos;ll lose out on job opportunities if you
+                don&apos;t.
               </p>
               <p>
                 Now that you have a decent base, spend some more time working
@@ -118,6 +173,73 @@ export default function SetUpSomeAliases() {
                 learn. Find areas your passionate about and learn as much as you
                 can.
               </p>
+              <p>Some good subreddits to learn web development things:</p>
+              <ul>
+                <li>
+                  <a href="https://www.reddit.com/r/css">
+                    https://www.reddit.com/r/css
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.reddit.com/r/javascript">
+                    https://www.reddit.com/r/javascript
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.reddit.com/r/node">
+                    https://www.reddit.com/r/node
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.reddit.com/r/reactjs">
+                    https://www.reddit.com/r/reactjs
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.reddit.com/r/SyntaxFM">
+                    https://www.reddit.com/r/SyntaxFM
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.reddit.com/r/tailwindcss">
+                    https://www.reddit.com/r/tailwindcss
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.reddit.com/r/webdev">
+                    https://www.reddit.com/r/webdev
+                  </a>
+                </li>
+              </ul>
+              <p>Some good sites to learn web development things:</p>
+              <ul>
+                <li>
+                  <a href="https://blog.hubspot.com/website/website-development">
+                    https://blog.hubspot.com/website/website-development
+                  </a>
+                </li>
+                <li>
+                  <a href="https://css-tricks.com/">https://css-tricks.com/</a>
+                </li>
+                <li>
+                  <a href="https://davidwalsh.name/">
+                    https://davidwalsh.name/
+                  </a>
+                </li>
+                <li>
+                  <a href="https://dev.to/">https://dev.to/</a>
+                </li>
+              </ul>
+              <p>
+                Learn out loud. Writing and/or streaming about what you learn is
+                a great way to learn faster. My friend Steven has done a great
+                job advancing his knowledge and network specifically by posting
+                what he learns. Check out his stuff (
+                <a href="https://medium.com/@steven_creates">
+                  https://medium.com/@steven_creates
+                </a>
+                ).
+              </p>
               <h2>Get your first job as a web developer</h2>
               <p>
                 Look at job sites and find what skills companies are looking
@@ -126,22 +248,35 @@ export default function SetUpSomeAliases() {
                 better developer. Exposure to new languages and frameworks will
                 help you teach your brain to learn quickly. Be okay with being
                 stuck on something. Go for a walk and come back to it. That
-                frustration is part of the learning process, there&apos;s now
-                way around it.
+                frustration is part of the learning process, there&apos;s no way
+                around it.
               </p>
               <p>
-                Be honest in interviews. If you don&apos;t know something,
-                it&apos;s completely fine to say &ldquo;I don&apos;t
+                <strong>Be honest in interviews</strong>. If you don&apos;t know
+                something, it&apos;s completely fine to say &ldquo;I don&apos;t
                 know.&rdquo; Lying about it is never the right answer. Trust me.
                 People who have interviewed a handful of applicants can cut
                 right through the BS and won&apos;t even entertain the idea of
                 bringing on a developer that doesn&apos;t acknowledge the
-                shortcomings they have. Good team members bring a growth
+                shortcomings they have.
+              </p>
+              <p>
+                <strong>Be hungry</strong>. Good team members bring a growth
                 mindset, and are willing to learn as much as they can from
-                whoever they can. Be that person in general, especially in
-                interviews. Take notes during interviews about the things you
-                didn&apos;t know. Interviews are a great way to learn the things
-                you don&apos;t know you didn&apos;t know.
+                whoever they can. Be that person; especially in interviews. Take
+                notes during interviews about the things you didn&apos;t know.
+                Interviews are a great way to learn the things you didn&apos;t
+                know you didn&apos;t know.
+              </p>
+              <h2>Need more info</h2>
+              <p>
+                Hit me up on LinkedIn. I&apos;m happy to chat with you about
+                your career path and give you some advice.
+              </p>
+              <p>
+                <a href="https://www.linkedin.com/in/michaelbonner/">
+                  https://www.linkedin.com/in/michaelbonner/
+                </a>
               </p>
             </div>
           </div>
