@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Layout from "../../components/layout";
+import { classes } from "../../styles/classes";
+import { classNames } from "../../styles/classNames";
 
 export default function SetUpSomeAliases() {
   return (
@@ -8,7 +10,7 @@ export default function SetUpSomeAliases() {
       description="Getting started as a web developer is hard; hopefully I can help a little bit."
     >
       <main className="container mx-auto px-8 py-12 flex items-center">
-        <div className="w-full max-w-3xl prose">
+        <div className="w-full max-w-3xl prose dark:prose-invert">
           <div className="pt-8">
             <div className="lg:pt-24">
               <div>
@@ -17,7 +19,7 @@ export default function SetUpSomeAliases() {
                 </h1>
               </div>
             </div>
-            <div className="lg:mt-32 text-lg prose max-w-5xl">
+            <div className="lg:mt-32 text-lg max-w-5xl">
               <p>
                 TL;DR: Learn the absolute basics, and build as much as you can.
               </p>
@@ -53,7 +55,10 @@ export default function SetUpSomeAliases() {
                 learning the basics the old fashioned way.
               </p>
               <figure>
-                <a className="break-all" href="https://tuff.michaelbonner.dev/">
+                <a
+                  className={classes.bodyLink}
+                  href="https://tuff.michaelbonner.dev/"
+                >
                   <Image
                     src="/images/tuff-website-screenshot.png"
                     alt="Tuff website screenshot"
@@ -67,16 +72,22 @@ export default function SetUpSomeAliases() {
               </figure>
               <p>
                 Learn basic{" "}
-                <a className="break-all" href="https://www.w3schools.com/html/">
+                <a
+                  className={classes.bodyLink}
+                  href="https://www.w3schools.com/html/"
+                >
                   HTML
                 </a>{" "}
                 and{" "}
-                <a className="break-all" href="https://www.w3schools.com/css/">
+                <a
+                  className={classes.bodyLink}
+                  href="https://www.w3schools.com/css/"
+                >
                   CSS
                 </a>
                 . Codecademy (
                 <a
-                  className="break-all"
+                  className={classes.bodyLink}
                   href="https://www.codecademy.com/catalog/language/html-css"
                 >
                   codecademy.com
@@ -88,7 +99,10 @@ export default function SetUpSomeAliases() {
               </p>
               <p>
                 Download Visual Studio Code (
-                <a className="break-all" href="https://code.visualstudio.com/">
+                <a
+                  className={classes.bodyLink}
+                  href="https://code.visualstudio.com/"
+                >
                   https://code.visualstudio.com/
                 </a>
                 ) and start making files. VS Code will help you find syntax
@@ -99,13 +113,16 @@ export default function SetUpSomeAliases() {
                 launch it. For real, just launch it. Get that thing out there.
                 You can host your site using Netlify for free. Just zip it up
                 and launch it. (
-                <a className="break-all" href="https://app.netlify.com/drop">
+                <a
+                  className={classes.bodyLink}
+                  href="https://app.netlify.com/drop"
+                >
                   https://app.netlify.com/drop
                 </a>
                 ) Tell your friends about your new site. Tell your parents about
                 it. Tell me about it.{` `}(
                 <a
-                  className="break-all"
+                  className={classes.bodyLink}
                   href="https://www.linkedin.com/in/michaelbonner/"
                 >
                   https://www.linkedin.com/in/michaelbonner/
@@ -132,7 +149,7 @@ export default function SetUpSomeAliases() {
               <h2>Get to the next level</h2>
               <figure>
                 <a
-                  className="break-all"
+                  className={classes.bodyLink}
                   href="https://github.com/michaelbonner/michaelbonner.dev"
                 >
                   <Image
@@ -148,7 +165,7 @@ export default function SetUpSomeAliases() {
               </figure>
               <p>
                 Learn Git. (
-                <a className="break-all" href="https://lab.github.com/">
+                <a className={classes.bodyLink} href="https://lab.github.com/">
                   https://lab.github.com/
                 </a>
                 ) Git is a tool to keep track of changes to your code. It allows
@@ -166,7 +183,10 @@ export default function SetUpSomeAliases() {
                 user interactions, and many run javascript on the server to
                 interface with the database. Wes Bos has a great course to get
                 you started. (
-                <a className="break-all" href="https://javascript30.com/">
+                <a
+                  className={classes.bodyLink}
+                  href="https://javascript30.com/"
+                >
                   https://javascript30.com/
                 </a>
                 )
@@ -174,7 +194,7 @@ export default function SetUpSomeAliases() {
               <p>
                 Keep learning. Watch tutorials. Listen to podcasts (
                 <a
-                  className="break-all"
+                  className={classes.bodyLink}
                   href="https://podcasts.michaelbonner.dev/"
                 >
                   https://podcasts.michaelbonner.dev/
@@ -223,7 +243,7 @@ export default function SetUpSomeAliases() {
                   "https://davidwalsh.name/",
                 ].map((site) => (
                   <li key={site}>
-                    <a className="break-all" href={site}>
+                    <a className={classes.bodyLink} href={site}>
                       {site}
                     </a>
                   </li>
@@ -235,7 +255,7 @@ export default function SetUpSomeAliases() {
                 job advancing his knowledge and network specifically by posting
                 what he learns. Check out his stuff (
                 <a
-                  className="break-all"
+                  className={classes.bodyLink}
                   href="https://medium.com/@steven_creates"
                 >
                   https://medium.com/@steven_creates
@@ -278,7 +298,7 @@ export default function SetUpSomeAliases() {
               </p>
               <p>
                 <a
-                  className="break-all"
+                  className={classes.bodyLink}
                   href="https://www.linkedin.com/in/michaelbonner/"
                 >
                   https://www.linkedin.com/in/michaelbonner/

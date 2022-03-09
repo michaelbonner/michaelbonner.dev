@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,5 +5,11 @@
 @layer base {
   html {
     @apply bg-gradient-to-tr from-indigo-100 to-gray-400 bg-fixed;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    @apply bg-gradient-to-tr from-gray-700 to-gray-900 bg-fixed;
   }
 }

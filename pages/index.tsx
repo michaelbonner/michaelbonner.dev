@@ -3,6 +3,8 @@ import { SiGithub, SiLinkedin, SiInstagram } from "react-icons/si";
 import { HiLink } from "react-icons/hi";
 import Layout from "../components/layout";
 import pictureOfMe from "../public/images/on-the-beach.jpg";
+import { classes } from "../styles/classes";
+import { classNames } from "../styles/classNames";
 
 const projects = [
   {
@@ -13,7 +15,7 @@ const projects = [
   },
   {
     title: `Wasatch Covers`,
-    description: `An ecommerce site built using Gatsby.js. Load times went from over 10 seconds on their old platform, down to near instantaneous on the new one.`,
+    description: `An eCommerce site built using Gatsby.js. Load times went from over 10 seconds on their old platform, down to near instantaneous on the new one.`,
     url: `https://wasatchcovers.com/`,
   },
   {
@@ -114,7 +116,7 @@ export default function Home() {
               />
             </div>
             <div className="mt-8 lg:mt-0 w-full lg:w-2/3 lg:pr-8">
-              <h1 className="leading-relaxed text-4xl tracking-wide lg:pr-8">
+              <h1 className="leading-relaxed text-3xl lg:text-4xl tracking-wide lg:pr-8">
                 Hi! I&apos;m{" "}
                 <span className="font-medium whitespace-nowrap">
                   Michael Bonner
@@ -123,7 +125,11 @@ export default function Home() {
                 with some friends called{" "}
                 <span className="whitespace-nowrap">
                   <a
-                    className="font-medium lg:leading-none border-b-4 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1 lg:inline-block"
+                    className={classNames(
+                      "!text-3xl !lg:text-4xl !inline",
+                      "font-medium lg:leading-none lg:inline-block",
+                      classes.largeBodyLink
+                    )}
                     href="https://bootpackdigital.com/"
                   >
                     Bootpack Digital
@@ -131,9 +137,13 @@ export default function Home() {
                   .
                 </span>
               </h1>
-              <div className="lg:inline-block my-8 lg:my-0">
+              <div className="inline-block my-8 lg:my-0">
                 <a
-                  className="my-8 md:flex space-x-2 text-2xl border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-all transform hover:-translate-y-1"
+                  className={classNames(
+                    "lg:flex text-2xl",
+                    classes.largeBodyLink,
+                    "my-4 lg:my-8"
+                  )}
                   href="https://github.com/michaelbonner"
                 >
                   <span>See what I&apos;m up to on GitHub</span>
@@ -145,7 +155,7 @@ export default function Home() {
                   I started making websites in high school back in 2003. I
                   actually found a copy of my first site and{` `}
                   <a
-                    className="my-8 text-lg border-b border-gray-400 hover:text-blue-800 hover:border-blue-400 transition-colors"
+                    className={classes.bodyLink}
                     href="https://tuff.michaelbonner.dev/"
                   >
                     put it up here
@@ -163,7 +173,7 @@ export default function Home() {
                   Also, I really like podcasts so I made a site to keep track of
                   the podcasts I listen to. You can{" "}
                   <a
-                    className="my-8 text-lg border-b border-gray-400 hover:text-blue-800 hover:border-blue-400 transition-colors"
+                    className={classes.bodyLink}
                     href="https://podcasts.michaelbonner.dev/"
                   >
                     check that out here
@@ -178,21 +188,27 @@ export default function Home() {
             <ul className="mt-8 text-lg lg:grid lg:grid-cols-2 gap-x-8 gap-y-12">
               {projects.map((project) => {
                 return (
-                  <li className="ml-4 lg:ml-8 mt-8 lg:mt-0" key={project.title}>
+                  <li
+                    className="ml-4 lg:ml-8 mt-8 lg:mt-0 grid gap-y-4"
+                    key={project.title}
+                  >
                     <p>
                       <a
-                        className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors text-2xl"
+                        className={classNames(
+                          "!text-2xl !inline",
+                          classes.largeBodyLink
+                        )}
                         href={project.url}
                       >
                         {project.title}
                       </a>
                     </p>
-                    <p className="mt-2 mb-4">{project.description}</p>
+                    <p>{project.description}</p>
                     <div className="flex justify-start space-x-4">
                       {project.url && (
                         <p>
                           <a
-                            className="flex space-x-1 border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors text-base"
+                            className={classes.largeBodyLink}
                             href={project.url}
                           >
                             <HiLink className="text-xl" />
@@ -203,7 +219,7 @@ export default function Home() {
                       {project.github && (
                         <p>
                           <a
-                            className="flex space-x-1 border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors text-base"
+                            className={classes.largeBodyLink}
                             href={project.github}
                           >
                             <SiGithub className="text-xl" />
@@ -222,21 +238,27 @@ export default function Home() {
             <ul className="mt-8 text-lg lg:grid lg:grid-cols-2 gap-x-8 gap-y-12">
               {otherThings.map((project) => {
                 return (
-                  <li className="ml-4 lg:ml-8 mt-8 lg:mt-0" key={project.title}>
+                  <li
+                    className="ml-4 lg:ml-8 mt-8 lg:mt-0 grid gap-y-4"
+                    key={project.title}
+                  >
                     <p>
                       <a
-                        className="inline border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors text-2xl"
+                        className={classNames(
+                          "!text-2xl !inline",
+                          classes.largeBodyLink
+                        )}
                         href={project.url}
                       >
                         {project.title}
                       </a>
                     </p>
-                    <p className="mt-2 mb-4">{project.description}</p>
+                    <p>{project.description}</p>
                     <div className="flex justify-start space-x-4">
                       {project.url && (
                         <p>
                           <a
-                            className="flex space-x-1 border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors text-base"
+                            className={classes.largeBodyLink}
                             href={project.url}
                           >
                             <HiLink className="text-xl" />
@@ -247,7 +269,7 @@ export default function Home() {
                       {project.github && (
                         <p>
                           <a
-                            className="flex space-x-1 border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors text-base"
+                            className={classes.largeBodyLink}
                             href={project.github}
                           >
                             <SiGithub className="text-xl" />
@@ -275,7 +297,7 @@ export default function Home() {
               <li>
                 <div className="flex">
                   <a
-                    className="flex space-x-1 justify-start items-center border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors"
+                    className={classes.largeBodyLink}
                     href="https://www.linkedin.com/in/michaelbonner/"
                   >
                     <SiLinkedin />
@@ -287,7 +309,7 @@ export default function Home() {
               <li>
                 <div className="flex">
                   <a
-                    className="flex space-x-1 justify-start items-center border-b-2 border-gray-300 hover:text-blue-800 hover:border-blue-400 transition-colors"
+                    className={classes.largeBodyLink}
                     href="https://www.instagram.com/michael__bonner"
                   >
                     <SiInstagram />

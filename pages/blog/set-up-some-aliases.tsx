@@ -7,7 +7,7 @@ export default function SetUpSomeAliases() {
       description="Aliases can speed up your development and help you focus on code"
     >
       <main className="container mx-auto px-8 py-12 flex items-center">
-        <div className="max-w-3xl prose">
+        <div className="max-w-3xl prose dark:prose-invert">
           <div className="pt-8">
             <div className="lg:pt-24">
               <div>
@@ -16,7 +16,7 @@ export default function SetUpSomeAliases() {
                 </h1>
               </div>
             </div>
-            <div className="lg:mt-32 text-lg prose max-w-5xl">
+            <div className="lg:mt-32 text-lg max-w-5xl">
               <p>Bash aliases are amazing, just set them up.</p>
               <h2>What are bash aliases?</h2>
               <p>
