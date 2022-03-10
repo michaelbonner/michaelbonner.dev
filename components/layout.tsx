@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { classes } from "../styles/classes";
 import { classNames } from "../styles/classNames";
@@ -11,6 +12,8 @@ const Layout = ({
   ogImage = "https://michaelbonner.dev/og-image.jpg",
   ogType = "website",
 }) => {
+  const { pathname } = useRouter();
+
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]');
     let hue = 208;
@@ -38,6 +41,10 @@ const Layout = ({
         <meta property="og:image" content={ogImage} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content={ogType} />
+        <meta
+          property="og:url"
+          content={`https://michaelbonner.dev${pathname}`}
+        />
         <meta name="author" content="Michael Bonner" />
         <meta property="profile:first_name" content="Michael" />
         <meta property="profile:last_name" content="Bonner" />
