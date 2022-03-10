@@ -9,6 +9,7 @@ const Layout = ({
   description,
   title,
   ogImage = "https://michaelbonner.dev/og-image.jpg",
+  ogType = "website",
 }) => {
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]');
@@ -36,8 +37,11 @@ const Layout = ({
         <meta property="og:title" content={title} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={ogType} />
         <meta name="author" content="Michael Bonner" />
+        <meta property="profile:first_name" content="Michael" />
+        <meta property="profile:last_name" content="Bonner" />
+        <meta property="profile:username" content="michaelbonner" />
         <link
           rel="apple-touch-icon"
           href="https://michaelbonner.dev/icon.png"

@@ -8,16 +8,18 @@ export default function SetUpSomeAliases() {
     <Layout
       title="Where I think new web software developers should start | Michael Bonner"
       description="Are you thinking about becoming a web developer? Where should you start? Here's my two cents as a full time web developer with almost 20 years of experience."
+      ogType="article"
     >
       <Head>
+        <meta
+          property="article:published_time"
+          content="2022-03-08T20:58:46.469Z"
+        />
         <meta
           name="publish_date"
           property="og:publish_date"
           content="2022-03-08T20:58:46.469Z"
         />
-        <meta property="profile:first_name" content="Michael" />
-        <meta property="profile:last_name" content="Bonner" />
-        <meta property="profile:username" content="michaelbonner" />
       </Head>
       <main className="container mx-auto px-8 py-12 flex items-center">
         <div className="w-full max-w-3xl prose dark:prose-invert">
