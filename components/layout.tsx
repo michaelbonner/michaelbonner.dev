@@ -85,6 +85,9 @@ const Layout = ({
           <Link href="/uses">
             <a className={classes.menuItem}>Uses</a>
           </Link>
+          <Link href="/policies">
+            <a className={classes.menuItem}>Policies</a>
+          </Link>
         </nav>
         <p className="text-center lg:text-left">
           &copy; {new Date().getFullYear()} by Michael Bonner.{" "}
