@@ -37,6 +37,7 @@ const Layout = ({
         <meta property="og:image" content={ogImage} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
+        <meta name="author" content="Michael Bonner" />
         <link
           rel="apple-touch-icon"
           href="https://michaelbonner.dev/icon.png"
