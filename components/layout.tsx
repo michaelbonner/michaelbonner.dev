@@ -49,6 +49,7 @@ const Layout = ({
         <meta property="profile:first_name" content="Michael" />
         <meta property="profile:last_name" content="Bonner" />
         <meta property="profile:username" content="michaelbonner" />
+        <meta property="fb:app_id" content="383758763158159" />
         <link
           rel="apple-touch-icon"
           href="https://michaelbonner.dev/icon.png"
