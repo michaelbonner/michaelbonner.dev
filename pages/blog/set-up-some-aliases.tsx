@@ -123,6 +123,10 @@ alias st='open . -a /Applications/Sourcetree.app'
 alias da='SwitchAudioSource -t input -s "Yeti X" && SwitchAudioSource -t output -s "Mike’s Beats"'
 `}
               </pre>
+              <p className="mt-16">
+                Published:{` `}
+                <time dateTime="2021-07-15">15 Jul 2021</time>
+              </p>
             </div>
           </div>
         </div>

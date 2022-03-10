@@ -312,6 +312,11 @@ export default function SetUpSomeAliases() {
                   linkedin.com/in/michaelbonner/
                 </a>
               </p>
+
+              <p className="mt-16">
+                Published:{` `}
+                <time dateTime="2022-03-08">08 Mar 2022</time>
+              </p>
             </div>
           </div>
         </div>
