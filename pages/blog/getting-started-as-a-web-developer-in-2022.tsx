@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Layout from "../../components/layout";
 import { classes } from "../../styles/classes";
-import { classNames } from "../../styles/classNames";
 
 export default function SetUpSomeAliases() {
   return (
@@ -25,16 +24,16 @@ export default function SetUpSomeAliases() {
               </p>
               <hr className="border-gray-300 mx-16" />
               <p>
-                Getting started as a web developer is hard; hopefully I can help
-                a little bit. Keep in mind this is only my opinion, you should
-                find other people&apos;s opinions as well. I have found things
-                that work for me, but I could be completely wrong on what works
-                for you.
+                Getting started as a web developer is hard; hopefully, I can
+                help a little bit. Keep in mind this is only my opinion, you
+                should find other people&apos;s opinions as well. I have found
+                things that work for me, but I could be completely wrong on what
+                works for you.
               </p>
               <p>
-                Real quick note about boot camps: I taught a couple cohorts for
-                the University of Utah and had a good experience and made great
-                connections. Several students found work as web software
+                A real quick note about boot camps: I taught a couple of cohorts
+                for the University of Utah and had a good experience and made
+                great connections. Several students found work as web software
                 engineers and are now gainfully employed. If you think that will
                 help you and you have the money, go for it. But don&apos;t think
                 a boot camp is a substitute for grinding your way through the
@@ -52,7 +51,7 @@ export default function SetUpSomeAliases() {
                 changes to it all the time. It got me excited to build more
                 websites. Find something like that. It might be tempting to use
                 an online website builder, but I think you&apos;ll be better off
-                learning the basics the old fashioned way.
+                learning the basics the old-fashioned way.
               </p>
               <figure>
                 <a href="https://tuff.michaelbonner.dev/">
@@ -106,7 +105,7 @@ export default function SetUpSomeAliases() {
                 errors in your code and make it easier to fix them.
               </p>
               <p>
-                Launch your first website. Even if you first site is horrible,
+                Launch your first website. Even if your first site is horrible,
                 launch it. For real, just launch it. Get that thing out there.
                 You can host your site using Netlify for free. Just zip it up
                 and launch it. (
@@ -132,16 +131,16 @@ export default function SetUpSomeAliases() {
                 get to work. It&apos;s a lot easier to learn when you&apos;re
                 solving a problem <em>you want</em> to solve. Look for tutorials
                 about how to do the exact thing you are stuck on. Keep your
-                appetite small to begin with and let your curiosity carry you.
+                appetite small, and let your curiosity carry you.
               </p>
               <p>
                 Find local businesses that don&apos;t have a web presence and
                 build them a site. Even if it&apos;s free. Get as much
                 experience as you can building all the sites you can. When
                 you&apos;re done with the site put your name at the bottom with
-                a link to find you. Could be a link to your LinkedIn, or your
-                Instagram, or some way for people to get in touch with you. If
-                you do good work people will notice and reach out.
+                a link to find you. The link could be your LinkedIn profile, or
+                your Instagram, or some way for people to get in touch with you.
+                If you do good work people will notice and reach out.
               </p>
               <h2>Get to the next level</h2>
               <figure>
@@ -165,9 +164,9 @@ export default function SetUpSomeAliases() {
                 ) Git is a tool to keep track of changes to your code. It allows
                 you to see what changes you made over time and roll things back
                 if you need to. You can create branches to keep new ideas
-                separate from production ready code, and then merge it back in
+                separate from production-ready code, and then merge it back in
                 when you are ready. You can have your website automatically
-                deploy when you push your code. Everybody uses Git, and
+                deployed when you push your code. Everybody uses Git, and
                 you&apos;ll lose out on job opportunities if you don&apos;t take
                 the time to learn it.
               </p>
@@ -281,11 +280,11 @@ export default function SetUpSomeAliases() {
               </p>
               <p>
                 <strong>Be hungry</strong>. Good team members bring a growth
-                mindset, and are willing to learn as much as they can from
-                whoever they can. Be that person; especially in interviews. Take
-                notes during interviews about the things you didn&apos;t know.
-                Interviews are a great way to learn the things you didn&apos;t
-                know you didn&apos;t know.
+                mindset and are willing to learn as much as they can from
+                whomever they can. Be that person; especially in interviews.
+                Take notes during interviews about the things you didn&apos;t
+                know. Interviews are a great way to learn the things you
+                don&apos;t know that you don&apos;t know.
               </p>
               <h2>Need more info</h2>
               <p>
