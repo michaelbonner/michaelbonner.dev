@@ -7,7 +7,7 @@ export default function SetUpSomeAliases() {
   return (
     <Layout
       title="Where I think new web software developers should start | Michael Bonner"
-      description="Getting started as a web developer is hard; hopefully I can help a little bit."
+      description="Are you thinking about becoming a web developer? Where should you start? Here's my two cents as a full time web developer with almost 20 years of experience."
     >
       <Head>
         <meta
