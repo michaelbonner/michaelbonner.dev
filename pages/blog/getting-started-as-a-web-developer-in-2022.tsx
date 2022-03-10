@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Layout from "../../components/layout";
 import { classes } from "../../styles/classes";
@@ -8,6 +9,15 @@ export default function SetUpSomeAliases() {
       title="Where I think new web software developers should start | Michael Bonner"
       description="Getting started as a web developer is hard; hopefully I can help a little bit."
     >
+      <Head>
+        <meta
+          property="article:published_time"
+          content="2022-03-08T20:58:46.469Z"
+        />
+        <meta property="profile:first_name" content="Michael" />
+        <meta property="profile:last_name" content="Bonner" />
+        <meta property="profile:username" content="michaelbonner" />
+      </Head>
       <main className="container mx-auto px-8 py-12 flex items-center">
         <div className="w-full max-w-3xl prose dark:prose-invert">
           <div className="pt-8">
