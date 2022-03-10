@@ -10,7 +10,11 @@ export default function SetUpSomeAliases() {
       description="Are you thinking about becoming a web developer? Where should you start? Here's my two cents as a full time web developer with almost 20 years of experience."
     >
       <Head>
-        <meta name="publish_date" property="og:publish_date" content="2022-03-08T20:58:46.469Z">
+        <meta
+          name="publish_date"
+          property="og:publish_date"
+          content="2022-03-08T20:58:46.469Z"
+        />
         <meta property="profile:first_name" content="Michael" />
         <meta property="profile:last_name" content="Bonner" />
         <meta property="profile:username" content="michaelbonner" />
