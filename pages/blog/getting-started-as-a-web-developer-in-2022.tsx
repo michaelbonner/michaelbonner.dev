@@ -50,8 +50,7 @@ export default function SetUpSomeAliases() {
                 engineers and are now gainfully employed. If you think that will
                 help you and you have the money, go for it. But don&apos;t think
                 a boot camp is a substitute for grinding your way through the
-                learning process. It&apos;s a slog either way. This post is
-                specifically for those people who want to learn on their own.
+                learning process. It&apos;s a slog either way.
               </p>
               <h2>
                 Find something simple you want to build, and force yourself to
