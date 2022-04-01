@@ -26,13 +26,13 @@ export default function SetUpSomeAliases() {
           <div className="pt-8">
             <div className="lg:pt-24">
               <div>
-                <h1 className="leading-relaxed text-4xl tracking-wide lg:pr-8">
+                <h1 className="text-4xl tracking-wider leading-[1.3em] lg:pr-8">
                   Where I think new web software developers should start in 2022
                 </h1>
               </div>
             </div>
-            <div className="lg:mt-32 text-lg max-w-5xl">
-              <p>
+            <div className="lg:mt-24 text-lg max-w-5xl">
+              <p className="text-base">
                 TL;DR: Learn the absolute basics, and build as much as you can.
               </p>
               <hr className="border-gray-300 mx-16" />
