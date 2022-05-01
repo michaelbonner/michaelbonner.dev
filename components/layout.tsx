@@ -89,14 +89,26 @@ const Layout = ({
             <a className={classes.menuItem}>Policies</a>
           </Link>
         </nav>
-        <p className="text-center lg:text-left">
-          &copy; {new Date().getFullYear()} by Michael Bonner.{" "}
-          <a
-            className={classNames(classes.menuItem, "text-sm inline-block")}
-            href="https://github.com/michaelbonner/michaelbonner.dev"
-          >
-            Check out the source for this site
-          </a>
+        <p className="justify-center lg:justify-start flex flex-wrap gap-x-4 gap-y-2">
+          <span>
+            &copy; {new Date().getFullYear()} by Michael Bonner.{" "}
+            <a
+              className={classNames(classes.menuItem, "text-sm inline-block")}
+              href="https://github.com/michaelbonner/michaelbonner.dev"
+            >
+              Check out the source for this site
+            </a>
+            .
+          </span>
+          <span>
+            Photographer:{" "}
+            <a
+              className={classes.bodyLink}
+              href="https://www.instagram.com/dallas.dean.photography/"
+            >
+              Dallas Dean
+            </a>
+          </span>
         </p>
       </footer>
     </div>

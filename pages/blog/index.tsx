@@ -4,6 +4,15 @@ import Layout from "../../components/layout";
 
 const articles = [
   {
+    imageUrl: "/images/chrome-basecamp-ui-extension.png",
+    href: "/blog/i-made-an-extension",
+    title: "I made my first Chrome extension",
+    description: "Really simple one, and it was really easy to make",
+    date: "2022-05-01",
+    datetime: "2022-05-01T00:00:00+00:00",
+    readingTime: 2,
+  },
+  {
     imageUrl: "/images/tuff-website-screenshot-trimmed.png",
     href: "/blog/getting-started-as-a-web-developer-in-2022",
     title: "Where I think new web software developers should start in 2022",

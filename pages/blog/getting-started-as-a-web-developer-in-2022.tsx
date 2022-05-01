@@ -313,16 +313,6 @@ export default function SetUpSomeAliases() {
               </p>
 
               <p className="mt-16">
-                Photographer: Dallas Dean (
-                <a
-                  className={classes.bodyLink}
-                  href="https://www.instagram.com/dallas.dean.photography/"
-                >
-                  instagram.com/dallas.dean.photography
-                </a>
-                )
-              </p>
-              <p className="mt-16">
                 Published:{` `}
                 <time dateTime="2022-03-08">08 Mar 2022</time>
               </p>
