@@ -68,6 +68,12 @@ const otherThings = [
     github: `https://github.com/michaelbonner/cookie-parser`,
   },
   {
+    title: `OCR Reader`,
+    description: `Just a little example of how Tesseract can be used to read text from an uploaded image.`,
+    url: `https://ocr.michaelbonner.dev/`,
+    github: `https://github.com/michaelbonner/tesseract-test`,
+  },
+  {
     title: `Random String Generator`,
     description: `I got tired of Googling for a site and getting a bunch of cruft I don't need when trying to generate a random string, so I built a dead simple replacement.`,
     url: `https://random-string-generator.michaelbonner.dev/`,
