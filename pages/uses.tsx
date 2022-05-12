@@ -54,6 +54,11 @@ export default function Uses() {
               <HiLink />
               <span>Docker (with Laravel Sail)</span>
             </A>
+            <span>Password manager</span>
+            <A href="https://1password.com/">
+              <HiLink />
+              <span>1Password</span>
+            </A>
             <span>Snippet/Doc reference tool</span>
             <A href="https://kapeli.com/dash">
               <HiLink />
