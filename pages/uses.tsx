@@ -64,6 +64,11 @@ export default function Uses() {
               <HiLink />
               <span>Paste</span>
             </A>
+            <span>Window management &amp; shortcuts</span>
+            <A href="https://folivora.ai/">
+              <HiLink />
+              <span>BetterTouchTool</span>
+            </A>
             <span>Just check it out, it&apos;s awesome</span>
             <A href="https://webcatalog.app/">
               <HiLink />
