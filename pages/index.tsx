@@ -20,10 +20,10 @@ const projects = [
     url: `https://wasatchcovers.com/`,
   },
   {
-    title: `Ravens Film Works`,
+    title: `JME Film Co`,
     description: `Built using Sanity CMS and Next.js. This one turned out really good and loads so fast.`,
-    url: `https://ravensfilmworks.com/`,
-    github: `https://github.com/michaelbonner/ravens`,
+    url: `https://www.jmillsent.com/`,
+    github: `https://github.com/michaelbonner/jmillsent`,
   },
   {
     title: `Blackthorn Software`,
