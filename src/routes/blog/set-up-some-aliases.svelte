@@ -49,9 +49,9 @@
 				<h2>My aliases</h2>
 				<p>Here are the aliases that I use</p>
 				<pre class="whitespace-pre-wrap">
-                {`
 # general
 alias ll='ls -la'
+alias zshrc='vim ~/.zshrc'
 alias hosts='sudo vim /etc/hosts'
 alias dev='cd ~/Development'
 alias projects='cd ~/Development/projects'
@@ -82,23 +82,31 @@ alias gpm='git pull origin mike'
 alias ga='git add .'
 alias gc='git commit -m '
 alias gac='git commit -am '
-alias ggs='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT STATUS IN $&#123;dir//\.git/&#125;\" && git status -s" ; done'
+alias ggs='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT STATUS IN $&#123;dir//\.git/&#123;\" && git status -s" ; done'
+alias ggpull='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT PULL IN $&#123;dir//\.git/&#123;\" && git pull" ; done'
 alias gc--.='git checkout -- .'
 alias gch='git checkout'
 alias gclean='git reset --hard;git clean -df;'
 alias ghash='git rev-parse HEAD | pbcopy'
 alias grpo='git remote prune origin'
+alias gt='git trim'
+alias ggt='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT TRIM IN $&#123;dir//\.git/&#123;\" && git trim" ; done'
 
 # laravel
+alias sup='sail up'
+alias sdo='sail down'
 alias pa='sail artisan'
 alias mfs='sail artisan queue:clear; sail artisan migrate:fresh --seed'
-alias cda='sail composer dump-autoload'
+alias cda='composer dump-autoload'
 alias sail='./vendor/bin/sail'
 alias sa='sail artisan'
+alias sc='sail composer'
+alias smfs='sail artisan queue:clear; sail artisan migrate:fresh --seed'
 
 #ionic
 alias ib='ionic build'
 alias is='ionic serve'
+alias ncoi='npx cap open ios'
 
 #npm
 alias nr='npm run'
@@ -109,17 +117,32 @@ alias nrt='npm run test'
 alias nrw='npm run watch'
 alias nrp='npm run prod'
 alias nrb='npm run build'
+alias nrl='npm run lint'
+alias nrc='npm run codegen'
+alias nrg='npm run generate'
+alias npmout='find . -type d -name .git -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nNPM STATUS IN $&#123;dir//\.git/&#125;\" && npm out" ; done'
+alias npmup='find . -type d -name '.git' -maxdepth 2 | while read dir ; do sh -c "cd $dir/ && echo -e \"\nNPM UPDATE IN $&#123;dir//\.git/&#125;\" && npm up" ; done'
+
+#docker
+alias dcu='docker-compose up'
+alias dcd='docker-compose down'
 
 # misc
 alias unit="./vendor/bin/phpunit"
 alias sf='sudo mdutil -E /'
 alias vapor='php vendor/bin/vapor'
-alias c='code .'
+alias c='open . -a /Applications/Visual\ Studio\ Code.app'
 alias ploys='./bin/deploy-staging.sh'
 alias ployp='./bin/deploy-production.sh'
+alias composerout='find . -type d -name 'vendor' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nCOMPOSER STATUS IN $&#123;dir//\.git/&#125;\" && composer out" ; done'
 alias st='open . -a /Applications/Sourcetree.app'
-alias da='SwitchAudioSource -t input -s "Yeti X" && SwitchAudioSource -t output -s "Mike’s Beats"'
-`}
+alias mjml='./node_modules/.bin/mjml'
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
+alias nd='netlify dev'
+
+alias da='SwitchAudioSource -t input -s "Yeti X" && SwitchAudioSource -t output -s "Mike&apos;s AirPods Max"'
+alias ba='SwitchAudioSource -t input -s "MacBook Pro Microphone" && SwitchAudioSource -t output -s "WH-1000XM3"'
+					
               </pre>
 				<p class="mt-16">
 					Published:{` `}
