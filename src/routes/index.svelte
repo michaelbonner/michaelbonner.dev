@@ -125,8 +125,8 @@
 			<div class="mt-8 lg:mt-0 w-full lg:w-2/3 lg:pr-8">
 				<h1 class="leading-relaxed text-3xl lg:text-4xl tracking-wide lg:pr-8">
 					Hi! I&apos;m{' '}
-					<span class="font-medium whitespace-nowrap"> Michael Bonner </span>
-					, a web developer in Salt Lake City, Utah. I run a small agency with some friends called{' '}
+					<span class="font-medium whitespace-nowrap"> Michael Bonner</span>, a web developer in
+					Salt Lake City, Utah. I run a small agency with some friends called{' '}
 					<span class="whitespace-nowrap">
 						<a
 							class={classNames(
@@ -137,8 +137,7 @@
 							href="https://bootpackdigital.com/"
 						>
 							Bootpack Digital
-						</a>
-						.
+						</a>.
 					</span>
 				</h1>
 				<div class="inline-block my-8 lg:my-0">
@@ -166,8 +165,7 @@
 						You can{' '}
 						<a class={classes.bodyLink} href="https://podcasts.michaelbonner.dev/">
 							check that out here
-						</a>
-						.
+						</a>.
 					</p>
 				</div>
 			</div>
