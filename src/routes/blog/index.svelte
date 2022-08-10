@@ -12,7 +12,7 @@
 			readingTime: 2
 		},
 		{
-			imageUrl: '/images/tuff-website-screenshot-trimmed.png',
+			imageUrl: '/images/tuff-website-screenshot-trimmed-600.jpg',
 			href: '/blog/getting-started-as-a-web-developer-in-2022',
 			title: 'Where I think new web software developers should start in 2022',
 			description: 'The guide I wish I had when getting started',
@@ -21,7 +21,7 @@
 			readingTime: 15
 		},
 		{
-			imageUrl: '/images/iterm-aliases-trimmed.png',
+			imageUrl: '/images/iterm-aliases-trimmed-600.jpg',
 			href: '/blog/set-up-some-aliases',
 			title: 'Set up some aliases',
 			description: 'Just use them, they will change your life',
