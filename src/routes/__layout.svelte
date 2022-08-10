@@ -3,10 +3,14 @@
 
 	import { page } from '$app/stores';
 	import { onDestroy, onMount } from 'svelte';
+	import Gtm from '../components/gtm.svelte';
 	import { classNames } from '../functions/classNames';
 	import { classes } from '../styles/classes';
 
 	let interval: any;
+
+	const gtmId = 'GTM-PCQSF3Z';
+	const gtmDataPoints: string[] = [];
 
 	onMount(() => {
 		const meta = document.querySelector('meta[name="theme-color"]');
@@ -21,6 +25,8 @@
 		clearInterval(interval);
 	});
 </script>
+
+<Gtm {gtmId} {gtmDataPoints} />
 
 <svelte:head>
 	<meta name="theme-color" content="hsl(208, 50%, 30%)" />
