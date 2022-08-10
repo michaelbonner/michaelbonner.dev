@@ -22,6 +22,7 @@
 						class="h-48 w-full object-cover"
 						src="/images/chrome-basecamp-ui-extension.jpg"
 						alt="I made my first Chrome extension"
+						immediate={true}
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
@@ -50,6 +51,7 @@
 						class="h-48 w-full object-cover"
 						src="/images/tuff-website-screenshot-trimmed-600.jpg"
 						alt="Where I think new web software developers should start in 2022"
+						immediate={true}
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
@@ -75,6 +77,7 @@
 						class="h-48 w-full object-cover"
 						src="/images/iterm-aliases-trimmed-600.jpg"
 						alt="Set up some aliases"
+						immediate={true}
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
