@@ -118,7 +118,7 @@
 					alt={'Michael Bonner photo'}
 					class="bg-indigo-300 bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:mix-blend-normal"
 					height="400"
-					src={`/images/on-the-beach.jpg`}
+					src={`/images/on-the-beach-600.jpg`}
 					width="600"
 				/>
 			</div>
