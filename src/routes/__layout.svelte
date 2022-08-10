@@ -33,6 +33,7 @@
 	<meta property="fb:app_id" content="383758763158159" />
 	<link rel="apple-touch-icon" href="https://michaelbonner.dev/icon.png" />
 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
 	<link
 		href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500&display=swap"
 		rel="stylesheet"
