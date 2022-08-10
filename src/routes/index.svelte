@@ -134,10 +134,8 @@
 								'font-medium lg:leading-none lg:inline-block',
 								classes.largeBodyLink
 							)}
-							href="https://bootpackdigital.com/"
-						>
-							Bootpack Digital
-						</a>.
+							href="https://bootpackdigital.com/">Bootpack Digital</a
+						>.
 					</span>
 				</h1>
 				<div class="inline-block my-8 lg:my-0">
@@ -163,9 +161,9 @@
 					<p class="mt-4">
 						Also, I really like podcasts so I made a site to keep track of the podcasts I listen to.
 						You can{' '}
-						<a class={classes.bodyLink} href="https://podcasts.michaelbonner.dev/">
-							check that out here
-						</a>.
+						<a class={classes.bodyLink} href="https://podcasts.michaelbonner.dev/"
+							>check that out here</a
+						>.
 					</p>
 				</div>
 			</div>
