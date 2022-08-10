@@ -34,7 +34,7 @@
 							Really simple one, and it was really easy to make
 						</p>
 					</a>
-					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-400">
+					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-200">
 						<time dateTime="2022-05-01T00:00:00+00:00">2022-05-01</time>
 						<span aria-hidden="true">&middot;</span>
 						<span>2 minute read</span>
@@ -63,7 +63,7 @@
 							The guide I wish I had when getting started
 						</p>
 					</a>
-					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-400">
+					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-200">
 						<time dateTime="2022-03-09T00:00:00+00:00">2022-03-09</time>
 						<span aria-hidden="true">&middot;</span>
 						<span>15 minute read</span>
@@ -89,7 +89,7 @@
 							Just use them, they will change your life
 						</p>
 					</a>
-					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-400">
+					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-200">
 						<time dateTime="2021-07-15T00:00:00+00:00">2021-07-15</time>
 						<span aria-hidden="true">&middot;</span>
 						<span>5 minute read</span>
