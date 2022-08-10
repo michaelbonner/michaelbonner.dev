@@ -3,7 +3,7 @@
 
 	const articles = [
 		{
-			imageUrl: '/images/chrome-basecamp-ui-extension.png',
+			imageUrl: '/images/chrome-basecamp-ui-extension.jpg',
 			href: '/blog/i-made-an-extension',
 			title: 'I made my first Chrome extension',
 			description: 'Really simple one, and it was really easy to make',
