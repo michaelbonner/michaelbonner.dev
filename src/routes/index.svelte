@@ -120,6 +120,7 @@
 					class="bg-indigo-300 bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:mix-blend-normal"
 					src="/images/on-the-beach-600.jpg"
 					width="600"
+					immediate={true}
 				/>
 			</div>
 			<div class="mt-8 lg:mt-0 w-full lg:w-2/3 lg:pr-8">
