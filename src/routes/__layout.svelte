@@ -19,6 +19,10 @@
 		interval = setInterval(() => {
 			meta?.setAttribute('content', `hsl(${(hue -= 1)}, 50%, 30%)`);
 		}, 40);
+
+		document.querySelectorAll('link[rel="preload"]').forEach((link) => {
+			link.setAttribute('rel', 'stylesheet');
+		});
 	});
 
 	onDestroy(() => {
@@ -41,8 +45,8 @@
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
 	<link
+		rel="preload"
 		href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500&display=swap"
-		rel="stylesheet"
 	/>
 </svelte:head>
 
