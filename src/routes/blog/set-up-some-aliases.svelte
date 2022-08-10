@@ -1,5 +1,9 @@
 <script lang="ts">
 	import Seo from '../../components/Seo.svelte';
+	import { Highlight } from 'svelte-highlight';
+	import bash from 'svelte-highlight/languages/bash';
+
+	import 'svelte-highlight/styles/github-dark.css';
 </script>
 
 <Seo
@@ -8,7 +12,7 @@
 	ogType="article"
 />
 
-<main class="container mx-auto px-8 py-12 flex items-center">
+<main class="container mx-auto px-8 py-12">
 	<div class="max-w-3xl prose dark:prose-invert">
 		<div class="pt-8">
 			<div class="lg:pt-24">
@@ -35,20 +39,26 @@
 					and try executing it after refreshing the shell or sourcing your config file.{' '}
 					<code>e.g. source ~/.zshrc</code>. I keep my aliases in a file at <code>~/.aliases</code>
 					and then add{' '}
+					<Highlight code={`source ~/.aliases`} language={bash} />
 					<code>source ~/.aliases</code> to my <code>~/.zshrc</code>.
 				</p>
 				<p>
 					Once you identify which file to edit, all you need to do is add something like the
 					following:
 				</p>
-				<pre>alias gs=&apos;git status&apos;</pre>
+				<Highlight code={`alias gs='git status'`} language={bash} />
 				<p>
 					In the above example, `gs` is the text you will type, and the text in the quotes is the
 					command that will be executed.
 				</p>
 				<h2>My aliases</h2>
 				<p>Here are the aliases that I use</p>
-				<pre class="whitespace-pre-wrap">
+			</div>
+		</div>
+	</div>
+	<div class="max-w-3xl">
+		<Highlight
+			code={`
 # general
 alias ll='ls -la'
 alias zshrc='vim ~/.zshrc'
@@ -141,14 +151,15 @@ alias ibrew='arch -x86_64 /usr/local/bin/brew'
 alias nd='netlify dev'
 
 alias da='SwitchAudioSource -t input -s "Yeti X" && SwitchAudioSource -t output -s "Mike&apos;s AirPods Max"'
-alias ba='SwitchAudioSource -t input -s "MacBook Pro Microphone" && SwitchAudioSource -t output -s "WH-1000XM3"'
-					
-              </pre>
-				<p class="mt-16">
-					Published:{` `}
-					<time dateTime="2021-07-15">15 Jul 2021</time>
-				</p>
-			</div>
-		</div>
+alias ba='SwitchAudioSource -t input -s "MacBook Pro Microphone" && SwitchAudioSource -t output -s "WH-1000XM3"'`}
+			language={bash}
+		/>
+	</div>
+
+	<div class="max-w-3xl prose dark:prose-invert">
+		<p class="mt-16">
+			Published:{` `}
+			<time dateTime="2021-07-15">15 Jul 2021</time>
+		</p>
 	</div>
 </main>
