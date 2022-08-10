@@ -1,35 +1,6 @@
 <script lang="ts">
+	import Image from 'svimg';
 	import Seo from '../../components/Seo.svelte';
-
-	const articles = [
-		{
-			imageUrl: '/images/chrome-basecamp-ui-extension.jpg',
-			href: '/blog/i-made-an-extension',
-			title: 'I made my first Chrome extension',
-			description: 'Really simple one, and it was really easy to make',
-			date: '2022-05-01',
-			datetime: '2022-05-01T00:00:00+00:00',
-			readingTime: 2
-		},
-		{
-			imageUrl: '/images/tuff-website-screenshot-trimmed-600.jpg',
-			href: '/blog/getting-started-as-a-web-developer-in-2022',
-			title: 'Where I think new web software developers should start in 2022',
-			description: 'The guide I wish I had when getting started',
-			date: '2022-03-09',
-			datetime: '2022-03-09T00:00:00+00:00',
-			readingTime: 15
-		},
-		{
-			imageUrl: '/images/iterm-aliases-trimmed-600.jpg',
-			href: '/blog/set-up-some-aliases',
-			title: 'Set up some aliases',
-			description: 'Just use them, they will change your life',
-			date: '2021-07-15',
-			datetime: '2021-07-15T00:00:00+00:00',
-			readingTime: 5
-		}
-	];
 </script>
 
 <Seo title="Developer Blog | Michael Bonner" description="Just writing down some things" />
@@ -43,35 +14,85 @@
 				time to time.
 			</p>
 		</div>
+
 		<div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
-			{#each articles as article}
-				<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-					<a class="flex-shrink-0 leading-[0]" href={article.href}>
-						<img
-							class="h-48 w-full object-cover"
-							src={article.imageUrl}
-							alt={article.title}
-							width="800"
-							height="400"
-						/>
+			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+				<a class="flex-shrink-0 leading-[0]" href="/blog/i-made-an-extension">
+					<Image
+						class="h-48 w-full object-cover"
+						src="/images/chrome-basecamp-ui-extension.jpg"
+						alt="I made my first Chrome extension"
+					/>
+				</a>
+				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
+					<a href="/blog/i-made-an-extension" class="block mt-2">
+						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
+							I made my first Chrome extension
+						</p>
+						<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
+							Really simple one, and it was really easy to make
+						</p>
 					</a>
-					<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
-						<a href={article.href} class="block mt-2">
-							<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
-								{article.title}
-							</p>
-							<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
-								{article.description}
-							</p>
-						</a>
-						<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-400">
-							<time dateTime={article.datetime}>{article.date}</time>
-							<span aria-hidden="true">&middot;</span>
-							<span>{article.readingTime} read</span>
-						</div>
+					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-400">
+						<time dateTime="2022-05-01T00:00:00+00:00">2022-05-01</time>
+						<span aria-hidden="true">&middot;</span>
+						<span>2 minute read</span>
 					</div>
 				</div>
-			{/each}
+			</div>
+
+			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+				<a
+					class="flex-shrink-0 leading-[0]"
+					href="/blog/getting-started-as-a-web-developer-in-2022"
+				>
+					<Image
+						class="h-48 w-full object-cover"
+						src="/images/tuff-website-screenshot-trimmed-600.jpg"
+						alt="Where I think new web software developers should start in 2022"
+					/>
+				</a>
+				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
+					<a href="/blog/getting-started-as-a-web-developer-in-2022" class="block mt-2">
+						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
+							Where I think new web software developers should start in 2022
+						</p>
+						<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
+							The guide I wish I had when getting started
+						</p>
+					</a>
+					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-400">
+						<time dateTime="2022-03-09T00:00:00+00:00">2022-03-09</time>
+						<span aria-hidden="true">&middot;</span>
+						<span>15 minute read</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+				<a class="flex-shrink-0 leading-[0]" href="/blog/set-up-some-aliases">
+					<Image
+						class="h-48 w-full object-cover"
+						src="/images/iterm-aliases-trimmed-600.jpg"
+						alt="Set up some aliases"
+					/>
+				</a>
+				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
+					<a href="/blog/set-up-some-aliases" class="block mt-2">
+						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
+							Set up some aliases
+						</p>
+						<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
+							Just use them, they will change your life
+						</p>
+					</a>
+					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-400">
+						<time dateTime="2021-07-15T00:00:00+00:00">2021-07-15</time>
+						<span aria-hidden="true">&middot;</span>
+						<span>5 minute read</span>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </main>

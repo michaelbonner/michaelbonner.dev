@@ -1,4 +1,6 @@
 <script>
+	import Image from 'svimg';
+
 	import Seo from '../../components/Seo.svelte';
 </script>
 
@@ -39,14 +41,14 @@
 
 				<h2>Before extension</h2>
 				<figure>
-					<img alt="Before extension" height="536" src="/images/before-extension.png" width="800" />
+					<Image alt="Before extension" src="/images/before-extension.png" width="800" />
 					<figcaption class="text-center">
 						Notice how big and in your face those completed items are?
 					</figcaption>
 				</figure>
 				<h2>After extension</h2>
 				<figure>
-					<img alt="After extension" height="536" src="/images/after-extension.png" width="800" />
+					<Image alt="After extension" src="/images/after-extension.png" width="800" />
 					<figcaption class="text-center">Notice how much nicer that looks?</figcaption>
 				</figure>
 
@@ -67,11 +69,10 @@
 					<a
 						href="https://chrome.google.com/webstore/detail/basecamp-ui-tweaks/aefhfcjkdpdjhbjdhoojknelmlodaidn?hl=en"
 					>
-						<img
+						<Image
 							class="bg-white rounded-md shadow-sm"
 							alt="Available in the chrome web store"
 							src="/images/available-in-the-chrome-web-store.png"
-							height="60"
 							width="200"
 						/>
 					</a>
