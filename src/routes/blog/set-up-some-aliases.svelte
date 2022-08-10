@@ -156,10 +156,14 @@ alias ba='SwitchAudioSource -t input -s "MacBook Pro Microphone" && SwitchAudioS
 		/>
 	</div>
 
-	<div class="max-w-3xl prose dark:prose-invert">
-		<p class="mt-16">
+	<div class="max-w-3xl prose dark:prose-invert mt-16">
+		<p>
 			Published:{` `}
 			<time dateTime="2021-07-15">15 Jul 2021</time>
+		</p>
+		<p>
+			Updated:{` `}
+			<time dateTime="2022-08-10">10 Aug 2022</time>
 		</p>
 	</div>
 </main>
