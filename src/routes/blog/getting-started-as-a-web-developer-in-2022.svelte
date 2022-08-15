@@ -154,7 +154,7 @@
 				</ul>
 				<p>Some good subreddits to learn web development things:</p>
 				<ul class="flex flex-wrap gap-x-4 gap-y-2 list-none">
-					{#each ['r/css', 'r/javascript', 'r/nextjs', 'r/node', 'r/reactjs', 'r/SyntaxFM', 'r/tailwindcss', 'r/webdev'] as subreddit}
+					{#each ['r/css', 'r/javascript', 'r/sveltejs', 'r/nextjs', 'r/node', 'r/reactjs', 'r/SyntaxFM', 'r/tailwindcss', 'r/webdev'] as subreddit}
 						<li class="p-0">
 							<a href={`https://www.reddit.com/${subreddit}`}>
 								{subreddit}
