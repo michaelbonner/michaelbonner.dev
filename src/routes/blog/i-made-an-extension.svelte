@@ -1,6 +1,6 @@
 <script>
 	import Image from 'svimg';
-
+	import A from '../../components/A.svelte';
 	import Seo from '../../components/Seo.svelte';
 </script>
 
@@ -29,9 +29,12 @@
 				<p>
 					I didn&apos;t realize how easy it is to make an extension. Google has a step-by-step
 					example here:{' '}
-					<a href="https://developer.chrome.com/docs/extensions/mv3/getstarted/">
+					<A
+						className="break-all"
+						href="https://developer.chrome.com/docs/extensions/mv3/getstarted/"
+					>
 						https://developer.chrome.com/docs/extensions/mv3/getstarted/
-					</a>
+					</A>
 				</p>
 
 				<p>
