@@ -74,8 +74,8 @@
 			<a href="/uses" class={classes.menuItem}>Uses</a>
 			<a href="/policies" class={classes.menuItem}>Policies</a>
 		</nav>
-		<p class="justify-center lg:justify-start flex flex-wrap gap-x-4 gap-y-2">
-			<span>
+		<p class="justify-center lg:justify-start items-end flex flex-wrap gap-x-4 gap-y-6 md:gap-y-2">
+			<span class="text-center">
 				&copy; {new Date().getFullYear()} by Michael Bonner.{' '}
 				<a
 					class={classNames(classes.menuItem, 'text-sm inline-block')}
@@ -85,7 +85,7 @@
 				</a>
 				.
 			</span>
-			<span>
+			<span class="text-sm">
 				Photographer:{' '}
 				<a class={classes.bodyLink} href="https://www.instagram.com/dallas.dean.photography/">
 					Dallas Dean
