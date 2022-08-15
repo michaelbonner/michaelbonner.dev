@@ -144,7 +144,7 @@
 				</p>
 				<p>Some good tutorial sites to learn web development things:</p>
 				<ul>
-					{#each ['https://www.freecodecamp.org/learn', 'https://wesbos.com/courses', 'https://www.leveluptutorials.com/'] as link}
+					{#each ['https://www.freecodecamp.org/learn', 'https://wesbos.com/courses', 'https://leveluptutorials.com/'] as link}
 						<li>
 							<a href={link}>
 								{link.replace(/https:\/\/([\w]{3}[.])?/g, '')}

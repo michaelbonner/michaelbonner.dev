@@ -64,7 +64,7 @@
 				<span>BetterTouchTool</span>
 			</A>
 			<span>Just check it out, it&apos;s awesome</span>
-			<A href="https://webcatalog.app/">
+			<A href="https://webcatalog.io/webcatalog/">
 				<Link />
 				<span>Webcatalog</span>
 			</A>
