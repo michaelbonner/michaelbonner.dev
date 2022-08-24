@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Link from '../icons/Link.svelte';
-	import A from '../components/A.svelte';
-	import Seo from '../components/Seo.svelte';
+	import Link from '../../icons/Link.svelte';
+	import A from '../../components/A.svelte';
+	import Seo from '../../components/Seo.svelte';
 </script>
 
 <Seo

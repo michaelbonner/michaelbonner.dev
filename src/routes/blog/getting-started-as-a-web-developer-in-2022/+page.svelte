@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Image from 'svimg';
-	import Seo from '../../components/Seo.svelte';
-	import { classes } from '../../styles/classes';
+	import Seo from '../../../components/Seo.svelte';
+	import { classes } from '../../../styles/classes';
 </script>
 
 <Seo

@@ -1,7 +1,7 @@
 <script>
 	import Image from 'svimg';
-	import A from '../../components/A.svelte';
-	import Seo from '../../components/Seo.svelte';
+	import A from '../../../components/A.svelte';
+	import Seo from '../../../components/Seo.svelte';
 </script>
 
 <Seo

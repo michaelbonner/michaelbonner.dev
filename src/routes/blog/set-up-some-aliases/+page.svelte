@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Seo from '../../components/Seo.svelte';
+	import Seo from '../../../components/Seo.svelte';
 	import { Highlight } from 'svelte-highlight';
 	import bash from 'svelte-highlight/languages/bash';
 
