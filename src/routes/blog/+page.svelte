@@ -3,7 +3,7 @@
 	import Seo from '../../components/Seo.svelte';
 </script>
 
-<Seo title="Developer Blog | Michael Bonner" description="Just writing down some things" />
+<Seo description="Just writing down some things" title="Developer Blog | Michael Bonner" />
 
 <main class="relative pt-8 pb-8 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
 	<div class="container mx-auto px-8 py-12">

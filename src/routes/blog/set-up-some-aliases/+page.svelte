@@ -7,8 +7,9 @@
 </script>
 
 <Seo
-	title="Set up some aliases | Michael Bonner"
 	description="Aliases can speed up your development and help you focus on code"
+	title="Set up some aliases | Michael Bonner"
+	ogImage="https://michaelbonner.dev/images/iterm-aliases-trimmed-600.jpg"
 	ogType="article"
 />
 

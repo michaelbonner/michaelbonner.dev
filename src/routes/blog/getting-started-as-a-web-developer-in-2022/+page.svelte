@@ -5,9 +5,10 @@
 </script>
 
 <Seo
-	title="Where I think new web software developers should start | Michael Bonner"
 	description="Are you thinking about becoming a web developer? Where should you start? Here's my two cents as a full time web developer with almost 20 years of experience."
+	ogImage="https://michaelbonner.dev/images/tuff-website-screenshot.png"
 	ogType="article"
+	title="Where I think new web software developers should start | Michael Bonner"
 />
 
 <svelte:head>

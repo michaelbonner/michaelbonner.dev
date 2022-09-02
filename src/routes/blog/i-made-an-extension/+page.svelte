@@ -5,9 +5,10 @@
 </script>
 
 <Seo
-	title="I made my first Chrome extension | Michael Bonner"
 	description="Really simple one, and it was really easy to make"
+	ogImage="https://michaelbonner.dev/images/chrome-basecamp-ui-extension.jpg"
 	ogType="article"
+	title="I made my first Chrome extension | Michael Bonner"
 />
 
 <svelte:head>
