@@ -5,7 +5,7 @@
 
 <Seo title="Developer Blog | Michael Bonner" description="Just writing down some things" />
 
-<main class="relative pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+<main class="relative pt-8 pb-8 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
 	<div class="container mx-auto px-8 py-12">
 		<div class="prose dark:prose-invert max-w-3xl">
 			<h1>Web Developer Blog</h1>
