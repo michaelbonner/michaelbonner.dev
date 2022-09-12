@@ -2,6 +2,120 @@
 	import Link from '../../icons/Link.svelte';
 	import A from '../../components/A.svelte';
 	import Seo from '../../components/Seo.svelte';
+
+	type UsesItem = {
+		description: string;
+		href: string;
+		title: string;
+	};
+
+	const workstationItems: UsesItem[] = [
+		{
+			title: 'MacBook Pro 14&quot; M1 Pro - 32GB RAM',
+			href: 'https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-space-gray-10-core-cpu-16-core-gpu-1tb',
+			description: "This computer is a beast. I've been using it since January 2022 and love it."
+		},
+		{
+			title: 'Samsung 32" 4k',
+			href: 'https://www.amazon.com/Samsung-U32J590-32-Inch-LED-Lit-Monitor/dp/B07CS3JGPC/ref=sr_1_2?crid=2PDUXL1TLDEI9&dchild=1&keywords=samsung%2B4k%2B32%2Binch%2Bmonitor&qid=1622763845&sprefix=samsung%2B4k%2B32%2Caps%2C217&sr=8-2&th=1',
+			description:
+				'I prefer to have one high resolution monitor instead of two different monitors. Check out BetterTouchTool below for some helpful window snapping stuff.'
+		},
+		{
+			href: 'https://www.logitech.com/en-us/products/webcams/streamcam.960-001289.html',
+			title: 'Logitech Streamcam',
+			description:
+				"I'm in Zoom calls all day, so it made sense to spend a little money for a good webcam."
+		},
+
+		{
+			href: 'https://www.bluemic.com/en-us/products/yeti-x/',
+			title: 'Blue Yeti x',
+			description:
+				"Zoom is hard enough already, I don't want to make it harder by being hard to understand on calls. This mic was relatively cheap and does a good job."
+		},
+
+		{
+			href: 'https://www.apple.com/airpods-max/',
+			title: 'AirPods Max',
+			description:
+				"Can't say enough good things about these. If you have Apple stuff they are definitely worth the price."
+		}
+	];
+
+	const developmentItems: UsesItem[] = [
+		{
+			title: `VS Code`,
+			href: 'https://code.visualstudio.com/',
+			description: `I use VS Code for all my development needs. I've tried a few different editors, but I always come back to VS Code.`
+		},
+		{
+			title: 'TablePlus',
+			href: 'https://tableplus.com/',
+			description: 'Great software for working with databases.'
+		},
+		{
+			title: 'iTerm2',
+			href: 'https://iterm2.com/',
+			description: 'Like the regular terminal, but looks better and has more features'
+		},
+		{
+			title: 'oh my zsh',
+			href: 'https://ohmyz.sh/',
+			description: 'Big fan of the zsh shell. Check out zsh-autosuggestions as well.'
+		},
+		{
+			title: 'Fira Code',
+			href: 'https://github.com/tonsky/FiraCode',
+			description: 'Nice looking font face with ligatures'
+		},
+		{
+			title: 'Docker Desktop',
+			href: 'https://www.docker.com/products/docker-desktop/',
+			description: 'Docker Desktop is invaluable for local development'
+		}
+	];
+
+	const productivityItems: UsesItem[] = [
+		{
+			href: 'https://1password.com/',
+			title: '1Password',
+			description: 'The best password manager I have used'
+		},
+		{
+			href: 'https://espanso.org/',
+			title: 'Espanso',
+			description: 'Awesome little text expander'
+		},
+		{
+			href: 'https://apps.apple.com/us/app/paste-clipboard-manager/id967805235',
+			title: 'Paste',
+			description: 'Clipboard manager for Mac'
+		},
+		{
+			href: 'https://folivora.ai/',
+			title: 'BetterTouchTool',
+			description:
+				'A producttivity powerhouse for me. I use it for window snapping, keyboard shortcuts, and more.'
+		},
+		{
+			href: 'https://webcatalog.io/webcatalog/',
+			title: 'Webcatalog',
+			description:
+				"Turns websites into apps, which is super handy if you have clients. I like being able to open one app when I'm working on a client project which contains the project management tool, error tracking, etc."
+		},
+		{
+			href: 'https://savvycal.com/',
+			title: 'SavvyCal',
+			description:
+				'Makes it super easy to just send a URL to a client and let them pick a meeting time that works for them'
+		},
+		{
+			href: 'https://www.notion.so/',
+			title: 'Notion',
+			description: 'Great for keeping things organized; super powerful and configurable'
+		}
+	];
 </script>
 
 <Seo
@@ -9,103 +123,73 @@
 	description="Hi, I'm Michael Bonner. I'm a web developer in Salt Lake UT"
 />
 
-<main class="container mx-auto px-8 py-12">
-	<h1 class="leading-relaxed text-4xl tracking-wide lg:pr-8 max-w-3xl">
-		Hi! I&apos;m{' '}
-		<span class="font-medium whitespace-nowrap">Michael Bonner</span>, and here&apos;s some of the
-		stuff I use
-	</h1>
-	<div class="text-lg">
-		<h2 class="mt-8 text-2xl">Software</h2>
-		<div class="mt-4 grid grid-cols-2 max-w-xl">
-			<span>Code Editor:</span>
-			<A href="https://code.visualstudio.com/">
-				<Link />
-				<span>VS Code</span>
-			</A>
-			<span>Terminal:</span>
-			<A href="https://iterm2.com/">
-				<Link />
-				<span>iTerm2</span>
-			</A>
-			<span>Shell:</span>
-			<A href="https://ohmyz.sh/">
-				<Link />
-				<span>oh my zsh</span>
-			</A>
-			<span>Editor Font:</span>
-			<A href="https://github.com/tonsky/FiraCode">
-				<Link />
-				<span>Fira Code</span>
-			</A>
-			<span>Local server:</span>
-			<A href="https://laravel.com/docs/8.x/sail">
-				<Link />
-				<span>Docker (with Laravel Sail)</span>
-			</A>
-			<span>Password manager</span>
-			<A href="https://1password.com/">
-				<Link />
-				<span>1Password</span>
-			</A>
-			<span>Snippet/Doc reference tool</span>
-			<A href="https://kapeli.com/dash">
-				<Link />
-				<span>Dash</span>
-			</A>
-			<span>Clipboard Manager</span>
-			<A href="https://apps.apple.com/us/app/paste-clipboard-manager/id967805235">
-				<Link />
-				<span>Paste</span>
-			</A>
-			<span>Window management &amp; shortcuts</span>
-			<A href="https://folivora.ai/">
-				<Link />
-				<span>BetterTouchTool</span>
-			</A>
-			<span>Just check it out, it&apos;s awesome</span>
-			<A href="https://webcatalog.io/webcatalog/">
-				<Link />
-				<span>Webcatalog</span>
-			</A>
+<main class="grid gap-8 container mx-auto px-8 py-12">
+	<div>
+		<h1 class="leading-relaxed text-4xl tracking-wide lg:pr-8 max-w-3xl">
+			Software and other things I recommend.
+		</h1>
+		<p class="text-lg max-w-xl">
+			I get asked about the things I use to build software and stay productive. Here’s a list of
+			some of my favorite stuff.
+		</p>
+	</div>
+
+	<div class="grid gap-24 mt-12">
+		<div
+			class="grid md:grid-cols-3 xl:grid-cols-6 border-l border-gray-300 dark:border-gray-600 pl-4 md:pl-8"
+		>
+			<div class="text-xl">Workstation</div>
+			<div class="md:col-span-2 xl:col-span-5 grid gap-8">
+				{#each workstationItems as item}
+					<div>
+						<span class="text-xl inline-block">
+							<A href={item.href}>
+								<Link />
+								<span>{item.title}</span>
+							</A>
+						</span>
+						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
+					</div>
+				{/each}
+			</div>
 		</div>
 
-		<h2 class="mt-8 text-2xl">Hardware</h2>
-		<div class="mt-4 grid grid-cols-2 max-w-xl">
-			<span>Computer:</span>
-			<A
-				href="https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-space-gray-10-core-cpu-16-core-gpu-1tb"
-			>
-				<Link />
-				<span>MacBook Pro 14&quot; M1 Pro</span>
-			</A>
+		<div
+			class="grid md:grid-cols-3 xl:grid-cols-6 border-l border-gray-300 dark:border-gray-600 pl-4 md:pl-8"
+		>
+			<div class="text-xl">Development Tools</div>
+			<div class="md:col-span-2 xl:col-span-5 grid gap-8">
+				{#each developmentItems as item}
+					<div>
+						<span class="text-xl inline-block">
+							<A href={item.href}>
+								<Link />
+								<span>{item.title}</span>
+							</A>
+						</span>
+						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
+					</div>
+				{/each}
+			</div>
+		</div>
 
-			<span>Display:</span>
-			<A
-				href="https://www.amazon.com/Samsung-U32J590-32-Inch-LED-Lit-Monitor/dp/B07CS3JGPC/ref=sr_1_2?crid=2PDUXL1TLDEI9&dchild=1&keywords=samsung%2B4k%2B32%2Binch%2Bmonitor&qid=1622763845&sprefix=samsung%2B4k%2B32%2Caps%2C217&sr=8-2&th=1"
-			>
-				<Link />
-				<span>Samsung 32&quot; 4k</span>
-			</A>
-
-			<span>Webcam:</span>
-			<A href="https://www.logitech.com/en-us/products/webcams/streamcam.960-001289.html">
-				<Link />
-				<span>Logitech Streamcam</span>
-			</A>
-
-			<span>Microphone:</span>
-			<A href="https://www.bluemic.com/en-us/products/yeti-x/">
-				<Link />
-				<span>
-					Blue Yeti<sup>x</sup>
-				</span>
-			</A>
-			<span>Headphones:</span>
-			<A href="https://www.apple.com/airpods-max/">
-				<Link />
-				<span>AirPods Max</span>
-			</A>
+		<div
+			class="grid md:grid-cols-3 xl:grid-cols-6 border-l border-gray-300 dark:border-gray-600 pl-4 md:pl-8"
+		>
+			<div class="text-xl">Productivity Tools</div>
+			<div class="md:col-span-2 xl:col-span-5 grid gap-8">
+				{#each productivityItems as item}
+					<div>
+						<span class="text-xl inline-block">
+							<A href={item.href}>
+								<Link />
+								<span>{item.title}</span>
+							</A>
+						</span>
+						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
+					</div>
+				{/each}
+			</div>
 		</div>
 	</div>
 </main>
