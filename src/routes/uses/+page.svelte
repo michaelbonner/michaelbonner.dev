@@ -11,7 +11,7 @@
 
 	const workstationItems: UsesItem[] = [
 		{
-			title: 'MacBook Pro 14&quot; M1 Pro - 32GB RAM',
+			title: 'MacBook Pro 14" M1 Pro - 32GB RAM',
 			href: 'https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-space-gray-10-core-cpu-16-core-gpu-1tb',
 			description: "This computer is a beast. I've been using it since January 2022 and love it."
 		},
