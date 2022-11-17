@@ -114,7 +114,7 @@
 <main class="container mx-auto px-8 py-12 flex items-center">
 	<div class="pt-8">
 		<div class="lg:flex lg:flex-row-reverse lg:pt-16">
-			<div class="w-full lg:w-1/3 mt-8 lg:mt-4">
+			<div class="w-full lg:w-1/3 mt-8 lg:mt-0">
 				<Image
 					alt="Michael Bonner photo"
 					class="bg-indigo-300 bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:mix-blend-normal"
