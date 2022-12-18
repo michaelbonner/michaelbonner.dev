@@ -64,33 +64,30 @@
 				<p>
 					Learn basic{' '}
 					<a class={classes.bodyLink} href="https://www.w3schools.com/html/"> HTML </a>{' '}
-					and{' '}
-					<a class={classes.bodyLink} href="https://www.w3schools.com/css/"> CSS </a>
-					. Codecademy (
-					<a class={classes.bodyLink} href="https://www.codecademy.com/catalog/language/html-css">
-						codecademy.com
-					</a>
-					) has really good interactive tutorials to get you started. Trudge through it, and then build
-					your small idea. It doesn&apos;t have to be pretty, it just needs to display some text.
+					and{' '}<a class={classes.bodyLink} href="https://www.w3schools.com/css/"> CSS </a>.
+					Codecademy (<a
+						class={classes.bodyLink}
+						href="https://www.codecademy.com/catalog/language/html-css">codecademy.com</a
+					>) has really good interactive tutorials to get you started. Trudge through it, and then
+					build your small idea. It doesn&apos;t have to be pretty, it just needs to display some
+					text.
 				</p>
 				<p>
-					Download Visual Studio Code (
-					<a class={classes.bodyLink} href="https://code.visualstudio.com/">
-						code.visualstudio.com/
-					</a>
-					) and start making files. VS Code will help you find syntax errors in your code and make it
-					easier to fix them.
+					Download Visual Studio Code (<a
+						class={classes.bodyLink}
+						href="https://code.visualstudio.com">code.visualstudio.com</a
+					>) and start making files. VS Code will help you find syntax errors in your code and make
+					it easier to fix them.
 				</p>
 				<p>
 					Launch your first website. Even if your first site is horrible, launch it. For real, just
 					launch it. Get that thing out there. You can host your site using Netlify for free. Just
-					zip it up and launch it. (
-					<a class={classes.bodyLink} href="https://app.netlify.com/drop"> app.netlify.com/drop </a>
-					) Tell your friends about your new site. Tell your parents about it. Tell me about it.{` `}(
-					<a class={classes.bodyLink} href="https://www.linkedin.com/in/michaelbonner/">
-						linkedin.com/in/michaelbonner/
-					</a>
-					)
+					zip it up and launch it. (<a class={classes.bodyLink} href="https://app.netlify.com/drop"
+						>app.netlify.com/drop</a
+					>) Tell your friends about your new site. Tell your parents about it. Tell me about it.{` `}(<a
+						class={classes.bodyLink}
+						href="https://www.linkedin.com/in/michaelbonner/">linkedin.com/in/michaelbonner/</a
+					>)
 				</p>
 				<h2>Build, build, build</h2>
 				<p>
@@ -120,32 +117,38 @@
 					</figcaption>
 				</figure>
 				<p>
-					Learn Git. (
-					<a class={classes.bodyLink} href="https://lab.github.com/"> lab.github.com/ </a>
-					) Git is a tool to keep track of changes to your code. It allows you to see what changes you
-					made over time and roll things back if you need to. You can create branches to keep new ideas
-					separate from production-ready code, and then merge it back in when you are ready. You can
-					have your website automatically deployed when you push your code. Everybody uses Git, and you&apos;ll
-					lose out on job opportunities if you don&apos;t take the time to learn it.
+					Learn Git. (<a class={classes.bodyLink} href="https://lab.github.com/">lab.github.com</a>)
+					Git is a tool to keep track of changes to your code. It allows you to see what changes you
+					made over time and roll things back if you need to. You can create branches to keep new
+					ideas separate from production-ready code, and then merge it back in when you are ready.
+					You can have your website automatically deployed when you push your code. Everybody uses
+					Git, and you&apos;ll lose out on job opportunities if you don&apos;t take the time to
+					learn it.
 				</p>
 				<p>
 					Learn Javascript. Javascript is the programming language of the internet. Almost every
 					site you use uses Javascript to enable user interactions, and many run javascript on the
-					server to interface with the database. Wes Bos has a great course to get you started. (
-					<a class={classes.bodyLink} href="https://javascript30.com/"> javascript30.com/ </a>
-					)
+					server to interface with the database. Wes Bos has a great course to get you started. (<a
+						class={classes.bodyLink}
+						href="https://javascript30.com/">javascript30.com</a
+					>)
 				</p>
 				<p>
-					Keep learning. Watch tutorials. Listen to podcasts (
-					<a class={classes.bodyLink} href="https://podcasts.michaelbonner.dev/">
-						podcasts.michaelbonner.dev/
-					</a>
-					). Read blogs. Find developer subreddits. There is so much to learn. Find areas you&apos;re
-					passionate about and learn as much as you can.
+					Keep learning. Watch tutorials. Listen to podcasts (<a
+						class={classes.bodyLink}
+						href="https://podcasts.michaelbonner.dev/">podcasts.michaelbonner.dev</a
+					>). Read blogs. Find developer subreddits. There is so much to learn. Find areas
+					you&apos;re passionate about and learn as much as you can.
+				</p>
+				<p>
+					The Odin Project has a few excellent free courses to get you started (<a
+						href="https://www.theodinproject.com">theodinproject.com</a
+					>). I would recommend doing the "Foundations" path and then move on to the "Full Stack
+					JavaScript" path.
 				</p>
 				<p>Some good tutorial sites to learn web development things:</p>
 				<ul>
-					{#each ['https://www.freecodecamp.org/learn', 'https://wesbos.com/courses', 'https://leveluptutorials.com/'] as link}
+					{#each ['https://www.freecodecamp.org/learn', 'https://wesbos.com/courses', 'https://leveluptutorials.com'] as link}
 						<li>
 							<a href={link}>
 								{link.replace(/https:\/\/([\w]{3}[.])?/g, '')}
@@ -155,7 +158,7 @@
 				</ul>
 				<p>Some good subreddits to learn web development things:</p>
 				<ul class="flex flex-wrap gap-x-4 gap-y-2 list-none">
-					{#each ['r/css', 'r/javascript', 'r/sveltejs', 'r/nextjs', 'r/node', 'r/reactjs', 'r/SyntaxFM', 'r/tailwindcss', 'r/webdev'] as subreddit}
+					{#each ['r/css', 'r/javascript', 'r/sveltejs', 'r/nextjs', 'r/node', 'r/reactjs', 'r/SyntaxFM', 'r/webdev'] as subreddit}
 						<li class="p-0">
 							<a href={`https://www.reddit.com/${subreddit}`}>
 								{subreddit}
@@ -165,10 +168,10 @@
 				</ul>
 				<p>Some good sites to learn web development things:</p>
 				<ul>
-					{#each ['https://css-tricks.com/', 'https://blog.hubspot.com/website/website-development', 'https://dev.to/', 'https://davidwalsh.name/'] as site}
+					{#each ['https://css-tricks.com', 'https://blog.hubspot.com/website/website-development', 'https://dev.to', 'https://davidwalsh.name'] as site}
 						<li>
 							<a class={classes.bodyLink} href={site}>
-								{site.replace(/https:\/\/([\w]{3}[.])?/g, '')}
+								{site.replace(/https:\/\/([w]{3}[.])?/g, '')}
 							</a>
 						</li>
 					{/each}
@@ -176,11 +179,12 @@
 				<p>
 					Learn out loud. Writing and/or streaming about what you learn is a great way to learn
 					faster. My friend Steven has done a great job advancing his knowledge and network
-					specifically by posting what he learns. Check out his stuff (
-					<a class={classes.bodyLink} href="https://medium.com/@steven_creates">
-						medium.com/@steven_creates
-					</a>
-					).
+					specifically by posting what he learns. Check out his stuff (<a
+						class={classes.bodyLink}
+						href="https://medium.com/@steven_creates"
+					>
+						medium.com/@steven_creates</a
+					>).
 				</p>
 				<h2>Get your first job as a web developer</h2>
 				<p>
@@ -193,10 +197,10 @@
 				</p>
 				<p>
 					<strong>Be honest in interviews</strong>. If you don&apos;t know something, it&apos;s
-					completely fine to say &ldquo;I don&apos;t know.&rdquo; Lying about it is never the right
-					answer. Trust me. People who have interviewed a handful of applicants can cut right
-					through the BS and won&apos;t even entertain the idea of bringing on a developer that
-					doesn&apos;t acknowledge the shortcomings they have.
+					completely fine to say &ldquo;I don&apos;t know&rdquo; and ask questions about it. Lying
+					about it is never the right answer. Trust me. People who have interviewed a handful of
+					applicants can cut right through the BS and won&apos;t even entertain the idea of bringing
+					on a developer that doesn&apos;t acknowledge the shortcomings they have.
 				</p>
 				<p>
 					<strong>Be hungry</strong>. Good team members bring a growth mindset and are willing to
@@ -218,6 +222,10 @@
 				<p class="mt-16">
 					Published:{` `}
 					<time dateTime="2022-03-08">08 Mar 2022</time>
+				</p>
+				<p>
+					Updated:{` `}
+					<time dateTime="2022-12-18">18 Dec 2022</time>
 				</p>
 			</div>
 		</div>
