@@ -140,15 +140,9 @@
 					>). Read blogs. Find developer subreddits. There is so much to learn. Find areas
 					you&apos;re passionate about and learn as much as you can.
 				</p>
-				<p>
-					The Odin Project has a few excellent free courses to get you started (<a
-						href="https://www.theodinproject.com">theodinproject.com</a
-					>). I would recommend doing the "Foundations" path and then move on to the "Full Stack
-					JavaScript" path.
-				</p>
 				<p>Some good tutorial sites to learn web development things:</p>
 				<ul>
-					{#each ['https://www.freecodecamp.org/learn', 'https://wesbos.com/courses', 'https://leveluptutorials.com'] as link}
+					{#each ['https://www.theodinproject.com', 'https://www.freecodecamp.org/learn', 'https://wesbos.com/courses', 'https://leveluptutorials.com'] as link}
 						<li>
 							<a href={link}>
 								{link.replace(/https:\/\/([\w]{3}[.])?/g, '')}
