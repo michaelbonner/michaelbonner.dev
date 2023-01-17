@@ -16,10 +16,10 @@
 			description: "This computer is a beast. I've been using it since January 2022 and love it."
 		},
 		{
-			title: 'Samsung 32" 4k',
-			href: 'https://www.amazon.com/Samsung-U32J590-32-Inch-LED-Lit-Monitor/dp/B07CS3JGPC/ref=sr_1_2?crid=2PDUXL1TLDEI9&dchild=1&keywords=samsung%2B4k%2B32%2Binch%2Bmonitor&qid=1622763845&sprefix=samsung%2B4k%2B32%2Caps%2C217&sr=8-2&th=1',
+			title: 'Apple Studio Display',
+			href: 'https://www.apple.com/studio-display/',
 			description:
-				'I prefer to have one high resolution monitor instead of two different monitors. Check out BetterTouchTool below for some helpful window snapping stuff.'
+				'I prefer to have one high resolution monitor instead of two different monitors. Check out Raycast below for some helpful window snapping stuff.'
 		},
 		{
 			href: 'https://www.logitech.com/en-us/products/webcams/streamcam.960-001289.html',
@@ -55,8 +55,8 @@
 			description: 'Great software for working with databases.'
 		},
 		{
-			title: 'iTerm2',
-			href: 'https://iterm2.com/',
+			title: 'Warp',
+			href: 'https://www.warp.dev/',
 			description: 'Like the regular terminal, but looks better and has more features'
 		},
 		{
@@ -83,20 +83,21 @@
 			description: 'The best password manager I have used'
 		},
 		{
-			href: 'https://espanso.org/',
-			title: 'Espanso',
-			description: 'Awesome little text expander'
+			href: 'https://arc.net/',
+			title: 'Arc Browser',
+			description: 'A great browser for Mac'
 		},
 		{
-			href: 'https://apps.apple.com/us/app/paste-clipboard-manager/id967805235',
-			title: 'Paste',
-			description: 'Clipboard manager for Mac'
+			href: 'https://raycast.com/',
+			title: 'Raycast',
+			description:
+				'Spotlight replacement for Mac with window management, clipboard history, and more'
 		},
 		{
 			href: 'https://folivora.ai/',
 			title: 'BetterTouchTool',
 			description:
-				'A producttivity powerhouse for me. I use it for window snapping, keyboard shortcuts, and more.'
+				'A productivity powerhouse for me. I use it for window snapping, keyboard shortcuts, and more.'
 		},
 		{
 			href: 'https://webcatalog.io/webcatalog/',
