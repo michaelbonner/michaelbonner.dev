@@ -17,6 +17,32 @@
 
 		<div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+				<a class="flex-shrink-0 leading-[0]" href="/blog/git-branch-name-raycast-extension">
+					<Image
+						class="h-48 w-full object-cover"
+						src="/images/git-branch-name-generator-3.jpg"
+						alt="Git Branch Name Raycast Extension"
+						immediate={true}
+					/>
+				</a>
+				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
+					<a href="/blog/git-branch-name-raycast-extension" class="block mt-2">
+						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
+							Git Branch Name Raycast Extension
+						</p>
+						<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
+							Check out the new Git Branch Name Raycast Extension I made
+						</p>
+					</a>
+					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-200">
+						<time dateTime="2023-01-017T16:00:00+00:00">2023-01-17</time>
+						<span aria-hidden="true">&middot;</span>
+						<span>2 minute read</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/i-made-an-extension">
 					<Image
 						class="h-48 w-full object-cover"
