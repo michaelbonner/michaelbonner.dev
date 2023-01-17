@@ -29,13 +29,18 @@
 			<div class="lg:mt-24 text-lg max-w-5xl prose-img:my-0 prose-figcaption:text-center">
 				<h2>What is Raycast?</h2>
 				<p>
-					Raycast is a new way to control your Mac. It&apos;s a productivity tool that helps you to
-					be more efficient with your daily tasks. It&apos;s a Spotlight on steroids. If you don't
+					Raycast is a super fast, totally extendable launcher. It lets you complete tasks,
+					calculate, share common links, manage your clipboard history, and much more. If you don't
 					have it installed, I recommend you go give it a try.
 				</p>
-				<p>
-					<A href="https://raycast.com">Download Raycast</A>
-				</p>
+				<div class="flex flex-wrap gap-8">
+					<p>
+						<A href="https://youtu.be/JKbTyXQ_QWA">Raycast overview on YouTube</A>
+					</p>
+					<p>
+						<A href="https://raycast.com">Download Raycast</A>
+					</p>
+				</div>
 				<h2>What is the Git Branch Name Raycast Extension?</h2>
 				<p>
 					The Git Branch Name Raycast Extension is a simple extension that allows you to generate a
