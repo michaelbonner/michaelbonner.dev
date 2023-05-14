@@ -85,12 +85,6 @@
 				</a>
 				.
 			</span>
-			<span class="text-sm">
-				Photographer:{' '}
-				<a class={classes.bodyLink} href="https://www.instagram.com/dallas.dean.photography/">
-					Dallas Dean
-				</a>
-			</span>
 		</p>
 	</footer>
 </div>
