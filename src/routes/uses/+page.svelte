@@ -22,19 +22,11 @@
 				'I prefer to have one high resolution monitor instead of two different monitors. Check out Raycast below for some helpful window snapping stuff.'
 		},
 		{
-			href: 'https://www.logitech.com/en-us/products/webcams/streamcam.960-001289.html',
-			title: 'Logitech Streamcam',
+			href: 'https://www.shure.com/en-US/products/microphones/mv7?variant=MV7-K',
+			title: 'Shure MV7 Microphone',
 			description:
-				"I'm in Zoom calls all day, so it made sense to spend a little money for a good webcam."
+				'I want people to be able to hear me clearly when making videos and on Zoom calls. This microphone is great for that.'
 		},
-
-		{
-			href: 'https://www.bluemic.com/en-us/products/yeti-x/',
-			title: 'Blue Yeti x',
-			description:
-				"Zoom is hard enough already, I don't want to make it harder by being hard to understand on calls. This mic was relatively cheap and does a good job."
-		},
-
 		{
 			href: 'https://www.apple.com/airpods-max/',
 			title: 'AirPods Max',
@@ -57,7 +49,8 @@
 		{
 			title: 'Warp',
 			href: 'https://www.warp.dev/',
-			description: 'Like the regular terminal, but looks better and has more features'
+			description:
+				'Like the regular terminal, but looks better and has more features. The AI features are super helpful.'
 		},
 		{
 			title: 'oh my zsh',
@@ -130,8 +123,8 @@
 			Software and other things I recommend.
 		</h1>
 		<p class="text-lg max-w-xl">
-			I get asked about the things I use to build software and stay productive. Here’s a list of
-			some of my favorite stuff.
+			I sometimes get asked about the things I use to build software and stay productive. Here’s a
+			list of some of my favorite stuff.
 		</p>
 	</div>
 
