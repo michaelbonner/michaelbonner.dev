@@ -40,13 +40,13 @@
 
 		<div class="grid justify-center lg:justify-start lg:flex lg:items-center lg:gap-8 mt-12 w-full">
 			<audio class="w-[80vw] lg:w-[340px]" controls>
-				<source src="/Come Thou Fount.ogg" type="audio/ogg" />
-				<source src="/Come Thou Fount.mp3" type="audio/mpeg" />
+				<source src="/Come-Thou-Fount.ogg" type="audio/ogg" />
+				<source src="/Come-Thou-Fount.mp3" type="audio/mpeg" />
 				Your browser does not support the audio element.
 			</audio>
 			<div class="flex mt-0 items-center justify-center gap-3">
 				<p>
-					<a href="/Come Thou Fount.mp3" download="Come Thou Fount.mp3"> Download </a>
+					<a href="/Come-Thou-Fount.mp3" download="Come Thou Fount.mp3"> Download </a>
 				</p>
 				<svg
 					stroke="currentColor"
