@@ -46,7 +46,7 @@
 					Your browser does not support the audio element.
 				</audio>
 			</div>
-			<div class="flex mt-0 items-center justify-center gap-2">
+			<div class="flex mt-0 items-center justify-center gap-3">
 				<p>
 					<a href="/Come Thou Fount.mp3" download="Come Thou Fount.mp3"> Download </a>
 				</p>
@@ -55,8 +55,8 @@
 					fill="currentColor"
 					stroke-width="0"
 					viewBox="0 0 16 16"
-					height="1em"
-					width="1em"
+					height="1.4em"
+					width="1.4em"
 					xmlns="http://www.w3.org/2000/svg"
 					><path
 						fill-rule="evenodd"
