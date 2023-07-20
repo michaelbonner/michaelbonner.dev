@@ -52,6 +52,12 @@
 			github: `https://github.com/michaelbonner/podcasts-i-listen-to`
 		},
 		{
+			title: `My Wedding Site`,
+			description: `A site I built to coordinate wedding things with my partner Kellie`,
+			url: `https://www.kellieandmike.com/`,
+			github: `https://github.com/michaelbonner/kellieandmike`
+		},
+		{
 			title: `NHL Arenas To Visit`,
 			description: `The plan is to visit every home ice arena. Seems like a decent way to explore the US and Canada`,
 			url: `https://nhl.michaelbonner.dev/`,
