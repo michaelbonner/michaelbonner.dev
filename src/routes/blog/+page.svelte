@@ -1,5 +1,9 @@
 <script lang="ts">
 	import Seo from '../../components/Seo.svelte';
+	import gitBranchNameGenerator3 from '../../images/git-branch-name-generator-3.jpg';
+	import chromeBasecampUiExtension from '../../images/chrome-basecamp-ui-extension.jpg';
+	import itermAliasesTrimmed600 from '../../images/iterm-aliases-trimmed-600.jpg';
+	import tuffWebsiteScreenshotTrimmed600 from '../../images/tuff-website-screenshot-trimmed-600.jpg';
 </script>
 
 <Seo description="Just writing down some things" title="Developer Blog | Michael Bonner" />
@@ -19,7 +23,7 @@
 				<a class="flex-shrink-0 leading-[0]" href="/blog/git-branch-name-raycast-extension">
 					<img
 						class="h-48 w-full object-cover"
-						src="/images/git-branch-name-generator-3.jpg"
+						src={gitBranchNameGenerator3}
 						alt="Git Branch Name Raycast Extension"
 					/>
 				</a>
@@ -44,7 +48,7 @@
 				<a class="flex-shrink-0 leading-[0]" href="/blog/i-made-an-extension">
 					<img
 						class="h-48 w-full object-cover"
-						src="/images/chrome-basecamp-ui-extension.jpg"
+						src={chromeBasecampUiExtension}
 						alt="I made my first Chrome extension"
 					/>
 				</a>
@@ -72,7 +76,7 @@
 				>
 					<img
 						class="h-48 w-full object-cover"
-						src="/images/tuff-website-screenshot-trimmed-600.jpg"
+						src={tuffWebsiteScreenshotTrimmed600}
 						alt="Where I think new web software developers should start in 2022"
 					/>
 				</a>
@@ -97,7 +101,7 @@
 				<a class="flex-shrink-0 leading-[0]" href="/blog/set-up-some-aliases">
 					<img
 						class="h-48 w-full object-cover"
-						src="/images/iterm-aliases-trimmed-600.jpg"
+						src={itermAliasesTrimmed600}
 						alt="Set up some aliases"
 					/>
 				</a>

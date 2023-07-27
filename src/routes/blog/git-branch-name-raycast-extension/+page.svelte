@@ -1,11 +1,14 @@
 <script>
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
+	import gitBranchNameGenerator1 from '../../../images/git-branch-name-generator-1.jpg';
+	import gitBranchNameGenerator2 from '../../../images/git-branch-name-generator-2.jpg';
+	import gitBranchNameGenerator3 from '../../../images/git-branch-name-generator-3.jpg';
 </script>
 
 <Seo
 	description="Check out the new Git Branch Name Raycast Extension I made"
-	ogImage="https://michaelbonner.dev/images/git-branch-name-generator-3.jpg"
+	ogImage={gitBranchNameGenerator3}
 	ogType="article"
 	title="Git Branch Name Raycast Extension | Michael Bonner"
 />
@@ -60,27 +63,19 @@
 				</p>
 
 				<figure>
-					<img
-						class="w-full"
-						src="/images/git-branch-name-generator-1.jpg"
-						alt="Choosing a branch type"
-					/>
+					<img class="w-full" src={gitBranchNameGenerator1} alt="Choosing a branch type" />
 					<figcaption>Choose your branch type</figcaption>
 				</figure>
 
 				<figure>
-					<img
-						class="w-full m-0"
-						src="/images/git-branch-name-generator-2.jpg"
-						alt="Add you branch name"
-					/>
+					<img class="w-full m-0" src={gitBranchNameGenerator2} alt="Add you branch name" />
 					<figcaption>Enter your branch name</figcaption>
 				</figure>
 
 				<figure>
 					<img
 						class="w-full"
-						src="/images/git-branch-name-generator-3.jpg"
+						src={gitBranchNameGenerator3}
 						alt="Results get copied to your clipboard"
 					/>
 					<figcaption>Results get copied to your clipboard</figcaption>

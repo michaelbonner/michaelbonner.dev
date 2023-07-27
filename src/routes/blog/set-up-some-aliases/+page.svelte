@@ -2,6 +2,7 @@
 	import Seo from '../../../components/Seo.svelte';
 	import { Highlight } from 'svelte-highlight';
 	import bash from 'svelte-highlight/languages/bash';
+	import ogImage from '../../../images/iterm-aliases-trimmed-600.jpg'
 
 	import 'svelte-highlight/styles/github-dark.css';
 </script>
@@ -9,7 +10,7 @@
 <Seo
 	description="Aliases can speed up your development and help you focus on code"
 	title="Set up some aliases | Michael Bonner"
-	ogImage="https://michaelbonner.dev/images/iterm-aliases-trimmed-600.jpg"
+	ogImage={ogImage}
 	ogType="article"
 />
 

@@ -7,6 +7,7 @@
 	import Link from '../icons/Link.svelte';
 	import LinkedIn from '../icons/LinkedIn.svelte';
 	import { classes } from '../styles/classes';
+	import mainImage from '../images/on-the-beach-600.jpg';
 
 	const projects = [
 		{
@@ -129,7 +130,7 @@
 				<img
 					alt="Michael Bonner"
 					class="bg-indigo-300 bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:mix-blend-normal"
-					src="/images/on-the-beach-600.jpg"
+					src={mainImage}
 					width="600"
 				/>
 			</div>
