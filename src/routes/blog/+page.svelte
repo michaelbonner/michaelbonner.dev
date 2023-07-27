@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Image from 'svimg';
 	import Seo from '../../components/Seo.svelte';
 </script>
 
@@ -18,11 +17,10 @@
 		<div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/git-branch-name-raycast-extension">
-					<Image
+					<img
 						class="h-48 w-full object-cover"
 						src="/images/git-branch-name-generator-3.jpg"
 						alt="Git Branch Name Raycast Extension"
-						immediate={true}
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
@@ -44,11 +42,10 @@
 
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/i-made-an-extension">
-					<Image
+					<img
 						class="h-48 w-full object-cover"
 						src="/images/chrome-basecamp-ui-extension.jpg"
 						alt="I made my first Chrome extension"
-						immediate={true}
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
@@ -73,11 +70,10 @@
 					class="flex-shrink-0 leading-[0]"
 					href="/blog/getting-started-as-a-web-developer-in-2022"
 				>
-					<Image
+					<img
 						class="h-48 w-full object-cover"
 						src="/images/tuff-website-screenshot-trimmed-600.jpg"
 						alt="Where I think new web software developers should start in 2022"
-						immediate={true}
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
@@ -99,11 +95,10 @@
 
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/set-up-some-aliases">
-					<Image
+					<img
 						class="h-48 w-full object-cover"
 						src="/images/iterm-aliases-trimmed-600.jpg"
 						alt="Set up some aliases"
-						immediate={true}
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">

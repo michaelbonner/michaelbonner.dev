@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Image from 'svimg';
 	import Seo from '../../../components/Seo.svelte';
 	import { classes } from '../../../styles/classes';
 </script>
@@ -53,7 +52,7 @@
 				</p>
 				<figure>
 					<a href="https://tuff.michaelbonner.dev/">
-						<Image
+						<img
 							src="/images/tuff-website-screenshot.png"
 							alt="Tuff website screenshot"
 							width={1400}
@@ -106,7 +105,7 @@
 				<h2>Get to the next level</h2>
 				<figure>
 					<a href="https://github.com/michaelbonner/michaelbonner.dev">
-						<Image
+						<img
 							alt="michaelbonner.dev github screenshot"
 							src="/images/michaelbonner-dev-github-screenshot.png"
 							width="1400"

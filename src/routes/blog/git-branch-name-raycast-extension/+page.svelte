@@ -1,5 +1,4 @@
 <script>
-	import Image from 'svimg';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
 </script>
@@ -61,31 +60,28 @@
 				</p>
 
 				<figure>
-					<Image
+					<img
 						class="w-full"
 						src="/images/git-branch-name-generator-1.jpg"
 						alt="Choosing a branch type"
-						immediate={true}
 					/>
 					<figcaption>Choose your branch type</figcaption>
 				</figure>
 
 				<figure>
-					<Image
+					<img
 						class="w-full m-0"
 						src="/images/git-branch-name-generator-2.jpg"
 						alt="Add you branch name"
-						immediate={true}
 					/>
 					<figcaption>Enter your branch name</figcaption>
 				</figure>
 
 				<figure>
-					<Image
+					<img
 						class="w-full"
 						src="/images/git-branch-name-generator-3.jpg"
 						alt="Results get copied to your clipboard"
-						immediate={true}
 					/>
 					<figcaption>Results get copied to your clipboard</figcaption>
 				</figure>

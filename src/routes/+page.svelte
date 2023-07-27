@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Image from 'svimg';
 	import H2 from '../components/H2.svelte';
 	import Seo from '../components/Seo.svelte';
 	import { classNames } from '../functions/classNames';
@@ -127,12 +126,11 @@
 	<div class="pt-8">
 		<div class="lg:flex lg:flex-row-reverse lg:pt-16">
 			<div class="w-full lg:w-1/3 mt-8 lg:mt-0">
-				<Image
-					alt="Michael Bonner photo"
+				<img
+					alt="Michael Bonner"
 					class="bg-indigo-300 bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:mix-blend-normal"
 					src="/images/on-the-beach-600.jpg"
 					width="600"
-					immediate={true}
 				/>
 			</div>
 			<div class="mt-8 lg:mt-0 w-full lg:w-2/3 lg:pr-8">
