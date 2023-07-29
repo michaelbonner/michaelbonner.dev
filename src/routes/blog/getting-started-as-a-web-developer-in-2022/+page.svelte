@@ -1,11 +1,13 @@
 <script lang="ts">
 	import Seo from '../../../components/Seo.svelte';
 	import { classes } from '../../../styles/classes';
+	import tuffWebsiteScreenshot from '../../../images/tuff-website-screenshot.webp';
+	import michaelbonnerDevGithubScreenshot from '../../../images/michaelbonner-dev-github-screenshot.webp';
 </script>
 
 <Seo
 	description="Are you thinking about becoming a web developer? Where should you start? Here's my two cents as a full time web developer with almost 20 years of experience."
-	ogImage="https://michaelbonner.dev/images/tuff-website-screenshot.png"
+	ogImage={tuffWebsiteScreenshot}
 	ogType="article"
 	title="Where I think new web software developers should start | Michael Bonner"
 />
@@ -52,11 +54,7 @@
 				</p>
 				<figure>
 					<a href="https://tuff.michaelbonner.dev/">
-						<img
-							src="/images/tuff-website-screenshot.png"
-							alt="Tuff website screenshot"
-							width={1400}
-						/>
+						<img src={tuffWebsiteScreenshot} alt="Tuff website screenshot" width={1400} />
 					</a>
 					<figcaption class="text-center">See how cringey that thing is?</figcaption>
 				</figure>
@@ -107,7 +105,7 @@
 					<a href="https://github.com/michaelbonner/michaelbonner.dev">
 						<img
 							alt="michaelbonner.dev github screenshot"
-							src="/images/michaelbonner-dev-github-screenshot.png"
+							src={michaelbonnerDevGithubScreenshot}
 							width="1400"
 						/>
 					</a>
