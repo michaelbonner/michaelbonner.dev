@@ -1,9 +1,9 @@
 <script>
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
-	import gitBranchNameGenerator1 from '../../../images/git-branch-name-generator-1.jpg';
-	import gitBranchNameGenerator2 from '../../../images/git-branch-name-generator-2.jpg';
-	import gitBranchNameGenerator3 from '../../../images/git-branch-name-generator-3.jpg';
+	import gitBranchNameGenerator1 from '../../../images/git-branch-name-generator-1.webp';
+	import gitBranchNameGenerator2 from '../../../images/git-branch-name-generator-2.webp';
+	import gitBranchNameGenerator3 from '../../../images/git-branch-name-generator-3.webp';
 </script>
 
 <Seo

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Seo from '../../../components/Seo.svelte';
 	import { classes } from '../../../styles/classes';
-	import tuffWebsiteScreenshot from '../../../images/tuff-website-screenshot.png';
-	import michaelbonnerDevGithubScreenshot from '../../../images/michaelbonner-dev-github-screenshot.png';
+	import tuffWebsiteScreenshot from '../../../images/tuff-website-screenshot.webp';
+	import michaelbonnerDevGithubScreenshot from '../../../images/michaelbonner-dev-github-screenshot.webp';
 </script>
 
 <Seo

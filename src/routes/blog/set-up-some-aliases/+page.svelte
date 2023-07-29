@@ -2,7 +2,7 @@
 	import Seo from '../../../components/Seo.svelte';
 	import { Highlight } from 'svelte-highlight';
 	import bash from 'svelte-highlight/languages/bash';
-	import ogImage from '../../../images/iterm-aliases-trimmed-600.jpg'
+	import ogImage from '../../../images/iterm-aliases-trimmed-600.webp'
 
 	import 'svelte-highlight/styles/github-dark.css';
 </script>

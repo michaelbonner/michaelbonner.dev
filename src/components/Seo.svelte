@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let title = '';
 	export let description = '';
-	export let ogImage = 'https://michaelbonner.dev/og-image.jpg';
+	export let ogImage = 'https://michaelbonner.dev/og-image.webp';
 	export let ogType = 'website';
 </script>
 
