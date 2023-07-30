@@ -54,29 +54,44 @@
 				<p>
 					<a href="https://www.raycast.com/mbonner/git-branch-name-generator"
 						><img
-							src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
-							height="64"
 							alt=""
+							height="64"
+							src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
 							style="height: 64px;"
+							width="256"
 						/></a
 					>
 				</p>
 
 				<figure>
-					<img class="w-full" src={gitBranchNameGenerator1} alt="Choosing a branch type" />
+					<img
+						alt="Choosing a branch type"
+						class="w-full"
+						height="480"
+						src={gitBranchNameGenerator1}
+						width="768"
+					/>
 					<figcaption>Choose your branch type</figcaption>
 				</figure>
 
 				<figure>
-					<img class="w-full m-0" src={gitBranchNameGenerator2} alt="Add you branch name" />
+					<img
+						alt="Add you branch name"
+						class="w-full m-0"
+						height="480"
+						src={gitBranchNameGenerator2}
+						width="768"
+					/>
 					<figcaption>Enter your branch name</figcaption>
 				</figure>
 
 				<figure>
 					<img
-						class="w-full"
-						src={gitBranchNameGenerator3}
 						alt="Results get copied to your clipboard"
+						class="w-full"
+						height="480"
+						src={gitBranchNameGenerator3}
+						width="768"
 					/>
 					<figcaption>Results get copied to your clipboard</figcaption>
 				</figure>
@@ -84,10 +99,11 @@
 				<p>
 					<a href="https://www.raycast.com/mbonner/git-branch-name-generator"
 						><img
-							src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
-							height="64"
 							alt=""
+							height="64"
+							src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
 							style="height: 64px;"
+							width="256"
 						/></a
 					>
 				</p>
