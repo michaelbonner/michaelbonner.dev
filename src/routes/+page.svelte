@@ -7,7 +7,7 @@
 	import Link from '../icons/Link.svelte';
 	import LinkedIn from '../icons/LinkedIn.svelte';
 	import { classes } from '../styles/classes';
-	import mainImage from '../images/on-the-beach-600.jpg?w=300;500;700&format=webp;avif;jpg';
+	import mainImage from '$lib/images/on-the-beach-600.jpg?w=300;500;700&format=webp;avif;jpg';
 
 	const projects = [
 		{
