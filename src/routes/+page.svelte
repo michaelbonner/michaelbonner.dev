@@ -130,6 +130,7 @@
 				<img
 					alt="Michael Bonner"
 					class="bg-indigo-300 bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:mix-blend-normal"
+					height="400"
 					src={mainImage}
 					width="600"
 				/>
