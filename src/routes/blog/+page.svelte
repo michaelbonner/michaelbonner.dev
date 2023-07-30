@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Seo from '../../components/Seo.svelte';
-	import gitBranchNameGenerator3 from '../../images/git-branch-name-generator-3.webp';
-	import chromeBasecampUiExtension from '../../images/chrome-basecamp-ui-extension.webp';
-	import itermAliasesTrimmed600 from '../../images/iterm-aliases-trimmed-600.webp';
-	import tuffWebsiteScreenshotTrimmed600 from '../../images/tuff-website-screenshot-trimmed-600.webp';
+	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.webp';
+	import chromeBasecampUiExtension from '$lib/images/chrome-basecamp-ui-extension.webp';
+	import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.webp';
+	import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.webp';
 </script>
 
 <Seo description="Just writing down some things" title="Developer Blog | Michael Bonner" />

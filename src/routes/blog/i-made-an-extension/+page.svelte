@@ -1,10 +1,10 @@
 <script>
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
-	import beforeExtension from '../../../images/before-extension.webp';
-	import afterExtension from '../../../images/after-extension.webp';
-	import availableInTheChromeWebStore from '../../../images/available-in-the-chrome-web-store.webp';
-	import ogImage from '../../../images/chrome-basecamp-ui-extension.webp';
+	import beforeExtension from '../$lib/images/before-extension.webp';
+	import afterExtension from '../$lib/images/after-extension.webp';
+	import availableInTheChromeWebStore from '../$lib/images/available-in-the-chrome-web-store.webp';
+	import ogImage from '../$lib/images/chrome-basecamp-ui-extension.webp';
 </script>
 
 <Seo
