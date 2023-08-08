@@ -35,5 +35,8 @@
 		"vite": "^4.4.9",
 		"vite-imagetools": "^5.0.7"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"photoswipe": "^5.3.8"
+	}
 }
