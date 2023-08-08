@@ -201,6 +201,8 @@
 			place.
 		</p>
 
+		<hr />
+
 		<p>Posted 08 Aug 2023</p>
 	</div>
 </main>
