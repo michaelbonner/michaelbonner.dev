@@ -69,10 +69,10 @@
 
 <Seo title="Ellie" description="Some of my favorite memories with Ellie" />
 
-<main class="grid gap-8 container mx-auto px-8 py-12">
+<main class="grid gap-8 container mx-auto px-8 pb-12">
 	<div class="prose dark:prose-invert prose-lg mt-12 max-w-2xl">
 		<figure>
-			<img src={ellieMain} alt="Ellie" />
+			<img alt="Ellie" class="rounded-xl shadow-lg max-w-[600px]" src={ellieMain} />
 			<figcaption>
 				<p>Ellie - 9/10/10 - 1/30/23</p>
 			</figcaption>
@@ -85,17 +85,22 @@
 			myself enough to write it. Every time I even think about writing it my eyes hurt and my chest
 			shakes. I miss you so much Ellie. But I want to write things down so I don't forget. The pain
 			tells me your still with me. I don't want to forget you. I've come to realize that the only
-			way to heal is to forget parts of you, so I'm refusing to heal. Despite my best efforts I'm
-			forgetting the way you smell, the way you'd nuzzle under the covers with me, the way you'd
-			dance in circles when I came home, how you would get so excited when I'd get your leash out,
-			the calm I would feel when you cuddled me, the way you'd look at me when I'd talk to you, the
-			way you played king of the bed with me like you knew how the game worked, the way you loved
-			everyone around you, the times you saved me from myself, the way you'd run right behind me
-			when we went biking, the way you'd run up to me when I'd call your name, the way you'd comfort
-			me when I was sad, the way you'd make me laugh, the way you'd make me smile, how patient you
-			were with kids hanging on you, how you'd lay your head anywhere you could find a spot on me,
-			the way you'd lay on your back and hold your toy above your head while you chewed on it, how
-			patient you were with puppies, and how you loved Kellie.
+			way to heal is to forget parts of you, so I'm refusing to heal.
+		</p>
+
+		<p>
+			Despite my best efforts I'm forgetting the way you smell, the way you'd nuzzle under the
+			covers with me, the way your eyes would pierce right through me, the way you'd dance in
+			circles when I came home, how you would get so excited when I'd get your leash out, the calm I
+			would feel when you cuddled me, the way you'd look at me when I'd talk to you, the way you
+			played king of the bed with me like you knew how the game worked, the way you loved everyone
+			around you, the times you saved me from myself, the way you'd run right behind me when we went
+			biking, the way you'd run up to me when I'd call your name, the way you'd tuck when you were
+			embarrassed, the way you would comfort me when I was sad, the way you'd make me laugh, the way
+			you'd make me smile, how patient you were with kids hanging on you, how you'd lay your head
+			anywhere you could find a spot on me, the way you'd hide when I watched sports because the
+			stress was just too much, the way you'd lay on your back and hold your toy above your head
+			while you chewed on it, how patient you were with puppies, and how you loved Kellie.
 		</p>
 
 		<hr />
