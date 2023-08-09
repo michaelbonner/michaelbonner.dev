@@ -25,7 +25,6 @@
 	import adult6 from '$lib/images/ellie/adult/D4DBF50F-C47D-4E01-BC2C-A795E730B9AC.webp';
 	import adult7 from '$lib/images/ellie/adult/DSC_1718.webp';
 	import adult8 from '$lib/images/ellie/adult/DSC_1740.webp';
-	import adult9 from '$lib/images/ellie/adult/IMG_0036.webp';
 	import adult10 from '$lib/images/ellie/adult/IMG_0041.webp';
 	import adult11 from '$lib/images/ellie/adult/IMG_0054.webp';
 	import adult12 from '$lib/images/ellie/adult/IMG_0058.webp';
@@ -85,6 +84,7 @@
 	import adult66 from '$lib/images/ellie/adult/IMG_9631.webp';
 	import adult67 from '$lib/images/ellie/adult/celebration-of-life--13.webp';
 	import adult68 from '$lib/images/ellie/adult/celebration-of-life--5.webp';
+	import adult69 from '$lib/images/ellie/adult/IMG_2021.webp';
 
 	const puppyImages = [
 		{
@@ -140,6 +140,12 @@
 	const adultImages = [
 		{
 			altText: 'Ellie as an adult',
+			width: 3024,
+			height: 4032,
+			url: adult69
+		},
+		{
+			altText: 'Ellie as an adult',
 			width: 1536,
 			height: 2731,
 			url: adult1
@@ -185,12 +191,6 @@
 			url: adult8,
 			width: 1280,
 			height: 847
-		},
-		{
-			altText: 'Ellie as an adult',
-			url: adult9,
-			width: 1536,
-			height: 2049
 		},
 		{
 			altText: 'Ellie as an adult',
@@ -549,10 +549,21 @@
 	];
 </script>
 
-<Seo title="Ellie" description="Some of my favorite memories with Ellie" />
+<Seo
+	title="Ellie"
+	description="Some of my favorite memories with Ellie"
+	ogImage="https://michaelbonner.dev/images/ellie-og-image.jpg"
+/>
 
-<main class="grid gap-8 container mx-auto px-8 pb-12">
+<main class="grid gap-8 container mx-auto px-8 py-12">
 	<div class="prose dark:prose-invert prose-lg mt-12 max-w-2xl">
+		<p>
+			<strong>Warning</strong>: This post is about my dog Ellie. She passed away on January 30th,
+			2023. I'm writing this to help me remember her. If you don't want to read about my feelings
+			about a dog
+			<a href="http://make-everything-ok.com/">you can leave now</a>.
+		</p>
+		<hr />
 		<figure>
 			<img alt="Ellie" class="rounded-xl shadow-lg max-w-[600px]" src={ellieMain} />
 			<figcaption>
@@ -672,8 +683,8 @@
 			with your back legs hanging straight down. You had no idea how to swim, but you figured it
 			out. For the first year of swimming that's how you'd swim. Big dane paws splashing water
 			everywhere. It was so fucking cute. You loved the water so much. Anytime we were near water
-			you were in it. I remember you running down the trail, then down to the river, then back to
-			the trail to catch up with me, and then back down to the river.
+			you were in it. I remember walking along the river and you running down the trail, then down
+			to the river, then back to the trail to catch up with me, and then back down to the river.
 		</p>
 
 		<p>
@@ -707,14 +718,15 @@
 
 		<p>
 			You became my perfect companion. You came to work with me sometimes, you came bikepacking with
-			me (and destroyed your paws 😬).
+			me (and destroyed your paws 😬). You came skiing with me. You came to bars. You were the
+			perfect wing woman.
 		</p>
 
 		<p>
 			As the years went on your body started breaking down, but you never complained. You were
 			always endless optimism. Even when it hurt too much to run you still seemed to smile. You were
-			so emotive with your face. You could tell me anything with your eyes. I always knew what you
-			were thinking.
+			so expressive with your face. You could tell me anything with your eyes. I always knew what
+			you were thinking.
 		</p>
 
 		<div class="max-h-[80vh] overflow-auto">
@@ -722,19 +734,20 @@
 		</div>
 
 		<p>
-			I told you that you would need to tell me when you were ready. Thank you so much for telling
-			me. When your back legs quit working for the last few days and I helped you go to the bathroom
-			you found a spot, dug your paw, and tried to hide. That broke my heart because I knew what you
-			were doing. Then you looked at me with those big eyes and told me you were ready. I don't know
-			how you did it, but I knew that's what you were saying. I've never felt so much pain in my
-			life. I knew I had to let you go.
+			I told you that you would need to tell me when you were ready. I will forever be grateful that
+			you told me so clearly. When your back legs quit working for the last few days and I helped
+			you go to the bathroom. One time you found a spot, dug your paw, and tried to hide. That broke
+			my heart because I knew what you were doing. Then you looked at me with those big eyes and
+			told me you were ready. I don't know how you did it, but I knew that's what you were saying.
+			I've never felt so much pain in my life. I knew I had to let you go.
 		</p>
 
 		<p>
-			We celebrated you the next day. You were depressed and slow that morning. But then your
-			friends came over to give you treats and say goodbye. You perked up when they came around. One
-			of your final acts was to put on a happy face for your friends. We sat around and told stories
-			about you. We laughed and cried. You were so loved Ellie.
+			We celebrated you the next day. You were depressed and slow that morning but then your friends
+			came over to give you treats and say goodbye. You perked up when they came around. One of your
+			final acts was to put on a happy face for your friends. We sat around and told stories about
+			you. We let you eat everything you've wanted to your whole life. We let you drink Ellie's
+			Aloha Ale™️. We laughed and cried. You were so loved Ellie.
 		</p>
 
 		<p>
