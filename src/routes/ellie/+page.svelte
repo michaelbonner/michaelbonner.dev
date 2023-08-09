@@ -645,10 +645,12 @@
 				class="aspect-w-16 aspect-h-9 rounded-lg w-full p-0"
 				controls
 				controlsList="nodownload"
+				playsinline
 				poster="/videos/ellie/slide-with-makaylee.webp"
 			>
 				<source src="/videos/ellie/slide-with-makaylee.webm" type="video/webm" />
 				<source src="/videos/ellie/slide-with-makaylee.ogv" type="video/ogg" />
+				<source src="/videos/ellie/slide-with-makaylee.mp4" type="video/mp4" />
 
 				<track kind="captions" src="/videos/ellie/slide-with-makaylee.vtt" label="Captions" />
 			</video>
@@ -659,10 +661,12 @@
 				class="aspect-w-16 aspect-h-9 rounded-lg w-full p-0"
 				controls
 				controlsList="nodownload"
+				playsinline
 				poster="/videos/ellie/slide-with-nieces-and-nephews.webp"
 			>
 				<source src="/videos/ellie/slide-with-nieces-and-nephews.webm" type="video/webm" />
 				<source src="/videos/ellie/slide-with-nieces-and-nephews.ogv" type="video/ogg" />
+				<source src="/videos/ellie/slide-with-nieces-and-nephews.mp4" type="video/mp4" />
 
 				<track
 					kind="captions"
