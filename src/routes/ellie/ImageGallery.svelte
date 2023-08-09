@@ -34,7 +34,7 @@
 			target="_blank"
 			rel="noreferrer"
 		>
-			<img alt={image.altText} class="my-0 py-0" src={image.url} />
+			<img alt={image.altText} class="my-0 py-0 rounded-md" src={image.url} />
 		</a>
 	{/each}
 </div>
