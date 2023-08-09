@@ -740,9 +740,9 @@
 			I told you that you would need to tell me when you were ready. I will forever be grateful that
 			you told me so clearly. When your back legs quit working for the last few days and I helped
 			you go to the bathroom. One time you found a spot, dug your paw, and tried to hide. That broke
-			my heart because I knew what you were doing. Then you looked at me with those big eyes and
-			told me you were ready. I don't know how you did it, but I knew that's what you were saying.
-			I've never felt so much pain in my life. I knew I had to let you go.
+			me because I knew what you were doing. Then you looked at me with those big eyes and told me
+			you were ready. I don't know how you did it, but I knew that's what you were saying. I've
+			never felt so much pain in my life. I knew I had to let you go.
 		</p>
 
 		<p>
