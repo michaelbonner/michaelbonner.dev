@@ -564,7 +564,7 @@
 		</p>
 		<hr />
 		<figure>
-			<img alt="Ellie" class="rounded-xl shadow-lg max-w-[600px]" src={ellieMain} />
+			<img alt="Ellie" class="rounded-xl shadow-lg lg:max-w-[600px]" src={ellieMain} />
 			<figcaption>
 				<p>Ellie - 9/10/10 - 1/30/23</p>
 			</figcaption>
