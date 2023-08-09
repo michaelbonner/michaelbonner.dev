@@ -2,8 +2,9 @@
 	import Seo from '../../components/Seo.svelte';
 	import ImageGallery from './ImageGallery.svelte';
 
-	// main image
+	// images
 	import ellieMain from '$lib/images/ellie/main.webp';
+	import goodbye from '$lib/images/ellie/goodbye.webp';
 
 	// puppy images
 	import puppy1 from '$lib/images/ellie/puppy/1.webp';
@@ -14,6 +15,76 @@
 	import puppy6 from '$lib/images/ellie/puppy/6.webp';
 	import puppy7 from '$lib/images/ellie/puppy/7.webp';
 	import puppy8 from '$lib/images/ellie/puppy/8.webp';
+
+	// adult images
+	import adult1 from '$lib/images/ellie/adult/20211030_171419.webp';
+	import adult2 from '$lib/images/ellie/adult/52E95267-89ED-44DA-BA92-332DDB4D1511.webp';
+	import adult3 from '$lib/images/ellie/adult/9D9F1399-339E-4F41-A899-261063B3D76F.webp';
+	import adult4 from '$lib/images/ellie/adult/C3A18D90-546C-49BF-B225-89744FB7A277.webp';
+	import adult5 from '$lib/images/ellie/adult/C8FEE226-B465-4C47-BD5F-7FD57CE4C645.webp';
+	import adult6 from '$lib/images/ellie/adult/D4DBF50F-C47D-4E01-BC2C-A795E730B9AC.webp';
+	import adult7 from '$lib/images/ellie/adult/DSC_1718.webp';
+	import adult8 from '$lib/images/ellie/adult/DSC_1740.webp';
+	import adult9 from '$lib/images/ellie/adult/IMG_0036.webp';
+	import adult10 from '$lib/images/ellie/adult/IMG_0041.webp';
+	import adult11 from '$lib/images/ellie/adult/IMG_0054.webp';
+	import adult12 from '$lib/images/ellie/adult/IMG_0058.webp';
+	import adult13 from '$lib/images/ellie/adult/IMG_0061.webp';
+	import adult14 from '$lib/images/ellie/adult/IMG_0067.webp';
+	import adult15 from '$lib/images/ellie/adult/IMG_0081.webp';
+	import adult16 from '$lib/images/ellie/adult/IMG_0083.webp';
+	import adult17 from '$lib/images/ellie/adult/IMG_0138.webp';
+	import adult18 from '$lib/images/ellie/adult/IMG_0143.webp';
+	import adult19 from '$lib/images/ellie/adult/IMG_0157.webp';
+	import adult20 from '$lib/images/ellie/adult/IMG_0189.webp';
+	import adult21 from '$lib/images/ellie/adult/IMG_0200.webp';
+	import adult22 from '$lib/images/ellie/adult/IMG_0201.webp';
+	import adult23 from '$lib/images/ellie/adult/IMG_0211.webp';
+	import adult24 from '$lib/images/ellie/adult/IMG_0218.webp';
+	import adult25 from '$lib/images/ellie/adult/IMG_0291.webp';
+	import adult26 from '$lib/images/ellie/adult/IMG_0428.webp';
+	import adult27 from '$lib/images/ellie/adult/IMG_0454.webp';
+	import adult28 from '$lib/images/ellie/adult/IMG_0461.webp';
+	import adult29 from '$lib/images/ellie/adult/IMG_0468.webp';
+	import adult30 from '$lib/images/ellie/adult/IMG_0518.webp';
+	import adult31 from '$lib/images/ellie/adult/IMG_0547.webp';
+	import adult32 from '$lib/images/ellie/adult/IMG_0790.webp';
+	import adult33 from '$lib/images/ellie/adult/IMG_0828.webp';
+	import adult34 from '$lib/images/ellie/adult/IMG_0844.webp';
+	import adult35 from '$lib/images/ellie/adult/IMG_0901.webp';
+	import adult36 from '$lib/images/ellie/adult/IMG_1466.webp';
+	import adult37 from '$lib/images/ellie/adult/IMG_1567.webp';
+	import adult38 from '$lib/images/ellie/adult/IMG_1570.webp';
+	import adult39 from '$lib/images/ellie/adult/IMG_1653.webp';
+	import adult40 from '$lib/images/ellie/adult/IMG_1983.webp';
+	import adult41 from '$lib/images/ellie/adult/IMG_2900.webp';
+	import adult42 from '$lib/images/ellie/adult/IMG_3718.webp';
+	import adult43 from '$lib/images/ellie/adult/IMG_3992.webp';
+	import adult44 from '$lib/images/ellie/adult/IMG_4904.webp';
+	import adult45 from '$lib/images/ellie/adult/IMG_4920.webp';
+	import adult46 from '$lib/images/ellie/adult/IMG_4976.webp';
+	import adult47 from '$lib/images/ellie/adult/IMG_5279.webp';
+	import adult48 from '$lib/images/ellie/adult/IMG_5859.webp';
+	import adult49 from '$lib/images/ellie/adult/IMG_6186.webp';
+	import adult50 from '$lib/images/ellie/adult/IMG_6410.webp';
+	import adult51 from '$lib/images/ellie/adult/IMG_6434.webp';
+	import adult52 from '$lib/images/ellie/adult/IMG_6436.webp';
+	import adult53 from '$lib/images/ellie/adult/IMG_6625.webp';
+	import adult54 from '$lib/images/ellie/adult/IMG_6646.webp';
+	import adult55 from '$lib/images/ellie/adult/IMG_6663.webp';
+	import adult56 from '$lib/images/ellie/adult/IMG_6695.webp';
+	import adult57 from '$lib/images/ellie/adult/IMG_6962.webp';
+	import adult58 from '$lib/images/ellie/adult/IMG_7114.webp';
+	import adult59 from '$lib/images/ellie/adult/IMG_7127.webp';
+	import adult60 from '$lib/images/ellie/adult/IMG_7145.webp';
+	import adult61 from '$lib/images/ellie/adult/IMG_8636.webp';
+	import adult62 from '$lib/images/ellie/adult/IMG_9146.webp';
+	import adult63 from '$lib/images/ellie/adult/IMG_9391.webp';
+	import adult64 from '$lib/images/ellie/adult/IMG_9574.webp';
+	import adult65 from '$lib/images/ellie/adult/IMG_9613.webp';
+	import adult66 from '$lib/images/ellie/adult/IMG_9631.webp';
+	import adult67 from '$lib/images/ellie/adult/celebration-of-life--13.webp';
+	import adult68 from '$lib/images/ellie/adult/celebration-of-life--5.webp';
 
 	const puppyImages = [
 		{
@@ -60,9 +131,420 @@
 		},
 		{
 			altText: 'Ellie as a puppy',
-			height: 1936,
+			height: 1536,
 			url: puppy8,
-			width: 2592
+			width: 2057
+		}
+	];
+
+	const adultImages = [
+		{
+			altText: 'Ellie as an adult',
+			width: 1536,
+			height: 2731,
+			url: adult1
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult2,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult3,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult4,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult5,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult6,
+			width: 1440,
+			height: 1526
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult7,
+			width: 1280,
+			height: 847
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult8,
+			width: 1280,
+			height: 847
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult9,
+			width: 1536,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult10,
+			width: 2305,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult11,
+			width: 2049,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult12,
+			width: 2305,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult13,
+			width: 2305,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult14,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult15,
+			width: 1536,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult16,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult17,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult18,
+			width: 2049,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult19,
+			width: 2049,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult20,
+			width: 2305,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult21,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult22,
+			width: 2049,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult23,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult24,
+			width: 1539,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult25,
+			width: 1539,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult26,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult27,
+			width: 2049,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult28,
+			width: 1536,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult29,
+			width: 1536,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult30,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult31,
+			width: 1536,
+			height: 2057
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult32,
+			width: 2049,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult33,
+			width: 1536,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult34,
+			width: 960,
+			height: 1280
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult35,
+			width: 1536,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult36,
+			width: 1536,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult37,
+			width: 1536,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult38,
+			width: 1536,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult39,
+			width: 1536,
+			height: 2244
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult40,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult41,
+			width: 1536,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult42,
+			width: 1536,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult43,
+			width: 1536,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult44,
+			width: 1532,
+			height: 2038
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult45,
+			width: 2049,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult46,
+			width: 1536,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult47,
+			width: 1536,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult48,
+			width: 1536,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult49,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult50,
+			width: 2049,
+			height: 1536
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult51,
+			width: 2049,
+			height: 1536
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult52,
+			width: 2049,
+			height: 1536
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult53,
+			width: 1536,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult54,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult55,
+			width: 2049,
+			height: 1536
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult56,
+			width: 1536,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult57,
+			width: 2049,
+			height: 1536
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult58,
+			width: 1536,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult59,
+			width: 1536,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult60,
+			width: 1536,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult61,
+			width: 1536,
+			height: 2048
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult62,
+			width: 828,
+			height: 458
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult63,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult64,
+			width: 2049,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult65,
+			width: 1537,
+			height: 2049
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult66,
+			width: 2049,
+			height: 1537
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult67,
+			width: 2049,
+			height: 1639
+		},
+		{
+			altText: 'Ellie as an adult',
+			url: adult68,
+			width: 2048,
+			height: 1638
 		}
 	];
 </script>
@@ -83,24 +565,24 @@
 		<p>
 			I'm sorry it's taken me a while to write this. Since you passed I haven't been able to compose
 			myself enough to write it. Every time I even think about writing it my eyes hurt and my chest
-			shakes. I miss you so much Ellie. But I want to write things down so I don't forget. The pain
-			tells me your still with me. I don't want to forget you. I've come to realize that the only
-			way to heal is to forget parts of you, so I'm refusing to heal.
+			shakes. I miss you so much Ellie. But I want to write things down so I don't forget. I don't
+			want to forget you.
 		</p>
 
 		<p>
 			Despite my best efforts I'm forgetting the way you smell, the way you'd nuzzle under the
-			covers with me, the way your eyes would pierce right through me, the way you'd dance in
-			circles when I came home, how you would get so excited when I'd get your leash out, the calm I
-			would feel when you cuddled me, the way you'd look at me when I'd talk to you, the way you
-			played king of the bed with me like you knew how the game worked, the way you loved everyone
-			around you, the times you saved me from myself, the way you'd run right behind me when we went
-			biking, the way you'd run up to me when I'd call your name, the way you'd tuck when you were
-			embarrassed, the way you would comfort me when I was sad, the way you'd make me laugh, the way
-			you'd make me smile, how patient you were with kids hanging on you, how you'd lay your head
-			anywhere you could find a spot on me, the way you'd hide when I watched sports because the
-			stress was just too much, the way you'd lay on your back and hold your toy above your head
-			while you chewed on it, how patient you were with puppies, and how you loved Kellie.
+			covers with me, the way your eyes would pierce right through me, your endless curiosity, the
+			way you'd dance in circles when I came home, how you would get so excited when I'd get your
+			leash out, the calm I would feel when you cuddled me, the way you'd look at me when I'd talk
+			to you, the way you played king of the bed with me like you knew how the game worked, the way
+			you loved everyone around you, the times you saved me from myself, the way you'd run right
+			behind me when we went biking, the way you'd run up to me when I'd call your name, the way
+			you'd tuck when you were embarrassed, the way you would comfort me when I was sad, the way
+			you'd make me laugh, the way you'd make me smile, how patient you were with kids hanging on
+			you, how you'd lay your head anywhere you could find a spot on me, the way you'd hide when I
+			watched sports because the stress was just too much, the way you'd lay on your back and hold
+			your toy above your head while you chewed on it, how patient you were with puppies, how proud
+			you'd get when you caught the frisbee before it hit the ground, and how you loved Kellie.
 		</p>
 
 		<hr />
@@ -115,8 +597,8 @@
 			felt when Chelsie and Makaylee brought you to my work one day. I was irritated, but you were
 			so dang cute. To be honest, it wasn't love at first sight; you peed under a shelf at my work.
 			But I saw how you lit up Makaylee's face, and there was no way I could say no. They told us
-			that you were ~5 months old, that you were a lab/dane mix, and that your previous owners gave
-			you up because you had too much energy. Holy shit did they miss out!
+			that you were ~5 months old, that you were a lab/dane mix, and that your previous owners took
+			you to the humane society because you had too much energy. Holy shit did they miss out!
 		</p>
 
 		<p>
@@ -136,13 +618,12 @@
 			work for an hour or two, and you were being so cute and playful. We were wrestling in the
 			living room and then I wanted to take a break so I leaned back against the couch. You came
 			over with a big smile on your face and you put your face to my cheek; which you did all the
-			time. It was like you couldn't get close enough to me. I leaned into the cuddle and pet you.
-			Then I noticed my leg was getting warm. I looked down and you were peeing on me! I was so
-			shocked I didn't know what to do. I grabbed your collar and pulled you outside. We sat there
-			for at least half an hour until you finally peed. I was so mad at you, but I couldn't stay mad
-			at you. You were so cute and you were just a puppy. I knew you didn't know any better. You
-			probably thought "pee in front of Mike, get a treat. Pee on Mike get a lifetime supply of
-			treats!"
+			time. It was like you couldn't get close enough to me. I leaned into the cuddle and hugged
+			you. Then I noticed my leg was getting warm. I looked down and you were peeing on my thigh! I
+			was so shocked I didn't know what to do. We sat outside there for at least half an hour until
+			you finally peed so I could reward you. I was so mad at you, but I couldn't stay mad at you.
+			You were so cute and you were just a puppy. I knew you didn't know any better. You probably
+			thought "pee in front of Mike, get a treat. Pee on Mike get a lifetime supply of treats!"
 		</p>
 
 		<ImageGallery galleryID="ellie-puppy" images={puppyImages} />
@@ -154,27 +635,32 @@
 				controlsList="nodownload"
 				poster="/videos/ellie/slide-with-makaylee.webp"
 			>
-				<!-- <source src="/videos/ellie/slide-with-makaylee.mp4" type="video/mp4" /> -->
+				<source src="/videos/ellie/slide-with-makaylee.mp4" type="video/mp4" />
 				<source src="/videos/ellie/slide-with-makaylee.webm" type="video/webm" />
 				<source src="/videos/ellie/slide-with-makaylee.ogv" type="video/ogg" />
 
 				<track kind="captions" src="/videos/ellie/slide-with-makaylee.vtt" label="Captions" />
 			</video>
-			<figcaption>Ellie loved going down the slide</figcaption>
 		</figure>
 
-		<iframe
-			class="aspect-w-16 aspect-h-9 rounded-lg w-full p-0"
-			title="Ellie slide with nieces and nephews"
-			src="https://www.facebook.com/plugins/video.php?height=315&href=https%3A%2F%2Fwww.facebook.com%2Fmichaelwbonner%2Fvideos%2F10200477125504234%2F&show_text=false&width=560&t=0"
-			width="560"
-			height="315"
-			style="border:none;overflow:hidden"
-			scrolling="no"
-			frameborder="0"
-			allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-			allowFullScreen
-		/>
+		<figure>
+			<video
+				class="aspect-w-16 aspect-h-9 rounded-lg w-full p-0"
+				controls
+				controlsList="nodownload"
+				poster="/videos/ellie/slide-with-nieces-and-nephews.webp"
+			>
+				<source src="/videos/ellie/slide-with-nieces-and-nephews.mp4" type="video/mp4" />
+				<source src="/videos/ellie/slide-with-nieces-and-nephews.webm" type="video/webm" />
+				<source src="/videos/ellie/slide-with-nieces-and-nephews.ogv" type="video/ogg" />
+
+				<track
+					kind="captions"
+					src="/videos/ellie/slide-with-nieces-and-nephews.vtt"
+					label="Captions"
+				/>
+			</video>
+		</figure>
 
 		<p>
 			I learned I could take you almost anywhere, so I did. We went on so many adventures together.
@@ -205,6 +691,71 @@
 			lake near us. It was you! Just out for a morning lap in the lake. You were in your happy
 			place.
 		</p>
+
+		<p>
+			Throughout all of the stressful times in my life you were there, just as happy as always. You
+			never responded to my stress with fear, always with love. You would do anything to make me
+			happy. You were the best dog I could have ever asked for.
+		</p>
+
+		<p>
+			When I got a divorce from my ex-wife, we had to decide who got what. You came up in the
+			discussion and I immediately said you were mine, non-negotiable. She obviously wanted you to
+			go with her and she put up a fight, but at the end of the day she knew you belonged with me.
+			You and I were inseparable.
+		</p>
+
+		<p>
+			You became my perfect companion. You came to work with me sometimes, you came bikepacking with
+			me (and destroyed your paws 😬).
+		</p>
+
+		<p>
+			As the years went on your body started breaking down, but you never complained. You were
+			always endless optimism. Even when it hurt too much to run you still seemed to smile. You were
+			so emotive with your face. You could tell me anything with your eyes. I always knew what you
+			were thinking.
+		</p>
+
+		<div class="max-h-[80vh] overflow-auto">
+			<ImageGallery galleryID="ellie-adult" images={adultImages} />
+		</div>
+
+		<p>
+			I told you that you would need to tell me when you were ready. Thank you so much for telling
+			me. When your back legs quit working for the last few days and I helped you go to the bathroom
+			you found a spot, dug your paw, and tried to hide. That broke my heart because I knew what you
+			were doing. Then you looked at me with those big eyes and told me you were ready. I don't know
+			how you did it, but I knew that's what you were saying. I've never felt so much pain in my
+			life. I knew I had to let you go.
+		</p>
+
+		<p>
+			We celebrated you the next day. You were depressed and slow that morning. But then your
+			friends came over to give you treats and say goodbye. You perked up when they came around. One
+			of your final acts was to put on a happy face for your friends. We sat around and told stories
+			about you. We laughed and cried. You were so loved Ellie.
+		</p>
+
+		<p>
+			After you passed I felt the most intense pain I've ever felt. I've never cried so much in my
+			life. Kellie and I took time off of work and went hiking in the snow. Being there reminded me
+			of all the amazing times we had together in the mountains. I knew we did the right thing, but
+			it still hurt. It took me 2 months before I went a day without crying. I still cry when I
+			think about you. I miss you so much Ellie. I miss your big brown eyes. I miss your big heart.
+			I miss you so much.
+		</p>
+
+		<p>
+			You saved me Ellie. I had plenty of dark, stressful moments in my life with you, but you
+			always saved me. All you had to to was look at me with those big brown eyes and I knew
+			everything was going to be okay. You were my rock. You were my best friend. After all the
+			times you saved me, I'm sorry I couldn't save you.
+		</p>
+
+		<figure>
+			<img alt="Ellie swimming off to get a ball" class="rounded-xl shadow-lg" src={goodbye} />
+		</figure>
 
 		<hr />
 
