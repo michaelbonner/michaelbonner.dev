@@ -560,8 +560,7 @@
 		<p>
 			<strong>Warning</strong>: This post is about my dog Ellie. She passed away on January 30th,
 			2023. I'm writing this to help me remember her. If you don't want to read about my feelings
-			about a dog
-			<a href="http://make-everything-ok.com/">you can leave now</a>.
+			about a dog <a href="http://www.staggeringbeauty.com/">you can leave now</a>.
 		</p>
 		<hr />
 		<figure>
@@ -595,6 +594,8 @@
 			your toy above your head while you chewed on it, how patient you were with puppies, how proud
 			you'd get when you caught the frisbee before it hit the ground, and how you loved Kellie.
 		</p>
+
+		<p>I'm realizing that only way to heal is to forget parts of you. And that fucking sucks.</p>
 
 		<hr />
 
