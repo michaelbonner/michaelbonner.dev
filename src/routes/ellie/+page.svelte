@@ -694,16 +694,16 @@
 			One of my favorite memories with you was at Bear Lake with some friends. We had set up camp
 			for the night and were having a few drinks on the beach. You wanted to play with a stick and
 			refused to take no for an answer. You probably found 50 sticks by the end of the night. When
-			one person said no you'd just go to the next person. Then the sun went down and you kept going
-			at it. You even found an 8' 4x4 fence post and dragged that over. Water meant play for you. We
-			sat around the camp fire that night and you kept trying to pull out sticks from the fire. It
-			was like you were saying, "Those are perfectly good playing sticks. Why are you trying to burn
-			them?" When it was time to sleep you got in the tent and passed out like you always did after
-			a long day of playing. The next morning we woke up slow and made breakfast on the camp fire.
-			After a few minutes I couldn't find you, which was odd because you always stayed right by me
-			when we were camping. After a couple minutes looking for you I noticed something out in the
-			lake near us. It was you! Just out for a morning lap in the lake. You were in your happy
-			place.
+			one person said "no" you'd just go to the next person. Then the sun went down and you kept
+			going at it. You even found an 8' 4x4 fence post and dragged that over. Water meant play for
+			you. We sat around the camp fire that night and you kept trying to pull out sticks from the
+			fire. It was like you were saying, "Those are perfectly good playing sticks. Why are you
+			trying to burn them?" When it was time to sleep you got in the tent and passed out like you
+			always did after a long day of playing. The next morning we woke up slow and made breakfast on
+			the camp fire. After a few minutes I couldn't find you, which was odd because you always
+			stayed right by me when we were camping. After a couple minutes looking for you I noticed
+			something out in the lake near us. It was you! Just out for a morning lap in the lake. You
+			were in your happy place.
 		</p>
 
 		<p>
