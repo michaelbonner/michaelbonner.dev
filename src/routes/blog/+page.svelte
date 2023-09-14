@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Seo from '../../components/Seo.svelte';
 	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.webp';
+	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.webp';
 	import chromeBasecampUiExtension from '$lib/images/chrome-basecamp-ui-extension.webp';
 	import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.webp';
 	import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.webp';
@@ -20,6 +21,31 @@
 
 		<div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+				<a class="flex-shrink-0 leading-[0]" href="/blog/github-repositories-viewer-app">
+					<img
+						class="h-48 w-full object-cover"
+						src={githubRepositoriesViewer}
+						alt="Github Repository Collaborators Viewer"
+					/>
+				</a>
+				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
+					<a href="/blog/github-repositories-viewer-app" class="block mt-2">
+						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
+							Github Repository Collaborators Viewer
+						</p>
+						<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
+							Check out the new Git Branch Name Raycast Extension I made
+						</p>
+					</a>
+					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-200">
+						<time dateTime="2023-09-147T16:00:00+00:00">2023-09-14</time>
+						<span aria-hidden="true">&middot;</span>
+						<span>2 minute read</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/git-branch-name-raycast-extension">
 					<img
 						class="h-48 w-full object-cover"
@@ -37,7 +63,7 @@
 						</p>
 					</a>
 					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-200">
-						<time dateTime="2023-01-017T16:00:00+00:00">2023-01-17</time>
+						<time dateTime="2023-01-17T12:58:46.469Z">2023-01-17</time>
 						<span aria-hidden="true">&middot;</span>
 						<span>2 minute read</span>
 					</div>

@@ -1,0 +1,66 @@
+<script>
+	import A from '../../../components/A.svelte';
+	import Seo from '../../../components/Seo.svelte';
+	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.webp';
+</script>
+
+<Seo
+	description="I made a little app to help me keep track of who has access to what GitHub repository"
+	ogImage={githubRepositoriesViewer}
+	ogType="article"
+	title="GitHub Repository Collaborators Viewer | Michael Bonner"
+/>
+
+<svelte:head>
+	<meta property="article:published_time" content="2022-09-14T22:58:46.469Z" />
+	<meta name="publish_date" property="og:publish_date" content="2022-09-14T22:58:46.469Z" />
+</svelte:head>
+
+<main class="container mx-auto px-8 py-12 flex items-center">
+	<div class="w-full max-w-3xl prose dark:prose-invert">
+		<div class="pt-8">
+			<div class="lg:pt-24">
+				<div>
+					<h1 class="text-4xl tracking-wider leading-[1.3em] lg:pr-8">
+						I made a little app to help me keep track of who has access to what GitHub repository
+					</h1>
+				</div>
+			</div>
+			<div class="lg:mt-24 text-lg max-w-5xl prose-img:my-0 prose-figcaption:text-center">
+				<h2>Do you have a bunch of repos and no easy way to know who's on them?</h2>
+				<p>
+					If you're like me, this is a problem. GitHub doesn't make it easy to see who has access to
+					what repository. I have a lot of repositories and I need to know who has access to what. I
+					made a little app to help me. Anyone can use it, just add your own access token from
+					GitHub and you can see all your repos and who is on them. This information never leaves
+					your computer, so you don't need to worry about me peeping.
+				</p>
+				<div class="flex flex-wrap gap-8">
+					<p>
+						<A href="https://github-repositories-viewer.bootpack.dev/"
+							>https://github-repositories-viewer.bootpack.dev/</A
+						>
+					</p>
+				</div>
+
+				<figure>
+					<img
+						alt="Screenshot of the GitHub Repositories Viewer app"
+						class="w-full m-0"
+						height="480"
+						src={githubRepositoriesViewer}
+						width="768"
+					/>
+					<figcaption>
+						Get your token from GitHub, then see all your repos and who is on them
+					</figcaption>
+				</figure>
+
+				<p class="mt-16">
+					Published:{` `}
+					<time dateTime="2023-01-17">14 Sep 2023</time>
+				</p>
+			</div>
+		</div>
+	</div>
+</main>
