@@ -564,7 +564,11 @@
 		</p>
 		<hr class="border-gray-300 dark:border-gray-700" />
 		<figure>
-			<img alt="Ellie" class="rounded-xl shadow-lg lg:max-w-[600px]" src={ellieMain} />
+			<img
+				alt="Ellie"
+				class="aspect-[600/800] rounded-xl shadow-lg w-full lg:max-w-[600px]"
+				src={ellieMain}
+			/>
 			<figcaption>
 				<p>Ellie - 9/10/10 - 1/30/23</p>
 			</figcaption>
