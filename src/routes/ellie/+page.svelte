@@ -562,7 +562,7 @@
 			2023. I'm writing this to help me remember her. If you don't want to read about my feelings
 			about a dog <a href="http://www.staggeringbeauty.com/">you can leave now</a>.
 		</p>
-		<hr />
+		<hr class="border-gray-300 dark:border-gray-700" />
 		<figure>
 			<img alt="Ellie" class="rounded-xl shadow-lg lg:max-w-[600px]" src={ellieMain} />
 			<figcaption>
@@ -598,7 +598,7 @@
 
 		<p>I'm realizing that only way to heal is to forget parts of you. And that fucking sucks.</p>
 
-		<hr />
+		<hr class="border-gray-300 dark:border-gray-700" />
 
 		<p>
 			I was 24 when I first met you, I was newly married, and I was so naive. My then wife
@@ -804,7 +804,7 @@
 			<img alt="Ellie swimming off to get a ball" class="rounded-xl shadow-lg" src={goodbye} />
 		</figure>
 
-		<hr />
+		<hr class="border-gray-300 dark:border-gray-700" />
 
 		<p>Posted 08 Aug 2023</p>
 	</div>
