@@ -583,16 +583,17 @@
 			Despite my best efforts I'm forgetting the way you smell, the way you'd nuzzle under the
 			covers with me, the way your eyes would pierce right through me, your endless curiosity, the
 			way you'd dance in circles when I came home, how you would get so excited when I'd get your
-			leash out, the calm I would feel when you cuddled me, the way you'd look at me when I'd talk
-			to you, the way you played king of the bed with me like you knew how the game worked, the way
-			you loved everyone around you, the times you saved me from myself, the way you'd run right
-			behind me when we went biking, the way you'd run up to me when I'd call your name, the way
-			you'd tuck when you were embarrassed, the way you would comfort me when I was sad, the way
-			you'd make me laugh, the way you'd make me smile, how patient you were with kids hanging on
-			you, how you'd lay your head anywhere you could find a spot on me, the way you'd hide when I
-			watched sports because the stress was just too much, the way you'd lay on your back and hold
-			your toy above your head while you chewed on it, how patient you were with puppies, how proud
-			you'd get when you caught the frisbee before it hit the ground, and how you loved Kellie.
+			leash out, the calm I would feel when you cuddled me, the way your ears felt when I played
+			with them, the way you'd look at me when I'd talk to you, the way you played king of the bed
+			with me like you knew how the game worked, the way you loved everyone around you, the times
+			you saved me from myself, the way you'd run right behind me when we went biking, the way you'd
+			run up to me when I'd call your name, the way you'd tuck when you were embarrassed, the way
+			you would comfort me when I was sad, the way you'd make me laugh, the way you'd make me smile,
+			how patient you were with kids hanging on you, how you'd lay your head anywhere you could find
+			a spot on me, the way you'd hide when I watched sports because the stress was just too much,
+			the way you'd lay on your back and hold your toy above your head while you chewed on it, how
+			patient you were with puppies, how proud you'd get when you caught the frisbee before it hit
+			the ground, and how you loved Kellie.
 		</p>
 
 		<p>I'm realizing that only way to heal is to forget parts of you. And that fucking sucks.</p>
@@ -606,11 +607,12 @@
 			both working full time, and going to school full time. We were busy, and we were stressed, and
 			we were young and dumb. Chelsie wanted a dog so bad but I didn't want to make a dog live in a
 			little apartment with the 3 of us. I thought it was cruel and unfair. So you can imagine how I
-			felt when Chelsie and Makaylee brought you to my work one day. I was irritated, but you were
-			so dang cute. To be honest, it wasn't love at first sight; you peed under a shelf at my work.
-			But I saw how you lit up Makaylee's face, and there was no way I could say no. They told us
-			that you were ~5 months old, that you were a lab/dane mix, and that your previous owners took
-			you to the humane society because you had too much energy. Holy shit did they miss out!
+			felt when Chelsie and Makaylee brought you to my work (Boater's Outlet) on February 11, 2011.
+			I was irritated, but you were so dang cute. To be honest, it wasn't love at first sight; you
+			peed under a shelf at my work. But I saw how you lit up Makaylee's face, and there was no way
+			I could say no. They told us that you were ~5 months old, that you were a lab/dane mix, and
+			that your previous owners took you to the humane society because you had too much energy. Holy
+			shit did they miss out!
 		</p>
 
 		<p>
@@ -637,45 +639,51 @@
 			You were so cute and you were just a puppy. I knew you didn't know any better. You probably
 			thought "pee in front of Mike, get a treat. Pee on Mike get a lifetime supply of treats!"
 		</p>
+	</div>
 
+	<div class="max-h-[80vh] overflow-auto max-w-7xl grid gap-2">
 		<ImageGallery galleryID="ellie-puppy" images={puppyImages} />
 
-		<figure>
-			<video
-				class="aspect-w-16 aspect-h-9 rounded-lg w-full p-0"
-				controls
-				controlsList="nodownload"
-				playsinline
-				poster="/videos/ellie/slide-with-makaylee.webp"
-			>
-				<source src="/videos/ellie/slide-with-makaylee.webm" type="video/webm" />
-				<source src="/videos/ellie/slide-with-makaylee.ogv" type="video/ogg" />
-				<source src="/videos/ellie/slide-with-makaylee.mp4" type="video/mp4" />
+		<div class="grid lg:grid-cols-2 gap-2">
+			<figure>
+				<video
+					class="aspect-w-16 aspect-h-9 rounded-lg w-full p-0"
+					controls
+					controlsList="nodownload"
+					playsinline
+					poster="/videos/ellie/slide-with-makaylee.webp"
+				>
+					<source src="/videos/ellie/slide-with-makaylee.webm" type="video/webm" />
+					<source src="/videos/ellie/slide-with-makaylee.ogv" type="video/ogg" />
+					<source src="/videos/ellie/slide-with-makaylee.mp4" type="video/mp4" />
 
-				<track kind="captions" src="/videos/ellie/slide-with-makaylee.vtt" label="Captions" />
-			</video>
-		</figure>
+					<track kind="captions" src="/videos/ellie/slide-with-makaylee.vtt" label="Captions" />
+				</video>
+			</figure>
 
-		<figure>
-			<video
-				class="aspect-w-16 aspect-h-9 rounded-lg w-full p-0"
-				controls
-				controlsList="nodownload"
-				playsinline
-				poster="/videos/ellie/slide-with-nieces-and-nephews.webp"
-			>
-				<source src="/videos/ellie/slide-with-nieces-and-nephews.webm" type="video/webm" />
-				<source src="/videos/ellie/slide-with-nieces-and-nephews.ogv" type="video/ogg" />
-				<source src="/videos/ellie/slide-with-nieces-and-nephews.mp4" type="video/mp4" />
+			<figure>
+				<video
+					class="aspect-w-16 aspect-h-9 rounded-lg w-full p-0"
+					controls
+					controlsList="nodownload"
+					playsinline
+					poster="/videos/ellie/slide-with-nieces-and-nephews.webp"
+				>
+					<source src="/videos/ellie/slide-with-nieces-and-nephews.webm" type="video/webm" />
+					<source src="/videos/ellie/slide-with-nieces-and-nephews.ogv" type="video/ogg" />
+					<source src="/videos/ellie/slide-with-nieces-and-nephews.mp4" type="video/mp4" />
 
-				<track
-					kind="captions"
-					src="/videos/ellie/slide-with-nieces-and-nephews.vtt"
-					label="Captions"
-				/>
-			</video>
-		</figure>
+					<track
+						kind="captions"
+						src="/videos/ellie/slide-with-nieces-and-nephews.vtt"
+						label="Captions"
+					/>
+				</video>
+			</figure>
+		</div>
+	</div>
 
+	<div class="prose dark:prose-invert prose-lg mt-12 max-w-2xl">
 		<p>
 			I learned I could take you almost anywhere, so I did. We went on so many adventures together.
 			You loved camping and hiking. That first summer we took you to Tanner Park to see if you would
@@ -713,7 +721,7 @@
 		</p>
 
 		<p>
-			When I got a divorce from my ex-wife, we had to decide who got what. You came up in the
+			When I got a divorce from my ex-wife, we had to divide up our assets. You came up in the
 			discussion and I immediately said you were mine, non-negotiable. She obviously wanted you to
 			go with her and she put up a fight, but at the end of the day she knew you belonged with me.
 			You and I were inseparable.
@@ -726,23 +734,46 @@
 		</p>
 
 		<p>
-			As the years went on your body started breaking down, but you never complained. You were
-			always endless optimism. Even when it hurt too much to run you still seemed to smile. You were
-			so expressive with your face. You could tell me anything with your eyes. I always knew what
-			you were thinking.
+			I remember the time your back knee ligament popped. I was still on crutches after breaking my
+			leg and took you to the school by our house. I used to throw the ball with my lacrosse stick
+			as far as I could and you'd one-hop it like it was no big deal. You were so fast. One time I
+			threw it and after a few strides you yelped like I'd never heard you yelp before. Even when
+			you were in that much pain you still went and got your ball, just on three legs. I had no idea
+			what had happened. I loaded you in the truck and took you to the vet. The first vet told me it
+			was arthritis, and that you'll just have to take pain meds the rest of your life. I wasn't
+			satisfied with that, so I took you to another vet. When we got back into the room the vet
+			immediately knew what was wrong. He said he saw you in the waiting room and knew you had torn
+			a major ligament (CCL) in your back leg. He said it was a common injury for labs. He said we
+			could do surgery, but it would be expensive and it would take a long time to recover. I never
+			considered anything besides surgery. You were only 5 years old. We did the surgery and you
+			healed well. After a few months you were able to run again. And almost immediately you popped
+			your other back leg's CCL. I knew exactly what had happened, and we got you in for the surgery
+			on the other leg. It took 9 months from your first tear to healthy again, those were some
+			rough times. You couldn't do stairs so I brought my mattress down to sleep with you on the
+			floor in the living room. In the end you were healthy, but never really the same physically.
+			You lost your jump, but you never lost your spirit.
 		</p>
 
-		<div class="max-h-[80vh] overflow-auto">
-			<ImageGallery galleryID="ellie-adult" images={adultImages} />
-		</div>
+		<p>
+			As the years went on your body started breaking down, but you never really complained. You
+			were always endless optimism. Even when it hurt too much to run you still seemed to smile. You
+			were so expressive with your face. You could tell me anything with your eyes. I always knew
+			what you were thinking.
+		</p>
+	</div>
 
+	<div class="max-h-[80vh] overflow-auto max-w-7xl">
+		<ImageGallery galleryID="ellie-adult" images={adultImages} />
+	</div>
+
+	<div class="prose dark:prose-invert prose-lg mt-12 max-w-2xl">
 		<p>
 			I told you that you would need to tell me when you were ready. I will forever be grateful that
-			you told me so clearly. When your back legs quit working for the last few days and I helped
-			you go to the bathroom. One time you found a spot, dug your paw, and tried to hide. That broke
-			me because I knew what you were doing. Then you looked at me with those big eyes and told me
-			you were ready. I don't know how you did it, but I knew that's what you were saying. I've
-			never felt so much pain in my life. I knew I had to let you go.
+			you told me so clearly. When your back legs quit working for the last few days, I helped you
+			go to the bathroom. One time you found a spot, dug your paw, and tried lay there and hide.
+			That broke me because I knew what you were doing. Then you looked at me with those big eyes
+			and told me you were ready. I don't know how you did it, but I knew that's what you were
+			saying. I've never felt so much pain in my life. I knew I had to let you go.
 		</p>
 
 		<p>
@@ -758,13 +789,13 @@
 			life. Kellie and I took time off of work and went hiking in the snow. Being there reminded me
 			of all the amazing times we had together in the mountains. I knew we did the right thing, but
 			it still hurt. It took me 2 months before I went a day without crying. I still cry when I
-			think about you. I miss you so much Ellie. I miss your big brown eyes. I miss your big heart.
-			I miss you so much.
+			think about you. I miss you so much Ellie. I miss your big brown eyes. I miss your giant
+			heart. I miss you so much.
 		</p>
 
 		<p>
 			You saved me Ellie. I had plenty of dark, stressful moments in my life with you, but you
-			always saved me. All you had to to was look at me with those big brown eyes and I knew
+			always saved me. All you had to do was look at me with those big brown eyes and I knew
 			everything was going to be okay. You were my rock. You were my best friend. After all the
 			times you saved me, I'm sorry I couldn't save you.
 		</p>
