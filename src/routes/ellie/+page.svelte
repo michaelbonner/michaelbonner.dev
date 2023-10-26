@@ -549,7 +549,7 @@
 />
 
 <main class="grid gap-8 container mx-auto px-8 py-12">
-	<div class="prose dark:prose-invert prose-lg mt-12 max-w-2xl mx-auto">
+	<div class="prose dark:prose-invert prose-xl mt-12 max-w-3xl mx-auto">
 		<p>
 			<strong>Warning</strong>: This post is about my dog Ellie. She passed away on January 30th,
 			2023. I'm writing this to help me remember her. If you don't want to read about my feelings
@@ -680,7 +680,7 @@
 		</div>
 	</div>
 
-	<div class="prose dark:prose-invert prose-lg mt-12 max-w-2xl mx-auto">
+	<div class="prose dark:prose-invert prose-xl mt-12 max-w-3xl mx-auto">
 		<p>
 			I learned I could take you almost anywhere, so I did. We went on so many adventures together.
 			You loved camping and hiking. That first summer we took you to Tanner Park to see if you would
@@ -763,7 +763,7 @@
 		<ImageGallery galleryID="ellie-adult" images={adultImages} />
 	</div>
 
-	<div class="prose dark:prose-invert prose-lg mt-12 max-w-2xl mx-auto">
+	<div class="prose dark:prose-invert prose-xl mt-12 max-w-3xl mx-auto">
 		<p>
 			I told you that you would need to tell me when you were ready. I will forever be grateful that
 			you told me so clearly. When your back legs quit working for the last few days, I helped you
