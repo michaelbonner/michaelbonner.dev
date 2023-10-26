@@ -35,7 +35,6 @@
 	import adult17 from '$lib/images/ellie/adult/IMG_0138.webp';
 	import adult18 from '$lib/images/ellie/adult/IMG_0143.webp';
 	import adult19 from '$lib/images/ellie/adult/IMG_0157.webp';
-	import adult20 from '$lib/images/ellie/adult/IMG_0189.webp';
 	import adult21 from '$lib/images/ellie/adult/IMG_0200.webp';
 	import adult22 from '$lib/images/ellie/adult/IMG_0201.webp';
 	import adult23 from '$lib/images/ellie/adult/IMG_0211.webp';
@@ -139,73 +138,73 @@
 
 	const adultImages = [
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie enjoying the sunshine',
 			width: 3024,
 			height: 4032,
 			url: adult69
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie in a tutu at goblin valley looking at Kellie',
 			width: 1536,
 			height: 2731,
 			url: adult1
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Happy Ellie with a stick',
 			url: adult2,
 			width: 1537,
 			height: 2049
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie mid shake',
 			url: adult3,
 			width: 1537,
 			height: 2049
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie up close',
 			url: adult4,
 			width: 1537,
 			height: 2049
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie face poking out of the covers',
 			url: adult5,
 			width: 1537,
 			height: 2049
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie with a graduation cap on',
 			url: adult6,
 			width: 1440,
 			height: 1526
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie in the snow with a stick',
 			url: adult7,
 			width: 1280,
 			height: 847
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie in the snow with another stick',
 			url: adult8,
 			width: 1280,
 			height: 847
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie mid bike ride',
 			url: adult10,
 			width: 2305,
 			height: 1537
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie all tucked in',
 			url: adult11,
 			width: 2049,
 			height: 1537
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie looking over her shoulder',
 			url: adult12,
 			width: 2305,
 			height: 1537
@@ -250,12 +249,6 @@
 			altText: 'Ellie as an adult',
 			url: adult19,
 			width: 2049,
-			height: 1537
-		},
-		{
-			altText: 'Ellie as an adult',
-			url: adult20,
-			width: 2305,
 			height: 1537
 		},
 		{
