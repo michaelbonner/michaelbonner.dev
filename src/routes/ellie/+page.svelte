@@ -578,17 +578,17 @@
 
 		<p>
 			Despite my best efforts I'm forgetting the way you smell, the way you'd nuzzle under the
-			covers with me, the way your eyes would pierce right through me, your endless curiosity, the
-			way you'd dance in circles when I came home, how you would get so excited when I'd get your
-			leash out, the calm I would feel when you cuddled me, the way your ears felt when I played
-			with them, the way you'd look at me when I'd talk to you, the way you played king of the bed
-			with me like you knew how the game worked, the way you loved everyone around you, the times
-			you saved me from myself, the way you'd run right behind me when we went biking, the way you'd
-			run up to me when I'd call your name, the way you'd tuck when you were embarrassed, the way
-			you would comfort me when I was sad, the way you'd make me laugh, the way you'd make me smile,
-			how patient you were with kids hanging on you, how you'd lay your head anywhere you could find
-			a spot on me, the way you'd hide when I watched sports because the stress was just too much,
-			the way you'd lay on your back and hold your toy above your head while you chewed on it, how
+			covers with me, the way your eyes would pierce through me, your endless curiosity, the way
+			you'd jump and dance in circles when I came home, how you would get so excited when I'd get
+			your leash out, the calm I would feel when you cuddled me, the way your ears felt when I
+			played with them, the way you'd look at me when I'd talk to you, the way you played king of
+			the bed with me like you knew how the game worked, the way you loved everyone around you, the
+			way you'd run right behind me when we went biking, the way you'd run up to me when I'd call
+			your name, the way you'd tuck when you were embarrassed (like when you farted), the way you
+			would comfort me when I was sad, the way you'd make me laugh, the way you'd make me smile, how
+			patient you were with kids hanging on you, how you'd lay your head anywhere you could find a
+			spot on me, the way you'd hide when I watched sports because the stress was just too much, the
+			way you'd lay on your back and hold your toy above your head while you chewed on it, how
 			patient you were with puppies, how proud you'd get when you caught the frisbee before it hit
 			the ground, and how you loved Kellie.
 		</p>
@@ -601,7 +601,7 @@
 			I was 24 when I first met you, I was newly married, and I was so naive. My then wife
 			(Chelsie), her 3 year old daughter (Makaylee), and I had just moved into our first apartment
 			together, and we were just figuring out how to be a family and make a marriage work. We were
-			both working full time, and going to school full time. We were busy, and we were stressed, and
+			both working full time and going to school full time. We were busy, and we were stressed, and
 			we were young and dumb. Chelsie wanted a dog so bad but I didn't want to make a dog live in a
 			little apartment with the 3 of us. I thought it was cruel and unfair. So you can imagine how I
 			felt when Chelsie and Makaylee brought you to my work (Boater's Outlet) on February 11, 2011.
@@ -754,8 +754,8 @@
 		<p>
 			As the years went on your body started breaking down, but you never really complained. You
 			were always endless optimism. Even when it hurt too much to run you still seemed to smile. You
-			were so expressive with your face. You could tell me anything with your eyes. I always knew
-			what you were thinking.
+			were so expressive with your face. You could tell me anything with your eyes. I always felt
+			like I knew what you were thinking.
 		</p>
 	</div>
 
@@ -768,17 +768,18 @@
 			I told you that you would need to tell me when you were ready. I will forever be grateful that
 			you told me so clearly. When your back legs quit working for the last few days, I helped you
 			go to the bathroom. One time you found a spot, dug your paw, and tried lay there and hide.
-			That broke me because I knew what you were doing. Then you looked at me with those big eyes
-			and told me you were ready. I don't know how you did it, but I knew that's what you were
-			saying. I've never felt so much pain in my life. I knew I had to let you go.
+			That broke me because I knew what you were doing. I said nope, and we kept walking around; but
+			then you did it again. Then you looked at me with those big eyes and told me you were ready. I
+			don't know how you did it, but I knew that's what you were saying. I've never felt so much
+			pain in my life. I knew I had to let you go.
 		</p>
 
 		<p>
 			We celebrated you the next day. You were depressed and slow that morning but then your friends
 			came over to give you treats and say goodbye. You perked up when they came around. One of your
 			final acts was to put on a happy face for your friends. We sat around and told stories about
-			you. We let you eat everything you've wanted to your whole life. We let you drink Ellie's
-			Aloha Ale™️. We laughed and cried. You were so loved Ellie.
+			you. We let you eat all the things I never let you eat your whole life. We let you drink
+			Ellie's Aloha Ale™️. We laughed and cried. You were so loved Ellie.
 		</p>
 
 		<p>
