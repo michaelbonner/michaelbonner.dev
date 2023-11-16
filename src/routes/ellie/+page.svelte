@@ -801,6 +801,17 @@
 			<img alt="Ellie swimming off to get a ball" class="rounded-xl shadow-lg" src={goodbye} />
 		</figure>
 
+		<iframe
+			title="Ghost - Josiah and the Bonnevilles"
+			style="border-radius:12px"
+			src="https://open.spotify.com/embed/track/1IUEz40wavYETWJgak8iI3?utm_source=generator&theme=0"
+			width="100%"
+			height="152"
+			frameBorder="0"
+			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+			loading="lazy"
+		/>
+
 		<hr class="border-gray-300 dark:border-gray-700" />
 
 		<p>Posted 08 Aug 2023</p>
