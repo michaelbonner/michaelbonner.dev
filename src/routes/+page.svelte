@@ -58,12 +58,6 @@
 			github: `https://github.com/michaelbonner/route-picker`
 		},
 		{
-			title: `My Wedding Site`,
-			description: `A site I built to coordinate wedding things with my partner Kellie`,
-			url: `https://www.kellieandmike.com/`,
-			github: `https://github.com/michaelbonner/kellieandmike`
-		},
-		{
 			title: `GitHub Repository Collaborators Viewer`,
 			description: `GitHub (on purpose) doesn't make it very easy for individuals to see a list of all your repos and who has access to them. This little app helps you see that.`,
 			url: `https://github-repositories-viewer.bootpack.dev/`,
