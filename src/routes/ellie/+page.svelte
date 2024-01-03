@@ -638,7 +638,7 @@
 		</p>
 	</div>
 
-	<div class="max-h-[80vh] overflow-auto max-w-7xl grid gap-2 mx-auto">
+	<div class="max-h-[80vh] overflow-auto max-w-7xl grid gap-2 mx-auto px-2 mb-scrollable">
 		<ImageGallery galleryID="ellie-puppy" images={puppyImages} />
 
 		<div class="grid lg:grid-cols-2 gap-2">
@@ -759,7 +759,7 @@
 		</p>
 	</div>
 
-	<div class="max-h-[80vh] overflow-auto max-w-7xl mx-auto">
+	<div class="max-h-[80vh] overflow-auto max-w-7xl mx-auto px-2 mb-scrollable">
 		<ImageGallery galleryID="ellie-adult" images={adultImages} />
 	</div>
 

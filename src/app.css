@@ -13,3 +13,21 @@
 		@apply bg-gradient-to-tr from-gray-700 to-gray-900 bg-fixed;
 	}
 }
+
+.mb-scrollable::-webkit-scrollbar {
+	width: 10px;
+	margin-left: 20px;
+}
+
+.mb-scrollable::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.mb-scrollable::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 10px;
+}
+
+.mb-scrollable::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.6);
+}
