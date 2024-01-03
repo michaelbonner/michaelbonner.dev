@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"photoswipe": "^5.4.2"
+		"photoswipe": "^5.4.2",
+		"sharp": "^0.33.1"
 	}
 }
