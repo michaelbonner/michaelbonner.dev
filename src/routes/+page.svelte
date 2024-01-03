@@ -187,9 +187,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="lg:mt-32">
+		<div class="lg:mt-32 max-w-7xl">
 			<H2>Projects I&apos;m proud of</H2>
-			<ul class="mt-8 text-lg lg:grid lg:grid-cols-2 gap-x-8 gap-y-12">
+			<ul class="mt-16 text-lg lg:grid lg:grid-cols-2 gap-x-24 gap-y-24">
 				{#each projects as project}
 					<li class="ml-4 lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
 						<p>
@@ -220,9 +220,9 @@
 				{/each}
 			</ul>
 		</div>
-		<div class="lg:mt-32">
+		<div class="lg:mt-32 max-w-7xl">
 			<H2>Things I&apos;ve built for fun</H2>
-			<ul class="mt-8 text-lg lg:grid lg:grid-cols-2 gap-x-8 gap-y-12">
+			<ul class="mt-16 text-lg lg:grid lg:grid-cols-2 gap-x-24 gap-y-24">
 				{#each otherThings as project}
 					<li class="ml-4 lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
 						<p>
