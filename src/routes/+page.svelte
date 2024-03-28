@@ -28,9 +28,9 @@
 			github: `https://github.com/michaelbonner/jmillsent`
 		},
 		{
-			title: `Blackthorn Software`,
+			title: `CrewView`,
 			description: `I'm part of a team building a web application that helps companies manage their projects, people, and assets in a way that's easy to use and intuitive.`,
-			url: `https://blackthornsoftware.com/`
+			url: `https://crewview.com/`
 		},
 		{
 			title: `NEF Programs Administration System`,
