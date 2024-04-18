@@ -41,14 +41,14 @@
 					and try executing it after refreshing the shell or sourcing your config file.{' '}
 					<code>e.g. source ~/.zshrc</code>. I keep my aliases in a file at <code>~/.aliases</code>
 					and then add{' '}
-					<Highlight code={`source ~/.aliases`} language={bash} />
+					<Highlight class="p-0" code={`source ~/.aliases`} language={bash} />
 					<code>source ~/.aliases</code> to my <code>~/.zshrc</code>.
 				</p>
 				<p>
 					Once you identify which file to edit, all you need to do is add something like the
 					following:
 				</p>
-				<Highlight code={`alias gs='git status'`} language={bash} />
+				<Highlight class="p-0" code={`alias gs='git status'`} language={bash} />
 				<p>
 					In the above example, `gs` is the text you will type, and the text in the quotes is the
 					command that will be executed.
@@ -60,8 +60,7 @@
 	</div>
 	<div class="max-w-3xl">
 		<Highlight
-			code={`
-# general
+			code={`# general
 alias ll='ls -la'
 alias zshrc='vim ~/.zshrc'
 alias hosts='sudo vim /etc/hosts'
