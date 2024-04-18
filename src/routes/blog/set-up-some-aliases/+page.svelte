@@ -65,6 +65,8 @@
 alias ll='ls -la'
 alias zshrc='vim ~/.zshrc'
 alias hosts='sudo vim /etc/hosts'
+
+# directories
 alias dev='cd ~/Development'
 alias projects='cd ~/Development/projects'
 
@@ -79,18 +81,13 @@ alias gpush='git push'
 alias gf='git fetch'
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 alias gl2="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias gcm='git checkout main'
 alias gcma='git checkout master'
 alias gcd='git checkout development'
 alias gcs='git checkout staging'
-alias gcm='git checkout mike'
-alias gmma='git merge master'
-alias gmd='git merge development'
-alias gms='git merge staging'
-alias gmm='git merge mike'
 alias gpma='git pull origin master'
 alias gpd='git pull origin development'
 alias gps='git pull origin staging'
-alias gpm='git pull origin mike'
 alias ga='git add .'
 alias gc='git commit -m '
 alias gac='git commit -am '
@@ -100,7 +97,6 @@ alias gc--.='git checkout -- .'
 alias gch='git checkout'
 alias gclean='git reset --hard;git clean -df;'
 alias ghash='git rev-parse HEAD | pbcopy'
-alias grpo='git remote prune origin'
 alias gt='git trim'
 alias ggt='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT TRIM IN $&#123;dir//\.git/&#123;\" && git trim" ; done'
 
@@ -115,12 +111,7 @@ alias sa='sail artisan'
 alias sc='sail composer'
 alias smfs='sail artisan queue:clear; sail artisan migrate:fresh --seed'
 
-#ionic
-alias ib='ionic build'
-alias is='ionic serve'
-alias ncoi='npx cap open ios'
-
-#npm
+# npm
 alias nr='npm run'
 alias nrs='npm run start'
 alias nrss='npm run start-secure'
@@ -134,26 +125,40 @@ alias nrc='npm run codegen'
 alias nrg='npm run generate'
 alias npmout='find . -type d -name .git -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nNPM STATUS IN $&#123;dir//\.git/&#125;\" && npm out" ; done'
 alias npmup='find . -type d -name '.git' -maxdepth 2 | while read dir ; do sh -c "cd $dir/ && echo -e \"\nNPM UPDATE IN $&#123;dir//\.git/&#125;\" && npm up" ; done'
+alias y='yarn'
+alias mjml='./node_modules/.bin/mjml'
+alias nd='netlify dev'
+alias npm='~/.npm-global/bin/npm'
 
-#docker
+# bun
+alias br='bun run'
+alias brs='bun run start'
+alias brss='bun run start-secure'
+alias brd='bun run dev'
+alias brt='bun run test'
+alias brw='bun run watch'
+alias brp='bun run prod'
+alias brb='bun run build'
+alias brl='bun run lint'
+alias brc='bun run codegen'
+alias brg='bun run generate'
+
+# docker
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 
-# misc
-alias unit="./vendor/bin/phpunit"
-alias sf='sudo mdutil -E /'
-alias vapor='php vendor/bin/vapor'
-alias c='open . -a /Applications/Visual\ Studio\ Code.app'
-alias ploys='./bin/deploy-staging.sh'
-alias ployp='./bin/deploy-production.sh'
-alias composerout='find . -type d -name 'vendor' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nCOMPOSER STATUS IN $&#123;dir//\.git/&#125;\" && composer out" ; done'
-alias st='open . -a /Applications/Sourcetree.app'
-alias mjml='./node_modules/.bin/mjml'
-alias ibrew='arch -x86_64 /usr/local/bin/brew'
-alias nd='netlify dev'
+# deployments
+alias vl='vercel ls'
 
-alias da='SwitchAudioSource -t input -s "Yeti X" && SwitchAudioSource -t output -s "Mike&apos;s AirPods Max"'
-alias ba='SwitchAudioSource -t input -s "MacBook Pro Microphone" && SwitchAudioSource -t output -s "WH-1000XM3"'`}
+# audio source
+alias da='SwitchAudioSource -t input -s "Shure MV7" && SwitchAudioSource -t output -s "Mike’s AirPods Max" && open -jg -a /Applications/ShurePlus\ MOTIV.app'
+alias ba='SwitchAudioSource -t input -s "MacBook Pro Microphone" && SwitchAudioSource -t output -s "Mike’s AirPods Max"'
+
+# misc
+alias c='open . -a /Applications/Visual\ Studio\ Code.app'
+alias st='open . -a /Applications/Sourcetree.app'
+alias vim='lvim'
+`}
 			language={bash}
 		/>
 	</div>
@@ -165,7 +170,7 @@ alias ba='SwitchAudioSource -t input -s "MacBook Pro Microphone" && SwitchAudioS
 		</p>
 		<p>
 			Updated:{` `}
-			<time dateTime="2022-08-10">10 Aug 2022</time>
+			<time dateTime="2022-08-10">18 Apr 2024</time>
 		</p>
 	</div>
 </main>
