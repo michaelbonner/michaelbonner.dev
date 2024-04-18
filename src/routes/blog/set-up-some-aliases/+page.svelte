@@ -58,7 +58,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="max-w-3xl">
+	<div class="max-w-7xl">
 		<Highlight
 			code={`# general
 alias ll='ls -la'
