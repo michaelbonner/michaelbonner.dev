@@ -60,7 +60,7 @@
 		{
 			title: 'Fira Code',
 			href: 'https://github.com/tonsky/FiraCode',
-			description: 'Nice looking font face with ligatures'
+			description: 'Nice looking coding font face'
 		},
 		{
 			title: 'Docker Desktop',
@@ -91,12 +91,6 @@
 			title: 'BetterTouchTool',
 			description:
 				'A productivity powerhouse for me. I use it for window snapping, keyboard shortcuts, and more.'
-		},
-		{
-			href: 'https://webcatalog.io/webcatalog/',
-			title: 'Webcatalog',
-			description:
-				"Turns websites into apps, which is super handy if you have clients. I like being able to open one app when I'm working on a client project which contains the project management tool, error tracking, etc."
 		},
 		{
 			href: 'https://savvycal.com/?via=michael-bonner',
