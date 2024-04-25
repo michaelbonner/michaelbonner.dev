@@ -135,7 +135,7 @@
 			<div class="w-full lg:w-1/3 mt-8 lg:mt-0">
 				<img
 					alt="Michael Bonner"
-					class="bg-indigo-300 bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:mix-blend-normal"
+					class="bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:bg-blend-darken hover:scale-105 hover:rotate-1 transition-transform"
 					height="400"
 					src={mainImage}
 					width="600"
