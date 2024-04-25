@@ -149,7 +149,7 @@
 					<span class="whitespace-nowrap">
 						<a
 							class={classNames(
-								'!text-3xl !lg:text-4xl !inline',
+								'!text-3xl !lg:text-4xl !inline-block',
 								'font-medium lg:leading-none lg:inline-block',
 								classes.largeBodyLink
 							)}
@@ -189,11 +189,11 @@
 		</div>
 		<div class="lg:mt-32 max-w-7xl">
 			<H2>Projects I&apos;m proud of</H2>
-			<ul class="mt-16 text-lg lg:grid lg:grid-cols-2 gap-x-24 gap-y-24">
+			<ul class="mt-16 text-lg grid lg:grid-cols-2 gap-x-24 gap-y-12 lg:gap-y-24">
 				{#each projects as project}
 					<li class="ml-4 lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
 						<p>
-							<a class={classNames('!text-2xl !inline', classes.largeBodyLink)} href={project.url}>
+							<a class={classNames('!text-2xl', classes.largeBodyLink)} href={project.url}>
 								{project.title}
 							</a>
 						</p>
@@ -222,11 +222,11 @@
 		</div>
 		<div class="lg:mt-32 max-w-7xl">
 			<H2>Things I&apos;ve built for fun</H2>
-			<ul class="mt-16 text-lg lg:grid lg:grid-cols-2 gap-x-24 gap-y-24">
+			<ul class="mt-16 text-lg grid lg:grid-cols-2 gap-x-24 gap-y-12 lg:gap-y-24">
 				{#each otherThings as project}
 					<li class="ml-4 lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
 						<p>
-							<a class={classNames('!text-2xl !inline', classes.largeBodyLink)} href={project.url}>
+							<a class={classNames('!text-2xl', classes.largeBodyLink)} href={project.url}>
 								{project.title}
 							</a>
 						</p>
