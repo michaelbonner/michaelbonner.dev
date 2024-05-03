@@ -7,6 +7,10 @@
 	description="This website's privacy policy and terms of service"
 />
 
+<svelte:head>
+	<link rel="canonical" href="https://michaelbonner.dev/policies" />
+</svelte:head>
+
 <main class="container mx-auto px-8 py-12 flex items-center">
 	<div class="prose dark:prose-invert mt-16">
 		<h1>Privacy Policy and Terms of Service</h1>

@@ -129,6 +129,10 @@
 	description="Hi, I'm Michael Bonner. I'm a web developer in Salt Lake UT that specializes in business efficiency applications, APIs, and integrations."
 />
 
+<svelte:head>
+	<meta name="canonical" content="https://michaelbonner.dev/" />
+</svelte:head>
+
 <main class="container mx-auto px-8 py-12 flex items-center">
 	<div class="pt-8">
 		<div class="lg:flex lg:flex-row-reverse lg:pt-16">

@@ -17,6 +17,9 @@
 <svelte:head>
 	<meta property="article:published_time" content="2022-05-01T12:58:46.469Z" />
 	<meta name="publish_date" property="og:publish_date" content="2022-05-01T12:58:46.469Z" />
+	<meta name="author" content="Michael Bonner" />
+
+	<link rel="canonical" href="https://michaelbonner.dev/blog/i-made-an-extension" />
 </svelte:head>
 
 <main class="container mx-auto px-8 py-12 flex items-center">

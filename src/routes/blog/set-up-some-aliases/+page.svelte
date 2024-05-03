@@ -14,6 +14,13 @@
 	ogType="article"
 />
 
+<svelte:head>
+	<meta property="article:published_time" content="2021-07-15T22:00:00.000Z" />
+	<meta name="publish_date" property="og:publish_date" content="2021-07-15T22:00:00.000Z" />
+
+	<link rel="canonical" href="https://michaelbonner.dev/blog/set-up-some-aliases" />
+</svelte:head>
+
 <main class="container mx-auto px-8 py-12">
 	<div class="max-w-3xl prose dark:prose-invert">
 		<div class="pt-8">

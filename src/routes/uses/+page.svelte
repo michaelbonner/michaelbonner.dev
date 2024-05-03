@@ -111,6 +111,10 @@
 	description="Hi, I'm Michael Bonner. I'm a web developer in Salt Lake UT"
 />
 
+<svelte:head>
+	<link rel="canonical" href="https://michaelbonner.dev/uses" />
+</svelte:head>
+
 <main class="grid gap-8 container mx-auto px-8 py-12">
 	<div>
 		<h1 class="leading-relaxed text-4xl tracking-wide lg:pr-8 max-w-3xl">

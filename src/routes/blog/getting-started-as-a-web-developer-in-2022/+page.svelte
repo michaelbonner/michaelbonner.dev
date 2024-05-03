@@ -15,6 +15,11 @@
 <svelte:head>
 	<meta property="article:published_time" content="2022-03-08T20:58:46.469Z" />
 	<meta name="publish_date" property="og:publish_date" content="2022-03-08T20:58:46.469Z" />
+
+	<link
+		rel="canonical"
+		href="https://michaelbonner.dev/blog/getting-started-as-a-web-developer-in-2022"
+	/>
 </svelte:head>
 
 <main class="container mx-auto px-8 py-12 flex items-center">

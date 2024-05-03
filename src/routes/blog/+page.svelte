@@ -9,6 +9,10 @@
 
 <Seo description="Just writing down some things" title="Developer Blog | Michael Bonner" />
 
+<svelte:head>
+	<link rel="canonical" href="https://michaelbonner.dev/blog" />
+</svelte:head>
+
 <main class="relative pt-8 pb-8 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
 	<div class="container mx-auto px-8 py-12">
 		<div class="prose dark:prose-invert max-w-3xl">
