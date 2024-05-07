@@ -130,7 +130,7 @@
 />
 
 <svelte:head>
-	<meta name="canonical" content="https://michaelbonner.dev/" />
+	<link rel="canonical" href="https://michaelbonner.dev/" />
 </svelte:head>
 
 <main class="container mx-auto px-8 py-12 flex items-center">
