@@ -87,6 +87,12 @@
 				'Spotlight replacement for Mac with window management, clipboard history, and more'
 		},
 		{
+			href: 'https://polypane.app/?via=bootpack',
+			title: 'Polypane',
+			description:
+				'Test your website in multiple viewports at once. Great for responsive design work.'
+		},
+		{
 			href: 'https://folivora.ai/',
 			title: 'BetterTouchTool',
 			description:
