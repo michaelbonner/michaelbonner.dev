@@ -37,7 +37,7 @@
 			console.log('hello');
 
 			posthog.init('phc_CR48D5k9rHyRASc1LcsP2vkacYA7WnCTRmV7lsuDULf', {
-				api_host: 'https://us.i.posthog.com',
+				api_host: 'https://michaelbonner.dev/ingest',
 				capture_pageview: false,
 				capture_pageleave: false
 			});
