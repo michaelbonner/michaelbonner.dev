@@ -17,7 +17,11 @@
     "meds",
     "nextjs",
     "nodownload",
+    "pageleave",
+    "pageview",
     "photoswipe",
+    "Polypane",
+    "posthog",
     "pswp",
     "Raycast",
     "reactjs",
@@ -28,6 +32,8 @@
     "sveltejs",
     "sveltekit",
     "Tesseract",
+    "viewports",
+    "vkac",
     "webdev"
   ]
 }

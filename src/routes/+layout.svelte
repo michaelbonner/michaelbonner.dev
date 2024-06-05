@@ -1,7 +1,10 @@
 <script lang="ts">
 	import '../app.css';
 
+	import { browser } from '$app/environment';
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
+	import posthog from 'posthog-js';
 	import { onDestroy, onMount } from 'svelte';
 	import Gtm from '../components/gtm.svelte';
 	import { classNames } from '../functions/classNames';
@@ -28,6 +31,25 @@
 	onDestroy(() => {
 		clearInterval(interval);
 	});
+
+	export const load = async () => {
+		if (browser) {
+			console.log('hello');
+
+			posthog.init('phc_CR48D5k9rHyRASc1LcsP2vkacYA7WnCTRmV7lsuDULf', {
+				api_host: 'https://us.i.posthog.com',
+				capture_pageview: false,
+				capture_pageleave: false
+			});
+		}
+		return;
+	};
+	load();
+
+	if (browser) {
+		beforeNavigate(() => posthog.capture('$pageleave'));
+		afterNavigate(() => posthog.capture('$pageview'));
+	}
 </script>
 
 <Gtm {gtmId} {gtmDataPoints} />
