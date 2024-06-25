@@ -6,8 +6,8 @@
 	import Instagram from '../icons/Instagram.svelte';
 	import Link from '../icons/Link.svelte';
 	import LinkedIn from '../icons/LinkedIn.svelte';
+	import mainImage from '../lib/images/on-the-beach-600.jpg?enhanced';
 	import { classes } from '../styles/classes';
-	import mainImage from '$lib/images/on-the-beach-600.jpg?w=300;500;700&format=webp;avif;jpg';
 
 	const projects = [
 		{
@@ -137,12 +137,10 @@
 	<div class="pt-8">
 		<div class="lg:flex lg:flex-row-reverse lg:pt-16">
 			<div class="w-full lg:w-1/3 mt-8 lg:mt-0">
-				<img
+				<enhanced:img
 					alt="Michael Bonner"
 					class="bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:bg-blend-darken hover:scale-105 hover:rotate-1 transition-transform"
-					height="400"
 					src={mainImage}
-					width="600"
 				/>
 			</div>
 			<div class="mt-8 lg:mt-0 w-full lg:w-2/3 lg:pr-8">
