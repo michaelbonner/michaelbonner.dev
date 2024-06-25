@@ -84,35 +84,38 @@
 
 	const puppyImages = [
 		{
-			altText: 'Ellie as a puppy',
-			url: puppy1
+			altText: 'Ellie as a puppy in her kennel from the Humane Society',
+			url: puppy1,
+			objectPosition: 'object-top'
 		},
 		{
-			altText: 'Ellie as a puppy',
-			url: puppy2
+			altText: 'Ellie looking over her shoulder while sitting',
+			url: puppy2,
+			objectPosition: 'object-top'
 		},
 		{
-			altText: 'Ellie as a puppy',
+			altText: 'Ellie laying on her back looking for scratches',
 			url: puppy3
 		},
 		{
-			altText: 'Ellie as a puppy',
-			url: puppy4
+			altText: 'Ellie in a t-shirt',
+			url: puppy4,
+			objectPosition: 'object-top'
 		},
 		{
-			altText: 'Ellie as a puppy',
+			altText: 'Ellie laying on her bed',
 			url: puppy5
 		},
 		{
-			altText: 'Ellie as a puppy',
+			altText: "Ellie laying on Makaylee's bed",
 			url: puppy6
 		},
 		{
-			altText: 'Ellie as a puppy',
+			altText: 'Ellie following Makaylee on her bike',
 			url: puppy7
 		},
 		{
-			altText: 'Ellie as a puppy',
+			altText: 'Ellie distracting me looking for pets',
 			url: puppy8
 		}
 	];
@@ -167,207 +170,209 @@
 			url: adult12
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie staring into your soul',
 			url: adult13
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie in goggles',
 			url: adult14
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie being a goof',
 			url: adult15
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie with the sun hitting her',
 			url: adult16
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie in the snow',
 			url: adult17
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie playing with a ball',
 			url: adult18
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie acting like one of the grandkids',
 			url: adult19
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie passed out on the couch',
 			url: adult21
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie sitting in her spot on the stairs',
 			url: adult22
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie playing in the snow',
 			url: adult23
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie laying on me on the couch',
 			url: adult24
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie laying on my shoulder',
 			url: adult25
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie on a snow hike',
 			url: adult26
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie with me on a hike',
 			url: adult27
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: "Ellie looking where we're going in the car",
 			url: adult28
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie doing her "nose" trick',
 			url: adult29
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie laying funny on the couth',
 			url: adult30
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie buckled up in the truck',
 			url: adult31
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie looking over her shoulder',
 			url: adult32
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie laying her face on mine',
 			url: adult33
 		},
 		{
-			altText: 'Ellie as an adult',
-			url: adult34
+			altText: 'Ellie looking over my shoulders',
+			url: adult34,
+			objectPosition: 'object-bottom'
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie playing with her frisbee in the snow',
 			url: adult35
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie with her chicken wings',
 			url: adult36
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie playing with a stick in the snow',
 			url: adult37
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie with her nose covered in snow',
 			url: adult38
 		},
 		{
-			altText: 'Ellie as an adult',
-			url: adult39
+			altText: 'Ellie in her life jacket',
+			url: adult39,
+			objectPosition: 'object-top'
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie with her stick',
 			url: adult40
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie yawning in the sun',
 			url: adult41
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie on a hike',
 			url: adult42
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie looking at Kellie',
 			url: adult43
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie in a hammock',
 			url: adult44
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie in the flowers',
 			url: adult45
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie being held like a baby',
 			url: adult46
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie on the beach in Oregon',
 			url: adult47
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie at Goblin Valley',
 			url: adult48
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie chilling in the car',
 			url: adult49
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie getting some loves',
 			url: adult50
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie passed out in the car',
 			url: adult51
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie waiting for her ball to be thrown at the beach',
 			url: adult52
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie walking on the beach',
 			url: adult53
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie paddleboarding',
 			url: adult54
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie smiling',
 			url: adult55
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie celebrating her birthday',
 			url: adult56
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie thinking the boat flag is a toy',
 			url: adult57
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie biking',
 			url: adult58
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie snuggling',
 			url: adult59
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie fetching a stick at the lake',
 			url: adult60
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie looking pretty at the beach',
 			url: adult61
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie playing in the ocean',
 			url: adult62
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie looking prestigious',
 			url: adult63
 		},
 		{
-			altText: 'Ellie as an adult',
+			altText: 'Ellie standing on a stump',
 			url: adult64
 		},
 		{

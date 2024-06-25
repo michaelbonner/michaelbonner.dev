@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { clsx } from 'clsx';
 	// @ts-ignore
 	import PhotoSwipeLightbox from 'photoswipe/lightbox';
 
@@ -15,6 +16,7 @@
 			};
 			sources: Record<string, string>;
 		};
+		objectPosition?: string;
 	};
 
 	export let galleryID = '';
@@ -41,9 +43,12 @@
 		>
 			<enhanced:img
 				alt={image.altText}
-				class="my-0 py-0 rounded-md aspect-1 object-cover w-full h-full"
+				class={clsx(
+					'my-0 py-0 rounded-md aspect-1 object-cover w-full h-full',
+					image.objectPosition
+				)}
 				loading="lazy"
-				sizes="(max-width: 600px) 100vw, 600px"
+				sizes="min(600px, 100vw)"
 				src={image.url}
 			/>
 		</a>
