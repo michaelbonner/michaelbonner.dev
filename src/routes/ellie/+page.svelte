@@ -85,456 +85,306 @@
 	const puppyImages = [
 		{
 			altText: 'Ellie as a puppy',
-			height: 2592,
-			url: puppy1,
-			width: 1936
+			url: puppy1
 		},
 		{
 			altText: 'Ellie as a puppy',
-			height: 2592,
-			url: puppy2,
-			width: 1936
+			url: puppy2
 		},
 		{
 			altText: 'Ellie as a puppy',
-			height: 2592,
-			url: puppy3,
-			width: 1936
+			url: puppy3
 		},
 		{
 			altText: 'Ellie as a puppy',
-			height: 2592,
-			url: puppy4,
-			width: 1936
+			url: puppy4
 		},
 		{
 			altText: 'Ellie as a puppy',
-			height: 2592,
-			url: puppy5,
-			width: 1936
+			url: puppy5
 		},
 		{
 			altText: 'Ellie as a puppy',
-			height: 2592,
-			url: puppy6,
-			width: 1936
+			url: puppy6
 		},
 		{
 			altText: 'Ellie as a puppy',
-			height: 2592,
-			url: puppy7,
-			width: 1936
+			url: puppy7
 		},
 		{
 			altText: 'Ellie as a puppy',
-			height: 1536,
-			url: puppy8,
-			width: 2057
+			url: puppy8
 		}
 	];
 
 	const adultImages = [
 		{
 			altText: 'Ellie enjoying the sunshine',
-			width: 3024,
-			height: 4032,
 			url: adult69
 		},
 		{
 			altText: 'Ellie in a tutu at goblin valley looking at Kellie',
-			width: 1536,
-			height: 2731,
 			url: adult1
 		},
 		{
 			altText: 'Happy Ellie with a stick',
-			url: adult2,
-			width: 1537,
-			height: 2049
+			url: adult2
 		},
 		{
 			altText: 'Ellie mid shake',
-			url: adult3,
-			width: 1537,
-			height: 2049
+			url: adult3
 		},
 		{
 			altText: 'Ellie up close',
-			url: adult4,
-			width: 1537,
-			height: 2049
+			url: adult4
 		},
 		{
 			altText: 'Ellie face poking out of the covers',
-			url: adult5,
-			width: 1537,
-			height: 2049
+			url: adult5
 		},
 		{
 			altText: 'Ellie with a graduation cap on',
-			url: adult6,
-			width: 1440,
-			height: 1526
+			url: adult6
 		},
 		{
 			altText: 'Ellie in the snow with a stick',
-			url: adult7,
-			width: 1280,
-			height: 847
+			url: adult7
 		},
 		{
 			altText: 'Ellie in the snow with another stick',
-			url: adult8,
-			width: 1280,
-			height: 847
+			url: adult8
 		},
 		{
 			altText: 'Ellie mid bike ride',
-			url: adult10,
-			width: 2305,
-			height: 1537
+			url: adult10
 		},
 		{
 			altText: 'Ellie all tucked in',
-			url: adult11,
-			width: 2049,
-			height: 1537
+			url: adult11
 		},
 		{
 			altText: 'Ellie looking over her shoulder',
-			url: adult12,
-			width: 2305,
-			height: 1537
+			url: adult12
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult13,
-			width: 2305,
-			height: 1537
+			url: adult13
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult14,
-			width: 1537,
-			height: 2049
+			url: adult14
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult15,
-			width: 1536,
-			height: 2049
+			url: adult15
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult16,
-			width: 1537,
-			height: 2049
+			url: adult16
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult17,
-			width: 1537,
-			height: 2049
+			url: adult17
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult18,
-			width: 2049,
-			height: 1537
+			url: adult18
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult19,
-			width: 2049,
-			height: 1537
+			url: adult19
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult21,
-			width: 1537,
-			height: 2049
+			url: adult21
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult22,
-			width: 2049,
-			height: 1537
+			url: adult22
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult23,
-			width: 1537,
-			height: 2049
+			url: adult23
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult24,
-			width: 1539,
-			height: 2048
+			url: adult24
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult25,
-			width: 1539,
-			height: 2048
+			url: adult25
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult26,
-			width: 1537,
-			height: 2049
+			url: adult26
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult27,
-			width: 2049,
-			height: 1537
+			url: adult27
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult28,
-			width: 1536,
-			height: 2049
+			url: adult28
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult29,
-			width: 1536,
-			height: 2048
+			url: adult29
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult30,
-			width: 1537,
-			height: 2049
+			url: adult30
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult31,
-			width: 1536,
-			height: 2057
+			url: adult31
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult32,
-			width: 2049,
-			height: 1537
+			url: adult32
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult33,
-			width: 1536,
-			height: 2049
+			url: adult33
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult34,
-			width: 960,
-			height: 1280
+			url: adult34
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult35,
-			width: 1536,
-			height: 2048
+			url: adult35
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult36,
-			width: 1536,
-			height: 2048
+			url: adult36
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult37,
-			width: 1536,
-			height: 2048
+			url: adult37
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult38,
-			width: 1536,
-			height: 2048
+			url: adult38
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult39,
-			width: 1536,
-			height: 2244
+			url: adult39
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult40,
-			width: 1537,
-			height: 2049
+			url: adult40
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult41,
-			width: 1536,
-			height: 2048
+			url: adult41
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult42,
-			width: 1536,
-			height: 2048
+			url: adult42
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult43,
-			width: 1536,
-			height: 2049
+			url: adult43
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult44,
-			width: 1532,
-			height: 2038
+			url: adult44
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult45,
-			width: 2049,
-			height: 1537
+			url: adult45
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult46,
-			width: 1536,
-			height: 2048
+			url: adult46
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult47,
-			width: 1536,
-			height: 2049
+			url: adult47
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult48,
-			width: 1536,
-			height: 2049
+			url: adult48
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult49,
-			width: 1537,
-			height: 2049
+			url: adult49
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult50,
-			width: 2049,
-			height: 1536
+			url: adult50
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult51,
-			width: 2049,
-			height: 1536
+			url: adult51
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult52,
-			width: 2049,
-			height: 1536
+			url: adult52
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult53,
-			width: 1536,
-			height: 2049
+			url: adult53
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult54,
-			width: 1537,
-			height: 2049
+			url: adult54
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult55,
-			width: 2049,
-			height: 1536
+			url: adult55
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult56,
-			width: 1536,
-			height: 2049
+			url: adult56
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult57,
-			width: 2049,
-			height: 1536
+			url: adult57
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult58,
-			width: 1536,
-			height: 2049
+			url: adult58
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult59,
-			width: 1536,
-			height: 2048
+			url: adult59
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult60,
-			width: 1536,
-			height: 2049
+			url: adult60
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult61,
-			width: 1536,
-			height: 2048
+			url: adult61
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult62,
-			width: 828,
-			height: 458
+			url: adult62
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult63,
-			width: 1537,
-			height: 2049
+			url: adult63
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult64,
-			width: 2049,
-			height: 1537
+			url: adult64
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult65,
-			width: 1537,
-			height: 2049
+			url: adult65
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult66,
-			width: 2049,
-			height: 1537
+			url: adult66
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult67,
-			width: 2049,
-			height: 1639
+			url: adult67
 		},
 		{
 			altText: 'Ellie as an adult',
-			url: adult68,
-			width: 2048,
-			height: 1638
+			url: adult68
 		}
 	];
 </script>
