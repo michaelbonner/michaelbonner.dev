@@ -412,6 +412,7 @@
 			<enhanced:img
 				alt="Ellie"
 				class="aspect-[600/800] rounded-xl shadow-lg w-full lg:max-w-[600px]"
+				sizes="min(600px, 100vw)"
 				src={ellieMain}
 			/>
 			<figcaption>
@@ -681,6 +682,7 @@
 				alt="Ellie swimming off to get a ball"
 				class="rounded-xl shadow-lg"
 				loading="lazy"
+				sizes="min(600px, 100vw)"
 				src={goodbye}
 			/>
 		</figure>
