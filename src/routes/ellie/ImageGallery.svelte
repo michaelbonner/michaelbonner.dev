@@ -41,7 +41,7 @@
 		>
 			<enhanced:img
 				alt={image.altText}
-				class="my-0 py-0 rounded-md"
+				class="my-0 py-0 rounded-md aspect-1 object-cover w-full h-full"
 				loading="lazy"
 				sizes="(max-width: 600px) 100vw, 600px"
 				src={image.url}
