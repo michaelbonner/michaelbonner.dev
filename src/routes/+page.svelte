@@ -6,7 +6,7 @@
 	import Instagram from '../icons/Instagram.svelte';
 	import Link from '../icons/Link.svelte';
 	import LinkedIn from '../icons/LinkedIn.svelte';
-	import mainImage from '../lib/images/on-the-beach-600.jpg?enhanced';
+	import mainImage from '$lib/images/on-the-beach-600.jpg?enhanced';
 	import { classes } from '../styles/classes';
 
 	const projects = [
