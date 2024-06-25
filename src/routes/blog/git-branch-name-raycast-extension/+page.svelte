@@ -57,6 +57,7 @@
 					<a href="https://www.raycast.com/mbonner/git-branch-name-generator"
 						><img
 							alt="Raycast Extension Install Button"
+							loading="lazy"
 							src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
 							style="height: 64px;"
 						/></a
@@ -64,7 +65,12 @@
 				</p>
 
 				<figure>
-					<enhanced:img alt="Choosing a branch type" class="w-full" src={gitBranchNameGenerator1} />
+					<enhanced:img
+						alt="Choosing a branch type"
+						class="w-full"
+						src={gitBranchNameGenerator1}
+						loading="lazy"
+					/>
 					<figcaption>Choose your branch type</figcaption>
 				</figure>
 
@@ -72,6 +78,7 @@
 					<enhanced:img
 						alt="Add you branch name"
 						class="w-full m-0"
+						loading="lazy"
 						src={gitBranchNameGenerator2}
 					/>
 					<figcaption>Enter your branch name</figcaption>
@@ -81,6 +88,7 @@
 					<enhanced:img
 						alt="Results get copied to your clipboard"
 						class="w-full"
+						loading="lazy"
 						src={gitBranchNameGenerator3}
 					/>
 					<figcaption>Results get copied to your clipboard</figcaption>
@@ -90,6 +98,7 @@
 					<a href="https://www.raycast.com/mbonner/git-branch-name-generator"
 						><img
 							alt="Raycast Extension Install Button"
+							loading="lazy"
 							src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
 							style="height: 64px;"
 						/></a
