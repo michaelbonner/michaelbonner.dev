@@ -645,13 +645,26 @@
 					controls
 					controlsList="nodownload"
 					playsinline
-					poster="/videos/ellie/slide-with-makaylee.webp"
+					poster="https://mbonner-general-web.s3-us-west-2.amazonaws.com/videos/ellie/slide-with-makaylee.webp"
 				>
-					<source src="/videos/ellie/slide-with-makaylee.webm" type="video/webm" />
-					<source src="/videos/ellie/slide-with-makaylee.ogv" type="video/ogg" />
-					<source src="/videos/ellie/slide-with-makaylee.mp4" type="video/mp4" />
+					<source
+						src="https://mbonner-general-web.s3-us-west-2.amazonaws.com/videos/ellie/slide-with-makaylee.webm"
+						type="video/webm"
+					/>
+					<source
+						src="https://mbonner-general-web.s3-us-west-2.amazonaws.com/videos/ellie/slide-with-makaylee.ogv"
+						type="video/ogg"
+					/>
+					<source
+						src="https://mbonner-general-web.s3-us-west-2.amazonaws.com/videos/ellie/slide-with-makaylee.mp4"
+						type="video/mp4"
+					/>
 
-					<track kind="captions" src="/videos/ellie/slide-with-makaylee.vtt" label="Captions" />
+					<track
+						kind="captions"
+						src="https://mbonner-general-web.s3-us-west-2.amazonaws.com/videos/ellie/slide-with-makaylee.vtt"
+						label="Captions"
+					/>
 				</video>
 			</figure>
 
@@ -661,15 +674,24 @@
 					controls
 					controlsList="nodownload"
 					playsinline
-					poster="/videos/ellie/slide-with-nieces-and-nephews.webp"
+					poster="https://mbonner-general-web.s3-us-west-2.amazonaws.com/videos/ellie/slide-with-nieces-and-nephews.webp"
 				>
-					<source src="/videos/ellie/slide-with-nieces-and-nephews.webm" type="video/webm" />
-					<source src="/videos/ellie/slide-with-nieces-and-nephews.ogv" type="video/ogg" />
-					<source src="/videos/ellie/slide-with-nieces-and-nephews.mp4" type="video/mp4" />
+					<source
+						src="https://mbonner-general-web.s3-us-west-2.amazonaws.com/videos/ellie/slide-with-nieces-and-nephews.webm"
+						type="video/webm"
+					/>
+					<source
+						src="https://mbonner-general-web.s3-us-west-2.amazonaws.com/videos/ellie/slide-with-nieces-and-nephews.ogv"
+						type="video/ogg"
+					/>
+					<source
+						src="https://mbonner-general-web.s3-us-west-2.amazonaws.com/videos/ellie/slide-with-nieces-and-nephews.mp4"
+						type="video/mp4"
+					/>
 
 					<track
 						kind="captions"
-						src="/videos/ellie/slide-with-nieces-and-nephews.vtt"
+						src="https://mbonner-general-web.s3-us-west-2.amazonaws.com/videos/ellie/slide-with-nieces-and-nephews.vtt"
 						label="Captions"
 					/>
 				</video>
