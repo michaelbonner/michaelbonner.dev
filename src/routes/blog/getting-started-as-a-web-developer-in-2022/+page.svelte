@@ -59,7 +59,11 @@
 				</p>
 				<figure>
 					<a href="https://tuff.michaelbonner.dev/">
-						<enhanced:img src={tuffWebsiteScreenshot} alt="Tuff website screenshot" />
+						<enhanced:img
+							alt="Tuff website screenshot"
+							src={tuffWebsiteScreenshot}
+							loading="lazy"
+						/>
 					</a>
 					<figcaption class="text-center">See how cringey that thing is?</figcaption>
 				</figure>
@@ -110,6 +114,7 @@
 					<a href="https://github.com/michaelbonner/michaelbonner.dev">
 						<enhanced:img
 							alt="michaelbonner.dev github screenshot"
+							loading="lazy"
 							src={michaelbonnerDevGithubScreenshot}
 						/>
 					</a>
