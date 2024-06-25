@@ -27,9 +27,9 @@
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/github-repositories-viewer-app">
 					<enhanced:img
+						alt="Github Repository Collaborators Viewer"
 						class="h-48 w-full object-cover"
 						src={githubRepositoriesViewer}
-						alt="Github Repository Collaborators Viewer"
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
@@ -52,9 +52,9 @@
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/git-branch-name-raycast-extension">
 					<enhanced:img
+						alt="Git Branch Name Raycast Extension"
 						class="h-48 w-full object-cover"
 						src={gitBranchNameGenerator3}
-						alt="Git Branch Name Raycast Extension"
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
@@ -77,9 +77,10 @@
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/i-made-an-extension">
 					<enhanced:img
-						class="h-48 w-full object-cover"
-						src={chromeBasecampUiExtension}
 						alt="I made my first Chrome extension"
+						class="h-48 w-full object-cover"
+						loading="lazy"
+						src={chromeBasecampUiExtension}
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
@@ -105,9 +106,10 @@
 					href="/blog/getting-started-as-a-web-developer-in-2022"
 				>
 					<enhanced:img
-						class="h-48 w-full object-cover"
-						src={tuffWebsiteScreenshotTrimmed600}
 						alt="Where I think new web software developers should start in 2022"
+						class="h-48 w-full object-cover"
+						loading="lazy"
+						src={tuffWebsiteScreenshotTrimmed600}
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
@@ -130,9 +132,10 @@
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/set-up-some-aliases">
 					<enhanced:img
-						class="h-48 w-full object-cover"
-						src={itermAliasesTrimmed600}
 						alt="Set up some aliases"
+						class="h-48 w-full object-cover"
+						loading="lazy"
+						src={itermAliasesTrimmed600}
 					/>
 				</a>
 				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">

@@ -61,8 +61,8 @@
 					<a href="https://tuff.michaelbonner.dev/">
 						<enhanced:img
 							alt="Tuff website screenshot"
-							src={tuffWebsiteScreenshot}
 							loading="lazy"
+							src={tuffWebsiteScreenshot}
 						/>
 					</a>
 					<figcaption class="text-center">See how cringey that thing is?</figcaption>

@@ -34,7 +34,12 @@
 			target="_blank"
 			rel="noreferrer"
 		>
-			<enhanced:img alt={image.altText} class="my-0 py-0 rounded-md" src={image.url} />
+			<enhanced:img
+				alt={image.altText}
+				class="my-0 py-0 rounded-md"
+				loading="lazy"
+				src={image.url}
+			/>
 		</a>
 	{/each}
 </div>

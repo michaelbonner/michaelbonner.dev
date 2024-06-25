@@ -58,7 +58,7 @@
 				</figure>
 				<h2>After extension</h2>
 				<figure>
-					<enhanced:img alt="After extension" src={afterExtension} />
+					<enhanced:img alt="After extension" loading="lazy" src={afterExtension} />
 					<figcaption class="text-center">Notice how much nicer that looks?</figcaption>
 				</figure>
 
@@ -80,8 +80,9 @@
 						href="https://chrome.google.com/webstore/detail/basecamp-ui-tweaks/aefhfcjkdpdjhbjdhoojknelmlodaidn?hl=en"
 					>
 						<enhanced:img
-							class="bg-white rounded-md shadow-sm max-w-[200px]"
 							alt="Available in the chrome web store"
+							class="bg-white rounded-md shadow-sm max-w-[200px]"
+							loading="lazy"
 							src={availableInTheChromeWebStore}
 						/>
 					</a>
