@@ -1,8 +1,8 @@
 <script lang="ts">
+	import michaelbonnerDevGithubScreenshot from '$lib/images/michaelbonner-dev-github-screenshot.webp?enhanced';
+	import tuffWebsiteScreenshot from '$lib/images/tuff-website-screenshot.webp?enhanced';
 	import Seo from '../../../components/Seo.svelte';
 	import { classes } from '../../../styles/classes';
-	import tuffWebsiteScreenshot from '$lib/images/tuff-website-screenshot.webp';
-	import michaelbonnerDevGithubScreenshot from '$lib/images/michaelbonner-dev-github-screenshot.webp';
 </script>
 
 <Seo
@@ -59,7 +59,7 @@
 				</p>
 				<figure>
 					<a href="https://tuff.michaelbonner.dev/">
-						<img src={tuffWebsiteScreenshot} alt="Tuff website screenshot" width={1400} />
+						<enhanced:img src={tuffWebsiteScreenshot} alt="Tuff website screenshot" />
 					</a>
 					<figcaption class="text-center">See how cringey that thing is?</figcaption>
 				</figure>
@@ -108,10 +108,9 @@
 				<h2>Get to the next level</h2>
 				<figure>
 					<a href="https://github.com/michaelbonner/michaelbonner.dev">
-						<img
+						<enhanced:img
 							alt="michaelbonner.dev github screenshot"
 							src={michaelbonnerDevGithubScreenshot}
-							width="1400"
 						/>
 					</a>
 					<figcaption class="text-center">

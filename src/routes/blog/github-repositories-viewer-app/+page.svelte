@@ -1,7 +1,7 @@
 <script>
+	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.webp?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
-	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.webp';
 </script>
 
 <Seo
@@ -46,12 +46,10 @@
 				</div>
 
 				<figure>
-					<img
+					<enhanced:img
 						alt="Screenshot of the GitHub Repositories Viewer app"
 						class="w-full m-0"
-						height="480"
 						src={githubRepositoriesViewer}
-						width="768"
 					/>
 					<figcaption>
 						Get your token from GitHub, then see all your repos and who is on them

@@ -1,9 +1,9 @@
 <script>
+	import gitBranchNameGenerator1 from '$lib/images/git-branch-name-generator-1.webp?enhanced';
+	import gitBranchNameGenerator2 from '$lib/images/git-branch-name-generator-2.webp?enhanced';
+	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.webp?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
-	import gitBranchNameGenerator1 from '$lib/images/git-branch-name-generator-1.webp';
-	import gitBranchNameGenerator2 from '$lib/images/git-branch-name-generator-2.webp';
-	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.webp';
 </script>
 
 <Seo
@@ -56,44 +56,32 @@
 				<p>
 					<a href="https://www.raycast.com/mbonner/git-branch-name-generator"
 						><img
-							alt=""
-							height="64"
+							alt="Raycast Extension Install Button"
 							src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
 							style="height: 64px;"
-							width="256"
 						/></a
 					>
 				</p>
 
 				<figure>
-					<img
-						alt="Choosing a branch type"
-						class="w-full"
-						height="480"
-						src={gitBranchNameGenerator1}
-						width="768"
-					/>
+					<enhanced:img alt="Choosing a branch type" class="w-full" src={gitBranchNameGenerator1} />
 					<figcaption>Choose your branch type</figcaption>
 				</figure>
 
 				<figure>
-					<img
+					<enhanced:img
 						alt="Add you branch name"
 						class="w-full m-0"
-						height="480"
 						src={gitBranchNameGenerator2}
-						width="768"
 					/>
 					<figcaption>Enter your branch name</figcaption>
 				</figure>
 
 				<figure>
-					<img
+					<enhanced:img
 						alt="Results get copied to your clipboard"
 						class="w-full"
-						height="480"
 						src={gitBranchNameGenerator3}
-						width="768"
 					/>
 					<figcaption>Results get copied to your clipboard</figcaption>
 				</figure>
@@ -101,11 +89,9 @@
 				<p>
 					<a href="https://www.raycast.com/mbonner/git-branch-name-generator"
 						><img
-							alt=""
-							height="64"
+							alt="Raycast Extension Install Button"
 							src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
 							style="height: 64px;"
-							width="256"
 						/></a
 					>
 				</p>

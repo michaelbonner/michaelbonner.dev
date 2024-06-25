@@ -1,10 +1,10 @@
 <script lang="ts">
+	import chromeBasecampUiExtension from '$lib/images/chrome-basecamp-ui-extension.webp?enhanced';
+	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.webp?enhanced';
+	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.webp?enhanced';
+	import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.webp?enhanced';
+	import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.webp?enhanced';
 	import Seo from '../../components/Seo.svelte';
-	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.webp';
-	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.webp';
-	import chromeBasecampUiExtension from '$lib/images/chrome-basecamp-ui-extension.webp';
-	import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.webp';
-	import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.webp';
 </script>
 
 <Seo description="Just writing down some things" title="Developer Blog | Michael Bonner" />
@@ -26,7 +26,7 @@
 		<div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/github-repositories-viewer-app">
-					<img
+					<enhanced:img
 						class="h-48 w-full object-cover"
 						src={githubRepositoriesViewer}
 						alt="Github Repository Collaborators Viewer"
@@ -51,7 +51,7 @@
 
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/git-branch-name-raycast-extension">
-					<img
+					<enhanced:img
 						class="h-48 w-full object-cover"
 						src={gitBranchNameGenerator3}
 						alt="Git Branch Name Raycast Extension"
@@ -76,7 +76,7 @@
 
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/i-made-an-extension">
-					<img
+					<enhanced:img
 						class="h-48 w-full object-cover"
 						src={chromeBasecampUiExtension}
 						alt="I made my first Chrome extension"
@@ -104,7 +104,7 @@
 					class="flex-shrink-0 leading-[0]"
 					href="/blog/getting-started-as-a-web-developer-in-2022"
 				>
-					<img
+					<enhanced:img
 						class="h-48 w-full object-cover"
 						src={tuffWebsiteScreenshotTrimmed600}
 						alt="Where I think new web software developers should start in 2022"
@@ -129,7 +129,7 @@
 
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/set-up-some-aliases">
-					<img
+					<enhanced:img
 						class="h-48 w-full object-cover"
 						src={itermAliasesTrimmed600}
 						alt="Set up some aliases"

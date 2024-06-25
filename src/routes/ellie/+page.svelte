@@ -1,89 +1,86 @@
 <script lang="ts">
 	import Seo from '../../components/Seo.svelte';
 	import ImageGallery from './ImageGallery.svelte';
-
 	// images
-	import ellieMain from '$lib/images/ellie/main.webp';
-	import goodbye from '$lib/images/ellie/goodbye.webp';
-
+	import goodbye from '$lib/images/ellie/goodbye.webp?enhanced';
+	import ellieMain from '$lib/images/ellie/main.webp?enhanced';
 	// puppy images
-	import puppy1 from '$lib/images/ellie/puppy/1.webp';
-	import puppy2 from '$lib/images/ellie/puppy/2.webp';
-	import puppy3 from '$lib/images/ellie/puppy/3.webp';
-	import puppy4 from '$lib/images/ellie/puppy/4.webp';
-	import puppy5 from '$lib/images/ellie/puppy/5.webp';
-	import puppy6 from '$lib/images/ellie/puppy/6.webp';
-	import puppy7 from '$lib/images/ellie/puppy/7.webp';
-	import puppy8 from '$lib/images/ellie/puppy/8.webp';
-
+	import puppy1 from '$lib/images/ellie/puppy/1.webp?enhanced';
+	import puppy2 from '$lib/images/ellie/puppy/2.webp?enhanced';
+	import puppy3 from '$lib/images/ellie/puppy/3.webp?enhanced';
+	import puppy4 from '$lib/images/ellie/puppy/4.webp?enhanced';
+	import puppy5 from '$lib/images/ellie/puppy/5.webp?enhanced';
+	import puppy6 from '$lib/images/ellie/puppy/6.webp?enhanced';
+	import puppy7 from '$lib/images/ellie/puppy/7.webp?enhanced';
+	import puppy8 from '$lib/images/ellie/puppy/8.webp?enhanced';
 	// adult images
-	import adult1 from '$lib/images/ellie/adult/20211030_171419.webp';
-	import adult2 from '$lib/images/ellie/adult/52E95267-89ED-44DA-BA92-332DDB4D1511.webp';
-	import adult3 from '$lib/images/ellie/adult/9D9F1399-339E-4F41-A899-261063B3D76F.webp';
-	import adult4 from '$lib/images/ellie/adult/C3A18D90-546C-49BF-B225-89744FB7A277.webp';
-	import adult5 from '$lib/images/ellie/adult/C8FEE226-B465-4C47-BD5F-7FD57CE4C645.webp';
-	import adult6 from '$lib/images/ellie/adult/D4DBF50F-C47D-4E01-BC2C-A795E730B9AC.webp';
-	import adult7 from '$lib/images/ellie/adult/DSC_1718.webp';
-	import adult8 from '$lib/images/ellie/adult/DSC_1740.webp';
-	import adult10 from '$lib/images/ellie/adult/IMG_0041.webp';
-	import adult11 from '$lib/images/ellie/adult/IMG_0054.webp';
-	import adult12 from '$lib/images/ellie/adult/IMG_0058.webp';
-	import adult13 from '$lib/images/ellie/adult/IMG_0061.webp';
-	import adult14 from '$lib/images/ellie/adult/IMG_0067.webp';
-	import adult15 from '$lib/images/ellie/adult/IMG_0081.webp';
-	import adult16 from '$lib/images/ellie/adult/IMG_0083.webp';
-	import adult17 from '$lib/images/ellie/adult/IMG_0138.webp';
-	import adult18 from '$lib/images/ellie/adult/IMG_0143.webp';
-	import adult19 from '$lib/images/ellie/adult/IMG_0157.webp';
-	import adult21 from '$lib/images/ellie/adult/IMG_0200.webp';
-	import adult22 from '$lib/images/ellie/adult/IMG_0201.webp';
-	import adult23 from '$lib/images/ellie/adult/IMG_0211.webp';
-	import adult24 from '$lib/images/ellie/adult/IMG_0218.webp';
-	import adult25 from '$lib/images/ellie/adult/IMG_0291.webp';
-	import adult26 from '$lib/images/ellie/adult/IMG_0428.webp';
-	import adult27 from '$lib/images/ellie/adult/IMG_0454.webp';
-	import adult28 from '$lib/images/ellie/adult/IMG_0461.webp';
-	import adult29 from '$lib/images/ellie/adult/IMG_0468.webp';
-	import adult30 from '$lib/images/ellie/adult/IMG_0518.webp';
-	import adult31 from '$lib/images/ellie/adult/IMG_0547.webp';
-	import adult32 from '$lib/images/ellie/adult/IMG_0790.webp';
-	import adult33 from '$lib/images/ellie/adult/IMG_0828.webp';
-	import adult34 from '$lib/images/ellie/adult/IMG_0844.webp';
-	import adult35 from '$lib/images/ellie/adult/IMG_0901.webp';
-	import adult36 from '$lib/images/ellie/adult/IMG_1466.webp';
-	import adult37 from '$lib/images/ellie/adult/IMG_1567.webp';
-	import adult38 from '$lib/images/ellie/adult/IMG_1570.webp';
-	import adult39 from '$lib/images/ellie/adult/IMG_1653.webp';
-	import adult40 from '$lib/images/ellie/adult/IMG_1983.webp';
-	import adult41 from '$lib/images/ellie/adult/IMG_2900.webp';
-	import adult42 from '$lib/images/ellie/adult/IMG_3718.webp';
-	import adult43 from '$lib/images/ellie/adult/IMG_3992.webp';
-	import adult44 from '$lib/images/ellie/adult/IMG_4904.webp';
-	import adult45 from '$lib/images/ellie/adult/IMG_4920.webp';
-	import adult46 from '$lib/images/ellie/adult/IMG_4976.webp';
-	import adult47 from '$lib/images/ellie/adult/IMG_5279.webp';
-	import adult48 from '$lib/images/ellie/adult/IMG_5859.webp';
-	import adult49 from '$lib/images/ellie/adult/IMG_6186.webp';
-	import adult50 from '$lib/images/ellie/adult/IMG_6410.webp';
-	import adult51 from '$lib/images/ellie/adult/IMG_6434.webp';
-	import adult52 from '$lib/images/ellie/adult/IMG_6436.webp';
-	import adult53 from '$lib/images/ellie/adult/IMG_6625.webp';
-	import adult54 from '$lib/images/ellie/adult/IMG_6646.webp';
-	import adult55 from '$lib/images/ellie/adult/IMG_6663.webp';
-	import adult56 from '$lib/images/ellie/adult/IMG_6695.webp';
-	import adult57 from '$lib/images/ellie/adult/IMG_6962.webp';
-	import adult58 from '$lib/images/ellie/adult/IMG_7114.webp';
-	import adult59 from '$lib/images/ellie/adult/IMG_7127.webp';
-	import adult60 from '$lib/images/ellie/adult/IMG_7145.webp';
-	import adult61 from '$lib/images/ellie/adult/IMG_8636.webp';
-	import adult62 from '$lib/images/ellie/adult/IMG_9146.webp';
-	import adult63 from '$lib/images/ellie/adult/IMG_9391.webp';
-	import adult64 from '$lib/images/ellie/adult/IMG_9574.webp';
-	import adult65 from '$lib/images/ellie/adult/IMG_9613.webp';
-	import adult66 from '$lib/images/ellie/adult/IMG_9631.webp';
-	import adult67 from '$lib/images/ellie/adult/celebration-of-life--13.webp';
-	import adult68 from '$lib/images/ellie/adult/celebration-of-life--5.webp';
-	import adult69 from '$lib/images/ellie/adult/IMG_2021.webp';
+	import adult1 from '$lib/images/ellie/adult/20211030_171419.webp?enhanced';
+	import adult2 from '$lib/images/ellie/adult/52E95267-89ED-44DA-BA92-332DDB4D1511.webp?enhanced';
+	import adult3 from '$lib/images/ellie/adult/9D9F1399-339E-4F41-A899-261063B3D76F.webp?enhanced';
+	import adult4 from '$lib/images/ellie/adult/C3A18D90-546C-49BF-B225-89744FB7A277.webp?enhanced';
+	import adult5 from '$lib/images/ellie/adult/C8FEE226-B465-4C47-BD5F-7FD57CE4C645.webp?enhanced';
+	import adult67 from '$lib/images/ellie/adult/celebration-of-life--13.webp?enhanced';
+	import adult68 from '$lib/images/ellie/adult/celebration-of-life--5.webp?enhanced';
+	import adult6 from '$lib/images/ellie/adult/D4DBF50F-C47D-4E01-BC2C-A795E730B9AC.webp?enhanced';
+	import adult7 from '$lib/images/ellie/adult/DSC_1718.webp?enhanced';
+	import adult8 from '$lib/images/ellie/adult/DSC_1740.webp?enhanced';
+	import adult10 from '$lib/images/ellie/adult/IMG_0041.webp?enhanced';
+	import adult11 from '$lib/images/ellie/adult/IMG_0054.webp?enhanced';
+	import adult12 from '$lib/images/ellie/adult/IMG_0058.webp?enhanced';
+	import adult13 from '$lib/images/ellie/adult/IMG_0061.webp?enhanced';
+	import adult14 from '$lib/images/ellie/adult/IMG_0067.webp?enhanced';
+	import adult15 from '$lib/images/ellie/adult/IMG_0081.webp?enhanced';
+	import adult16 from '$lib/images/ellie/adult/IMG_0083.webp?enhanced';
+	import adult17 from '$lib/images/ellie/adult/IMG_0138.webp?enhanced';
+	import adult18 from '$lib/images/ellie/adult/IMG_0143.webp?enhanced';
+	import adult19 from '$lib/images/ellie/adult/IMG_0157.webp?enhanced';
+	import adult21 from '$lib/images/ellie/adult/IMG_0200.webp?enhanced';
+	import adult22 from '$lib/images/ellie/adult/IMG_0201.webp?enhanced';
+	import adult23 from '$lib/images/ellie/adult/IMG_0211.webp?enhanced';
+	import adult24 from '$lib/images/ellie/adult/IMG_0218.webp?enhanced';
+	import adult25 from '$lib/images/ellie/adult/IMG_0291.webp?enhanced';
+	import adult26 from '$lib/images/ellie/adult/IMG_0428.webp?enhanced';
+	import adult27 from '$lib/images/ellie/adult/IMG_0454.webp?enhanced';
+	import adult28 from '$lib/images/ellie/adult/IMG_0461.webp?enhanced';
+	import adult29 from '$lib/images/ellie/adult/IMG_0468.webp?enhanced';
+	import adult30 from '$lib/images/ellie/adult/IMG_0518.webp?enhanced';
+	import adult31 from '$lib/images/ellie/adult/IMG_0547.webp?enhanced';
+	import adult32 from '$lib/images/ellie/adult/IMG_0790.webp?enhanced';
+	import adult33 from '$lib/images/ellie/adult/IMG_0828.webp?enhanced';
+	import adult34 from '$lib/images/ellie/adult/IMG_0844.webp?enhanced';
+	import adult35 from '$lib/images/ellie/adult/IMG_0901.webp?enhanced';
+	import adult36 from '$lib/images/ellie/adult/IMG_1466.webp?enhanced';
+	import adult37 from '$lib/images/ellie/adult/IMG_1567.webp?enhanced';
+	import adult38 from '$lib/images/ellie/adult/IMG_1570.webp?enhanced';
+	import adult39 from '$lib/images/ellie/adult/IMG_1653.webp?enhanced';
+	import adult40 from '$lib/images/ellie/adult/IMG_1983.webp?enhanced';
+	import adult69 from '$lib/images/ellie/adult/IMG_2021.webp?enhanced';
+	import adult41 from '$lib/images/ellie/adult/IMG_2900.webp?enhanced';
+	import adult42 from '$lib/images/ellie/adult/IMG_3718.webp?enhanced';
+	import adult43 from '$lib/images/ellie/adult/IMG_3992.webp?enhanced';
+	import adult44 from '$lib/images/ellie/adult/IMG_4904.webp?enhanced';
+	import adult45 from '$lib/images/ellie/adult/IMG_4920.webp?enhanced';
+	import adult46 from '$lib/images/ellie/adult/IMG_4976.webp?enhanced';
+	import adult47 from '$lib/images/ellie/adult/IMG_5279.webp?enhanced';
+	import adult48 from '$lib/images/ellie/adult/IMG_5859.webp?enhanced';
+	import adult49 from '$lib/images/ellie/adult/IMG_6186.webp?enhanced';
+	import adult50 from '$lib/images/ellie/adult/IMG_6410.webp?enhanced';
+	import adult51 from '$lib/images/ellie/adult/IMG_6434.webp?enhanced';
+	import adult52 from '$lib/images/ellie/adult/IMG_6436.webp?enhanced';
+	import adult53 from '$lib/images/ellie/adult/IMG_6625.webp?enhanced';
+	import adult54 from '$lib/images/ellie/adult/IMG_6646.webp?enhanced';
+	import adult55 from '$lib/images/ellie/adult/IMG_6663.webp?enhanced';
+	import adult56 from '$lib/images/ellie/adult/IMG_6695.webp?enhanced';
+	import adult57 from '$lib/images/ellie/adult/IMG_6962.webp?enhanced';
+	import adult58 from '$lib/images/ellie/adult/IMG_7114.webp?enhanced';
+	import adult59 from '$lib/images/ellie/adult/IMG_7127.webp?enhanced';
+	import adult60 from '$lib/images/ellie/adult/IMG_7145.webp?enhanced';
+	import adult61 from '$lib/images/ellie/adult/IMG_8636.webp?enhanced';
+	import adult62 from '$lib/images/ellie/adult/IMG_9146.webp?enhanced';
+	import adult63 from '$lib/images/ellie/adult/IMG_9391.webp?enhanced';
+	import adult64 from '$lib/images/ellie/adult/IMG_9574.webp?enhanced';
+	import adult65 from '$lib/images/ellie/adult/IMG_9613.webp?enhanced';
+	import adult66 from '$lib/images/ellie/adult/IMG_9631.webp?enhanced';
 
 	const puppyImages = [
 		{
@@ -557,7 +554,7 @@
 		</p>
 		<hr class="border-gray-300 dark:border-gray-700" />
 		<figure>
-			<img
+			<enhanced:img
 				alt="Ellie"
 				class="aspect-[600/800] rounded-xl shadow-lg w-full lg:max-w-[600px]"
 				src={ellieMain}
@@ -799,7 +796,11 @@
 		</p>
 
 		<figure>
-			<img alt="Ellie swimming off to get a ball" class="rounded-xl shadow-lg" src={goodbye} />
+			<enhanced:img
+				alt="Ellie swimming off to get a ball"
+				class="rounded-xl shadow-lg"
+				src={goodbye}
+			/>
 		</figure>
 
 		<iframe

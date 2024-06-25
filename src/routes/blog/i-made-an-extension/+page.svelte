@@ -1,10 +1,10 @@
 <script>
+	import afterExtension from '$lib/images/after-extension.webp?enhanced';
+	import availableInTheChromeWebStore from '$lib/images/available-in-the-chrome-web-store.webp?enhanced';
+	import beforeExtension from '$lib/images/before-extension.webp?enhanced';
+	import ogImage from '$lib/images/chrome-basecamp-ui-extension.webp?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
-	import beforeExtension from '$lib/images/before-extension.webp';
-	import afterExtension from '$lib/images/after-extension.webp';
-	import availableInTheChromeWebStore from '$lib/images/available-in-the-chrome-web-store.webp';
-	import ogImage from '$lib/images/chrome-basecamp-ui-extension.webp';
 </script>
 
 <Seo
@@ -51,14 +51,14 @@
 
 				<h2>Before extension</h2>
 				<figure>
-					<img alt="Before extension" src={beforeExtension} width="800" />
+					<enhanced:img alt="Before extension" src={beforeExtension} />
 					<figcaption class="text-center">
 						Notice how big and in your face those completed items are?
 					</figcaption>
 				</figure>
 				<h2>After extension</h2>
 				<figure>
-					<img alt="After extension" src={afterExtension} width="800" />
+					<enhanced:img alt="After extension" src={afterExtension} />
 					<figcaption class="text-center">Notice how much nicer that looks?</figcaption>
 				</figure>
 
@@ -79,11 +79,10 @@
 					<a
 						href="https://chrome.google.com/webstore/detail/basecamp-ui-tweaks/aefhfcjkdpdjhbjdhoojknelmlodaidn?hl=en"
 					>
-						<img
-							class="bg-white rounded-md shadow-sm"
+						<enhanced:img
+							class="bg-white rounded-md shadow-sm max-w-[200px]"
 							alt="Available in the chrome web store"
 							src={availableInTheChromeWebStore}
-							width="200"
 						/>
 					</a>
 				</p>
