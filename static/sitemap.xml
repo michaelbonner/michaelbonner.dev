@@ -59,4 +59,10 @@
         <priority>0.5</priority>
         <lastmod>2022-01-27T23:19:59.711Z</lastmod>
     </url>
+    <url>
+        <loc>https://michaelbonner.dev/ellie</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+        <lastmod>2024-06-25T16:12:21.010Z</lastmod>
+    </url>
 </urlset>

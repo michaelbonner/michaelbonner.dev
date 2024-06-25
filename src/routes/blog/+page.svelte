@@ -5,6 +5,7 @@
 	import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.webp?enhanced';
 	import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.webp?enhanced';
 	import Seo from '../../components/Seo.svelte';
+	import { classes } from '../../styles/classes';
 </script>
 
 <Seo description="Just writing down some things" title="Developer Blog | Michael Bonner" />
@@ -14,7 +15,7 @@
 </svelte:head>
 
 <main class="relative pt-8 pb-8 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-	<div class="container mx-auto px-8 py-12">
+	<div class="container grid gap-12 mx-auto px-8 py-12">
 		<div class="prose dark:prose-invert max-w-3xl">
 			<h1>Web Developer Blog</h1>
 			<p>
@@ -23,7 +24,7 @@
 			</p>
 		</div>
 
-		<div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
+		<div class="max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
 			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 				<a class="flex-shrink-0 leading-[0]" href="/blog/github-repositories-viewer-app">
 					<enhanced:img
@@ -154,6 +155,10 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div>
+			I also wrote a <a class={classes.bodyLink} href="/ellie">post about my pup Ellie</a>, who died
+			in 2023.
 		</div>
 	</div>
 </main>

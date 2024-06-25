@@ -485,7 +485,9 @@
 		</p>
 	</div>
 
-	<div class="max-h-[80vh] overflow-auto max-w-7xl grid gap-2 mx-auto px-2 mb-scrollable">
+	<div
+		class="max-h-[80vh] overflow-auto max-w-7xl grid gap-2 mx-auto mb-scrollable p-8 bg-gray-300 dark:bg-gray-700 rounded-2xl"
+	>
 		<ImageGallery galleryID="ellie-puppy" images={puppyImages} />
 
 		<div class="grid lg:grid-cols-2 gap-2">
@@ -628,7 +630,9 @@
 		</p>
 	</div>
 
-	<div class="max-h-[80vh] overflow-auto max-w-7xl mx-auto px-2 mb-scrollable">
+	<div
+		class="max-h-[80vh] overflow-auto max-w-7xl mx-auto mb-scrollable p-8 bg-gray-300 dark:bg-gray-700 rounded-2xl"
+	>
 		<ImageGallery galleryID="ellie-adult" images={adultImages} />
 	</div>
 
