@@ -36,8 +36,9 @@
 		if (browser) {
 			posthog.init('phc_CR48D5k9rHyRASc1LcsP2vkacYA7WnCTRmV7lsuDULf', {
 				api_host: 'https://michaelbonner.dev/ingest',
+				capture_pageleave: false,
 				capture_pageview: false,
-				capture_pageleave: false
+				ui_host: 'https://us.posthog.com'
 			});
 		}
 		return;
