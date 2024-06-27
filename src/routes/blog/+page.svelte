@@ -1,9 +1,9 @@
 <script lang="ts">
-	import chromeBasecampUiExtension from '$lib/images/chrome-basecamp-ui-extension.webp?enhanced';
-	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.webp?enhanced';
-	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.webp?enhanced';
-	import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.webp?enhanced';
-	import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.webp?enhanced';
+	import chromeBasecampUiExtension from '$lib/images/chrome-basecamp-ui-extension.jpg?enhanced';
+	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg?enhanced';
+	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced';
+	import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.jpg?enhanced';
+	import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.jpg?enhanced';
 	import Seo from '../../components/Seo.svelte';
 	import { classes } from '../../styles/classes';
 </script>
