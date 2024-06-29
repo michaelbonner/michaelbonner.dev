@@ -25,7 +25,9 @@
 		</div>
 
 		<div class="max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
-			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+			<div
+				class="flex flex-col rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:rotate-1 transition-transform"
+			>
 				<a class="flex-shrink-0 leading-[0]" href="/blog/github-repositories-viewer-app">
 					<enhanced:img
 						alt="Github Repository Collaborators Viewer"
@@ -50,7 +52,9 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+			<div
+				class="flex flex-col rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:rotate-1 transition-transform"
+			>
 				<a class="flex-shrink-0 leading-[0]" href="/blog/git-branch-name-raycast-extension">
 					<enhanced:img
 						alt="Git Branch Name Raycast Extension"
@@ -75,7 +79,9 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+			<div
+				class="flex flex-col rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:rotate-1 transition-transform"
+			>
 				<a class="flex-shrink-0 leading-[0]" href="/blog/i-made-an-extension">
 					<enhanced:img
 						alt="I made my first Chrome extension"
@@ -101,7 +107,9 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+			<div
+				class="flex flex-col rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:rotate-1 transition-transform"
+			>
 				<a
 					class="flex-shrink-0 leading-[0]"
 					href="/blog/getting-started-as-a-web-developer-in-2022"
@@ -130,7 +138,9 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+			<div
+				class="flex flex-col rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:rotate-1 transition-transform"
+			>
 				<a class="flex-shrink-0 leading-[0]" href="/blog/set-up-some-aliases">
 					<enhanced:img
 						alt="Set up some aliases"
