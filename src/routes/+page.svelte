@@ -222,9 +222,9 @@
 		</div>
 		<div class="lg:mt-32 max-w-7xl">
 			<H2>Projects I&apos;m proud of</H2>
-			<ul class="mt-16 text-lg grid lg:grid-cols-2 gap-x-24 gap-y-12 lg:gap-y-24">
+			<ul class="mt-8 lg:mt-16 text-lg grid lg:grid-cols-2 gap-x-24 gap-y-12 lg:gap-y-24">
 				{#each projects as project, projectIndex}
-					<li class="ml-4 lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
+					<li class="lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
 						<a class="hover:scale-105 hover:rotate-1 transition-transform" href={project.url}>
 							<enhanced:img
 								alt={project.title}
@@ -264,9 +264,9 @@
 		</div>
 		<div class="lg:mt-32 max-w-7xl">
 			<H2>Things I&apos;ve built for fun</H2>
-			<ul class="mt-16 text-lg grid lg:grid-cols-2 gap-x-24 gap-y-12 lg:gap-y-24">
+			<ul class="mt-8 lg:mt-16 text-lg grid lg:grid-cols-2 gap-x-24 gap-y-12 lg:gap-y-24">
 				{#each otherThings as project}
-					<li class="ml-4 lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
+					<li class="lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
 						{#if project.image}
 							<a class="hover:scale-105 hover:rotate-1 transition-transform" href={project.url}>
 								<enhanced:img
