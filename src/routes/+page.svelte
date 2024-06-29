@@ -231,7 +231,7 @@
 								class="rounded-lg md:max-w-md"
 								loading={projectIndex <= 1 ? 'eager' : 'lazy'}
 								src={project.image}
-								sizes="448w"
+								sizes="(min-width:768px) 448px, 100vw"
 							/>
 						</a>
 						<p>
@@ -274,7 +274,7 @@
 									class="rounded-lg md:max-w-md"
 									loading="lazy"
 									src={project.image}
-									sizes="448w"
+									sizes="(min-width:768px) 448px, 100vw"
 								/>
 							</a>
 						{/if}
