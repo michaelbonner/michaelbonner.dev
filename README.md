@@ -1,4 +1,4 @@
-<img src="./static/og-image.jpg" alt="Repository for michaelbonner.dev" style="margin-bottom:20px;border-radius: 24px" />
+<a href="https://michaelbonner.dev?utm_source=github"><img src="./static/og-image.jpg" alt="Repository for michaelbonner.dev" style="margin-bottom:20px;border-radius: 24px" /></a>
 
 Public site for [michaelbonner.dev](https://michaelbonner.dev/).
 
