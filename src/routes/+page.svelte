@@ -9,33 +9,54 @@
 	import mainImage from '$lib/images/on-the-beach-600.jpg?enhanced';
 	import { classes } from '../styles/classes';
 
+	import hereKidsWin from '$lib/images/projects/here-kids-win.jpg?enhanced';
+	import crewView from '$lib/images/projects/crewview.jpg?enhanced';
+	import jMillsEnt from '$lib/images/projects/jmillsent.jpg?enhanced';
+	import nefPas from '$lib/images/projects/nef-pas.jpg?enhanced';
+	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced';
+	import lazyUncle from '$lib/images/projects/lazy-uncle.jpg?enhanced';
+	import podcasts from '$lib/images/projects/podcasts.jpg?enhanced';
+	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced';
+	import githubRepositoriesViewer from '$lib/images/projects/github-repositories-viewer.jpg?enhanced';
+	import nhlArenas from '$lib/images/projects/nhl-arenas.jpg?enhanced';
+	import daysUntil from '$lib/images/projects/days-until.jpg?enhanced';
+	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced';
+	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced';
+	import ocr from '$lib/images/projects/ocr.jpg?enhanced';
+	import randomStringGenerator from '$lib/images/projects/random-string-generator.jpg?enhanced';
+
 	const projects = [
 		{
 			title: `Primary Children's Hospital: Here Kids Win`,
 			description: `Primary Children's Hospital wanted a website to promote patient stories. Faktory reached out to me to build the site they had envisioned. I'm really happy with how this one came out. Next.js made so much of it really simple.`,
 			url: `https://herekidswin.com/`,
-			github: `https://github.com/FaktoryUtah/primary-childrens-stories`
+			github: `https://github.com/FaktoryUtah/primary-childrens-stories`,
+			image: hereKidsWin
 		},
 		{
 			title: `Wasatch Covers`,
 			description: `An eCommerce site built using Gatsby.js. Load times went from over 10 seconds on their old platform, down to near instantaneous on the new one.`,
-			url: `https://wasatchcovers.com/`
+			url: `https://wasatchcovers.com/`,
+			image: wasatchCovers
 		},
 		{
 			title: `JME Film Co`,
 			description: `Built using Sanity CMS and Next.js. This one turned out really good and loads so fast.`,
 			url: `https://www.jmillsent.com/`,
-			github: `https://github.com/michaelbonner/jmillsent`
+			github: `https://github.com/michaelbonner/jmillsent`,
+			image: jMillsEnt
 		},
 		{
 			title: `CrewView`,
 			description: `I'm part of a team building a web application that helps companies manage their projects, people, and assets in a way that's easy to use and intuitive.`,
-			url: `https://crewview.com/`
+			url: `https://crewview.com/`,
+			image: crewView
 		},
 		{
 			title: `NEF Programs Administration System`,
 			description: `Big ol' platform to administer all of their programs. Can't show you the code for security reasons, but I'm really proud of it so I wanted to at least put it here. 😆`,
-			url: `https://pas.nef1.org/`
+			url: `https://pas.nef1.org/`,
+			image: nefPas
 		}
 	];
 	const otherThings = [
@@ -43,61 +64,71 @@
 			title: `Lazy Uncle`,
 			description: `I have a lot of people in my family, and sometimes it's hard to keep track of their birthdays and how old they are. Lazy Uncle makes it a little easier. Give it a shot and let me know what you think.`,
 			url: `https://www.lazyuncle.net/`,
-			github: `https://github.com/michaelbonner/lazy-uncle`
+			github: `https://github.com/michaelbonner/lazy-uncle`,
+			image: lazyUncle
 		},
 		{
 			title: `Podcasts I Listen To`,
 			description: `I am really into podcasts, and people ask what podcasts they should listen to. I built this site to make it easier to share the really good ones.`,
 			url: `https://podcasts.michaelbonner.dev/`,
-			github: `https://github.com/michaelbonner/podcasts-i-listen-to`
+			github: `https://github.com/michaelbonner/podcasts-i-listen-to`,
+			image: podcasts
 		},
 		{
 			title: `Route Picker`,
 			description: `Sometimes you just wanna have a timer to time a couple different routes and see which one is faster over time. This is made to do just that.`,
 			url: `https://www.whichrouteisfaster.com/`,
-			github: `https://github.com/michaelbonner/route-picker`
+			github: `https://github.com/michaelbonner/route-picker`,
+			image: routePicker
 		},
 		{
 			title: `GitHub Repository Collaborators Viewer`,
 			description: `GitHub (on purpose) doesn't make it very easy for individuals to see a list of all your repos and who has access to them. This little app helps you see that.`,
 			url: `https://github-repositories-viewer.bootpack.dev/`,
-			github: `https://github.com/michaelbonner/github-repositories-viewer`
+			github: `https://github.com/michaelbonner/github-repositories-viewer`,
+			image: githubRepositoriesViewer
 		},
 		{
 			title: `NHL Arenas To Visit`,
 			description: `The plan is to visit every home ice arena. Seems like a decent way to explore the US and Canada`,
 			url: `https://nhl.michaelbonner.dev/`,
-			github: `https://github.com/michaelbonner/nhl-arenas-react`
+			github: `https://github.com/michaelbonner/nhl-arenas-react`,
+			image: nhlArenas
 		},
 		{
 			title: `Days Until`,
 			description: `You ever wanted a site to just tell you how many days until a specific date. Well here you go. Really I just needed something easy to start building Svelte projects.`,
 			url: `https://days-until.michaelbonner.dev/`,
-			github: `https://github.com/michaelbonner/days-until`
+			github: `https://github.com/michaelbonner/days-until`,
+			image: daysUntil
 		},
 		{
 			title: `date-fns Format Helper`,
 			description: `I always forget date-fns format strings. This site offers some sane defaults and makes it easy to see what the format string will look like.`,
 			url: `https://date-fns.michaelbonner.dev/`,
-			github: `https://github.com/michaelbonner/date-fns-format`
+			github: `https://github.com/michaelbonner/date-fns-format`,
+			image: dateFnsFormat
 		},
 		{
 			title: `Cookie Parser`,
 			description: `Now you don't have to wonder what all the cookies on a site mean. Just copy and paste the cookies string and the site will tell you what cookies are present with links to learn more.`,
 			url: `https://cookie-parser.michaelbonner.dev/`,
-			github: `https://github.com/michaelbonner/cookie-parser`
+			github: `https://github.com/michaelbonner/cookie-parser`,
+			image: cookieParser
 		},
 		{
 			title: `OCR Reader`,
 			description: `Just a little example of how Tesseract can be used to read text from an uploaded image.`,
 			url: `https://ocr.michaelbonner.dev/`,
-			github: `https://github.com/michaelbonner/tesseract-test`
+			github: `https://github.com/michaelbonner/tesseract-test`,
+			image: ocr
 		},
 		{
 			title: `Random String Generator`,
 			description: `I got tired of Googling for a site and getting a bunch of cruft I don't need when trying to generate a random string, so I built a dead simple replacement.`,
 			url: `https://random-string-generator.michaelbonner.dev/`,
-			github: `https://github.com/michaelbonner/random-string-generator`
+			github: `https://github.com/michaelbonner/random-string-generator`,
+			image: randomStringGenerator
 		}
 	];
 
@@ -194,6 +225,14 @@
 			<ul class="mt-16 text-lg grid lg:grid-cols-2 gap-x-24 gap-y-12 lg:gap-y-24">
 				{#each projects as project}
 					<li class="ml-4 lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
+						<a class="hover:scale-105 hover:rotate-1 transition-transform" href={project.url}>
+							<enhanced:img
+								alt={project.title}
+								class="rounded-lg md:max-w-md"
+								src={project.image}
+								sizes="448w"
+							/>
+						</a>
 						<p>
 							<a class={classNames('!text-2xl', classes.largeBodyLink)} href={project.url}>
 								{project.title}
@@ -227,6 +266,16 @@
 			<ul class="mt-16 text-lg grid lg:grid-cols-2 gap-x-24 gap-y-12 lg:gap-y-24">
 				{#each otherThings as project}
 					<li class="ml-4 lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
+						{#if project.image}
+							<a class="hover:scale-105 hover:rotate-1 transition-transform" href={project.url}>
+								<enhanced:img
+									alt={project.title}
+									class="rounded-lg md:max-w-md"
+									src={project.image}
+									sizes="448w"
+								/>
+							</a>
+						{/if}
 						<p>
 							<a class={classNames('!text-2xl', classes.largeBodyLink)} href={project.url}>
 								{project.title}
