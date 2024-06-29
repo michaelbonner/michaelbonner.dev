@@ -21,7 +21,7 @@
 
 		interval = setInterval(() => {
 			meta?.setAttribute('content', `hsl(${(hue -= 1)}, 50%, 30%)`);
-		}, 40);
+		}, 100);
 
 		document.querySelectorAll('link[rel="preload"]').forEach((link) => {
 			link.setAttribute('rel', 'stylesheet');
