@@ -48,7 +48,7 @@
 		},
 		{
 			title: 'Warp',
-			href: 'https://www.warp.dev/',
+			href: 'https://app.warp.dev/referral/J55E6',
 			description:
 				'Like the regular terminal, but looks better and has more features. The AI features are super helpful.'
 		},
