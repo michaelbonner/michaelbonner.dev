@@ -1,4 +1,5 @@
 <script lang="ts">
+	import mainImage from '$lib/images/on-the-beach-600.jpg?enhanced';
 	import H2 from '../components/H2.svelte';
 	import Seo from '../components/Seo.svelte';
 	import { classNames } from '../functions/classNames';
@@ -6,24 +7,23 @@
 	import Instagram from '../icons/Instagram.svelte';
 	import Link from '../icons/Link.svelte';
 	import LinkedIn from '../icons/LinkedIn.svelte';
-	import mainImage from '$lib/images/on-the-beach-600.jpg?enhanced';
 	import { classes } from '../styles/classes';
 
-	import hereKidsWin from '$lib/images/projects/here-kids-win.jpg?enhanced';
-	import crewView from '$lib/images/projects/crewview.jpg?enhanced';
-	import jMillsEnt from '$lib/images/projects/jmillsent.jpg?enhanced';
-	import nefPas from '$lib/images/projects/nef-pas.jpg?enhanced';
-	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced';
-	import lazyUncle from '$lib/images/projects/lazy-uncle.jpg?enhanced';
-	import podcasts from '$lib/images/projects/podcasts.jpg?enhanced';
-	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced';
-	import githubRepositoriesViewer from '$lib/images/projects/github-repositories-viewer.jpg?enhanced';
-	import nhlArenas from '$lib/images/projects/nhl-arenas.jpg?enhanced';
-	import daysUntil from '$lib/images/projects/days-until.jpg?enhanced';
-	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced';
-	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced';
-	import ocr from '$lib/images/projects/ocr.jpg?enhanced';
-	import randomStringGenerator from '$lib/images/projects/random-string-generator.jpg?enhanced';
+	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced&w=448';
+	import crewView from '$lib/images/projects/crewview.jpg?enhanced&w=448';
+	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced&w=448';
+	import daysUntil from '$lib/images/projects/days-until.jpg?enhanced&w=448';
+	import githubRepositoriesViewer from '$lib/images/projects/github-repositories-viewer.jpg?enhanced&w=448';
+	import hereKidsWin from '$lib/images/projects/here-kids-win.jpg?enhanced&w=448';
+	import jMillsEnt from '$lib/images/projects/jmillsent.jpg?enhanced&w=448';
+	import lazyUncle from '$lib/images/projects/lazy-uncle.jpg?enhanced&w=448';
+	import nefPas from '$lib/images/projects/nef-pas.jpg?enhanced&w=448';
+	import nhlArenas from '$lib/images/projects/nhl-arenas.jpg?enhanced&w=448';
+	import ocr from '$lib/images/projects/ocr.jpg?enhanced&w=448';
+	import podcasts from '$lib/images/projects/podcasts.jpg?enhanced&w=448';
+	import randomStringGenerator from '$lib/images/projects/random-string-generator.jpg?enhanced&w=448';
+	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced&w=448';
+	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced&w=448';
 
 	const projects = [
 		{
