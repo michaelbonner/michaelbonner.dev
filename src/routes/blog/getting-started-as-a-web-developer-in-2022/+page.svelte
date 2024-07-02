@@ -1,6 +1,6 @@
 <script lang="ts">
-	import michaelbonnerDevGithubScreenshot from '$lib/images/michaelbonner-dev-github-screenshot.png?enhanced';
-	import tuffWebsiteScreenshot from '$lib/images/tuff-website-screenshot.png?enhanced';
+	import michaelbonnerDevGithubScreenshot from '$lib/images/michaelbonner-dev-github-screenshot.png?enhanced&w=768,440';
+	import tuffWebsiteScreenshot from '$lib/images/tuff-website-screenshot.png?enhanced&w=768,440';
 	import Seo from '../../../components/Seo.svelte';
 	import { classes } from '../../../styles/classes';
 </script>
@@ -62,6 +62,7 @@
 						<enhanced:img
 							alt="Tuff website screenshot"
 							loading="lazy"
+							sizes="(max-width: 768px) 100vw, 768px"
 							src={tuffWebsiteScreenshot}
 						/>
 					</a>
@@ -115,6 +116,7 @@
 						<enhanced:img
 							alt="michaelbonner.dev github screenshot"
 							loading="lazy"
+							sizes="(max-width: 768px) 100vw, 768px"
 							src={michaelbonnerDevGithubScreenshot}
 						/>
 					</a>

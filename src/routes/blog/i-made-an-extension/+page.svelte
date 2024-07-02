@@ -1,7 +1,7 @@
 <script>
-	import afterExtension from '$lib/images/after-extension.png?enhanced';
-	import availableInTheChromeWebStore from '$lib/images/available-in-the-chrome-web-store.png?enhanced';
-	import beforeExtension from '$lib/images/before-extension.png?enhanced';
+	import afterExtension from '$lib/images/after-extension.png?enhanced&w=768,440';
+	import availableInTheChromeWebStore from '$lib/images/available-in-the-chrome-web-store.png?enhanced&w=768,440';
+	import beforeExtension from '$lib/images/before-extension.png?enhanced&w=768,440';
 	import ogImage from '$lib/images/chrome-basecamp-ui-extension.jpg?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
@@ -51,14 +51,23 @@
 
 				<h2>Before extension</h2>
 				<figure>
-					<enhanced:img alt="Before extension" src={beforeExtension} />
+					<enhanced:img
+						alt="Before extension"
+						sizes="(max-width: 768px) 100vw, 768px"
+						src={beforeExtension}
+					/>
 					<figcaption class="text-center">
 						Notice how big and in your face those completed items are?
 					</figcaption>
 				</figure>
 				<h2>After extension</h2>
 				<figure>
-					<enhanced:img alt="After extension" loading="lazy" src={afterExtension} />
+					<enhanced:img
+						alt="After extension"
+						loading="lazy"
+						sizes="(max-width: 768px) 100vw, 768px"
+						src={afterExtension}
+					/>
 					<figcaption class="text-center">Notice how much nicer that looks?</figcaption>
 				</figure>
 
@@ -83,6 +92,7 @@
 							alt="Available in the chrome web store"
 							class="bg-white rounded-md shadow-sm max-w-[200px]"
 							loading="lazy"
+							sizes="(max-width: 768px) 100vw, 768px"
 							src={availableInTheChromeWebStore}
 						/>
 					</a>

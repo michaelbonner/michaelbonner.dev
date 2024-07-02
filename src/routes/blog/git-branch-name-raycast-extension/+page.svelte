@@ -1,7 +1,7 @@
 <script>
-	import gitBranchNameGenerator1 from '$lib/images/git-branch-name-generator-1.jpg?enhanced';
-	import gitBranchNameGenerator2 from '$lib/images/git-branch-name-generator-2.jpg?enhanced';
-	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg?enhanced';
+	import gitBranchNameGenerator1 from '$lib/images/git-branch-name-generator-1.jpg?enhanced&w=768,440';
+	import gitBranchNameGenerator2 from '$lib/images/git-branch-name-generator-2.jpg?enhanced&w=768,440';
+	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg?enhanced&w=768,440';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
 </script>
@@ -70,6 +70,7 @@
 						class="w-full"
 						src={gitBranchNameGenerator1}
 						loading="lazy"
+						sizes="(max-width: 768px) 100vw, 768px"
 					/>
 					<figcaption>Choose your branch type</figcaption>
 				</figure>
@@ -79,6 +80,7 @@
 						alt="Add you branch name"
 						class="w-full m-0"
 						loading="lazy"
+						sizes="(max-width: 768px) 100vw, 768px"
 						src={gitBranchNameGenerator2}
 					/>
 					<figcaption>Enter your branch name</figcaption>
@@ -89,6 +91,7 @@
 						alt="Results get copied to your clipboard"
 						class="w-full"
 						loading="lazy"
+						sizes="(max-width: 768px) 100vw, 768px"
 						src={gitBranchNameGenerator3}
 					/>
 					<figcaption>Results get copied to your clipboard</figcaption>

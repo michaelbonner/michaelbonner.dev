@@ -1,5 +1,5 @@
 <script>
-	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced';
+	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced&w=768,440';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
 </script>
@@ -49,6 +49,8 @@
 					<enhanced:img
 						alt="Screenshot of the GitHub Repositories Viewer app"
 						class="w-full m-0"
+						loading="lazy"
+						sizes="(max-width: 768px) 100vw, 440px"
 						src={githubRepositoriesViewer}
 					/>
 					<figcaption>
