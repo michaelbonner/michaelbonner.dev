@@ -4,7 +4,7 @@
 	import { browser } from '$app/environment';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
-	import posthog from 'posthog-js-lite';
+	import posthog from 'posthog-js';
 	import { onDestroy, onMount } from 'svelte';
 	import Gtm from '../components/gtm.svelte';
 	import { classNames } from '../functions/classNames';

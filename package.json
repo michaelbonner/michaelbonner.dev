@@ -40,7 +40,7 @@
 		"@sveltejs/adapter-vercel": "^5.3.2",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.3",
-		"posthog-js-lite": "^3.0.2",
+		"posthog-js": "^1.142.1",
 		"sharp": "^0.33.3"
 	}
 }
