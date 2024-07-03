@@ -81,7 +81,7 @@
 			description: 'A great browser for Mac'
 		},
 		{
-			href: 'https://raycast.com/',
+			href: 'https://www.raycast.com/hey/1fec4edf',
 			title: 'Raycast',
 			description:
 				'Spotlight replacement for Mac with window management, clipboard history, and more'
