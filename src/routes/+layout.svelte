@@ -80,7 +80,7 @@
 >
 	<header class="flex justify-between pt-12 px-8 container mx-auto">
 		<a href={`/`} class={classNames('lg:text-3xl', classes.menuItem)}> Michael Bonner </a>
-		<nav class="flex justify-end space-x-6 text-xl">
+		<nav class="flex justify-end space-x-6 text-xl" aria-label="Main">
 			<a href={`/`} class={classes.menuItem}>Home</a>
 			<a href="/blog" class={classes.menuItem}>Blog</a>
 		</nav>
@@ -89,7 +89,10 @@
 	<slot />
 
 	<footer class="lg:flex lg:items-center lg:flex-row-reverse justify-between container mx-auto p-8">
-		<nav class="flex justify-center lg:justify-end space-x-6 text-xl pb-8 lg:py-0">
+		<nav
+			class="flex justify-center lg:justify-end space-x-6 text-xl pb-8 lg:py-0"
+			aria-label="Footer"
+		>
 			<a href="/" class={classes.menuItem}>Home</a>
 			<a href="/blog" class={classes.menuItem}>Blog</a>
 			<a href="/uses" class={classes.menuItem}>Uses</a>
