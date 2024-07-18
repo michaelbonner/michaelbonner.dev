@@ -150,8 +150,8 @@ alias brc='bun run codegen'
 alias brg='bun run generate'
 
 # docker
-alias dcu='docker-compose up'
-alias dcd='docker-compose down'
+alias dcu='docker compose up'
+alias dcd='docker compose down'
 
 # deployments
 alias vl='vercel ls'
