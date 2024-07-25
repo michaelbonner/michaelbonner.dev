@@ -443,7 +443,7 @@
 			spot on me, the way you'd hide when I watched sports because the stress was just too much, the
 			way you'd lay on your back and hold your toy above your head while you chewed on it, how
 			patient you were with puppies, how proud you'd get when you caught the frisbee before it hit
-			the ground, and how you loved Kellie.
+			the ground, and how you loved Kellie from the first moment you met her.
 		</p>
 
 		<p>I'm realizing that only way to heal is to forget parts of you. And that fucking sucks.</p>
