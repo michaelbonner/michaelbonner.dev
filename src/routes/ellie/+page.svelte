@@ -634,6 +634,16 @@
 			were so expressive with your face. You could tell me anything with your eyes. I always felt
 			like I knew what you were thinking.
 		</p>
+
+		<p>
+			I loved watching you fall in love with Kellie. From the moment you two met I knew it was
+			special. You usually were a little unsure about new girls, but Kellie obviously was different.
+			I think you saw the same beautiful traits that I fell in love with. You and Kellie became best
+			friends. I loved how you'd wait for me to get up in the morning and then take my spot in the
+			bed to get some cuddles from Kellie. She would take you hiking all the time and you loved it.
+			You'd come back from a hike and be so tired, but so happy. That girl gave her heart and soul
+			to you, and you gave it back just as much.
+		</p>
 	</div>
 
 	<div
