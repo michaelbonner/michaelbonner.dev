@@ -113,8 +113,8 @@
 </script>
 
 <Seo
-	title="Michael Bonner | Developer in Salt Lake, UT"
-	description="Hi, I'm Michael Bonner. I'm a web developer in Salt Lake UT"
+	title="The tools i use as a developer in Salt Lake, UT"
+	description="A short list of some of the tools I use on a regular basis to help me build products for clients."
 />
 
 <svelte:head>
