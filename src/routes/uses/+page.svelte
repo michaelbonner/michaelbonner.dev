@@ -65,7 +65,7 @@
 		{
 			title: 'Docker Desktop',
 			href: 'https://www.docker.com/products/docker-desktop/',
-			description: 'Docker Desktop is invaluable for local development'
+			description: 'Docker Desktop is invaluable for developers.'
 		}
 	];
 
