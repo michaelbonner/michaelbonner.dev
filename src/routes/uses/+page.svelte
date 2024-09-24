@@ -7,6 +7,7 @@
 		description: string;
 		href: string;
 		title: string;
+		isAffiliateLink?: boolean;
 	};
 
 	const workstationItems: UsesItem[] = [
@@ -84,13 +85,15 @@
 			href: 'https://www.raycast.com/hey/1fec4edf',
 			title: 'Raycast',
 			description:
-				'Spotlight replacement for Mac with window management, clipboard history, and more'
+				'Spotlight replacement for Mac with window management, clipboard history, and more',
+			isAffiliateLink: true
 		},
 		{
 			href: 'https://polypane.app/?via=bootpack',
 			title: 'Polypane',
 			description:
-				'Test your website in multiple viewports at once. Great for responsive design work.'
+				'Test your website in multiple viewports at once. Great for responsive design work.',
+			isAffiliateLink: true
 		},
 		{
 			href: 'https://folivora.ai/',
@@ -108,6 +111,13 @@
 			href: 'https://www.notion.so/',
 			title: 'Notion',
 			description: 'Great for keeping things organized; super powerful and configurable'
+		},
+		{
+			href: 'https://ref.flowvoice.ai/bootpack',
+			title: 'Wispr Flow',
+			description:
+				'An amazing AI tool for transcribing. I use it all the time for emails and project communications.',
+			isAffiliateLink: true
 		}
 	];
 </script>
@@ -147,6 +157,12 @@
 							</A>
 						</span>
 						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
+						{#if item.isAffiliateLink}
+							<p class="text-sm text-gray-500 dark:text-gray-400">
+								*This is an affiliate link. I may receive a commission if you purchase through this
+								link.
+							</p>
+						{/if}
 					</div>
 				{/each}
 			</div>
@@ -166,6 +182,12 @@
 							</A>
 						</span>
 						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
+						{#if item.isAffiliateLink}
+							<p class="text-sm text-gray-500 dark:text-gray-400">
+								*This is an affiliate link. I may receive a commission if you purchase through this
+								link.
+							</p>
+						{/if}
 					</div>
 				{/each}
 			</div>
@@ -185,6 +207,12 @@
 							</A>
 						</span>
 						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
+						{#if item.isAffiliateLink}
+							<p class="text-sm text-gray-500 dark:text-gray-400">
+								*This is an affiliate link. I may receive a commission if you purchase through this
+								link.
+							</p>
+						{/if}
 					</div>
 				{/each}
 			</div>
