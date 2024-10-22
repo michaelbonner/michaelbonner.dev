@@ -9,6 +9,11 @@
 	import Gtm from '../components/gtm.svelte';
 	import { classNames } from '../functions/classNames';
 	import { classes } from '../styles/classes';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	let interval: any;
 
@@ -86,7 +91,7 @@
 		</nav>
 	</header>
 
-	<slot />
+	{@render children?.()}
 
 	<footer class="lg:flex lg:items-center lg:flex-row-reverse justify-between container mx-auto p-8">
 		<nav

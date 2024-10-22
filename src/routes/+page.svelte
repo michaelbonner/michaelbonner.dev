@@ -323,7 +323,7 @@
 							<LinkedIn />
 							<span class="pt-1">LinkedIn</span>
 						</a>
-						<span class="flex-1" />
+						<span class="flex-1"></span>
 					</div>
 				</li>
 				<li>
@@ -332,7 +332,7 @@
 							<Instagram />
 							<span class="pt-1">Instagram</span>
 						</a>
-						<span class="flex-1" />
+						<span class="flex-1"></span>
 					</div>
 				</li>
 			</ul>
