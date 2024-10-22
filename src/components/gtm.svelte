@@ -1,18 +1,29 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	/** @type {string} gtmId - GTM ID 'GTM-F00BARS'. */
-	export let gtmId: string = '';
-	/** @type {(Object[]|Object)} [gtmDataPoints=[]] - Array or single object of custom data points for dataLayer.
+	
+	
+	
+	
+	interface Props {
+		/** @type {string} gtmId - GTM ID 'GTM-F00BARS'. */
+		gtmId?: string;
+		/** @type {(Object[]|Object)} [gtmDataPoints=[]] - Array or single object of custom data points for dataLayer.
 	 * @type {Object} [gtmDataPoints[]] - Custom data point Object.
 	 * @type {string} [gtmDataPoints[][]] - Custom data point property. */
-	export let gtmDataPoints: string[] = [];
-	/** @type {number} [timeout=0] - The number of milliseconds to timeout intiating loading the GTM script from Google */
-	export let timeout = 0;
-	/** @type {boolean} [dev=false] - Set to true to give errors */
-	export let dev = false;
+		gtmDataPoints?: string[];
+		timeout?: number;
+		dev?: boolean;
+	}
 
-	let scriptSrc: string | undefined;
+	let {
+		gtmId = '',
+		gtmDataPoints = [],
+		timeout = 0,
+		dev = false
+	}: Props = $props();
+
+	let scriptSrc: string | undefined = $state();
 
 	/** getFunctionScriptElementFromInitGtm - Sets global dataLayer on Window Object.
 	 * @param {(Object[]|Object)} [customDataPoints=[]] - Array or single object of custom data points for dataLayer.

@@ -19,8 +19,12 @@
 		objectPosition?: string;
 	};
 
-	export let galleryID = '';
-	export let images: Image[] = [];
+	interface Props {
+		galleryID?: string;
+		images?: Image[];
+	}
+
+	let { galleryID = '', images = [] }: Props = $props();
 
 	onMount(() => {
 		let lightbox = new PhotoSwipeLightbox({

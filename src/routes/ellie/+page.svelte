@@ -706,7 +706,7 @@
 			style="border-radius:12px"
 			title="Ghost - Josiah and the Bonnevilles"
 			width="100%"
-		/>
+		></iframe>
 
 		<hr class="border-gray-300 dark:border-gray-700" />
 
