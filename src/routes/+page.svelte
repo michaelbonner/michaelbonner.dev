@@ -13,6 +13,7 @@
 	import crewView from '$lib/images/projects/crewview.jpg?enhanced&w=448';
 	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced&w=448';
 	import daysUntil from '$lib/images/projects/days-until.jpg?enhanced&w=448';
+	import dkow from '$lib/images/projects/dkow.jpg?enhanced&w=448';
 	import githubRepositoriesViewer from '$lib/images/projects/github-repositories-viewer.jpg?enhanced&w=448';
 	import hereKidsWin from '$lib/images/projects/here-kids-win.jpg?enhanced&w=448';
 	import jMillsEnt from '$lib/images/projects/jmillsent.jpg?enhanced&w=448';
@@ -27,106 +28,128 @@
 
 	const projects = [
 		{
-			title: `Primary Children's Hospital: Here Kids Win`,
-			description: `Primary Children's Hospital wanted a website to promote patient stories. Faktory reached out to me to build the site they had envisioned. I'm really happy with how this one came out. Next.js made so much of it really simple.`,
-			url: `https://herekidswin.com/`,
+			title: "Primary Children's Hospital: Here Kids Win",
+			description:
+				"Primary Children's Hospital wanted a website to promote patient stories. Faktory reached out to me to build the site they had envisioned. I'm really happy with how this one came out. Next.js made so much of it really simple.",
+			url: 'https://herekidswin.com/',
 			github: `https://github.com/FaktoryUtah/primary-childrens-stories`,
 			image: hereKidsWin
 		},
 		{
-			title: `Wasatch Covers`,
-			description: `An eCommerce site built using Gatsby.js. Load times went from over 10 seconds on their old platform, down to near instantaneous on the new one.`,
-			url: `https://wasatchcovers.com/`,
+			title: 'DKOW Law',
+			description:
+				'A marketing website built for a law firm in Salt Lake that has the largest recoveries for clients in Utah.',
+			url: 'https://www.dkow.com/',
+			image: dkow
+		},
+		{
+			title: 'Wasatch Covers',
+			description:
+				'An eCommerce site built using Gatsby.js. Load times went from over 10 seconds on their old platform, down to near instantaneous on the new one.',
+			url: 'https://wasatchcovers.com/',
 			image: wasatchCovers
 		},
 		{
-			title: `JME Film Co`,
-			description: `Built using Sanity CMS and Next.js. This one turned out really good and loads so fast.`,
-			url: `https://www.jmillsent.com/`,
+			title: 'JME Film Co',
+			description:
+				'Built using Sanity CMS and Next.js. This one turned out really good and loads so fast.',
+			url: 'https://www.jmillsent.com/',
 			github: `https://github.com/michaelbonner/jmillsent`,
 			image: jMillsEnt
 		},
 		{
-			title: `CrewView`,
-			description: `I'm part of a team building a web application that helps companies manage their projects, people, and assets in a way that's easy to use and intuitive.`,
-			url: `https://crewview.com/`,
+			title: 'CrewView',
+			description:
+				"I'm part of a team building a web application that helps companies manage their projects, people, and assets in a way that's easy to use and intuitive.",
+			url: 'https://crewview.com/',
 			image: crewView
 		},
 		{
-			title: `NEF Programs Administration System`,
-			description: `Big ol' platform to administer all of their programs. Can't show you the code for security reasons, but I'm really proud of it so I wanted to at least put it here. 😆`,
-			url: `https://pas.nef1.org/`,
+			title: 'NEF Programs Administration System',
+			description:
+				"Big ol' platform to administer all of their programs. Can't show you the code for security reasons, but I'm really proud of it so I wanted to at least put it here. 😆",
+			url: 'https://pas.nef1.org/',
 			image: nefPas
 		}
 	];
 	const otherThings = [
 		{
-			title: `Lazy Uncle`,
-			description: `I have a lot of people in my family, and sometimes it's hard to keep track of their birthdays and how old they are. Lazy Uncle makes it a little easier. Give it a shot and let me know what you think.`,
-			url: `https://www.lazyuncle.net/`,
+			title: 'Lazy Uncle',
+			description:
+				"I have a lot of people in my family, and sometimes it's hard to keep track of their birthdays and how old they are. Lazy Uncle makes it a little easier. Give it a shot and let me know what you think.",
+			url: 'https://www.lazyuncle.net/',
 			github: `https://github.com/michaelbonner/lazy-uncle`,
 			image: lazyUncle
 		},
 		{
-			title: `Podcasts I Listen To`,
-			description: `I am really into podcasts, and people ask what podcasts they should listen to. I built this site to make it easier to share the really good ones.`,
-			url: `https://podcasts.michaelbonner.dev/`,
+			title: 'Podcasts I Listen To',
+			description:
+				'I am really into podcasts, and people ask what podcasts they should listen to. I built this site to make it easier to share the really good ones.',
+			url: 'https://podcasts.michaelbonner.dev/',
 			github: `https://github.com/michaelbonner/podcasts-i-listen-to`,
 			image: podcasts
 		},
 		{
-			title: `Route Picker`,
-			description: `Sometimes you just wanna have a timer to time a couple different routes and see which one is faster over time. This is made to do just that.`,
-			url: `https://www.whichrouteisfaster.com/`,
+			title: 'Route Picker',
+			description:
+				'Sometimes you just wanna have a timer to time a couple different routes and see which one is faster over time. This is made to do just that.',
+			url: 'https://www.whichrouteisfaster.com/',
 			github: `https://github.com/michaelbonner/route-picker`,
 			image: routePicker
 		},
 		{
-			title: `GitHub Repository Collaborators Viewer`,
-			description: `GitHub (on purpose) doesn't make it very easy for individuals to see a list of all your repos and who has access to them. This little app helps you see that.`,
-			url: `https://github-repositories-viewer.bootpack.dev/`,
+			title: 'GitHub Repository Collaborators Viewer',
+			description:
+				"GitHub (on purpose) doesn't make it very easy for individuals to see a list of all your repos and who has access to them. This little app helps you see that.",
+			url: 'https://github-repositories-viewer.bootpack.dev/',
 			github: `https://github.com/michaelbonner/github-repositories-viewer`,
 			image: githubRepositoriesViewer
 		},
 		{
-			title: `NHL Arenas To Visit`,
-			description: `The plan is to visit every home ice arena. Seems like a decent way to explore the US and Canada`,
-			url: `https://nhl.michaelbonner.dev/`,
+			title: 'NHL Arenas To Visit',
+			description:
+				'The plan is to visit every home ice arena. Seems like a decent way to explore the US and Canada',
+			url: 'https://nhl.michaelbonner.dev/',
 			github: `https://github.com/michaelbonner/nhl-arenas-react`,
 			image: nhlArenas
 		},
 		{
-			title: `Days Until`,
-			description: `You ever wanted a site to just tell you how many days until a specific date. Well here you go. Really I just needed something easy to start building Svelte projects.`,
-			url: `https://days-until.michaelbonner.dev/`,
+			title: 'Days Until',
+			description:
+				'You ever wanted a site to just tell you how many days until a specific date. Well here you go. Really I just needed something easy to start building Svelte projects.',
+			url: 'https://days-until.michaelbonner.dev/',
 			github: `https://github.com/michaelbonner/days-until`,
 			image: daysUntil
 		},
 		{
-			title: `date-fns Format Helper`,
-			description: `I always forget date-fns format strings. This site offers some sane defaults and makes it easy to see what the format string will look like.`,
-			url: `https://date-fns.michaelbonner.dev/`,
+			title: 'date-fns Format Helper',
+			description:
+				'I always forget date-fns format strings. This site offers some sane defaults and makes it easy to see what the format string will look like.',
+			url: 'https://date-fns.michaelbonner.dev/',
 			github: `https://github.com/michaelbonner/date-fns-format`,
 			image: dateFnsFormat
 		},
 		{
-			title: `Cookie Parser`,
-			description: `Now you don't have to wonder what all the cookies on a site mean. Just copy and paste the cookies string and the site will tell you what cookies are present with links to learn more.`,
-			url: `https://cookie-parser.michaelbonner.dev/`,
+			title: 'Cookie Parser',
+			description:
+				"Now you don't have to wonder what all the cookies on a site mean. Just copy and paste the cookies string and the site will tell you what cookies are present with links to learn more.",
+			url: 'https://cookie-parser.michaelbonner.dev/',
 			github: `https://github.com/michaelbonner/cookie-parser`,
 			image: cookieParser
 		},
 		{
-			title: `OCR Reader`,
-			description: `Just a little example of how Tesseract can be used to read text from an uploaded image.`,
-			url: `https://ocr.michaelbonner.dev/`,
+			title: 'OCR Reader',
+			description:
+				'Just a little example of how Tesseract can be used to read text from an uploaded image.',
+			url: 'https://ocr.michaelbonner.dev/',
 			github: `https://github.com/michaelbonner/tesseract-test`,
 			image: ocr
 		},
 		{
-			title: `Random String Generator`,
-			description: `I got tired of Googling for a site and getting a bunch of cruft I don't need when trying to generate a random string, so I built a dead simple replacement.`,
-			url: `https://random-string-generator.michaelbonner.dev/`,
+			title: 'Random String Generator',
+			description:
+				"I got tired of Googling for a site and getting a bunch of cruft I don't need when trying to generate a random string, so I built a dead simple replacement.",
+			url: 'https://random-string-generator.michaelbonner.dev/',
 			github: `https://github.com/michaelbonner/random-string-generator`,
 			image: randomStringGenerator
 		}
