@@ -248,7 +248,11 @@
 			<ul class="mt-8 lg:mt-16 text-lg grid lg:grid-cols-2 gap-x-24 gap-y-12 lg:gap-y-24">
 				{#each projects as project, projectIndex}
 					<li class="lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
-						<a class="hover:scale-105 hover:rotate-1 transition-transform" href={project.url}>
+						<a
+							aria-label={`View ${project.title}`}
+							class="hover:scale-105 hover:rotate-1 transition-transform"
+							href={project.url}
+						>
 							<enhanced:img
 								alt={project.title}
 								class="rounded-lg md:max-w-md"
@@ -291,7 +295,11 @@
 				{#each otherThings as project}
 					<li class="lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
 						{#if project.image}
-							<a class="hover:scale-105 hover:rotate-1 transition-transform" href={project.url}>
+							<a
+								aria-label={`View ${project.title}`}
+								class="hover:scale-105 hover:rotate-1 transition-transform"
+								href={project.url}
+							>
 								<enhanced:img
 									alt={project.title}
 									class="rounded-lg md:max-w-md"
