@@ -32,13 +32,13 @@
 			description:
 				"Primary Children's Hospital wanted a website to promote patient stories. Faktory reached out to me to build the site they had envisioned. I'm really happy with how this one came out. Next.js made so much of it really simple.",
 			url: 'https://herekidswin.com/',
-			github: `https://github.com/FaktoryUtah/primary-childrens-stories`,
+			github: 'https://github.com/FaktoryUtah/primary-childrens-stories',
 			image: hereKidsWin
 		},
 		{
 			title: 'DKOW Law',
 			description:
-				'A marketing website built for a law firm in Salt Lake that has the largest recoveries for clients in Utah.',
+				'A marketing website built for a law firm in Salt Lake that has the largest recoveries for clients in Utah. I worked with a local designer to make the site look and feel like a modern law firm. Even though it is built with WordPress, it still loads super fast.',
 			url: 'https://www.dkow.com/',
 			image: dkow
 		},
@@ -54,7 +54,7 @@
 			description:
 				'Built using Sanity CMS and Next.js. This one turned out really good and loads so fast.',
 			url: 'https://www.jmillsent.com/',
-			github: `https://github.com/michaelbonner/jmillsent`,
+			github: 'https://github.com/michaelbonner/jmillsent',
 			image: jMillsEnt
 		},
 		{
@@ -78,7 +78,7 @@
 			description:
 				"I have a lot of people in my family, and sometimes it's hard to keep track of their birthdays and how old they are. Lazy Uncle makes it a little easier. Give it a shot and let me know what you think.",
 			url: 'https://www.lazyuncle.net/',
-			github: `https://github.com/michaelbonner/lazy-uncle`,
+			github: 'https://github.com/michaelbonner/lazy-uncle',
 			image: lazyUncle
 		},
 		{
@@ -86,7 +86,7 @@
 			description:
 				'I am really into podcasts, and people ask what podcasts they should listen to. I built this site to make it easier to share the really good ones.',
 			url: 'https://podcasts.michaelbonner.dev/',
-			github: `https://github.com/michaelbonner/podcasts-i-listen-to`,
+			github: 'https://github.com/michaelbonner/podcasts-i-listen-to',
 			image: podcasts
 		},
 		{
@@ -94,7 +94,7 @@
 			description:
 				'Sometimes you just wanna have a timer to time a couple different routes and see which one is faster over time. This is made to do just that.',
 			url: 'https://www.whichrouteisfaster.com/',
-			github: `https://github.com/michaelbonner/route-picker`,
+			github: 'https://github.com/michaelbonner/route-picker',
 			image: routePicker
 		},
 		{
@@ -102,7 +102,7 @@
 			description:
 				"GitHub (on purpose) doesn't make it very easy for individuals to see a list of all your repos and who has access to them. This little app helps you see that.",
 			url: 'https://github-repositories-viewer.bootpack.dev/',
-			github: `https://github.com/michaelbonner/github-repositories-viewer`,
+			github: 'https://github.com/michaelbonner/github-repositories-viewer',
 			image: githubRepositoriesViewer
 		},
 		{
@@ -110,7 +110,7 @@
 			description:
 				'The plan is to visit every home ice arena. Seems like a decent way to explore the US and Canada',
 			url: 'https://nhl.michaelbonner.dev/',
-			github: `https://github.com/michaelbonner/nhl-arenas-react`,
+			github: 'https://github.com/michaelbonner/nhl-arenas-react',
 			image: nhlArenas
 		},
 		{
@@ -118,7 +118,7 @@
 			description:
 				'You ever wanted a site to just tell you how many days until a specific date. Well here you go. Really I just needed something easy to start building Svelte projects.',
 			url: 'https://days-until.michaelbonner.dev/',
-			github: `https://github.com/michaelbonner/days-until`,
+			github: 'https://github.com/michaelbonner/days-until',
 			image: daysUntil
 		},
 		{
@@ -126,7 +126,7 @@
 			description:
 				'I always forget date-fns format strings. This site offers some sane defaults and makes it easy to see what the format string will look like.',
 			url: 'https://date-fns.michaelbonner.dev/',
-			github: `https://github.com/michaelbonner/date-fns-format`,
+			github: 'https://github.com/michaelbonner/date-fns-format',
 			image: dateFnsFormat
 		},
 		{
@@ -134,7 +134,7 @@
 			description:
 				"Now you don't have to wonder what all the cookies on a site mean. Just copy and paste the cookies string and the site will tell you what cookies are present with links to learn more.",
 			url: 'https://cookie-parser.michaelbonner.dev/',
-			github: `https://github.com/michaelbonner/cookie-parser`,
+			github: 'https://github.com/michaelbonner/cookie-parser',
 			image: cookieParser
 		},
 		{
@@ -142,7 +142,7 @@
 			description:
 				'Just a little example of how Tesseract can be used to read text from an uploaded image.',
 			url: 'https://ocr.michaelbonner.dev/',
-			github: `https://github.com/michaelbonner/tesseract-test`,
+			github: 'https://github.com/michaelbonner/tesseract-test',
 			image: ocr
 		},
 		{
@@ -150,7 +150,7 @@
 			description:
 				"I got tired of Googling for a site and getting a bunch of cruft I don't need when trying to generate a random string, so I built a dead simple replacement.",
 			url: 'https://random-string-generator.michaelbonner.dev/',
-			github: `https://github.com/michaelbonner/random-string-generator`,
+			github: 'https://github.com/michaelbonner/random-string-generator',
 			image: randomStringGenerator
 		}
 	];
