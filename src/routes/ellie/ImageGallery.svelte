@@ -36,7 +36,7 @@
 	});
 </script>
 
-<div class="grid grid-cols-2 lg:grid-cols-4 items-center gap-2" id={galleryID}>
+<div class="grid grid-cols-2 gap-2 items-center lg:grid-cols-4" id={galleryID}>
 	{#each images as image}
 		<a
 			href={image.url.img.src}

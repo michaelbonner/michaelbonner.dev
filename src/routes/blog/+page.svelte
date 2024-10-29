@@ -14,9 +14,9 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog" />
 </svelte:head>
 
-<main class="relative pt-8 pb-8 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-	<div class="container grid gap-12 mx-auto px-8 py-12">
-		<div class="prose dark:prose-invert max-w-3xl">
+<main class="relative pt-8 pb-8 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
+	<div class="container grid gap-12 py-12 px-8 mx-auto">
+		<div class="max-w-3xl prose dark:prose-invert">
 			<h1>Web Developer Blog</h1>
 			<p>
 				I&apos;m a full-time web developer, and I find things I want to write down, so I do from
@@ -24,18 +24,18 @@
 			</p>
 		</div>
 
-		<div class="max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-none">
+		<div class="grid gap-5 mx-auto max-w-lg lg:grid-cols-2 lg:max-w-none xl:grid-cols-3">
 			<div
-				class="flex flex-col rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:rotate-1 transition-transform"
+				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 			>
 				<a class="flex-shrink-0 leading-[0]" href="/blog/github-repositories-viewer-app">
 					<enhanced:img
 						alt="Github Repository Collaborators Viewer"
-						class="h-48 w-full object-cover"
+						class="object-cover w-full h-48"
 						src={githubRepositoriesViewer}
 					/>
 				</a>
-				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
+				<div class="grid flex-1 gap-y-4 p-6 bg-white dark:bg-gray-700">
 					<a href="/blog/github-repositories-viewer-app" class="block mt-2">
 						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
 							Github Repository Collaborators Viewer
@@ -44,7 +44,7 @@
 							Check out the new Git Branch Name Raycast Extension I made
 						</p>
 					</a>
-					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-200">
+					<div class="flex justify-end space-x-1 text-sm text-gray-500 dark:text-gray-200">
 						<time dateTime="2023-09-147T16:00:00+00:00">2023-09-14</time>
 						<span aria-hidden="true">&middot;</span>
 						<span>2 minute read</span>
@@ -53,16 +53,16 @@
 			</div>
 
 			<div
-				class="flex flex-col rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:rotate-1 transition-transform"
+				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 			>
 				<a class="flex-shrink-0 leading-[0]" href="/blog/git-branch-name-raycast-extension">
 					<enhanced:img
 						alt="Git Branch Name Raycast Extension"
-						class="h-48 w-full object-cover"
+						class="object-cover w-full h-48"
 						src={gitBranchNameGenerator3}
 					/>
 				</a>
-				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
+				<div class="grid flex-1 gap-y-4 p-6 bg-white dark:bg-gray-700">
 					<a href="/blog/git-branch-name-raycast-extension" class="block mt-2">
 						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
 							Git Branch Name Raycast Extension
@@ -71,7 +71,7 @@
 							Check out the new Git Branch Name Raycast Extension I made
 						</p>
 					</a>
-					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-200">
+					<div class="flex justify-end space-x-1 text-sm text-gray-500 dark:text-gray-200">
 						<time dateTime="2023-01-17T12:58:46.469Z">2023-01-17</time>
 						<span aria-hidden="true">&middot;</span>
 						<span>2 minute read</span>
@@ -80,17 +80,17 @@
 			</div>
 
 			<div
-				class="flex flex-col rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:rotate-1 transition-transform"
+				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 			>
 				<a class="flex-shrink-0 leading-[0]" href="/blog/i-made-an-extension">
 					<enhanced:img
 						alt="I made my first Chrome extension"
-						class="h-48 w-full object-cover"
+						class="object-cover w-full h-48"
 						loading="lazy"
 						src={chromeBasecampUiExtension}
 					/>
 				</a>
-				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
+				<div class="grid flex-1 gap-y-4 p-6 bg-white dark:bg-gray-700">
 					<a href="/blog/i-made-an-extension" class="block mt-2">
 						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
 							I made my first Chrome extension
@@ -99,7 +99,7 @@
 							Really simple one, and it was really easy to make
 						</p>
 					</a>
-					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-200">
+					<div class="flex justify-end space-x-1 text-sm text-gray-500 dark:text-gray-200">
 						<time dateTime="2022-05-01T00:00:00+00:00">2022-05-01</time>
 						<span aria-hidden="true">&middot;</span>
 						<span>2 minute read</span>
@@ -108,7 +108,7 @@
 			</div>
 
 			<div
-				class="flex flex-col rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:rotate-1 transition-transform"
+				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 			>
 				<a
 					class="flex-shrink-0 leading-[0]"
@@ -116,12 +116,12 @@
 				>
 					<enhanced:img
 						alt="Where I think new web software developers should start in 2022"
-						class="h-48 w-full object-cover"
+						class="object-cover w-full h-48"
 						loading="lazy"
 						src={tuffWebsiteScreenshotTrimmed600}
 					/>
 				</a>
-				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
+				<div class="grid flex-1 gap-y-4 p-6 bg-white dark:bg-gray-700">
 					<a href="/blog/getting-started-as-a-web-developer-in-2022" class="block mt-2">
 						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
 							Where I think new web software developers should start in 2022
@@ -130,7 +130,7 @@
 							The guide I wish I had when getting started
 						</p>
 					</a>
-					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-200">
+					<div class="flex justify-end space-x-1 text-sm text-gray-500 dark:text-gray-200">
 						<time dateTime="2022-03-09T00:00:00+00:00">2022-03-09</time>
 						<span aria-hidden="true">&middot;</span>
 						<span>15 minute read</span>
@@ -139,17 +139,17 @@
 			</div>
 
 			<div
-				class="flex flex-col rounded-lg shadow-lg overflow-hidden hover:scale-105 hover:rotate-1 transition-transform"
+				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 			>
 				<a class="flex-shrink-0 leading-[0]" href="/blog/set-up-some-aliases">
 					<enhanced:img
 						alt="Set up some aliases"
-						class="h-48 w-full object-cover"
+						class="object-cover w-full h-48"
 						loading="lazy"
 						src={itermAliasesTrimmed600}
 					/>
 				</a>
-				<div class="flex-1 bg-white dark:bg-gray-700 p-6 grid gap-y-4">
+				<div class="grid flex-1 gap-y-4 p-6 bg-white dark:bg-gray-700">
 					<a href="/blog/set-up-some-aliases" class="block mt-2">
 						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
 							Set up some aliases
@@ -158,7 +158,7 @@
 							Just use them, they will change your life
 						</p>
 					</a>
-					<div class="flex space-x-1 justify-end text-sm text-gray-500 dark:text-gray-200">
+					<div class="flex justify-end space-x-1 text-sm text-gray-500 dark:text-gray-200">
 						<time dateTime="2021-07-15T00:00:00+00:00">2021-07-15</time>
 						<span aria-hidden="true">&middot;</span>
 						<span>5 minute read</span>

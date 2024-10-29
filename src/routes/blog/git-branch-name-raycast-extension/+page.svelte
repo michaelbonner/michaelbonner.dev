@@ -20,17 +20,17 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/git-branch-name-raycast-extension" />
 </svelte:head>
 
-<main class="container mx-auto px-8 py-12 flex items-center">
+<main class="container flex items-center py-12 px-8 mx-auto">
 	<div class="w-full max-w-3xl prose dark:prose-invert">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl tracking-wider leading-[1.3em] lg:pr-8">
+					<h1 class="text-4xl tracking-wider lg:pr-8 leading-[1.3em]">
 						Check out the new Git Branch Name Raycast Extension I made
 					</h1>
 				</div>
 			</div>
-			<div class="lg:mt-24 text-lg max-w-5xl prose-img:my-0 prose-figcaption:text-center">
+			<div class="max-w-5xl text-lg lg:mt-24 prose-img:my-0 prose-figcaption:text-center">
 				<h2>What is Raycast?</h2>
 				<p>
 					Raycast is a super fast, totally extendable launcher. It lets you complete tasks,
@@ -78,7 +78,7 @@
 				<figure>
 					<enhanced:img
 						alt="Add you branch name"
-						class="w-full m-0"
+						class="m-0 w-full"
 						loading="lazy"
 						sizes="(max-width: 768px) 100vw, 768px"
 						src={gitBranchNameGenerator2}

@@ -18,17 +18,17 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/github-repositories-viewer-app" />
 </svelte:head>
 
-<main class="container mx-auto px-8 py-12 flex items-center">
+<main class="container flex items-center py-12 px-8 mx-auto">
 	<div class="w-full max-w-3xl prose dark:prose-invert">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl tracking-wider leading-[1.3em] lg:pr-8">
+					<h1 class="text-4xl tracking-wider lg:pr-8 leading-[1.3em]">
 						I made a little app to help me keep track of who has access to what GitHub repository
 					</h1>
 				</div>
 			</div>
-			<div class="lg:mt-24 text-lg max-w-5xl prose-img:my-0 prose-figcaption:text-center">
+			<div class="max-w-5xl text-lg lg:mt-24 prose-img:my-0 prose-figcaption:text-center">
 				<h2>Do you have a bunch of repos and no easy way to know who's on them?</h2>
 				<p>
 					If you're like me, this is a problem. GitHub doesn't make it easy to see who has access to
@@ -48,7 +48,7 @@
 				<figure>
 					<enhanced:img
 						alt="Screenshot of the GitHub Repositories Viewer app"
-						class="w-full m-0"
+						class="m-0 w-full"
 						loading="lazy"
 						sizes="(max-width: 768px) 100vw, 440px"
 						src={githubRepositoriesViewer}

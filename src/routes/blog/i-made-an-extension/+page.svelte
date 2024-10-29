@@ -22,17 +22,17 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/i-made-an-extension" />
 </svelte:head>
 
-<main class="container mx-auto px-8 py-12 flex items-center">
+<main class="container flex items-center py-12 px-8 mx-auto">
 	<div class="w-full max-w-3xl prose dark:prose-invert">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl tracking-wider leading-[1.3em] lg:pr-8">
+					<h1 class="text-4xl tracking-wider lg:pr-8 leading-[1.3em]">
 						I made my first Chrome extension
 					</h1>
 				</div>
 			</div>
-			<div class="lg:mt-24 text-lg max-w-5xl">
+			<div class="max-w-5xl text-lg lg:mt-24">
 				<p>
 					I didn&apos;t realize how easy it is to make an extension. Google has a step-by-step
 					example here:{' '}

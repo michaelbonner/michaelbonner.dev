@@ -131,12 +131,12 @@
 	<link rel="canonical" href="https://michaelbonner.dev/uses" />
 </svelte:head>
 
-<main class="grid gap-8 container mx-auto px-8 py-12">
+<main class="container grid gap-8 py-12 px-8 mx-auto">
 	<div>
-		<h1 class="leading-relaxed text-4xl tracking-wide lg:pr-8 max-w-3xl">
+		<h1 class="max-w-3xl text-4xl tracking-wide leading-relaxed lg:pr-8">
 			Software and other things I recommend.
 		</h1>
-		<p class="text-lg max-w-xl">
+		<p class="max-w-xl text-lg">
 			I sometimes get asked about the things I use to build software and stay productive. Here’s a
 			list of some of my favorite stuff.
 		</p>
@@ -144,13 +144,13 @@
 
 	<div class="grid gap-24 mt-12">
 		<div
-			class="grid md:grid-cols-3 xl:grid-cols-6 border-l border-gray-300 dark:border-gray-600 pl-4 md:pl-8"
+			class="grid pl-4 border-l border-gray-300 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
 		>
 			<div class="text-xl">Workstation</div>
-			<div class="md:col-span-2 xl:col-span-5 grid gap-8">
+			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
 				{#each workstationItems as item}
 					<div>
-						<span class="text-xl inline-block">
+						<span class="inline-block text-xl">
 							<A href={item.href}>
 								<Link />
 								<span>{item.title}</span>
@@ -169,13 +169,13 @@
 		</div>
 
 		<div
-			class="grid md:grid-cols-3 xl:grid-cols-6 border-l border-gray-300 dark:border-gray-600 pl-4 md:pl-8"
+			class="grid pl-4 border-l border-gray-300 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
 		>
 			<div class="text-xl">Development Tools</div>
-			<div class="md:col-span-2 xl:col-span-5 grid gap-8">
+			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
 				{#each developmentItems as item}
 					<div>
-						<span class="text-xl inline-block">
+						<span class="inline-block text-xl">
 							<A href={item.href}>
 								<Link />
 								<span>{item.title}</span>
@@ -194,13 +194,13 @@
 		</div>
 
 		<div
-			class="grid md:grid-cols-3 xl:grid-cols-6 border-l border-gray-300 dark:border-gray-600 pl-4 md:pl-8"
+			class="grid pl-4 border-l border-gray-300 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
 		>
 			<div class="text-xl">Productivity Tools</div>
-			<div class="md:col-span-2 xl:col-span-5 grid gap-8">
+			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
 				{#each productivityItems as item}
 					<div>
-						<span class="text-xl inline-block">
+						<span class="inline-block text-xl">
 							<A href={item.href}>
 								<Link />
 								<span>{item.title}</span>

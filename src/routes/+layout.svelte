@@ -83,7 +83,7 @@
 		'dark:bg-gray-800 dark:text-gray-200 dark:bg-opacity-70'
 	)}
 >
-	<header class="flex justify-between pt-12 px-8 container mx-auto">
+	<header class="container flex justify-between px-8 pt-12 mx-auto">
 		<a href={`/`} class={classNames('lg:text-3xl', classes.menuItem)}> Michael Bonner </a>
 		<nav class="flex justify-end space-x-6 text-xl" aria-label="Main">
 			<a href={`/`} class={classes.menuItem}>Home</a>
@@ -93,9 +93,9 @@
 
 	{@render children?.()}
 
-	<footer class="lg:flex lg:items-center lg:flex-row-reverse justify-between container mx-auto p-8">
+	<footer class="container justify-between p-8 mx-auto lg:flex lg:flex-row-reverse lg:items-center">
 		<nav
-			class="flex justify-center lg:justify-end space-x-6 text-xl pb-8 lg:py-0"
+			class="flex justify-center pb-8 space-x-6 text-xl lg:justify-end lg:py-0"
 			aria-label="Footer"
 		>
 			<a href="/" class={classes.menuItem}>Home</a>
@@ -103,7 +103,7 @@
 			<a href="/uses" class={classes.menuItem}>Uses</a>
 			<a href="/policies" class={classes.menuItem}>Policies</a>
 		</nav>
-		<p class="justify-center lg:justify-start items-end flex flex-wrap gap-x-4 gap-y-6 md:gap-y-2">
+		<p class="flex flex-wrap gap-x-4 gap-y-6 justify-center items-end md:gap-y-2 lg:justify-start">
 			<span class="text-center">
 				&copy; {new Date().getFullYear()} by Michael Bonner.{' '}
 				<a

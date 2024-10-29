@@ -187,18 +187,18 @@
 	<link rel="canonical" href="https://michaelbonner.dev/" />
 </svelte:head>
 
-<main class="container mx-auto px-8 py-12 flex items-center">
+<main class="container flex items-center py-12 px-8 mx-auto">
 	<div class="pt-8">
 		<div class="lg:flex lg:flex-row-reverse lg:pt-16">
-			<div class="w-full lg:w-1/3 mt-8 lg:mt-0">
+			<div class="mt-8 w-full lg:mt-0 lg:w-1/3">
 				<enhanced:img
 					alt="Michael Bonner"
-					class="bg-opacity-100 rounded-lg w-full h-auto mix-blend-luminosity hover:bg-blend-darken hover:scale-105 hover:rotate-1 transition-transform"
+					class="w-full h-auto bg-opacity-100 rounded-lg transition-transform hover:scale-105 hover:rotate-1 mix-blend-luminosity hover:bg-blend-darken"
 					src={mainImage}
 				/>
 			</div>
-			<div class="mt-8 lg:mt-0 w-full lg:w-2/3 lg:pr-8">
-				<h1 class="leading-relaxed text-3xl lg:text-4xl tracking-wide lg:pr-8">
+			<div class="mt-8 w-full lg:pr-8 lg:mt-0 lg:w-2/3">
+				<h1 class="text-3xl tracking-wide leading-relaxed lg:pr-8 lg:text-4xl">
 					Hi! I&apos;m{' '}
 					<span class="font-medium whitespace-nowrap"> Michael Bonner</span>, a web developer in
 					Salt Lake City, Utah. I run a small agency with some friends called{' '}
@@ -243,14 +243,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="lg:mt-32 max-w-7xl">
+		<div class="max-w-7xl lg:mt-32">
 			<H2>Projects I&apos;m proud of</H2>
-			<ul class="mt-8 lg:mt-16 text-lg grid lg:grid-cols-2 gap-x-24 gap-y-12 lg:gap-y-24">
+			<ul class="grid gap-y-12 gap-x-24 mt-8 text-lg lg:grid-cols-2 lg:gap-y-24 lg:mt-16">
 				{#each projects as project, projectIndex}
-					<li class="lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
+					<li class="grid gap-y-4 mt-8 lg:mt-0 lg:ml-8">
 						<a
 							aria-label={`View ${project.title}`}
-							class="hover:scale-105 hover:rotate-1 transition-transform"
+							class="transition-transform hover:scale-105 hover:rotate-1"
 							href={project.url}
 						>
 							<enhanced:img
@@ -289,15 +289,15 @@
 				{/each}
 			</ul>
 		</div>
-		<div class="lg:mt-32 max-w-7xl">
+		<div class="max-w-7xl lg:mt-32">
 			<H2>Things I&apos;ve built for fun</H2>
-			<ul class="mt-8 lg:mt-16 text-lg grid lg:grid-cols-2 gap-x-24 gap-y-12 lg:gap-y-24">
+			<ul class="grid gap-y-12 gap-x-24 mt-8 text-lg lg:grid-cols-2 lg:gap-y-24 lg:mt-16">
 				{#each otherThings as project}
-					<li class="lg:ml-8 mt-8 lg:mt-0 grid gap-y-4">
+					<li class="grid gap-y-4 mt-8 lg:mt-0 lg:ml-8">
 						{#if project.image}
 							<a
 								aria-label={`View ${project.title}`}
-								class="hover:scale-105 hover:rotate-1 transition-transform"
+								class="transition-transform hover:scale-105 hover:rotate-1"
 								href={project.url}
 							>
 								<enhanced:img
@@ -339,7 +339,7 @@
 		</div>
 		<div class="lg:mt-32">
 			<H2>Tools I use</H2>
-			<ul class="mt-4 pl-12 list-outside list-disc text-lg lg:grid lg:grid-cols-4 gap-x-4 gap-y-2">
+			<ul class="gap-y-2 gap-x-4 pl-12 mt-4 text-lg list-disc list-outside lg:grid lg:grid-cols-4">
 				{#each tools as tool}
 					<li>{tool}</li>
 				{/each}
@@ -347,7 +347,7 @@
 		</div>
 		<div class="lg:mt-32">
 			<H2>Get in touch</H2>
-			<ul class="mt-6 pl-4 text-lg lg:grid lg:grid-cols-4 gap-x-4 gap-y-2">
+			<ul class="gap-y-2 gap-x-4 pl-4 mt-6 text-lg lg:grid lg:grid-cols-4">
 				<li>
 					<div class="flex">
 						<a class={classes.largeBodyLink} href="https://www.linkedin.com/in/michaelbonner/">

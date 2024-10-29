@@ -400,8 +400,8 @@
 	ogImage="https://michaelbonner.dev/images/ellie-og-image.jpg"
 />
 
-<main class="grid gap-8 container mx-auto px-8 py-12">
-	<div class="prose dark:prose-invert prose-xl mt-12 max-w-3xl mx-auto">
+<main class="container grid gap-8 py-12 px-8 mx-auto">
+	<div class="mx-auto mt-12 max-w-3xl prose prose-xl dark:prose-invert">
 		<p>
 			<strong>Warning</strong>: This post is about my dog Ellie. She passed away on January 30th,
 			2023. I'm writing this to help me remember her. If you don't want to read about my feelings
@@ -411,7 +411,7 @@
 		<figure>
 			<enhanced:img
 				alt="Ellie"
-				class="aspect-[600/800] rounded-xl shadow-lg w-full lg:max-w-[600px]"
+				class="w-full rounded-xl shadow-lg aspect-[600/800] lg:max-w-[600px]"
 				sizes="min(600px, 100vw)"
 				src={ellieMain}
 			/>
@@ -492,14 +492,14 @@
 	</div>
 
 	<div
-		class="max-h-[80vh] overflow-auto max-w-7xl grid gap-2 mx-auto mb-scrollable p-8 bg-gray-300 dark:bg-gray-700 rounded-2xl"
+		class="grid overflow-auto gap-2 p-8 mx-auto max-w-7xl bg-gray-300 rounded-2xl dark:bg-gray-700 max-h-[80vh] mb-scrollable"
 	>
 		<ImageGallery galleryID="ellie-puppy" images={puppyImages} />
 
-		<div class="grid lg:grid-cols-2 gap-2">
+		<div class="grid gap-2 lg:grid-cols-2">
 			<figure>
 				<video
-					class="aspect-w-16 aspect-h-9 rounded-lg w-full p-0"
+					class="p-0 w-full rounded-lg aspect-w-16 aspect-h-9"
 					controls
 					controlsList="nodownload"
 					playsinline
@@ -528,7 +528,7 @@
 
 			<figure>
 				<video
-					class="aspect-w-16 aspect-h-9 rounded-lg w-full p-0"
+					class="p-0 w-full rounded-lg aspect-w-16 aspect-h-9"
 					controls
 					controlsList="nodownload"
 					playsinline
@@ -557,7 +557,7 @@
 		</div>
 	</div>
 
-	<div class="prose dark:prose-invert prose-xl mt-12 max-w-3xl mx-auto">
+	<div class="mx-auto mt-12 max-w-3xl prose prose-xl dark:prose-invert">
 		<p>
 			I learned I could take you almost anywhere, so I did. We went on so many adventures together.
 			You loved camping and hiking. That first summer we took you to Tanner Park to see if you would
@@ -647,12 +647,12 @@
 	</div>
 
 	<div
-		class="max-h-[80vh] overflow-auto max-w-7xl mx-auto mb-scrollable p-8 bg-gray-300 dark:bg-gray-700 rounded-2xl"
+		class="overflow-auto p-8 mx-auto max-w-7xl bg-gray-300 rounded-2xl dark:bg-gray-700 max-h-[80vh] mb-scrollable"
 	>
 		<ImageGallery galleryID="ellie-adult" images={adultImages} />
 	</div>
 
-	<div class="prose dark:prose-invert prose-xl mt-12 max-w-3xl mx-auto">
+	<div class="mx-auto mt-12 max-w-3xl prose prose-xl dark:prose-invert">
 		<p>
 			I told you that you would need to tell me when you were ready. I will forever be grateful that
 			you told me so clearly. When your back legs quit working for the last few days, I helped you

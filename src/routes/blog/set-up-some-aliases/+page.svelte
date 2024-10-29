@@ -21,15 +21,15 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/set-up-some-aliases" />
 </svelte:head>
 
-<main class="container mx-auto px-8 py-12">
+<main class="container py-12 px-8 mx-auto">
 	<div class="max-w-3xl prose dark:prose-invert">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="leading-relaxed text-4xl tracking-wide lg:pr-8">Set up some aliases</h1>
+					<h1 class="text-4xl tracking-wide leading-relaxed lg:pr-8">Set up some aliases</h1>
 				</div>
 			</div>
-			<div class="lg:mt-32 text-lg max-w-5xl">
+			<div class="max-w-5xl text-lg lg:mt-32">
 				<p>Bash aliases are amazing, just set them up.</p>
 				<h2>What are bash aliases?</h2>
 				<p>
@@ -169,7 +169,7 @@ alias vim='lvim'
 		/>
 	</div>
 
-	<div class="max-w-3xl prose dark:prose-invert mt-16">
+	<div class="mt-16 max-w-3xl prose dark:prose-invert">
 		<p>
 			Published:{` `}
 			<time dateTime="2021-07-15">15 Jul 2021</time>

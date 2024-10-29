@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 </script>
 
-<div class="flex justify-between px-8 container mx-auto py-16">
+<div class="container flex justify-between py-16 px-8 mx-auto">
 	<div class="grid gap-4">
 		<h1 class="text-3xl">{$page.error?.message}</h1>
 		<p>

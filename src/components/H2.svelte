@@ -8,6 +8,6 @@
 	let { children } = $props();
 </script>
 
-<h2 class="dark:text-gray-50 text-3xl mt-16">
+<h2 class="mt-16 text-3xl dark:text-gray-50">
 	{@render children?.()}
 </h2>

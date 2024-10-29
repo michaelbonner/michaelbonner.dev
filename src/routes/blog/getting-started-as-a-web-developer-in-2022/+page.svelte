@@ -22,19 +22,19 @@
 	/>
 </svelte:head>
 
-<main class="container mx-auto px-8 py-12 flex items-center">
+<main class="container flex items-center py-12 px-8 mx-auto">
 	<div class="w-full max-w-3xl prose dark:prose-invert">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl tracking-wider leading-[1.3em] lg:pr-8">
+					<h1 class="text-4xl tracking-wider lg:pr-8 leading-[1.3em]">
 						Where I think new web software developers should start in 2022
 					</h1>
 				</div>
 			</div>
-			<div class="lg:mt-24 text-lg max-w-5xl">
+			<div class="max-w-5xl text-lg lg:mt-24">
 				<p class="text-base">TL;DR: Learn the absolute basics, and build as much as you can.</p>
-				<hr class="border-gray-300 mx-16" />
+				<hr class="mx-16 border-gray-300" />
 				<p>
 					Getting started as a web developer is hard; hopefully, I can help a little bit. Keep in
 					mind this is only my opinion, you should find other people&apos;s opinions as well. I have
@@ -159,7 +159,7 @@
 					{/each}
 				</ul>
 				<p>Some good subreddits to learn web development things:</p>
-				<ul class="flex flex-wrap gap-x-4 gap-y-2 list-none">
+				<ul class="flex flex-wrap gap-y-2 gap-x-4 list-none">
 					{#each ['r/css', 'r/javascript', 'r/sveltejs', 'r/nextjs', 'r/node', 'r/reactjs', 'r/SyntaxFM', 'r/webdev'] as subreddit}
 						<li class="p-0">
 							<a href={`https://www.reddit.com/${subreddit}`}>
