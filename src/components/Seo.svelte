@@ -9,7 +9,7 @@
 	let {
 		title = '',
 		description = '',
-		ogImage = 'https://michaelbonner.dev/og-image.webp',
+		ogImage = 'https://michaelbonner.dev/og-image.jpg',
 		ogType = 'website'
 	}: Props = $props();
 </script>
