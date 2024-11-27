@@ -690,23 +690,29 @@
 		<figure>
 			<enhanced:img
 				alt="Ellie swimming off to get a ball"
-				class="rounded-xl shadow-lg"
+				class="rounded-xl shadow-lg w-full"
 				loading="lazy"
 				sizes="min(600px, 100vw)"
 				src={goodbye}
 			/>
 		</figure>
 
-		<iframe
-			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-			frameBorder="0"
-			height="152"
-			loading="lazy"
-			src="https://open.spotify.com/embed/track/1IUEz40wavYETWJgak8iI3?utm_source=generator&theme=0"
-			style="border-radius:12px"
-			title="Ghost - Josiah and the Bonnevilles"
-			width="100%"
-		></iframe>
+		<div
+			class="rounded-xl w-full aspect-w-16 aspect-h-9 mt-8 border-8 border-gray-300 dark:border-gray-700"
+		>
+			<iframe
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen
+				class="rounded"
+				frameborder="0"
+				height="100%"
+				loading="lazy"
+				referrerpolicy="strict-origin-when-cross-origin"
+				src="https://www.youtube.com/embed/gSug-g52Xmg?si=eTAK-xEgwIErTJ9s"
+				title="YouTube video player"
+				width="100%"
+			></iframe>
+		</div>
 
 		<hr class="border-gray-300 dark:border-gray-700" />
 
