@@ -405,7 +405,8 @@
 		<p>
 			<strong>Warning</strong>: This post is about my dog Ellie. She passed away on January 30th,
 			2023. I'm writing this to help me remember her. If you don't want to read about my feelings
-			about a dog <a href="http://www.staggeringbeauty.com/">you can leave now</a>.
+			about a dog
+			<a href="http://www.staggeringbeauty.com/">you can leave now, no hard feelings</a>.
 		</p>
 		<hr class="border-gray-300 dark:border-gray-700" />
 		<figure>
