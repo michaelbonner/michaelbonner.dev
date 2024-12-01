@@ -37,7 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-vercel": "^5.4.7",
+		"@sveltejs/adapter-auto": "^3.3.1",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.4",
 		"posthog-js": "^1.181.0",
