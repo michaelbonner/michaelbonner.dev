@@ -12,9 +12,9 @@
 
 	const workstationItems: UsesItem[] = [
 		{
-			title: 'MacBook Pro 14" M1 Pro - 32GB RAM',
-			href: 'https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-space-gray-10-core-cpu-16-core-gpu-1tb',
-			description: "This computer is a beast. I've been using it since January 2022 and love it."
+			title: 'MacBook Pro 14" M4 Pro - 48GB RAM',
+			href: 'https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-space-black-standard-display-apple-m4-pro-with-14-core-cpu-and-20-core-gpu-24gb-memory-1tb',
+			description: "This computer is a beast. I've been using it since November 2024 and love it."
 		},
 		{
 			title: 'Apple Studio Display',
@@ -38,9 +38,9 @@
 
 	const developmentItems: UsesItem[] = [
 		{
-			title: `VS Code`,
-			href: 'https://code.visualstudio.com/',
-			description: `I use VS Code for all my development needs. I've tried a few different editors, but I always come back to VS Code.`
+			title: `Cursor`,
+			href: 'https://www.cursor.com/',
+			description: `Cursor is a pretty neat AI code editor. I've been using it for a few months now and it's pretty cool.`
 		},
 		{
 			title: 'TablePlus',
