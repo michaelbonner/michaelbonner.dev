@@ -105,7 +105,7 @@
 		</nav>
 		<p class="flex flex-wrap gap-x-4 gap-y-6 justify-center items-end md:gap-y-2 lg:justify-start">
 			<span class="text-center">
-				&copy; {new Date().getFullYear()} by Michael Bonner.{' '}
+				&copy; 2021-{new Date().getFullYear()} by Michael Bonner.{' '}
 				<a
 					class={classNames(classes.menuItem, 'text-sm inline-block')}
 					href="https://github.com/michaelbonner/michaelbonner.dev"
