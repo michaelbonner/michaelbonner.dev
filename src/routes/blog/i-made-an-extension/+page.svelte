@@ -90,7 +90,7 @@
 					>
 						<enhanced:img
 							alt="Available in the chrome web store"
-							class="bg-white rounded-md shadow-sm max-w-[200px]"
+							class="bg-white rounded-md shadow-xs max-w-[200px]"
 							loading="lazy"
 							sizes="(max-width: 768px) 100vw, 768px"
 							src={availableInTheChromeWebStore}
