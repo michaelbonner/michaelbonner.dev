@@ -205,7 +205,7 @@
 					<span class="whitespace-nowrap">
 						<a
 							class={classNames(
-								'!text-3xl !lg:text-4xl !inline-block',
+								'text-3xl! !lg:text-4xl inline-block!',
 								'font-medium lg:leading-none lg:inline-block',
 								classes.largeBodyLink
 							)}
@@ -262,7 +262,7 @@
 							/>
 						</a>
 						<p>
-							<a class={classNames('!text-2xl', classes.largeBodyLink)} href={project.url}>
+							<a class={classNames('text-2xl!', classes.largeBodyLink)} href={project.url}>
 								{project.title}
 							</a>
 						</p>
@@ -310,7 +310,7 @@
 							</a>
 						{/if}
 						<p>
-							<a class={classNames('!text-2xl', classes.largeBodyLink)} href={project.url}>
+							<a class={classNames('text-2xl!', classes.largeBodyLink)} href={project.url}>
 								{project.title}
 							</a>
 						</p>

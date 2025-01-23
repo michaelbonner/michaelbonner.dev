@@ -412,7 +412,7 @@
 		<figure>
 			<enhanced:img
 				alt="Ellie"
-				class="w-full rounded-xl shadow-lg aspect-[600/800] lg:max-w-[600px]"
+				class="w-full rounded-xl shadow-lg aspect-600/800 lg:max-w-[600px]"
 				sizes="min(600px, 100vw)"
 				src={ellieMain}
 			/>
@@ -704,7 +704,7 @@
 			<iframe
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen
-				class="rounded"
+				class="rounded-sm"
 				frameborder="0"
 				height="100%"
 				loading="lazy"
