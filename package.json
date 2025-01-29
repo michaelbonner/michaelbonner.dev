@@ -37,7 +37,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-auto": "^4.0.0",
+		"@sveltejs/adapter-vercel": "^5.5.3",
+		"@tailwindcss/vite": "^4.0.0",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.4",
 		"posthog-js": "^1.207.0",
