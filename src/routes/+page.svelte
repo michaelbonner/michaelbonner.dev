@@ -368,7 +368,7 @@
 
 		<div class="max-w-7xl lg:mt-32">
 			<H2>Recent Blog Posts</H2>
-			<ul class="mt-8 list-disc list-outside ml-12 lg:ml-16">
+			<ul class="mt-8 list-disc list-outside ml-12">
 				{#each blogPosts as blogPost}
 					<li class="lg:mt-2">
 						<a class="underline" href={blogPost.url}>{blogPost.title}</a>
