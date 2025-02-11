@@ -154,6 +154,33 @@
 			image: randomStringGenerator
 		}
 	];
+	const blogPosts = [
+		{
+			title: 'Github Repository Collaborators Viewer',
+			description: 'Check out the new Git Branch Name Raycast Extension I made',
+			url: '/blog/github-repositories-viewer-app'
+		},
+		{
+			title: 'Git Branch Name Raycast Extension',
+			description: 'Check out the new Git Branch Name Raycast Extension I made',
+			url: '/blog/git-branch-name-raycast-extension'
+		},
+		{
+			title: 'I made my first Chrome extension',
+			description: 'Really simple one, and it was really easy to make',
+			url: '/blog/i-made-an-extension'
+		},
+		{
+			title: 'Where I think new web software developers should start in 2022',
+			description: 'The guide I wish I had when getting started',
+			url: '/blog/getting-started-as-a-web-developer-in-2022'
+		},
+		{
+			title: 'Set up some aliases',
+			description: 'A guide to setting up some aliases',
+			url: '/blog/set-up-some-aliases'
+		}
+	];
 
 	const tools = [
 		'JavaScript',
@@ -243,6 +270,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="max-w-7xl lg:mt-32">
 			<H2>Projects I&apos;m proud of</H2>
 			<ul class="grid gap-y-12 gap-x-24 mt-8 text-lg lg:grid-cols-2 lg:gap-y-24 lg:mt-16">
@@ -337,6 +365,18 @@
 				{/each}
 			</ul>
 		</div>
+
+		<div class="max-w-7xl lg:mt-32">
+			<H2>Recent Blog Posts</H2>
+			<ul class="mt-8 list-disc list-outside ml-12 lg:ml-16">
+				{#each blogPosts as blogPost}
+					<li class="lg:mt-2">
+						<a class="underline" href={blogPost.url}>{blogPost.title}</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+
 		<div class="lg:mt-32">
 			<H2>Tools I use</H2>
 			<ul class="gap-y-2 gap-x-4 pl-12 mt-4 text-lg list-disc list-outside lg:grid lg:grid-cols-4">
