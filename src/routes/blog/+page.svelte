@@ -28,7 +28,11 @@
 			<div
 				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 			>
-				<a class="shrink-0 leading-0" href="/blog/github-repositories-viewer-app">
+				<a
+					aria-label="Github Repository Collaborators Viewer"
+					class="shrink-0 leading-0"
+					href="/blog/github-repositories-viewer-app"
+				>
 					<enhanced:img
 						alt="Github Repository Collaborators Viewer"
 						class="object-cover w-full h-48"
@@ -55,7 +59,11 @@
 			<div
 				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 			>
-				<a class="shrink-0 leading-0" href="/blog/git-branch-name-raycast-extension">
+				<a
+					aria-label="Git Branch Name Raycast Extension"
+					class="shrink-0 leading-0"
+					href="/blog/git-branch-name-raycast-extension"
+				>
 					<enhanced:img
 						alt="Git Branch Name Raycast Extension"
 						class="object-cover w-full h-48"
@@ -82,7 +90,11 @@
 			<div
 				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 			>
-				<a class="shrink-0 leading-0" href="/blog/i-made-an-extension">
+				<a
+					aria-label="I made my first Chrome extension"
+					class="shrink-0 leading-0"
+					href="/blog/i-made-an-extension"
+				>
 					<enhanced:img
 						alt="I made my first Chrome extension"
 						class="object-cover w-full h-48"
@@ -111,6 +123,7 @@
 				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 			>
 				<a
+					aria-label="Where I think new web software developers should start in 2022"
 					class="shrink-0 leading-0"
 					href="/blog/getting-started-as-a-web-developer-in-2022"
 				>
@@ -141,7 +154,11 @@
 			<div
 				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 			>
-				<a class="shrink-0 leading-0" href="/blog/set-up-some-aliases">
+				<a
+					aria-label="Set up some aliases"
+					class="shrink-0 leading-0"
+					href="/blog/set-up-some-aliases"
+				>
 					<enhanced:img
 						alt="Set up some aliases"
 						class="object-cover w-full h-48"
