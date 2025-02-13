@@ -2,6 +2,7 @@
 	export let slug;
 
 	import { blogArticles } from '$lib/data/blogArticles';
+	import clsx from 'clsx';
 	import H2 from '../../components/H2.svelte';
 	import { classes } from '../../styles/classes';
 
@@ -13,7 +14,7 @@
 	<ul class="list-disc list-outside ml-12 mt-4">
 		{#each otherArticles as article}
 			<li class="py-1">
-				<a class={classes.bodyLink} href={`/blog/${article.slug}`}>
+				<a class={clsx(classes.bodyLink, 'w-full md:w-auto')} href={`/blog/${article.slug}`}>
 					{article.title}
 				</a>
 			</li>

@@ -26,6 +26,7 @@
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced&w=448';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced&w=448';
 	import { blogArticles } from '$lib/data/blogArticles';
+	import clsx from 'clsx';
 
 	const projects = [
 		{
@@ -341,11 +342,13 @@
 		</div>
 
 		<div class="max-w-7xl lg:mt-32">
-			<H2>Recent Blog Posts</H2>
+			<H2>Recent Blog Articles</H2>
 			<ul class="mt-8 list-disc list-outside ml-12">
-				{#each blogArticles as blogPost}
-					<li class="lg:mt-2">
-						<a class="underline" href={`/blog/${blogPost.slug}`}>{blogPost.title}</a>
+				{#each blogArticles as article}
+					<li class="py-1">
+						<a class={clsx(classes.bodyLink, 'w-full md:w-auto')} href={`/blog/${article.slug}`}>
+							{article.title}
+						</a>
 					</li>
 				{/each}
 			</ul>
