@@ -25,6 +25,7 @@
 	import randomStringGenerator from '$lib/images/projects/random-string-generator.jpg?enhanced&w=448';
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced&w=448';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced&w=448';
+	import { blogArticles } from '$lib/data/blogArticles';
 
 	const projects = [
 		{
@@ -152,33 +153,6 @@
 			url: 'https://random-string-generator.michaelbonner.dev/',
 			github: 'https://github.com/michaelbonner/random-string-generator',
 			image: randomStringGenerator
-		}
-	];
-	const blogPosts = [
-		{
-			title: 'Github Repository Collaborators Viewer',
-			description: 'Check out the new Git Branch Name Raycast Extension I made',
-			url: '/blog/github-repositories-viewer-app'
-		},
-		{
-			title: 'Git Branch Name Raycast Extension',
-			description: 'Check out the new Git Branch Name Raycast Extension I made',
-			url: '/blog/git-branch-name-raycast-extension'
-		},
-		{
-			title: 'I made my first Chrome extension',
-			description: 'Really simple one, and it was really easy to make',
-			url: '/blog/i-made-an-extension'
-		},
-		{
-			title: 'Where I think new web software developers should start in 2022',
-			description: 'The guide I wish I had when getting started',
-			url: '/blog/getting-started-as-a-web-developer-in-2022'
-		},
-		{
-			title: 'Set up some aliases',
-			description: 'A guide to setting up some aliases',
-			url: '/blog/set-up-some-aliases'
 		}
 	];
 
@@ -369,9 +343,9 @@
 		<div class="max-w-7xl lg:mt-32">
 			<H2>Recent Blog Posts</H2>
 			<ul class="mt-8 list-disc list-outside ml-12">
-				{#each blogPosts as blogPost}
+				{#each blogArticles as blogPost}
 					<li class="lg:mt-2">
-						<a class="underline" href={blogPost.url}>{blogPost.title}</a>
+						<a class="underline" href={`/blog/${blogPost.slug}`}>{blogPost.title}</a>
 					</li>
 				{/each}
 			</ul>

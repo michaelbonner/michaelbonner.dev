@@ -6,6 +6,8 @@
 	import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.jpg?enhanced&w=470';
 	import Seo from '../../components/Seo.svelte';
 	import { classes } from '../../styles/classes';
+
+	import { blogArticles } from '$lib/data/blogArticles';
 </script>
 
 <Seo description="Just writing down some things" title="Developer Blog | Michael Bonner" />
@@ -25,163 +27,36 @@
 		</div>
 
 		<div class="grid gap-5 mx-auto max-w-lg lg:grid-cols-2 lg:max-w-none xl:grid-cols-3">
-			<div
-				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
-			>
-				<a
-					aria-label="Github Repository Collaborators Viewer"
-					class="shrink-0 leading-0"
-					href="/blog/github-repositories-viewer-app"
+			{#each blogArticles as article}
+				<div
+					class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 				>
-					<enhanced:img
-						alt="Github Repository Collaborators Viewer"
-						class="object-cover w-full h-48"
-						src={githubRepositoriesViewer}
-					/>
-				</a>
-				<div class="grid flex-1 gap-y-4 p-6 bg-white dark:bg-gray-700">
-					<a href="/blog/github-repositories-viewer-app" class="block mt-2">
-						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
-							Github Repository Collaborators Viewer
-						</p>
-						<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
-							Check out the new Git Branch Name Raycast Extension I made
-						</p>
+					<a aria-label={article.title} class="shrink-0 leading-0" href={`/blog/${article.slug}`}>
+						<enhanced:img
+							alt={article.title}
+							class="object-cover w-full h-48"
+							src={article.image}
+						/>
 					</a>
-					<div class="flex justify-end space-x-1 text-sm text-gray-500 dark:text-gray-200">
-						<time dateTime="2023-09-147T16:00:00+00:00">2023-09-14</time>
-						<span aria-hidden="true">&middot;</span>
-						<span>2 minute read</span>
+					<div class="grid flex-1 gap-y-4 p-6 bg-white dark:bg-gray-700">
+						<a href={`/blog/${article.slug}`} class="block mt-2">
+							<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
+								{article.title}
+							</p>
+							<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
+								{article.teaser}
+							</p>
+						</a>
+						<div class="flex justify-end space-x-1 text-sm text-gray-500 dark:text-gray-200">
+							<time dateTime={article.publishedAt.toISOString()}
+								>{article.publishedAt.toLocaleDateString()}</time
+							>
+							<span aria-hidden="true">&middot;</span>
+							<span>{article.readingTime}</span>
+						</div>
 					</div>
 				</div>
-			</div>
-
-			<div
-				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
-			>
-				<a
-					aria-label="Git Branch Name Raycast Extension"
-					class="shrink-0 leading-0"
-					href="/blog/git-branch-name-raycast-extension"
-				>
-					<enhanced:img
-						alt="Git Branch Name Raycast Extension"
-						class="object-cover w-full h-48"
-						src={gitBranchNameGenerator3}
-					/>
-				</a>
-				<div class="grid flex-1 gap-y-4 p-6 bg-white dark:bg-gray-700">
-					<a href="/blog/git-branch-name-raycast-extension" class="block mt-2">
-						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
-							Git Branch Name Raycast Extension
-						</p>
-						<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
-							Check out the new Git Branch Name Raycast Extension I made
-						</p>
-					</a>
-					<div class="flex justify-end space-x-1 text-sm text-gray-500 dark:text-gray-200">
-						<time dateTime="2023-01-17T12:58:46.469Z">2023-01-17</time>
-						<span aria-hidden="true">&middot;</span>
-						<span>2 minute read</span>
-					</div>
-				</div>
-			</div>
-
-			<div
-				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
-			>
-				<a
-					aria-label="I made my first Chrome extension"
-					class="shrink-0 leading-0"
-					href="/blog/i-made-an-extension"
-				>
-					<enhanced:img
-						alt="I made my first Chrome extension"
-						class="object-cover w-full h-48"
-						loading="lazy"
-						src={chromeBasecampUiExtension}
-					/>
-				</a>
-				<div class="grid flex-1 gap-y-4 p-6 bg-white dark:bg-gray-700">
-					<a href="/blog/i-made-an-extension" class="block mt-2">
-						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
-							I made my first Chrome extension
-						</p>
-						<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
-							Really simple one, and it was really easy to make
-						</p>
-					</a>
-					<div class="flex justify-end space-x-1 text-sm text-gray-500 dark:text-gray-200">
-						<time dateTime="2022-05-01T00:00:00+00:00">2022-05-01</time>
-						<span aria-hidden="true">&middot;</span>
-						<span>2 minute read</span>
-					</div>
-				</div>
-			</div>
-
-			<div
-				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
-			>
-				<a
-					aria-label="Where I think new web software developers should start in 2022"
-					class="shrink-0 leading-0"
-					href="/blog/getting-started-as-a-web-developer-in-2022"
-				>
-					<enhanced:img
-						alt="Where I think new web software developers should start in 2022"
-						class="object-cover w-full h-48"
-						loading="lazy"
-						src={tuffWebsiteScreenshotTrimmed600}
-					/>
-				</a>
-				<div class="grid flex-1 gap-y-4 p-6 bg-white dark:bg-gray-700">
-					<a href="/blog/getting-started-as-a-web-developer-in-2022" class="block mt-2">
-						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
-							Where I think new web software developers should start in 2022
-						</p>
-						<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
-							The guide I wish I had when getting started
-						</p>
-					</a>
-					<div class="flex justify-end space-x-1 text-sm text-gray-500 dark:text-gray-200">
-						<time dateTime="2022-03-09T00:00:00+00:00">2022-03-09</time>
-						<span aria-hidden="true">&middot;</span>
-						<span>15 minute read</span>
-					</div>
-				</div>
-			</div>
-
-			<div
-				class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
-			>
-				<a
-					aria-label="Set up some aliases"
-					class="shrink-0 leading-0"
-					href="/blog/set-up-some-aliases"
-				>
-					<enhanced:img
-						alt="Set up some aliases"
-						class="object-cover w-full h-48"
-						loading="lazy"
-						src={itermAliasesTrimmed600}
-					/>
-				</a>
-				<div class="grid flex-1 gap-y-4 p-6 bg-white dark:bg-gray-700">
-					<a href="/blog/set-up-some-aliases" class="block mt-2">
-						<p class="text-xl font-semibold text-gray-900 dark:text-gray-300">
-							Set up some aliases
-						</p>
-						<p class="mt-3 text-base text-gray-500 dark:text-gray-200">
-							Just use them, they will change your life
-						</p>
-					</a>
-					<div class="flex justify-end space-x-1 text-sm text-gray-500 dark:text-gray-200">
-						<time dateTime="2021-07-15T00:00:00+00:00">2021-07-15</time>
-						<span aria-hidden="true">&middot;</span>
-						<span>5 minute read</span>
-					</div>
-				</div>
-			</div>
+			{/each}
 		</div>
 		<div>
 			I also wrote a <a class={classes.bodyLink} href="/ellie">post about my pup Ellie</a>, who died
