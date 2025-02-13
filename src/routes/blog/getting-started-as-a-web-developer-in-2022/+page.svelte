@@ -1,4 +1,5 @@
 <script lang="ts">
+	import OtherBlogArticles from '$lib/components/OtherBlogArticles.svelte';
 	import michaelbonnerDevGithubScreenshot from '$lib/images/michaelbonner-dev-github-screenshot.png?enhanced&w=768,440';
 	import tuffWebsiteScreenshot from '$lib/images/tuff-website-screenshot.png?enhanced&w=768,440';
 	import Seo from '../../../components/Seo.svelte';
@@ -233,3 +234,5 @@
 		</div>
 	</div>
 </main>
+
+<OtherBlogArticles slug="getting-started-as-a-web-developer-in-2022" />

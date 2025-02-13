@@ -1,4 +1,5 @@
 <script>
+	import OtherBlogArticles from '$lib/components/OtherBlogArticles.svelte';
 	import afterExtension from '$lib/images/after-extension.png?enhanced&w=768,440';
 	import availableInTheChromeWebStore from '$lib/images/available-in-the-chrome-web-store.png?enhanced&w=768,440';
 	import beforeExtension from '$lib/images/before-extension.png?enhanced&w=768,440';
@@ -106,3 +107,5 @@
 		</div>
 	</div>
 </main>
+
+<OtherBlogArticles slug="i-made-an-extension" />

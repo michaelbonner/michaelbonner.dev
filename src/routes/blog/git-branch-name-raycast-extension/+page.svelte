@@ -1,4 +1,5 @@
 <script>
+	import OtherBlogArticles from '$lib/components/OtherBlogArticles.svelte';
 	import gitBranchNameGenerator1 from '$lib/images/git-branch-name-generator-1.jpg?enhanced&w=768,440';
 	import gitBranchNameGenerator2 from '$lib/images/git-branch-name-generator-2.jpg?enhanced&w=768,440';
 	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg?enhanced&w=768,440';
@@ -116,3 +117,5 @@
 		</div>
 	</div>
 </main>
+
+<OtherBlogArticles slug="git-branch-name-raycast-extension" />

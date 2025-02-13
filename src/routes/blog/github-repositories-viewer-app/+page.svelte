@@ -1,4 +1,5 @@
 <script>
+	import OtherBlogArticles from '$lib/components/OtherBlogArticles.svelte';
 	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced&w=768,440';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
@@ -66,3 +67,5 @@
 		</div>
 	</div>
 </main>
+
+<OtherBlogArticles slug="github-repositories-viewer-app" />

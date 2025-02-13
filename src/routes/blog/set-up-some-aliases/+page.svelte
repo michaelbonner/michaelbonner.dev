@@ -5,6 +5,7 @@
 	import ogImage from '$lib/images/iterm-aliases-trimmed-600.jpg';
 
 	import 'svelte-highlight/styles/github-dark.css';
+	import OtherBlogArticles from '$lib/components/OtherBlogArticles.svelte';
 </script>
 
 <Seo
@@ -180,3 +181,5 @@ alias vim='lvim'
 		</p>
 	</div>
 </main>
+
+<OtherBlogArticles slug="set-up-some-aliases" />
