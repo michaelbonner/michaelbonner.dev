@@ -7,7 +7,7 @@ Public site for [michaelbonner.dev](https://michaelbonner.dev/).
 First, run the development server:
 
 ```bash
-npm run dev -- --open
+bun run dev -- --open
 ```
 
 A browser should open at [http://127.0.0.1:5173/](http://127.0.0.1:5173/) to see the result.
