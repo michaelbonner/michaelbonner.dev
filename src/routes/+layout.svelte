@@ -3,12 +3,14 @@
 
 	import { browser } from '$app/environment';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
+	import { PUBLIC_POSTHOG_API_KEY } from '$env/static/public';
 	import posthog from 'posthog-js';
 	import { onDestroy, onMount } from 'svelte';
 	import Gtm from '../components/gtm.svelte';
 	import { classNames } from '../functions/classNames';
 	import { classes } from '../styles/classes';
+
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
@@ -39,7 +41,7 @@
 
 	export const load = async () => {
 		if (browser) {
-			posthog.init('phc_CR48D5k9rHyRASc1LcsP2vkacYA7WnCTRmV7lsuDULf', {
+			posthog.init(PUBLIC_POSTHOG_API_KEY, {
 				api_host: 'https://michaelbonner.dev/ingest',
 				capture_pageleave: false,
 				capture_pageview: false,
