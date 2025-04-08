@@ -63,7 +63,7 @@
 <svelte:head>
 	<meta name="theme-color" content="hsl(208, 50%, 30%)" />
 	<link rel="icon" href="/favicon.ico" />
-	<meta property="og:url" content={`https://michaelbonner.dev${$page.url.pathname}`} />
+	<meta property="og:url" content={`https://michaelbonner.dev${page.url.pathname}`} />
 	<meta name="author" content="Michael Bonner" />
 	<meta property="profile:first_name" content="Michael" />
 	<meta property="profile:last_name" content="Bonner" />
@@ -71,7 +71,7 @@
 	<meta property="fb:app_id" content="383758763158159" />
 	<link rel="apple-touch-icon" href="https://michaelbonner.dev/icon.png" />
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
 		rel="preload"
 		href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500&display=swap"
