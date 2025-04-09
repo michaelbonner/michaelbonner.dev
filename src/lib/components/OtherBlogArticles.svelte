@@ -1,11 +1,11 @@
 <script>
-	export let slug;
-
+	import { page } from '$app/state';
 	import { blogArticles } from '$lib/data/blogArticles';
 	import clsx from 'clsx';
 	import H2 from '../../components/H2.svelte';
 	import { classes } from '../../styles/classes';
 
+	const slug = (page.route.id ?? '').split('/').pop();
 	const otherArticles = blogArticles.filter((article) => article.slug !== slug);
 </script>
 

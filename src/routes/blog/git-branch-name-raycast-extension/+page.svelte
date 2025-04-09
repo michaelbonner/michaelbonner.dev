@@ -1,5 +1,4 @@
 <script>
-	import OtherBlogArticles from '$lib/components/OtherBlogArticles.svelte';
 	import gitBranchNameGenerator1 from '$lib/images/git-branch-name-generator-1.jpg?enhanced&w=768,440';
 	import gitBranchNameGenerator2 from '$lib/images/git-branch-name-generator-2.jpg?enhanced&w=768,440';
 	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg?enhanced&w=768,440';
@@ -21,7 +20,7 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/git-branch-name-raycast-extension" />
 </svelte:head>
 
-<main class="container flex items-center py-12 px-8 mx-auto">
+<div class="container flex items-center py-12 px-8 mx-auto">
 	<div class="w-full max-w-3xl prose dark:prose-invert">
 		<div class="pt-8">
 			<div class="lg:pt-24">
@@ -116,6 +115,4 @@
 			</div>
 		</div>
 	</div>
-</main>
-
-<OtherBlogArticles slug="git-branch-name-raycast-extension" />
+</div>

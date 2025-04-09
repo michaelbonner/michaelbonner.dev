@@ -1,5 +1,4 @@
 <script>
-	import OtherBlogArticles from '$lib/components/OtherBlogArticles.svelte';
 	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced&w=768,440';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
@@ -19,7 +18,7 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/github-repositories-viewer-app" />
 </svelte:head>
 
-<main class="container flex items-center py-12 px-8 mx-auto">
+<div class="container flex items-center py-12 px-8 mx-auto">
 	<div class="w-full max-w-3xl prose dark:prose-invert">
 		<div class="pt-8">
 			<div class="lg:pt-24">
@@ -66,6 +65,4 @@
 			</div>
 		</div>
 	</div>
-</main>
-
-<OtherBlogArticles slug="github-repositories-viewer-app" />
+</div>

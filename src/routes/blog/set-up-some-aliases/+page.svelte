@@ -1,11 +1,10 @@
 <script lang="ts">
-	import Seo from '../../../components/Seo.svelte';
+	import ogImage from '$lib/images/iterm-aliases-trimmed-600.jpg';
 	import { Highlight } from 'svelte-highlight';
 	import bash from 'svelte-highlight/languages/bash';
-	import ogImage from '$lib/images/iterm-aliases-trimmed-600.jpg';
+	import Seo from '../../../components/Seo.svelte';
 
 	import 'svelte-highlight/styles/github-dark.css';
-	import OtherBlogArticles from '$lib/components/OtherBlogArticles.svelte';
 </script>
 
 <Seo
@@ -22,7 +21,7 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/set-up-some-aliases" />
 </svelte:head>
 
-<main class="container py-12 px-8 mx-auto">
+<div class="container py-12 px-8 mx-auto">
 	<div class="max-w-3xl prose dark:prose-invert">
 		<div class="pt-8">
 			<div class="lg:pt-24">
@@ -180,6 +179,4 @@ alias vim='lvim'
 			<time dateTime="2022-08-10">18 Apr 2024</time>
 		</p>
 	</div>
-</main>
-
-<OtherBlogArticles slug="set-up-some-aliases" />
+</div>

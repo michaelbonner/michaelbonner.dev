@@ -1,5 +1,4 @@
 <script>
-	import OtherBlogArticles from '$lib/components/OtherBlogArticles.svelte';
 	import afterExtension from '$lib/images/after-extension.png?enhanced&w=768,440';
 	import availableInTheChromeWebStore from '$lib/images/available-in-the-chrome-web-store.png?enhanced&w=768,440';
 	import beforeExtension from '$lib/images/before-extension.png?enhanced&w=768,440';
@@ -23,7 +22,7 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/i-made-an-extension" />
 </svelte:head>
 
-<main class="container flex items-center py-12 px-8 mx-auto">
+<div class="container flex items-center py-12 px-8 mx-auto">
 	<div class="w-full max-w-3xl prose dark:prose-invert">
 		<div class="pt-8">
 			<div class="lg:pt-24">
@@ -106,6 +105,4 @@
 			</div>
 		</div>
 	</div>
-</main>
-
-<OtherBlogArticles slug="i-made-an-extension" />
+</div>
