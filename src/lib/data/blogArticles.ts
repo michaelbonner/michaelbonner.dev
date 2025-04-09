@@ -2,9 +2,18 @@ import chromeBasecampUiExtension from '$lib/images/chrome-basecamp-ui-extension.
 import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg?enhanced&w=470';
 import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced&w=470';
 import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.jpg?enhanced&w=470';
+import pagespeed from '$lib/images/projects/pagespeed.jpg?enhanced&w=470';
 import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.jpg?enhanced&w=470';
 
 export const blogArticles = [
+	{
+		title: 'PageSpeed Testing is important, you should take it seriously',
+		slug: 'pagespeed-testing',
+		teaser: 'I made a little tool to test the performance of pages on a site on one page',
+		publishedAt: new Date('2025-04-09T16:00:00.000Z'),
+		readingTime: '2 minute read',
+		image: pagespeed
+	},
 	{
 		title: 'Github Repository Collaborators Viewer',
 		slug: 'github-repositories-viewer-app',
