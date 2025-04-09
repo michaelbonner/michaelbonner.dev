@@ -93,7 +93,7 @@
 			image: podcasts
 		},
 		{
-			title: 'Route Picker',
+			title: 'Which Route Is Faster',
 			description:
 				'Sometimes you just wanna have a timer to time a couple different routes and see which one is faster over time. This is made to do just that.',
 			url: 'https://www.whichrouteisfaster.com/',
