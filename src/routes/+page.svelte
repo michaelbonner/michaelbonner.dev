@@ -21,6 +21,7 @@
 	import nefPas from '$lib/images/projects/nef-pas.jpg?enhanced&w=448';
 	import nhlArenas from '$lib/images/projects/nhl-arenas.jpg?enhanced&w=448';
 	import ocr from '$lib/images/projects/ocr.jpg?enhanced&w=448';
+	import pagespeed from '$lib/images/projects/pagespeed.jpg?enhanced&w=448';
 	import podcasts from '$lib/images/projects/podcasts.jpg?enhanced&w=448';
 	import randomStringGenerator from '$lib/images/projects/random-string-generator.jpg?enhanced&w=448';
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced&w=448';
@@ -106,6 +107,14 @@
 			url: 'https://github-repositories-viewer.bootpack.dev/',
 			github: 'https://github.com/michaelbonner/github-repositories-viewer',
 			image: githubRepositoriesViewer
+		},
+		{
+			title: 'PageSpeed Testing',
+			description:
+				'I wanted an easy way to test the performance of some of the sites I have built. This is a tool to help me see those results all on one page.',
+			url: 'https://pagespeed.bootpack.dev/',
+			github: 'https://github.com/michaelbonner/pagespeed',
+			image: pagespeed
 		},
 		{
 			title: 'NHL Arenas To Visit',
