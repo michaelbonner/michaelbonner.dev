@@ -5,9 +5,9 @@
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { PUBLIC_POSTHOG_API_KEY } from '$env/static/public';
+	import { partytownSnippet } from '@qwik.dev/partytown/integration';
 	import posthog from 'posthog-js';
 	import { onDestroy, onMount } from 'svelte';
-	import Gtm from '../components/gtm.svelte';
 	import { classNames } from '../functions/classNames';
 	import { classes } from '../styles/classes';
 
@@ -18,9 +18,6 @@
 	let { children }: Props = $props();
 
 	let interval: any;
-
-	const gtmId = 'GTM-PCQSF3Z';
-	const gtmDataPoints: string[] = [];
 
 	onMount(() => {
 		const meta = document.querySelector('meta[name="theme-color"]');
@@ -58,8 +55,6 @@
 	}
 </script>
 
-<Gtm {gtmId} {gtmDataPoints} />
-
 <svelte:head>
 	<meta name="theme-color" content="hsl(208, 50%, 30%)" />
 	<link rel="icon" href="/favicon.ico" />
@@ -77,6 +72,28 @@
 		href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500&display=swap"
 		as="style"
 	/>
+
+	<script>
+		// Forward the necessary functions to the web worker layer
+		partytown = {
+			forward: ['dataLayer.push', 'gtag']
+		};
+	</script>
+
+	{@html '<script>' + partytownSnippet() + '</script>'}
+
+	<script
+		type="text/partytown"
+		src="https://www.googletagmanager.com/gtag/js?id=GTM-PCQSF3Z"
+	></script>
+	<script type="text/partytown">
+		window.dataLayer = window.dataLayer || [];
+		window.gtag = function () {
+			dataLayer.push(arguments);
+		};
+		gtag('js', new Date());
+		gtag('config', 'GTM-PCQSF3Z');
+	</script>
 </svelte:head>
 
 <div
