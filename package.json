@@ -19,9 +19,9 @@
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/postcss": "^4.1.4",
 		"@tailwindcss/typography": "^0.5.16",
-		"@typescript-eslint/eslint-plugin": "^8.30.1",
-		"@typescript-eslint/parser": "^8.30.1",
-		"eslint": "^9.25.0",
+		"@typescript-eslint/eslint-plugin": "^8.31.0",
+		"@typescript-eslint/parser": "^8.31.0",
+		"eslint": "^9.25.1",
 		"eslint-config-prettier": "^10.1.2",
 		"eslint-plugin-svelte": "^3.5.1",
 		"postcss": "^8.5.3",
@@ -43,7 +43,7 @@
 		"@tailwindcss/vite": "^4.1.4",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.4",
-		"posthog-js": "^1.236.2",
+		"posthog-js": "^1.236.4",
 		"sharp": "^0.34.1"
 	}
 }
