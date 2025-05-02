@@ -1,13 +1,7 @@
 <script lang="ts">
-	import chromeBasecampUiExtension from '$lib/images/chrome-basecamp-ui-extension.jpg?enhanced&w=470';
-	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg?enhanced&w=470';
-	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced&w=470';
-	import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.jpg?enhanced&w=470';
-	import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.jpg?enhanced&w=470';
+	import { blogArticles } from '$lib/data/blogArticles';
 	import Seo from '../../components/Seo.svelte';
 	import { classes } from '../../styles/classes';
-
-	import { blogArticles } from '$lib/data/blogArticles';
 </script>
 
 <Seo description="Just writing down some things" title="Developer Blog | Michael Bonner" />
