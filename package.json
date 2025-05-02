@@ -13,7 +13,7 @@
 		"out": "bun outdated"
 	},
 	"devDependencies": {
-		"@sveltejs/enhanced-img": "^0.4.4",
+		"@sveltejs/enhanced-img": "^0.5.0",
 		"@sveltejs/kit": "^2.20.8",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
