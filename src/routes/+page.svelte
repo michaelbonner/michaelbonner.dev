@@ -267,7 +267,7 @@
 						>
 							<enhanced:img
 								alt={project.title}
-								class="rounded-lg md:max-w-md"
+								class="rounded-lg md:max-w-md border border-gray-200 lg:border-gray-900/40 shadow-sm"
 								loading={projectIndex <= 1 ? 'eager' : 'lazy'}
 								src={project.image}
 								sizes="(min-width:768px) 448px, 100vw"
@@ -314,7 +314,7 @@
 							>
 								<enhanced:img
 									alt={project.title}
-									class="rounded-lg md:max-w-md"
+									class="rounded-lg md:max-w-md border border-gray-200 lg:border-gray-900/40 shadow-sm"
 									loading="lazy"
 									src={project.image}
 									sizes="(min-width:768px) 448px, 100vw"
