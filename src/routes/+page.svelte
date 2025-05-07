@@ -25,6 +25,7 @@
 	import podcasts from '$lib/images/projects/podcasts.jpg?enhanced&w=448';
 	import randomStringGenerator from '$lib/images/projects/random-string-generator.jpg?enhanced&w=448';
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced&w=448';
+	import screenshotMaker from '$lib/images/projects/screenshot-maker.jpg?enhanced&w=448';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced&w=448';
 	import { blogArticles } from '$lib/data/blogArticles';
 	import clsx from 'clsx';
@@ -83,6 +84,14 @@
 			url: 'https://www.lazyuncle.net/',
 			github: 'https://github.com/michaelbonner/lazy-uncle',
 			image: lazyUncle
+		},
+		{
+			title: 'Screenshot Maker',
+			description:
+				'I needed a way to make screenshots of projects. This is a simple tool that allows you to do just that.',
+			url: 'https://screenshot-maker.bootpack.dev/',
+			github: 'https://github.com/michaelbonner/screenshot-maker',
+			image: screenshotMaker
 		},
 		{
 			title: 'Podcasts I Listen To',
