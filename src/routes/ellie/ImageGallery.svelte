@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { clsx } from 'clsx';
-	// @ts-ignore
 	import PhotoSwipeLightbox from 'photoswipe/lightbox';
+	import { onMount } from 'svelte';
 
 	import 'photoswipe/style.css';
 
@@ -37,8 +36,9 @@
 </script>
 
 <div class="grid grid-cols-2 gap-2 items-center lg:grid-cols-4" id={galleryID}>
-	{#each images as image}
+	{#each images as image (image.url.img.src)}
 		<a
+			aria-label={image.altText}
 			href={image.url.img.src}
 			data-pswp-width={image.url.img.w}
 			data-pswp-height={image.url.img.h}

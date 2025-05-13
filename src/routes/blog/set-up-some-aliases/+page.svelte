@@ -35,7 +35,7 @@
 				<p>
 					Bash aliases are shortcuts. They reduce the key strokes, and increase efficiency. You just
 					type a short, easy to remember shortcut, and bash will execute the full command. Why type
-					out{' '}
+					out&nbsp;
 					<code>git status</code> when you could type <code>gs</code>? Whey type out
 					<code>git checkout origin master</code>
 					when you could just type <code>gcm</code>?
@@ -45,17 +45,17 @@
 					First, identify which version of shell you&apos;re using and where &apos;s configuration
 					file is. Usually, on a mac, it&apos;s in a file at <code>~/.bash_profile</code>. I use
 					zsh, so mine is at <code>~/.zshrc</code>. An easy way to test is to add a sample alias,
-					and try executing it after refreshing the shell or sourcing your config file.{' '}
+					and try executing it after refreshing the shell or sourcing your config file.&nbsp;
 					<code>e.g. source ~/.zshrc</code>. I keep my aliases in a file at <code>~/.aliases</code>
-					and then add{' '}
-					<Highlight class="p-0" code={`source ~/.aliases`} language={bash} />
+					and then add&nbsp;
+					<Highlight class="p-0" code="source ~/.aliases" language={bash} />
 					<code>source ~/.aliases</code> to my <code>~/.zshrc</code>.
 				</p>
 				<p>
 					Once you identify which file to edit, all you need to do is add something like the
 					following:
 				</p>
-				<Highlight class="p-0" code={`alias gs='git status'`} language={bash} />
+				<Highlight class="p-0" code="alias gs='git status'" language={bash} />
 				<p>
 					In the above example, `gs` is the text you will type, and the text in the quotes is the
 					command that will be executed.
@@ -97,14 +97,14 @@ alias gps='git pull origin staging'
 alias ga='git add .'
 alias gc='git commit -m '
 alias gac='git commit -am '
-alias ggs='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT STATUS IN $&#123;dir//\.git/&#123;\" && git status -s" ; done'
-alias ggpull='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT PULL IN $&#123;dir//\.git/&#123;\" && git pull" ; done'
+alias ggs='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e "GIT STATUS IN $&#123;dir//.git/&#123;" && git status -s" ; done'
+alias ggpull='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e "GIT PULL IN $&#123;dir//.git/&#123;" && git pull" ; done'
 alias gc--.='git checkout -- .'
 alias gch='git checkout'
 alias gclean='git reset --hard;git clean -df;'
 alias ghash='git rev-parse HEAD | pbcopy'
 alias gt='git trim'
-alias ggt='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT TRIM IN $&#123;dir//\.git/&#123;\" && git trim" ; done'
+alias ggt='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e "GIT TRIM IN $&#123;dir//.git/&#123;" && git trim" ; done'
 
 # laravel
 alias sup='sail up'
@@ -129,8 +129,8 @@ alias nrb='npm run build'
 alias nrl='npm run lint'
 alias nrc='npm run codegen'
 alias nrg='npm run generate'
-alias npmout='find . -type d -name .git -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nNPM STATUS IN $&#123;dir//\.git/&#125;\" && npm out" ; done'
-alias npmup='find . -type d -name '.git' -maxdepth 2 | while read dir ; do sh -c "cd $dir/ && echo -e \"\nNPM UPDATE IN $&#123;dir//\.git/&#125;\" && npm up" ; done'
+alias npmout='find . -type d -name .git -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e "NPM STATUS IN $&#123;dir//.git/&#125;" && npm out" ; done'
+alias npmup='find . -type d -name '.git' -maxdepth 2 | while read dir ; do sh -c "cd $dir/ && echo -e "NPM UPDATE IN $&#123;dir//.git/&#125;" && npm up" ; done'
 alias y='yarn'
 alias mjml='./node_modules/.bin/mjml'
 alias nd='netlify dev'
@@ -156,12 +156,8 @@ alias dcd='docker compose down'
 # deployments
 alias vl='vercel ls'
 
-# audio source
-alias da='SwitchAudioSource -t input -s "Shure MV7" && SwitchAudioSource -t output -s "Mike’s AirPods Max" && open -jg -a /Applications/ShurePlus\ MOTIV.app'
-alias ba='SwitchAudioSource -t input -s "MacBook Pro Microphone" && SwitchAudioSource -t output -s "Mike’s AirPods Max"'
-
 # misc
-alias c='open . -a /Applications/Visual\ Studio\ Code.app'
+alias c='open . -a "/Applications/Visual Studio Code.app"
 alias st='open . -a /Applications/Sourcetree.app'
 alias vim='lvim'
 `}
@@ -171,11 +167,11 @@ alias vim='lvim'
 
 	<div class="mt-16 max-w-3xl prose dark:prose-invert">
 		<p>
-			Published:{` `}
+			Published:&nbsp;
 			<time dateTime="2021-07-15">15 Jul 2021</time>
 		</p>
 		<p>
-			Updated:{` `}
+			Updated:&nbsp;
 			<time dateTime="2022-08-10">18 Apr 2024</time>
 		</p>
 	</div>

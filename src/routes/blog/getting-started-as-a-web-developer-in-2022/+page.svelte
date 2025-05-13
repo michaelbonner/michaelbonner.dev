@@ -58,7 +58,7 @@
 					think you&apos;ll be better off learning the basics the old-fashioned way.
 				</p>
 				<figure>
-					<a href="https://tuff.michaelbonner.dev/">
+					<a href="https://tuff.michaelbonner.dev/" aria-label="Tuff website screenshot">
 						<enhanced:img
 							alt="Tuff website screenshot"
 							loading="lazy"
@@ -69,10 +69,9 @@
 					<figcaption class="text-center">See how cringey that thing is?</figcaption>
 				</figure>
 				<p>
-					Learn basic{' '}
-					<a class={classes.bodyLink} href="https://www.w3schools.com/html/"> HTML </a>{' '}
-					and{' '}<a class={classes.bodyLink} href="https://www.w3schools.com/css/"> CSS </a>.
-					Codecademy (<a
+					Learn basic&nbsp;
+					<a class={classes.bodyLink} href="https://www.w3schools.com/html/"> HTML </a> and&nbsp;
+					<a class={classes.bodyLink} href="https://www.w3schools.com/css/"> CSS </a>. Codecademy (<a
 						class={classes.bodyLink}
 						href="https://www.codecademy.com/catalog/language/html-css">codecademy.com</a
 					>) has really good interactive tutorials to get you started. Trudge through it, and then
@@ -91,9 +90,9 @@
 					launch it. Get that thing out there. You can host your site using Netlify for free. Just
 					zip it up and launch it. (<a class={classes.bodyLink} href="https://app.netlify.com/drop"
 						>app.netlify.com/drop</a
-					>) Tell your friends about your new site. Tell your parents about it. Tell me about it.{` `}(<a
-						class={classes.bodyLink}
-						href="https://www.linkedin.com/in/michaelbonner/">linkedin.com/in/michaelbonner/</a
+					>) Tell your friends about your new site. Tell your parents about it. Tell me about
+					it.&nbsp;(<a class={classes.bodyLink} href="https://www.linkedin.com/in/michaelbonner/"
+						>linkedin.com/in/michaelbonner/</a
 					>)
 				</p>
 				<h2>Build, build, build</h2>
@@ -150,7 +149,7 @@
 				</p>
 				<p>Some good tutorial sites to learn web development things:</p>
 				<ul>
-					{#each ['https://www.theodinproject.com', 'https://www.freecodecamp.org/learn', 'https://wesbos.com/courses', 'https://leveluptutorials.com'] as link}
+					{#each ['https://www.theodinproject.com', 'https://www.freecodecamp.org/learn', 'https://wesbos.com/courses', 'https://leveluptutorials.com'] as link (link)}
 						<li>
 							<a href={link}>
 								{link.replace(/https:\/\/([\w]{3}[.])?/g, '')}
@@ -160,7 +159,7 @@
 				</ul>
 				<p>Some good subreddits to learn web development things:</p>
 				<ul class="flex flex-wrap gap-y-2 gap-x-4 list-none">
-					{#each ['r/css', 'r/javascript', 'r/sveltejs', 'r/nextjs', 'r/node', 'r/reactjs', 'r/SyntaxFM', 'r/webdev'] as subreddit}
+					{#each ['r/css', 'r/javascript', 'r/sveltejs', 'r/nextjs', 'r/node', 'r/reactjs', 'r/SyntaxFM', 'r/webdev'] as subreddit (subreddit)}
 						<li class="p-0">
 							<a href={`https://www.reddit.com/${subreddit}`}>
 								{subreddit}
@@ -170,7 +169,7 @@
 				</ul>
 				<p>Some good sites to learn web development things:</p>
 				<ul>
-					{#each ['https://css-tricks.com', 'https://blog.hubspot.com/website/website-development', 'https://dev.to', 'https://davidwalsh.name'] as site}
+					{#each ['https://css-tricks.com', 'https://blog.hubspot.com/website/website-development', 'https://dev.to', 'https://davidwalsh.name'] as site (site)}
 						<li>
 							<a class={classes.bodyLink} href={site}>
 								{site.replace(/https:\/\/([w]{3}[.])?/g, '')}
@@ -222,11 +221,11 @@
 				</p>
 
 				<p class="mt-16">
-					Published:{` `}
+					Published:&nbsp;
 					<time dateTime="2022-03-08">08 Mar 2022</time>
 				</p>
 				<p>
-					Updated:{` `}
+					Updated:&nbsp;
 					<time dateTime="2022-12-18">18 Dec 2022</time>
 				</p>
 			</div>
