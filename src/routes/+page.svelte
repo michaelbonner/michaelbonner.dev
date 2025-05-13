@@ -219,9 +219,9 @@
 			</div>
 			<div class="mt-8 w-full lg:pr-8 lg:mt-0 lg:w-2/3">
 				<h1 class="text-3xl tracking-wide leading-relaxed lg:pr-8 lg:text-4xl">
-					Hi! I&apos;m{' '}
+					Hi! I&apos;m&nbsp;
 					<span class="font-medium whitespace-nowrap"> Michael Bonner</span>, a web developer in
-					Salt Lake City, Utah. I run a small agency with some friends called{' '}
+					Salt Lake City, Utah. I run a small agency with some friends called&nbsp;
 					<span class="whitespace-nowrap">
 						<a
 							class={classNames(
@@ -245,7 +245,7 @@
 				<div class="text-xl leading-relaxed">
 					<p class="mt-4">
 						I started making websites in high school back in 2003. I actually found a copy of my
-						first site and{` `}
+						first site and&nbsp;
 						<a class={classes.bodyLink} href="https://tuff.michaelbonner.dev/"> put it up here </a>
 						. Epic, right? Don&apos;t miss the days of GeoCities. From there I made websites for people
 						I knew, then people they knew, and so on. Making websites was definitely my thing. Since
@@ -255,7 +255,7 @@
 					</p>
 					<p class="mt-4">
 						Also, I really like podcasts so I made a site to keep track of the podcasts I listen to.
-						You can{' '}
+						You can&nbsp;
 						<a class={classes.bodyLink} href="https://podcasts.michaelbonner.dev/"
 							>check that out here</a
 						>.
@@ -267,7 +267,7 @@
 		<div class="max-w-7xl lg:mt-32">
 			<H2>Projects I&apos;m proud of</H2>
 			<ul class="grid gap-y-12 gap-x-24 mt-8 text-lg lg:grid-cols-2 lg:gap-y-24 lg:mt-16">
-				{#each projects as project, projectIndex}
+				{#each projects as project, projectIndex (project.title)}
 					<li class="grid gap-y-4 mt-8 lg:mt-0 lg:ml-8">
 						<a
 							aria-label={`View ${project.title}`}
@@ -313,7 +313,7 @@
 		<div class="max-w-7xl lg:mt-32">
 			<H2>Things I&apos;ve built for fun</H2>
 			<ul class="grid gap-y-12 gap-x-24 mt-8 text-lg lg:grid-cols-2 lg:gap-y-24 lg:mt-16">
-				{#each otherThings as project}
+				{#each otherThings as project (project.title)}
 					<li class="grid gap-y-4 mt-8 lg:mt-0 lg:ml-8">
 						{#if project.image}
 							<a
@@ -362,7 +362,7 @@
 		<div class="max-w-7xl lg:mt-32">
 			<H2>Recent Blog Articles</H2>
 			<ul class="mt-8 list-disc list-outside ml-12">
-				{#each blogArticles as article}
+				{#each blogArticles as article (article.slug)}
 					<li class="py-1">
 						<a class={clsx(classes.bodyLink, 'w-full md:w-auto')} href={`/blog/${article.slug}`}>
 							{article.title}
@@ -375,7 +375,7 @@
 		<div class="lg:mt-32">
 			<H2>Tools I use</H2>
 			<ul class="gap-y-2 gap-x-4 pl-12 mt-4 text-lg list-disc list-outside lg:grid lg:grid-cols-4">
-				{#each tools as tool}
+				{#each tools as tool (tool)}
 					<li>{tool}</li>
 				{/each}
 			</ul>

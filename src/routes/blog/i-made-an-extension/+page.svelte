@@ -35,7 +35,7 @@
 			<div class="max-w-5xl text-lg lg:mt-24">
 				<p>
 					I didn&apos;t realize how easy it is to make an extension. Google has a step-by-step
-					example here:{' '}
+					example here:&nbsp;
 					<A
 						className="break-all"
 						href="https://developer.chrome.com/docs/extensions/mv3/getstarted/"
@@ -99,7 +99,7 @@
 				</p>
 
 				<p class="mt-16">
-					Published:{` `}
+					Published:&nbsp;
 					<time dateTime="2022-05-01">01 May 2022</time>
 				</p>
 			</div>

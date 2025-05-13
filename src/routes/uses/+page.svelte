@@ -148,7 +148,7 @@
 		>
 			<div class="text-xl">Workstation</div>
 			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
-				{#each workstationItems as item}
+				{#each workstationItems as item (item.title)}
 					<div>
 						<span class="inline-block text-xl">
 							<A href={item.href}>
@@ -173,7 +173,7 @@
 		>
 			<div class="text-xl">Development Tools</div>
 			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
-				{#each developmentItems as item}
+				{#each developmentItems as item (item.title)}
 					<div>
 						<span class="inline-block text-xl">
 							<A href={item.href}>
@@ -198,7 +198,7 @@
 		>
 			<div class="text-xl">Productivity Tools</div>
 			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
-				{#each productivityItems as item}
+				{#each productivityItems as item (item.title)}
 					<div>
 						<span class="inline-block text-xl">
 							<A href={item.href}>

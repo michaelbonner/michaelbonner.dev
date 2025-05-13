@@ -11,13 +11,7 @@
 	import { classNames } from '../functions/classNames';
 	import { classes } from '../styles/classes';
 
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
-
-	let { children }: Props = $props();
-
-	let interval: any;
+	let interval: ReturnType<typeof setInterval>;
 
 	onMount(() => {
 		const meta = document.querySelector('meta[name="theme-color"]');
@@ -36,7 +30,7 @@
 		clearInterval(interval);
 	});
 
-	export const load = async () => {
+	const load = async () => {
 		if (browser) {
 			posthog.init(PUBLIC_POSTHOG_API_KEY, {
 				api_host: 'https://michaelbonner.dev/ingest',
@@ -89,7 +83,11 @@
 		};
 	</script>
 
+	<!-- eslint-disable @typescript-eslint/no-unused-expressions -->
+	<!-- eslint-disable svelte/no-at-html-tags -->
 	{@html '<script>' + partytownSnippet() + '</script>'}
+	<!-- eslint-enable svelte/no-at-html-tags -->
+	<!-- eslint-enable @typescript-eslint/no-unused-expressions -->
 
 	<script
 		type="text/partytown"
@@ -112,14 +110,14 @@
 	)}
 >
 	<header class="container flex justify-between px-8 pt-12 mx-auto">
-		<a href={`/`} class={classNames('lg:text-3xl', classes.menuItem)}> Michael Bonner </a>
+		<a href="/" class={classNames('lg:text-3xl', classes.menuItem)}> Michael Bonner </a>
 		<nav class="flex justify-end space-x-6 text-xl" aria-label="Main">
-			<a href={`/`} class={classes.menuItem}>Home</a>
+			<a href="/" class={classes.menuItem}>Home</a>
 			<a href="/blog" class={classes.menuItem}>Blog</a>
 		</nav>
 	</header>
 
-	{@render children?.()}
+	<slot />
 
 	<footer class="container justify-between p-8 mx-auto lg:flex lg:flex-row-reverse lg:items-center">
 		<nav
@@ -133,7 +131,7 @@
 		</nav>
 		<p class="flex flex-wrap gap-x-4 gap-y-6 justify-center items-end md:gap-y-2 lg:justify-start">
 			<span class="text-center">
-				&copy; 2021-{new Date().getFullYear()} by Michael Bonner.{' '}
+				&copy; 2021-{new Date().getFullYear()} by Michael Bonner.&nbsp;
 				<a
 					class={classNames(classes.menuItem, 'text-sm inline-block')}
 					href="https://github.com/michaelbonner/michaelbonner.dev"

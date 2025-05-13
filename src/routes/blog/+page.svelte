@@ -21,7 +21,7 @@
 		</div>
 
 		<div class="grid gap-5 mx-auto max-w-lg lg:grid-cols-2 lg:max-w-none xl:grid-cols-3">
-			{#each blogArticles as article}
+			{#each blogArticles as article (article.slug)}
 				<div
 					class="flex overflow-hidden flex-col rounded-lg shadow-lg transition-transform hover:scale-105 hover:rotate-1"
 				>

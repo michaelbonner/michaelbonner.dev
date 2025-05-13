@@ -18,7 +18,7 @@
 		<div>
 			<p>
 				Your privacy is important to me. It is Michael Bonner&apos;s policy to respect your privacy
-				regarding any information I may collect from you across our website,{' '}
+				regarding any information I may collect from you across our website,&nbsp;
 				<a href="/">https://michaelbonner.dev/</a>
 				, and other sites I own and operate.
 			</p>
@@ -49,7 +49,7 @@
 			<p>
 				Your continued use of our website will be regarded as acceptance of our practices around
 				privacy and personal information. If you have any questions about how I handle user data and
-				personal information, feel free to{' '}
+				personal information, feel free to&nbsp;
 				<a href="https://www.linkedin.com/in/michaelbonner/"> contact me </a>
 				.
 			</p>
@@ -59,7 +59,7 @@
 		<div>
 			<h3>1. Terms</h3>
 			<p>
-				By accessing the website at{' '}
+				By accessing the website at&nbsp;
 				<a href="/">https://michaelbonner.dev/</a>
 				, you are agreeing to be bound by these terms of service, all applicable laws and regulations,
 				and agree that you are responsible for compliance with any applicable local laws. If you do not
