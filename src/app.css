@@ -4,9 +4,9 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --font-*: initial;
-  --font-sans: Graphik, sans-serif;
-  --font-serif: Newsreader, serif;
+	--font-*: initial;
+	--font-sans: Graphik, sans-serif;
+	--font-serif: Newsreader, serif;
 }
 
 /*
@@ -18,13 +18,13 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+	}
 }
 
 @layer base {
