@@ -3,9 +3,18 @@ import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg
 import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced&w=470';
 import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.jpg?enhanced&w=470';
 import pagespeed from '$lib/images/projects/pagespeed.jpg?enhanced&w=470';
+import screenshotMaker from '$lib/images/projects/screenshot-maker.webp?enhanced&w=470';
 import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.jpg?enhanced&w=470';
 
 export const blogArticles = [
+	{
+		title: 'Screenshot Maker',
+		slug: 'screenshot-maker',
+		teaser: 'A tool to make screenshots of websites. Dang simple and serverless ready',
+		publishedAt: new Date('2025-05-14T16:46:00.845Z'),
+		readingTime: '2 minute read',
+		image: screenshotMaker
+	},
 	{
 		title: 'PageSpeed Testing is important, you should take it seriously',
 		slug: 'pagespeed-testing',

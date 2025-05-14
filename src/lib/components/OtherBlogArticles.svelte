@@ -5,8 +5,12 @@
 	import H2 from '../../components/H2.svelte';
 	import { classes } from '../../styles/classes';
 
-	const slug = (page.route.id ?? '').split('/').pop();
-	const otherArticles = blogArticles.filter((article) => article.slug !== slug);
+	// update the other articles when the page.route.id changes
+	let otherArticles = $derived.by(() => {
+		const slug = (page.route.id ?? '').split('/').pop();
+
+		return blogArticles.filter((article) => article.slug !== slug);
+	});
 </script>
 
 <aside class="container py-12 px-8 mx-auto">
