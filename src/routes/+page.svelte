@@ -450,9 +450,10 @@
 						<div>
 							<img
 								alt={otherSite.name}
-								src={`https://unavatar.io/${encodeURIComponent(otherSite.url.replace(/https:\/\/(www\.)?/, ''))}?fallback=https://michaelbonner.dev/images/link.png`}
+								src={`https://unavatar.io/${encodeURIComponent(otherSite.url.replace(/https:\/\/(www\.)?/, ''))}?fallback=${encodeURIComponent('https://michaelbonner.dev/images/link.png')}`}
 								width={20}
 								height={20}
+								loading="lazy"
 							/>
 						</div>
 						<div>
