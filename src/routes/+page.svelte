@@ -446,10 +446,20 @@
 			<H2>Some Other Sites</H2>
 			<ul class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 mt-8 lg:ml-8">
 				{#each otherSites as otherSite (otherSite.name)}
-					<li>
-						{otherSite.name}<br /><A href={otherSite.url}>
-							{otherSite.url.replace(/https:\/\/(www\.)?/, '')}
-						</A>
+					<li class="flex gap-4">
+						<div>
+							<img
+								alt={otherSite.name}
+								src={`https://unavatar.io/${encodeURIComponent(otherSite.url.replace(/https:\/\/(www\.)?/, ''))}?fallback=https://michaelbonner.dev/images/link.png`}
+								width={20}
+								height={20}
+							/>
+						</div>
+						<div>
+							{otherSite.name}<br /><A href={otherSite.url}>
+								{otherSite.url.replace(/https:\/\/(www\.)?/, '')}
+							</A>
+						</div>
 					</li>
 				{/each}
 			</ul>
