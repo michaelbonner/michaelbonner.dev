@@ -1,14 +1,6 @@
 <script lang="ts">
+	import { blogArticles } from '$lib/data/blogArticles';
 	import mainImage from '$lib/images/on-the-beach-600.jpg?enhanced';
-	import H2 from '../components/H2.svelte';
-	import Seo from '../components/Seo.svelte';
-	import { classNames } from '../functions/classNames';
-	import Github from '../icons/Github.svelte';
-	import Instagram from '../icons/Instagram.svelte';
-	import Link from '../icons/Link.svelte';
-	import LinkedIn from '../icons/LinkedIn.svelte';
-	import { classes } from '../styles/classes';
-
 	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced&w=448';
 	import crewView from '$lib/images/projects/crewview.jpg?enhanced&w=448';
 	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced&w=448';
@@ -27,8 +19,16 @@
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced&w=448';
 	import screenshotMaker from '$lib/images/projects/screenshot-maker.jpg?enhanced&w=448';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced&w=448';
-	import { blogArticles } from '$lib/data/blogArticles';
 	import clsx from 'clsx';
+	import A from '../components/A.svelte';
+	import H2 from '../components/H2.svelte';
+	import Seo from '../components/Seo.svelte';
+	import { classNames } from '../functions/classNames';
+	import Github from '../icons/Github.svelte';
+	import Instagram from '../icons/Instagram.svelte';
+	import Link from '../icons/Link.svelte';
+	import LinkedIn from '../icons/LinkedIn.svelte';
+	import { classes } from '../styles/classes';
 
 	const projects = [
 		{
@@ -174,6 +174,89 @@
 			image: randomStringGenerator
 		}
 	];
+
+	const otherSites = [
+		{
+			name: 'MetaCensus',
+			url: 'https://metacensus.org'
+		},
+		{
+			name: 'NEF Programs Administration System',
+			url: 'https://pas.nef1.org'
+		},
+		{
+			name: 'NEF Corporate Site',
+			url: 'https://nef1.org'
+		},
+		{
+			name: 'Heritage of Preston',
+			url: 'https://www.heritageofpreston.com'
+		},
+		{
+			name: 'Heritage of Soda',
+			url: 'https://www.heritageofsoda.com'
+		},
+		{
+			name: 'Jeremy Miller Director',
+			url: 'https://jeremymillerdirector.com'
+		},
+		{
+			name: 'Ravens Film Works',
+			url: 'https://ravensfilmworks.com'
+		},
+		{
+			name: 'Life or Death Documentary',
+			url: 'https://www.lifeordeathdoc.com'
+		},
+		{
+			name: 'Hanks Garage Venue',
+			url: 'https://www.hanksgaragevenue.com'
+		},
+		{
+			name: 'Accelerated Equity Plans',
+			url: 'https://www.acceleratedep.com'
+		},
+		{
+			name: 'EnergySafeLeaders',
+			url: 'https://energysafeleaders.org/leaders'
+		},
+		{
+			name: 'Swift Manager',
+			url: 'https://www.swift-manager.com'
+		},
+		{
+			name: 'Pizza Size Price Calculator',
+			url: 'https://pizza.michaelbonner.dev'
+		},
+		{
+			name: 'Artist Amy Bonner',
+			url: 'https://www.amy-bonner.com'
+		},
+		{
+			name: 'Denver Window Well Covers',
+			url: 'https://denverwindowwellcovers.com'
+		},
+		{
+			name: 'J.E. Cosgriff School',
+			url: 'https://cosgriff.org'
+		},
+		{
+			name: 'BlackThorn Software',
+			url: 'https://www.blackthornsoftware.com'
+		},
+		{
+			name: 'Know Your Force',
+			url: 'https://knowyourforce.com'
+		},
+		{
+			name: 'Redirects Wizard',
+			url: 'https://redirects.bootpack.dev'
+		},
+		{
+			name: 'Water coloring game',
+			url: 'https://games.nef1.org/title/water'
+		}
+	].sort((a, b) => a.name.localeCompare(b.name));
 
 	const tools = [
 		'JavaScript',
@@ -354,6 +437,19 @@
 								</p>
 							{/if}
 						</div>
+					</li>
+				{/each}
+			</ul>
+		</div>
+
+		<div class="max-w-7xl lg:mt-32">
+			<H2>Some Other Sites</H2>
+			<ul class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 mt-8 lg:ml-8">
+				{#each otherSites as otherSite (otherSite.name)}
+					<li>
+						{otherSite.name}<br /><A href={otherSite.url}>
+							{otherSite.url.replace(/https:\/\/(www\.)?/, '')}
+						</A>
 					</li>
 				{/each}
 			</ul>
