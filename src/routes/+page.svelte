@@ -1,14 +1,6 @@
 <script lang="ts">
+	import { blogArticles } from '$lib/data/blogArticles';
 	import mainImage from '$lib/images/on-the-beach-600.jpg?enhanced';
-	import H2 from '../components/H2.svelte';
-	import Seo from '../components/Seo.svelte';
-	import { classNames } from '../functions/classNames';
-	import Github from '../icons/Github.svelte';
-	import Instagram from '../icons/Instagram.svelte';
-	import Link from '../icons/Link.svelte';
-	import LinkedIn from '../icons/LinkedIn.svelte';
-	import { classes } from '../styles/classes';
-
 	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced&w=448';
 	import crewView from '$lib/images/projects/crewview.jpg?enhanced&w=448';
 	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced&w=448';
@@ -27,8 +19,15 @@
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced&w=448';
 	import screenshotMaker from '$lib/images/projects/screenshot-maker.jpg?enhanced&w=448';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced&w=448';
-	import { blogArticles } from '$lib/data/blogArticles';
 	import clsx from 'clsx';
+	import H2 from '../components/H2.svelte';
+	import Seo from '../components/Seo.svelte';
+	import { classNames } from '../functions/classNames';
+	import Github from '../icons/Github.svelte';
+	import Instagram from '../icons/Instagram.svelte';
+	import Link from '../icons/Link.svelte';
+	import LinkedIn from '../icons/LinkedIn.svelte';
+	import { classes } from '../styles/classes';
 
 	const projects = [
 		{
