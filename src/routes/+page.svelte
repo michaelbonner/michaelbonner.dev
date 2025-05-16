@@ -178,83 +178,103 @@
 	const otherSites = [
 		{
 			name: 'MetaCensus',
-			url: 'https://metacensus.org'
+			url: 'https://metacensus.org',
+			host: 'metacensus.org'
 		},
 		{
 			name: 'NEF Programs Administration System',
-			url: 'https://pas.nef1.org'
+			url: 'https://pas.nef1.org',
+			host: 'pas.nef1.org'
 		},
 		{
 			name: 'NEF Corporate Site',
-			url: 'https://nef1.org'
+			url: 'https://nef1.org',
+			host: 'nef1.org'
 		},
 		{
 			name: 'Heritage of Preston',
-			url: 'https://www.heritageofpreston.com'
+			url: 'https://www.heritageofpreston.com',
+			host: 'heritageofpreston.com'
 		},
 		{
 			name: 'Heritage of Soda',
-			url: 'https://www.heritageofsoda.com'
+			url: 'https://www.heritageofsoda.com',
+			host: 'heritageofsoda.com'
 		},
 		{
 			name: 'Jeremy Miller Director',
-			url: 'https://jeremymillerdirector.com'
+			url: 'https://jeremymillerdirector.com',
+			host: 'jeremymillerdirector.com'
 		},
 		{
 			name: 'Ravens Film Works',
-			url: 'https://ravensfilmworks.com'
+			url: 'https://ravensfilmworks.com',
+			host: 'ravensfilmworks.com'
 		},
 		{
 			name: 'Life or Death Documentary',
-			url: 'https://www.lifeordeathdoc.com'
+			url: 'https://www.lifeordeathdoc.com',
+			host: 'lifeordeathdoc.com'
 		},
 		{
 			name: 'Hanks Garage Venue',
-			url: 'https://www.hanksgaragevenue.com'
+			url: 'https://www.hanksgaragevenue.com',
+			host: 'hanksgaragevenue.com'
 		},
 		{
 			name: 'Accelerated Equity Plans',
-			url: 'https://www.acceleratedep.com'
+			url: 'https://www.acceleratedep.com',
+			host: 'acceleratedep.com'
 		},
 		{
 			name: 'EnergySafeLeaders',
-			url: 'https://energysafeleaders.org/leaders'
+			url: 'https://energysafeleaders.org/leaders',
+			host: 'energysafeleaders.org'
 		},
 		{
 			name: 'Swift Manager',
-			url: 'https://www.swift-manager.com'
+			url: 'https://www.swift-manager.com',
+			host: 'swift-manager.com'
 		},
 		{
 			name: 'Pizza Size Price Calculator',
-			url: 'https://pizza.michaelbonner.dev'
+			url: 'https://pizza.michaelbonner.dev',
+			host: 'pizza.michaelbonner.dev'
 		},
 		{
 			name: 'Artist Amy Bonner',
-			url: 'https://www.amy-bonner.com'
+			url: 'https://www.amy-bonner.com',
+			host: 'amy-bonner.com'
 		},
 		{
 			name: 'Denver Window Well Covers',
-			url: 'https://denverwindowwellcovers.com'
+			url: 'https://denverwindowwellcovers.com',
+			host: 'denverwindowwellcovers.com'
 		},
 		{
 			name: 'J.E. Cosgriff School',
-			url: 'https://cosgriff.org'
+			url: 'https://cosgriff.org',
+			host: 'cosgriff.org'
 		},
 		{
 			name: 'BlackThorn Software',
-			url: 'https://www.blackthornsoftware.com'
+			url: 'https://www.blackthornsoftware.com',
+			host: 'blackthornsoftware.com'
 		},
 		{
 			name: 'Know Your Force',
-			url: 'https://knowyourforce.com'
+			url: 'https://knowyourforce.com',
+			host: 'knowyourforce.com'
 		},
 		{
 			name: 'Redirects Wizard',
-			url: 'https://redirects.bootpack.dev'
+			url: 'https://redirects.bootpack.dev',
+			host: 'redirects.bootpack.dev'
 		},
 		{
 			name: 'Water coloring game',
-			url: 'https://games.nef1.org/title/water'
+			url: 'https://games.nef1.org/title/water',
+			host: 'games.nef1.org'
 		}
 	].sort((a, b) => a.name.localeCompare(b.name));
 
@@ -450,7 +470,7 @@
 						<div>
 							<img
 								alt={otherSite.name}
-								src={`https://unavatar.io/${encodeURIComponent(otherSite.url.replace(/https:\/\/(www\.)?/, ''))}?fallback=${encodeURIComponent('https://michaelbonner.dev/images/link.png')}`}
+								src={`https://unavatar.io/${encodeURIComponent(otherSite.host)}?fallback=${encodeURIComponent('https://michaelbonner.dev/images/link.png')}`}
 								width={20}
 								height={20}
 								loading="lazy"
