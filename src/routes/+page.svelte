@@ -1,5 +1,17 @@
 <script lang="ts">
 	import { blogArticles } from '$lib/data/blogArticles';
+	import clsx from 'clsx';
+	import A from '../components/A.svelte';
+	import H2 from '../components/H2.svelte';
+	import Seo from '../components/Seo.svelte';
+	import { classNames } from '../functions/classNames';
+	import Github from '../icons/Github.svelte';
+	import Instagram from '../icons/Instagram.svelte';
+	import Link from '../icons/Link.svelte';
+	import LinkedIn from '../icons/LinkedIn.svelte';
+	import { classes } from '../styles/classes';
+
+	// images
 	import mainImage from '$lib/images/on-the-beach-600.jpg?enhanced';
 	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced&w=448';
 	import crewView from '$lib/images/projects/crewview.jpg?enhanced&w=448';
@@ -19,38 +31,26 @@
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced&w=448';
 	import screenshotMaker from '$lib/images/projects/screenshot-maker.jpg?enhanced&w=448';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced&w=448';
-
-	import metacensus from '$lib/images/sites/metacensus-org.png?enhanced';
-	import pasNef1Org from '$lib/images/sites/pas-nef1-org.png?enhanced';
-	import nef1Org from '$lib/images/sites/nef1-org.png?enhanced';
+	import acceleratedEquityPlans from '$lib/images/sites/acceleratedep-com.png?enhanced';
+	import artistAmyBonner from '$lib/images/sites/amy-bonner-com.png?enhanced';
+	import blackThornSoftware from '$lib/images/sites/blackthornsoftware-com.png?enhanced';
+	import cosgriffSchool from '$lib/images/sites/cosgriff-org.png?enhanced';
+	import denverWindowWellCovers from '$lib/images/sites/denverwindowwellcovers-com.png?enhanced';
+	import energySafeLeaders from '$lib/images/sites/energysafeleaders-org.png?enhanced';
+	import waterColoringGame from '$lib/images/sites/games-nef1-org.png?enhanced';
+	import hanksGarageVenue from '$lib/images/sites/hanksgaragevenue-com.png?enhanced';
 	import heritageOfPreston from '$lib/images/sites/heritageofpreston-com.png?enhanced';
 	import heritageOfSoda from '$lib/images/sites/heritageofsoda-com.png?enhanced';
 	import jeremyMillerDirector from '$lib/images/sites/jeremymillerdirector-com.png?enhanced';
-	import ravensFilmWorks from '$lib/images/sites/ravensfilmworks-com.png?enhanced';
-	import lifeOrDeathDocumentary from '$lib/images/sites/lifeordeathdoc-com.png?enhanced';
-	import hanksGarageVenue from '$lib/images/sites/hanksgaragevenue-com.png?enhanced';
-	import acceleratedEquityPlans from '$lib/images/sites/acceleratedep-com.png?enhanced';
-	import energySafeLeaders from '$lib/images/sites/energysafeleaders-org.png?enhanced';
-	import swiftManager from '$lib/images/sites/swift-manager-com.png?enhanced';
-	import pizzaSizePriceCalculator from '$lib/images/sites/pizza-michaelbonner-dev.png?enhanced';
-	import artistAmyBonner from '$lib/images/sites/amy-bonner-com.png?enhanced';
-	import denverWindowWellCovers from '$lib/images/sites/denverwindowwellcovers-com.png?enhanced';
-	import cosgriffSchool from '$lib/images/sites/cosgriff-org.png?enhanced';
-	import blackThornSoftware from '$lib/images/sites/blackthornsoftware-com.png?enhanced';
 	import knowYourForce from '$lib/images/sites/knowyourforce-com.png?enhanced';
+	import lifeOrDeathDocumentary from '$lib/images/sites/lifeordeathdoc-com.png?enhanced';
+	import metacensus from '$lib/images/sites/metacensus-org.png?enhanced';
+	import nef1Org from '$lib/images/sites/nef1-org.png?enhanced';
+	import pasNef1Org from '$lib/images/sites/pas-nef1-org.png?enhanced';
+	import pizzaSizePriceCalculator from '$lib/images/sites/pizza-michaelbonner-dev.png?enhanced';
+	import ravensFilmWorks from '$lib/images/sites/ravensfilmworks-com.png?enhanced';
 	import redirectsWizard from '$lib/images/sites/redirects-bootpack-dev.png?enhanced';
-	import waterColoringGame from '$lib/images/sites/games-nef1-org.png?enhanced';
-
-	import clsx from 'clsx';
-	import A from '../components/A.svelte';
-	import H2 from '../components/H2.svelte';
-	import Seo from '../components/Seo.svelte';
-	import { classNames } from '../functions/classNames';
-	import Github from '../icons/Github.svelte';
-	import Instagram from '../icons/Instagram.svelte';
-	import Link from '../icons/Link.svelte';
-	import LinkedIn from '../icons/LinkedIn.svelte';
-	import { classes } from '../styles/classes';
+	import swiftManager from '$lib/images/sites/swift-manager-com.png?enhanced';
 
 	const projects = [
 		{
