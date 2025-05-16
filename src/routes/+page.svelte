@@ -19,6 +19,28 @@
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced&w=448';
 	import screenshotMaker from '$lib/images/projects/screenshot-maker.jpg?enhanced&w=448';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced&w=448';
+
+	import metacensus from '$lib/images/sites/metacensus-org.png?enhanced';
+	import pasNef1Org from '$lib/images/sites/pas-nef1-org.png?enhanced';
+	import nef1Org from '$lib/images/sites/nef1-org.png?enhanced';
+	import heritageOfPreston from '$lib/images/sites/heritageofpreston-com.png?enhanced';
+	import heritageOfSoda from '$lib/images/sites/heritageofsoda-com.png?enhanced';
+	import jeremyMillerDirector from '$lib/images/sites/jeremymillerdirector-com.png?enhanced';
+	import ravensFilmWorks from '$lib/images/sites/ravensfilmworks-com.png?enhanced';
+	import lifeOrDeathDocumentary from '$lib/images/sites/lifeordeathdoc-com.png?enhanced';
+	import hanksGarageVenue from '$lib/images/sites/hanksgaragevenue-com.png?enhanced';
+	import acceleratedEquityPlans from '$lib/images/sites/acceleratedep-com.png?enhanced';
+	import energySafeLeaders from '$lib/images/sites/energysafeleaders-org.png?enhanced';
+	import swiftManager from '$lib/images/sites/swift-manager-com.png?enhanced';
+	import pizzaSizePriceCalculator from '$lib/images/sites/pizza-michaelbonner-dev.png?enhanced';
+	import artistAmyBonner from '$lib/images/sites/amy-bonner-com.png?enhanced';
+	import denverWindowWellCovers from '$lib/images/sites/denverwindowwellcovers-com.png?enhanced';
+	import cosgriffSchool from '$lib/images/sites/cosgriff-org.png?enhanced';
+	import blackThornSoftware from '$lib/images/sites/blackthornsoftware-com.png?enhanced';
+	import knowYourForce from '$lib/images/sites/knowyourforce-com.png?enhanced';
+	import redirectsWizard from '$lib/images/sites/redirects-bootpack-dev.png?enhanced';
+	import waterColoringGame from '$lib/images/sites/games-nef1-org.png?enhanced';
+
 	import clsx from 'clsx';
 	import A from '../components/A.svelte';
 	import H2 from '../components/H2.svelte';
@@ -179,102 +201,122 @@
 		{
 			name: 'MetaCensus',
 			url: 'https://metacensus.org',
-			host: 'metacensus.org'
+			host: 'metacensus.org',
+			imgSrc: metacensus
 		},
 		{
 			name: 'NEF Programs Administration System',
 			url: 'https://pas.nef1.org',
-			host: 'pas.nef1.org'
+			host: 'pas.nef1.org',
+			imgSrc: pasNef1Org
 		},
 		{
 			name: 'NEF Corporate Site',
 			url: 'https://nef1.org',
-			host: 'nef1.org'
+			host: 'nef1.org',
+			imgSrc: nef1Org
 		},
 		{
 			name: 'Heritage of Preston',
 			url: 'https://www.heritageofpreston.com',
-			host: 'heritageofpreston.com'
+			host: 'heritageofpreston.com',
+			imgSrc: heritageOfPreston
 		},
 		{
 			name: 'Heritage of Soda',
 			url: 'https://www.heritageofsoda.com',
-			host: 'heritageofsoda.com'
+			host: 'heritageofsoda.com',
+			imgSrc: heritageOfSoda
 		},
 		{
 			name: 'Jeremy Miller Director',
 			url: 'https://jeremymillerdirector.com',
-			host: 'jeremymillerdirector.com'
+			host: 'jeremymillerdirector.com',
+			imgSrc: jeremyMillerDirector
 		},
 		{
 			name: 'Ravens Film Works',
 			url: 'https://ravensfilmworks.com',
-			host: 'ravensfilmworks.com'
+			host: 'ravensfilmworks.com',
+			imgSrc: ravensFilmWorks
 		},
 		{
 			name: 'Life or Death Documentary',
 			url: 'https://www.lifeordeathdoc.com',
-			host: 'lifeordeathdoc.com'
+			host: 'lifeordeathdoc.com',
+			imgSrc: lifeOrDeathDocumentary
 		},
 		{
 			name: 'Hanks Garage Venue',
 			url: 'https://www.hanksgaragevenue.com',
-			host: 'hanksgaragevenue.com'
+			host: 'hanksgaragevenue.com',
+			imgSrc: hanksGarageVenue
 		},
 		{
 			name: 'Accelerated Equity Plans',
 			url: 'https://www.acceleratedep.com',
-			host: 'acceleratedep.com'
+			host: 'acceleratedep.com',
+			imgSrc: acceleratedEquityPlans
 		},
 		{
 			name: 'EnergySafeLeaders',
 			url: 'https://energysafeleaders.org/leaders',
-			host: 'energysafeleaders.org'
+			host: 'energysafeleaders.org',
+			imgSrc: energySafeLeaders
 		},
 		{
 			name: 'Swift Manager',
 			url: 'https://www.swift-manager.com',
-			host: 'swift-manager.com'
+			host: 'swift-manager.com',
+			imgSrc: swiftManager
 		},
 		{
 			name: 'Pizza Size Price Calculator',
 			url: 'https://pizza.michaelbonner.dev',
-			host: 'pizza.michaelbonner.dev'
+			host: 'pizza.michaelbonner.dev',
+			imgSrc: pizzaSizePriceCalculator
 		},
 		{
 			name: 'Artist Amy Bonner',
 			url: 'https://www.amy-bonner.com',
-			host: 'amy-bonner.com'
+			host: 'amy-bonner.com',
+			imgSrc: artistAmyBonner
 		},
 		{
 			name: 'Denver Window Well Covers',
 			url: 'https://denverwindowwellcovers.com',
-			host: 'denverwindowwellcovers.com'
+			host: 'denverwindowwellcovers.com',
+			imgSrc: denverWindowWellCovers
 		},
 		{
 			name: 'J.E. Cosgriff School',
 			url: 'https://cosgriff.org',
-			host: 'cosgriff.org'
+			host: 'cosgriff.org',
+			imgSrc: cosgriffSchool
 		},
 		{
 			name: 'BlackThorn Software',
 			url: 'https://www.blackthornsoftware.com',
-			host: 'blackthornsoftware.com'
+			host: 'blackthornsoftware.com',
+			imgSrc: blackThornSoftware
 		},
 		{
 			name: 'Know Your Force',
 			url: 'https://knowyourforce.com',
-			host: 'knowyourforce.com'
+			host: 'knowyourforce.com',
+			imgSrc: knowYourForce
 		},
 		{
 			name: 'Redirects Wizard',
 			url: 'https://redirects.bootpack.dev',
-			host: 'redirects.bootpack.dev'
+			host: 'redirects.bootpack.dev',
+			imgSrc: redirectsWizard
 		},
 		{
 			name: 'Water coloring game',
 			url: 'https://games.nef1.org/title/water',
-			host: 'games.nef1.org'
+			host: 'games.nef1.org',
+			imgSrc: waterColoringGame
 		}
 	].sort((a, b) => a.name.localeCompare(b.name));
 
@@ -468,11 +510,10 @@
 				{#each otherSites as otherSite (otherSite.name)}
 					<li class="flex gap-4">
 						<div>
-							<img
+							<enhanced:img
+								class="size-6"
 								alt={otherSite.name}
-								src={`https://unavatar.io/${encodeURIComponent(otherSite.host)}?fallback=${encodeURIComponent('https://michaelbonner.dev/images/link.png')}`}
-								width={20}
-								height={20}
+								src={otherSite.imgSrc}
 								loading="lazy"
 							/>
 						</div>
