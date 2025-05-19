@@ -16,7 +16,7 @@
 		"@eslint/compat": "^1.2.9",
 		"@eslint/js": "^9.27.0",
 		"@sveltejs/enhanced-img": "^0.6.0",
-		"@sveltejs/kit": "2.20.8",
+		"@sveltejs/kit": "2.21.1",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/postcss": "^4.1.7",
