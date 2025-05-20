@@ -111,7 +111,10 @@
 				</p>
 				<h2>Get to the next level</h2>
 				<figure>
-					<a href="https://github.com/michaelbonner/michaelbonner.dev">
+					<a
+						href="https://github.com/michaelbonner/michaelbonner.dev"
+						aria-label="michaelbonner.dev github screenshot"
+					>
 						<enhanced:img
 							alt="michaelbonner.dev github screenshot"
 							loading="lazy"

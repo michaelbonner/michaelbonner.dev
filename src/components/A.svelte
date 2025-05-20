@@ -1,11 +1,5 @@
 <script lang="ts">
-	interface Props {
-		href?: string;
-		className?: string;
-		children?: import('svelte').Snippet;
-	}
-
-	let { href = '', className = '', children }: Props = $props();
+	let { href = '', className = '', children } = $props();
 </script>
 
 <a
