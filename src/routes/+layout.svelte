@@ -9,6 +9,11 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { classNames } from '../functions/classNames';
 	import { classes } from '../styles/classes';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	let interval: ReturnType<typeof setInterval>;
 
@@ -116,7 +121,7 @@
 		</nav>
 	</header>
 
-	<slot />
+	{@render children?.()}
 
 	<footer class="container mx-auto justify-between p-8 lg:flex lg:flex-row-reverse lg:items-center">
 		<nav
