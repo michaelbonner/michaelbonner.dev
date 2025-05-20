@@ -2,7 +2,7 @@
 	import { page } from '$app/state';
 </script>
 
-<div class="container flex justify-between py-16 px-8 mx-auto">
+<div class="container mx-auto flex justify-between px-8 py-16">
 	<div class="grid gap-4">
 		<h1 class="text-3xl">{page.error?.message}</h1>
 		<p>
