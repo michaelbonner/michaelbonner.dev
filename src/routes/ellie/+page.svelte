@@ -412,7 +412,7 @@
 		<figure>
 			<enhanced:img
 				alt="Ellie"
-				class="w-full rounded-xl shadow-lg aspect-600/800 lg:max-w-[600px]"
+				class="w-full rounded-xl shadow-lg aspect-[600/800] lg:max-w-[600px]"
 				sizes="min(600px, 100vw)"
 				src={ellieMain}
 			/>
@@ -500,7 +500,7 @@
 		<div class="grid gap-2 lg:grid-cols-2">
 			<figure>
 				<video
-					class="p-0 w-full rounded-lg aspect-w-16 aspect-h-9"
+					class="p-0 w-full rounded-lg aspect-[16/9]"
 					controls
 					controlsList="nodownload"
 					playsinline
@@ -529,7 +529,7 @@
 
 			<figure>
 				<video
-					class="p-0 w-full rounded-lg aspect-w-16 aspect-h-9"
+					class="p-0 w-full rounded-lg aspect-[16/9]"
 					controls
 					controlsList="nodownload"
 					playsinline
@@ -698,9 +698,7 @@
 			/>
 		</figure>
 
-		<div
-			class="rounded-xl w-full aspect-w-16 aspect-h-9 mt-8 border-8 border-gray-300 dark:border-gray-700"
-		>
+		<div class="rounded-xl w-full aspect-[16/9] mt-8 border-8 border-gray-300 dark:border-gray-700">
 			<iframe
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen
