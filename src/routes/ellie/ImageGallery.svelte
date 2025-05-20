@@ -5,19 +5,6 @@
 
 	import 'photoswipe/style.css';
 
-	type Image = {
-		altText: string;
-		url: {
-			img: {
-				h: number;
-				src: string;
-				w: number;
-			};
-			sources: Record<string, string>;
-		};
-		objectPosition?: string;
-	};
-
 	let { galleryID = '', images = [] } = $props();
 
 	onMount(() => {

@@ -8,7 +8,7 @@
 		"preview": "vite preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint . && prettier --check .",
 		"format": "prettier --write --plugin-search-dir=. .",
 		"out": "bun outdated"
 	},
@@ -25,6 +25,7 @@
 		"eslint": "^9.27.0",
 		"eslint-config-prettier": "^10.1.5",
 		"eslint-plugin-svelte": "^3.8.1",
+		"globals": "^16.1.0",
 		"postcss": "^8.5.3",
 		"prettier": "^3.5.3",
 		"prettier-plugin-svelte": "^3.4.0",
