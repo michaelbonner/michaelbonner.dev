@@ -1,6 +1,5 @@
 <script lang="ts">
 	import '../app.css';
-
 	import { browser } from '$app/environment';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
@@ -105,11 +104,11 @@
 
 <div
 	class={classNames(
-		'font-serif bg-gray-200 text-gray-800 min-h-screen bg-opacity-80',
-		'dark:bg-gray-800 dark:text-gray-200 dark:bg-opacity-70'
+		'bg-opacity-80 min-h-screen bg-gray-200 font-serif text-gray-800',
+		'dark:bg-opacity-70 dark:bg-gray-800 dark:text-gray-200'
 	)}
 >
-	<header class="container flex justify-between px-8 pt-12 mx-auto">
+	<header class="container mx-auto flex justify-between px-8 pt-12">
 		<a href="/" class={classNames('lg:text-3xl', classes.menuItem)}> Michael Bonner </a>
 		<nav class="flex justify-end space-x-6 text-xl" aria-label="Main">
 			<a href="/" class={classes.menuItem}>Home</a>
@@ -119,9 +118,9 @@
 
 	<slot />
 
-	<footer class="container justify-between p-8 mx-auto lg:flex lg:flex-row-reverse lg:items-center">
+	<footer class="container mx-auto justify-between p-8 lg:flex lg:flex-row-reverse lg:items-center">
 		<nav
-			class="flex justify-center pb-8 space-x-6 text-xl lg:justify-end lg:py-0"
+			class="flex justify-center space-x-6 pb-8 text-xl lg:justify-end lg:py-0"
 			aria-label="Footer"
 		>
 			<a href="/" class={classes.menuItem}>Home</a>
@@ -129,11 +128,11 @@
 			<a href="/uses" class={classes.menuItem}>Uses</a>
 			<a href="/policies" class={classes.menuItem}>Policies</a>
 		</nav>
-		<p class="flex flex-wrap gap-x-4 gap-y-6 justify-center items-end md:gap-y-2 lg:justify-start">
+		<p class="flex flex-wrap items-end justify-center gap-x-4 gap-y-6 md:gap-y-2 lg:justify-start">
 			<span class="text-center">
 				&copy; 2021-{new Date().getFullYear()} by Michael Bonner.&nbsp;
 				<a
-					class={classNames(classes.menuItem, 'text-sm inline-block')}
+					class={classNames(classes.menuItem, 'inline-block text-sm')}
 					href="https://github.com/michaelbonner/michaelbonner.dev"
 				>
 					Check out the source for this site
