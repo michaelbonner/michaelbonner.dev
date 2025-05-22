@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+
 	import { browser } from '$app/environment';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
@@ -34,23 +35,19 @@
 		clearInterval(interval);
 	});
 
-	const load = async () => {
-		if (browser) {
-			posthog.init(PUBLIC_POSTHOG_API_KEY, {
-				api_host: 'https://michaelbonner.dev/ingest',
-				capture_pageleave: false,
-				capture_pageview: false,
-				ui_host: 'https://us.posthog.com'
-			});
-		}
-		return;
-	};
-	load();
-
 	if (browser) {
+		posthog.init(PUBLIC_POSTHOG_API_KEY, {
+			api_host: '/ingest',
+			capture_pageleave: false,
+			capture_pageview: false,
+			ui_host: 'https://us.posthog.com'
+		});
+
 		beforeNavigate(() => posthog.capture('$pageleave'));
 		afterNavigate(() => posthog.capture('$pageview'));
 	}
+
+	const children_render = $derived(children);
 </script>
 
 <svelte:head>
@@ -121,7 +118,7 @@
 		</nav>
 	</header>
 
-	{@render children?.()}
+	{@render children_render?.()}
 
 	<footer class="container mx-auto justify-between p-8 lg:flex lg:flex-row-reverse lg:items-center">
 		<nav
