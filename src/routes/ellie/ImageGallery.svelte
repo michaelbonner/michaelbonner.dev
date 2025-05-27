@@ -17,7 +17,7 @@
 	});
 </script>
 
-<div class="grid grid-cols-2 gap-2 items-center lg:grid-cols-4" id={galleryID}>
+<div class="grid grid-cols-2 items-center gap-2 lg:grid-cols-4" id={galleryID}>
 	{#each images as image (image.url.img.src)}
 		<a
 			aria-label={image.altText}
@@ -30,7 +30,7 @@
 			<enhanced:img
 				alt={image.altText}
 				class={clsx(
-					'my-0 py-0 rounded-md aspect-[1/1] object-cover w-full h-full',
+					'my-0 aspect-[1/1] h-full w-full rounded-md object-cover py-0',
 					image.objectPosition
 				)}
 				loading="lazy"

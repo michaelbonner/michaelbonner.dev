@@ -22,12 +22,12 @@
 	/>
 </svelte:head>
 
-<div class="container flex items-center py-12 px-8 mx-auto">
-	<div class="w-full max-w-3xl prose dark:prose-invert">
+<div class="container mx-auto flex items-center px-8 py-12">
+	<div class="prose dark:prose-invert w-full max-w-3xl">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl tracking-wider lg:pr-8 leading-[1.3em]">
+					<h1 class="text-4xl leading-[1.3em] tracking-wider lg:pr-8">
 						Where I think new web software developers should start in 2022
 					</h1>
 				</div>
@@ -161,7 +161,7 @@
 					{/each}
 				</ul>
 				<p>Some good subreddits to learn web development things:</p>
-				<ul class="flex flex-wrap gap-y-2 gap-x-4 list-none">
+				<ul class="flex list-none flex-wrap gap-x-4 gap-y-2">
 					{#each ['r/css', 'r/javascript', 'r/sveltejs', 'r/nextjs', 'r/node', 'r/reactjs', 'r/SyntaxFM', 'r/webdev'] as subreddit (subreddit)}
 						<li class="p-0">
 							<a href={`https://www.reddit.com/${subreddit}`}>

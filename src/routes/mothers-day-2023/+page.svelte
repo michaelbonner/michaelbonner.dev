@@ -7,8 +7,8 @@
 	description="I wanted to take a moment to let you know just how much I appreciate and love you."
 />
 
-<main class="container grid gap-8 py-12 px-8 mx-auto">
-	<div class="mt-12 prose dark:prose-invert">
+<main class="container mx-auto grid gap-8 px-8 py-12">
+	<div class="prose dark:prose-invert mt-12">
 		<h1>Happy Mother's Day Mom!</h1>
 
 		<p>I wanted to take a moment to let you know just how much I appreciate and love you.</p>
@@ -38,7 +38,7 @@
 
 		<p>Here's a recording I made for you of "Come Thou Fount." I hope you enjoy it 😀</p>
 
-		<div class="grid justify-center mt-12 w-full lg:flex lg:gap-8 lg:justify-start lg:items-center">
+		<div class="mt-12 grid w-full justify-center lg:flex lg:items-center lg:justify-start lg:gap-8">
 			<audio class="w-[80vw] lg:w-[340px]" controls>
 				<source
 					src="https://mbonner-general-web.s3.us-west-2.amazonaws.com/Come-Thou-Fount.ogg"
@@ -50,7 +50,7 @@
 				/>
 				Your browser does not support the audio element.
 			</audio>
-			<div class="flex gap-3 justify-center items-center mt-0">
+			<div class="mt-0 flex items-center justify-center gap-3">
 				<p>
 					<a
 						href="https://mbonner-general-web.s3.us-west-2.amazonaws.com/Come-Thou-Fount.mp3"

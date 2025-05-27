@@ -400,8 +400,8 @@
 	ogImage="https://michaelbonner.dev/images/ellie-og-image.jpg"
 />
 
-<main class="container grid gap-8 py-12 px-8 mx-auto">
-	<div class="mx-auto mt-12 max-w-3xl prose prose-xl dark:prose-invert">
+<main class="container mx-auto grid gap-8 px-8 py-12">
+	<div class="prose prose-xl dark:prose-invert mx-auto mt-12 max-w-3xl">
 		<p>
 			<strong>Warning</strong>: This post is about my dog Ellie. She passed away on January 30th,
 			2023. I'm writing this to help me remember her. If you don't want to read about my feelings
@@ -412,7 +412,7 @@
 		<figure>
 			<enhanced:img
 				alt="Ellie"
-				class="w-full rounded-xl shadow-lg aspect-[600/800] lg:max-w-[600px]"
+				class="aspect-[600/800] w-full rounded-xl shadow-lg lg:max-w-[600px]"
 				sizes="min(600px, 100vw)"
 				src={ellieMain}
 			/>
@@ -493,14 +493,14 @@
 	</div>
 
 	<div
-		class="grid overflow-auto gap-2 p-8 mx-auto max-w-7xl bg-gray-300 rounded-2xl dark:bg-gray-700 max-h-[80vh] mb-scrollable"
+		class="mb-scrollable mx-auto grid max-h-[80vh] max-w-7xl gap-2 overflow-auto rounded-2xl bg-gray-300 p-8 dark:bg-gray-700"
 	>
 		<ImageGallery galleryID="ellie-puppy" images={puppyImages} />
 
 		<div class="grid gap-2 lg:grid-cols-2">
 			<figure>
 				<video
-					class="p-0 w-full rounded-lg aspect-[16/9]"
+					class="aspect-[16/9] w-full rounded-lg p-0"
 					controls
 					controlsList="nodownload"
 					playsinline
@@ -529,7 +529,7 @@
 
 			<figure>
 				<video
-					class="p-0 w-full rounded-lg aspect-[16/9]"
+					class="aspect-[16/9] w-full rounded-lg p-0"
 					controls
 					controlsList="nodownload"
 					playsinline
@@ -558,7 +558,7 @@
 		</div>
 	</div>
 
-	<div class="mx-auto mt-12 max-w-3xl prose prose-xl dark:prose-invert">
+	<div class="prose prose-xl dark:prose-invert mx-auto mt-12 max-w-3xl">
 		<p>
 			I learned I could take you almost anywhere, so I did. We went on so many adventures together.
 			You loved camping and hiking. That first summer we took you to Tanner Park to see if you would
@@ -648,12 +648,12 @@
 	</div>
 
 	<div
-		class="overflow-auto p-8 mx-auto max-w-7xl bg-gray-300 rounded-2xl dark:bg-gray-700 max-h-[80vh] mb-scrollable"
+		class="mb-scrollable mx-auto max-h-[80vh] max-w-7xl overflow-auto rounded-2xl bg-gray-300 p-8 dark:bg-gray-700"
 	>
 		<ImageGallery galleryID="ellie-adult" images={adultImages} />
 	</div>
 
-	<div class="mx-auto mt-12 max-w-3xl prose prose-xl dark:prose-invert">
+	<div class="prose prose-xl dark:prose-invert mx-auto mt-12 max-w-3xl">
 		<p>
 			I told you that you would need to tell me when you were ready. I will forever be grateful that
 			you told me so clearly. When your back legs quit working for the last few days, I helped you
@@ -691,14 +691,14 @@
 		<figure>
 			<enhanced:img
 				alt="Ellie swimming off to get a ball"
-				class="rounded-xl shadow-lg w-full"
+				class="w-full rounded-xl shadow-lg"
 				loading="lazy"
 				sizes="min(600px, 100vw)"
 				src={goodbye}
 			/>
 		</figure>
 
-		<div class="rounded-xl w-full aspect-[16/9] mt-8 border-8 border-gray-300 dark:border-gray-700">
+		<div class="mt-8 aspect-[16/9] w-full rounded-xl border-8 border-gray-300 dark:border-gray-700">
 			<iframe
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen

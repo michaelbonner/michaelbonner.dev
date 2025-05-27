@@ -21,12 +21,12 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/set-up-some-aliases" />
 </svelte:head>
 
-<div class="container py-12 px-8 mx-auto">
-	<div class="max-w-3xl prose dark:prose-invert">
+<div class="container mx-auto px-8 py-12">
+	<div class="prose dark:prose-invert max-w-3xl">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl tracking-wide leading-relaxed lg:pr-8">Set up some aliases</h1>
+					<h1 class="text-4xl leading-relaxed tracking-wide lg:pr-8">Set up some aliases</h1>
 				</div>
 			</div>
 			<div class="max-w-5xl text-lg lg:mt-32">
@@ -165,7 +165,7 @@ alias vim='lvim'
 		/>
 	</div>
 
-	<div class="mt-16 max-w-3xl prose dark:prose-invert">
+	<div class="prose dark:prose-invert mt-16 max-w-3xl">
 		<p>
 			Published:&nbsp;
 			<time dateTime="2021-07-15">15 Jul 2021</time>

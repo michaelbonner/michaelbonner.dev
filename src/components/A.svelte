@@ -3,7 +3,7 @@
 </script>
 
 <a
-	class={`flex space-x-1 items-center underline ${className}`}
+	class={`flex items-center space-x-1 underline ${className}`}
 	{href}
 	target="_blank"
 	rel="noreferrer"

@@ -352,35 +352,35 @@
 	<link rel="canonical" href="https://michaelbonner.dev/" />
 </svelte:head>
 
-<main class="container flex items-center py-12 px-8 mx-auto">
+<main class="container mx-auto flex items-center px-8 py-12">
 	<div class="pt-8">
 		<div class="lg:flex lg:flex-row-reverse lg:pt-16">
 			<div class="mt-8 w-full lg:mt-0 lg:w-1/3">
 				<enhanced:img
 					alt="Michael Bonner"
-					class="w-full h-auto bg-opacity-100 rounded-lg transition-transform hover:scale-105 hover:rotate-1 mix-blend-luminosity hover:bg-blend-darken"
+					class="bg-opacity-100 h-auto w-full rounded-lg mix-blend-luminosity transition-transform hover:scale-105 hover:rotate-1 hover:bg-blend-darken"
 					src={mainImage}
 				/>
 			</div>
-			<div class="mt-8 w-full lg:pr-8 lg:mt-0 lg:w-2/3">
-				<h1 class="text-3xl tracking-wide leading-relaxed lg:pr-8 lg:text-4xl">
+			<div class="mt-8 w-full lg:mt-0 lg:w-2/3 lg:pr-8">
+				<h1 class="text-3xl leading-relaxed tracking-wide lg:pr-8 lg:text-4xl">
 					Hi! I&apos;m&nbsp;
 					<span class="font-medium whitespace-nowrap"> Michael Bonner</span>, a web developer in
 					Salt Lake City, Utah. I run a small agency with some friends called&nbsp;
 					<span class="whitespace-nowrap">
 						<a
 							class={classNames(
-								'text-3xl! !lg:text-4xl inline-block!',
-								'font-medium lg:leading-none lg:inline-block',
+								'!lg:text-4xl inline-block! text-3xl!',
+								'font-medium lg:inline-block lg:leading-none',
 								classes.largeBodyLink
 							)}
 							href="https://bootpackdigital.com/">Bootpack Digital</a
 						>.
 					</span>
 				</h1>
-				<div class="inline-block my-8 lg:my-0">
+				<div class="my-8 inline-block lg:my-0">
 					<a
-						class={classNames('lg:flex text-2xl', classes.largeBodyLink, 'my-4 lg:my-8')}
+						class={classNames('text-2xl lg:flex', classes.largeBodyLink, 'my-4 lg:my-8')}
 						href="https://github.com/michaelbonner"
 					>
 						<span>See what I&apos;m up to on GitHub</span>
@@ -411,9 +411,9 @@
 
 		<div class="max-w-7xl lg:mt-32">
 			<H2>Projects I&apos;m proud of</H2>
-			<ul class="grid gap-y-12 gap-x-24 mt-8 text-lg lg:grid-cols-2 lg:gap-y-24 lg:mt-16">
+			<ul class="mt-8 grid gap-x-24 gap-y-12 text-lg lg:mt-16 lg:grid-cols-2 lg:gap-y-24">
 				{#each projects as project, projectIndex (project.title)}
-					<li class="grid gap-y-4 mt-8 lg:mt-0 lg:ml-8">
+					<li class="mt-8 grid gap-y-4 lg:mt-0 lg:ml-8">
 						<a
 							aria-label={`View ${project.title}`}
 							class="transition-transform hover:scale-105 hover:rotate-1"
@@ -421,7 +421,7 @@
 						>
 							<enhanced:img
 								alt={project.title}
-								class="rounded-lg md:max-w-md border border-gray-100 dark:border-gray-900/40 shadow-sm"
+								class="rounded-lg border border-gray-100 shadow-sm md:max-w-md dark:border-gray-900/40"
 								loading={projectIndex <= 1 ? 'eager' : 'lazy'}
 								src={project.image}
 								sizes="(min-width:768px) 448px, 100vw"
@@ -457,9 +457,9 @@
 		</div>
 		<div class="max-w-7xl lg:mt-32">
 			<H2>Things I&apos;ve built for fun</H2>
-			<ul class="grid gap-y-12 gap-x-24 mt-8 text-lg lg:grid-cols-2 lg:gap-y-24 lg:mt-16">
+			<ul class="mt-8 grid gap-x-24 gap-y-12 text-lg lg:mt-16 lg:grid-cols-2 lg:gap-y-24">
 				{#each otherThings as project (project.title)}
-					<li class="grid gap-y-4 mt-8 lg:mt-0 lg:ml-8">
+					<li class="mt-8 grid gap-y-4 lg:mt-0 lg:ml-8">
 						{#if project.image}
 							<a
 								aria-label={`View ${project.title}`}
@@ -468,7 +468,7 @@
 							>
 								<enhanced:img
 									alt={project.title}
-									class="rounded-lg md:max-w-md border border-gray-100 dark:border-gray-900/40 shadow-sm"
+									class="rounded-lg border border-gray-100 shadow-sm md:max-w-md dark:border-gray-900/40"
 									loading="lazy"
 									src={project.image}
 									sizes="(min-width:768px) 448px, 100vw"
@@ -506,7 +506,7 @@
 
 		<div class="max-w-7xl lg:mt-32">
 			<H2>Some Other Sites</H2>
-			<ul class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 mt-8 lg:ml-8">
+			<ul class="mt-8 grid gap-x-4 gap-y-8 sm:grid-cols-2 lg:ml-8 lg:grid-cols-3 xl:grid-cols-4">
 				{#each otherSites as otherSite (otherSite.name)}
 					<li class="flex gap-4">
 						<div>
@@ -529,7 +529,7 @@
 
 		<div class="max-w-7xl lg:mt-32">
 			<H2>Recent Blog Articles</H2>
-			<ul class="mt-8 list-disc list-outside ml-12">
+			<ul class="mt-8 ml-12 list-outside list-disc">
 				{#each blogArticles as article (article.slug)}
 					<li class="py-1">
 						<a class={clsx(classes.bodyLink, 'w-full md:w-auto')} href={`/blog/${article.slug}`}>
@@ -542,7 +542,7 @@
 
 		<div class="lg:mt-32">
 			<H2>Tools I use</H2>
-			<ul class="gap-y-2 gap-x-4 pl-12 mt-4 text-lg list-disc list-outside lg:grid lg:grid-cols-4">
+			<ul class="mt-4 list-outside list-disc gap-x-4 gap-y-2 pl-12 text-lg lg:grid lg:grid-cols-4">
 				{#each tools as tool (tool)}
 					<li>{tool}</li>
 				{/each}
@@ -550,7 +550,7 @@
 		</div>
 		<div class="lg:mt-32">
 			<H2>Get in touch</H2>
-			<ul class="gap-y-2 gap-x-4 pl-4 mt-6 text-lg lg:grid lg:grid-cols-4">
+			<ul class="mt-6 gap-x-4 gap-y-2 pl-4 text-lg lg:grid lg:grid-cols-4">
 				<li>
 					<div class="flex">
 						<a class={classes.largeBodyLink} href="https://www.linkedin.com/in/michaelbonner/">

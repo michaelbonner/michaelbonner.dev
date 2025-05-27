@@ -13,9 +13,9 @@
 	});
 </script>
 
-<aside class="container py-12 px-8 mx-auto">
+<aside class="container mx-auto px-8 py-12">
 	<H2>Other Articles</H2>
-	<ul class="list-disc list-outside ml-12 mt-4">
+	<ul class="mt-4 ml-12 list-outside list-disc">
 		{#each otherArticles as article (article.slug)}
 			<li class="py-1">
 				<a class={clsx(classes.bodyLink, 'w-full md:w-auto')} href={`/blog/${article.slug}`}>

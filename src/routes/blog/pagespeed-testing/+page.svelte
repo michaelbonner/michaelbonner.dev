@@ -18,17 +18,17 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/pagespeed-testing" />
 </svelte:head>
 
-<div class="container flex items-center py-12 px-8 mx-auto">
-	<div class="w-full max-w-3xl prose dark:prose-invert">
+<div class="container mx-auto flex items-center px-8 py-12">
+	<div class="prose dark:prose-invert w-full max-w-3xl">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl tracking-wider lg:pr-8 leading-[1.3em]">
+					<h1 class="text-4xl leading-[1.3em] tracking-wider lg:pr-8">
 						PageSpeed Testing is important, you should take it seriously
 					</h1>
 				</div>
 			</div>
-			<div class="max-w-5xl text-lg lg:mt-24 prose-img:my-0 prose-figcaption:text-center">
+			<div class="prose-img:my-0 prose-figcaption:text-center max-w-5xl text-lg lg:mt-24">
 				<p>
 					PageSpeed Insights is a tool that helps you test the performance of your site. It measures
 					how quickly the content loads and how quickly a person would be able to use the site.

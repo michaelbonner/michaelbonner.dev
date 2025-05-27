@@ -11,8 +11,8 @@
 	<link rel="canonical" href="https://michaelbonner.dev/policies" />
 </svelte:head>
 
-<main class="container flex items-center py-12 px-8 mx-auto">
-	<div class="mt-16 prose dark:prose-invert">
+<main class="container mx-auto flex items-center px-8 py-12">
+	<div class="prose dark:prose-invert mt-16">
 		<h1>Privacy Policy and Terms of Service</h1>
 		<h2>Privacy Policy</h2>
 		<div>

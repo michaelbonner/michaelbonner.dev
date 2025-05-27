@@ -20,17 +20,17 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/git-branch-name-raycast-extension" />
 </svelte:head>
 
-<div class="container flex items-center py-12 px-8 mx-auto">
-	<div class="w-full max-w-3xl prose dark:prose-invert">
+<div class="container mx-auto flex items-center px-8 py-12">
+	<div class="prose dark:prose-invert w-full max-w-3xl">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl tracking-wider lg:pr-8 leading-[1.3em]">
+					<h1 class="text-4xl leading-[1.3em] tracking-wider lg:pr-8">
 						Check out the new Git Branch Name Raycast Extension I made
 					</h1>
 				</div>
 			</div>
-			<div class="max-w-5xl text-lg lg:mt-24 prose-img:my-0 prose-figcaption:text-center">
+			<div class="prose-img:my-0 prose-figcaption:text-center max-w-5xl text-lg lg:mt-24">
 				<h2>What is Raycast?</h2>
 				<p>
 					Raycast is a super fast, totally extendable launcher. It lets you complete tasks,

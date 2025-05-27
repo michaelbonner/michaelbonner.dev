@@ -131,9 +131,9 @@
 	<link rel="canonical" href="https://michaelbonner.dev/uses" />
 </svelte:head>
 
-<main class="container grid gap-8 py-12 px-8 mx-auto">
+<main class="container mx-auto grid gap-8 px-8 py-12">
 	<div>
-		<h1 class="max-w-3xl text-4xl tracking-wide leading-relaxed lg:pr-8">
+		<h1 class="max-w-3xl text-4xl leading-relaxed tracking-wide lg:pr-8">
 			Software and other things I recommend.
 		</h1>
 		<p class="max-w-xl text-lg">
@@ -142,9 +142,9 @@
 		</p>
 	</div>
 
-	<div class="grid gap-24 mt-12">
+	<div class="mt-12 grid gap-24">
 		<div
-			class="grid pl-4 border-l border-gray-300 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
+			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
 		>
 			<div class="text-xl">Workstation</div>
 			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
@@ -169,7 +169,7 @@
 		</div>
 
 		<div
-			class="grid pl-4 border-l border-gray-300 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
+			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
 		>
 			<div class="text-xl">Development Tools</div>
 			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
@@ -194,7 +194,7 @@
 		</div>
 
 		<div
-			class="grid pl-4 border-l border-gray-300 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
+			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
 		>
 			<div class="text-xl">Productivity Tools</div>
 			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
