@@ -115,7 +115,6 @@ alias cda='composer dump-autoload'
 alias sail='./vendor/bin/sail'
 alias sa='sail artisan'
 alias sc='sail composer'
-alias smfs='sail artisan queue:clear; sail artisan migrate:fresh --seed'
 
 # npm
 alias nr='npm run'
