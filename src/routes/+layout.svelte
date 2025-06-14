@@ -4,13 +4,12 @@
 	import { browser } from '$app/environment';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
-	import { PUBLIC_POSTHOG_API_KEY } from '$env/static/public';
+	import { PUBLIC_POSTHOG_API_KEY, PUBLIC_POSTHOG_ENABLED } from '$env/static/public';
 	import { partytownSnippet } from '@qwik.dev/partytown/integration';
 	import posthog from 'posthog-js';
 	import { onDestroy, onMount } from 'svelte';
 	import { classNames } from '../functions/classNames';
 	import { classes } from '../styles/classes';
-	import { PUBLIC_POSTHOG_ENABLED } from '$env/static/public';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
@@ -46,7 +45,6 @@
 
 		beforeNavigate(() => posthog.capture('$pageleave'));
 		afterNavigate(() => posthog.capture('$pageview'));
-	}
 	}
 
 	const children_render = $derived(children);
