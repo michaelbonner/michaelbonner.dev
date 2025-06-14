@@ -10,6 +10,7 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { classNames } from '../functions/classNames';
 	import { classes } from '../styles/classes';
+	import { PUBLIC_POSTHOG_ENABLED } from '$env/static/public';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
@@ -35,7 +36,7 @@
 		clearInterval(interval);
 	});
 
-	if (browser) {
+	if (PUBLIC_POSTHOG_ENABLED !== 'false' && browser) {
 		posthog.init(PUBLIC_POSTHOG_API_KEY, {
 			api_host: '/ingest',
 			capture_pageleave: false,
@@ -45,6 +46,7 @@
 
 		beforeNavigate(() => posthog.capture('$pageleave'));
 		afterNavigate(() => posthog.capture('$pageview'));
+	}
 	}
 
 	const children_render = $derived(children);

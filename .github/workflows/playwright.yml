@@ -17,7 +17,6 @@ jobs:
         run: bunx playwright install --with-deps
       - name: Set environment variables
         run: |
-          echo "PUBLIC_TEST_CONTACT_FORM=true" >> $GITHUB_ENV
           echo "PUBLIC_POSTHOG_ENABLED=false" >> $GITHUB_ENV
       - name: Run Playwright tests
         run: bunx playwright test
