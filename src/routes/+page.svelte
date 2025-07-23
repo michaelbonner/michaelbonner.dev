@@ -10,7 +10,6 @@
 	import Link from '../icons/Link.svelte';
 	import LinkedIn from '../icons/LinkedIn.svelte';
 	import { classes } from '../styles/classes';
-
 	// images
 	import mainImage from '$lib/images/on-the-beach-600.jpg?enhanced';
 	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced';
@@ -45,6 +44,7 @@
 	import knowYourForce from '$lib/images/sites/knowyourforce-com.png?enhanced';
 	import lifeOrDeathDocumentary from '$lib/images/sites/lifeordeathdoc-com.png?enhanced';
 	import metacensus from '$lib/images/sites/metacensus-org.png?enhanced';
+	import mp4Compressor from '$lib/images/sites/mp4-compressor-bootpack-dev.png?enhanced';
 	import nef1Org from '$lib/images/sites/nef1-org.png?enhanced';
 	import pasNef1Org from '$lib/images/sites/pas-nef1-org.png?enhanced';
 	import pizzaSizePriceCalculator from '$lib/images/sites/pizza-michaelbonner-dev.png?enhanced';
@@ -323,6 +323,12 @@
 			url: 'https://games.nef1.org/title/water',
 			host: 'games.nef1.org',
 			imgSrc: waterColoringGame
+		},
+		{
+			name: 'MP4 Compressor',
+			url: 'https://mp4-compressor.bootpack.dev',
+			host: 'mp4-compressor.bootpack.dev',
+			imgSrc: mp4Compressor
 		}
 	].sort((a, b) => a.name.localeCompare(b.name));
 
