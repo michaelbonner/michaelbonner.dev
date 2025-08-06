@@ -29,6 +29,7 @@
 	import randomStringGenerator from '$lib/images/projects/random-string-generator.jpg?enhanced';
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced';
 	import screenshotMaker from '$lib/images/projects/screenshot-maker.jpg?enhanced';
+	import utahMountainAdventures from '$lib/images/projects/utah-mountain-adventures.jpg?enhanced';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced';
 	import acceleratedEquityPlans from '$lib/images/sites/acceleratedep-com.png?enhanced';
 	import artistAmyBonner from '$lib/images/sites/amy-bonner-com.png?enhanced';
@@ -60,6 +61,13 @@
 			url: 'https://herekidswin.com/',
 			github: 'https://github.com/FaktoryUtah/primary-childrens-stories',
 			image: hereKidsWin
+		},
+		{
+			title: 'Utah Mountain Adventures',
+			description:
+				'UMA had an outdated website that required a developer to manually change all the content, which made it difficult to keep content up to date. They wanted a fresh, new look and a more powerful CMS to update their website.',
+			url: 'https://www.utahmountainadventures.com/',
+			image: utahMountainAdventures
 		},
 		{
 			title: 'DKOW Law',
