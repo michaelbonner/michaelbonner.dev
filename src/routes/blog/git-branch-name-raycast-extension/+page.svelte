@@ -42,7 +42,7 @@
 						<A href="https://youtu.be/JKbTyXQ_QWA">Raycast overview on YouTube</A>
 					</p>
 					<p>
-						<A href="https://raycast.com">Download Raycast</A>
+						<A href="https://www.raycast.com/hey/1fec4edf">Download Raycast</A>
 					</p>
 				</div>
 				<h2>What is the Git Branch Name Raycast Extension?</h2>

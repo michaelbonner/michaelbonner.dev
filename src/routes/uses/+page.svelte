@@ -39,7 +39,7 @@
 	const developmentItems: UsesItem[] = [
 		{
 			title: `Cursor`,
-			href: 'https://www.cursor.com/',
+			href: 'https://cursor.com/en',
 			description: `Cursor is a pretty neat AI code editor. I've been using it for a few months now and it's pretty cool.`
 		},
 		{
@@ -108,7 +108,7 @@
 				'Makes it super easy to just send a URL to a client and let them pick a meeting time that works for them'
 		},
 		{
-			href: 'https://www.notion.so/',
+			href: 'https://www.notion.com/',
 			title: 'Notion',
 			description: 'Great for keeping things organized; super powerful and configurable'
 		},
