@@ -95,7 +95,7 @@
 			title: 'CrewView',
 			description:
 				"I'm part of a team building a web application that helps companies manage their projects, people, and assets in a way that's easy to use and intuitive.",
-			url: 'https://crewview.com/',
+			url: 'https://www.crewview.com/',
 			image: crewView
 		},
 		{
