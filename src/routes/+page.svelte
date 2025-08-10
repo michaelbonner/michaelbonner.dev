@@ -379,6 +379,7 @@
 				<enhanced:img
 					alt="Michael Bonner"
 					class="bg-opacity-100 h-auto w-full rounded-lg mix-blend-luminosity transition-transform hover:scale-105 hover:rotate-1 hover:bg-blend-darken"
+					fetchpriority="high"
 					src={mainImage}
 				/>
 			</div>
