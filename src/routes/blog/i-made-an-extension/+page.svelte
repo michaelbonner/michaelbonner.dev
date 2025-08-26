@@ -35,7 +35,7 @@
 			<div class="max-w-5xl text-lg lg:mt-24">
 				<p>
 					I didn&apos;t realize how easy it is to make an extension. Google has a step-by-step
-					example here:&nbsp;
+					example here:
 					<A
 						className="break-all"
 						href="https://developer.chrome.com/docs/extensions/mv3/getstarted/"
@@ -87,6 +87,7 @@
 				<p>
 					<a
 						href="https://chrome.google.com/webstore/detail/basecamp-ui-tweaks/aefhfcjkdpdjhbjdhoojknelmlodaidn?hl=en"
+						aria-label="Available in the chrome web store"
 					>
 						<enhanced:img
 							alt="Available in the chrome web store"
@@ -99,7 +100,7 @@
 				</p>
 
 				<p class="mt-16">
-					Published:&nbsp;
+					Published:
 					<time dateTime="2022-05-01">01 May 2022</time>
 				</p>
 			</div>

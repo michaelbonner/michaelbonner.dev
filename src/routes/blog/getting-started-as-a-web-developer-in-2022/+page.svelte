@@ -69,8 +69,8 @@
 					<figcaption class="text-center">See how cringey that thing is?</figcaption>
 				</figure>
 				<p>
-					Learn basic&nbsp;
-					<a class={classes.bodyLink} href="https://www.w3schools.com/html/"> HTML </a> and&nbsp;
+					Learn basic
+					<a class={classes.bodyLink} href="https://www.w3schools.com/html/"> HTML </a> and
 					<a class={classes.bodyLink} href="https://www.w3schools.com/css/"> CSS </a>. Codecademy (<a
 						class={classes.bodyLink}
 						href="https://www.codecademy.com/catalog/language/html-css">codecademy.com</a
@@ -90,9 +90,9 @@
 					launch it. Get that thing out there. You can host your site using Netlify for free. Just
 					zip it up and launch it. (<a class={classes.bodyLink} href="https://app.netlify.com/drop"
 						>app.netlify.com/drop</a
-					>) Tell your friends about your new site. Tell your parents about it. Tell me about
-					it.&nbsp;(<a class={classes.bodyLink} href="https://www.linkedin.com/in/michaelbonner/"
-						>linkedin.com/in/michaelbonner/</a
+					>) Tell your friends about your new site. Tell your parents about it. Tell me about it. (<a
+						class={classes.bodyLink}
+						href="https://www.linkedin.com/in/michaelbonner/">linkedin.com/in/michaelbonner/</a
 					>)
 				</p>
 				<h2>Build, build, build</h2>
@@ -123,7 +123,7 @@
 						/>
 					</a>
 					<figcaption class="text-center">
-						A screenshot of the Github repository for this website
+						A screenshot of the GitHub repository for this website
 					</figcaption>
 				</figure>
 				<p>
@@ -225,11 +225,11 @@
 				</p>
 
 				<p class="mt-16">
-					Published:&nbsp;
+					Published:
 					<time dateTime="2022-03-08">08 Mar 2022</time>
 				</p>
 				<p>
-					Updated:&nbsp;
+					Updated:
 					<time dateTime="2022-12-18">18 Dec 2022</time>
 				</p>
 			</div>

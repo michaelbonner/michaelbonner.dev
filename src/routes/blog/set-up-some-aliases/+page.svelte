@@ -35,8 +35,7 @@
 				<p>
 					Bash aliases are shortcuts. They reduce the key strokes, and increase efficiency. You just
 					type a short, easy to remember shortcut, and bash will execute the full command. Why type
-					out&nbsp;
-					<code>git status</code> when you could type <code>gs</code>? Whey type out
+					out <code>git status</code> when you could type <code>gs</code>? Whey type out
 					<code>git checkout origin master</code>
 					when you could just type <code>gcm</code>?
 				</p>
@@ -45,10 +44,9 @@
 					First, identify which version of shell you&apos;re using and where &apos;s configuration
 					file is. Usually, on a mac, it&apos;s in a file at <code>~/.bash_profile</code>. I use
 					zsh, so mine is at <code>~/.zshrc</code>. An easy way to test is to add a sample alias,
-					and try executing it after refreshing the shell or sourcing your config file.&nbsp;
+					and try executing it after refreshing the shell or sourcing your config file.
 					<code>e.g. source ~/.zshrc</code>. I keep my aliases in a file at <code>~/.aliases</code>
-					and then add&nbsp;
-					<Highlight class="p-0" code="source ~/.aliases" language={bash} />
+					and then add <Highlight class="p-0" code="source ~/.aliases" language={bash} />
 					<code>source ~/.aliases</code> to my <code>~/.zshrc</code>.
 				</p>
 				<p>
@@ -166,11 +164,11 @@ alias vim='lvim'
 
 	<div class="prose dark:prose-invert mt-16 max-w-3xl">
 		<p>
-			Published:&nbsp;
+			Published:
 			<time dateTime="2021-07-15">15 Jul 2021</time>
 		</p>
 		<p>
-			Updated:&nbsp;
+			Updated:
 			<time dateTime="2022-08-10">18 Apr 2024</time>
 		</p>
 	</div>

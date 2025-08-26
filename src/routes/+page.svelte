@@ -79,14 +79,14 @@
 		{
 			title: 'Wasatch Covers',
 			description:
-				'An eCommerce site built using Gatsby.js. Load times went from over 10 seconds on their old platform, down to near instantaneous on the new one.',
+				'An eCommerce site built using Gatsby.js. Load times went from over 10 seconds on their old platform, down to nearly instantaneous on the new one.',
 			url: 'https://wasatchcovers.com/',
 			image: wasatchCovers
 		},
 		{
 			title: 'JME Film Co',
 			description:
-				'Built using Sanity CMS and Next.js. This one turned out really good and loads so fast.',
+				'Built using Sanity CMS and Next.js. This one turned out really well and loads so quickly. I am happy about the way the custom video player turned out as well. Streaming provided by Vimeo, but skinned like JME.',
 			url: 'https://www.jmillsent.com/',
 			github: 'https://github.com/michaelbonner/jmillsent',
 			image: jMillsEnt
@@ -94,14 +94,14 @@
 		{
 			title: 'CrewView',
 			description:
-				"I'm part of a team building a web application that helps companies manage their projects, people, and assets in a way that's easy to use and intuitive.",
+				"I'm part of a team building a web application that helps companies manage their projects, people, and assets in a way that's easy to use and intuitive to use.",
 			url: 'https://www.crewview.com/',
 			image: crewView
 		},
 		{
 			title: 'NEF Programs Administration System',
 			description:
-				"Big ol' platform to administer all of their programs. Can't show you the code for security reasons, but I'm really proud of it so I wanted to at least put it here. 😆",
+				"Big ol' platform to administer all of their programs. Can't show you the code for security reasons, but I'm really proud of it, so I wanted to at least put it here. 😆",
 			url: 'https://pas.nef1.org/',
 			image: nefPas
 		}
@@ -134,7 +134,7 @@
 		{
 			title: 'Which Route Is Faster',
 			description:
-				'Sometimes you just wanna have a timer to time a couple different routes and see which one is faster over time. This is made to do just that.',
+				'Sometimes you just want to have a timer to time a couple different routes and see which one is faster over time. This app does that. Plain and simple.',
 			url: 'https://www.whichrouteisfaster.com/',
 			github: 'https://github.com/michaelbonner/route-picker',
 			image: routePicker
@@ -158,7 +158,7 @@
 		{
 			title: 'NHL Arenas To Visit',
 			description:
-				'The plan is to visit every home ice arena. Seems like a decent way to explore the US and Canada',
+				'The plan is to visit every home ice arena. Seems like a decent way to explore the US and Canada.',
 			url: 'https://nhl.michaelbonner.dev/',
 			github: 'https://github.com/michaelbonner/nhl-arenas-react',
 			image: nhlArenas
@@ -166,7 +166,7 @@
 		{
 			title: 'Days Until',
 			description:
-				'You ever wanted a site to just tell you how many days until a specific date. Well here you go. Really I just needed something easy to start building Svelte projects.',
+				'Have you ever wanted a site to just tell you how many days until a specific date. Well, here you go. Really I just needed something easy to start building Svelte projects.',
 			url: 'https://days-until.michaelbonner.dev/',
 			github: 'https://github.com/michaelbonner/days-until',
 			image: daysUntil
@@ -261,7 +261,7 @@
 			imgSrc: lifeOrDeathDocumentary
 		},
 		{
-			name: 'Hanks Garage Venue',
+			name: "Hank's Garage Venue",
 			url: 'https://www.hanksgaragevenue.com',
 			host: 'hanksgaragevenue.com',
 			imgSrc: hanksGarageVenue
@@ -273,7 +273,7 @@
 			imgSrc: acceleratedEquityPlans
 		},
 		{
-			name: 'EnergySafeLeaders',
+			name: 'Energy Safe Leaders',
 			url: 'https://energysafeleaders.org/leaders',
 			host: 'energysafeleaders.org',
 			imgSrc: energySafeLeaders
@@ -415,13 +415,13 @@
 						</a>
 						. Epic, right? Don&apos;t miss the days of GeoCities. From there I made websites for people
 						I knew, then people they knew, and so on. Making websites was definitely my thing. Since
-						then I have worked at a handful of places making websites, web apps, and mobile apps. I also
-						was a director at a digital agency for several years, and taught a boot camp for the University
+						then I have worked at a handful of places making websites, web apps, and mobile apps. I was
+						also a director at a digital agency for several years, and taught a boot camp for the University
 						of Utah. I love what I do, and I&apos;m always down to chat about it.
 					</p>
 					<p class="mt-4">
-						Also, I really like podcasts so I made a site to keep track of the podcasts I listen to.
-						You can <a class={classes.bodyLink} href="https://podcasts.michaelbonner.dev/"
+						I really like podcasts so I made a site to keep track of the podcasts I listen to. You
+						can <a class={classes.bodyLink} href="https://podcasts.michaelbonner.dev/"
 							>check that out here</a
 						>.
 					</p>

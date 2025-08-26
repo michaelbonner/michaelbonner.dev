@@ -59,7 +59,7 @@
 				</figure>
 
 				<p class="mt-16">
-					Published:&nbsp;
+					Published:
 					<time dateTime="2023-01-17">14 Sep 2023</time>
 				</p>
 			</div>

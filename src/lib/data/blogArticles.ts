@@ -24,9 +24,9 @@ export const blogArticles = [
 		image: pagespeed
 	},
 	{
-		title: 'Github Repository Collaborators Viewer',
+		title: 'GitHub Repository Collaborators Viewer',
 		slug: 'github-repositories-viewer-app',
-		teaser: 'A simple app to view Github repository collaborators across all your repositories',
+		teaser: 'A simple app to view GitHub repository collaborators across all your repositories',
 		publishedAt: new Date('2023-09-14T16:00:00.000Z'),
 		readingTime: '2 minute read',
 		image: githubRepositoriesViewer

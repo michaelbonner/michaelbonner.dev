@@ -68,7 +68,7 @@
 				</p>
 
 				<p class="mt-16">
-					Published:&nbsp;
+					Published:
 					<time dateTime="2025-05-14">14 May 2025</time>
 				</p>
 			</div>

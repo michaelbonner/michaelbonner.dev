@@ -109,7 +109,7 @@
 				</p>
 
 				<p class="mt-16">
-					Published:&nbsp;
+					Published:
 					<time dateTime="2023-01-17">17 Jan 2023</time>
 				</p>
 			</div>
