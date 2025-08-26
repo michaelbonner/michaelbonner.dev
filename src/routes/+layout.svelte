@@ -51,7 +51,7 @@
 </script>
 
 <svelte:head>
-	<meta name="theme-color" content="hsl(208, 50%, 30%)" />
+	<meta name="theme-color" content="#264f73" />
 	<meta property="og:url" content={`https://michaelbonner.dev${page.url.pathname}`} />
 	<meta name="author" content="Michael Bonner" />
 	<meta property="profile:first_name" content="Michael" />
