@@ -156,7 +156,25 @@
 			"hasOccupation": {
 				"@type": "Occupation",
 				"name": "Web Developer",
-				"description": "Building websites, web apps, and mobile apps."
+				"description": "Building websites, web apps, and mobile apps.",
+				"estimatedSalary": [
+					{
+						"@type": "MonetaryAmount",
+						"currency": "USD",
+						"value": "120",
+						"duration": "P1H"
+					}
+				],
+				"mainEntityOfPage": {
+					"@type": "WebPage",
+					"lastReviewed": "2025-08-26T14:20:00-06:00"
+				},
+				"occupationLocation": [
+					{
+						"@type": "City",
+						"name": "Salt Lake City"
+					}
+				]
 			},
 			"memberOf": [
 				{
