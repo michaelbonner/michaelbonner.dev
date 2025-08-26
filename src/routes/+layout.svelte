@@ -161,8 +161,9 @@
 					{
 						"@type": "MonetaryAmountDistribution",
 						"currency": "USD",
-						"median": "120",
 						"duration": "P1H"
+						"median": "120",
+						"name": "Hourly Rate",
 					}
 				],
 				"mainEntityOfPage": {
