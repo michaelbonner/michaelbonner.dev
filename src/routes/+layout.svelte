@@ -59,6 +59,7 @@
 	<meta property="profile:last_name" content="Bonner" />
 	<meta property="profile:username" content="michaelbonner" />
 	<meta property="fb:app_id" content="383758763158159" />
+	<meta name="twitter:card" content="summary_large_image" />
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
