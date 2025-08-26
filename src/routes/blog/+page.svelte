@@ -10,7 +10,7 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog" />
 </svelte:head>
 
-<main class="relative pt-8 pb-8 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
+<div class="relative pt-8 pb-8 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
 	<div class="container mx-auto grid gap-12 px-8 py-12">
 		<div class="prose dark:prose-invert max-w-3xl">
 			<h1>Web Developer Blog</h1>
@@ -57,4 +57,4 @@
 			in 2023.
 		</div>
 	</div>
-</main>
+</div>

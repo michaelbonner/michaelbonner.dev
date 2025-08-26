@@ -8,10 +8,10 @@
 	let { children }: Props = $props();
 </script>
 
-<main>
+<div>
 	{@render children?.()}
 
 	{#if page.route.id !== '/blog'}
 		<OtherBlogArticles />
 	{/if}
-</main>
+</div>

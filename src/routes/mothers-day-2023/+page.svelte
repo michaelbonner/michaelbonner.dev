@@ -7,7 +7,7 @@
 	description="I wanted to take a moment to let you know just how much I appreciate and love you."
 />
 
-<main class="container mx-auto grid gap-8 px-8 py-12">
+<div class="container mx-auto grid gap-8 px-8 py-12">
 	<div class="prose dark:prose-invert mt-12">
 		<h1>Happy Mother's Day Mom!</h1>
 
@@ -76,4 +76,4 @@
 			</div>
 		</div>
 	</div>
-</main>
+</div>

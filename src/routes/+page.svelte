@@ -372,7 +372,7 @@
 	<link rel="canonical" href="https://michaelbonner.dev/" />
 </svelte:head>
 
-<main class="container mx-auto flex items-center px-8 py-12">
+<div class="container mx-auto flex items-center px-8 py-12">
 	<div class="pt-8">
 		<div class="lg:flex lg:flex-row-reverse lg:pt-16">
 			<div class="mt-8 w-full lg:mt-0 lg:w-1/3">
@@ -592,4 +592,4 @@
 			</ul>
 		</div>
 	</div>
-</main>
+</div>

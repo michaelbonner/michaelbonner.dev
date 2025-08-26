@@ -400,7 +400,7 @@
 	ogImage="https://michaelbonner.dev/images/ellie-og-image.jpg"
 />
 
-<main class="container mx-auto grid gap-8 px-8 py-12">
+<div class="container mx-auto grid gap-8 px-8 py-12">
 	<div class="prose prose-xl dark:prose-invert mx-auto mt-12 max-w-3xl">
 		<p>
 			<strong>Warning</strong>: This post is about my dog Ellie. She passed away on January 30th,
@@ -717,4 +717,4 @@
 
 		<p>Posted 08 Aug 2023</p>
 	</div>
-</main>
+</div>

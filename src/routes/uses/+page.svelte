@@ -131,7 +131,7 @@
 	<link rel="canonical" href="https://michaelbonner.dev/uses" />
 </svelte:head>
 
-<main class="container mx-auto grid gap-8 px-8 py-12">
+<div class="container mx-auto grid gap-8 px-8 py-12">
 	<div>
 		<h1 class="max-w-3xl text-4xl leading-relaxed tracking-wide lg:pr-8">
 			Software and other things I recommend.
@@ -218,4 +218,4 @@
 			</div>
 		</div>
 	</div>
-</main>
+</div>
