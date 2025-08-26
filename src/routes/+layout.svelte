@@ -170,86 +170,48 @@
 			},
 			"makesOffer": [
 				{
-					"@type": "Service",
-					"name": "Web Development",
-					"provider": {
-						"@type": "Organization",
-						"name": "Bootpack Digital"
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Service",
+						"name": "Web Development",
+						"provider": {
+							"@type": "Organization",
+							"name": "Bootpack Digital"
+						}
 					}
 				},
 				{
-					"@type": "Service",
-					"name": "Web Design",
-					"provider": {
-						"@type": "Organization",
-						"name": "Bootpack Digital"
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Service",
+						"name": "Web Design",
+						"provider": {
+							"@type": "Organization",
+							"name": "Bootpack Digital"
+						}
 					}
 				},
 				{
-					"@type": "Service",
-					"name": "Marketing",
-					"provider": {
-						"@type": "Organization",
-						"name": "Bootpack Digital"
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Service",
+						"name": "Digital Marketing",
+						"provider": {
+							"@type": "Organization",
+							"name": "Bootpack Digital"
+						}
 					}
 				},
 				{
-					"@type": "Service",
-					"name": "Software Consulting",
-					"provider": {
-						"@type": "Organization",
-						"name": "Bootpack Digital"
+					"@type": "Offer",
+					"itemOffered": {
+						"@type": "Service",
+						"name": "Software Consulting",
+						"provider": {
+							"@type": "Organization",
+							"name": "Bootpack Digital"
+						}
 					}
-				}
-			],
-			"hasPart": [
-				{
-					"@type": "CreativeWork",
-					"name": "Primary Children's Hospital: Here Kids Win",
-					"url": "https://herekidswin.org",
-					"description": "Website to promote patient stories for Primary Children's Hospital."
-				},
-				{
-					"@type": "CreativeWork",
-					"name": "Utah Mountain Adventures",
-					"url": "https://utahmountainadventures.com",
-					"description": "Modernized website and CMS for UMA."
-				},
-				{
-					"@type": "CreativeWork",
-					"name": "DKOW Law",
-					"url": "https://dkowlaw.com",
-					"description": "Marketing website for a law firm in Salt Lake City."
-				},
-				{
-					"@type": "CreativeWork",
-					"name": "Wasatch Covers",
-					"url": "https://wasatchcovers.com",
-					"description": "eCommerce site for window well covers."
-				},
-				{
-					"@type": "CreativeWork",
-					"name": "JME Film Co",
-					"url": "https://jmillsent.com",
-					"description": "Film company website with custom video player."
-				},
-				{
-					"@type": "CreativeWork",
-					"name": "CrewView",
-					"url": "https://crewview.app",
-					"description": "Web application for project, people, and asset management."
-				},
-				{
-					"@type": "CreativeWork",
-					"name": "Lazy Uncle",
-					"url": "https://lazy-uncle.net",
-					"description": "App for tracking family birthdays."
-				},
-				{
-					"@type": "CreativeWork",
-					"name": "Screenshot Maker",
-					"url": "https://screenshot-maker.michaelbonner.dev",
-					"description": "Tool for making screenshots of projects."
 				}
 			]
 		}
