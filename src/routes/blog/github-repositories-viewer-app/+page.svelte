@@ -6,7 +6,7 @@
 
 <Seo
 	description="I made a little app to help me keep track of who has access to what GitHub repository"
-	ogImage={githubRepositoriesViewer}
+	ogImage={githubRepositoriesViewer.img.src}
 	ogType="article"
 	title="GitHub Repository Collaborators Viewer | Michael Bonner"
 />

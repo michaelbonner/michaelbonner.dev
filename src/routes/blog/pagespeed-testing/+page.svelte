@@ -6,7 +6,7 @@
 
 <Seo
 	description="I made a little tool to test the performance of pages on a site on one page"
-	ogImage={pagespeed}
+	ogImage={pagespeed.img.src}
 	ogType="article"
 	title="PageSpeed Testing | Michael Bonner"
 />

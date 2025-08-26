@@ -2,14 +2,14 @@
 	import afterExtension from '$lib/images/after-extension.png?enhanced&w=768,440';
 	import availableInTheChromeWebStore from '$lib/images/available-in-the-chrome-web-store.png?enhanced&w=768,440';
 	import beforeExtension from '$lib/images/before-extension.png?enhanced&w=768,440';
-	import ogImage from '$lib/images/chrome-basecamp-ui-extension.jpg?enhanced';
+	import chromeBasecampExtension from '$lib/images/chrome-basecamp-ui-extension.jpg?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
 </script>
 
 <Seo
 	description="Really simple one, and it was really easy to make"
-	{ogImage}
+	ogImage={chromeBasecampExtension.img.src}
 	ogType="article"
 	title="I made my first Chrome extension | Michael Bonner"
 />

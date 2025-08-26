@@ -6,7 +6,7 @@
 
 <Seo
 	description="A tool to make screenshots of websites. Dang simple and serverless ready"
-	ogImage={screenshotMaker}
+	ogImage={screenshotMaker.img.src}
 	ogType="article"
 	title="Screenshot Maker | Michael Bonner"
 />

@@ -7,7 +7,7 @@
 
 <Seo
 	description="Are you thinking about becoming a web developer? Where should you start? Here's my two cents as a full time web developer with almost 20 years of experience."
-	ogImage={tuffWebsiteScreenshot}
+	ogImage={tuffWebsiteScreenshot.img.src}
 	ogType="article"
 	title="Where I think new web software developers should start | Michael Bonner"
 />
