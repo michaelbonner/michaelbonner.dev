@@ -104,6 +104,156 @@
 		gtag('js', new Date());
 		gtag('config', 'GTM-PCQSF3Z');
 	</script>
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Michael Bonner",
+			"alternateName": "Mike Bonner",
+			"url": "https://michaelbonner.dev/",
+			"image": "https://michaelbonner.dev/images/on-the-beach-600.jpg",
+			"jobTitle": "Web Developer",
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Bootpack Digital",
+				"url": "https://bootpackdigital.com"
+			},
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Salt Lake City",
+				"addressRegion": "UT",
+				"addressCountry": "US"
+			},
+			"email": "mailto:michaelbonner@michaelbonner.dev",
+			"sameAs": [
+				"https://github.com/michaelbonner",
+				"https://www.linkedin.com/in/michaelbonner",
+				"https://www.instagram.com/michael__bonner"
+			],
+			"description": "Web developer in Salt Lake City, Utah. Founder of Bootpack Digital. Building websites, web apps, and mobile apps since 2003.",
+			"knowsAbout": [
+				"JavaScript",
+				"TypeScript",
+				"React",
+				"Svelte",
+				"Node",
+				"PHP",
+				"AWS",
+				"Serverless",
+				"Next.js",
+				"Gatsby",
+				"GraphQL",
+				"Prisma",
+				"Apollo",
+				"Laravel",
+				"MongoDB",
+				"MySQL",
+				"PostgreSQL",
+				"WordPress",
+				"Shopify"
+			],
+			"hasOccupation": {
+				"@type": "Occupation",
+				"name": "Web Developer",
+				"description": "Building websites, web apps, and mobile apps."
+			},
+			"memberOf": [
+				{
+					"@type": "Organization",
+					"name": "Bootpack Digital"
+				}
+			],
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://michaelbonner.dev/"
+			},
+			"makesOffer": [
+				{
+					"@type": "Service",
+					"name": "Web Development",
+					"provider": {
+						"@type": "Organization",
+						"name": "Bootpack Digital"
+					}
+				},
+				{
+					"@type": "Service",
+					"name": "Web Design",
+					"provider": {
+						"@type": "Organization",
+						"name": "Bootpack Digital"
+					}
+				},
+				{
+					"@type": "Service",
+					"name": "Marketing",
+					"provider": {
+						"@type": "Organization",
+						"name": "Bootpack Digital"
+					}
+				},
+				{
+					"@type": "Service",
+					"name": "Software Consulting",
+					"provider": {
+						"@type": "Organization",
+						"name": "Bootpack Digital"
+					}
+				}
+			],
+			"hasPart": [
+				{
+					"@type": "CreativeWork",
+					"name": "Primary Children's Hospital: Here Kids Win",
+					"url": "https://herekidswin.org",
+					"description": "Website to promote patient stories for Primary Children's Hospital."
+				},
+				{
+					"@type": "CreativeWork",
+					"name": "Utah Mountain Adventures",
+					"url": "https://utahmountainadventures.com",
+					"description": "Modernized website and CMS for UMA."
+				},
+				{
+					"@type": "CreativeWork",
+					"name": "DKOW Law",
+					"url": "https://dkowlaw.com",
+					"description": "Marketing website for a law firm in Salt Lake City."
+				},
+				{
+					"@type": "CreativeWork",
+					"name": "Wasatch Covers",
+					"url": "https://wasatchcovers.com",
+					"description": "eCommerce site for window well covers."
+				},
+				{
+					"@type": "CreativeWork",
+					"name": "JME Film Co",
+					"url": "https://jmillsent.com",
+					"description": "Film company website with custom video player."
+				},
+				{
+					"@type": "CreativeWork",
+					"name": "CrewView",
+					"url": "https://crewview.app",
+					"description": "Web application for project, people, and asset management."
+				},
+				{
+					"@type": "CreativeWork",
+					"name": "Lazy Uncle",
+					"url": "https://lazy-uncle.net",
+					"description": "App for tracking family birthdays."
+				},
+				{
+					"@type": "CreativeWork",
+					"name": "Screenshot Maker",
+					"url": "https://screenshot-maker.michaelbonner.dev",
+					"description": "Tool for making screenshots of projects."
+				}
+			]
+		}
+	</script>
 </svelte:head>
 
 <div
