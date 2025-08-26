@@ -159,9 +159,9 @@
 				"description": "Building websites, web apps, and mobile apps.",
 				"estimatedSalary": [
 					{
-						"@type": "MonetaryAmount",
+						"@type": "MonetaryAmountDistribution",
 						"currency": "USD",
-						"value": "120",
+						"median": "120",
 						"duration": "P1H"
 					}
 				],
