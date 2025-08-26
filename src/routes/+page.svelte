@@ -385,9 +385,8 @@
 			</div>
 			<div class="mt-8 w-full lg:mt-0 lg:w-2/3 lg:pr-8">
 				<h1 class="text-3xl leading-relaxed tracking-wide lg:pr-8 lg:text-4xl">
-					Hi! I&apos;m&nbsp;
-					<span class="font-medium whitespace-nowrap"> Michael Bonner</span>, a web developer in
-					Salt Lake City, Utah. I run a small agency with some friends called&nbsp;
+					Hi! I&apos;m <span class="font-medium whitespace-nowrap"> Michael Bonner</span>, a web
+					developer in Salt Lake City, Utah. I run a small agency with some friends called
 					<span class="whitespace-nowrap">
 						<a
 							class={classNames(
@@ -411,8 +410,9 @@
 				<div class="text-xl leading-relaxed">
 					<p class="mt-4">
 						I started making websites in high school back in 2003. I actually found a copy of my
-						first site and&nbsp;
-						<a class={classes.bodyLink} href="https://tuff.michaelbonner.dev/"> put it up here </a>
+						first site and <a class={classes.bodyLink} href="https://tuff.michaelbonner.dev/">
+							put it up here
+						</a>
 						. Epic, right? Don&apos;t miss the days of GeoCities. From there I made websites for people
 						I knew, then people they knew, and so on. Making websites was definitely my thing. Since
 						then I have worked at a handful of places making websites, web apps, and mobile apps. I also
@@ -421,8 +421,7 @@
 					</p>
 					<p class="mt-4">
 						Also, I really like podcasts so I made a site to keep track of the podcasts I listen to.
-						You can&nbsp;
-						<a class={classes.bodyLink} href="https://podcasts.michaelbonner.dev/"
+						You can <a class={classes.bodyLink} href="https://podcasts.michaelbonner.dev/"
 							>check that out here</a
 						>.
 					</p>
