@@ -1,5 +1,5 @@
 <script>
-	import screenshotMaker from '$lib/images/projects/screenshot-maker.webp?enhanced&w=470';
+	import screenshotMaker from '$lib/images/projects/screenshot-maker.webp?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
 </script>
