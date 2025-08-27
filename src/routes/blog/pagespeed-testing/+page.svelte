@@ -1,5 +1,5 @@
 <script>
-	import pagespeed from '$lib/images/projects/pagespeed.jpg?enhanced&w=470';
+	import pagespeed from '$lib/images/projects/pagespeed.jpg?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
 </script>

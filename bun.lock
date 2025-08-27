@@ -8,6 +8,7 @@
         "clsx": "^2.1.1",
         "photoswipe": "^5.4.4",
         "posthog-js": "^1.260.3",
+        "posthog-node": "^5.8.0",
       },
       "devDependencies": {
         "@eslint/compat": "^1.3.2",
@@ -624,6 +625,8 @@
     "postcss-selector-parser": ["postcss-selector-parser@6.0.10", "", { "dependencies": { "cssesc": "^3.0.0", "util-deprecate": "^1.0.2" } }, "sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w=="],
 
     "posthog-js": ["posthog-js@1.260.3", "", { "dependencies": { "@posthog/core": "1.0.1", "core-js": "^3.38.1", "fflate": "^0.4.8", "preact": "^10.19.3", "web-vitals": "^4.2.4" }, "peerDependencies": { "@rrweb/types": "2.0.0-alpha.17", "rrweb-snapshot": "2.0.0-alpha.17" }, "optionalPeers": ["@rrweb/types", "rrweb-snapshot"] }, "sha512-FCtksk0GQn22Rk9P7x7dsmAO7a2aBxPeYb2O2KXSraxR8xd2G6lUOOthVDK+qgtmuhpUZuur/mHrXEslMUEtjg=="],
+
+    "posthog-node": ["posthog-node@5.8.0", "", { "dependencies": { "@posthog/core": "1.0.1" } }, "sha512-Idj6TgjYN0POXvrGK97ZKTLbLEY7sUjsaeMaquKt9UlK3Z9ps0nj0wRkFYKEYvfQ8OMwTwgKaze+5hXgmudwdw=="],
 
     "preact": ["preact@10.26.6", "", {}, "sha512-5SRRBinwpwkaD+OqlBDeITlRgvd8I8QlxHJw9AxSdMNV6O+LodN9nUyYGpSF7sadHjs6RzeFShMexC6DbtWr9g=="],
 
