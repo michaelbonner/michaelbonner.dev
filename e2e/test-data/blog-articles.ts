@@ -8,7 +8,7 @@ export const blogArticlesTestData = [
 		slug: 'screenshot-maker'
 	},
 	{
-		title: 'PageSpeed Testing is important, you should take it seriously',
+		title: 'PageSpeed Testing is important. You should take it seriously.',
 		slug: 'pagespeed-testing'
 	},
 	{

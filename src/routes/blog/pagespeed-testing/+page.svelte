@@ -24,22 +24,22 @@
 			<div class="lg:pt-24">
 				<div>
 					<h1 class="text-4xl leading-[1.3em] tracking-wider lg:pr-8">
-						PageSpeed Testing is important, you should take it seriously
+						PageSpeed Testing is important. You should take it seriously.
 					</h1>
 				</div>
 			</div>
 			<div class="prose-img:my-0 prose-figcaption:text-center max-w-5xl text-lg lg:mt-24">
 				<p>
 					PageSpeed Insights is a tool that helps you test the performance of your site. It measures
-					how quickly the content loads and how quickly a person would be able to use the site.
+					how quickly the content loads and how soon a person can start using the site.
 					<A
 						className="inline"
 						href="https://developers.google.com/search/blog/2018/01/using-page-speed-in-mobile-search"
 						>Google has said</A
 					> that they use this data to rank sites in search, so I think it's important to keep an eye
 					on it. There are other tools out there to do something similar, but they all feel too complicated
-					and overwhelming. This tools sticks to the bare minimum of what I need to know with links to
-					more detailed information when I need it.
+					and overwhelming. This tool sticks to the bare minimum I need to know, with links to more detailed
+					information when I need it.
 				</p>
 
 				<p>Here's a screenshot of the tool:</p>
@@ -60,7 +60,7 @@
 					You can find the source code here: <A
 						className="inline"
 						href="https://github.com/michaelbonner/pagespeed">github.com/michaelbonner/pagespeed</A
-					>. Feel free to fork it and make it your own. You'll need an api key from Google to use it
+					>. Feel free to fork it and make it your own. You'll need an API key from Google to use it
 					in your own project.
 				</p>
 

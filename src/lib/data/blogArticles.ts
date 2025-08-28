@@ -16,7 +16,7 @@ export const blogArticles = [
 		image: screenshotMaker
 	},
 	{
-		title: 'PageSpeed Testing is important, you should take it seriously',
+		title: 'PageSpeed Testing is important. You should take it seriously.',
 		slug: 'pagespeed-testing',
 		teaser: 'I made a little tool to test the performance of pages on a site on one page',
 		publishedAt: new Date('2025-04-09T16:00:00.000Z'),
