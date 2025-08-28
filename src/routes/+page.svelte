@@ -413,7 +413,7 @@
 						first site and <a class={classes.bodyLink} href="https://tuff.michaelbonner.dev/">
 							put it up here
 						</a>
-						. Epic, right? Don&apos;t miss the days of GeoCities. From there I made websites for people
+						. Epic, right? I don&apos;t miss the days of GeoCities. From there I made websites for people
 						I knew, then people they knew, and so on. Making websites was definitely my thing. Since
 						then I have worked at a handful of places making websites, web apps, and mobile apps. I was
 						also a director at a digital agency for several years, and taught a boot camp for the University
