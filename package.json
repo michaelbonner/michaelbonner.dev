@@ -14,7 +14,8 @@
 		"up": "bun update",
 		"preinstall": "npx only-allow bun",
 		"test:e2e": "playwright test",
-		"test": "npm run test:e2e"
+		"test:setup": "bun ./e2e/validate-test-data.js",
+		"test": "bun test:setup && bun test:e2e"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.3.2",
