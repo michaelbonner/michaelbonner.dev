@@ -413,6 +413,7 @@
 			<enhanced:img
 				alt="Ellie"
 				class="aspect-[600/800] w-full rounded-xl shadow-lg lg:max-w-[600px]"
+				fetchpriority="high"
 				sizes="min(600px, 100vw)"
 				src={ellieMain}
 			/>
@@ -692,6 +693,7 @@
 			<enhanced:img
 				alt="Ellie swimming off to get a ball"
 				class="w-full rounded-xl shadow-lg"
+				decoding="async"
 				loading="lazy"
 				sizes="min(600px, 100vw)"
 				src={goodbye}
