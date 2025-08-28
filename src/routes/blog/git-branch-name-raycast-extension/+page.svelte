@@ -77,7 +77,7 @@
 
 				<figure>
 					<enhanced:img
-						alt="Add you branch name"
+						alt="Add your branch name"
 						class="m-0 w-full"
 						loading="lazy"
 						sizes="(max-width: 768px) 100vw, 768px"
