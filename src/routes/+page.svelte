@@ -520,11 +520,11 @@
 
 		<div class="max-w-7xl lg:mt-32">
 			<H2>Some Other Sites</H2>
-			<ul class="mt-8 grid gap-x-4 gap-y-8 sm:grid-cols-2 lg:ml-8 lg:grid-cols-3 xl:grid-cols-4">
+			<ul class="mt-8 grid grid-cols-2 gap-x-4 gap-y-6 lg:ml-8 lg:grid-cols-3 xl:grid-cols-4">
 				{#each otherSites as otherSite (otherSite.name)}
 					<li>
 						<a
-							class="flex items-center gap-4"
+							class="inline-flex items-center gap-4 transition hover:scale-105 hover:rotate-1"
 							href={otherSite.url}
 							target="_blank"
 							rel="noreferrer"
@@ -535,7 +535,14 @@
 								src={otherSite.imgSrc}
 								loading="lazy"
 							/>
-							<span class={classes.bodyLink}>{otherSite.name}</span>
+							<span
+								class={clsx(
+									'sm:border-b sm:border-gray-400',
+									'dark:border-gray-500',
+									'hover:border-blue-400',
+									'dark:hover:border-blue-100'
+								)}>{otherSite.name}</span
+							>
 						</a>
 					</li>
 				{/each}
