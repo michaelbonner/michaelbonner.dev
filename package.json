@@ -14,7 +14,7 @@
 		"up": "bun update",
 		"preinstall": "npx only-allow bun",
 		"test:e2e": "playwright test",
-		"test:setup": "bun ./e2e/validate-test-data.js",
+		"test:setup": "bun ./e2e/validate-test-data.js --update",
 		"test": "bun test:setup && bun test:e2e"
 	},
 	"devDependencies": {

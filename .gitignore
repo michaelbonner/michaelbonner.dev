@@ -9,3 +9,4 @@ node_modules
 !.env.example
 .vercel
 playwright-report
+e2e/test-data/blog-articles.ts

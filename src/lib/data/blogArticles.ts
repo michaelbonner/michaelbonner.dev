@@ -25,6 +25,7 @@ export const blogArticles = [
 	},
 	{
 		title: 'GitHub Repository Collaborators Viewer',
+		h1: 'I made a little app to help me keep track of who has access to what GitHub repository',
 		slug: 'github-repositories-viewer-app',
 		teaser: 'A simple app to view GitHub repository collaborators across all your repositories',
 		publishedAt: new Date('2023-09-14T16:00:00.000Z'),
@@ -33,6 +34,7 @@ export const blogArticles = [
 	},
 	{
 		title: 'Git Branch Name Generator Raycast Extension',
+		h1: 'Check out the new Git Branch Name Raycast Extension I made',
 		slug: 'git-branch-name-raycast-extension',
 		teaser: 'Check out the new Git Branch Name Raycast Extension I made',
 		publishedAt: new Date('2023-01-17T12:58:46.469Z'),

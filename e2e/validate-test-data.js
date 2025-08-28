@@ -5,7 +5,7 @@
  * This script can be run manually or as part of CI to verify test coverage
  */
 
-import { readdir, readFile } from 'fs/promises';
+import { readdir, readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 
 async function validateTestData() {
@@ -69,10 +69,93 @@ async function validateTestData() {
 	}
 }
 
+/**
+ * Updates the test data file with current blog articles data
+ * Extracts only slug and title (or h1 if available) from blogArticles.ts
+ */
+async function updateTestData() {
+	console.log('🔄 Updating blog test data from source...\n');
+
+	try {
+		// Read the source blog articles file
+		const blogArticlesPath = join(process.cwd(), 'src/lib/data/blogArticles.ts');
+		const blogArticlesContent = await readFile(blogArticlesPath, 'utf-8');
+
+		// Extract the blogArticles array using regex
+		const arrayMatch = blogArticlesContent.match(/export const blogArticles = \[([\s\S]*?)\];/);
+		if (!arrayMatch) {
+			throw new Error('Could not find blogArticles array in source file');
+		}
+
+		// Parse each article object to extract slug and title/h1
+		const articleObjects = [];
+		const objectRegex = /\{([\s\S]*?)\}/g;
+		let match;
+
+		while ((match = objectRegex.exec(arrayMatch[1])) !== null) {
+			const objectContent = match[1];
+
+			// Extract slug
+			const slugMatch = objectContent.match(/slug:\s*['"`]([^'"`]+)['"`]/);
+			if (!slugMatch) continue;
+
+			const slug = slugMatch[1];
+
+			// Extract h1 first, then title if h1 doesn't exist
+			const h1Match = objectContent.match(/h1:\s*['"`]([^'"`]+)['"`]/);
+			const titleMatch = objectContent.match(/title:\s*['"`]([^'"`]+)['"`]/);
+
+			const title = h1Match ? h1Match[1] : titleMatch ? titleMatch[1] : '';
+
+			if (title) {
+				articleObjects.push({ title, slug });
+			}
+		}
+
+		// Generate the new test data file content
+		const testDataContent = `// Generated file, do not edit directly
+// Test-friendly version of blog articles data
+// This file extracts only the necessary data for testing without SvelteKit-specific imports
+
+export const blogArticlesTestData = [
+${articleObjects
+	.map(
+		(article) => `\t{
+\t\ttitle: '${article.title.replace(/'/g, "\\'")}',
+\t\tslug: '${article.slug}'
+\t}`
+	)
+	.join(',\n')}
+];
+`;
+
+		// Write the updated test data file
+		const testDataPath = join(process.cwd(), 'e2e/test-data/blog-articles.ts');
+		await writeFile(testDataPath, testDataContent, 'utf-8');
+
+		console.log(`✅ Successfully updated test data with ${articleObjects.length} articles:`);
+		articleObjects.forEach((article) => console.log(`   - ${article.slug}: "${article.title}"`));
+
+		return true;
+	} catch (error) {
+		console.error('❌ Error updating test data:', error.message);
+		return false;
+	}
+}
+
 // Run validation if called directly
 if (import.meta.url === `file://${process.argv[1]}`) {
+	const shouldUpdate = process.argv.includes('--update');
+
+	if (shouldUpdate) {
+		const updateSuccess = await updateTestData();
+		if (!updateSuccess) {
+			process.exit(1);
+		}
+	}
+
 	const isValid = await validateTestData();
 	process.exit(isValid ? 0 : 1);
 }
 
-export { validateTestData };
+export { updateTestData, validateTestData };
