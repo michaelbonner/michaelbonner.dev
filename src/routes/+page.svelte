@@ -414,9 +414,9 @@
 						of Utah. I love what I do, and I&apos;m always down to chat about it.
 					</p>
 					<p class="mt-4">
-						I really like podcasts so I made a site to keep track of the podcasts I listen to. You
-						can <a class={classes.bodyLink} href="https://podcasts.michaelbonner.dev/"
-							>check that out here</a
+						I really like podcasts, so I made a site to share the podcasts I listen to. You can <a
+							class={classes.bodyLink}
+							href="https://podcasts.michaelbonner.dev/">check that out here</a
 						>.
 					</p>
 				</div>
