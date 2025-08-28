@@ -522,20 +522,21 @@
 			<H2>Some Other Sites</H2>
 			<ul class="mt-8 grid gap-x-4 gap-y-8 sm:grid-cols-2 lg:ml-8 lg:grid-cols-3 xl:grid-cols-4">
 				{#each otherSites as otherSite (otherSite.name)}
-					<li class="flex gap-4">
-						<div>
+					<li>
+						<a
+							class="flex items-center gap-4"
+							href={otherSite.url}
+							target="_blank"
+							rel="noreferrer"
+						>
 							<enhanced:img
-								class="size-6"
+								class="size-7"
 								alt={otherSite.name}
 								src={otherSite.imgSrc}
 								loading="lazy"
 							/>
-						</div>
-						<div>
-							{otherSite.name}<br /><A href={otherSite.url}>
-								{otherSite.url.replace(/https:\/\/(www\.)?/, '')}
-							</A>
-						</div>
+							<span class={classes.bodyLink}>{otherSite.name}</span>
+						</a>
 					</li>
 				{/each}
 			</ul>
