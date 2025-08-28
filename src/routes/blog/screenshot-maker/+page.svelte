@@ -29,7 +29,7 @@
 			<div class="prose-img:my-0 prose-figcaption:text-center max-w-5xl text-lg lg:mt-24">
 				<p>
 					I like to take screenshots of websites for a handful of reasons. It's helpful sometimes
-					when you're making dependency updates to have an easy visual of the before and after. I
+					when you're making dependency updates to have an easy visual of the before-and-after. I
 					also add screenshots of projects to the <A
 						className="inline"
 						href="https://redirects.bootpack.dev/">Redirects Wizard</A
@@ -39,9 +39,9 @@
 				</p>
 
 				<p>
-					You add the desired inputs which will generate a url to a screenshot. The images are
-					cached for an hour, so you can use it as many times as you want. Hopefully it's pretty
-					easy to use but let me know if you run into issues.
+					Enter the desired inputs to generate a screenshot URL. The images are cached for an hour,
+					so you can use it as many times as you want. Hopefully it's pretty easy to use, but let me
+					know if you run into issues.
 				</p>
 
 				<p>Here's a screenshot of the tool:</p>
