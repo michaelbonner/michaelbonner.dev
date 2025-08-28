@@ -118,6 +118,13 @@
 			description:
 				'An amazing AI tool for transcribing. I use it all the time for emails and project communications.',
 			isAffiliateLink: true
+		},
+		{
+			href: 'https://referworkspace.app.goo.gl/iyUE',
+			title: 'Google Workspace',
+			description:
+				'Google Workspace has been the easiest and most reliable provider of email, calendar, and shared drive storage.',
+			isAffiliateLink: true
 		}
 	];
 </script>
