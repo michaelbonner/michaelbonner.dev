@@ -166,7 +166,7 @@
 		{
 			title: 'Days Until',
 			description:
-				'Have you ever wanted a site to just tell you how many days until a specific date. Well, here you go. Really I just needed something easy to start building Svelte projects.',
+				'Have you ever wanted a site to just tell you how many days until a specific date? Well, here you go. Really I just needed something easy to start building Svelte projects.',
 			url: 'https://days-until.michaelbonner.dev/',
 			github: 'https://github.com/michaelbonner/days-until',
 			image: daysUntil
