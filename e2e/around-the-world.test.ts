@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { blogArticlesTestData } from './test-data/blog-articles.ts';
+import { blogArticlesTestData } from './test-data/blog-articles';
 
 /**
  * Calculate string similarity using Levenshtein distance
