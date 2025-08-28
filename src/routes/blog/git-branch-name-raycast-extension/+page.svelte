@@ -1,7 +1,7 @@
 <script>
-	import gitBranchNameGenerator1 from '$lib/images/git-branch-name-generator-1.jpg?enhanced&w=768,440';
-	import gitBranchNameGenerator2 from '$lib/images/git-branch-name-generator-2.jpg?enhanced&w=768,440';
-	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg?enhanced&w=768,440';
+	import gitBranchNameGenerator1 from '$lib/images/git-branch-name-generator-1.jpg?enhanced';
+	import gitBranchNameGenerator2 from '$lib/images/git-branch-name-generator-2.jpg?enhanced';
+	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
 </script>

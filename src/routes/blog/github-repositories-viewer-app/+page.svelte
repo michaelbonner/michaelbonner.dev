@@ -1,5 +1,5 @@
 <script>
-	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced&w=768,440';
+	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
 </script>
