@@ -213,12 +213,6 @@
 			imgSrc: metacensus
 		},
 		{
-			name: 'NEF Programs Administration System',
-			url: 'https://pas.nef1.org',
-			host: 'pas.nef1.org',
-			imgSrc: pasNef1Org
-		},
-		{
 			name: 'NEF Corporate Site',
 			url: 'https://nef1.org',
 			host: 'nef1.org',
