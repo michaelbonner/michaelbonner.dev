@@ -3,12 +3,14 @@
 </script>
 
 <svg
+	aria-hidden="true"
 	class={className}
-	stroke="currentColor"
 	fill="currentColor"
-	stroke-width="0"
-	viewBox="0 0 20 20"
 	height="1em"
+	role="presentation"
+	stroke-width="0"
+	stroke="currentColor"
+	viewBox="0 0 20 20"
 	width="1em"
 	xmlns="http://www.w3.org/2000/svg"
 >
