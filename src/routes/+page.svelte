@@ -36,6 +36,7 @@
 	import blackThornSoftware from '$lib/images/sites/blackthornsoftware-com.png?enhanced';
 	import cosgriffSchool from '$lib/images/sites/cosgriff-org.png?enhanced';
 	import denverWindowWellCovers from '$lib/images/sites/denverwindowwellcovers-com.png?enhanced';
+	import energySafeKids from '$lib/images/projects/energy-safe-kids.jpg?enhanced';
 	import energySafeLeaders from '$lib/images/sites/energysafeleaders-org.png?enhanced';
 	import waterColoringGame from '$lib/images/sites/games-nef1-org.png?enhanced';
 	import hanksGarageVenue from '$lib/images/sites/hanksgaragevenue-com.png?enhanced';
@@ -68,6 +69,13 @@
 				'UMA had an outdated website that required a developer to manually change all the content, which made it difficult to keep content up to date. They wanted a fresh, new look and a more powerful CMS to update their website.',
 			url: 'https://www.utahmountainadventures.com/',
 			image: utahMountainAdventures
+		},
+		{
+			title: 'Energy Safe Kids',
+			description:
+				'National Energy Foundation (NEF) runs a program to teach teachers and students about energy safety. They offer a custom website to sponsors to help them operate their program(s). We built a website generator that will allow NEF to create a website for each of their sponsors with only a few inputs.',
+			url: 'https://energysafekids.org/',
+			image: energySafeKids
 		},
 		{
 			title: 'DKOW Law',
