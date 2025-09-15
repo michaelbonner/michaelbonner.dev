@@ -125,6 +125,12 @@
 			description:
 				'Google Workspace has been the easiest and most reliable provider of email, calendar, and shared drive storage.',
 			isAffiliateLink: true
+		},
+		{
+			href: 'https://hetzner.cloud/?ref=rmvsAZEWOxGE',
+			title: 'Hetzner',
+			description: 'Hetzner is a great cloud provider for cloud projects.',
+			isAffiliateLink: true
 		}
 	];
 </script>
