@@ -66,7 +66,7 @@
 	<div class="max-w-7xl">
 		<Highlight
 			code={`# general
-alias ll='ls -la'
+alias ll='ls -lah'
 alias zshrc='vim ~/.zshrc'
 alias hosts='sudo vim /etc/hosts'
 
@@ -79,30 +79,37 @@ alias mylog='git log --author="Michael Bonner" --pretty=format:"%aD : %s"'
 alias gs='git status'
 alias gb='git branch'
 alias gpull='git pull'
+alias gpul='gpull'
 alias gpo='git pull origin'
 alias gp='git pull'
 alias gpush='git push'
 alias gf='git fetch'
-alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
-alias gl2="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias gl2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gcm='git checkout main'
 alias gcma='git checkout master'
 alias gcd='git checkout development'
 alias gcs='git checkout staging'
 alias gpma='git pull origin master'
+alias gpm='git pull origin main'
 alias gpd='git pull origin development'
 alias gps='git pull origin staging'
 alias ga='git add .'
 alias gc='git commit -m '
 alias gac='git commit -am '
-alias ggs='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e "GIT STATUS IN $&#123;dir//.git/&#123;" && git status -s" ; done'
-alias ggpull='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e "GIT PULL IN $&#123;dir//.git/&#123;" && git pull" ; done'
 alias gc--.='git checkout -- .'
 alias gch='git checkout'
 alias gclean='git reset --hard;git clean -df;'
 alias ghash='git rev-parse HEAD | pbcopy'
-alias gt='git trim'
-alias ggt='find . -type d -name '.git' -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e "GIT TRIM IN $&#123;dir//.git/&#123;" && git trim" ; done'
+alias gt='bunx git-trim'
+alias gr='git rebase'
+alias g='lazygit'
+alias gw='git worktree'
+alias gwl='git worktree list'
+alias gwa='git worktree add'
+alias gwr='git worktree remove'
+alias groma='git rebase origin/master'
+alias grom='git rebase origin/main'
 
 # laravel
 alias sup='sail up'
@@ -113,50 +120,35 @@ alias cda='composer dump-autoload'
 alias sail='./vendor/bin/sail'
 alias sa='sail artisan'
 alias sc='sail composer'
+alias pest='vendor/bin/pest'
+alias unit="./vendor/bin/phpunit"
+alias pint="./vendor/bin/pint"
 
-# npm
-alias nr='npm run'
-alias nrs='npm run start'
-alias nrss='npm run start-secure'
-alias nrd='npm run dev'
-alias nrt='npm run test'
-alias nrw='npm run watch'
-alias nrp='npm run prod'
-alias nrb='npm run build'
-alias nrl='npm run lint'
-alias nrc='npm run codegen'
-alias nrg='npm run generate'
-alias npmout='find . -type d -name .git -maxdepth 3 | while read dir ; do sh -c "cd $dir/../ && echo -e "NPM STATUS IN $&#123;dir//.git/&#125;" && npm out" ; done'
-alias npmup='find . -type d -name '.git' -maxdepth 2 | while read dir ; do sh -c "cd $dir/ && echo -e "NPM UPDATE IN $&#123;dir//.git/&#125;" && npm up" ; done'
-alias y='yarn'
-alias mjml='./node_modules/.bin/mjml'
-alias nd='netlify dev'
-alias npm='~/.npm-global/bin/npm'
-
-# bun
-alias br='bun run'
-alias brs='bun run start'
-alias brss='bun run start-secure'
-alias brd='bun run dev'
-alias brt='bun run test'
-alias brw='bun run watch'
-alias brp='bun run prod'
-alias brb='bun run build'
-alias brl='bun run lint'
-alias brc='bun run codegen'
-alias brg='bun run generate'
+# npm : requires ni (https://github.com/antfu-collective/ni)
+alias nrt='nr test'
+alias nrl='nr lint'
+alias nrd='nr dev'
+alias nrb='nr build'
+alias nrs='nr start'
+alias nout='na outdated'
+alias nrg='nr generate'
+alias nrc='nr codegen'
 
 # docker
 alias dcu='docker compose up'
 alias dcd='docker compose down'
+alias dps='docker ps'
+alias dpa='docker ps -a'
 
 # deployments
 alias vl='vercel ls'
 
 # misc
-alias c='open . -a "/Applications/Visual Studio Code.app"
+alias c='open . -a /Applications/Cursor.app'
+alias k='kiro .'
 alias st='open . -a /Applications/Sourcetree.app'
 alias vim='lvim'
+alias speedtest='bunx speed-cloudflare-cli'
 `}
 			language={bash}
 		/>
@@ -169,7 +161,7 @@ alias vim='lvim'
 		</p>
 		<p>
 			Updated:
-			<time dateTime="2022-08-10">18 Apr 2024</time>
+			<time dateTime="2025-10-09">09 Oct 2025</time>
 		</p>
 	</div>
 </div>
