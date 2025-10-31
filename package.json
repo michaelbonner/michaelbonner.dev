@@ -18,12 +18,12 @@
 		"test": "bun test:setup && bun test:e2e"
 	},
 	"devDependencies": {
-		"@eslint/compat": "^1.4.0",
+		"@eslint/compat": "^1.4.1",
 		"@eslint/js": "^9.38.0",
 		"@playwright/test": "^1.56.1",
-		"@sveltejs/adapter-vercel": "^6.1.0",
+		"@sveltejs/adapter-vercel": "^6.1.1",
 		"@sveltejs/enhanced-img": "^0.8.4",
-		"@sveltejs/kit": "^2.48.2",
+		"@sveltejs/kit": "^2.48.4",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@tailwindcss/postcss": "^4.1.16",
 		"@tailwindcss/typography": "^0.5.19",
@@ -32,14 +32,14 @@
 		"@typescript-eslint/parser": "^8.46.2",
 		"eslint": "^9.38.0",
 		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-svelte": "^3.12.5",
+		"eslint-plugin-svelte": "^3.13.0",
 		"globals": "^16.4.0",
 		"postcss": "^8.5.6",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"prettier-plugin-tailwindcss": "^0.7.1",
 		"sharp": "^0.34.4",
-		"svelte": "^5.43.0",
+		"svelte": "^5.43.2",
 		"svelte-check": "^4.3.3",
 		"svelte-highlight": "^7.9.0",
 		"svelte-preprocess": "^6.0.3",
@@ -55,7 +55,7 @@
 		"@qwik.dev/partytown": "^0.11.2",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.4",
-		"posthog-js": "^1.281.0",
+		"posthog-js": "^1.282.0",
 		"posthog-node": "^5.10.4"
 	}
 }
