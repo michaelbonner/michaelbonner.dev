@@ -19,7 +19,7 @@
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.4.1",
-		"@eslint/js": "^9.38.0",
+		"@eslint/js": "^9.39.0",
 		"@playwright/test": "^1.56.1",
 		"@sveltejs/adapter-vercel": "^6.1.1",
 		"@sveltejs/enhanced-img": "^0.8.4",
@@ -30,10 +30,10 @@
 		"@tailwindcss/vite": "^4.1.16",
 		"@typescript-eslint/eslint-plugin": "^8.46.2",
 		"@typescript-eslint/parser": "^8.46.2",
-		"eslint": "^9.38.0",
+		"eslint": "^9.39.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.13.0",
-		"globals": "^16.4.0",
+		"globals": "^16.5.0",
 		"postcss": "^8.5.6",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
@@ -55,7 +55,7 @@
 		"@qwik.dev/partytown": "^0.11.2",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.4",
-		"posthog-js": "^1.282.0",
-		"posthog-node": "^5.10.4"
+		"posthog-js": "^1.284.0",
+		"posthog-node": "^5.11.0"
 	}
 }
