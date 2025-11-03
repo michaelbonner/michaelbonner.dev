@@ -28,8 +28,8 @@
 		"@tailwindcss/postcss": "^4.1.16",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.1.16",
-		"@typescript-eslint/eslint-plugin": "^8.46.2",
-		"@typescript-eslint/parser": "^8.46.2",
+		"@typescript-eslint/eslint-plugin": "^8.46.3",
+		"@typescript-eslint/parser": "^8.46.3",
 		"eslint": "^9.39.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.13.0",
@@ -46,7 +46,7 @@
 		"tailwindcss": "^4.1.16",
 		"tslib": "^2.8.1",
 		"typescript": "^5.9.3",
-		"typescript-eslint": "^8.46.2",
+		"typescript-eslint": "^8.46.3",
 		"vite": "^7.1.12",
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
@@ -55,7 +55,7 @@
 		"@qwik.dev/partytown": "^0.11.2",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.4",
-		"posthog-js": "^1.284.0",
+		"posthog-js": "^1.285.0",
 		"posthog-node": "^5.11.0"
 	}
 }
