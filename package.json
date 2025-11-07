@@ -25,9 +25,9 @@
 		"@sveltejs/enhanced-img": "^0.8.4",
 		"@sveltejs/kit": "^2.48.4",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
-		"@tailwindcss/postcss": "^4.1.16",
+		"@tailwindcss/postcss": "^4.1.17",
 		"@tailwindcss/typography": "^0.5.19",
-		"@tailwindcss/vite": "^4.1.16",
+		"@tailwindcss/vite": "^4.1.17",
 		"@typescript-eslint/eslint-plugin": "^8.46.3",
 		"@typescript-eslint/parser": "^8.46.3",
 		"eslint": "^9.39.1",
@@ -38,16 +38,16 @@
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"prettier-plugin-tailwindcss": "^0.7.1",
-		"sharp": "^0.34.4",
-		"svelte": "^5.43.3",
+		"sharp": "^0.34.5",
+		"svelte": "^5.43.4",
 		"svelte-check": "^4.3.3",
 		"svelte-highlight": "^7.9.0",
 		"svelte-preprocess": "^6.0.3",
-		"tailwindcss": "^4.1.16",
+		"tailwindcss": "^4.1.17",
 		"tslib": "^2.8.1",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.46.3",
-		"vite": "^7.1.12",
+		"vite": "^7.2.1",
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
 	"type": "module",
@@ -55,7 +55,7 @@
 		"@qwik.dev/partytown": "^0.11.2",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.4",
-		"posthog-js": "^1.285.1",
-		"posthog-node": "^5.11.0"
+		"posthog-js": "^1.289.0",
+		"posthog-node": "^5.11.2"
 	}
 }
