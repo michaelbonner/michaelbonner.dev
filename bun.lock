@@ -7,8 +7,8 @@
         "@qwik.dev/partytown": "^0.11.2",
         "clsx": "^2.1.1",
         "photoswipe": "^5.4.4",
-        "posthog-js": "^1.291.0",
-        "posthog-node": "^5.11.2",
+        "posthog-js": "~1.291.0",
+        "posthog-node": "~5.11.2",
       },
       "devDependencies": {
         "@eslint/compat": "^1.4.1",
