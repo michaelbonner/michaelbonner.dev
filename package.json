@@ -18,7 +18,7 @@
 		"test": "bun test:setup && bun test:e2e"
 	},
 	"devDependencies": {
-		"@eslint/compat": "^1.4.1",
+		"@eslint/compat": "^2.0.0",
 		"@eslint/js": "^9.39.1",
 		"@playwright/test": "^1.56.1",
 		"@sveltejs/adapter-vercel": "^6.1.1",
@@ -55,7 +55,7 @@
 		"@qwik.dev/partytown": "^0.11.2",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.4",
-		"posthog-js": "~1.292.0",
-		"posthog-node": "~5.11.2"
+		"posthog-js": "^1.293.0",
+		"posthog-node": "^5.11.2"
 	}
 }
