@@ -27,9 +27,7 @@
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl leading-[1.3em] tracking-wider lg:pr-8">
-						Where I think new web software developers should start in 2022
-					</h1>
+					<h1>Where I think new web software developers should start in 2022</h1>
 				</div>
 			</div>
 			<div class="max-w-5xl text-lg lg:mt-24">

@@ -145,10 +145,8 @@
 </svelte:head>
 
 <div class="container mx-auto grid gap-8 px-8 py-12">
-	<div>
-		<h1 class="max-w-3xl text-4xl leading-relaxed tracking-wide lg:pr-8">
-			Software and other things I recommend.
-		</h1>
+	<div class="prose dark:prose-invert max-w-3xl">
+		<h1>Software and other things I recommend.</h1>
 		<p class="max-w-xl text-lg">
 			I sometimes get asked about the things I use to build software and stay productive. Here’s a
 			list of some of my favorite stuff.

@@ -5,7 +5,7 @@
 @theme {
 	--font-*: initial;
 	--font-sans: Graphik, sans-serif;
-	--font-serif: Newsreader, serif;
+	--font-serif: 'Newsreader Variable', serif;
 }
 
 /*
@@ -52,4 +52,8 @@
 	.mb-scrollable::-webkit-scrollbar-thumb:hover {
 		background: rgba(0, 0, 0, 0.6);
 	}
+}
+
+.prose h1 {
+	font-weight: 600;
 }

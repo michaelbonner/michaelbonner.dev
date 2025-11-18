@@ -26,10 +26,10 @@
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl leading-relaxed tracking-wide lg:pr-8">Set up some aliases</h1>
+					<h1>Set up some aliases</h1>
 				</div>
 			</div>
-			<div class="max-w-5xl text-lg lg:mt-32">
+			<div class="lg:mt-32">
 				<p>Bash aliases are amazing, just set them up.</p>
 				<h2>What are bash aliases?</h2>
 				<p>
