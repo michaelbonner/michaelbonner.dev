@@ -52,6 +52,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource-variable/newsreader": "^5.2.10",
 		"@qwik.dev/partytown": "^0.11.2",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.4",
