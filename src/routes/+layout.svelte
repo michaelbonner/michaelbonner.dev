@@ -10,6 +10,7 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { classNames } from '../functions/classNames';
 	import { classes } from '../styles/classes';
+	import { resolve } from '$app/paths';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
@@ -244,10 +245,10 @@
 	)}
 >
 	<header class="container mx-auto flex justify-between px-8 pt-12">
-		<a href="/" class={classNames('lg:text-3xl', classes.menuItem)}> Michael Bonner </a>
+		<a href={resolve('/')} class={classNames('lg:text-3xl', classes.menuItem)}> Michael Bonner </a>
 		<nav class="flex justify-end space-x-6 text-xl" aria-label="Main">
-			<a href="/" class={classes.menuItem}>Home</a>
-			<a href="/blog" class={classes.menuItem}>Blog</a>
+			<a href={resolve('/')} class={classes.menuItem}>Home</a>
+			<a href={resolve('/blog')} class={classes.menuItem}>Blog</a>
 		</nav>
 	</header>
 
@@ -258,10 +259,10 @@
 			class="flex justify-center space-x-6 pb-8 text-xl lg:justify-end lg:py-0"
 			aria-label="Footer"
 		>
-			<a href="/" class={classes.menuItem}>Home</a>
-			<a href="/blog" class={classes.menuItem}>Blog</a>
-			<a href="/uses" class={classes.menuItem}>Uses</a>
-			<a href="/policies" class={classes.menuItem}>Policies</a>
+			<a href={resolve('/')} class={classes.menuItem}>Home</a>
+			<a href={resolve('/blog')} class={classes.menuItem}>Blog</a>
+			<a href={resolve('/uses')} class={classes.menuItem}>Uses</a>
+			<a href={resolve('/policies')} class={classes.menuItem}>Policies</a>
 		</nav>
 		<p class="flex flex-wrap items-end justify-center gap-x-4 gap-y-6 md:gap-y-2 lg:justify-start">
 			<span class="text-center">

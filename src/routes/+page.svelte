@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { blogArticles } from '$lib/data/blogArticles';
 	import clsx from 'clsx';
-	import A from '../components/A.svelte';
 	import H2 from '../components/H2.svelte';
 	import Seo from '../components/Seo.svelte';
 	import { classNames } from '../functions/classNames';
@@ -17,6 +16,7 @@
 	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced';
 	import daysUntil from '$lib/images/projects/days-until.jpg?enhanced';
 	import dkow from '$lib/images/projects/dkow.jpg?enhanced';
+	import energySafeKids from '$lib/images/projects/energy-safe-kids.jpg?enhanced';
 	import githubRepositoriesViewer from '$lib/images/projects/github-repositories-viewer.jpg?enhanced';
 	import hereKidsWin from '$lib/images/projects/here-kids-win.jpg?enhanced';
 	import jMillsEnt from '$lib/images/projects/jmillsent.jpg?enhanced';
@@ -36,7 +36,6 @@
 	import blackThornSoftware from '$lib/images/sites/blackthornsoftware-com.png?enhanced';
 	import cosgriffSchool from '$lib/images/sites/cosgriff-org.png?enhanced';
 	import denverWindowWellCovers from '$lib/images/sites/denverwindowwellcovers-com.png?enhanced';
-	import energySafeKids from '$lib/images/projects/energy-safe-kids.jpg?enhanced';
 	import energySafeLeaders from '$lib/images/sites/energysafeleaders-org.png?enhanced';
 	import waterColoringGame from '$lib/images/sites/games-nef1-org.png?enhanced';
 	import hanksGarageVenue from '$lib/images/sites/hanksgaragevenue-com.png?enhanced';
@@ -48,7 +47,6 @@
 	import metacensus from '$lib/images/sites/metacensus-org.png?enhanced';
 	import mp4Compressor from '$lib/images/sites/mp4-compressor-bootpack-dev.png?enhanced';
 	import nef1Org from '$lib/images/sites/nef1-org.png?enhanced';
-	import pasNef1Org from '$lib/images/sites/pas-nef1-org.png?enhanced';
 	import pizzaSizePriceCalculator from '$lib/images/sites/pizza-michaelbonner-dev.png?enhanced';
 	import ravensFilmWorks from '$lib/images/sites/ravensfilmworks-com.png?enhanced';
 	import redirectsWizard from '$lib/images/sites/redirects-bootpack-dev.png?enhanced';
