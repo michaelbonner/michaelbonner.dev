@@ -501,7 +501,7 @@
 		<div class="grid gap-2 lg:grid-cols-2">
 			<figure>
 				<video
-					class="aspect-[16/9] w-full rounded-lg p-0"
+					class="aspect-video w-full rounded-lg p-0"
 					controls
 					controlsList="nodownload"
 					playsinline
@@ -530,7 +530,7 @@
 
 			<figure>
 				<video
-					class="aspect-[16/9] w-full rounded-lg p-0"
+					class="aspect-video w-full rounded-lg p-0"
 					controls
 					controlsList="nodownload"
 					playsinline
@@ -700,16 +700,16 @@
 			/>
 		</figure>
 
-		<div class="mt-8 aspect-[16/9] w-full rounded-xl border-8 border-gray-300 dark:border-gray-700">
+		<div class="mt-8 aspect-video w-full rounded-xl border-8 border-gray-300 dark:border-gray-700">
 			<iframe
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen
-				class="rounded-sm"
+				class="rounded-sm bg-gray-500"
 				frameborder="0"
 				height="100%"
 				loading="lazy"
 				referrerpolicy="strict-origin-when-cross-origin"
-				src="https://www.youtube.com/embed/gSug-g52Xmg?si=eTAK-xEgwIErTJ9s"
+				src="https://www.youtube.com/embed/H-swqFUvZD0?si=EQ27ZjcfnhNoDnnJ"
 				title="YouTube video player"
 				width="100%"
 			></iframe>
