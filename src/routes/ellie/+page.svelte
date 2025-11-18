@@ -412,7 +412,7 @@
 		<figure>
 			<enhanced:img
 				alt="Ellie"
-				class="aspect-[600/800] w-full rounded-xl shadow-lg lg:max-w-[600px]"
+				class="aspect-6/8 w-full rounded-xl shadow-lg lg:max-w-[600px]"
 				fetchpriority="high"
 				sizes="min(600px, 100vw)"
 				src={ellieMain}

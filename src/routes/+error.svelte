@@ -4,8 +4,8 @@
 </script>
 
 <div class="container mx-auto flex justify-between px-8 py-16">
-	<div class="grid gap-4">
-		<h1 class="text-3xl">{page.error?.message}</h1>
+	<div class="prose dark:prose-invert grid gap-4">
+		<h1>{page.error?.message}</h1>
 		<p>
 			Looks like you've hit a dead end. <a class="underline underline-offset-4" href={resolve('/')}
 				>Go back home</a

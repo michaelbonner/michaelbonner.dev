@@ -23,7 +23,7 @@
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl leading-[1.3em] tracking-wider lg:pr-8">
+					<h1>
 						I made a little app to help me keep track of who has access to what GitHub repository
 					</h1>
 				</div>

@@ -23,7 +23,7 @@
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1 class="text-4xl leading-[1.3em] tracking-wider lg:pr-8">Screenshot Maker</h1>
+					<h1>Screenshot Maker</h1>
 				</div>
 			</div>
 			<div class="prose-img:my-0 prose-figcaption:text-center max-w-5xl text-lg lg:mt-24">
