@@ -31,26 +31,26 @@
 	import screenshotMaker from '$lib/images/projects/screenshot-maker.jpg?enhanced';
 	import utahMountainAdventures from '$lib/images/projects/utah-mountain-adventures.jpg?enhanced';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced';
-	import acceleratedEquityPlans from '$lib/images/sites/acceleratedep-com.png?enhanced';
-	import artistAmyBonner from '$lib/images/sites/amy-bonner-com.png?enhanced';
-	import blackThornSoftware from '$lib/images/sites/blackthornsoftware-com.png?enhanced';
-	import cosgriffSchool from '$lib/images/sites/cosgriff-org.png?enhanced';
-	import denverWindowWellCovers from '$lib/images/sites/denverwindowwellcovers-com.png?enhanced';
-	import energySafeLeaders from '$lib/images/sites/energysafeleaders-org.png?enhanced';
-	import waterColoringGame from '$lib/images/sites/games-nef1-org.png?enhanced';
-	import hanksGarageVenue from '$lib/images/sites/hanksgaragevenue-com.png?enhanced';
-	import heritageOfPreston from '$lib/images/sites/heritageofpreston-com.png?enhanced';
-	import heritageOfSoda from '$lib/images/sites/heritageofsoda-com.png?enhanced';
-	import jeremyMillerDirector from '$lib/images/sites/jeremymillerdirector-com.png?enhanced';
-	import knowYourForce from '$lib/images/sites/knowyourforce-com.png?enhanced';
-	import lifeOrDeathDocumentary from '$lib/images/sites/lifeordeathdoc-com.png?enhanced';
-	import metacensus from '$lib/images/sites/metacensus-org.png?enhanced';
-	import mp4Compressor from '$lib/images/sites/mp4-compressor-bootpack-dev.png?enhanced';
-	import nef1Org from '$lib/images/sites/nef1-org.png?enhanced';
-	import pizzaSizePriceCalculator from '$lib/images/sites/pizza-michaelbonner-dev.png?enhanced';
-	import ravensFilmWorks from '$lib/images/sites/ravensfilmworks-com.png?enhanced';
-	import redirectsWizard from '$lib/images/sites/redirects-bootpack-dev.png?enhanced';
-	import swiftManager from '$lib/images/sites/swift-manager-com.png?enhanced';
+	import acceleratedEquityPlans from '$lib/images/sites/acceleratedep-com.webp?enhanced';
+	import artistAmyBonner from '$lib/images/sites/amy-bonner-com.webp?enhanced';
+	import blackThornSoftware from '$lib/images/sites/blackthornsoftware-com.webp?enhanced';
+	import cosgriffSchool from '$lib/images/sites/cosgriff-org.webp?enhanced';
+	import denverWindowWellCovers from '$lib/images/sites/denverwindowwellcovers-com.webp?enhanced';
+	import energySafeLeaders from '$lib/images/sites/energysafeleaders-org.webp?enhanced';
+	import waterColoringGame from '$lib/images/sites/games-nef1-org.webp?enhanced';
+	import hanksGarageVenue from '$lib/images/sites/hanksgaragevenue-com.webp?enhanced';
+	import heritageOfPreston from '$lib/images/sites/heritageofpreston-com.webp?enhanced';
+	import heritageOfSoda from '$lib/images/sites/heritageofsoda-com.webp?enhanced';
+	import jeremyMillerDirector from '$lib/images/sites/jeremymillerdirector-com.webp?enhanced';
+	import knowYourForce from '$lib/images/sites/knowyourforce-com.webp?enhanced';
+	import lifeOrDeathDocumentary from '$lib/images/sites/lifeordeathdoc-com.webp?enhanced';
+	import metacensus from '$lib/images/sites/metacensus-org.webp?enhanced';
+	import mp4Compressor from '$lib/images/sites/mp4-compressor-bootpack-dev.webp?enhanced';
+	import nef1Org from '$lib/images/sites/nef1-org.webp?enhanced';
+	import pizzaSizePriceCalculator from '$lib/images/sites/pizza-michaelbonner-dev.webp?enhanced';
+	import ravensFilmWorks from '$lib/images/sites/ravensfilmworks-com.webp?enhanced';
+	import redirectsWizard from '$lib/images/sites/redirects-bootpack-dev.webp?enhanced';
+	import swiftManager from '$lib/images/sites/swift-manager-com.webp?enhanced';
 
 	const projects = [
 		{
