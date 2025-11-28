@@ -1,7 +1,7 @@
 <script>
-	import afterExtension from '$lib/images/after-extension.png?enhanced';
-	import availableInTheChromeWebStore from '$lib/images/available-in-the-chrome-web-store.png?enhanced';
-	import beforeExtension from '$lib/images/before-extension.png?enhanced';
+	import afterExtension from '$lib/images/after-extension.webp?enhanced';
+	import availableInTheChromeWebStore from '$lib/images/available-in-the-chrome-web-store.webp?enhanced';
+	import beforeExtension from '$lib/images/before-extension.webp?enhanced';
 	import chromeBasecampExtension from '$lib/images/chrome-basecamp-ui-extension.jpg?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';

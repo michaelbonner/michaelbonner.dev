@@ -1,6 +1,6 @@
 <script>
-	import michaelbonnerDevGithubScreenshot from '$lib/images/michaelbonner-dev-github-screenshot.png?enhanced';
-	import tuffWebsiteScreenshot from '$lib/images/tuff-website-screenshot.png?enhanced';
+	import michaelbonnerDevGithubScreenshot from '$lib/images/michaelbonner-dev-github-screenshot.webp?enhanced';
+	import tuffWebsiteScreenshot from '$lib/images/tuff-website-screenshot.webp?enhanced';
 	import Seo from '../../../components/Seo.svelte';
 	import { classes } from '../../../styles/classes';
 </script>
