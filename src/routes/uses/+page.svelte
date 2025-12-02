@@ -82,7 +82,7 @@
 			description: 'A great browser for Mac'
 		},
 		{
-			href: 'https://www.raycast.com/hey/1fec4edf',
+			href: 'https://raycast.com/?via=michael-bonner',
 			title: 'Raycast',
 			description:
 				'Spotlight replacement for Mac with window management, clipboard history, and more',
