@@ -6,7 +6,7 @@ on:
     branches: [master]
 jobs:
   test:
-    timeout-minutes: 60
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,6 +21,7 @@ jobs:
           echo "PUBLIC_POSTHOG_API_KEY=null" >> $GITHUB_ENV
       - name: Run Playwright tests
         run: bunx playwright test
+        timeout-minutes: 10
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
