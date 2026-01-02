@@ -56,7 +56,7 @@
 		"@qwik.dev/partytown": "^0.11.2",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.4",
-		"posthog-js": "^1.311.0",
+		"posthog-js": "^1.313.0",
 		"posthog-node": "^5.18.1"
 	}
 }
