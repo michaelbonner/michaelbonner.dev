@@ -51,6 +51,7 @@
 	import ravensFilmWorks from '$lib/images/sites/ravensfilmworks-com.webp?enhanced';
 	import redirectsWizard from '$lib/images/sites/redirects-bootpack-dev.webp?enhanced';
 	import swiftManager from '$lib/images/sites/swift-manager-com.webp?enhanced';
+	import eightOneOneContest from '$lib/images/sites/811contest-org.webp?enhanced';
 
 	const projects = [
 		{
@@ -337,6 +338,12 @@
 			url: 'https://mp4-compressor.bootpack.dev',
 			host: 'mp4-compressor.bootpack.dev',
 			imgSrc: mp4Compressor
+		},
+		{
+			name: '811 Contest',
+			url: 'https://811contest.org',
+			host: '811contest.org',
+			imgSrc: eightOneOneContest
 		}
 	].sort((a, b) => a.name.localeCompare(b.name));
 
