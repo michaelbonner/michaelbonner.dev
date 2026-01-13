@@ -421,9 +421,9 @@
 							put it up here
 						</a>
 						. Epic, right? I don&apos;t miss the days of GeoCities. From there I made websites for people
-						I knew, then people they knew, and so on. Making websites was definitely my thing. Since
-						then I have worked at a handful of places making websites, web apps, and mobile apps. I was
-						also a director at a digital agency for several years, and taught a boot camp for the University
+						I knew, then people they knew, and so on. Making websites was definitely my thing. Since then
+						I have worked at a handful of places making websites, web apps, and mobile apps. I was also
+						a director at a digital agency for several years, and taught a boot camp for the University
 						of Utah. I love what I do, and I&apos;m always down to chat about it.
 					</p>
 					<p class="mt-4">
