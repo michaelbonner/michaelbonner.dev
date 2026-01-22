@@ -2,9 +2,9 @@
 	import { blogArticles } from '$lib/data/blogArticles';
 	import clsx from 'clsx';
 	import H2 from '../components/H2.svelte';
-	import Seo from '../components/Seo.svelte';
 	import OrganizationSchema from '../components/OrganizationSchema.svelte';
 	import PersonSchema from '../components/PersonSchema.svelte';
+	import Seo from '../components/Seo.svelte';
 	import { classNames } from '../functions/classNames';
 	import Github from '../icons/Github.svelte';
 	import Instagram from '../icons/Instagram.svelte';
@@ -33,6 +33,7 @@
 	import screenshotMaker from '$lib/images/projects/screenshot-maker.jpg?enhanced';
 	import utahMountainAdventures from '$lib/images/projects/utah-mountain-adventures.jpg?enhanced';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced';
+	import eightOneOneContest from '$lib/images/sites/811contest-org.webp?enhanced';
 	import acceleratedEquityPlans from '$lib/images/sites/acceleratedep-com.webp?enhanced';
 	import artistAmyBonner from '$lib/images/sites/amy-bonner-com.webp?enhanced';
 	import blackThornSoftware from '$lib/images/sites/blackthornsoftware-com.webp?enhanced';
@@ -53,7 +54,6 @@
 	import ravensFilmWorks from '$lib/images/sites/ravensfilmworks-com.webp?enhanced';
 	import redirectsWizard from '$lib/images/sites/redirects-bootpack-dev.webp?enhanced';
 	import swiftManager from '$lib/images/sites/swift-manager-com.webp?enhanced';
-	import eightOneOneContest from '$lib/images/sites/811contest-org.webp?enhanced';
 
 	type Project = {
 		title: string;
@@ -389,10 +389,7 @@
 	description="Hi, I'm Michael Bonner. I'm a web developer in Salt Lake UT that specializes in business efficiency applications, APIs, and integrations."
 />
 
-<OrganizationSchema
-	name="Bootpack Digital"
-	url="https://bootpackdigital.com"
-/>
+<OrganizationSchema name="Bootpack Digital" url="https://bootpackdigital.com" />
 
 <PersonSchema
 	name="Michael Bonner"
@@ -468,7 +465,7 @@
 		</div>
 
 		<div class="max-w-7xl lg:mt-32">
-			<H2>Projects I&apos;m proud of</H2>
+			<H2 id="projects">Projects I&apos;m proud of</H2>
 			<ul class="mt-8 grid gap-x-24 gap-y-12 text-lg lg:mt-16 lg:grid-cols-2 lg:gap-y-24">
 				{#each projects as project, projectIndex (project.title)}
 					<li class="mt-8 grid gap-y-4 lg:mt-0 lg:ml-8">

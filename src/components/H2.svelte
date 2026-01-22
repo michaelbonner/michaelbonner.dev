@@ -2,12 +2,13 @@
 	/**
 	 * @typedef {Object} Props
 	 * @property {import('svelte').Snippet} [children]
+	 * @property {string} [id]
 	 */
 
 	/** @type {Props} */
-	let { children } = $props();
+	let { children, id = undefined } = $props();
 </script>
 
-<h2 class="mt-16 text-3xl dark:text-gray-50">
+<h2 {id} class="pt-16 text-3xl dark:text-gray-50">
 	{@render children?.()}
 </h2>
