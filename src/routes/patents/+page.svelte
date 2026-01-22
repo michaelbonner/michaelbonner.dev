@@ -34,7 +34,8 @@
 			title: 'Linking data entries in database systems',
 			patentNumber: 'US 12,530,642',
 			inventors: ['Russell E. Fowles', 'Chase Kitteridge', 'Michael Bonner'],
-			filingDate: 'December 16, 202',
+			filingDate: 'December 16, 2022',
+			issueDate: 'January 20, 2026',
 			assignee: 'Blackthorn IP, LLC',
 			description:
 				'Systems, methods, and devices for data ingestion, database management, and data security. A method includes storing a plurality o f data entries i n a project bucket o n a database, wherein the plurality of data entries represents information applicable t o a plurality of data units associated with a project. The method includes organizing at least a portion of the plurality o f data units according to a polymorphous data schema. The method includes linking two or more data units of the plurality o f data units t o generate a project linkage. The method further includes restricting a user from removing only a portion of the project linkage from the project without first manually breaking the project linkage.',
