@@ -4,7 +4,10 @@
 	import { classes } from '../../styles/classes';
 </script>
 
-<Seo description="Just writing down some things" title="Developer Blog | Michael Bonner" />
+<Seo
+	description="A web developer's blog from Salt Lake City, UT. Thoughts on development, technology, and random things worth writing about."
+	title="Developer Blog | Michael Bonner"
+/>
 
 <svelte:head>
 	<link rel="canonical" href="https://michaelbonner.dev/blog" />
