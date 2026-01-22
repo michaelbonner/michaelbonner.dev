@@ -55,7 +55,16 @@
 	import swiftManager from '$lib/images/sites/swift-manager-com.webp?enhanced';
 	import eightOneOneContest from '$lib/images/sites/811contest-org.webp?enhanced';
 
-	const projects = [
+	type Project = {
+		title: string;
+		description: string;
+		url: string;
+		image: any;
+		github?: string;
+		blogPost?: string;
+	};
+
+	const projects: Project[] = [
 		{
 			title: "Primary Children's Hospital: Here Kids Win",
 			description:
@@ -115,7 +124,7 @@
 			image: nefPas
 		}
 	];
-	const otherThings = [
+	const otherThings: Project[] = [
 		{
 			title: 'Lazy Uncle',
 			description:
