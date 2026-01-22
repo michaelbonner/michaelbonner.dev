@@ -2,6 +2,7 @@
 	import Link from '../../icons/Link.svelte';
 	import A from '../../components/A.svelte';
 	import Seo from '../../components/Seo.svelte';
+	import { classes } from '../../styles/classes';
 
 	type Patent = {
 		title: string;
@@ -97,15 +98,17 @@
 <div class="container mx-auto grid gap-8 px-8 py-12">
 	<div class="prose dark:prose-invert max-w-3xl">
 		<h1>Patents</h1>
-		<p class="max-w-xl text-lg">
+		<p class="text-lg">
 			I'm lucky enough to have my name listed on a few patents and patent applications for work I
-			did with <A href="https://www.blackthornsoftware.com">Blackthorn Software</A>. Here is a list
-			of them.
-		</p>
-		<p class="max-w-xl text-lg">
-			These patents are related to the construction project management platform
-			<A href="https://www.crewview.com">CrewView</A>, which I helped build. You can
-			<A href="/#projects">view more of my projects on the homepage</A>.
+			did with <a
+				class={classes.bodyLink}
+				target="_blank"
+				rel="noreferrer"
+				href="https://www.blackthornsoftware.com">Blackthorn Software</a
+			>. These patents are related to the construction project management platform
+			<a target="_blank" rel="noreferrer" href="https://www.crewview.com">CrewView</a>, which I
+			helped build. You can
+			<a class={classes.bodyLink} href="/#projects">view more of my projects on the homepage</a>.
 		</p>
 	</div>
 
