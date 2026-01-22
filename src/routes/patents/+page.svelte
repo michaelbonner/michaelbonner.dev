@@ -99,7 +99,13 @@
 		<h1>Patents</h1>
 		<p class="max-w-xl text-lg">
 			I'm lucky enough to have my name listed on a few patents and patent applications for work I
-			did with Blackthorn Software. Here is a list of them.
+			did with <A href="https://www.blackthornsoftware.com">Blackthorn Software</A>. Here is a list
+			of them.
+		</p>
+		<p class="max-w-xl text-lg">
+			These patents are related to the construction project management platform
+			<A href="https://www.crewview.com">CrewView</A>, which I helped build. You can
+			<A href="/#projects">view more of my projects on the homepage</A>.
 		</p>
 	</div>
 

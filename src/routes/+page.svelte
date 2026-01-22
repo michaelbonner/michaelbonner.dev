@@ -130,6 +130,7 @@
 				'I needed a way to make screenshots of projects. This is a simple tool that allows you to do just that.',
 			url: 'https://screenshot-maker.bootpack.dev/',
 			github: 'https://github.com/michaelbonner/screenshot-maker',
+			blogPost: '/blog/screenshot-maker',
 			image: screenshotMaker
 		},
 		{
@@ -154,6 +155,7 @@
 				"GitHub (on purpose) doesn't make it very easy for individuals to see a list of all your repos and who has access to them. This little app helps you see that.",
 			url: 'https://github-repositories-viewer.bootpack.dev/',
 			github: 'https://github.com/michaelbonner/github-repositories-viewer',
+			blogPost: '/blog/github-repositories-viewer-app',
 			image: githubRepositoriesViewer
 		},
 		{
@@ -162,6 +164,7 @@
 				'I wanted an easy way to test the performance of some of the sites I have built. This is a tool to help me see those results all on one page.',
 			url: 'https://pagespeed.bootpack.dev/',
 			github: 'https://github.com/michaelbonner/pagespeed',
+			blogPost: '/blog/pagespeed-testing',
 			image: pagespeed
 		},
 		{
@@ -496,6 +499,27 @@
 									</a>
 								</p>
 							{/if}
+							{#if project.blogPost}
+								<p>
+									<a class={classes.largeBodyLink} href={project.blogPost}>
+										<svg
+											class="inline-block size-5"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="2"
+												d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+											/>
+										</svg>
+										<span>Read More</span>
+									</a>
+								</p>
+							{/if}
 						</div>
 					</li>
 				{/each}
@@ -541,6 +565,27 @@
 									<a class={classes.largeBodyLink} href={project.github}>
 										<Github className="text-xl" />
 										<span>Source</span>
+									</a>
+								</p>
+							{/if}
+							{#if project.blogPost}
+								<p>
+									<a class={classes.largeBodyLink} href={project.blogPost}>
+										<svg
+											class="inline-block size-5"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="2"
+												d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+											/>
+										</svg>
+										<span>Read More</span>
 									</a>
 								</p>
 							{/if}

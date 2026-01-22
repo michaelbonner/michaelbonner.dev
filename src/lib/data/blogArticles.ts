@@ -13,7 +13,9 @@ export const blogArticles = [
 		teaser: 'A tool to make screenshots of websites. Dang simple and serverless ready',
 		publishedAt: new Date('2025-05-14T16:46:00.845Z'),
 		readingTime: '2 minute read',
-		image: screenshotMaker
+		image: screenshotMaker,
+		tags: ['tools', 'projects', 'serverless'],
+		relatedSlugs: ['pagespeed-testing']
 	},
 	{
 		title: 'PageSpeed Testing is important. You should take it seriously.',
@@ -21,7 +23,9 @@ export const blogArticles = [
 		teaser: 'I made a little tool to test the performance of pages on a site on one page',
 		publishedAt: new Date('2025-04-09T16:00:00.000Z'),
 		readingTime: '2 minute read',
-		image: pagespeed
+		image: pagespeed,
+		tags: ['tools', 'projects', 'performance'],
+		relatedSlugs: ['screenshot-maker']
 	},
 	{
 		title: 'GitHub Repository Collaborators Viewer',
@@ -30,7 +34,9 @@ export const blogArticles = [
 		teaser: 'A simple app to view GitHub repository collaborators across all your repositories',
 		publishedAt: new Date('2023-09-14T16:00:00.000Z'),
 		readingTime: '2 minute read',
-		image: githubRepositoriesViewer
+		image: githubRepositoriesViewer,
+		tags: ['tools', 'projects', 'github'],
+		relatedSlugs: ['git-branch-name-raycast-extension']
 	},
 	{
 		title: 'Git Branch Name Generator Raycast Extension',
@@ -39,7 +45,9 @@ export const blogArticles = [
 		teaser: 'Check out the new Git Branch Name Raycast Extension I made',
 		publishedAt: new Date('2023-01-17T12:58:46.469Z'),
 		readingTime: '2 minute read',
-		image: gitBranchNameGenerator3
+		image: gitBranchNameGenerator3,
+		tags: ['tools', 'extensions', 'git'],
+		relatedSlugs: ['github-repositories-viewer-app', 'set-up-some-aliases']
 	},
 	{
 		title: 'I made my first Chrome extension',
@@ -47,7 +55,9 @@ export const blogArticles = [
 		teaser: 'A Chrome extension to make Basecamp a little more usable',
 		publishedAt: new Date('2022-05-01T12:00:00.000Z'),
 		readingTime: '2 minute read',
-		image: chromeBasecampUiExtension
+		image: chromeBasecampUiExtension,
+		tags: ['extensions', 'chrome', 'projects'],
+		relatedSlugs: ['git-branch-name-raycast-extension']
 	},
 	{
 		title: 'Where I think new web software developers should start in 2022',
@@ -55,7 +65,9 @@ export const blogArticles = [
 		teaser: 'A (hopefully) helpful guide for getting started as a web software developer',
 		publishedAt: new Date('2022-03-09T12:00:00.000Z'),
 		readingTime: '15 minute read',
-		image: tuffWebsiteScreenshotTrimmed600
+		image: tuffWebsiteScreenshotTrimmed600,
+		tags: ['career', 'learning', 'beginners'],
+		relatedSlugs: ['set-up-some-aliases']
 	},
 	{
 		title: 'Set up some aliases',
@@ -63,6 +75,8 @@ export const blogArticles = [
 		teaser: 'Just use them, they will change your life',
 		publishedAt: new Date('2021-07-15T12:00:00.000Z'),
 		readingTime: '5 minute read',
-		image: itermAliasesTrimmed600
+		image: itermAliasesTrimmed600,
+		tags: ['productivity', 'tools', 'terminal'],
+		relatedSlugs: ['git-branch-name-raycast-extension', 'getting-started-as-a-web-developer-in-2022']
 	}
 ];
