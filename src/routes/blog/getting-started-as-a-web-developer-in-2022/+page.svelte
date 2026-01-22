@@ -14,7 +14,7 @@
 />
 
 <BlogPostSchema
-	title="Where I think new web software developers should start in 2022"
+	title="Getting Started as a Web Developer in 2022"
 	description="Are you thinking about becoming a web developer? Where should you start? Here's my two cents as a full time web developer with almost 20 years of experience."
 	url="https://michaelbonner.dev/blog/getting-started-as-a-web-developer-in-2022"
 	datePublished="2022-03-08T20:58:46.469Z"
@@ -37,7 +37,7 @@
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1>Where I think new web software developers should start in 2022</h1>
+					<h1>Getting Started as a Web Developer in 2022</h1>
 				</div>
 			</div>
 			<div class="max-w-5xl text-lg lg:mt-24">

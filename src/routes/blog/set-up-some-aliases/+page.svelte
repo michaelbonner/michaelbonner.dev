@@ -16,7 +16,7 @@
 />
 
 <BlogPostSchema
-	title="Set up some aliases"
+	title="Set Up Bash Aliases to Speed Up Development"
 	description="Aliases can speed up your development and help you focus on code"
 	url="https://michaelbonner.dev/blog/set-up-some-aliases"
 	datePublished="2021-07-15T22:00:00.000Z"
@@ -36,7 +36,7 @@
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1>Set up some aliases</h1>
+					<h1>Set Up Bash Aliases to Speed Up Development</h1>
 				</div>
 			</div>
 			<div class="lg:mt-32">
