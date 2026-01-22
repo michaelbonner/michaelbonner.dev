@@ -5,6 +5,7 @@
 	import chromeBasecampExtension from '$lib/images/chrome-basecamp-ui-extension.jpg?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
+	import BlogPostSchema from '../../../components/BlogPostSchema.svelte';
 </script>
 
 <Seo
@@ -12,6 +13,15 @@
 	ogImage={chromeBasecampExtension.img.src}
 	ogType="article"
 	title="I made my first Chrome extension | Michael Bonner"
+/>
+
+<BlogPostSchema
+	title="I made my first Chrome extension"
+	description="Really simple one, and it was really easy to make"
+	url="https://michaelbonner.dev/blog/i-made-an-extension"
+	datePublished="2022-05-01T12:58:46.469Z"
+	dateModified="2025-12-03T10:24:21.000Z"
+	image={chromeBasecampExtension.img.src}
 />
 
 <svelte:head>

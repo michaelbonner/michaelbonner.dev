@@ -2,6 +2,7 @@
 	import pagespeed from '$lib/images/projects/pagespeed.jpg?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
+	import BlogPostSchema from '../../../components/BlogPostSchema.svelte';
 </script>
 
 <Seo
@@ -9,6 +10,15 @@
 	ogImage={pagespeed.img.src}
 	ogType="article"
 	title="PageSpeed Testing | Michael Bonner"
+/>
+
+<BlogPostSchema
+	title="PageSpeed Testing is important. You should take it seriously."
+	description="I made a little tool to test the performance of pages on a site on one page"
+	url="https://michaelbonner.dev/blog/pagespeed-testing"
+	datePublished="2025-04-09T16:00:00.000Z"
+	dateModified="2025-12-03T10:21:51.000Z"
+	image={pagespeed.img.src}
 />
 
 <svelte:head>

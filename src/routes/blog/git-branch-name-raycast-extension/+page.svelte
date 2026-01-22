@@ -4,6 +4,7 @@
 	import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
+	import BlogPostSchema from '../../../components/BlogPostSchema.svelte';
 </script>
 
 <Seo
@@ -11,6 +12,15 @@
 	ogImage={gitBranchNameGenerator3.img.src}
 	ogType="article"
 	title="Git Branch Name Raycast Extension | Michael Bonner"
+/>
+
+<BlogPostSchema
+	title="Check out the new Git Branch Name Raycast Extension I made"
+	description="Check out the new Git Branch Name Raycast Extension I made"
+	url="https://michaelbonner.dev/blog/git-branch-name-raycast-extension"
+	datePublished="2023-01-17T12:58:46.469Z"
+	dateModified="2025-12-03T10:21:51.000Z"
+	image={gitBranchNameGenerator3.img.src}
 />
 
 <svelte:head>

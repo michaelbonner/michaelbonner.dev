@@ -2,6 +2,7 @@
 	import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
+	import BlogPostSchema from '../../../components/BlogPostSchema.svelte';
 </script>
 
 <Seo
@@ -9,6 +10,15 @@
 	ogImage={githubRepositoriesViewer.img.src}
 	ogType="article"
 	title="GitHub Repository Collaborators Viewer | Michael Bonner"
+/>
+
+<BlogPostSchema
+	title="I made a little app to help me keep track of who has access to what GitHub repository"
+	description="I made a little app to help me keep track of who has access to what GitHub repository"
+	url="https://michaelbonner.dev/blog/github-repositories-viewer-app"
+	datePublished="2023-09-14T22:58:46.469Z"
+	dateModified="2025-12-03T10:21:51.000Z"
+	image={githubRepositoriesViewer.img.src}
 />
 
 <svelte:head>

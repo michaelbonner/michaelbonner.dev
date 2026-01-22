@@ -3,6 +3,8 @@
 	import clsx from 'clsx';
 	import H2 from '../components/H2.svelte';
 	import Seo from '../components/Seo.svelte';
+	import OrganizationSchema from '../components/OrganizationSchema.svelte';
+	import PersonSchema from '../components/PersonSchema.svelte';
 	import { classNames } from '../functions/classNames';
 	import Github from '../icons/Github.svelte';
 	import Instagram from '../icons/Instagram.svelte';
@@ -373,6 +375,23 @@
 <Seo
 	title="Michael Bonner | Developer in Salt Lake, UT"
 	description="Hi, I'm Michael Bonner. I'm a web developer in Salt Lake UT that specializes in business efficiency applications, APIs, and integrations."
+/>
+
+<OrganizationSchema
+	name="Bootpack Digital"
+	url="https://bootpackdigital.com"
+/>
+
+<PersonSchema
+	name="Michael Bonner"
+	url="https://michaelbonner.dev"
+	jobTitle="Web Developer"
+	description="Web developer in Salt Lake City, Utah that specializes in business efficiency applications, APIs, and integrations."
+	sameAs={[
+		'https://github.com/michaelbonner',
+		'https://www.linkedin.com/in/michaelbonner/',
+		'https://www.instagram.com/michael__bonner'
+	]}
 />
 
 <svelte:head>
