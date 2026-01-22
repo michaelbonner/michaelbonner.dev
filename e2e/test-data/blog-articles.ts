@@ -8,27 +8,27 @@ export const blogArticlesTestData = [
 		slug: 'screenshot-maker'
 	},
 	{
-		title: 'PageSpeed Testing is important. You should take it seriously.',
+		title: 'PageSpeed Testing Tool for Developers',
 		slug: 'pagespeed-testing'
 	},
 	{
-		title: 'I made a little app to help me keep track of who has access to what GitHub repository',
+		title: 'GitHub Repository Collaborators Viewer',
 		slug: 'github-repositories-viewer-app'
 	},
 	{
-		title: 'Check out the new Git Branch Name Raycast Extension I made',
+		title: 'Git Branch Name Generator: Raycast Extension',
 		slug: 'git-branch-name-raycast-extension'
 	},
 	{
-		title: 'I made my first Chrome extension',
+		title: 'Building a Chrome Extension: Basecamp UI Tweaks',
 		slug: 'i-made-an-extension'
 	},
 	{
-		title: 'Where I think new web software developers should start in 2022',
+		title: 'Getting Started as a Web Developer in 2022',
 		slug: 'getting-started-as-a-web-developer-in-2022'
 	},
 	{
-		title: 'Set up some aliases',
+		title: 'Set Up Bash Aliases to Speed Up Development',
 		slug: 'set-up-some-aliases'
 	}
 ];
