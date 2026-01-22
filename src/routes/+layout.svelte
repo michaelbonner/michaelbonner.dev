@@ -256,6 +256,7 @@
 			<a href={resolve('/')} class={classes.menuItem}>Home</a>
 			<a href={resolve('/blog')} class={classes.menuItem}>Blog</a>
 			<a href={resolve('/uses')} class={classes.menuItem}>Uses</a>
+			<a href={resolve('/patents')} class={classes.menuItem}>Patents</a>
 			<a href={resolve('/policies')} class={classes.menuItem}>Policies</a>
 		</nav>
 		<p class="flex flex-wrap items-end justify-center gap-x-4 gap-y-6 md:gap-y-2 lg:justify-start">
