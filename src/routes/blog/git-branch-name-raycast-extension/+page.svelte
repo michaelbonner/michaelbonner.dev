@@ -15,7 +15,7 @@
 />
 
 <BlogPostSchema
-	title="Check out the new Git Branch Name Raycast Extension I made"
+	title="Git Branch Name Generator: Raycast Extension"
 	description="Check out the new Git Branch Name Raycast Extension I made"
 	url="https://michaelbonner.dev/blog/git-branch-name-raycast-extension"
 	datePublished="2023-01-17T12:58:46.469Z"
@@ -35,7 +35,7 @@
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1>Check out the new Git Branch Name Raycast Extension I made</h1>
+					<h1>Git Branch Name Generator: Raycast Extension</h1>
 				</div>
 			</div>
 			<div class="prose-img:my-0 prose-figcaption:text-center max-w-5xl text-lg lg:mt-24">

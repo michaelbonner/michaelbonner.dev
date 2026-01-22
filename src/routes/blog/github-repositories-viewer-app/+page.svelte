@@ -13,7 +13,7 @@
 />
 
 <BlogPostSchema
-	title="I made a little app to help me keep track of who has access to what GitHub repository"
+	title="GitHub Repository Collaborators Viewer"
 	description="I made a little app to help me keep track of who has access to what GitHub repository"
 	url="https://michaelbonner.dev/blog/github-repositories-viewer-app"
 	datePublished="2023-09-14T22:58:46.469Z"
@@ -33,9 +33,7 @@
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1>
-						I made a little app to help me keep track of who has access to what GitHub repository
-					</h1>
+					<h1>GitHub Repository Collaborators Viewer</h1>
 				</div>
 			</div>
 			<div class="prose-img:my-0 prose-figcaption:text-center max-w-5xl text-lg lg:mt-24">

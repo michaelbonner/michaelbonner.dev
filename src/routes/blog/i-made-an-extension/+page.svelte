@@ -16,7 +16,7 @@
 />
 
 <BlogPostSchema
-	title="I made my first Chrome extension"
+	title="Building a Chrome Extension: Basecamp UI Tweaks"
 	description="Really simple one, and it was really easy to make"
 	url="https://michaelbonner.dev/blog/i-made-an-extension"
 	datePublished="2022-05-01T12:58:46.469Z"
@@ -37,7 +37,7 @@
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
-					<h1>I made my first Chrome extension</h1>
+					<h1>Building a Chrome Extension: Basecamp UI Tweaks</h1>
 				</div>
 			</div>
 			<div class="max-w-5xl text-lg lg:mt-24">
