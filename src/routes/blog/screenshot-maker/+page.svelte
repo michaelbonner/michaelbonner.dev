@@ -2,6 +2,7 @@
 	import screenshotMaker from '$lib/images/projects/screenshot-maker.webp?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
+	import BlogPostSchema from '../../../components/BlogPostSchema.svelte';
 </script>
 
 <Seo
@@ -9,6 +10,15 @@
 	ogImage={screenshotMaker.img.src}
 	ogType="article"
 	title="Screenshot Maker | Michael Bonner"
+/>
+
+<BlogPostSchema
+	title="Screenshot Maker"
+	description="A tool to make screenshots of websites. Dang simple and serverless ready"
+	url="https://michaelbonner.dev/blog/screenshot-maker"
+	datePublished="2025-05-14T16:46:00.845Z"
+	dateModified="2025-12-03T10:21:51.000Z"
+	image={screenshotMaker.img.src}
 />
 
 <svelte:head>

@@ -3,6 +3,7 @@
 	import { Highlight } from 'svelte-highlight';
 	import bash from 'svelte-highlight/languages/bash';
 	import Seo from '../../../components/Seo.svelte';
+	import BlogPostSchema from '../../../components/BlogPostSchema.svelte';
 
 	import 'svelte-highlight/styles/github-dark.css';
 </script>
@@ -12,6 +13,15 @@
 	title="Set up some aliases | Michael Bonner"
 	{ogImage}
 	ogType="article"
+/>
+
+<BlogPostSchema
+	title="Set up some aliases"
+	description="Aliases can speed up your development and help you focus on code"
+	url="https://michaelbonner.dev/blog/set-up-some-aliases"
+	datePublished="2021-07-15T22:00:00.000Z"
+	dateModified="2025-12-03T10:21:51.000Z"
+	image={ogImage}
 />
 
 <svelte:head>

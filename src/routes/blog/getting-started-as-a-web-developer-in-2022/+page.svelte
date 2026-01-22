@@ -2,6 +2,7 @@
 	import michaelbonnerDevGithubScreenshot from '$lib/images/michaelbonner-dev-github-screenshot.webp?enhanced';
 	import tuffWebsiteScreenshot from '$lib/images/tuff-website-screenshot.webp?enhanced';
 	import Seo from '../../../components/Seo.svelte';
+	import BlogPostSchema from '../../../components/BlogPostSchema.svelte';
 	import { classes } from '../../../styles/classes';
 </script>
 
@@ -10,6 +11,15 @@
 	ogImage={tuffWebsiteScreenshot.img.src}
 	ogType="article"
 	title="Where I think new web software developers should start | Michael Bonner"
+/>
+
+<BlogPostSchema
+	title="Where I think new web software developers should start in 2022"
+	description="Are you thinking about becoming a web developer? Where should you start? Here's my two cents as a full time web developer with almost 20 years of experience."
+	url="https://michaelbonner.dev/blog/getting-started-as-a-web-developer-in-2022"
+	datePublished="2022-03-08T20:58:46.469Z"
+	dateModified="2025-12-03T10:24:21.000Z"
+	image={tuffWebsiteScreenshot.img.src}
 />
 
 <svelte:head>

@@ -31,4 +31,8 @@
 	<meta property="og:image" content={getOgImageWithHost(ogImage)} />
 	<meta property="og:description" content={description} />
 	<meta property="og:type" content={ogType} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={getOgImageWithHost(ogImage)} />
 </svelte:head>
