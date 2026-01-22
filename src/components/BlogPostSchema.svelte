@@ -29,7 +29,7 @@
 		return `https://michaelbonner.dev${image}`;
 	};
 
-	const schema = {
+	const schema = $derived({
 		'@context': 'https://schema.org',
 		'@type': 'BlogPosting',
 		headline: title,
@@ -48,7 +48,7 @@
 			'@type': 'WebPage',
 			'@id': url
 		}
-	};
+	});
 </script>
 
 <svelte:head>

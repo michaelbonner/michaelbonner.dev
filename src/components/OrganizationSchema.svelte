@@ -9,13 +9,13 @@
 		}
 	} = $props();
 
-	const schema = {
+	const schema = $derived({
 		'@context': 'https://schema.org',
 		'@type': 'Organization',
 		name: name,
 		url: url,
 		founder: founder
-	};
+	});
 </script>
 
 <svelte:head>

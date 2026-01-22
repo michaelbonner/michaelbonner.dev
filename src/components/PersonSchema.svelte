@@ -8,7 +8,7 @@
 		sameAs = [] as string[]
 	} = $props();
 
-	const schema = {
+	const schema = $derived({
 		'@context': 'https://schema.org',
 		'@type': 'Person',
 		name: name,
@@ -17,7 +17,7 @@
 		description: description,
 		image: image,
 		sameAs: sameAs
-	};
+	});
 </script>
 
 <svelte:head>
