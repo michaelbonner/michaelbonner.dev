@@ -18,7 +18,7 @@ export const blogArticles = [
 		relatedSlugs: ['pagespeed-testing']
 	},
 	{
-		title: 'PageSpeed Testing is important. You should take it seriously.',
+		title: 'PageSpeed Testing Tool for Developers',
 		slug: 'pagespeed-testing',
 		teaser: 'I made a little tool to test the performance of pages on a site on one page',
 		publishedAt: new Date('2025-04-09T16:00:00.000Z'),
@@ -29,7 +29,6 @@ export const blogArticles = [
 	},
 	{
 		title: 'GitHub Repository Collaborators Viewer',
-		h1: 'I made a little app to help me keep track of who has access to what GitHub repository',
 		slug: 'github-repositories-viewer-app',
 		teaser: 'A simple app to view GitHub repository collaborators across all your repositories',
 		publishedAt: new Date('2023-09-14T16:00:00.000Z'),
@@ -39,8 +38,7 @@ export const blogArticles = [
 		relatedSlugs: ['git-branch-name-raycast-extension']
 	},
 	{
-		title: 'Git Branch Name Generator Raycast Extension',
-		h1: 'Check out the new Git Branch Name Raycast Extension I made',
+		title: 'Git Branch Name Generator: Raycast Extension',
 		slug: 'git-branch-name-raycast-extension',
 		teaser: 'Check out the new Git Branch Name Raycast Extension I made',
 		publishedAt: new Date('2023-01-17T12:58:46.469Z'),
@@ -50,7 +48,7 @@ export const blogArticles = [
 		relatedSlugs: ['github-repositories-viewer-app', 'set-up-some-aliases']
 	},
 	{
-		title: 'I made my first Chrome extension',
+		title: 'Building a Chrome Extension: Basecamp UI Tweaks',
 		slug: 'i-made-an-extension',
 		teaser: 'A Chrome extension to make Basecamp a little more usable',
 		publishedAt: new Date('2022-05-01T12:00:00.000Z'),
@@ -60,7 +58,7 @@ export const blogArticles = [
 		relatedSlugs: ['git-branch-name-raycast-extension']
 	},
 	{
-		title: 'Where I think new web software developers should start in 2022',
+		title: 'Getting Started as a Web Developer in 2022',
 		slug: 'getting-started-as-a-web-developer-in-2022',
 		teaser: 'A (hopefully) helpful guide for getting started as a web software developer',
 		publishedAt: new Date('2022-03-09T12:00:00.000Z'),
@@ -70,7 +68,7 @@ export const blogArticles = [
 		relatedSlugs: ['set-up-some-aliases']
 	},
 	{
-		title: 'Set up some aliases',
+		title: 'Set Up Bash Aliases to Speed Up Development',
 		slug: 'set-up-some-aliases',
 		teaser: 'Just use them, they will change your life',
 		publishedAt: new Date('2021-07-15T12:00:00.000Z'),
