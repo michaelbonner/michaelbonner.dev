@@ -32,6 +32,7 @@
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced';
 	import screenshotMaker from '$lib/images/projects/screenshot-maker.jpg?enhanced';
 	import utahMountainAdventures from '$lib/images/projects/utah-mountain-adventures.jpg?enhanced';
+	import wasatchFabrication from '$lib/images/projects/wasatch-fabrication.jpg?enhanced';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced';
 	import eightOneOneContest from '$lib/images/sites/811contest-org.webp?enhanced';
 	import acceleratedEquityPlans from '$lib/images/sites/acceleratedep-com.webp?enhanced';
@@ -110,11 +111,11 @@
 			image: jMillsEnt
 		},
 		{
-			title: 'CrewView',
+			title: 'Wasatch Fabrication',
 			description:
-				"I'm part of a team building a web application that helps companies manage their projects, people, and assets in a way that is easy and intuitive to use.",
-			url: 'https://www.crewview.com/',
-			image: crewView
+				'I helped the team at Wasatch Fabrication build a custom website for their new business. The site provides info about their services and allows potential customers to get a quote. We built out an admin area to allow the team to manage the content and the quotes.',
+			url: 'https://www.wasatchfabrication.com/',
+			image: wasatchFabrication
 		},
 		{
 			title: 'NEF Programs Administration System',
