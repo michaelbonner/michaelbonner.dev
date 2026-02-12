@@ -169,7 +169,7 @@
 						</span>
 						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
 						{#if item.isAffiliateLink}
-							<p class="text-sm text-gray-500 dark:text-gray-400">
+							<p class="text-sm text-gray-600 dark:text-gray-300">
 								*This is an affiliate link. I may receive a commission if you purchase through this
 								link.
 							</p>
@@ -194,7 +194,7 @@
 						</span>
 						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
 						{#if item.isAffiliateLink}
-							<p class="text-sm text-gray-500 dark:text-gray-400">
+							<p class="text-sm text-gray-600 dark:text-gray-300">
 								*This is an affiliate link. I may receive a commission if you purchase through this
 								link.
 							</p>
@@ -219,7 +219,7 @@
 						</span>
 						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
 						{#if item.isAffiliateLink}
-							<p class="text-sm text-gray-500 dark:text-gray-400">
+							<p class="text-sm text-gray-600 dark:text-gray-300">
 								*This is an affiliate link. I may receive a commission if you purchase through this
 								link.
 							</p>
