@@ -245,7 +245,9 @@
 		</nav>
 	</header>
 
-	{@render children_render?.()}
+	<main>
+		{@render children_render?.()}
+	</main>
 
 	<footer class="container mx-auto justify-between p-8 lg:flex lg:flex-row-reverse lg:items-center">
 		<nav
