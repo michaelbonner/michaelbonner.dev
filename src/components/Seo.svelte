@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { env } from '$env/dynamic/public';
+
 	let {
 		title = '',
 		description = '',
@@ -11,16 +13,11 @@
 			return ogImage;
 		}
 
-		if (import.meta.env.VERCEL_TARGET_ENV === 'preview') {
-			return `https://${import.meta.env.VERCEL_URL}${ogImage}`;
-		}
-
 		if (import.meta.env.MODE === 'development') {
 			return `http://localhost:5173${ogImage}`;
 		}
 
-		// Default to production
-		return `https://michaelbonner.dev${ogImage}`;
+		return `${env.PUBLIC_SITE_URL || 'https://michaelbonner.dev'}${ogImage}`;
 	};
 </script>
 
