@@ -413,7 +413,7 @@
 		<div class="lg:flex lg:flex-row-reverse lg:pt-16">
 			<div class="mt-8 w-full lg:mt-0 lg:w-1/3">
 				<enhanced:img
-					alt="Michael Bonner"
+					alt=""
 					class="bg-opacity-100 h-auto w-full rounded-lg mix-blend-luminosity transition-transform hover:scale-105 hover:rotate-1 hover:bg-blend-darken"
 					fetchpriority="high"
 					src={mainImage}
@@ -476,7 +476,7 @@
 							href={project.url}
 						>
 							<enhanced:img
-								alt={project.title}
+								alt=""
 								class="rounded-lg border border-gray-100 shadow-sm md:max-w-md dark:border-gray-900/40"
 								loading={projectIndex <= 1 ? 'eager' : 'lazy'}
 								src={project.image}
@@ -544,7 +544,7 @@
 								href={project.url}
 							>
 								<enhanced:img
-									alt={project.title}
+									alt=""
 									class="rounded-lg border border-gray-100 shadow-sm md:max-w-md dark:border-gray-900/40"
 									loading="lazy"
 									src={project.image}
@@ -615,7 +615,7 @@
 						>
 							<enhanced:img
 								class="size-7"
-								alt={otherSite.name}
+								alt=""
 								src={otherSite.imgSrc}
 								loading="lazy"
 							/>
