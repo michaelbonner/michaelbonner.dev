@@ -57,3 +57,23 @@
 .prose h1 {
 	font-weight: 600;
 }
+
+.prose figcaption {
+	color: var(--color-gray-600);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	.prose figcaption {
+		color: var(--color-gray-300);
+	}
+}
+
+pre code.hljs {
+	overflow-x: visible !important;
+}
+
+pre:has(> code.hljs) {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+

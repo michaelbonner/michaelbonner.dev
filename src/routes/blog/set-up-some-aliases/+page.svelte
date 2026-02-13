@@ -75,6 +75,7 @@
 	</div>
 	<div class="max-w-7xl">
 		<Highlight
+			tabindex="0"
 			code={`# general
 alias ll='ls -lah'
 alias zshrc='vim ~/.zshrc'
