@@ -75,6 +75,9 @@ export const blogArticles = [
 		readingTime: '5 minute read',
 		image: itermAliasesTrimmed600,
 		tags: ['productivity', 'tools', 'terminal'],
-		relatedSlugs: ['git-branch-name-raycast-extension', 'getting-started-as-a-web-developer-in-2022']
+		relatedSlugs: [
+			'git-branch-name-raycast-extension',
+			'getting-started-as-a-web-developer-in-2022'
+		]
 	}
 ];

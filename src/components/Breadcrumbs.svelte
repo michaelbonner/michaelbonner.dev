@@ -17,12 +17,12 @@
 				{#if item.href}
 					<a
 						href={item.href}
-						class="hover:text-gray-900 dark:hover:text-gray-200 transition-colors underline"
+						class="underline transition-colors hover:text-gray-900 dark:hover:text-gray-200"
 					>
 						{item.label}
 					</a>
 				{:else}
-					<span class="text-gray-900 dark:text-gray-200 font-medium">
+					<span class="font-medium text-gray-900 dark:text-gray-200">
 						{item.label}
 					</span>
 				{/if}

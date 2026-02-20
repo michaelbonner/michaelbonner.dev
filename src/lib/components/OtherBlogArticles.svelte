@@ -11,12 +11,10 @@
 		const currentArticle = blogArticles.find((article) => article.slug === slug);
 
 		const relatedSlugs = currentArticle?.relatedSlugs || [];
-		const relatedArticles = blogArticles.filter((article) =>
-			relatedSlugs.includes(article.slug)
-		);
+		const relatedArticles = blogArticles.filter((article) => relatedSlugs.includes(article.slug));
 
-		const otherArticles = blogArticles.filter((article) =>
-			article.slug !== slug && !relatedSlugs.includes(article.slug)
+		const otherArticles = blogArticles.filter(
+			(article) => article.slug !== slug && !relatedSlugs.includes(article.slug)
 		);
 
 		return { relatedArticles, otherArticles };

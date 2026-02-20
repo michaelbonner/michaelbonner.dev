@@ -23,7 +23,7 @@ export const actions: Actions = {
 			const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
 				method: 'POST',
 				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded',
+					'Content-Type': 'application/x-www-form-urlencoded'
 				},
 				body: new URLSearchParams({
 					secret: env.TURNSTILE_SECRET_KEY,
@@ -40,17 +40,20 @@ export const actions: Actions = {
 		// Send Telegram notification
 		if (env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_CHAT_ID) {
 			const text = `New contact form submission!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-			
-			const telegramRes = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					chat_id: env.TELEGRAM_CHAT_ID,
-					text: text
-				})
-			});
+
+			const telegramRes = await fetch(
+				`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`,
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						chat_id: env.TELEGRAM_CHAT_ID,
+						text: text
+					})
+				}
+			);
 
 			if (!telegramRes.ok) {
 				console.error('Failed to send Telegram message:', await telegramRes.text());

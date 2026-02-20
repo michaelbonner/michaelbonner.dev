@@ -5,9 +5,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 ### Package Manager
+
 This project uses **Bun** as the package manager. The preinstall hook enforces this with `npx only-allow bun`.
 
 ### Essential Commands
+
 ```bash
 # Development
 bun run dev              # Start dev server (opens at http://127.0.0.1:5173/)
@@ -35,6 +37,7 @@ bun up                   # Update dependencies
 ## Architecture Overview
 
 ### Framework & Deployment
+
 - **SvelteKit 2.x** with Svelte 5 (uses Svelte 5 runes syntax: `$props`, `$derived`, `$state`)
 - Deployed on **Vercel** using `@sveltejs/adapter-vercel`
 - Uses **file-based routing** in `src/routes/`
@@ -42,6 +45,7 @@ bun up                   # Update dependencies
 ### Key Architectural Patterns
 
 #### Blog System Architecture
+
 The blog uses a **static, file-based architecture** without a CMS:
 
 1. **Blog metadata** is centralized in `src/lib/data/blogArticles.ts` as an array of article objects with:
@@ -58,13 +62,15 @@ The blog uses a **static, file-based architecture** without a CMS:
 3. **Test data synchronization**: E2E tests use `e2e/validate-test-data.js` to ensure test data in `e2e/test-data/blog-articles.ts` stays in sync with actual blog routes. Run `bun test:setup` to validate/update.
 
 #### Image Handling
+
 Uses **@sveltejs/enhanced-img** with the `?enhanced` query parameter:
+
 ```svelte
-import image from '$lib/images/example.jpg?enhanced';
-// Use: {image.img.src} for src attribute
+import image from '$lib/images/example.jpg?enhanced'; // Use: {image.img.src} for src attribute
 ```
 
 #### Analytics & Performance
+
 - **PostHog** for analytics (both client and server)
   - Client-side: Initialized in `src/routes/+layout.svelte` with manual page view tracking
   - Server-side: Used in `src/hooks.server.ts` for error tracking
@@ -74,6 +80,7 @@ import image from '$lib/images/example.jpg?enhanced';
 - **Theme color animation**: Root layout animates theme color by decrementing hue in `onMount`
 
 #### Styling
+
 - **Tailwind CSS 4.x** with:
   - `@tailwindcss/typography` plugin
   - `@tailwindcss/postcss` and `@tailwindcss/vite` for build integration
@@ -83,7 +90,9 @@ import image from '$lib/images/example.jpg?enhanced';
 - Custom font: Newsreader variable font (`@fontsource-variable/newsreader`)
 
 #### SEO & Structured Data
+
 Strong emphasis on SEO with dedicated components:
+
 - `src/components/Seo.svelte` - Meta tags and Open Graph
 - `src/components/BlogPostSchema.svelte` - Article structured data
 - `src/components/PersonSchema.svelte` - Person schema
@@ -92,6 +101,7 @@ Strong emphasis on SEO with dedicated components:
 - Each blog post has canonical URLs and article publish dates
 
 ### Directory Structure
+
 ```
 src/
 ├── routes/              # SvelteKit file-based routing
@@ -115,6 +125,7 @@ src/
 ## Testing Strategy
 
 ### E2E Testing with Playwright
+
 - Tests in `e2e/` directory
 - **Test data validation** is critical: The `validate-test-data.js` script ensures test data matches actual blog routes by comparing slugs
 - Playwright config builds and previews the app (port 4173) with a 5-minute timeout
@@ -135,6 +146,7 @@ src/
 ## Environment Variables
 
 Required for production:
+
 - `PUBLIC_POSTHOG_API_KEY` - PostHog analytics key
 - `PUBLIC_POSTHOG_ENABLED` - Toggle analytics (set to "false" to disable)
 
