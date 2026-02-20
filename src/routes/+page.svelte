@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { blogArticles } from '$lib/data/blogArticles';
 	import clsx from 'clsx';
+	import type { Picture } from 'vite-imagetools';
 	import H2 from '../components/H2.svelte';
 	import OrganizationSchema from '../components/OrganizationSchema.svelte';
 	import PersonSchema from '../components/PersonSchema.svelte';
@@ -14,7 +15,6 @@
 	// images
 	import mainImage from '$lib/images/on-the-beach-600.jpg?enhanced';
 	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced';
-	import crewView from '$lib/images/projects/crewview.jpg?enhanced';
 	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced';
 	import daysUntil from '$lib/images/projects/days-until.jpg?enhanced';
 	import dkow from '$lib/images/projects/dkow.jpg?enhanced';
@@ -60,7 +60,7 @@
 		title: string;
 		description: string;
 		url: string;
-		image: any;
+		image: Picture;
 		github?: string;
 		blogPost?: string;
 	};
