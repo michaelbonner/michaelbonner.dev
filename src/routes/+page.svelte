@@ -409,7 +409,7 @@
 </svelte:head>
 
 <div class="container mx-auto flex items-center px-8 py-12">
-	<div class="pt-8">
+	<div class="sm:pt-8">
 		<div class="lg:flex lg:flex-row-reverse lg:pt-16">
 			<div class="mt-8 w-full lg:mt-0 lg:w-1/3">
 				<enhanced:img
@@ -613,12 +613,7 @@
 							target="_blank"
 							rel="noreferrer"
 						>
-							<enhanced:img
-								class="size-7"
-								alt=""
-								src={otherSite.imgSrc}
-								loading="lazy"
-							/>
+							<enhanced:img class="size-7" alt="" src={otherSite.imgSrc} loading="lazy" />
 							<span
 								class={clsx(
 									'sm:border-b sm:border-gray-400',

@@ -20,7 +20,7 @@
 	<link rel="canonical" href="https://michaelbonner.dev/contact" />
 </svelte:head>
 
-<div class="container mx-auto max-w-5xl px-8 py-12 md:my-24">
+<div class="container mx-auto my-20 px-8 sm:my-36">
 	<h1 class="mb-12 text-4xl font-semibold">Get In Touch</h1>
 
 	<div class="grid gap-16 md:grid-cols-2">

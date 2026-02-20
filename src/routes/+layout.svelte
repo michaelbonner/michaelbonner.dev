@@ -237,8 +237,21 @@
 		'dark:bg-opacity-70 dark:bg-gray-800 dark:text-gray-200'
 	)}
 >
-	<header class="container mx-auto flex justify-between px-8 pt-12">
-		<a href={resolve('/')} class={classNames('lg:text-3xl', classes.menuItem)}> Michael Bonner </a>
+	<header
+		class="container mx-auto flex flex-col items-start justify-between gap-4 px-8 pt-12 sm:flex-row"
+	>
+		<a
+			href={resolve('/')}
+			class={classNames(
+				'origin-left scale-150',
+				'hover:scale-150',
+				'sm:scale-100 sm:text-3xl',
+				'sm:hover:scale-105',
+				classes.menuItem
+			)}
+		>
+			Michael Bonner
+		</a>
 		<nav class="flex justify-end space-x-6 text-xl" aria-label="Main">
 			<a href={resolve('/')} class={classes.menuItem}>Home</a>
 			<a href={resolve('/blog')} class={classes.menuItem}>Blog</a>
