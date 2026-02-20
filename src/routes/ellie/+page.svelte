@@ -400,6 +400,10 @@
 	ogImage="https://michaelbonner.dev/images/ellie-og-image.jpg"
 />
 
+<svelte:head>
+	<link rel="canonical" href="https://michaelbonner.dev/ellie" />
+</svelte:head>
+
 <div class="container mx-auto grid gap-8 px-8 py-12">
 	<div class="prose prose-xl dark:prose-invert mx-auto mt-12 max-w-3xl">
 		<p>
