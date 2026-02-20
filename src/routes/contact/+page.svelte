@@ -111,7 +111,7 @@
 						class={clsx(
 							'flex items-center gap-4 rounded-lg border border-gray-300 p-4 transition',
 							'dark:border-gray-700 dark:hover:bg-white/10',
-							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 hover:bg-white/50'
+							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 dark:hover:bg-white/50'
 						)}
 					>
 						<span class="text-blue-700 dark:text-blue-400"><LinkedIn /></span>
@@ -124,7 +124,7 @@
 						class={clsx(
 							'flex items-center gap-4 rounded-lg border border-gray-300 p-4 transition',
 							'dark:border-gray-700 dark:hover:bg-white/10',
-							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 hover:bg-white/50'
+							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 dark:hover:bg-white/50'
 						)}
 					>
 						<span class="text-gray-900 dark:text-white"><Github /></span>
@@ -137,7 +137,7 @@
 						class={clsx(
 							'flex items-center gap-4 rounded-lg border border-gray-300 p-4 transition',
 							'dark:border-gray-700 dark:hover:bg-white/10',
-							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 hover:bg-white/50'
+							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 dark:hover:bg-white/50'
 						)}
 					>
 						<span class="text-pink-600 dark:text-pink-400"><Instagram /></span>
