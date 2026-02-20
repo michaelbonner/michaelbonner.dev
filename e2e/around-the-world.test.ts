@@ -179,7 +179,8 @@ test.describe.parallel('Dynamic Blog Routes', () => {
 							`  H1 elements found: ${h1Count}\n` +
 							`  Navigation time: ${navigationTime}ms\n` +
 							`  Debug: Check if the route exists and renders properly\n` +
-							`  Original error: ${visibilityError.message}`
+							`  Original error: ${visibilityError.message}`,
+						{ cause: visibilityError }
 					);
 				}
 
@@ -241,7 +242,8 @@ test.describe.parallel('Dynamic Blog Routes', () => {
 							`  Error type: Network/Navigation failure\n` +
 							`  Debug: Check if the server is running and the route exists\n` +
 							`  Original error: ${error.message}\n` +
-							`  Test context: ${JSON.stringify(testContext, null, 2)}`
+							`  Test context: ${JSON.stringify(testContext, null, 2)}`,
+						{ cause: error }
 					);
 				}
 
@@ -254,7 +256,8 @@ test.describe.parallel('Dynamic Blog Routes', () => {
 							`  Debug: Page may be loading slowly or element selectors may be incorrect\n` +
 							`  Suggestion: Check server performance and page rendering\n` +
 							`  Original error: ${error.message}\n` +
-							`  Test context: ${JSON.stringify(testContext, null, 2)}`
+							`  Test context: ${JSON.stringify(testContext, null, 2)}`,
+						{ cause: error }
 					);
 				}
 
@@ -267,7 +270,8 @@ test.describe.parallel('Dynamic Blog Routes', () => {
 						`  Debug: This is an unexpected error - check test implementation\n` +
 						`  Original error: ${error.message}\n` +
 						`  Stack trace: ${error.stack}\n` +
-						`  Test context: ${JSON.stringify(testContext, null, 2)}`
+						`  Test context: ${JSON.stringify(testContext, null, 2)}`,
+					{ cause: error }
 				);
 			}
 		});
