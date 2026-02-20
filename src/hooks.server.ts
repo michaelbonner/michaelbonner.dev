@@ -1,5 +1,15 @@
 import { PUBLIC_POSTHOG_API_KEY, PUBLIC_POSTHOG_ENABLED } from '$env/static/public';
-import type { HandleServerError } from '@sveltejs/kit';
+import type { Handle, HandleServerError } from '@sveltejs/kit';
+
+export const handle: Handle = ({ event, resolve }) => {
+	const host = event.request.headers.get('host');
+	if (host?.startsWith('www.')) {
+		const url = new URL(event.request.url);
+		url.host = host.replace(/^www\./, '');
+		return Response.redirect(url.toString(), 301);
+	}
+	return resolve(event);
+};
 
 export const handleError: HandleServerError = async ({ error, status }) => {
 	if (status !== 404 && PUBLIC_POSTHOG_ENABLED !== 'false' && PUBLIC_POSTHOG_API_KEY) {
