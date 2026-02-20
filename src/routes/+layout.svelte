@@ -242,6 +242,7 @@
 		<nav class="flex justify-end space-x-6 text-xl" aria-label="Main">
 			<a href={resolve('/')} class={classes.menuItem}>Home</a>
 			<a href={resolve('/blog')} class={classes.menuItem}>Blog</a>
+			<a href={resolve('/contact')} class={classes.menuItem}>Contact</a>
 		</nav>
 	</header>
 
@@ -249,9 +250,11 @@
 		{@render children_render?.()}
 	</main>
 
-	<footer class="container mx-auto justify-between p-8 lg:flex lg:flex-row-reverse lg:items-center">
+	<footer
+		class="container mx-auto justify-between gap-8 p-8 lg:flex lg:flex-row-reverse lg:items-center"
+	>
 		<nav
-			class="flex justify-center space-x-6 pb-8 text-xl lg:justify-end lg:py-0"
+			class="flex flex-wrap justify-center gap-6 pb-8 text-xl lg:justify-end lg:py-0"
 			aria-label="Footer"
 		>
 			<a href={resolve('/')} class={classes.menuItem}>Home</a>
@@ -259,17 +262,11 @@
 			<a href={resolve('/uses')} class={classes.menuItem}>Uses</a>
 			<a href={resolve('/patents')} class={classes.menuItem}>Patents</a>
 			<a href={resolve('/policies')} class={classes.menuItem}>Policies</a>
+			<a href={resolve('/contact')} class={classes.menuItem}>Contact</a>
 		</nav>
 		<p class="flex flex-wrap items-end justify-center gap-x-4 gap-y-6 md:gap-y-2 lg:justify-start">
-			<span class="text-center">
+			<span>
 				&copy; 2021&ndash;{new Date().getFullYear()} Michael Bonner.
-				<a
-					class={classNames(classes.menuItem, 'inline-block text-sm')}
-					href="https://github.com/michaelbonner/michaelbonner.dev"
-				>
-					Check out the source for this site
-				</a>
-				.
 			</span>
 		</p>
 	</footer>

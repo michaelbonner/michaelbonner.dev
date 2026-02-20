@@ -14,6 +14,7 @@ export async function GET() {
 	const staticPages: SitemapPage[] = [
 		{ url: '', priority: '1.0', changefreq: 'daily', lastmod: '2026-01-26T21:37:35-07:00' },
 		{ url: '/blog', priority: '0.9', changefreq: 'daily', lastmod: '2026-01-22T14:15:57-07:00' },
+		{ url: '/contact', priority: '0.8', changefreq: 'daily', lastmod: '2026-02-19T14:15:57-07:00' },
 		{ url: '/uses', priority: '0.7', changefreq: 'monthly', lastmod: '2025-12-02T09:59:39-07:00' },
 		{ url: '/patents', priority: '0.7', changefreq: 'monthly', lastmod: '2026-01-22T14:15:57-07:00' },
 		{ url: '/policies', priority: '0.5', changefreq: 'yearly', lastmod: '2025-11-18T11:02:55-07:00' },
