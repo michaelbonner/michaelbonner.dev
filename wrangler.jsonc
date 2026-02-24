@@ -6,5 +6,12 @@
 	"assets": {
 		"directory": "./.svelte-kit/cloudflare",
 		"binding": "ASSETS"
+	},
+
+	"vars": {
+		"PUBLIC_POSTHOG_API_KEY": "phc_CR48D5k9rHyRASc1LcsP2vkacYA7WnCTRmV7lsuDULf",
+		"PUBLIC_POSTHOG_ENABLED": "true",
+		"PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAACfvRumOPoxj99HQ",
+		"TELEGRAM_CHAT_ID": "5298372807"
 	}
 }
