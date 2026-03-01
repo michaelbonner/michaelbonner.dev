@@ -5,7 +5,25 @@
 	}
 
 	let { items = [] as BreadcrumbItem[] } = $props();
+
+	const baseUrl = 'https://michaelbonner.dev';
+
+	const schema = $derived({
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: items.map((item, index) => ({
+			'@type': 'ListItem',
+			position: index + 1,
+			name: item.label,
+			...(item.href ? { item: `${baseUrl}${item.href}` } : {})
+		}))
+	});
 </script>
+
+<svelte:head>
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+	{@html `<${'script'} type="application/ld+json">${JSON.stringify(schema)}</${'script'}>`}
+</svelte:head>
 
 <nav aria-label="Breadcrumb" class="container mx-auto px-8 py-4">
 	<ol class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
