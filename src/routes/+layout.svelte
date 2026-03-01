@@ -56,6 +56,7 @@
 	<meta name="theme-color" content="#264f73" />
 	<meta name="color-scheme" content="dark light" />
 	<meta property="og:url" content={`https://michaelbonner.dev${page.url.pathname}`} />
+	<meta property="og:locale" content="en_US" />
 	<meta name="author" content="Michael Bonner" />
 	<meta property="profile:first_name" content="Michael" />
 	<meta property="profile:last_name" content="Bonner" />
