@@ -37,6 +37,15 @@
 						I've received your message and will get back to you soon.
 					</p>
 				</div>
+			{:else if !env.PUBLIC_TURNSTILE_SITE_KEY}
+				<div
+					class="mb-6 rounded-lg border border-yellow-200 bg-yellow-50 p-6 text-yellow-900 dark:border-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-100"
+				>
+					<p class="text-lg font-medium">Contact Form Unavailable</p>
+					<p class="mt-2 text-yellow-800 dark:text-yellow-200">
+						The contact form is currently unavailable. Please use one of the social links below to get in touch.
+					</p>
+				</div>
 			{:else}
 				<form method="POST" use:enhance class="grid gap-6">
 					{#if form?.error}
