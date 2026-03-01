@@ -157,7 +157,7 @@
 		<div
 			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
 		>
-			<div class="text-xl">Workstation</div>
+			<h2 class="text-xl">Workstation</h2>
 			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
 				{#each workstationItems as item (item.title)}
 					<div>
@@ -182,7 +182,7 @@
 		<div
 			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
 		>
-			<div class="text-xl">Development Tools</div>
+			<h2 class="text-xl">Development Tools</h2>
 			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
 				{#each developmentItems as item (item.title)}
 					<div>
@@ -207,7 +207,7 @@
 		<div
 			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
 		>
-			<div class="text-xl">Productivity Tools</div>
+			<h2 class="text-xl">Productivity Tools</h2>
 			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
 				{#each productivityItems as item (item.title)}
 					<div>
