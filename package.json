@@ -20,7 +20,7 @@
 	"devDependencies": {
 		"@eslint/compat": "^2.0.3",
 		"@eslint/js": "^10.0.1",
-		"@playwright/test": "^1.58.2",
+		"@playwright/test": "^1.59.1",
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"@sveltejs/enhanced-img": "^0.10.4",
 		"@sveltejs/kit": "^2.55.0",
@@ -53,10 +53,10 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource-variable/newsreader": "^5.2.10",
-		"@qwik.dev/partytown": "^0.11.2",
+		"@qwik.dev/partytown": "^0.13.2",
 		"clsx": "^2.1.1",
 		"photoswipe": "^5.4.4",
-		"posthog-js": "^1.364.2",
+		"posthog-js": "^1.364.6",
 		"svelte-turnstile": "^0.11.0"
 	}
 }
