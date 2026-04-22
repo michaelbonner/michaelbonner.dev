@@ -17,14 +17,17 @@
 	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced';
 	import daysUntil from '$lib/images/projects/days-until.jpg?enhanced';
 	import dkow from '$lib/images/projects/dkow.jpg?enhanced';
+	import easyCustomerFeedback from '$lib/images/projects/easycustomerfeedback.jpg?enhanced';
 	import energySafeKids from '$lib/images/projects/energy-safe-kids.jpg?enhanced';
 	import githubRepositoriesViewer from '$lib/images/projects/github-repositories-viewer.jpg?enhanced';
 	import hereKidsWin from '$lib/images/projects/here-kids-win.jpg?enhanced';
 	import jMillsEnt from '$lib/images/projects/jmillsent.jpg?enhanced';
+	import jobListing from '$lib/images/projects/joblisting.jpg?enhanced';
 	import lazyUncle from '$lib/images/projects/lazy-uncle.jpg?enhanced';
 	import nefPas from '$lib/images/projects/nef-pas.jpg?enhanced';
 	import nhlArenas from '$lib/images/projects/nhl-arenas.jpg?enhanced';
 	import ocr from '$lib/images/projects/ocr.jpg?enhanced';
+	import officelunch from '$lib/images/projects/officelunch.jpg?enhanced';
 	import pagespeed from '$lib/images/projects/pagespeed.jpg?enhanced';
 	import podcasts from '$lib/images/projects/podcasts.jpg?enhanced';
 	import randomStringGenerator from '$lib/images/projects/random-string-generator.jpg?enhanced';
@@ -125,6 +128,27 @@
 		}
 	];
 	const otherThings: Project[] = [
+		{
+			title: 'OfficeLunch',
+			description:
+				'A lunch coordination app for busy admins. Collect opt-ins, organize orders, and keep multiple organizations in sync — so Friday lunch runs itself instead of eating up your week.',
+			url: 'https://officelunch.app/',
+			image: officelunch
+		},
+		{
+			title: 'EasyCustomerFeedback',
+			description:
+				'A beautifully simple feedback platform that helps product teams capture insights, prioritize features, and keep customers in the loop. Built to cut through the noise of heavier tools.',
+			url: 'https://easycustomerfeedback.com/',
+			image: easyCustomerFeedback
+		},
+		{
+			title: 'Job Listing',
+			description:
+				'Create a clean career page, collect applications, and track candidates without the clutter of a traditional ATS. A lightweight hiring tool for small and growing teams.',
+			url: 'https://joblisting.app/',
+			image: jobListing
+		},
 		{
 			title: 'Lazy Uncle',
 			description:
