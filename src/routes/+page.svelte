@@ -36,6 +36,7 @@
 	import utahMountainAdventures from '$lib/images/projects/utah-mountain-adventures.jpg?enhanced';
 	import wasatchFabrication from '$lib/images/projects/wasatch-fabrication.jpg?enhanced';
 	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced';
+	import whatToDoInSaltLake from '$lib/images/projects/whattodoinsaltlake.jpg?enhanced';
 	import eightOneOneContest from '$lib/images/sites/811contest-org.webp?enhanced';
 	import acceleratedEquityPlans from '$lib/images/sites/acceleratedep-com.webp?enhanced';
 	import artistAmyBonner from '$lib/images/sites/amy-bonner-com.webp?enhanced';
@@ -128,6 +129,13 @@
 		}
 	];
 	const otherThings: Project[] = [
+		{
+			title: 'What To Do In Salt Lake',
+			description:
+				'A curated guide to upcoming events, venues, and things to do around Salt Lake City. Search by category, browse by date, and find your next night out without digging through a dozen different sites.',
+			url: 'https://whattodoinsaltlake.com/',
+			image: whatToDoInSaltLake
+		},
 		{
 			title: 'OfficeLunch',
 			description:
