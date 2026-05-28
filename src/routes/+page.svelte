@@ -19,6 +19,7 @@
 	import dkow from '$lib/images/projects/dkow.jpg?enhanced';
 	import easyCustomerFeedback from '$lib/images/projects/easycustomerfeedback.jpg?enhanced';
 	import energySafeKids from '$lib/images/projects/energy-safe-kids.jpg?enhanced';
+	import festivalThings from '$lib/images/projects/festival-things.jpg?enhanced';
 	import githubRepositoriesViewer from '$lib/images/projects/github-repositories-viewer.jpg?enhanced';
 	import hereKidsWin from '$lib/images/projects/here-kids-win.jpg?enhanced';
 	import jMillsEnt from '$lib/images/projects/jmillsent.jpg?enhanced';
@@ -149,6 +150,13 @@
 				'A beautifully simple feedback platform that helps product teams capture insights, prioritize features, and keep customers in the loop. Built to cut through the noise of heavier tools.',
 			url: 'https://easycustomerfeedback.com/',
 			image: easyCustomerFeedback
+		},
+		{
+			title: 'Festival Things',
+			description:
+				'A festival lineup companion for music fans. Sort every artist into must-see, want-to-see, maybe, or pass, discover new acts, and connect your Spotify to see who you already love — then share it all with your group so you never miss a set.',
+			url: 'https://festival-things.com/',
+			image: festivalThings
 		},
 		{
 			title: 'Job Listing',
