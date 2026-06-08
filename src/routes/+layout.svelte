@@ -39,9 +39,10 @@
 
 	if (PUBLIC_POSTHOG_ENABLED !== 'false' && browser) {
 		posthog.init(PUBLIC_POSTHOG_API_KEY, {
-			api_host: '/ingest',
+			api_host: 'https://g.michaelbonner.dev',
 			capture_pageleave: false,
 			capture_pageview: false,
+			defaults: '2026-05-30',
 			ui_host: 'https://us.posthog.com'
 		});
 
