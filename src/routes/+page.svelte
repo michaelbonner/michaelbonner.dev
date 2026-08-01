@@ -49,9 +49,11 @@
 	import hanksGarageVenue from '$lib/images/sites/hanksgaragevenue-com.webp?enhanced';
 	import heritageOfPreston from '$lib/images/sites/heritageofpreston-com.webp?enhanced';
 	import heritageOfSoda from '$lib/images/sites/heritageofsoda-com.webp?enhanced';
+	import homeOrganizingMadeEasy from '$lib/images/sites/homeorganizingme-com.webp?enhanced';
 	import jeremyMillerDirector from '$lib/images/sites/jeremymillerdirector-com.webp?enhanced';
 	import knowYourForce from '$lib/images/sites/knowyourforce-com.webp?enhanced';
 	import lifeOrDeathDocumentary from '$lib/images/sites/lifeordeathdoc-com.webp?enhanced';
+	import lostCreekContracting from '$lib/images/sites/lostcreekcontracting-com.webp?enhanced';
 	import metacensus from '$lib/images/sites/metacensus-org.webp?enhanced';
 	import mp4Compressor from '$lib/images/sites/mp4-compressor-bootpack-dev.webp?enhanced';
 	import nef1Org from '$lib/images/sites/nef1-org.webp?enhanced';
@@ -398,6 +400,18 @@
 			url: 'https://811contest.org',
 			host: '811contest.org',
 			imgSrc: eightOneOneContest
+		},
+		{
+			name: 'Home Organizing Made Easy',
+			url: 'https://www.homeorganizingme.com',
+			host: 'homeorganizingme.com',
+			imgSrc: homeOrganizingMadeEasy
+		},
+		{
+			name: 'Lost Creek Contracting',
+			url: 'https://lostcreekcontracting.com',
+			host: 'lostcreekcontracting.com',
+			imgSrc: lostCreekContracting
 		}
 	].sort((a, b) => a.name.localeCompare(b.name));
 
