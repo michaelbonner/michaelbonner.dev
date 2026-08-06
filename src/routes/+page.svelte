@@ -379,8 +379,8 @@
 		},
 		{
 			name: 'Redirects Wizard',
-			url: 'https://redirects.bootpack.dev',
-			host: 'redirects.bootpack.dev',
+			url: 'https://redirectswizard.com',
+			host: 'redirectswizard.com',
 			imgSrc: redirectsWizard
 		},
 		{

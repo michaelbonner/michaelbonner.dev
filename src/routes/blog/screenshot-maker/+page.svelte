@@ -42,7 +42,7 @@
 					when you're making dependency updates to have an easy visual of the before-and-after. I
 					also add screenshots of projects to the <A
 						className="inline"
-						href="https://redirects.bootpack.dev/">Redirects Wizard</A
+						href="https://redirectswizard.com/">Redirects Wizard</A
 					> project when viewing the index of redirect batches. I also take screenshots of projects for
 					marketing and posting on websites. It's not the easiest thing to get a consistent screenshot
 					of a project, so I made a tool to do it.
