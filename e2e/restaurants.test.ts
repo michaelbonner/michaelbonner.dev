@@ -1,0 +1,97 @@
+import { expect, test } from '@playwright/test';
+import { restaurants } from '../src/lib/data/restaurants';
+
+/** Names as they appear in the desktop table, in render order. */
+const renderedNames = (page: import('@playwright/test').Page) =>
+	page.locator('tbody tr td:first-child > span:first-child').allTextContents();
+
+test.describe('Restaurants page', () => {
+	test.beforeEach(async ({ page }) => {
+		await page.goto('/restaurants');
+		await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+	});
+
+	test('lists every restaurant', async ({ page }) => {
+		await expect(page.locator('tbody tr')).toHaveCount(restaurants.length);
+		await expect(
+			page.getByText(`Showing ${restaurants.length} of ${restaurants.length} restaurants`)
+		).toBeVisible();
+	});
+
+	test('defaults to highest rated first', async ({ page }) => {
+		const ratings = await page.locator('tbody tr td:last-child').allTextContents();
+		const values = ratings.map((text) => Number(text.split('/')[0]));
+		expect(values).toEqual([...values].sort((a, b) => b - a));
+	});
+
+	test('sorts by a column header, and reverses on a second click', async ({ page }) => {
+		const header = page.getByRole('button', { name: /^Restaurant/ });
+
+		await header.click();
+		const ascending = await renderedNames(page);
+		expect(ascending).toEqual([...ascending].sort((a, b) => a.localeCompare(b)));
+
+		await header.click();
+		const descending = await renderedNames(page);
+		expect(descending).toEqual([...ascending].reverse());
+	});
+
+	test('filters by cuisine', async ({ page }) => {
+		const cuisine = restaurants[0].cuisine;
+		const expected = restaurants.filter((r) => r.cuisine === cuisine);
+
+		await page.getByLabel('Cuisine', { exact: true }).selectOption(cuisine);
+
+		await expect(page.locator('tbody tr')).toHaveCount(expected.length);
+		for (const restaurant of expected) {
+			await expect(page.locator(`tr[data-restaurant="${restaurant.name}"]`)).toBeVisible();
+		}
+	});
+
+	test('filters by search text', async ({ page }) => {
+		const target = restaurants[0];
+
+		await page.getByLabel('Search', { exact: true }).fill(target.name);
+
+		await expect(page.locator(`tr[data-restaurant="${target.name}"]`)).toBeVisible();
+		await expect(page.locator('tbody tr')).toHaveCount(1);
+	});
+
+	test('combines tag filters and can clear them', async ({ page }) => {
+		const tag = restaurants[0].goodFor[0];
+		const expected = restaurants.filter((r) => r.goodFor.includes(tag));
+
+		await page.getByRole('button', { name: tag, exact: true }).click();
+		await expect(page.locator('tbody tr')).toHaveCount(expected.length);
+
+		await page.getByRole('button', { name: 'Clear filters' }).click();
+		await expect(page.locator('tbody tr')).toHaveCount(restaurants.length);
+	});
+
+	test('shows an empty state when nothing matches', async ({ page }) => {
+		await page.getByLabel('Search', { exact: true }).fill('definitely-not-a-restaurant');
+
+		await expect(page.getByText('No restaurants match those filters.')).toBeVisible();
+		await expect(page.locator('tbody tr')).toHaveCount(0);
+	});
+
+	test('renders the map with a pin for every geocoded restaurant', async ({ page }) => {
+		const geocoded = restaurants.filter((r) => r.lat != null && r.lng != null);
+
+		await expect(page.locator('.leaflet-container')).toBeVisible();
+		await expect(page.locator('.restaurant-pin')).toHaveCount(geocoded.length);
+	});
+
+	test('selecting a row opens its map popup and closes it again', async ({ page }) => {
+		const target = restaurants.find((r) => r.lat != null && r.lng != null);
+		test.skip(!target, 'No geocoded restaurants; run `bun run geocode` first.');
+
+		const row = page.locator(`tr[data-restaurant="${target!.name}"]`);
+
+		await row.click();
+		await expect(page.locator('.leaflet-popup')).toContainText(target!.name);
+
+		await row.click();
+		await expect(page.locator('.leaflet-popup')).toHaveCount(0);
+	});
+});

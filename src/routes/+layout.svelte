@@ -275,6 +275,7 @@
 			<a href={resolve('/')} class={classes.menuItem}>Home</a>
 			<a href={resolve('/blog')} class={classes.menuItem}>Blog</a>
 			<a href={resolve('/uses')} class={classes.menuItem}>Uses</a>
+			<a href={resolve('/restaurants')} class={classes.menuItem}>Restaurants</a>
 			<a href={resolve('/patents')} class={classes.menuItem}>Patents</a>
 			<a href={resolve('/policies')} class={classes.menuItem}>Policies</a>
 			<a href={resolve('/contact')} class={classes.menuItem}>Contact</a>

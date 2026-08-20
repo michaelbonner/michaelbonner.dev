@@ -17,6 +17,12 @@ export async function GET() {
 		{ url: '/contact', priority: '0.8', changefreq: 'daily', lastmod: '2026-02-19T14:15:57-07:00' },
 		{ url: '/uses', priority: '0.7', changefreq: 'monthly', lastmod: '2025-12-02T09:59:39-07:00' },
 		{
+			url: '/restaurants',
+			priority: '0.7',
+			changefreq: 'monthly',
+			lastmod: '2026-08-20T09:00:00-06:00'
+		},
+		{
 			url: '/patents',
 			priority: '0.7',
 			changefreq: 'monthly',
