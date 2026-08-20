@@ -72,12 +72,20 @@
 				({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]!
 		);
 
+	type RatingBand = 'top' | 'great' | 'good';
+
+	const getRatingBand = (rating: number): RatingBand => {
+		if (rating >= 10) return 'top';
+		if (rating >= 9) return 'great';
+		return 'good';
+	};
+
 	const buildIcon = (leaflet: typeof Leaflet, restaurant: Restaurant, isActive: boolean) =>
 		leaflet.divIcon({
 			// A div icon avoids Leaflet's default marker images, which need bundler-specific
 			// asset URLs, and lets the pin be styled and animated with the rest of the site.
 			className: 'restaurant-pin',
-			html: `<span class="restaurant-pin__dot${isActive ? ' restaurant-pin__dot--active' : ''}">${restaurant.rating}</span>`,
+			html: `<span class="restaurant-pin__dot restaurant-pin__dot--${getRatingBand(restaurant.rating)}${isActive ? ' restaurant-pin__dot--active' : ''}" data-rating="${restaurant.rating}">${restaurant.rating}</span>`,
 			iconSize: [28, 28],
 			iconAnchor: [14, 14],
 			popupAnchor: [0, -14]
@@ -184,7 +192,7 @@
 					.marker([restaurant.lat!, restaurant.lng!], {
 						icon: buildIcon(leaflet, restaurant, restaurant.name === activeName),
 						title: restaurant.name,
-						alt: restaurant.name,
+						alt: `${restaurant.name}, rated ${restaurant.rating} out of 10`,
 						riseOnHover: true
 					})
 					.bindTooltip(buildPreview(restaurant), {
@@ -254,6 +262,27 @@
 		aria-label="Map of favorite Salt Lake restaurants"
 	></div>
 
+	<div
+		class="pointer-events-none absolute top-3 right-3 z-500 rounded-md border border-gray-300 bg-white/95 px-3 py-2 text-gray-900 shadow-md backdrop-blur-sm"
+		aria-label="Pin colors by rating"
+	>
+		<p class="text-xs font-semibold tracking-wide uppercase">Rating</p>
+		<ul class="mt-1 flex gap-3 text-sm tabular-nums" role="list">
+			<li class="flex items-center gap-1.5">
+				<span class="size-2.5 rounded-full bg-emerald-700" aria-hidden="true"></span>
+				10
+			</li>
+			<li class="flex items-center gap-1.5">
+				<span class="size-2.5 rounded-full bg-amber-400" aria-hidden="true"></span>
+				9
+			</li>
+			<li class="flex items-center gap-1.5">
+				<span class="size-2.5 rounded-full bg-blue-700" aria-hidden="true"></span>
+				8
+			</li>
+		</ul>
+	</div>
+
 	{#if mappable.length === 0}
 		<p
 			class="pointer-events-none absolute inset-x-4 top-1/2 -translate-y-1/2 rounded-md bg-gray-200/95 p-4 text-center dark:bg-gray-800/95"
@@ -283,14 +312,24 @@
 		height: 1.75rem;
 		border: 2px solid white;
 		border-radius: 9999px;
-		background-color: #1e40af;
 		box-shadow: 0 1px 4px rgb(0 0 0 / 0.4);
 		color: white;
 		font-size: 0.8125rem;
 		font-weight: 600;
-		transition:
-			transform 150ms ease,
-			background-color 150ms ease;
+		transition: transform 150ms ease;
+	}
+
+	:global(.restaurant-pin__dot--top) {
+		background-color: var(--color-emerald-700);
+	}
+
+	:global(.restaurant-pin__dot--great) {
+		background-color: var(--color-amber-400);
+		color: var(--color-amber-950);
+	}
+
+	:global(.restaurant-pin__dot--good) {
+		background-color: var(--color-blue-700);
 	}
 
 	:global(.restaurant-pin:hover .restaurant-pin__dot) {
@@ -298,7 +337,10 @@
 	}
 
 	:global(.restaurant-pin__dot--active) {
-		background-color: #b91c1c;
+		box-shadow:
+			0 0 0 3px white,
+			0 0 0 6px var(--color-gray-900),
+			0 1px 4px rgb(0 0 0 / 0.4);
 		transform: scale(1.25);
 	}
 

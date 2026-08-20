@@ -79,6 +79,20 @@ test.describe('Restaurants page', () => {
 		await expect(page.locator('.restaurant-pin')).toHaveCount(geocoded.length);
 	});
 
+	test('color codes pins by rating and explains the scale', async ({ page }) => {
+		await expect(page.getByLabel('Pin colors by rating')).toContainText('10');
+		await expect(page.getByLabel('Pin colors by rating')).toContainText('9');
+		await expect(page.getByLabel('Pin colors by rating')).toContainText('8');
+
+		for (const restaurant of restaurants.filter((item) => item.lat != null && item.lng != null)) {
+			const expectedBand =
+				restaurant.rating >= 10 ? 'top' : restaurant.rating >= 9 ? 'great' : 'good';
+			await expect(
+				page.locator(`.restaurant-pin[title="${restaurant.name}"] .restaurant-pin__dot`)
+			).toHaveClass(new RegExp(`restaurant-pin__dot--${expectedBand}`));
+		}
+	});
+
 	test('shows a restaurant preview when a pin is hovered or focused', async ({ page }) => {
 		const pin = page.locator('.restaurant-pin[title="Antica Sicilia"]');
 
