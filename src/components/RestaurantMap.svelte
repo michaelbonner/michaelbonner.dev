@@ -184,6 +184,10 @@
 		if (!leaflet || !instance) return;
 
 		untrack(() => {
+			// Close first: removing a marker while its popup is open leaves the popup
+			// element behind on the map, so rebuilding would stack up orphaned copies.
+			instance.closePopup();
+
 			for (const marker of Object.values(markersByName)) marker.remove();
 			markersByName = {};
 
@@ -222,6 +226,12 @@
 			} else {
 				instance.setView(SALT_LAKE_CITY, 12);
 			}
+
+			// Rebuilding replaced every marker, which closed the open popup. The
+			// selection effect below only tracks `activeName`, so it will not re-run
+			// for a filter or sort change — reopen the popup here instead, after
+			// framing, so a selected restaurant keeps its popup.
+			if (activeName) markersByName[activeName]?.openPopup();
 		});
 	});
 

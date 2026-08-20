@@ -64,7 +64,11 @@ const geocode = async (query) => {
 const main = async () => {
 	const { restaurants } = await import('../src/lib/data/restaurants.ts');
 
-	const existing = force ? {} : JSON.parse(await readFile(coordinatesPath, 'utf8'));
+	// Always start from what is on disk, even with --force. Discarding it first
+	// meant a single failed or out-of-area lookup silently dropped a restaurant
+	// off the map; now --force only decides what gets re-requested, and a good
+	// coordinate is only ever replaced by a better one.
+	const existing = JSON.parse(await readFile(coordinatesPath, 'utf8'));
 	// Drop coordinates for restaurants that are no longer in the list, so replacing
 	// the data does not leave orphaned entries behind.
 	const currentNames = new Set(restaurants.map((restaurant) => restaurant.name));
@@ -75,7 +79,7 @@ const main = async () => {
 		else removed.push(name);
 	}
 
-	const pending = restaurants.filter((restaurant) => !results[restaurant.name]);
+	const pending = restaurants.filter((restaurant) => force || !results[restaurant.name]);
 
 	if (pending.length === 0 && removed.length === 0) {
 		console.log('Every restaurant already has coordinates. Pass --force to re-geocode.');

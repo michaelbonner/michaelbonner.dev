@@ -18,10 +18,32 @@ export type RestaurantEntry = {
 
 /** A restaurant with its geocoded position merged in, as consumed by the page. */
 export type Restaurant = RestaurantEntry & {
+	/**
+	 * `location` split into its individual neighborhoods, so a place listed as
+	 * "Downtown/Sugarhouse/Midvale" matches a filter for any one of them.
+	 */
+	locationParts: string[];
 	/** Filled in by `bun run geocode`. Restaurants without coordinates are hidden from the map. */
 	lat?: number;
 	lng?: number;
 };
+
+/**
+ * The source list writes several branches as one slash-separated string, and
+ * writes Sugarhouse loosely ("Sugarhouse-", "Sugarhouse-ish"). Both are kept
+ * verbatim for display and normalized here so the filter has one clean option
+ * per neighborhood.
+ */
+const toLocationParts = (location: string) =>
+	location
+		.split('/')
+		.map((part) =>
+			part
+				.trim()
+				.replace(/-(?:ish)?$/, '')
+				.trim()
+		)
+		.filter(Boolean);
 
 /**
  * The source of truth for the list. Coordinates deliberately live in
@@ -228,6 +250,7 @@ const coordinatesByName: Record<string, { lat: number; lng: number }> = coordina
 
 export const restaurants: Restaurant[] = entries.map((entry) => ({
 	...entry,
+	locationParts: toLocationParts(entry.location),
 	...coordinatesByName[entry.name]
 }));
 
@@ -237,7 +260,9 @@ export const restaurantTags = [
 ].sort();
 
 /** Sorted, de-duplicated list of every location present in the data. */
-export const locations = [...new Set(restaurants.map((restaurant) => restaurant.location))].sort();
+export const locations = [
+	...new Set(restaurants.flatMap((restaurant) => restaurant.locationParts))
+].sort();
 
 /** Sorted, de-duplicated list of the source data's per-person price points. */
 export const pricesPerPerson = [

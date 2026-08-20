@@ -3,7 +3,7 @@ import { restaurants } from '../src/lib/data/restaurants';
 
 /** Names as they appear in the desktop table, in render order. */
 const renderedNames = (page: import('@playwright/test').Page) =>
-	page.locator('tbody tr td:first-child > span:first-child').allTextContents();
+	page.locator('tbody tr td:first-child > button').allTextContents();
 
 test.describe('Restaurants page', () => {
 	test.beforeEach(async ({ page }) => {
@@ -46,6 +46,56 @@ test.describe('Restaurants page', () => {
 		for (const restaurant of expected) {
 			await expect(page.locator(`tr[data-restaurant="${restaurant.name}"]`)).toBeVisible();
 		}
+	});
+
+	test('filters by location, including places listed in several', async ({ page }) => {
+		// Midvale covers single-location places and multi-location ones such as
+		// Laziz Kitchen ("Downtown/Midvale") and Pretty Bird.
+		const expected = restaurants.filter((restaurant) =>
+			restaurant.locationParts.includes('Midvale')
+		);
+		const multiple = expected.filter((restaurant) => restaurant.locationParts.length > 1);
+		expect(multiple.length).toBeGreaterThan(0);
+
+		await page.getByLabel('Location', { exact: true }).selectOption('Midvale');
+
+		await expect(page.locator('tbody tr')).toHaveCount(expected.length);
+		for (const restaurant of multiple) {
+			await expect(page.locator(`tr[data-restaurant="${restaurant.name}"]`)).toBeVisible();
+		}
+	});
+
+	test('selects a restaurant from the keyboard', async ({ page }) => {
+		const target = restaurants.find((restaurant) => restaurant.lat != null);
+		test.skip(!target, 'Nothing geocoded yet; run `bun run geocode` first.');
+
+		const button = page.locator(`tr[data-restaurant="${target!.name}"] td:first-child button`);
+
+		await button.focus();
+		await page.keyboard.press('Enter');
+
+		await expect(button).toHaveAttribute('aria-pressed', 'true');
+		await expect(page.locator('.leaflet-popup')).toContainText(target!.name);
+	});
+
+	test('keeps the selected popup open when the filters change', async ({ page }) => {
+		// A restaurant that stays visible under the filter applied below.
+		const target = restaurants.find(
+			(restaurant) => restaurant.lat != null && restaurant.rating >= 9
+		);
+		test.skip(!target, 'Nothing geocoded yet; run `bun run geocode` first.');
+
+		await page.locator(`tr[data-restaurant="${target!.name}"] td:first-child button`).click();
+		await expect(page.locator('.leaflet-popup')).toContainText(target!.name);
+
+		// Rebuilding the markers used to drop the popup and never bring it back.
+		await page.getByLabel('Rating', { exact: true }).selectOption('9');
+
+		await expect(page.locator(`tr[data-restaurant="${target!.name}"]`)).toBeVisible();
+		// The outgoing popup lingers for the length of Leaflet's fade, so settle on a
+		// single popup before reading it. This also catches orphaned popup elements.
+		await expect(page.locator('.leaflet-popup')).toHaveCount(1);
+		await expect(page.locator('.leaflet-popup')).toContainText(target!.name);
 	});
 
 	test('filters by search text', async ({ page }) => {

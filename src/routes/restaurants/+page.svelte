@@ -59,7 +59,9 @@
 		return restaurants.filter((restaurant) => {
 			if (query && !matchesSearch(restaurant, query)) return false;
 			if (tag && !restaurant.tags.includes(tag)) return false;
-			if (location && restaurant.location !== location) return false;
+			// Match on the split parts so a place listed in several neighborhoods
+			// still turns up when filtering for any one of them.
+			if (location && !restaurant.locationParts.includes(location)) return false;
 			if (pricePerPerson && restaurant.pricePerPerson !== pricePerPerson) return false;
 			if (minRating && restaurant.rating < minRating) return false;
 			return true;
@@ -343,7 +345,22 @@
 									)}
 								>
 									<td class="py-3 pr-4">
-										<span class="text-lg">{restaurant.name}</span>
+										<!--
+											The row is clickable for the mouse, but the name is a real button so
+											the same selection is reachable by keyboard and announced to screen
+											readers. It stops propagation so the row handler cannot undo it.
+										-->
+										<button
+											type="button"
+											aria-pressed={isActive}
+											onclick={(event) => {
+												event.stopPropagation();
+												select(restaurant.name);
+											}}
+											class="text-left text-lg hover:text-blue-800 dark:hover:text-blue-300"
+										>
+											{restaurant.name}
+										</button>
 										{#if restaurant.notes}
 											<span class="block text-sm text-gray-600 dark:text-gray-400">
 												{restaurant.notes}
