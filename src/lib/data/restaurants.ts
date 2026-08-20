@@ -5,20 +5,15 @@ import coordinates from './restaurantCoordinates.json' with { type: 'json' };
 export type RestaurantEntry = {
 	/** Restaurant name, used as the stable key throughout the UI and to look up coordinates. */
 	name: string;
-	cuisine: string;
-	neighborhood: string;
-	/** Street address, used for the geocode script and the map popup. */
-	address: string;
-	/** 1&ndash;4, rendered as $ through $$$$. */
-	price: 1 | 2 | 3 | 4;
-	/** My rating, 1&ndash;5. */
+	/** Categories from the source list. Every restaurant has at least one. */
+	tags: [string, ...string[]];
+	/** Personal rating on the source list's 10-point scale. */
 	rating: number;
-	/** Occasions this place is good for. Drives the tag filter. */
-	goodFor: string[];
-	/** What to order. */
-	order?: string;
-	website?: string;
 	notes?: string;
+	/** Approximate cost in dollars for one person. */
+	pricePerPerson: number;
+	/** Neighborhood or city listed in the source data. */
+	location: string;
 };
 
 /** A restaurant with its geocoded position merged in, as consumed by the page. */
@@ -33,65 +28,201 @@ export type Restaurant = RestaurantEntry & {
  * `restaurantCoordinates.json` so `bun run geocode` can rewrite them without
  * touching this file.
  */
-const entries: RestaurantEntry[] = [
+const entries = [
 	{
-		name: 'Red Iguana',
-		cuisine: 'Mexican',
-		neighborhood: 'Downtown',
-		address: '736 W North Temple, Salt Lake City, UT 84116',
-		price: 2,
-		rating: 5,
-		goodFor: ['Dinner', 'Groups', 'Out-of-towners'],
-		order: 'Mole Amarillo',
-		website: 'https://rediguana.com/',
-		notes: 'The wait is real. Put your name in and walk around the block.'
+		name: 'Antica Sicilia',
+		tags: ['Italian'],
+		rating: 9,
+		pricePerPerson: 50,
+		location: 'Sugarhouse-'
 	},
 	{
-		name: 'Takashi',
-		cuisine: 'Japanese',
-		neighborhood: 'Downtown',
-		address: '18 W Market St, Salt Lake City, UT 84101',
-		price: 4,
-		rating: 5,
-		goodFor: ['Date Night', 'Dinner'],
-		order: 'Whatever is on the fresh sheet',
-		website: 'https://www.takashisushi.com/',
-		notes: 'Best sushi in the state. Get there right when they open or plan to wait.'
+		name: 'Bricks Corner',
+		tags: ['Pizza'],
+		rating: 9,
+		notes: 'Detroit style',
+		pricePerPerson: 20,
+		location: 'Downtown'
 	},
 	{
-		name: 'Pretty Bird',
-		cuisine: 'Chicken',
-		neighborhood: 'Downtown',
-		address: '146 S Regent St, Salt Lake City, UT 84111',
-		price: 1,
-		rating: 4,
-		goodFor: ['Lunch', 'Takeout'],
-		order: 'Hot chicken sandwich, medium',
-		website: 'https://prettybirdchicken.com/'
+		name: 'Chanon Thai Cafe',
+		tags: ['Thai'],
+		rating: 9,
+		pricePerPerson: 20,
+		location: 'Downtown'
+	},
+	{
+		name: "Dave's Hot Chicken",
+		tags: ['Chicken'],
+		rating: 8,
+		pricePerPerson: 15,
+		location: 'Midvale'
+	},
+	{
+		name: 'Dolcetti Gelato',
+		tags: ['Ice Cream'],
+		rating: 9,
+		pricePerPerson: 10,
+		location: 'Sugarhouse-ish'
+	},
+	{
+		name: 'Frankies',
+		tags: ['Pizza'],
+		rating: 10,
+		notes: 'New York style',
+		pricePerPerson: 10,
+		location: 'Murray'
+	},
+	{
+		name: 'Ganesh',
+		tags: ['Indian'],
+		rating: 9,
+		pricePerPerson: 20,
+		location: 'Midvale'
+	},
+	{
+		name: 'Grove Market and Deli',
+		tags: ['Sandwich'],
+		rating: 8,
+		pricePerPerson: 10,
+		location: 'South Salt Lake'
+	},
+	{
+		name: 'Honolulu Grill',
+		tags: ['Hawaiian'],
+		rating: 8,
+		pricePerPerson: 15,
+		location: 'West Jordan'
+	},
+	{
+		name: 'Jinya',
+		tags: ['Ramen'],
+		rating: 8,
+		pricePerPerson: 15,
+		location: 'Sugarhouse/Murray'
+	},
+	{
+		name: 'La Yaquesita',
+		tags: ['Mexican'],
+		rating: 8,
+		pricePerPerson: 10,
+		location: 'Midvale'
 	},
 	{
 		name: 'Laziz Kitchen',
-		cuisine: 'Lebanese',
-		neighborhood: 'Central Ninth',
-		address: '912 S Jefferson St, Salt Lake City, UT 84101',
-		price: 2,
-		rating: 4,
-		goodFor: ['Lunch', 'Dinner', 'Vegetarian'],
-		order: 'Muhammara and the chicken shawarma',
-		website: 'https://lazizkitchen.com/'
+		tags: ['Mediterranean'],
+		rating: 8,
+		pricePerPerson: 20,
+		location: 'Downtown/Midvale'
 	},
 	{
-		name: 'HSL',
-		cuisine: 'New American',
-		neighborhood: 'Central City',
-		address: '418 E 200 S, Salt Lake City, UT 84111',
-		price: 3,
-		rating: 5,
-		goodFor: ['Date Night', 'Dinner'],
-		order: 'Whatever the seasonal vegetable plate is',
-		website: 'https://hslrestaurant.com/'
+		name: 'Lucky 13',
+		tags: ['Burger'],
+		rating: 8,
+		pricePerPerson: 15,
+		location: 'South Salt Lake'
+	},
+	{
+		name: 'Nomad East',
+		tags: ['Pizza'],
+		rating: 8,
+		pricePerPerson: 20,
+		location: 'Sugarhouse'
+	},
+	{
+		name: 'Osteria Amore',
+		tags: ['Italian'],
+		rating: 9,
+		pricePerPerson: 50,
+		location: 'Downtown'
+	},
+	{
+		name: 'Paradise Biryani Pointe',
+		tags: ['Indian'],
+		rating: 9,
+		pricePerPerson: 20,
+		location: 'Draper'
+	},
+	{
+		name: 'Phở 777',
+		tags: ['Vietnamese'],
+		rating: 8,
+		pricePerPerson: 15,
+		location: 'West Valley'
+	},
+	{
+		name: 'Pretty Bird',
+		tags: ['Chicken'],
+		rating: 8,
+		pricePerPerson: 20,
+		location: 'Downtown/Sugarhouse/Midvale'
+	},
+	{
+		name: 'Proper Burger',
+		tags: ['Burger'],
+		rating: 8,
+		pricePerPerson: 15,
+		location: 'Downtown'
+	},
+	{
+		name: 'Red Iguana',
+		tags: ['Mexican'],
+		rating: 8,
+		pricePerPerson: 20,
+		location: 'Downtown'
+	},
+	{
+		name: 'Sauce Boss Southern Kitchen',
+		tags: ['Comfort Food'],
+		rating: 9,
+		notes: 'So good!',
+		pricePerPerson: 20,
+		location: 'Draper'
+	},
+	{
+		name: 'Sawadee',
+		tags: ['Thai'],
+		rating: 8,
+		pricePerPerson: 20,
+		location: 'Downtown'
+	},
+	{
+		name: 'Settebello',
+		tags: ['Pizza'],
+		rating: 9,
+		notes: 'My favorite pizza in Utah',
+		pricePerPerson: 20,
+		location: 'Downtown'
+	},
+	{
+		name: 'Takashi',
+		tags: ['Sushi'],
+		rating: 9,
+		pricePerPerson: 50,
+		location: 'Downtown'
+	},
+	{
+		name: 'Vertical diner',
+		tags: ['Diner', 'Vegan'],
+		rating: 8,
+		pricePerPerson: 20,
+		location: 'Downtown'
+	},
+	{
+		name: "Victor's pizza co",
+		tags: ['Pizza'],
+		rating: 8,
+		pricePerPerson: 20,
+		location: 'South Salt Lake'
+	},
+	{
+		name: 'Zhu Ting Ji 竹亭记',
+		tags: ['Chinese'],
+		rating: 8,
+		pricePerPerson: 20,
+		location: 'Murray'
 	}
-];
+] satisfies RestaurantEntry[];
 
 const coordinatesByName: Record<string, { lat: number; lng: number }> = coordinates;
 
@@ -100,11 +231,15 @@ export const restaurants: Restaurant[] = entries.map((entry) => ({
 	...coordinatesByName[entry.name]
 }));
 
-/** Sorted, de-duplicated list of every cuisine present in the data. */
-export const cuisines = [...new Set(restaurants.map((r) => r.cuisine))].sort();
+/** Sorted, de-duplicated list of every tag present in the data. */
+export const restaurantTags = [
+	...new Set(restaurants.flatMap((restaurant) => restaurant.tags))
+].sort();
 
-/** Sorted, de-duplicated list of every neighborhood present in the data. */
-export const neighborhoods = [...new Set(restaurants.map((r) => r.neighborhood))].sort();
+/** Sorted, de-duplicated list of every location present in the data. */
+export const locations = [...new Set(restaurants.map((restaurant) => restaurant.location))].sort();
 
-/** Sorted, de-duplicated list of every `goodFor` tag present in the data. */
-export const goodForTags = [...new Set(restaurants.flatMap((r) => r.goodFor))].sort();
+/** Sorted, de-duplicated list of the source data's per-person price points. */
+export const pricesPerPerson = [
+	...new Set(restaurants.map((restaurant) => restaurant.pricePerPerson))
+].sort((a, b) => a - b);

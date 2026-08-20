@@ -1,4 +1,4 @@
-import { PUBLIC_POSTHOG_API_KEY, PUBLIC_POSTHOG_ENABLED } from '$env/static/public';
+import { env } from '$env/dynamic/public';
 import type { Handle, HandleServerError } from '@sveltejs/kit';
 
 export const handle: Handle = ({ event, resolve }) => {
@@ -12,7 +12,7 @@ export const handle: Handle = ({ event, resolve }) => {
 };
 
 export const handleError: HandleServerError = async ({ error, status }) => {
-	if (status !== 404 && PUBLIC_POSTHOG_ENABLED !== 'false' && PUBLIC_POSTHOG_API_KEY) {
+	if (status !== 404 && env.PUBLIC_POSTHOG_ENABLED !== 'false' && env.PUBLIC_POSTHOG_API_KEY) {
 		const normalizedError = error instanceof Error ? error : new Error(String(error));
 
 		await fetch('https://us.i.posthog.com/capture/', {
@@ -21,7 +21,7 @@ export const handleError: HandleServerError = async ({ error, status }) => {
 				'content-type': 'application/json'
 			},
 			body: JSON.stringify({
-				api_key: PUBLIC_POSTHOG_API_KEY,
+				api_key: env.PUBLIC_POSTHOG_API_KEY,
 				event: '$exception',
 				distinct_id: 'server',
 				properties: {

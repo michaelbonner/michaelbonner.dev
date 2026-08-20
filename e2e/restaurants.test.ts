@@ -36,11 +36,11 @@ test.describe('Restaurants page', () => {
 		expect(descending).toEqual([...ascending].reverse());
 	});
 
-	test('filters by cuisine', async ({ page }) => {
-		const cuisine = restaurants[0].cuisine;
-		const expected = restaurants.filter((r) => r.cuisine === cuisine);
+	test('filters by tag', async ({ page }) => {
+		const tag = restaurants[0].tags[0];
+		const expected = restaurants.filter((restaurant) => restaurant.tags.includes(tag));
 
-		await page.getByLabel('Cuisine', { exact: true }).selectOption(cuisine);
+		await page.getByLabel('Tag', { exact: true }).selectOption(tag);
 
 		await expect(page.locator('tbody tr')).toHaveCount(expected.length);
 		for (const restaurant of expected) {
@@ -57,12 +57,9 @@ test.describe('Restaurants page', () => {
 		await expect(page.locator('tbody tr')).toHaveCount(1);
 	});
 
-	test('combines tag filters and can clear them', async ({ page }) => {
-		const tag = restaurants[0].goodFor[0];
-		const expected = restaurants.filter((r) => r.goodFor.includes(tag));
-
-		await page.getByRole('button', { name: tag, exact: true }).click();
-		await expect(page.locator('tbody tr')).toHaveCount(expected.length);
+	test('clears filters', async ({ page }) => {
+		await page.getByLabel('Search', { exact: true }).fill(restaurants[0].name);
+		await expect(page.locator('tbody tr')).toHaveCount(1);
 
 		await page.getByRole('button', { name: 'Clear filters' }).click();
 		await expect(page.locator('tbody tr')).toHaveCount(restaurants.length);

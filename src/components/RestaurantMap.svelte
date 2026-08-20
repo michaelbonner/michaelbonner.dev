@@ -61,14 +61,13 @@
 
 	const buildPopup = (restaurant: Restaurant) => {
 		const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-			`${restaurant.name} ${restaurant.address}`
+			`${restaurant.name}, ${restaurant.location}, Utah`
 		)}`;
 
 		return `
 			<strong class="restaurant-popup__name">${escapeHtml(restaurant.name)}</strong>
-			<span class="restaurant-popup__meta">${escapeHtml(restaurant.cuisine)} &middot; ${'$'.repeat(restaurant.price)} &middot; ${restaurant.rating}/5</span>
-			<span class="restaurant-popup__address">${escapeHtml(restaurant.address)}</span>
-			${restaurant.order ? `<span class="restaurant-popup__order">Order the ${escapeHtml(restaurant.order)}</span>` : ''}
+			<span class="restaurant-popup__meta">${escapeHtml(restaurant.tags.join(', '))} &middot; $${restaurant.pricePerPerson}/person &middot; ${restaurant.rating}/10</span>
+			<span class="restaurant-popup__address">${escapeHtml(restaurant.location)}</span>
 			<a class="restaurant-popup__link" href="${escapeHtml(mapsUrl)}" target="_blank" rel="noopener noreferrer">Directions</a>
 		`;
 	};

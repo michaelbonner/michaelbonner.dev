@@ -5,7 +5,7 @@
 	import { browser } from '$app/environment';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
-	import { PUBLIC_POSTHOG_API_KEY, PUBLIC_POSTHOG_ENABLED } from '$env/static/public';
+	import { env } from '$env/dynamic/public';
 	import { partytownSnippet } from '@qwik.dev/partytown/integration';
 	import posthog from 'posthog-js';
 	import { onDestroy, onMount } from 'svelte';
@@ -37,8 +37,8 @@
 		clearInterval(interval);
 	});
 
-	if (PUBLIC_POSTHOG_ENABLED !== 'false' && browser) {
-		posthog.init(PUBLIC_POSTHOG_API_KEY, {
+	if (browser && env.PUBLIC_POSTHOG_ENABLED !== 'false' && env.PUBLIC_POSTHOG_API_KEY) {
+		posthog.init(env.PUBLIC_POSTHOG_API_KEY, {
 			api_host: 'https://g.michaelbonner.dev',
 			capture_pageleave: false,
 			capture_pageview: false,

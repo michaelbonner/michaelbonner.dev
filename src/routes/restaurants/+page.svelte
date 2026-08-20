@@ -4,59 +4,48 @@
 	import { classNames } from '../../functions/classNames';
 	import { classes } from '../../styles/classes';
 	import {
-		cuisines,
-		goodForTags,
-		neighborhoods,
+		locations,
+		pricesPerPerson,
+		restaurantTags,
 		restaurants,
 		type Restaurant
 	} from '$lib/data/restaurants';
 
-	type SortKey = 'name' | 'cuisine' | 'neighborhood' | 'price' | 'rating';
+	type SortKey = 'name' | 'tags' | 'location' | 'pricePerPerson' | 'rating';
 	type SortDirection = 'asc' | 'desc';
 
 	const columns: { key: SortKey; label: string; alignRight: boolean }[] = [
 		{ key: 'name', label: 'Restaurant', alignRight: false },
-		{ key: 'cuisine', label: 'Cuisine', alignRight: false },
-		{ key: 'neighborhood', label: 'Neighborhood', alignRight: false },
-		{ key: 'price', label: 'Price', alignRight: true },
+		{ key: 'tags', label: 'Tags', alignRight: false },
+		{ key: 'location', label: 'Location', alignRight: false },
+		{ key: 'pricePerPerson', label: 'Price/person', alignRight: true },
 		{ key: 'rating', label: 'Rating', alignRight: true }
 	];
 
 	// Text columns sort A–Z first; numeric columns are most useful highest-first.
 	const defaultDirection: Record<SortKey, SortDirection> = {
 		name: 'asc',
-		cuisine: 'asc',
-		neighborhood: 'asc',
-		price: 'desc',
+		tags: 'asc',
+		location: 'asc',
+		pricePerPerson: 'desc',
 		rating: 'desc'
 	};
 
 	let search = $state('');
-	let cuisine = $state('');
-	let neighborhood = $state('');
-	let price = $state(0);
+	let tag = $state('');
+	let location = $state('');
+	let pricePerPerson = $state(0);
 	let minRating = $state(0);
-	let selectedTags = $state<string[]>([]);
 	let sortKey = $state<SortKey>('rating');
 	let sortDirection = $state<SortDirection>('desc');
 	let activeName = $state<string | null>(null);
 
 	let listElement: HTMLDivElement | undefined = $state();
 
-	const hasFilters = $derived(
-		Boolean(search || cuisine || neighborhood || price || minRating || selectedTags.length)
-	);
+	const hasFilters = $derived(Boolean(search || tag || location || pricePerPerson || minRating));
 
 	const matchesSearch = (restaurant: Restaurant, query: string) => {
-		const haystack = [
-			restaurant.name,
-			restaurant.cuisine,
-			restaurant.neighborhood,
-			restaurant.address,
-			restaurant.order,
-			restaurant.notes,
-			...restaurant.goodFor
-		]
+		const haystack = [restaurant.name, restaurant.location, restaurant.notes, ...restaurant.tags]
 			.filter(Boolean)
 			.join(' ')
 			.toLowerCase();
@@ -69,12 +58,10 @@
 
 		return restaurants.filter((restaurant) => {
 			if (query && !matchesSearch(restaurant, query)) return false;
-			if (cuisine && restaurant.cuisine !== cuisine) return false;
-			if (neighborhood && restaurant.neighborhood !== neighborhood) return false;
-			if (price && restaurant.price !== price) return false;
+			if (tag && !restaurant.tags.includes(tag)) return false;
+			if (location && restaurant.location !== location) return false;
+			if (pricePerPerson && restaurant.pricePerPerson !== pricePerPerson) return false;
 			if (minRating && restaurant.rating < minRating) return false;
-			// Tags are additive: a restaurant has to carry every selected tag.
-			if (selectedTags.some((tag) => !restaurant.goodFor.includes(tag))) return false;
 			return true;
 		});
 	});
@@ -105,30 +92,21 @@
 		sortDirection = defaultDirection[key];
 	};
 
-	const toggleTag = (tag: string) => {
-		selectedTags = selectedTags.includes(tag)
-			? selectedTags.filter((selected) => selected !== tag)
-			: [...selectedTags, tag];
-	};
-
 	const clearFilters = () => {
 		search = '';
-		cuisine = '';
-		neighborhood = '';
-		price = 0;
+		tag = '';
+		location = '';
+		pricePerPerson = 0;
 		minRating = 0;
-		selectedTags = [];
 	};
 
 	const select = (name: string | null) => {
 		activeName = activeName === name ? null : name;
 	};
 
-	const priceLabel = (level: number) => '$'.repeat(level);
-
 	const directionsUrl = (restaurant: Restaurant) =>
 		`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-			`${restaurant.name} ${restaurant.address}`
+			`${restaurant.name}, ${restaurant.location}, Utah`
 		)}`;
 
 	// When a map pin is clicked, bring its row into view.
@@ -160,10 +138,13 @@
 			item: {
 				'@type': 'Restaurant',
 				name: restaurant.name,
-				servesCuisine: restaurant.cuisine,
-				priceRange: '$'.repeat(restaurant.price),
-				address: { '@type': 'PostalAddress', streetAddress: restaurant.address },
-				...(restaurant.website ? { url: restaurant.website } : {}),
+				servesCuisine: restaurant.tags,
+				priceRange: `$${restaurant.pricePerPerson} per person`,
+				address: {
+					'@type': 'PostalAddress',
+					addressLocality: restaurant.location,
+					addressRegion: 'UT'
+				},
 				...(restaurant.lat != null && restaurant.lng != null
 					? {
 							geo: {
@@ -226,26 +207,26 @@
 							id="restaurant-search"
 							type="search"
 							bind:value={search}
-							placeholder="Name, dish, neighborhood&hellip;"
+							placeholder="Name, tag, location&hellip;"
 							class={inputClasses}
 						/>
 					</div>
 
 					<div class="grid gap-1">
-						<label for="restaurant-cuisine" class={labelClasses}>Cuisine</label>
-						<select id="restaurant-cuisine" bind:value={cuisine} class={inputClasses}>
-							<option value="">Any cuisine</option>
-							{#each cuisines as option (option)}
+						<label for="restaurant-tag" class={labelClasses}>Tag</label>
+						<select id="restaurant-tag" bind:value={tag} class={inputClasses}>
+							<option value="">Any tag</option>
+							{#each restaurantTags as option (option)}
 								<option value={option}>{option}</option>
 							{/each}
 						</select>
 					</div>
 
 					<div class="grid gap-1">
-						<label for="restaurant-neighborhood" class={labelClasses}>Neighborhood</label>
-						<select id="restaurant-neighborhood" bind:value={neighborhood} class={inputClasses}>
-							<option value="">Any neighborhood</option>
-							{#each neighborhoods as option (option)}
+						<label for="restaurant-location" class={labelClasses}>Location</label>
+						<select id="restaurant-location" bind:value={location} class={inputClasses}>
+							<option value="">Any location</option>
+							{#each locations as option (option)}
 								<option value={option}>{option}</option>
 							{/each}
 						</select>
@@ -253,11 +234,11 @@
 
 					<div class="grid grid-cols-2 gap-4">
 						<div class="grid gap-1">
-							<label for="restaurant-price" class={labelClasses}>Price</label>
-							<select id="restaurant-price" bind:value={price} class={inputClasses}>
+							<label for="restaurant-price" class={labelClasses}>Price/person</label>
+							<select id="restaurant-price" bind:value={pricePerPerson} class={inputClasses}>
 								<option value={0}>Any</option>
-								{#each [1, 2, 3, 4] as level (level)}
-									<option value={level}>{priceLabel(level)}</option>
+								{#each pricesPerPerson as pricePoint (pricePoint)}
+									<option value={pricePoint}>${pricePoint}</option>
 								{/each}
 							</select>
 						</div>
@@ -266,37 +247,13 @@
 							<label for="restaurant-rating" class={labelClasses}>Rating</label>
 							<select id="restaurant-rating" bind:value={minRating} class={inputClasses}>
 								<option value={0}>Any</option>
-								{#each [5, 4, 3] as level (level)}
-									<option value={level}>{level}+ stars</option>
+								{#each [10, 9, 8] as level (level)}
+									<option value={level}>{level}+</option>
 								{/each}
 							</select>
 						</div>
 					</div>
 				</div>
-
-				{#if goodForTags.length > 0}
-					<fieldset class="grid gap-2">
-						<legend class="text-sm text-gray-700 dark:text-gray-300">Good for</legend>
-						<div class="flex flex-wrap gap-2">
-							{#each goodForTags as tag (tag)}
-								{@const isSelected = selectedTags.includes(tag)}
-								<button
-									type="button"
-									onclick={() => toggleTag(tag)}
-									aria-pressed={isSelected}
-									class={classNames(
-										'rounded-full border px-3 py-1 transition-transform hover:scale-105',
-										isSelected
-											? 'border-blue-800 bg-blue-800 text-gray-100 dark:border-blue-300 dark:bg-blue-300 dark:text-gray-900'
-											: 'border-gray-400 hover:border-blue-600 dark:border-gray-600 dark:hover:border-blue-300'
-									)}
-								>
-									{tag}
-								</button>
-							{/each}
-						</div>
-					</fieldset>
-				{/if}
 
 				<div class="flex flex-wrap items-center justify-between gap-4">
 					<p aria-live="polite" class="text-gray-700 dark:text-gray-300">
@@ -324,12 +281,12 @@
 					>
 						<option value="rating:desc">Rating, high to low</option>
 						<option value="rating:asc">Rating, low to high</option>
-						<option value="price:asc">Price, low to high</option>
-						<option value="price:desc">Price, high to low</option>
+						<option value="pricePerPerson:asc">Price, low to high</option>
+						<option value="pricePerPerson:desc">Price, high to low</option>
 						<option value="name:asc">Name, A to Z</option>
 						<option value="name:desc">Name, Z to A</option>
-						<option value="cuisine:asc">Cuisine, A to Z</option>
-						<option value="neighborhood:asc">Neighborhood, A to Z</option>
+						<option value="tags:asc">Tags, A to Z</option>
+						<option value="location:asc">Location, A to Z</option>
 					</select>
 				</div>
 			</div>
@@ -387,28 +344,12 @@
 								>
 									<td class="py-3 pr-4">
 										<span class="text-lg">{restaurant.name}</span>
-										{#if restaurant.order}
-											<span class="block text-gray-700 italic dark:text-gray-400">
-												Order the {restaurant.order}
-											</span>
-										{/if}
 										{#if restaurant.notes}
 											<span class="block text-sm text-gray-600 dark:text-gray-400">
 												{restaurant.notes}
 											</span>
 										{/if}
 										<span class="mt-1 flex flex-wrap gap-x-3 text-sm">
-											{#if restaurant.website}
-												<a
-													href={restaurant.website}
-													target="_blank"
-													rel="noopener noreferrer"
-													class={classes.bodyLink}
-													onclick={(event) => event.stopPropagation()}
-												>
-													Website
-												</a>
-											{/if}
 											<a
 												href={directionsUrl(restaurant)}
 												target="_blank"
@@ -420,13 +361,12 @@
 											</a>
 										</span>
 									</td>
-									<td class="py-3 pr-4">{restaurant.cuisine}</td>
-									<td class="py-3 pr-4">{restaurant.neighborhood}</td>
+									<td class="py-3 pr-4">{restaurant.tags.join(', ')}</td>
+									<td class="py-3 pr-4">{restaurant.location}</td>
 									<td class="py-3 pr-4 text-right whitespace-nowrap">
-										<span class="sr-only">{restaurant.price} out of 4</span>
-										<span aria-hidden="true">{priceLabel(restaurant.price)}</span>
+										${restaurant.pricePerPerson}
 									</td>
-									<td class="py-3 text-right whitespace-nowrap">{restaurant.rating}/5</td>
+									<td class="py-3 text-right whitespace-nowrap">{restaurant.rating}/10</td>
 								</tr>
 							{/each}
 						</tbody>
@@ -452,30 +392,13 @@
 									{restaurant.name}
 								</button>
 								<p class="text-gray-700 dark:text-gray-300">
-									{restaurant.cuisine} &middot; {restaurant.neighborhood} &middot;
-									<span class="sr-only">{restaurant.price} out of 4</span>
-									<span aria-hidden="true">{priceLabel(restaurant.price)}</span>
-									&middot; {restaurant.rating}/5
+									{restaurant.tags.join(', ')} &middot; {restaurant.location} &middot; ${restaurant.pricePerPerson}/person
+									&middot; {restaurant.rating}/10
 								</p>
-								{#if restaurant.order}
-									<p class="text-gray-700 italic dark:text-gray-400">
-										Order the {restaurant.order}
-									</p>
-								{/if}
 								{#if restaurant.notes}
 									<p class="text-sm text-gray-600 dark:text-gray-400">{restaurant.notes}</p>
 								{/if}
 								<p class="mt-2 flex flex-wrap gap-x-4">
-									{#if restaurant.website}
-										<a
-											href={restaurant.website}
-											target="_blank"
-											rel="noopener noreferrer"
-											class={classes.bodyLink}
-										>
-											Website
-										</a>
-									{/if}
 									<a
 										href={directionsUrl(restaurant)}
 										target="_blank"

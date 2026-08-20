@@ -1,5 +1,5 @@
 /**
- * Geocodes every restaurant address in `src/lib/data/restaurants.ts` and writes the
+ * Geocodes every restaurant location in `src/lib/data/restaurants.ts` and writes the
  * results to `src/lib/data/restaurantCoordinates.json`, which is committed so the
  * site stays static.
  *
@@ -19,19 +19,20 @@ const coordinatesPath = resolve(projectRoot, 'src/lib/data/restaurantCoordinates
 
 const USER_AGENT = 'michaelbonner.dev restaurant map (https://michaelbonner.dev)';
 const RATE_LIMIT_MS = 1100;
+const SALT_LAKE_AREA = {
+	north: 41,
+	south: 40.4,
+	east: -111.6,
+	west: -112.2
+};
 
 const force = process.argv.includes('--force');
 
 const sleep = (ms) => new Promise((done) => setTimeout(done, ms));
 
-/**
- * Nominatim does better with a plain "name, street, city, state" query than with a
- * full postal address, so the zip is dropped before searching.
- */
-const buildQuery = (restaurant) => {
-	const withoutZip = restaurant.address.replace(/\s+\d{5}(-\d{4})?$/, '');
-	return `${restaurant.name}, ${withoutZip}`;
-};
+// The source data has broad labels such as "Downtown/Midvale" rather than street
+// addresses. Nominatim matches the business name plus state more reliably.
+const buildQuery = (restaurant) => `${restaurant.name}, Utah`;
 
 const geocode = async (query) => {
 	const url = new URL('https://nominatim.openstreetmap.org/search');
@@ -47,7 +48,17 @@ const geocode = async (query) => {
 	const [match] = await response.json();
 	if (!match) return null;
 
-	return { lat: Number(match.lat), lng: Number(match.lon) };
+	const position = { lat: Number(match.lat), lng: Number(match.lon) };
+	if (
+		position.lat > SALT_LAKE_AREA.north ||
+		position.lat < SALT_LAKE_AREA.south ||
+		position.lng > SALT_LAKE_AREA.east ||
+		position.lng < SALT_LAKE_AREA.west
+	) {
+		return null;
+	}
+
+	return position;
 };
 
 const main = async () => {
@@ -110,7 +121,7 @@ const main = async () => {
 		console.warn(
 			`\n${failures.length} restaurant(s) could not be geocoded and will not appear on the map:\n` +
 				failures.map((name) => `  - ${name}`).join('\n') +
-				`\n\nAdd their lat/lng to restaurantCoordinates.json by hand, or tighten the address.`
+				`\n\nAdd their lat/lng to restaurantCoordinates.json by hand, or tighten the location.`
 		);
 	}
 };
