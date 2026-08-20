@@ -19,20 +19,44 @@
 	// Salt Lake City, used until there is something to fit the map to.
 	const SALT_LAKE_CITY: [number, number] = [40.7608, -111.891];
 
-	// CARTO's OpenStreetMap-derived basemaps, which need no API key and come in a
-	// dark variant so the map can follow the rest of the site's color scheme.
-	const TILES = {
-		light: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-		dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-	};
+	// Voyager stays light enough to read against the site's blue-gray dark theme.
+	// CARTO's dark tiles are nearly black and make the map feel disconnected from the page.
+	const TILE_URL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
 	const TILE_ATTRIBUTION =
 		'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
 		'&copy; <a href="https://carto.com/attributions">CARTO</a>';
+	const imageModules = import.meta.glob<string>('/src/lib/images/restaurants/*.jpg', {
+		eager: true,
+		import: 'default',
+		query: '?url'
+	});
+	const imageNameAliases: Record<string, string> = {
+		'ganesh indian cuisine': 'ganesh',
+		'pretty bird hot chicken': 'pretty bird',
+		'proper burger company': 'proper burger'
+	};
+
+	const normalizeRestaurantName = (value: string) =>
+		value
+			.normalize('NFD')
+			.replace(/\p{Diacritic}/gu, '')
+			.toLowerCase()
+			.replace(/[^a-z0-9]+/g, ' ')
+			.trim();
+
+	const restaurantImages: Record<string, string> = {};
+	for (const [path, url] of Object.entries(imageModules)) {
+		const fileName = path.split('/').pop();
+		if (!fileName) continue;
+
+		const imageName = normalizeRestaurantName(fileName.replace(/\.[^.]+$/, ''));
+		const restaurantName = imageNameAliases[imageName] ?? imageName;
+		restaurantImages[restaurantName] = url;
+	}
 
 	let container: HTMLDivElement;
 	let L: typeof Leaflet | undefined = $state();
 	let map: Leaflet.Map | undefined;
-	let tileLayer: Leaflet.TileLayer | undefined;
 	// Imperative Leaflet handles rather than reactive state, so a plain record is enough.
 	let markersByName: Record<string, Leaflet.Marker> = {};
 
@@ -63,8 +87,13 @@
 		const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
 			`${restaurant.name}, ${restaurant.location}, Utah`
 		)}`;
+		const imageUrl = restaurantImages[normalizeRestaurantName(restaurant.name)];
+		const image = imageUrl
+			? `<img class="restaurant-popup__image" src="${escapeHtml(imageUrl)}" alt="" loading="lazy">`
+			: '<span class="restaurant-popup__missing">Photo coming soon</span>';
 
 		return `
+			${image}
 			<strong class="restaurant-popup__name">${escapeHtml(restaurant.name)}</strong>
 			<span class="restaurant-popup__meta">${escapeHtml(restaurant.tags.join(', '))} &middot; $${restaurant.pricePerPerson}/person &middot; ${restaurant.rating}/10</span>
 			<span class="restaurant-popup__address">${escapeHtml(restaurant.location)}</span>
@@ -72,9 +101,28 @@
 		`;
 	};
 
+	const buildPreview = (restaurant: Restaurant) => {
+		const imageUrl = restaurantImages[normalizeRestaurantName(restaurant.name)];
+		const image = imageUrl
+			? `<img class="restaurant-preview__image" src="${escapeHtml(imageUrl)}" alt="" loading="lazy">`
+			: '<span class="restaurant-preview__missing">Photo coming soon</span>';
+		const tags = restaurant.tags
+			.map((tag) => `<span class="restaurant-preview__tag">${escapeHtml(tag)}</span>`)
+			.join('');
+
+		return `
+			<div class="restaurant-preview__card">
+				${image}
+				<div class="restaurant-preview__content">
+					<strong class="restaurant-preview__name">${escapeHtml(restaurant.name)}</strong>
+					<span class="restaurant-preview__tags">${tags}</span>
+				</div>
+			</div>
+		`;
+	};
+
 	onMount(() => {
 		let disposed = false;
-		let stopWatchingColorScheme: (() => void) | undefined;
 		let stopWatchingSize: (() => void) | undefined;
 
 		// Leaflet touches `window` at import time, so it can only be loaded in the browser.
@@ -88,20 +136,12 @@
 				scrollWheelZoom: false
 			});
 
-			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-			const applyTiles = () => {
-				if (tileLayer) tileLayer.remove();
-				tileLayer = leaflet
-					.tileLayer(prefersDark.matches ? TILES.dark : TILES.light, {
-						attribution: TILE_ATTRIBUTION,
-						maxZoom: 19
-					})
-					.addTo(instance);
-			};
-
-			applyTiles();
-			prefersDark.addEventListener('change', applyTiles);
-			stopWatchingColorScheme = () => prefersDark.removeEventListener('change', applyTiles);
+			leaflet
+				.tileLayer(TILE_URL, {
+					attribution: TILE_ATTRIBUTION,
+					maxZoom: 19
+				})
+				.addTo(instance);
 
 			// Scroll zoom is off by default so the page still scrolls over the map;
 			// clicking the map opts into it.
@@ -122,10 +162,8 @@
 		return () => {
 			disposed = true;
 			stopWatchingSize?.();
-			stopWatchingColorScheme?.();
 			map?.remove();
 			map = undefined;
-			tileLayer = undefined;
 			markersByName = {};
 		};
 	});
@@ -149,12 +187,19 @@
 						alt: restaurant.name,
 						riseOnHover: true
 					})
+					.bindTooltip(buildPreview(restaurant), {
+						className: 'restaurant-preview',
+						direction: 'auto',
+						offset: [18, 0],
+						opacity: 1
+					})
 					.bindPopup(buildPopup(restaurant), {
 						className: 'restaurant-popup',
 						autoPanPadding: [24, 24]
 					})
 					.on('click', () => onSelect(restaurant.name))
 					.addTo(instance);
+				marker.on('popupopen', () => marker.closeTooltip());
 
 				markersByName[restaurant.name] = marker;
 			}
@@ -257,6 +302,71 @@
 		transform: scale(1.25);
 	}
 
+	:global(.restaurant-preview.leaflet-tooltip) {
+		width: 15rem;
+		overflow: hidden;
+		padding: 0;
+		border: 1px solid var(--color-gray-300);
+		border-radius: 0.5rem;
+		background: var(--color-gray-50);
+		box-shadow: 0 0.5rem 1.5rem rgb(15 23 42 / 0.22);
+		color: var(--color-gray-900);
+		font-family: inherit;
+	}
+
+	:global(.restaurant-preview.leaflet-tooltip::before) {
+		display: none;
+	}
+
+	:global(.restaurant-preview__card) {
+		display: grid;
+	}
+
+	:global(.restaurant-preview__image),
+	:global(.restaurant-preview__missing) {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+	}
+
+	:global(.restaurant-preview__image) {
+		display: block;
+		object-fit: cover;
+	}
+
+	:global(.restaurant-preview__missing) {
+		display: grid;
+		place-items: center;
+		background: var(--color-gray-200);
+		color: var(--color-gray-600);
+		font-size: 0.8125rem;
+	}
+
+	:global(.restaurant-preview__content) {
+		display: grid;
+		gap: 0.5rem;
+		padding: 0.75rem;
+	}
+
+	:global(.restaurant-preview__name) {
+		font-size: 1rem;
+		line-height: 1.2;
+	}
+
+	:global(.restaurant-preview__tags) {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.375rem;
+	}
+
+	:global(.restaurant-preview__tag) {
+		border-radius: 9999px;
+		background: var(--color-blue-100);
+		padding: 0.125rem 0.5rem;
+		color: var(--color-blue-900);
+		font-size: 0.75rem;
+		line-height: 1.4;
+	}
+
 	/* Let the container's own background show through while tiles load. */
 	:global(.leaflet-container) {
 		background: transparent;
@@ -265,8 +375,30 @@
 	:global(.restaurant-popup .leaflet-popup-content) {
 		display: grid;
 		gap: 0.25rem;
+		width: 15rem !important;
 		margin: 0.75rem;
 		font-family: inherit;
+	}
+
+	:global(.restaurant-popup__image),
+	:global(.restaurant-popup__missing) {
+		width: 100%;
+		margin-bottom: 0.375rem;
+		border-radius: 0.375rem;
+		aspect-ratio: 16 / 9;
+	}
+
+	:global(.restaurant-popup__image) {
+		display: block;
+		object-fit: cover;
+	}
+
+	:global(.restaurant-popup__missing) {
+		display: grid;
+		place-items: center;
+		background: var(--color-gray-200);
+		color: var(--color-gray-600);
+		font-size: 0.8125rem;
 	}
 
 	:global(.restaurant-popup__name) {
@@ -290,6 +422,28 @@
 
 	/* Popups are the one piece of Leaflet chrome big enough to clash in dark mode. */
 	@media (prefers-color-scheme: dark) {
+		:global(.restaurant-preview.leaflet-tooltip) {
+			border-color: var(--color-gray-600);
+			background: var(--color-gray-800);
+			box-shadow: none;
+			color: var(--color-gray-100);
+		}
+
+		:global(.restaurant-preview__missing) {
+			background: var(--color-gray-700);
+			color: var(--color-gray-300);
+		}
+
+		:global(.restaurant-popup__missing) {
+			background: var(--color-gray-700);
+			color: var(--color-gray-300);
+		}
+
+		:global(.restaurant-preview__tag) {
+			background: var(--color-blue-950);
+			color: var(--color-blue-200);
+		}
+
 		:global(.restaurant-popup .leaflet-popup-content-wrapper),
 		:global(.restaurant-popup .leaflet-popup-tip) {
 			background-color: #1f2937;

@@ -79,6 +79,21 @@ test.describe('Restaurants page', () => {
 		await expect(page.locator('.restaurant-pin')).toHaveCount(geocoded.length);
 	});
 
+	test('shows a restaurant preview when a pin is hovered or focused', async ({ page }) => {
+		const pin = page.locator('.restaurant-pin[title="Antica Sicilia"]');
+
+		await pin.hover();
+		await expect(page.locator('.restaurant-preview')).toContainText('Antica Sicilia');
+		await expect(page.locator('.restaurant-preview')).toContainText('Italian');
+		await expect(page.locator('.restaurant-preview__image')).toBeVisible();
+
+		await page.mouse.move(0, 0);
+		await expect(page.locator('.restaurant-preview')).toHaveCount(0);
+
+		await pin.focus();
+		await expect(page.locator('.restaurant-preview')).toContainText('Antica Sicilia');
+	});
+
 	test('selecting a row opens its map popup and closes it again', async ({ page }) => {
 		const target = restaurants.find((r) => r.lat != null && r.lng != null);
 		test.skip(!target, 'No geocoded restaurants; run `bun run geocode` first.');
@@ -87,6 +102,7 @@ test.describe('Restaurants page', () => {
 
 		await row.click();
 		await expect(page.locator('.leaflet-popup')).toContainText(target!.name);
+		await expect(page.locator('.restaurant-popup__image')).toBeVisible();
 
 		await row.click();
 		await expect(page.locator('.leaflet-popup')).toHaveCount(0);

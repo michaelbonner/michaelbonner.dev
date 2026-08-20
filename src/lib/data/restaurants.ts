@@ -34,7 +34,7 @@ const entries = [
 		tags: ['Italian'],
 		rating: 9,
 		pricePerPerson: 50,
-		location: 'Sugarhouse-'
+		location: 'Sugarhouse'
 	},
 	{
 		name: 'Bricks Corner',
@@ -63,7 +63,7 @@ const entries = [
 		tags: ['Ice Cream'],
 		rating: 9,
 		pricePerPerson: 10,
-		location: 'Sugarhouse-ish'
+		location: 'Sugarhouse'
 	},
 	{
 		name: 'Frankies',
@@ -153,7 +153,7 @@ const entries = [
 	{
 		name: 'Pretty Bird',
 		tags: ['Chicken'],
-		rating: 8,
+		rating: 9,
 		pricePerPerson: 20,
 		location: 'Downtown/Sugarhouse/Midvale'
 	},
