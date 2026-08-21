@@ -106,8 +106,11 @@ database behind it:
    notification. It stores first and notifies second: a saved-but-unannounced
    suggestion is recoverable, an announced-but-lost one is not.
 3. The schema lives in `migrations/`, applied with
-   `bunx wrangler d1 migrations apply`. The `DB` binding is declared in
-   `wrangler.jsonc` and typed in `src/app.d.ts`.
+   `bunx wrangler d1 migrations apply`. The `DB` binding is typed in
+   `src/app.d.ts`, and its `wrangler.jsonc` block ships **commented out** with
+   an empty `database_id`: a Workers build fails outright on an id that is not a
+   real database, so the block is uncommented once the database exists (see the
+   README).
 4. It reuses the contact form's `TURNSTILE_SECRET_KEY`, `TELEGRAM_BOT_TOKEN`, and
    `TELEGRAM_CHAT_ID`. Without any of those, or without the binding, the action
    fails with a visitor-facing "temporarily unavailable" message rather than

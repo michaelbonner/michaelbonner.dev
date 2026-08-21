@@ -23,16 +23,22 @@ form's `TURNSTILE_SECRET_KEY`, `TELEGRAM_BOT_TOKEN`, and `TELEGRAM_CHAT_ID`; the
 action refuses submissions rather than dropping them if any of those, or the D1
 binding, are missing.
 
-One-time setup:
+One-time setup. The `d1_databases` block in `wrangler.jsonc` ships commented
+out, because a Workers build fails outright on a `database_id` that is not a real
+database:
 
 ```bash
-# Create the database and paste the printed database_id into wrangler.jsonc
+# Create the database, then paste the printed id into the commented-out
+# d1_databases block in wrangler.jsonc and uncomment it
 bunx wrangler d1 create michaelbonner-dev
 
 # Apply the schema in migrations/
 bunx wrangler d1 migrations apply michaelbonner-dev --local   # local dev
 bunx wrangler d1 migrations apply michaelbonner-dev --remote  # production
 ```
+
+Until that is done the dialog reports suggestions as unavailable rather than
+accepting submissions it cannot store.
 
 To read what has come in:
 
