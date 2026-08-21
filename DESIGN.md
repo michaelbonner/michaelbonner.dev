@@ -100,6 +100,15 @@ ends, so hierarchy never flattens on small screens. Body measure is capped at
   version separated sections with nothing but a large top margin.
 - The header is sticky with a hairline under it. Previously the wordmark and nav
   floated on the same undifferentiated field as the content.
+- **The sticky header has consequences.** Its height lives in `--header-height`
+  (taller below `sm`, where the row wraps). Anything that must clear it reads
+  that token: `html` sets `scroll-padding-top` from it so in-page anchors like
+  `/#projects` do not land under the header, and the restaurants map offsets its
+  own `xl:sticky` position from it. Do not hard-code an offset.
+- **Only one sticky layer may compete with the header.** The map is given
+  `isolate` so its `z-500` legend and Leaflet's high-z popup panes stay in their
+  own stacking context instead of painting over the header. Any future
+  high-`z-index` island needs the same treatment.
 - Asymmetric where it helps: the hero gives the sentence the wide column and the
   photo the narrow one, with a facts list filling what used to be a tall empty
   gap.

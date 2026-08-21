@@ -81,6 +81,13 @@
 	--shadow-color: 45 25% 22%;
 
 	/*
+		Height of the sticky header. Anything that needs to sit clear of it (anchor
+		targets, a second sticky layer) reads this rather than hard-coding an
+		offset that drifts when the header's padding changes.
+	*/
+	--header-height: 5.5rem;
+
+	/*
 		Map pin scale, by rating band. Ordinal, so the three steps separate on
 		lightness as well as hue: they stay distinguishable in greyscale, and the
 		rating is printed inside each pin regardless, so nothing depends on colour
@@ -140,9 +147,23 @@
 		border-color: var(--rule);
 	}
 
+	/* Above `sm` the wordmark and nav share one line, so the header is shorter. */
+	@media (width >= 40rem) {
+		:root {
+			--header-height: 4.0625rem;
+		}
+	}
+
 	html {
 		background-color: var(--ground);
 		-webkit-text-size-adjust: 100%;
+
+		/*
+			Keeps `/#projects` and any other in-page anchor from landing underneath
+			the sticky header, which otherwise covers the target's eyebrow and, on
+			narrow layouts, part of its heading.
+		*/
+		scroll-padding-top: calc(var(--header-height) + 1.5rem);
 	}
 
 	body {

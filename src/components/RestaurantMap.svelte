@@ -260,7 +260,12 @@
 	});
 </script>
 
-<div class="relative">
+<!--
+	`isolate` keeps this whole subtree in its own stacking context. The legend sits
+	at z-500 and Leaflet's popup panes go higher still; without isolation those
+	compete with the site header directly and paint over it on scroll.
+-->
+<div class="relative isolate">
 	<div
 		bind:this={container}
 		class="border-rule bg-ground-sunken h-[22rem] w-full rounded-xl border xl:h-[38rem]"

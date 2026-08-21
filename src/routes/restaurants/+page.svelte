@@ -321,7 +321,7 @@
 	<div class="border-rule grid gap-8 border-t pt-10 pb-8 xl:grid-cols-5">
 		<!-- The map sticks alongside the list on wide screens and sits above it otherwise. -->
 		<div class="xl:order-2 xl:col-span-2">
-			<div class="xl:sticky xl:top-8">
+			<div class="xl:sticky xl:top-[calc(var(--header-height)+1rem)]">
 				<RestaurantMap restaurants={visible} {activeName} onSelect={select} />
 			</div>
 		</div>

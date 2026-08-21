@@ -134,6 +134,10 @@ import image from '$lib/images/example.jpg?enhanced'; // Use: {image.img.src} fo
   `eyebrow`, `sectionHeading`). Prefer these over rebuilding a treatment.
 - Reusable layout components: `src/components/Section.svelte` (eyebrow + heading +
   hairline) and `src/components/ProjectCard.svelte`.
+- The header is sticky. `--header-height` is the single source of truth for its
+  height; `html`'s `scroll-padding-top` and the restaurants map's sticky offset
+  both derive from it. Give any new high-`z-index` island `isolate` so it cannot
+  paint over the header.
 - Prose is wired to the same tokens, so `prose` alone is correct. Do **not** add
   `dark:prose-invert`. Those overrides are intentionally unlayered in `app.css`
   because `@tailwindcss/typography` defines `.prose` inside `@layer utilities`.
