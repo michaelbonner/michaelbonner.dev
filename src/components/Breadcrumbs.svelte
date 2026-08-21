@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { classes } from '../styles/classes';
+
 	interface BreadcrumbItem {
 		label: string;
 		href?: string;
@@ -25,24 +27,28 @@
 	{@html `<${'script'} type="application/ld+json">${JSON.stringify(schema)}</${'script'}>`}
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="container mx-auto px-8 py-4">
-	<ol class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+<nav aria-label="Breadcrumb" class="container mx-auto px-6 pt-8 sm:px-8">
+	<ol class="flex flex-wrap items-center gap-x-2 gap-y-1">
 		{#each items as item, index (item.label)}
-			<li class="flex items-center gap-2">
+			<li class="flex min-w-0 items-center gap-2">
 				{#if index > 0}
-					<span aria-hidden="true">/</span>
+					<span aria-hidden="true" class="text-ink-faint">/</span>
 				{/if}
 				{#if item.href}
 					<a
 						href={item.href}
-						class="underline transition-colors hover:text-gray-900 dark:hover:text-gray-200"
+						class="{classes.label} hover:text-accent no-underline transition-colors duration-150 ease-out"
 					>
 						{item.label}
 					</a>
 				{:else}
-					<span class="font-medium text-gray-900 dark:text-gray-200">
-						{item.label}
-					</span>
+					<!--
+						The current page truncates rather than wrapping. `max-w-full` rather
+						than a ch measure: a fixed 60ch never constrains a 320px screen, so
+						`truncate` had nothing to work against and a long post title pushed
+						the page sideways.
+					-->
+					<span class="{classes.label} text-ink max-w-full min-w-0 truncate">{item.label}</span>
 				{/if}
 			</li>
 		{/each}
