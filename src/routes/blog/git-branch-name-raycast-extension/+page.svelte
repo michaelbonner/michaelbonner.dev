@@ -9,7 +9,7 @@
 
 <Seo
 	description="Check out the new Git Branch Name Raycast Extension I made"
-	ogImage={gitBranchNameGenerator3.img.src}
+	ogImage="/og/blog-git-branch-name-raycast-extension.jpg"
 	ogType="article"
 	title="Git Branch Name Raycast Extension | Michael Bonner"
 />

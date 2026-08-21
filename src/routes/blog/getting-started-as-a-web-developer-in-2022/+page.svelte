@@ -8,7 +8,7 @@
 
 <Seo
 	description="Are you thinking about becoming a web developer? Where should you start? Here's my two cents as a full time web developer with almost 20 years of experience."
-	ogImage={tuffWebsiteScreenshot.img.src}
+	ogImage="/og/blog-getting-started-as-a-web-developer-in-2022.jpg"
 	ogType="article"
 	title="Getting Started as a Web Developer in 2022 | Michael Bonner"
 />

@@ -6,6 +6,7 @@
 <Seo
 	title="Michael Bonner | Developer in Salt Lake, UT"
 	description="This website's privacy policy and terms of service"
+	ogImage="/og/policies.jpg"
 />
 
 <svelte:head>

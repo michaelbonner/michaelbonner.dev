@@ -4,7 +4,7 @@
 	let {
 		title = '',
 		description = '',
-		ogImage = 'https://michaelbonner.dev/og-image.jpg',
+		ogImage = '/og/default.jpg',
 		ogType = 'website'
 	} = $props();
 

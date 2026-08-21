@@ -6,6 +6,7 @@
 
 <Seo
 	description="A web developer's blog from Salt Lake City, UT. Thoughts on development, technology, and random things worth writing about."
+	ogImage="/og/blog.jpg"
 	title="Developer Blog | Michael Bonner"
 />
 

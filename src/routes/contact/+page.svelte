@@ -14,6 +14,7 @@
 <Seo
 	title="Contact | Michael Bonner"
 	description="Get in touch with Michael Bonner, a full-stack developer in Salt Lake City, Utah."
+	ogImage="/og/contact.jpg"
 />
 
 <svelte:head>

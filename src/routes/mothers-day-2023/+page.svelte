@@ -5,6 +5,7 @@
 <Seo
 	title="Happy Mother's Day Mom!"
 	description="I wanted to take a moment to let you know just how much I appreciate and love you."
+	ogImage="/og/mothers-day-2023.jpg"
 />
 
 <svelte:head>

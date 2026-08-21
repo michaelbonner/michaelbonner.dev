@@ -44,6 +44,7 @@
 <Seo
 	title="Patents by Michael Bonner - Inventor & Software Developer"
 	description="A collection of patents listing Michael Bonner as inventor, covering data management systems and construction project management technology."
+	ogImage="/og/patents.jpg"
 />
 
 <svelte:head>

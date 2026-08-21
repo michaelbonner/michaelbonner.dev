@@ -66,7 +66,7 @@ const entries = [
 		locations: ['Sugarhouse']
 	},
 	{
-		name: 'Frankies',
+		name: "Frankie's Pizza and Pasta",
 		tags: ['Pizza'],
 		rating: 10,
 		notes: 'New York style',

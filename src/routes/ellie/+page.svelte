@@ -397,7 +397,7 @@
 <Seo
 	title="Ellie"
 	description="Some of my favorite memories with Ellie"
-	ogImage="https://michaelbonner.dev/images/ellie-og-image.jpg"
+	ogImage="/og/ellie.jpg"
 />
 
 <svelte:head>

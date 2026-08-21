@@ -25,14 +25,14 @@ const HEIGHT = 630;
 const SCALE = 2;
 
 // Full-bleed photo panel on the right of a "panel" card
-const PANEL_WIDTH = 520;
+const PANEL_WIDTH = 560;
 // Rounded screenshot card on the right of a "thumb" card
 const THUMB_WIDTH = 400;
 const THUMB_HEIGHT = 270;
 
 const HEADSHOT = 'src/lib/images/on-the-beach.jpg';
 // Square crop around the face in the source photo (2066x1378)
-const HEADSHOT_CROP = { left: 368, top: 110, width: 620, height: 620 };
+const HEADSHOT_CROP = { left: 412, top: 168, width: 520, height: 520 };
 
 const GRAVITY = {
 	top: 'north',
@@ -122,6 +122,14 @@ const template = ({ fonts, headshot, card, cardImage }) => {
 				position: relative;
 				width: 100%;
 				height: 100%;
+			}
+
+			/* The site's dark gradient. On photo cards its right edge is masked away,
+			   which dissolves the photo into the background with no visible seam. */
+			.scrim {
+				position: absolute;
+				inset: 0;
+				z-index: 2;
 				background:
 					radial-gradient(
 						120% 130% at 100% 0%,
@@ -131,8 +139,20 @@ const template = ({ fonts, headshot, card, cardImage }) => {
 					linear-gradient(28deg, #0b1220 0%, #16203a 55%, #202c48 100%);
 			}
 
+			.card.has-panel .scrim {
+				-webkit-mask-image: linear-gradient(
+					90deg,
+					#000 0%,
+					#000 57%,
+					rgba(0, 0, 0, 0.9) 67%,
+					rgba(0, 0, 0, 0.45) 79%,
+					rgba(0, 0, 0, 0.08) 93%,
+					transparent 100%
+				);
+			}
+
 			/* Accent rule across the top, echoing the site's blue links */
-			.card::before {
+			.card::after {
 				content: '';
 				position: absolute;
 				inset: 0 0 auto 0;
@@ -153,25 +173,11 @@ const template = ({ fonts, headshot, card, cardImage }) => {
 				object-fit: cover;
 			}
 
-			/* Fades the photo into the background so the type stays readable */
-			.panel::after {
-				content: '';
-				position: absolute;
-				inset: 0;
-				background: linear-gradient(
-					90deg,
-					#111b31 0%,
-					rgba(17, 27, 49, 0.9) 16%,
-					rgba(17, 27, 49, 0.3) 48%,
-					rgba(17, 27, 49, 0.08) 100%
-				);
-			}
-
 			.thumb {
 				position: absolute;
 				top: 50%;
 				right: 68px;
-				z-index: 3;
+				z-index: 4;
 				width: ${THUMB_WIDTH}px;
 				height: ${THUMB_HEIGHT}px;
 				overflow: hidden;
@@ -189,7 +195,7 @@ const template = ({ fonts, headshot, card, cardImage }) => {
 
 			.content {
 				position: relative;
-				z-index: 2;
+				z-index: 3;
 				display: flex;
 				flex-direction: column;
 				height: 100%;
@@ -262,8 +268,9 @@ const template = ({ fonts, headshot, card, cardImage }) => {
 		</style>
 	</head>
 	<body>
-		<div class="card">
+		<div class="card ${style === 'panel' ? 'has-panel' : ''}">
 			${style === 'panel' ? `<div class="panel"><img src="${cardImage}" alt="" /></div>` : ''}
+			<div class="scrim"></div>
 			${style === 'thumb' ? `<div class="thumb"><img src="${cardImage}" alt="" /></div>` : ''}
 			<div class="content">
 				<div class="eyebrow">${card.eyebrow}</div>

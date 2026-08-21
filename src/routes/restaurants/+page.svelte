@@ -177,6 +177,7 @@
 <Seo
 	title="Favorite Restaurants in Salt Lake | Michael Bonner"
 	description="A sortable, filterable, mapped list of my favorite restaurants in and around Salt Lake City."
+	ogImage="/og/restaurants.jpg"
 />
 
 <svelte:head>

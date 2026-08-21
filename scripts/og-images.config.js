@@ -62,7 +62,7 @@ export const cards = [
 		eyebrow: 'Salt Lake City',
 		title: 'Favorite Restaurants in Salt Lake',
 		description: 'A sortable, filterable, mapped list of the places I keep going back to.',
-		image: 'src/lib/images/restaurants/Bricks Corner.jpg'
+		image: 'src/lib/images/restaurants/Settebello.jpg'
 	},
 	{
 		name: 'ellie',

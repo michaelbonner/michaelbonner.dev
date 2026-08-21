@@ -138,6 +138,7 @@
 <Seo
 	title="The tools I use as a developer in Salt Lake, UT"
 	description="A short list of some of the tools I use on a regular basis to help me build products for clients."
+	ogImage="/og/uses.jpg"
 />
 
 <svelte:head>

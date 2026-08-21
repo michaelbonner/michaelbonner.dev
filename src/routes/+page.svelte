@@ -441,6 +441,7 @@
 <Seo
 	title="Michael Bonner | Developer in Salt Lake, UT"
 	description="Hi, I'm Michael Bonner. I'm a web developer in Salt Lake UT that specializes in business efficiency applications, APIs, and integrations."
+	ogImage="/og/home.jpg"
 />
 
 <OrganizationSchema name="Bootpack Digital" url="https://bootpackdigital.com" />

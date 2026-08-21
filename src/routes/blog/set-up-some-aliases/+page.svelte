@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ogImage from '$lib/images/iterm-aliases-trimmed-600.jpg';
+	import itermAliases from '$lib/images/iterm-aliases-trimmed-600.jpg';
 	import { Highlight } from 'svelte-highlight';
 	import bash from 'svelte-highlight/languages/bash';
 	import Seo from '../../../components/Seo.svelte';
@@ -11,7 +11,7 @@
 <Seo
 	description="Aliases can speed up your development and help you focus on code"
 	title="Set up some aliases | Michael Bonner"
-	{ogImage}
+	ogImage="/og/blog-set-up-some-aliases.jpg"
 	ogType="article"
 />
 
@@ -21,7 +21,7 @@
 	url="https://michaelbonner.dev/blog/set-up-some-aliases"
 	datePublished="2021-07-15T22:00:00.000Z"
 	dateModified="2025-12-03T10:21:51.000Z"
-	image={ogImage}
+	image={itermAliases}
 />
 
 <svelte:head>

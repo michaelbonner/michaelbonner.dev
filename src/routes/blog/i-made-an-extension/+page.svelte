@@ -10,7 +10,7 @@
 
 <Seo
 	description="Really simple one, and it was really easy to make"
-	ogImage={chromeBasecampExtension.img.src}
+	ogImage="/og/blog-i-made-an-extension.jpg"
 	ogType="article"
 	title="I made my first Chrome extension | Michael Bonner"
 />

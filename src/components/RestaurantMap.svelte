@@ -31,6 +31,7 @@
 		query: '?url'
 	});
 	const imageNameAliases: Record<string, string> = {
+		frankies: 'frankie s pizza and pasta',
 		'ganesh indian cuisine': 'ganesh',
 		'pretty bird hot chicken': 'pretty bird',
 		'proper burger company': 'proper burger'
