@@ -23,6 +23,15 @@
 	let captchaAttempt = $state(0);
 
 	/*
+	 * A submission outlives the dialog if the visitor closes it mid-flight, and
+	 * its result must not land on the next one: a late success would leave a
+	 * reopened dialog showing the previous thank-you. Closing aborts the request
+	 * and bumps the generation, so anything still in flight is ignored.
+	 */
+	let submission = 0;
+	let pending: AbortController | undefined;
+
+	/*
 	 * `showModal()` rather than the `open` attribute: it puts the dialog in the
 	 * top layer (so it clears the sticky header and the map's own stacking
 	 * context), makes the rest of the page inert, and gives us Esc-to-close and
@@ -68,6 +77,14 @@
 		open = false;
 		succeeded = false;
 		error = '';
+
+		// Abandon a submission still in flight. `submitting` is reset here rather
+		// than only in the callback, which an aborted request never reaches, so a
+		// reopened form can never come back stuck on "Sending…".
+		submission += 1;
+		pending?.abort();
+		pending = undefined;
+		submitting = false;
 	}}
 	onclick={(event) => {
 		// Only the backdrop is the dialog element itself; everything else is
@@ -114,7 +131,9 @@
 				<form
 					method="POST"
 					action="?/suggest"
-					use:enhance={() => {
+					use:enhance={({ controller }) => {
+						const attempt = (submission += 1);
+						pending = controller;
 						submitting = true;
 						error = '';
 
@@ -124,6 +143,13 @@
 						 * filters and its URL are untouched by a suggestion.
 						 */
 						return async ({ result }) => {
+							pending = undefined;
+
+							// The dialog was closed, or resubmitted, while this was in
+							// flight. Aborting usually stops the callback from running at
+							// all; this covers a response that beat the abort.
+							if (attempt !== submission) return;
+
 							submitting = false;
 
 							if (result.type === 'success') {

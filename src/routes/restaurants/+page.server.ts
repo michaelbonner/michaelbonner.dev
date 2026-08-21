@@ -130,24 +130,34 @@ export const actions: Actions = {
 			.filter((line) => line !== null)
 			.join('\n');
 
-		const telegramRes = await fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				chat_id: telegramChatId,
-				text: text
-			})
-		});
-
 		// The row is already committed, so a failed notification is mine to notice
-		// in the logs, not the visitor's to retry into a duplicate suggestion.
-		if (!telegramRes.ok) {
-			console.error(
-				'Saved restaurant suggestion but failed to send Telegram message:',
-				await telegramRes.text()
+		// in the logs, not the visitor's to retry into a duplicate suggestion. That
+		// covers a thrown request as much as a rejected one: a DNS or timeout error
+		// escaping here would reach the visitor as a failure they would reasonably
+		// resend, which is the duplicate this ordering exists to avoid.
+		try {
+			const telegramRes = await fetch(
+				`https://api.telegram.org/bot${telegramBotToken}/sendMessage`,
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						chat_id: telegramChatId,
+						text: text
+					})
+				}
 			);
+
+			if (!telegramRes.ok) {
+				console.error(
+					'Saved restaurant suggestion but failed to send Telegram message:',
+					await telegramRes.text()
+				);
+			}
+		} catch (error) {
+			console.error('Saved restaurant suggestion but the Telegram request failed:', error);
 		}
 
 		return { success: true };

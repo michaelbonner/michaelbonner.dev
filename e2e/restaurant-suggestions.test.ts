@@ -164,6 +164,38 @@ test.describe('Suggest a restaurant', () => {
 		await expect(reopened.getByRole('button', { name: 'Send suggestion' })).toBeVisible();
 	});
 
+	test('abandons a submission the dialog was closed on', async ({ page }) => {
+		// Held open so the dialog can be closed while the request is in flight.
+		let release = () => {};
+		const held = new Promise<void>((resolve) => {
+			release = resolve;
+		});
+
+		await page.route(isSuggestAction, async (route) => {
+			await held;
+			// Aborting the request makes fulfil throw, which is the expected path
+			// here rather than a failure.
+			await route.fulfill(saved).catch(() => {});
+		});
+
+		const dialog = await openDialog(page);
+		await fillSuggestion(dialog);
+		await dialog.getByRole('button', { name: 'Send suggestion' }).click();
+
+		await page.keyboard.press('Escape');
+		await expect(page.getByRole('dialog')).toBeHidden();
+
+		// The response lands after the dialog is gone; it must not be applied to
+		// the next one.
+		release();
+
+		const reopened = await openDialog(page);
+		await expect(reopened.getByRole('textbox', { name: 'Restaurant' })).toHaveValue('');
+		// Never stuck on "Sending…", and never showing the previous thank-you.
+		await expect(reopened.getByRole('button', { name: 'Send suggestion' })).toBeEnabled();
+		await expect(reopened.getByRole('button', { name: 'Done' })).toBeHidden();
+	});
+
 	test('leaves the filters and the shareable URL untouched', async ({ page }) => {
 		await interceptSuggest(page, saved);
 
