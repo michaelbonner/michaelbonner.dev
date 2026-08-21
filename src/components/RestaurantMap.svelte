@@ -362,7 +362,9 @@
 		white-space: normal;
 		border: 1px solid var(--color-gray-300);
 		border-radius: 0.5rem;
-		background: var(--color-gray-50);
+		background: var(--popover-surface);
+		-webkit-backdrop-filter: var(--popover-backdrop);
+		backdrop-filter: var(--popover-backdrop);
 		box-shadow: 0 0.5rem 1.5rem rgb(15 23 42 / 0.22);
 		color: var(--color-gray-900);
 		font-family: inherit;
@@ -430,6 +432,22 @@
 	/* Let the container's own background show through while tiles load. */
 	:global(.leaflet-container) {
 		background: transparent;
+
+		/* Both popovers sit on the map rather than covering it: 85% opaque over a
+		   blurred backdrop, so the streets under them still read as streets. Kept
+		   here, on the one ancestor both the tooltip and the popup panes inherit
+		   from, so light and dark each set the surface in a single place. */
+		--popover-surface: color-mix(in oklab, var(--color-gray-50) 85%, transparent);
+		--popover-backdrop: blur(0.5rem);
+	}
+
+	/* The tip is the little arrow under the popup, and it is a separate box, so it
+	   needs the same treatment or it reads as a solid white notch. */
+	:global(.restaurant-popup .leaflet-popup-content-wrapper),
+	:global(.restaurant-popup .leaflet-popup-tip) {
+		background: var(--popover-surface);
+		-webkit-backdrop-filter: var(--popover-backdrop);
+		backdrop-filter: var(--popover-backdrop);
 	}
 
 	:global(.restaurant-popup .leaflet-popup-content) {
@@ -485,9 +503,12 @@
 
 	/* Popups are the one piece of Leaflet chrome big enough to clash in dark mode. */
 	@media (prefers-color-scheme: dark) {
+		:global(.leaflet-container) {
+			--popover-surface: color-mix(in oklab, var(--color-gray-800) 85%, transparent);
+		}
+
 		:global(.restaurant-preview.leaflet-tooltip) {
 			border-color: var(--color-gray-600);
-			background: var(--color-gray-800);
 			box-shadow: none;
 			color: var(--color-gray-100);
 		}
@@ -509,7 +530,6 @@
 
 		:global(.restaurant-popup .leaflet-popup-content-wrapper),
 		:global(.restaurant-popup .leaflet-popup-tip) {
-			background-color: #1f2937;
 			color: #e5e7eb;
 		}
 
