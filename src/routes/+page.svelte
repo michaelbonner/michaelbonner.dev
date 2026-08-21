@@ -12,7 +12,7 @@
 	import LinkedIn from '../icons/LinkedIn.svelte';
 	import { classes } from '../styles/classes';
 	// images
-	import mainImage from '$lib/images/on-the-beach-600.jpg?enhanced';
+	import mainImage from '$lib/images/on-the-beach.jpg?enhanced';
 	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced';
 	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced';
 	import daysUntil from '$lib/images/projects/days-until.jpg?enhanced';
