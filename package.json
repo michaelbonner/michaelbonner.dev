@@ -11,6 +11,7 @@
     "lint": "prettier --check . && eslint . && prettier --check .",
     "format": "prettier --write .",
     "geocode": "bun ./scripts/geocode-restaurants.js",
+    "og": "bun ./scripts/generate-og-images.js",
     "out": "bun outdated",
     "up": "bun update",
     "preinstall": "npx only-allow bun",
