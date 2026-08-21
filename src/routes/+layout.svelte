@@ -5,7 +5,7 @@
 	import { browser } from '$app/environment';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
-	import { PUBLIC_POSTHOG_API_KEY, PUBLIC_POSTHOG_ENABLED } from '$env/static/public';
+	import { env } from '$env/dynamic/public';
 	import { partytownSnippet } from '@qwik.dev/partytown/integration';
 	import posthog from 'posthog-js';
 	import { onDestroy, onMount } from 'svelte';
@@ -37,8 +37,8 @@
 		clearInterval(interval);
 	});
 
-	if (PUBLIC_POSTHOG_ENABLED !== 'false' && browser) {
-		posthog.init(PUBLIC_POSTHOG_API_KEY, {
+	if (browser && env.PUBLIC_POSTHOG_ENABLED !== 'false' && env.PUBLIC_POSTHOG_API_KEY) {
+		posthog.init(env.PUBLIC_POSTHOG_API_KEY, {
 			api_host: 'https://g.michaelbonner.dev',
 			capture_pageleave: false,
 			capture_pageview: false,
@@ -275,6 +275,7 @@
 			<a href={resolve('/')} class={classes.menuItem}>Home</a>
 			<a href={resolve('/blog')} class={classes.menuItem}>Blog</a>
 			<a href={resolve('/uses')} class={classes.menuItem}>Uses</a>
+			<a href={resolve('/restaurants')} class={classes.menuItem}>Favorite Restaurants</a>
 			<a href={resolve('/patents')} class={classes.menuItem}>Patents</a>
 			<a href={resolve('/policies')} class={classes.menuItem}>Policies</a>
 			<a href={resolve('/contact')} class={classes.menuItem}>Contact</a>

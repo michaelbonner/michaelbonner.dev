@@ -10,6 +10,7 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check . && eslint . && prettier --check .",
     "format": "prettier --write .",
+    "geocode": "bun ./scripts/geocode-restaurants.js",
     "out": "bun outdated",
     "up": "bun update",
     "preinstall": "npx only-allow bun",
@@ -28,6 +29,7 @@
     "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
+    "@types/leaflet": "^1.9.22",
     "@typescript-eslint/eslint-plugin": "^8.66.0",
     "@typescript-eslint/parser": "^8.66.0",
     "eslint": "^10.8.1",
@@ -54,6 +56,7 @@
     "@fontsource-variable/newsreader": "^5.3.0",
     "@qwik.dev/partytown": "^0.14.0",
     "clsx": "^2.1.1",
+    "leaflet": "^1.9.4",
     "photoswipe": "^5.4.4",
     "posthog-js": "^1.414.0",
     "svelte-turnstile": "^0.11.0"

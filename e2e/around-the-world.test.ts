@@ -45,6 +45,9 @@ test.describe('Static Routes', () => {
 		await page.goto('/uses');
 		await expect(page.locator('h1')).toBeVisible();
 
+		await page.goto('/restaurants');
+		await expect(page.locator('h1')).toBeVisible();
+
 		await page.goto('/patents');
 		await expect(page.locator('h1')).toBeVisible();
 
