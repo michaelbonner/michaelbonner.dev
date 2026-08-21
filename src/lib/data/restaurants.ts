@@ -37,6 +37,13 @@ const entries = [
 		locations: ['Sugarhouse']
 	},
 	{
+		name: 'Blacksmith Ice Cream',
+		tags: ['Ice Cream'],
+		rating: 9,
+		pricePerPerson: 5,
+		locations: ['Millcreek', 'Midvale']
+	},
+	{
 		name: 'Bricks Corner',
 		tags: ['Pizza'],
 		rating: 9,
