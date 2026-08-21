@@ -154,6 +154,65 @@ test.describe('Restaurants page', () => {
 		await expect(page.locator('.restaurant-preview')).toContainText('Antica Sicilia');
 	});
 
+	test('keeps the filters and sort in the URL so a view can be shared', async ({ page }) => {
+		// Filters that leave at least one row, so the sortable headers stay on screen.
+		const target = restaurants.find((restaurant) => restaurant.rating >= 9)!;
+
+		await page.getByLabel('Search', { exact: true }).fill(target.name);
+		await page.getByLabel('Tag', { exact: true }).selectOption(target.tags[0]);
+		await page.getByLabel('Rating', { exact: true }).selectOption('9');
+		await page.getByRole('button', { name: /^Restaurant/ }).click();
+
+		await expect(page).toHaveURL(/sort=name-asc/);
+
+		const params = new URL(page.url()).searchParams;
+		expect(params.get('q')).toBe(target.name);
+		expect(params.get('tag')).toBe(target.tags[0]);
+		expect(params.get('rating')).toBe('9');
+	});
+
+	test('drops the query string again when the filters are cleared', async ({ page }) => {
+		await page.getByLabel('Search', { exact: true }).fill(restaurants[0].name);
+		await expect(page).toHaveURL(/\?q=/);
+
+		await page.getByRole('button', { name: 'Clear filters' }).click();
+
+		await expect(page).toHaveURL(/\/restaurants$/);
+	});
+
+	test('restores the filters and sort from a shared URL', async ({ page }) => {
+		const expected = restaurants
+			.filter((restaurant) => restaurant.locations.includes('Midvale'))
+			.map((restaurant) => restaurant.name)
+			.sort((a, b) => a.localeCompare(b));
+		expect(expected.length).toBeGreaterThan(1);
+
+		await page.goto('/restaurants?location=Midvale&sort=name-asc');
+
+		await expect(page.getByLabel('Location', { exact: true })).toHaveValue('Midvale');
+		await expect(page.locator('tbody tr')).toHaveCount(expected.length);
+		expect(await renderedNames(page)).toEqual(expected);
+	});
+
+	test('ignores filter values that are not in the data', async ({ page }) => {
+		await page.goto('/restaurants?tag=NotACuisine&location=Atlantis&price=7&rating=3');
+
+		await expect(page.locator('tbody tr')).toHaveCount(restaurants.length);
+		await expect(page.getByLabel('Tag', { exact: true })).toHaveValue('');
+		await expect(page.getByLabel('Rating', { exact: true })).toHaveValue('0');
+	});
+
+	test('survives a reload', async ({ page }) => {
+		await page.getByLabel('Rating', { exact: true }).selectOption('10');
+		await expect(page).toHaveURL(/rating=10/);
+		const expected = await page.locator('tbody tr').count();
+
+		await page.reload();
+
+		await expect(page.getByLabel('Rating', { exact: true })).toHaveValue('10');
+		await expect(page.locator('tbody tr')).toHaveCount(expected);
+	});
+
 	test('selecting a row opens its map popup and closes it again', async ({ page }) => {
 		const target = restaurants.find((r) => r.lat != null && r.lng != null);
 		test.skip(!target, 'No geocoded restaurants; run `bun run geocode` first.');
