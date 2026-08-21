@@ -34,7 +34,7 @@ const entries = [
 		tags: ['Italian'],
 		rating: 9,
 		pricePerPerson: 50,
-		locations: ['Sugarhouse']
+		locations: ['Millcreek']
 	},
 	{
 		name: 'Blacksmith Ice Cream',
@@ -64,13 +64,6 @@ const entries = [
 		rating: 9,
 		pricePerPerson: 20,
 		locations: ['Downtown']
-	},
-	{
-		name: "Dave's Hot Chicken",
-		tags: ['Chicken'],
-		rating: 8,
-		pricePerPerson: 15,
-		locations: ['Midvale']
 	},
 	{
 		name: 'Dolcetti Gelato',
