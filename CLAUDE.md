@@ -19,9 +19,10 @@ bun run build            # Build for production
 bun run preview          # Preview production build
 
 # Testing
-bun test                 # Run test setup + E2E tests
-bun test:setup           # Update test data validation
-bun test:e2e            # Run Playwright E2E tests only
+bun run test             # Run test setup + E2E tests (NOT `bun test`, which
+                         # invokes Bun's own runner and fails on these specs)
+bun run test:setup       # Update test data validation
+bun run test:e2e         # Run Playwright E2E tests only
 
 # Open Graph images
 bun run og               # Regenerate all OG cards into static/og/
@@ -107,17 +108,41 @@ import image from '$lib/images/example.jpg?enhanced'; // Use: {image.img.src} fo
   - Configured via env vars: `PUBLIC_POSTHOG_API_KEY`, `PUBLIC_POSTHOG_ENABLED`
   - PostHog requests proxied through `/ingest` endpoint
 - **Partytown** (`@qwik.dev/partytown`) offloads Google Analytics to web worker
-- **Theme color animation**: Root layout animates theme color by decrementing hue in `onMount`
+- **Theme color**: Static `theme-color` meta matching the page background
 
 #### Styling
 
 - **Tailwind CSS 4.x** with:
   - `@tailwindcss/typography` plugin
   - `@tailwindcss/postcss` and `@tailwindcss/vite` for build integration
-  - Dark mode support (using `dark:` prefix)
-- Shared styles in `src/styles/classes.ts` export reusable class strings
-- Global styles in `src/app.css`
-- Custom font: Newsreader variable font (`@fontsource-variable/newsreader`)
+- **Light only.** There is no dark mode; do not add `dark:` variants. `color-scheme`
+  is pinned to `light`.
+- **Semantic design tokens, not palette values.** `src/app.css` defines the whole
+  system: colors in OKLCH (`--ground`, `--surface`, `--ink`, `--ink-muted`,
+  `--ink-faint`, `--rule`, `--rule-strong`, `--accent`, `--accent-bright`,
+  `--accent-soft`), a fluid type scale (`--text-h1`…`--text-ui-sm`), shadows, and
+  syntax colors. `@theme inline` maps them to utilities, so use `bg-ground`,
+  `text-ink-muted`, `border-rule`, `text-accent` and never `bg-gray-200` or
+  `text-blue-800`.
+- **Two font families with distinct jobs**: Newsreader
+  (`@fontsource-variable/newsreader`) for display type and long-form prose;
+  Public Sans (`@fontsource-variable/public-sans`) for interface chrome — nav,
+  buttons, form labels, table headers, metadata. Use `font-serif` / `font-sans`
+  accordingly.
+- Shared class recipes in `src/styles/classes.ts` (`bodyLink`, `menuItem`,
+  `label`, `surface`, `surfaceInteractive`, `input`, `button`, `buttonQuiet`,
+  `eyebrow`, `sectionHeading`). Prefer these over rebuilding a treatment.
+- Reusable layout components: `src/components/Section.svelte` (eyebrow + heading +
+  hairline) and `src/components/ProjectCard.svelte`.
+- Prose is wired to the same tokens, so `prose` alone is correct. Do **not** add
+  `dark:prose-invert`. Those overrides are intentionally unlayered in `app.css`
+  because `@tailwindcss/typography` defines `.prose` inside `@layer utilities`.
+- Accessibility: all text must clear WCAG AA (4.5:1, or 3:1 for large text).
+  `--ink-faint` is the floor for small text; anything lighter fails.
+- No `hover:scale-*` / `hover:rotate-*` on text, links, or interactive chrome;
+  those hover states change color, border, shadow, or translate only. The one
+  exception is a card scaling its own image inside an `overflow-hidden` wrapper.
+- See `DESIGN.md` for the reasoning behind the palette and type scale.
 
 #### SEO & Structured Data
 
