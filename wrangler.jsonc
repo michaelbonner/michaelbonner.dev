@@ -2,30 +2,11 @@
 	"name": "michaelbonner-dev",
 	"main": "./.svelte-kit/cloudflare/_worker.js",
 	"compatibility_date": "2026-02-12",
-	"compatibility_flags": [
-		"nodejs_compat"
-	],
+	"compatibility_flags": ["nodejs_compat"],
 	"assets": {
 		"directory": "./.svelte-kit/cloudflare",
 		"binding": "ASSETS"
 	},
-	// Restaurant suggestions submitted from /restaurants, stored in D1.
-	//
-	// Left commented out because a build fails outright on a `database_id` that
-	// is not a real database, and only the account owner can create one. To turn
-	// the feature on: run `bunx wrangler d1 create michaelbonner-dev`, paste the
-	// id it prints in below, uncomment this block, and apply `migrations/` (see
-	// the README). Until then the suggestion form reports itself unavailable
-	// rather than accepting submissions it cannot store.
-	//
-	// "d1_databases": [
-	// 	{
-	// 		"binding": "DB",
-	// 		"database_name": "michaelbonner-dev",
-	// 		"database_id": "",
-	// 		"migrations_dir": "migrations"
-	// 	}
-	// ],
 	"vars": {
 		"PUBLIC_POSTHOG_API_KEY": "phc_CR48D5k9rHyRASc1LcsP2vkacYA7WnCTRmV7lsuDULf",
 		"PUBLIC_POSTHOG_ENABLED": "true",
@@ -38,11 +19,16 @@
 			"invocation_logs": true
 		}
 	},
+	// Restaurant suggestions submitted from /restaurants. The binding name is the
+	// contract with `platform.env.DB` in src/routes/restaurants/+page.server.ts
+	// and the `DB` type in src/app.d.ts; renaming it here silently disables the
+	// suggestion form.
 	"d1_databases": [
 		{
-			"binding": "michaelbonner_dev",
+			"binding": "DB",
 			"database_name": "michaelbonner-dev",
 			"database_id": "00a7df3a-1fce-499a-ac03-df4f46336958",
+			"migrations_dir": "migrations",
 			"remote": true
 		}
 	]
