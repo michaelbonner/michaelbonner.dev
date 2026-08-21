@@ -5,7 +5,7 @@
 	import Seo from '../../../components/Seo.svelte';
 	import BlogPostSchema from '../../../components/BlogPostSchema.svelte';
 
-	import 'svelte-highlight/styles/github-dark.css';
+	import 'svelte-highlight/styles/github.css';
 </script>
 
 <Seo
@@ -31,46 +31,40 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/set-up-some-aliases" />
 </svelte:head>
 
-<div class="container mx-auto px-8 py-12">
-	<div class="prose dark:prose-invert max-w-3xl">
-		<div class="pt-8">
-			<div class="lg:pt-24">
-				<div>
-					<h1>Set Up Bash Aliases to Speed Up Development</h1>
-				</div>
-			</div>
-			<div class="lg:mt-32">
-				<p>Bash aliases are amazing, just set them up.</p>
-				<h2>What are bash aliases?</h2>
-				<p>
-					Bash aliases are shortcuts. They reduce the key strokes, and increase efficiency. You just
-					type a short, easy to remember shortcut, and bash will execute the full command. Why type
-					out <code>git status</code> when you could type <code>gs</code>? Whey type out
-					<code>git checkout origin master</code>
-					when you could just type <code>gcm</code>?
-				</p>
-				<h2>How to set them up</h2>
-				<p>
-					First, identify which version of shell you&apos;re using and where &apos;s configuration
-					file is. Usually, on a mac, it&apos;s in a file at <code>~/.bash_profile</code>. I use
-					zsh, so mine is at <code>~/.zshrc</code>. An easy way to test is to add a sample alias,
-					and try executing it after refreshing the shell or sourcing your config file.
-					<code>e.g. source ~/.zshrc</code>. I keep my aliases in a file at <code>~/.aliases</code>
-					and then add <Highlight class="p-0" code="source ~/.aliases" language={bash} />
-					<code>source ~/.aliases</code> to my <code>~/.zshrc</code>.
-				</p>
-				<p>
-					Once you identify which file to edit, all you need to do is add something like the
-					following:
-				</p>
-				<Highlight class="p-0" code="alias gs='git status'" language={bash} />
-				<p>
-					In the above example, `gs` is the text you will type, and the text in the quotes is the
-					command that will be executed.
-				</p>
-				<h2>My aliases</h2>
-				<p>Here are the aliases that I use</p>
-			</div>
+<div class="container mx-auto px-6 py-12 sm:px-8 lg:py-20">
+	<div class="prose max-w-[68ch]">
+		<h1>Set Up Bash Aliases to Speed Up Development</h1>
+		<div class="mt-8">
+			<p>Bash aliases are amazing, just set them up.</p>
+			<h2>What are bash aliases?</h2>
+			<p>
+				Bash aliases are shortcuts. They reduce the key strokes, and increase efficiency. You just
+				type a short, easy to remember shortcut, and bash will execute the full command. Why type
+				out <code>git status</code> when you could type <code>gs</code>? Whey type out
+				<code>git checkout origin master</code>
+				when you could just type <code>gcm</code>?
+			</p>
+			<h2>How to set them up</h2>
+			<p>
+				First, identify which version of shell you&apos;re using and where &apos;s configuration
+				file is. Usually, on a mac, it&apos;s in a file at <code>~/.bash_profile</code>. I use zsh,
+				so mine is at <code>~/.zshrc</code>. An easy way to test is to add a sample alias, and try
+				executing it after refreshing the shell or sourcing your config file.
+				<code>e.g. source ~/.zshrc</code>. I keep my aliases in a file at <code>~/.aliases</code>
+				and then add <Highlight class="p-0" code="source ~/.aliases" language={bash} />
+				<code>source ~/.aliases</code> to my <code>~/.zshrc</code>.
+			</p>
+			<p>
+				Once you identify which file to edit, all you need to do is add something like the
+				following:
+			</p>
+			<Highlight class="p-0" code="alias gs='git status'" language={bash} />
+			<p>
+				In the above example, `gs` is the text you will type, and the text in the quotes is the
+				command that will be executed.
+			</p>
+			<h2>My aliases</h2>
+			<p>Here are the aliases that I use</p>
 		</div>
 	</div>
 	<div class="max-w-7xl">
@@ -165,12 +159,14 @@ alias speedtest='bunx speed-cloudflare-cli'
 		/>
 	</div>
 
-	<div class="prose dark:prose-invert mt-16 max-w-3xl">
-		<p>
+	<div class="prose mt-16 max-w-[68ch]">
+		<p
+			class="not-prose border-rule text-ui-sm text-ink-faint flex flex-wrap gap-x-2 border-t pt-6 font-sans tracking-wide"
+		>
 			Published:
 			<time dateTime="2021-07-15">15 Jul 2021</time>
 		</p>
-		<p>
+		<p class="not-prose text-ui-sm text-ink-faint flex flex-wrap gap-x-2 font-sans tracking-wide">
 			Updated:
 			<time dateTime="2025-10-09">09 Oct 2025</time>
 		</p>

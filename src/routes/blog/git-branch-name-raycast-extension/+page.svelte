@@ -30,97 +30,93 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/git-branch-name-raycast-extension" />
 </svelte:head>
 
-<div class="container mx-auto flex items-center px-8 py-12">
-	<div class="prose dark:prose-invert w-full max-w-3xl">
-		<div class="pt-8">
-			<div class="lg:pt-24">
-				<div>
-					<h1>Git Branch Name Generator: Raycast Extension</h1>
-				</div>
-			</div>
-			<div class="prose-img:my-0 prose-figcaption:text-center max-w-5xl text-lg lg:mt-24">
-				<h2>What is Raycast?</h2>
+<div class="container mx-auto px-6 py-12 sm:px-8 lg:py-20">
+	<div class="prose w-full max-w-[68ch]">
+		<h1>Git Branch Name Generator: Raycast Extension</h1>
+		<div class="prose-img:my-0 prose-figcaption:text-center mt-8">
+			<h2>What is Raycast?</h2>
+			<p>
+				Raycast is a super fast, totally extendable launcher. It lets you complete tasks, calculate,
+				share common links, manage your clipboard history, and much more. If you don't have it
+				installed, I recommend you go give it a try.
+			</p>
+			<div class="flex flex-wrap gap-8">
 				<p>
-					Raycast is a super fast, totally extendable launcher. It lets you complete tasks,
-					calculate, share common links, manage your clipboard history, and much more. If you don't
-					have it installed, I recommend you go give it a try.
+					<A href="https://youtu.be/JKbTyXQ_QWA">Raycast overview on YouTube</A>
 				</p>
-				<div class="flex flex-wrap gap-8">
-					<p>
-						<A href="https://youtu.be/JKbTyXQ_QWA">Raycast overview on YouTube</A>
-					</p>
-					<p>
-						<A href="https://www.raycast.com/hey/1fec4edf">Download Raycast</A>
-					</p>
-				</div>
-				<h2>What is the Git Branch Name Raycast Extension?</h2>
 				<p>
-					The Git Branch Name Raycast Extension is a simple extension that allows you to generate a
-					branch name based on the type of branch you are working on and a string. I usually copy
-					the name of the to-do and paste that in. It also allows you to copy the branch name to
-					your clipboard.
-				</p>
-
-				<p>
-					<a href="https://www.raycast.com/mbonner/git-branch-name-generator"
-						><img
-							alt="Raycast Extension Install Button"
-							loading="lazy"
-							src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
-							style="height: 64px;"
-						/></a
-					>
-				</p>
-
-				<figure>
-					<enhanced:img
-						alt="Choosing a branch type"
-						class="w-full"
-						src={gitBranchNameGenerator1}
-						loading="lazy"
-						sizes="(max-width: 768px) 100vw, 768px"
-					/>
-					<figcaption>Choose your branch type</figcaption>
-				</figure>
-
-				<figure>
-					<enhanced:img
-						alt="Add your branch name"
-						class="m-0 w-full"
-						loading="lazy"
-						sizes="(max-width: 768px) 100vw, 768px"
-						src={gitBranchNameGenerator2}
-					/>
-					<figcaption>Enter your branch name</figcaption>
-				</figure>
-
-				<figure>
-					<enhanced:img
-						alt="Results get copied to your clipboard"
-						class="w-full"
-						loading="lazy"
-						sizes="(max-width: 768px) 100vw, 768px"
-						src={gitBranchNameGenerator3}
-					/>
-					<figcaption>Results get copied to your clipboard</figcaption>
-				</figure>
-
-				<p>
-					<a href="https://www.raycast.com/mbonner/git-branch-name-generator"
-						><img
-							alt="Raycast Extension Install Button"
-							loading="lazy"
-							src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
-							style="height: 64px;"
-						/></a
-					>
-				</p>
-
-				<p class="mt-16">
-					Published:
-					<time dateTime="2023-01-17">17 Jan 2023</time>
+					<A href="https://www.raycast.com/hey/1fec4edf">Download Raycast</A>
 				</p>
 			</div>
+			<h2>What is the Git Branch Name Raycast Extension?</h2>
+			<p>
+				The Git Branch Name Raycast Extension is a simple extension that allows you to generate a
+				branch name based on the type of branch you are working on and a string. I usually copy the
+				name of the to-do and paste that in. It also allows you to copy the branch name to your
+				clipboard.
+			</p>
+
+			<p>
+				<a href="https://www.raycast.com/mbonner/git-branch-name-generator"
+					><img
+						alt="Raycast Extension Install Button"
+						loading="lazy"
+						src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
+						style="height: 64px;"
+					/></a
+				>
+			</p>
+
+			<figure>
+				<enhanced:img
+					alt="Choosing a branch type"
+					class="w-full"
+					src={gitBranchNameGenerator1}
+					loading="lazy"
+					sizes="(max-width: 768px) 100vw, 768px"
+				/>
+				<figcaption>Choose your branch type</figcaption>
+			</figure>
+
+			<figure>
+				<enhanced:img
+					alt="Add your branch name"
+					class="m-0 w-full"
+					loading="lazy"
+					sizes="(max-width: 768px) 100vw, 768px"
+					src={gitBranchNameGenerator2}
+				/>
+				<figcaption>Enter your branch name</figcaption>
+			</figure>
+
+			<figure>
+				<enhanced:img
+					alt="Results get copied to your clipboard"
+					class="w-full"
+					loading="lazy"
+					sizes="(max-width: 768px) 100vw, 768px"
+					src={gitBranchNameGenerator3}
+				/>
+				<figcaption>Results get copied to your clipboard</figcaption>
+			</figure>
+
+			<p>
+				<a href="https://www.raycast.com/mbonner/git-branch-name-generator"
+					><img
+						alt="Raycast Extension Install Button"
+						loading="lazy"
+						src="https://www.raycast.com/mbonner/git-branch-name-generator/install_button@2x.png"
+						style="height: 64px;"
+					/></a
+				>
+			</p>
+
+			<p
+				class="not-prose border-rule text-ui-sm text-ink-faint mt-16 flex flex-wrap gap-x-2 border-t pt-6 font-sans tracking-wide"
+			>
+				Published:
+				<time dateTime="2023-01-17">17 Jan 2023</time>
+			</p>
 		</div>
 	</div>
 </div>

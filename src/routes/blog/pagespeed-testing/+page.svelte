@@ -28,55 +28,51 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/pagespeed-testing" />
 </svelte:head>
 
-<div class="container mx-auto flex items-center px-8 py-12">
-	<div class="prose dark:prose-invert w-full max-w-3xl">
-		<div class="pt-8">
-			<div class="lg:pt-24">
-				<div>
-					<h1>PageSpeed Testing Tool for Developers</h1>
-				</div>
-			</div>
-			<div class="prose-img:my-0 prose-figcaption:text-center max-w-5xl text-lg lg:mt-24">
-				<p>
-					PageSpeed Insights is a tool that helps you test the performance of your site. It measures
-					how quickly the content loads and how soon a person can start using the site.
-					<A
-						className="inline"
-						href="https://developers.google.com/search/blog/2018/01/using-page-speed-in-mobile-search"
-						>Google has said</A
-					> that they use this data to rank sites in search, so I think it's important to keep an eye
-					on it. There are other tools out there to do something similar, but they all feel too complicated
-					and overwhelming. This tool sticks to the bare minimum I need to know, with links to more detailed
-					information when I need it.
-				</p>
+<div class="container mx-auto px-6 py-12 sm:px-8 lg:py-20">
+	<div class="prose w-full max-w-[68ch]">
+		<h1>PageSpeed Testing Tool for Developers</h1>
+		<div class="prose-img:my-0 prose-figcaption:text-center mt-8">
+			<p>
+				PageSpeed Insights is a tool that helps you test the performance of your site. It measures
+				how quickly the content loads and how soon a person can start using the site.
+				<A
+					className="inline"
+					href="https://developers.google.com/search/blog/2018/01/using-page-speed-in-mobile-search"
+					>Google has said</A
+				> that they use this data to rank sites in search, so I think it's important to keep an eye on
+				it. There are other tools out there to do something similar, but they all feel too complicated
+				and overwhelming. This tool sticks to the bare minimum I need to know, with links to more detailed
+				information when I need it.
+			</p>
 
-				<p>Here's a screenshot of the tool:</p>
+			<p>Here's a screenshot of the tool:</p>
 
-				<figure>
-					<a href="https://pagespeed.bootpack.dev/" aria-label="PageSpeed testing website"
-						><enhanced:img alt="PageSpeed Testing" src={pagespeed} /></a
-					>
-				</figure>
+			<figure>
+				<a href="https://pagespeed.bootpack.dev/" aria-label="PageSpeed testing website"
+					><enhanced:img alt="PageSpeed Testing" src={pagespeed} /></a
+				>
+			</figure>
 
-				<p>
-					You can find the tool here: <A className="inline" href="https://pagespeed.bootpack.dev/"
-						>pagespeed.bootpack.dev</A
-					>.
-				</p>
+			<p>
+				You can find the tool here: <A className="inline" href="https://pagespeed.bootpack.dev/"
+					>pagespeed.bootpack.dev</A
+				>.
+			</p>
 
-				<p>
-					You can find the source code here: <A
-						className="inline"
-						href="https://github.com/michaelbonner/pagespeed">github.com/michaelbonner/pagespeed</A
-					>. Feel free to fork it and make it your own. You'll need an API key from Google to use it
-					in your own project.
-				</p>
+			<p>
+				You can find the source code here: <A
+					className="inline"
+					href="https://github.com/michaelbonner/pagespeed">github.com/michaelbonner/pagespeed</A
+				>. Feel free to fork it and make it your own. You'll need an API key from Google to use it
+				in your own project.
+			</p>
 
-				<p class="mt-16">
-					Published:
-					<time dateTime="2025-04-09">9 Apr 2025</time>
-				</p>
-			</div>
+			<p
+				class="not-prose border-rule text-ui-sm text-ink-faint mt-16 flex flex-wrap gap-x-2 border-t pt-6 font-sans tracking-wide"
+			>
+				Published:
+				<time dateTime="2025-04-09">9 Apr 2025</time>
+			</p>
 		</div>
 	</div>
 </div>
