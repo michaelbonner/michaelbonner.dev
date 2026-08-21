@@ -6,6 +6,7 @@
 	import Seo from '../../components/Seo.svelte';
 	import RestaurantMap from '../../components/RestaurantMap.svelte';
 	import RestaurantThumbnail from '../../components/RestaurantThumbnail.svelte';
+	import SuggestRestaurantDialog from '../../components/SuggestRestaurantDialog.svelte';
 	import { classNames } from '../../functions/classNames';
 	import { classes } from '../../styles/classes';
 	import {
@@ -119,6 +120,7 @@
 	let sortKey = $state<SortKey>(initial.sortKey);
 	let sortDirection = $state<SortDirection>(initial.sortDirection);
 	let activeName = $state<string | null>(null);
+	let suggesting = $state(false);
 
 	let listElement: HTMLDivElement | undefined = $state();
 
@@ -316,6 +318,11 @@
 			People ask me where to eat in Salt Lake often enough that I started keeping a list. Sort it,
 			filter it, or find something near you on the map.
 		</p>
+		<div>
+			<button type="button" onclick={() => (suggesting = true)} class={classes.button}>
+				Suggest a restaurant
+			</button>
+		</div>
 	</header>
 
 	<div class="border-rule grid gap-8 border-t pt-10 pb-8 xl:grid-cols-5">
@@ -608,7 +615,24 @@
 						{/each}
 					</ul>
 				{/if}
+
+				<!--
+					A second way in, for whoever reached the bottom of the list and
+					noticed their favorite is not on it.
+				-->
+				<div
+					class="border-rule mt-8 flex flex-wrap items-center justify-between gap-4 border-t pt-6"
+				>
+					<p class="text-ink-muted font-serif text-[1.0625rem]">
+						Somewhere missing that I should try?
+					</p>
+					<button type="button" onclick={() => (suggesting = true)} class={classes.buttonQuiet}>
+						Suggest a restaurant
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<SuggestRestaurantDialog bind:open={suggesting} />

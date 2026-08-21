@@ -8,6 +8,24 @@
 		"binding": "ASSETS"
 	},
 
+	// Restaurant suggestions submitted from /restaurants, stored in D1.
+	//
+	// Left commented out because a build fails outright on a `database_id` that
+	// is not a real database, and only the account owner can create one. To turn
+	// the feature on: run `bunx wrangler d1 create michaelbonner-dev`, paste the
+	// id it prints in below, uncomment this block, and apply `migrations/` (see
+	// the README). Until then the suggestion form reports itself unavailable
+	// rather than accepting submissions it cannot store.
+	//
+	// "d1_databases": [
+	// 	{
+	// 		"binding": "DB",
+	// 		"database_name": "michaelbonner-dev",
+	// 		"database_id": "",
+	// 		"migrations_dir": "migrations"
+	// 	}
+	// ],
+
 	"vars": {
 		"PUBLIC_POSTHOG_API_KEY": "phc_CR48D5k9rHyRASc1LcsP2vkacYA7WnCTRmV7lsuDULf",
 		"PUBLIC_POSTHOG_ENABLED": "true",
