@@ -242,11 +242,6 @@
 				class={page.url.pathname.startsWith('/blog') ? 'text-tomato' : 'hover:text-tomato'}>Blog</a
 			>
 			<a
-				href={resolve('/restaurants')}
-				class={page.url.pathname === '/restaurants' ? 'text-tomato' : 'hover:text-tomato'}
-				>Restaurants</a
-			>
-			<a
 				href={resolve('/contact')}
 				class={page.url.pathname === '/contact' ? 'text-tomato' : 'hover:text-tomato'}>Contact</a
 			>
@@ -262,7 +257,6 @@
 			>
 				<a class="px-3 py-2" href={resolve('/')}>Home</a>
 				<a class="px-3 py-2" href={resolve('/blog')}>Blog</a>
-				<a class="px-3 py-2" href={resolve('/restaurants')}>Restaurants</a>
 				<a class="px-3 py-2" href={resolve('/contact')}>Contact</a>
 			</nav>
 		</details>
