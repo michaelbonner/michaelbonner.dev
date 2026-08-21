@@ -5,9 +5,9 @@
 	import type { ResolvedPathname } from '$app/types';
 	import Seo from '../../components/Seo.svelte';
 	import RestaurantMap from '../../components/RestaurantMap.svelte';
+	import RestaurantThumbnail from '../../components/RestaurantThumbnail.svelte';
 	import { classNames } from '../../functions/classNames';
 	import { classes } from '../../styles/classes';
-	import { restaurantImage } from '$lib/data/restaurantImages';
 	import {
 		locations,
 		pricesPerPerson,
@@ -479,29 +479,11 @@
 									<td class="py-3 pr-4">
 										<div class="flex items-start gap-3">
 											<!--
-												The photo is decorative: the name sits right beside it, so an alt
-												text would only repeat what the row already says. A placeholder
-												keeps the names aligned when a restaurant has no photo yet.
-
 												Kept small deliberately. The table shares its row with the map, so
 												every pixel the thumbnail takes comes out of the name column and
 												wraps more of the longer names onto a second line.
 											-->
-											{#if restaurantImage(restaurant.name)}
-												<img
-													src={restaurantImage(restaurant.name)}
-													alt=""
-													loading="lazy"
-													width="40"
-													height="40"
-													class="size-10 shrink-0 rounded-md object-cover"
-												/>
-											{:else}
-												<span
-													class="size-10 shrink-0 rounded-md bg-gray-200 dark:bg-gray-700"
-													aria-hidden="true"
-												></span>
-											{/if}
+											<RestaurantThumbnail name={restaurant.name} size={40} />
 
 											<div>
 												<!--
@@ -566,23 +548,8 @@
 									<!--
 										Bigger than the table's thumbnail: a card has the full width to
 										itself, so the photo is not competing with four other columns.
-										Decorative for the same reason as in the table.
 									-->
-									{#if restaurantImage(restaurant.name)}
-										<img
-											src={restaurantImage(restaurant.name)}
-											alt=""
-											loading="lazy"
-											width="64"
-											height="64"
-											class="size-16 shrink-0 rounded-md object-cover"
-										/>
-									{:else}
-										<span
-											class="size-16 shrink-0 rounded-md bg-gray-200 dark:bg-gray-700"
-											aria-hidden="true"
-										></span>
-									{/if}
+									<RestaurantThumbnail name={restaurant.name} size={64} />
 
 									<!-- min-w-0 so a long name wraps instead of stretching the card. -->
 									<div class="min-w-0">

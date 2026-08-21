@@ -5,6 +5,28 @@ import { restaurants } from '../src/lib/data/restaurants';
 const renderedNames = (page: import('@playwright/test').Page) =>
 	page.locator('tbody tr td:first-child button').allTextContents();
 
+/**
+ * Brings every row of a list into view in order. The photos only load as their
+ * row comes near the viewport, so nothing below the fold exists until this runs.
+ */
+const scrollThrough = async (rows: import('@playwright/test').Locator) => {
+	const count = await rows.count();
+	for (let index = 0; index < count; index++) {
+		await rows.nth(index).scrollIntoViewIfNeeded();
+	}
+};
+
+/** The distinct rendered sizes of a set of photos, as `WxH` strings. */
+const thumbnailSizes = (thumbnails: import('@playwright/test').Locator) =>
+	thumbnails.evaluateAll((images) => [
+		...new Set(
+			images.map((image) => {
+				const { width, height } = image.getBoundingClientRect();
+				return `${Math.round(width)}x${Math.round(height)}`;
+			})
+		)
+	]);
+
 test.describe('Restaurants page', () => {
 	test.beforeEach(async ({ page }) => {
 		await page.goto('/restaurants');
@@ -123,12 +145,16 @@ test.describe('Restaurants page', () => {
 
 	test('shows a thumbnail in every table row', async ({ page }) => {
 		const thumbnails = page.locator('tbody tr td:first-child img');
+		await scrollThrough(page.locator('tbody tr'));
 
 		await expect(thumbnails).toHaveCount(restaurants.length);
 		// Every restaurant on the list currently has a photo, so no row should be
 		// falling back to the placeholder.
-		await expect(page.locator('tbody tr td:first-child span[aria-hidden="true"]')).toHaveCount(0);
+		await expect(page.locator('tbody tr td:first-child [data-photo="missing"]')).toHaveCount(0);
 		await expect(thumbnails.first()).toHaveAttribute('loading', 'lazy');
+		// The <picture> that wraps each photo is the flex item, so it, and not the
+		// image, is what has to hold the square. Without that the thumbnails squash.
+		expect(await thumbnailSizes(thumbnails)).toEqual(['40x40']);
 	});
 
 	test('shows a thumbnail on every card at mobile widths', async ({ page }) => {
@@ -139,14 +165,46 @@ test.describe('Restaurants page', () => {
 		const cards = page.locator('ul li[data-restaurant]');
 		await expect(cards.first()).toBeVisible();
 		await expect(page.locator('table')).toBeHidden();
+		await scrollThrough(cards);
+
 		await expect(cards.locator('img')).toHaveCount(restaurants.length);
+		expect(await thumbnailSizes(cards.locator('img'))).toEqual(['64x64']);
+	});
+
+	test('loads only the photos near the viewport', async ({ page }) => {
+		const photos = new Set<string>();
+		page.on('request', (request) => {
+			if (/\/_app\/immutable\/assets\/.+\.(avif|webp|jpeg)$/.test(request.url())) {
+				photos.add(request.url());
+			}
+		});
+
+		await page.goto('/restaurants');
+		await expect(page.locator('tbody tr td:first-child img').first()).toBeVisible();
+		await page.waitForLoadState('networkidle');
+
+		// A few rows' worth, not all thirty.
+		expect(photos.size).toBeGreaterThan(0);
+		expect(photos.size).toBeLessThan(restaurants.length);
+
+		// The card list is display:none at this width. The browser cannot place a box
+		// it does not render, so it would fetch every photo in it were the photos
+		// there at all, which is what kept `loading="lazy"` from helping.
+		await expect(page.locator('ul li[data-restaurant] img')).toHaveCount(0);
+
+		await scrollThrough(page.locator('tbody tr'));
+		expect(photos.size).toBe(restaurants.length);
 	});
 
 	test('does not scroll sideways on a narrow screen', async ({ page }) => {
 		// The thumbnail leaves the card's text less room, so a location list with no
 		// break opportunity ("Downtown/Sugarhouse/Midvale") is what pushes this over.
 		await page.setViewportSize({ width: 320, height: 844 });
-		await expect(page.locator('ul li[data-restaurant] img').first()).toBeVisible();
+		// The cards sit below the map, so the first photo has to be scrolled to
+		// before it loads and takes up its share of the card.
+		const thumbnail = page.locator('ul li[data-restaurant] [data-photo]').first();
+		await thumbnail.scrollIntoViewIfNeeded();
+		await expect(thumbnail.locator('img')).toBeVisible();
 
 		const { scrollWidth, clientWidth } = await page.evaluate(() => ({
 			scrollWidth: document.documentElement.scrollWidth,

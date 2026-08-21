@@ -64,14 +64,31 @@
 			popupAnchor: [0, -14]
 		});
 
+	/**
+	 * Leaflet takes its popups and tooltips as HTML strings, so `<enhanced:img>` is not
+	 * available here. This builds the same `<picture>` markup it would compile to, from
+	 * the `Picture` the photo lookup hands back.
+	 */
+	const buildImage = (restaurant: Restaurant, blockClass: string) => {
+		const picture = restaurantImage(restaurant.name);
+		if (!picture) return `<span class="${blockClass}__missing">Photo coming soon</span>`;
+
+		// Both the popup and the preview are a fixed 15rem wide.
+		const sources = Object.entries(picture.sources)
+			.map(
+				([format, srcset]) =>
+					`<source srcset="${escapeHtml(srcset)}" sizes="240px" type="image/${format}">`
+			)
+			.join('');
+
+		return `<picture class="${blockClass}__picture">${sources}<img class="${blockClass}__image" src="${escapeHtml(picture.img.src)}" alt="" loading="lazy" width="${picture.img.w}" height="${picture.img.h}"></picture>`;
+	};
+
 	const buildPopup = (restaurant: Restaurant) => {
 		const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
 			`${restaurant.name}, ${restaurant.locations[0]}, Utah`
 		)}`;
-		const imageUrl = restaurantImage(restaurant.name);
-		const image = imageUrl
-			? `<img class="restaurant-popup__image" src="${escapeHtml(imageUrl)}" alt="" loading="lazy">`
-			: '<span class="restaurant-popup__missing">Photo coming soon</span>';
+		const image = buildImage(restaurant, 'restaurant-popup');
 
 		return `
 			${image}
@@ -83,10 +100,7 @@
 	};
 
 	const buildPreview = (restaurant: Restaurant) => {
-		const imageUrl = restaurantImage(restaurant.name);
-		const image = imageUrl
-			? `<img class="restaurant-preview__image" src="${escapeHtml(imageUrl)}" alt="" loading="lazy">`
-			: '<span class="restaurant-preview__missing">Photo coming soon</span>';
+		const image = buildImage(restaurant, 'restaurant-preview');
 		const tags = restaurant.tags
 			.map((tag) => `<span class="restaurant-preview__tag">${escapeHtml(tag)}</span>`)
 			.join('');
@@ -347,14 +361,15 @@
 		display: grid;
 	}
 
+	:global(.restaurant-preview__picture),
 	:global(.restaurant-preview__image),
 	:global(.restaurant-preview__missing) {
+		display: block;
 		width: 100%;
 		aspect-ratio: 16 / 9;
 	}
 
 	:global(.restaurant-preview__image) {
-		display: block;
 		object-fit: cover;
 	}
 
@@ -405,16 +420,19 @@
 		font-family: inherit;
 	}
 
+	:global(.restaurant-popup__picture),
 	:global(.restaurant-popup__image),
 	:global(.restaurant-popup__missing) {
+		display: block;
 		width: 100%;
 		margin-bottom: 0.375rem;
 		border-radius: 0.375rem;
 		aspect-ratio: 16 / 9;
 	}
 
+	/* The picture carries the spacing; the image just fills it. */
 	:global(.restaurant-popup__image) {
-		display: block;
+		margin-bottom: 0;
 		object-fit: cover;
 	}
 
