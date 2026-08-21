@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Restaurant } from '$lib/data/restaurants';
+	import { restaurantImage } from '$lib/data/restaurantImages';
 	import type * as Leaflet from 'leaflet';
 	import { onMount, untrack } from 'svelte';
 	// Vite extracts this at build time, so it is safe to import outside the browser guard.
@@ -25,35 +26,6 @@
 	const TILE_ATTRIBUTION =
 		'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
 		'&copy; <a href="https://carto.com/attributions">CARTO</a>';
-	const imageModules = import.meta.glob<string>('/src/lib/images/restaurants/*.jpg', {
-		eager: true,
-		import: 'default',
-		query: '?url'
-	});
-	const imageNameAliases: Record<string, string> = {
-		frankies: 'frankie s pizza and pasta',
-		'ganesh indian cuisine': 'ganesh',
-		'pretty bird hot chicken': 'pretty bird',
-		'proper burger company': 'proper burger'
-	};
-
-	const normalizeRestaurantName = (value: string) =>
-		value
-			.normalize('NFD')
-			.replace(/\p{Diacritic}/gu, '')
-			.toLowerCase()
-			.replace(/[^a-z0-9]+/g, ' ')
-			.trim();
-
-	const restaurantImages: Record<string, string> = {};
-	for (const [path, url] of Object.entries(imageModules)) {
-		const fileName = path.split('/').pop();
-		if (!fileName) continue;
-
-		const imageName = normalizeRestaurantName(fileName.replace(/\.[^.]+$/, ''));
-		const restaurantName = imageNameAliases[imageName] ?? imageName;
-		restaurantImages[restaurantName] = url;
-	}
 
 	let container: HTMLDivElement;
 	let L: typeof Leaflet | undefined = $state();
@@ -96,7 +68,7 @@
 		const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
 			`${restaurant.name}, ${restaurant.locations[0]}, Utah`
 		)}`;
-		const imageUrl = restaurantImages[normalizeRestaurantName(restaurant.name)];
+		const imageUrl = restaurantImage(restaurant.name);
 		const image = imageUrl
 			? `<img class="restaurant-popup__image" src="${escapeHtml(imageUrl)}" alt="" loading="lazy">`
 			: '<span class="restaurant-popup__missing">Photo coming soon</span>';
@@ -111,7 +83,7 @@
 	};
 
 	const buildPreview = (restaurant: Restaurant) => {
-		const imageUrl = restaurantImages[normalizeRestaurantName(restaurant.name)];
+		const imageUrl = restaurantImage(restaurant.name);
 		const image = imageUrl
 			? `<img class="restaurant-preview__image" src="${escapeHtml(imageUrl)}" alt="" loading="lazy">`
 			: '<span class="restaurant-preview__missing">Photo coming soon</span>';

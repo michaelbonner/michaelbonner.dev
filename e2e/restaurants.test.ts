@@ -3,7 +3,7 @@ import { restaurants } from '../src/lib/data/restaurants';
 
 /** Names as they appear in the desktop table, in render order. */
 const renderedNames = (page: import('@playwright/test').Page) =>
-	page.locator('tbody tr td:first-child > button').allTextContents();
+	page.locator('tbody tr td:first-child button').allTextContents();
 
 test.describe('Restaurants page', () => {
 	test.beforeEach(async ({ page }) => {
@@ -29,6 +29,9 @@ test.describe('Restaurants page', () => {
 
 		await header.click();
 		const ascending = await renderedNames(page);
+		// Guards the selector as much as the sort: an empty list would satisfy the
+		// comparisons below without ever reading a name.
+		expect(ascending).toHaveLength(restaurants.length);
 		expect(ascending).toEqual([...ascending].sort((a, b) => a.localeCompare(b)));
 
 		await header.click();
@@ -116,6 +119,16 @@ test.describe('Restaurants page', () => {
 
 		await expect(page.getByText('No restaurants match those filters.')).toBeVisible();
 		await expect(page.locator('tbody tr')).toHaveCount(0);
+	});
+
+	test('shows a thumbnail in every table row', async ({ page }) => {
+		const thumbnails = page.locator('tbody tr td:first-child img');
+
+		await expect(thumbnails).toHaveCount(restaurants.length);
+		// Every restaurant on the list currently has a photo, so no row should be
+		// falling back to the placeholder.
+		await expect(page.locator('tbody tr td:first-child span[aria-hidden="true"]')).toHaveCount(0);
+		await expect(thumbnails.first()).toHaveAttribute('loading', 'lazy');
 	});
 
 	test('renders the map with a pin for every geocoded restaurant', async ({ page }) => {

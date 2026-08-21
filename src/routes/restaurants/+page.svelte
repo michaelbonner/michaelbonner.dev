@@ -7,6 +7,7 @@
 	import RestaurantMap from '../../components/RestaurantMap.svelte';
 	import { classNames } from '../../functions/classNames';
 	import { classes } from '../../styles/classes';
+	import { restaurantImage } from '$lib/data/restaurantImages';
 	import {
 		locations,
 		pricesPerPerson,
@@ -381,7 +382,7 @@
 							<select id="restaurant-rating" bind:value={minRating} class={inputClasses}>
 								<option value={0}>Any</option>
 								{#each ratingOptions as level (level)}
-									<option value={level}>{level}{level !== 10 ? "+" : ""}</option>
+									<option value={level}>{level}{level !== 10 ? '+' : ''}</option>
 								{/each}
 							</select>
 						</div>
@@ -476,38 +477,67 @@
 									)}
 								>
 									<td class="py-3 pr-4">
-										<!--
-											The row is clickable for the mouse, but the name is a real button so
-											the same selection is reachable by keyboard and announced to screen
-											readers. It stops propagation so the row handler cannot undo it.
-										-->
-										<button
-											type="button"
-											aria-pressed={isActive}
-											onclick={(event) => {
-												event.stopPropagation();
-												select(restaurant.name);
-											}}
-											class="text-left text-lg hover:text-blue-800 dark:hover:text-blue-300"
-										>
-											{restaurant.name}
-										</button>
-										{#if restaurant.notes}
-											<span class="block text-sm text-gray-600 dark:text-gray-400">
-												{restaurant.notes}
-											</span>
-										{/if}
-										<span class="mt-1 flex flex-wrap gap-x-3 text-sm">
-											<a
-												href={directionsUrl(restaurant)}
-												target="_blank"
-												rel="noopener noreferrer"
-												class={classes.bodyLink}
-												onclick={(event) => event.stopPropagation()}
-											>
-												Directions
-											</a>
-										</span>
+										<div class="flex items-start gap-3">
+											<!--
+												The photo is decorative: the name sits right beside it, so an alt
+												text would only repeat what the row already says. A placeholder
+												keeps the names aligned when a restaurant has no photo yet.
+
+												Kept small deliberately. The table shares its row with the map, so
+												every pixel the thumbnail takes comes out of the name column and
+												wraps more of the longer names onto a second line.
+											-->
+											{#if restaurantImage(restaurant.name)}
+												<img
+													src={restaurantImage(restaurant.name)}
+													alt=""
+													loading="lazy"
+													width="40"
+													height="40"
+													class="size-10 shrink-0 rounded-md object-cover"
+												/>
+											{:else}
+												<span
+													class="size-10 shrink-0 rounded-md bg-gray-200 dark:bg-gray-700"
+													aria-hidden="true"
+												></span>
+											{/if}
+
+											<div>
+												<!--
+													The row is clickable for the mouse, but the name is a real button so
+													the same selection is reachable by keyboard and announced to screen
+													readers. It stops propagation so the row handler cannot undo it.
+												-->
+												<button
+													type="button"
+													aria-pressed={isActive}
+													onclick={(event) => {
+														event.stopPropagation();
+														select(restaurant.name);
+													}}
+													class="text-left text-lg hover:text-blue-800 dark:hover:text-blue-300"
+												>
+													{restaurant.name}
+												</button>
+												{#if restaurant.notes}
+													<span class="block text-sm text-gray-600 dark:text-gray-400">
+														{restaurant.notes}
+													</span>
+												{/if}
+												<span class="mt-1 flex flex-wrap gap-x-3 text-sm">
+													<a
+														href={directionsUrl(restaurant)}
+														target="_blank"
+														rel="noopener noreferrer"
+														class={classes.bodyLink}
+														onclick={(event) => event.stopPropagation()}
+													>
+														Directions
+													</a>
+												</span>
+											</div>
+										</div>
 									</td>
 									<td class="py-3 pr-4">{restaurant.tags.join(', ')}</td>
 									<td class="py-3 pr-4">{locationLabel(restaurant)}</td>
