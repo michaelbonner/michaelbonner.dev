@@ -2,77 +2,407 @@
 
 @plugin '@tailwindcss/typography';
 
+/*
+  Design tokens.
+
+  Two families with distinct jobs: Newsreader carries display type and long-form
+  prose (it is the site's voice), Public Sans carries interface chrome — nav,
+  labels, table headers, buttons, metadata. Mixing the two in one paragraph is
+  the mistake; giving each a job is the point.
+*/
 @theme {
 	--font-*: initial;
-	--font-sans: Graphik, sans-serif;
-	--font-serif: 'Newsreader Variable', serif;
+	--font-sans: 'Public Sans Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Newsreader Variable', Georgia, serif;
+	--font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace;
+
+	/*
+		Fluid display sizes. Ratios stay at or above 1.25 between steps at both
+		ends of the clamp, so the hierarchy never flattens out on small screens.
+	*/
+	--text-h1: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
+	--text-h1--line-height: 1.08;
+	--text-h1--letter-spacing: -0.02em;
+
+	--text-h2: clamp(1.5rem, 1.24rem + 1.1vw, 2.125rem);
+	--text-h2--line-height: 1.15;
+	--text-h2--letter-spacing: -0.015em;
+
+	--text-h3: clamp(1.1875rem, 1.11rem + 0.35vw, 1.4375rem);
+	--text-h3--line-height: 1.25;
+	--text-h3--letter-spacing: -0.01em;
+
+	--text-lead: clamp(1.125rem, 1.06rem + 0.3vw, 1.3125rem);
+	--text-lead--line-height: 1.55;
+
+	/* Interface sizes, in the sans. */
+	--text-ui: 0.9375rem;
+	--text-ui--line-height: 1.45;
+	--text-ui-sm: 0.8125rem;
+	--text-ui-sm--line-height: 1.4;
+
+	/* Exponential ease-out. No bounce, no elastic. */
+	--ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+	/*
+		Shadows are tinted with the warm neutral hue rather than pure black, so a
+		raised panel reads as lit rather than as a grey box with a grey halo.
+	*/
+	--shadow-panel: 0 1px 2px -1px hsl(var(--shadow-color) / 0.09);
+	--shadow-lift: 0 10px 30px -14px hsl(var(--shadow-color) / 0.22);
+	--shadow-float: 0 18px 48px -20px hsl(var(--shadow-color) / 0.28);
 }
 
 /*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
+  Semantic colors, in OKLCH, every neutral tinted toward the copper hue so the
+  greys and the accent read as one family. The site is light only, so these are
+  defined once; pages reference the roles (`bg-ground`, `text-ink-muted`) rather
+  than raw palette values.
 */
+:root {
+	color-scheme: light;
+
+	--ground: oklch(0.974 0.005 70);
+	--ground-sunken: oklch(0.952 0.006 70);
+	--surface: oklch(0.995 0.003 70);
+
+	--ink: oklch(0.235 0.01 55);
+	--ink-muted: oklch(0.45 0.012 55);
+	--ink-faint: oklch(0.515 0.01 55);
+
+	--rule: oklch(0.895 0.006 70);
+	--rule-strong: oklch(0.82 0.008 70);
+
+	/* Copper. `accent` is contrast-checked for text, `accent-bright` is for fills. */
+	--accent: oklch(0.475 0.145 42);
+	--accent-bright: oklch(0.585 0.155 45);
+	--accent-soft: oklch(0.936 0.032 55);
+
+	--shadow-color: 45 25% 22%;
+
+	/*
+		Map pin scale, by rating band. Ordinal, so the three steps separate on
+		lightness as well as hue: they stay distinguishable in greyscale, and the
+		rating is printed inside each pin regardless, so nothing depends on colour
+		alone. `-ink` is the label colour that clears AA on each fill.
+	*/
+	--pin-top: oklch(0.46 0.115 152);
+	--pin-top-ink: oklch(0.985 0.01 152);
+	--pin-great: oklch(0.7 0.145 62);
+	--pin-great-ink: oklch(0.25 0.05 62);
+	--pin-good: oklch(0.53 0.075 248);
+	--pin-good-ink: oklch(0.98 0.008 248);
+
+	/*
+		Syntax colours. github.css ships values tuned for a pure white page, and
+		several of them (its greys, reds, and oranges) fall under 4.5:1 on this
+		warmer sunken surface. These are the same roles re-picked against the
+		site's own background, all clearing AA.
+	*/
+	--code-comment: oklch(0.515 0.014 60);
+	--code-keyword: oklch(0.48 0.16 18);
+	--code-string: oklch(0.46 0.1 235);
+	--code-number: oklch(0.47 0.13 285);
+	--code-function: oklch(0.46 0.14 300);
+	--code-type: oklch(0.46 0.11 190);
+	--code-literal: oklch(0.45 0.12 150);
+	--code-symbol: oklch(0.48 0.14 55);
+	--code-deletion: oklch(0.47 0.17 22);
+}
+
+/*
+  `inline` so utilities reference the raw custom property rather than copying its
+  value, which keeps the tokens above the single place a colour is defined.
+*/
+@theme inline {
+	--color-ground: var(--ground);
+	--color-ground-sunken: var(--ground-sunken);
+	--color-surface: var(--surface);
+
+	--color-ink: var(--ink);
+	--color-ink-muted: var(--ink-muted);
+	--color-ink-faint: var(--ink-faint);
+
+	--color-rule: var(--rule);
+	--color-rule-strong: var(--rule-strong);
+
+	--color-accent: var(--accent);
+	--color-accent-bright: var(--accent-bright);
+	--color-accent-soft: var(--accent-soft);
+}
+
 @layer base {
 	*,
 	::after,
 	::before,
 	::backdrop,
 	::file-selector-button {
-		border-color: var(--color-gray-200, currentColor);
+		border-color: var(--rule);
 	}
 
 	html {
-		@apply bg-linear-to-tr from-indigo-100 to-gray-400 bg-fixed;
+		background-color: var(--ground);
+		-webkit-text-size-adjust: 100%;
 	}
 
-	@media screen and (prefers-color-scheme: dark) {
-		html {
-			@apply bg-linear-to-tr from-gray-700 to-gray-900 bg-fixed;
+	body {
+		background-color: var(--ground);
+		color: var(--ink);
+		font-family: var(--font-serif);
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+
+	/*
+		One visible focus treatment for the whole site. Two rings so it stays
+		legible whether the element sits on the ground or on a surface.
+	*/
+	:focus-visible {
+		outline: 2px solid var(--accent-bright);
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+
+	::selection {
+		background-color: var(--accent-soft);
+		color: var(--ink);
+	}
+
+	/* Headings and interface text opt out of the serif body default. */
+	h1,
+	h2,
+	h3,
+	h4 {
+		text-wrap: balance;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		::before,
+		::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
 		}
 	}
-
-	.mb-scrollable::-webkit-scrollbar {
-		width: 10px;
-		margin-left: 20px;
-	}
-
-	.mb-scrollable::-webkit-scrollbar-track {
-		background: rgba(0, 0, 0, 0.2);
-	}
-
-	.mb-scrollable::-webkit-scrollbar-thumb {
-		background: rgba(0, 0, 0, 0.8);
-		border-radius: 10px;
-	}
-
-	.mb-scrollable::-webkit-scrollbar-thumb:hover {
-		background: rgba(0, 0, 0, 0.6);
-	}
 }
 
-.prose h1 {
+/*
+  Prose is wired to the same tokens, so `prose` alone is correct everywhere and
+  pages no longer need `dark:prose-invert`.
+
+  Deliberately unlayered: @tailwindcss/typography defines `.prose` inside
+  `@layer utilities`, and an unlayered rule is the only thing that reliably
+  outranks it without an !important on every declaration.
+*/
+.prose {
+	--tw-prose-body: var(--ink-muted);
+	--tw-prose-headings: var(--ink);
+	--tw-prose-lead: var(--ink-muted);
+	--tw-prose-links: var(--accent);
+	--tw-prose-bold: var(--ink);
+	--tw-prose-counters: var(--ink-faint);
+	--tw-prose-bullets: var(--rule-strong);
+	--tw-prose-hr: var(--rule);
+	--tw-prose-quotes: var(--ink);
+	--tw-prose-quote-borders: var(--accent-bright);
+	--tw-prose-captions: var(--ink-faint);
+	--tw-prose-code: var(--ink);
+	--tw-prose-pre-code: var(--ink);
+	--tw-prose-pre-bg: var(--ground-sunken);
+	--tw-prose-th-borders: var(--rule-strong);
+	--tw-prose-td-borders: var(--rule);
+
+	font-family: var(--font-serif);
+}
+
+.prose :where(h1, h2, h3, h4):not(:where([class~='not-prose'] *)) {
+	font-family: var(--font-serif);
 	font-weight: 600;
+	letter-spacing: -0.015em;
 }
 
-.prose figcaption {
-	color: var(--color-gray-600);
+.prose :where(h1):not(:where([class~='not-prose'] *)) {
+	font-size: var(--text-h1);
+	line-height: 1.08;
+	letter-spacing: -0.02em;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-	.prose figcaption {
-		color: var(--color-gray-300);
-	}
+.prose :where(h2):not(:where([class~='not-prose'] *)) {
+	font-size: var(--text-h2);
+	line-height: 1.15;
+}
+
+/*
+	Links inside prose: a real underline, offset off the baseline, in a muted
+	copper that saturates on hover. Replaces the old bordered-box treatment,
+	which stacked a heavy 2px rule under every phrase in a paragraph.
+*/
+.prose :where(a):not(:where([class~='not-prose'] *)) {
+	font-weight: inherit;
+	text-decoration-line: underline;
+	text-decoration-thickness: 1px;
+	text-decoration-color: color-mix(in oklch, var(--accent) 40%, transparent);
+	text-underline-offset: 3px;
+	transition: text-decoration-color 150ms var(--ease-out-quart);
+}
+
+.prose :where(a):not(:where([class~='not-prose'] *)):hover {
+	text-decoration-color: var(--accent);
+}
+
+.prose :where(code):not(:where(pre *, [class~='not-prose'] *)) {
+	font-family: var(--font-mono);
+	font-size: 0.875em;
+	font-weight: 500;
+	background-color: var(--ground-sunken);
+	border: 1px solid var(--rule);
+	border-radius: 4px;
+	padding: 0.1em 0.35em;
+}
+
+.prose :where(code):not(:where(pre *, [class~='not-prose'] *))::before,
+.prose :where(code):not(:where(pre *, [class~='not-prose'] *))::after {
+	content: none;
+}
+
+.prose :where(figcaption):not(:where([class~='not-prose'] *)) {
+	font-family: var(--font-sans);
+	font-size: var(--text-ui-sm);
+	letter-spacing: 0.01em;
+}
+
+/*
+  Utility for the small sans labels that recur across the site: nav, table
+  headers, form labels, metadata. Tracking opens up slightly because Public
+  Sans is a touch tight at these sizes.
+*/
+@utility label {
+	font-family: var(--font-sans);
+	font-size: var(--text-ui-sm);
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	color: var(--ink-faint);
+}
+
+.mb-scrollable {
+	scrollbar-width: thin;
+	scrollbar-color: var(--rule-strong) transparent;
+}
+
+.mb-scrollable::-webkit-scrollbar {
+	width: 10px;
+}
+
+.mb-scrollable::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.mb-scrollable::-webkit-scrollbar-thumb {
+	background: var(--rule-strong);
+	border-radius: 999px;
+	border: 3px solid transparent;
+	background-clip: content-box;
+}
+
+.mb-scrollable::-webkit-scrollbar-thumb:hover {
+	background: var(--ink-faint);
+	background-clip: content-box;
+}
+
+/*
+  svelte-highlight ships its own theme background and palette. Reuse the site's
+  sunken surface and hairline so a code block reads as part of the page, and
+  re-point the token colours at the AA-checked values above.
+*/
+code.hljs {
+	background: var(--ground-sunken);
+	color: var(--ink);
+	font-family: var(--font-mono);
 }
 
 pre code.hljs {
 	overflow-x: visible !important;
+	border: 1px solid var(--rule);
+	border-radius: 0.5rem;
+	padding: 1rem;
 }
 
 pre:has(> code.hljs) {
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
+}
+
+code.hljs .hljs-comment,
+code.hljs .hljs-quote,
+code.hljs .hljs-formula {
+	color: var(--code-comment);
+}
+
+code.hljs .hljs-keyword,
+code.hljs .hljs-selector-tag,
+code.hljs .hljs-template-tag,
+code.hljs .hljs-variable.language_,
+code.hljs .hljs-doctag,
+code.hljs .hljs-params {
+	color: var(--code-keyword);
+}
+
+code.hljs .hljs-string,
+code.hljs .hljs-attribute,
+code.hljs .hljs-attr,
+code.hljs .hljs-selector-attr,
+code.hljs .hljs-selector-pseudo,
+code.hljs .hljs-code,
+code.hljs .hljs-regexp,
+code.hljs .hljs-addition {
+	color: var(--code-string);
+}
+
+code.hljs .hljs-number,
+code.hljs .hljs-literal,
+code.hljs .hljs-meta,
+code.hljs .hljs-bullet {
+	color: var(--code-number);
+}
+
+code.hljs .hljs-title,
+code.hljs .hljs-title.class_,
+code.hljs .hljs-title.class_.inherited__,
+code.hljs .hljs-title.function_,
+code.hljs .hljs-section,
+code.hljs .hljs-name {
+	color: var(--code-function);
+}
+
+code.hljs .hljs-type,
+code.hljs .hljs-selector-class,
+code.hljs .hljs-selector-id,
+code.hljs .hljs-tag,
+code.hljs .hljs-punctuation {
+	color: var(--code-type);
+}
+
+code.hljs .hljs-symbol,
+code.hljs .hljs-template-variable,
+code.hljs .hljs-variable,
+code.hljs .hljs-operator,
+code.hljs .hljs-built_in,
+code.hljs .hljs-link,
+code.hljs .hljs-subst {
+	color: var(--code-symbol);
+}
+
+code.hljs .hljs-strong,
+code.hljs .hljs-emphasis {
+	color: var(--ink);
+}
+
+code.hljs .hljs-deletion {
+	color: var(--code-deletion);
 }
