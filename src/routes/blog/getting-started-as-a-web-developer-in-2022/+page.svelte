@@ -32,8 +32,8 @@
 	/>
 </svelte:head>
 
-<div class="container mx-auto flex items-center px-8 py-12">
-	<div class="prose dark:prose-invert w-full max-w-3xl">
+<div class="mx-auto flex max-w-[90rem] items-center px-5 py-12 sm:px-8 lg:px-12 lg:py-20">
+	<div class="prose prose-lg w-full max-w-3xl">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
@@ -42,7 +42,7 @@
 			</div>
 			<div class="max-w-5xl text-lg lg:mt-24">
 				<p class="text-base">TL;DR: Learn the absolute basics, and build as much as you can.</p>
-				<hr class="mx-16 border-gray-300" />
+				<hr class="border-ink/20 mx-16" />
 				<p>
 					Getting started as a web developer is hard; hopefully, I can help a little bit. Keep in
 					mind this is only my opinion, you should find other people&apos;s opinions as well. I have

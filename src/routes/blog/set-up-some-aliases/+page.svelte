@@ -31,8 +31,8 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/set-up-some-aliases" />
 </svelte:head>
 
-<div class="container mx-auto px-8 py-12">
-	<div class="prose dark:prose-invert max-w-3xl">
+<div class="mx-auto max-w-[90rem] px-5 py-12 sm:px-8 lg:px-12 lg:py-20">
+	<div class="prose prose-lg max-w-3xl">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>
@@ -165,7 +165,7 @@ alias speedtest='bunx speed-cloudflare-cli'
 		/>
 	</div>
 
-	<div class="prose dark:prose-invert mt-16 max-w-3xl">
+	<div class="prose prose-lg mt-16 max-w-3xl">
 		<p>
 			Published:
 			<time dateTime="2021-07-15">15 Jul 2021</time>

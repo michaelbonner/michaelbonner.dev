@@ -6,7 +6,6 @@
 	import Instagram from '../../icons/Instagram.svelte';
 	import LinkedIn from '../../icons/LinkedIn.svelte';
 	import Seo from '../../components/Seo.svelte';
-	import clsx from 'clsx';
 
 	let { form } = $props();
 </script>
@@ -21,140 +20,129 @@
 	<link rel="canonical" href="https://michaelbonner.dev/contact" />
 </svelte:head>
 
-<div class="container mx-auto my-20 px-8 sm:my-36">
-	<h1 class="mb-12 text-4xl font-semibold">Get In Touch</h1>
+<section class="py-16 sm:py-20 lg:py-28">
+	<div class="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
+		<p class="text-tomato font-sans text-base font-medium sm:text-sm">Say hello</p>
+		<h1
+			class="mt-3 max-w-[13ch] text-6xl font-medium tracking-tight text-balance sm:text-7xl lg:text-8xl"
+		>
+			Get in touch
+		</h1>
 
-	<div class="grid gap-16 md:grid-cols-2">
-		<!-- Contact Form -->
-		<div>
-			<h2 class="mb-6 text-2xl font-semibold">Send a Message</h2>
+		<div class="border-ink/20 mt-14 grid gap-16 border-t pt-10 md:grid-cols-2 lg:gap-24">
+			<!-- Contact Form -->
+			<div>
+				<h2 class="mb-6 text-4xl font-medium tracking-tight text-balance">Send a message</h2>
 
-			{#if form?.success}
-				<div
-					class="mb-6 rounded-lg border border-green-200 bg-green-100 p-6 text-green-900 dark:border-green-800 dark:bg-green-900/40 dark:text-green-100"
-				>
-					<p class="text-lg font-medium">Thanks for reaching out!</p>
-					<p class="mt-2 text-green-800 dark:text-green-200">
-						I've received your message and will get back to you soon.
-					</p>
-				</div>
-			{:else if !env.PUBLIC_TURNSTILE_SITE_KEY}
-				<div
-					class="mb-6 rounded-lg border border-yellow-200 bg-yellow-50 p-6 text-yellow-900 dark:border-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-100"
-				>
-					<p class="text-lg font-medium">Contact Form Unavailable</p>
-					<p class="mt-2 text-yellow-800 dark:text-yellow-200">
-						The contact form is currently unavailable. Please use one of the social links below to get in touch.
-					</p>
-				</div>
-			{:else}
-				<form method="POST" use:enhance class="grid gap-6">
-					{#if form?.error}
-						<div
-							class="rounded-lg border border-red-200 bg-red-50 p-4 text-red-800 dark:border-red-800 dark:bg-red-900/30 dark:text-red-200"
-						>
-							{form.error}
+				{#if form?.success}
+					<div class="bg-butter border-ink/20 mb-6 border p-6 font-sans">
+						<p class="text-lg font-medium">Thanks for reaching out!</p>
+						<p class="text-ink-muted mt-2">
+							I've received your message and will get back to you soon.
+						</p>
+					</div>
+				{:else if !env.PUBLIC_TURNSTILE_SITE_KEY}
+					<div class="bg-butter border-ink/20 mb-6 border p-6 font-sans">
+						<p class="text-lg font-medium">Contact Form Unavailable</p>
+						<p class="text-ink-muted mt-2">
+							The contact form is currently unavailable. Please use one of the social links below to
+							get in touch.
+						</p>
+					</div>
+				{:else}
+					<form method="POST" use:enhance class="grid gap-6 font-sans">
+						{#if form?.error}
+							<div class="border-tomato bg-tomato/10 text-ink border p-4">
+								{form.error}
+							</div>
+						{/if}
+
+						<div>
+							<label for="name" class="mb-2 block text-lg font-medium sm:text-base">Name</label>
+							<input
+								type="text"
+								id="name"
+								name="name"
+								required
+								class="bg-cream border-ink/25 focus:border-tomato focus:ring-tomato/20 w-full border px-4 py-3 text-lg outline-none focus:ring-4 sm:text-base"
+							/>
 						</div>
-					{/if}
 
-					<div>
-						<label for="name" class="mb-2 block text-lg font-medium">Name</label>
-						<input
-							type="text"
-							id="name"
-							name="name"
-							required
-							class="w-full rounded-lg border border-gray-300 bg-white/50 px-4 py-3 text-lg transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-900/50"
-						/>
-					</div>
+						<div>
+							<label for="email" class="mb-2 block text-lg font-medium sm:text-base">Email</label>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								required
+								class="bg-cream border-ink/25 focus:border-tomato focus:ring-tomato/20 w-full border px-4 py-3 text-lg outline-none focus:ring-4 sm:text-base"
+							/>
+						</div>
 
-					<div>
-						<label for="email" class="mb-2 block text-lg font-medium">Email</label>
-						<input
-							type="email"
-							id="email"
-							name="email"
-							required
-							class="w-full rounded-lg border border-gray-300 bg-white/50 px-4 py-3 text-lg transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-900/50"
-						/>
-					</div>
+						<div>
+							<label for="message" class="mb-2 block text-lg font-medium sm:text-base"
+								>Message</label
+							>
+							<textarea
+								id="message"
+								name="message"
+								rows="5"
+								required
+								class="bg-cream border-ink/25 focus:border-tomato focus:ring-tomato/20 w-full border px-4 py-3 text-lg outline-none focus:ring-4 sm:text-base"
+							></textarea>
+						</div>
 
-					<div>
-						<label for="message" class="mb-2 block text-lg font-medium">Message</label>
-						<textarea
-							id="message"
-							name="message"
-							rows="5"
-							required
-							class="w-full rounded-lg border border-gray-300 bg-white/50 px-4 py-3 text-lg transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-900/50"
-						></textarea>
-					</div>
+						{#if env.PUBLIC_TURNSTILE_SITE_KEY}
+							<Turnstile siteKey={env.PUBLIC_TURNSTILE_SITE_KEY} />
+						{/if}
 
-					{#if env.PUBLIC_TURNSTILE_SITE_KEY}
-						<Turnstile siteKey={env.PUBLIC_TURNSTILE_SITE_KEY} />
-					{/if}
+						<button
+							type="submit"
+							class="bg-tomato text-cream focus-visible:outline-tomato min-h-12 w-fit cursor-pointer px-6 py-3 text-lg font-semibold outline-none hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:transition-transform sm:text-base"
+						>
+							Send Message
+						</button>
+					</form>
+				{/if}
+			</div>
 
-					<button
-						type="submit"
-						class={clsx(
-							'w-fit cursor-pointer rounded-lg bg-blue-600 px-8 py-3 text-lg font-medium text-white transition-colors',
-							'hover:scale-105 hover:rotate-1 hover:bg-blue-700'
-						)}
-					>
-						Send Message
-					</button>
-				</form>
-			{/if}
-		</div>
+			<!-- Social Links -->
+			<div>
+				<h2 class="mb-6 text-4xl font-medium tracking-tight text-balance">Connect elsewhere</h2>
+				<p class="text-ink-muted mb-8 max-w-[48ch] font-sans text-lg text-pretty sm:text-base/7">
+					You can also find me on these platforms. Feel free to connect or send a message there.
+				</p>
 
-		<!-- Social Links -->
-		<div>
-			<h2 class="mb-6 text-2xl font-semibold">Connect</h2>
-			<p class="mb-8 text-lg leading-relaxed">
-				You can also find me on these platforms. Feel free to connect or send a message there!
-			</p>
-
-			<ul class="grid gap-4">
-				<li>
-					<a
-						href="https://www.linkedin.com/in/michaelbonner/"
-						class={clsx(
-							'flex items-center gap-4 rounded-lg border border-gray-300 p-4 transition',
-							'dark:border-gray-700 dark:hover:bg-white/10',
-							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 dark:hover:bg-white/50'
-						)}
-					>
-						<span class="text-blue-700 dark:text-blue-400"><LinkedIn /></span>
-						<span class="text-xl font-medium">LinkedIn</span>
-					</a>
-				</li>
-				<li>
-					<a
-						href="https://github.com/michaelbonner"
-						class={clsx(
-							'flex items-center gap-4 rounded-lg border border-gray-300 p-4 transition',
-							'dark:border-gray-700 dark:hover:bg-white/10',
-							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 dark:hover:bg-white/50'
-						)}
-					>
-						<span class="text-gray-900 dark:text-white"><Github /></span>
-						<span class="text-xl font-medium">GitHub</span>
-					</a>
-				</li>
-				<li>
-					<a
-						href="https://www.instagram.com/michael__bonner"
-						class={clsx(
-							'flex items-center gap-4 rounded-lg border border-gray-300 p-4 transition',
-							'dark:border-gray-700 dark:hover:bg-white/10',
-							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 dark:hover:bg-white/50'
-						)}
-					>
-						<span class="text-pink-600 dark:text-pink-400"><Instagram /></span>
-						<span class="text-xl font-medium">Instagram</span>
-					</a>
-				</li>
-			</ul>
+				<ul class="border-ink/20 divide-ink/15 grid divide-y border-y font-sans" role="list">
+					<li>
+						<a
+							href="https://www.linkedin.com/in/michaelbonner/"
+							class="hover:text-tomato focus-visible:text-tomato flex min-h-16 items-center gap-4 py-4 outline-none"
+						>
+							<LinkedIn className="size-5 shrink-0" />
+							<p class="text-xl font-medium">LinkedIn</p>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://github.com/michaelbonner"
+							class="hover:text-tomato focus-visible:text-tomato flex min-h-16 items-center gap-4 py-4 outline-none"
+						>
+							<Github className="size-5 shrink-0" />
+							<p class="text-xl font-medium">GitHub</p>
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://www.instagram.com/michael__bonner"
+							class="hover:text-tomato focus-visible:text-tomato flex min-h-16 items-center gap-4 py-4 outline-none"
+						>
+							<Instagram className="size-5 shrink-0" />
+							<p class="text-xl font-medium">Instagram</p>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
+</section>

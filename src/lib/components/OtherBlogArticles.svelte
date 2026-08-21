@@ -1,9 +1,6 @@
 <script>
 	import { page } from '$app/state';
 	import { blogArticles } from '$lib/data/blogArticles';
-	import clsx from 'clsx';
-	import H2 from '../../components/H2.svelte';
-	import { classes } from '../../styles/classes';
 
 	// Compute related and other articles when page.route.id changes
 	let articleGroups = $derived.by(() => {
@@ -21,32 +18,47 @@
 	});
 </script>
 
-<aside class="container mx-auto px-8 py-12">
-	{#if articleGroups.relatedArticles.length > 0}
-		<H2>Related Articles</H2>
-		<ul class="mt-4 ml-12 list-outside list-disc">
-			{#each articleGroups.relatedArticles as article (article.slug)}
-				<li class="py-1">
-					<a class={clsx(classes.bodyLink, 'w-full md:w-auto')} href={`/blog/${article.slug}`}>
-						{article.title}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	{/if}
-
-	{#if articleGroups.otherArticles.length > 0}
-		<div class:mt-8={articleGroups.relatedArticles.length > 0}>
-			<H2>Other Articles</H2>
-			<ul class="mt-4 ml-12 list-outside list-disc">
-				{#each articleGroups.otherArticles as article (article.slug)}
-					<li class="py-1">
-						<a class={clsx(classes.bodyLink, 'w-full md:w-auto')} href={`/blog/${article.slug}`}>
+<aside class="bg-ink text-cream mt-16 py-16 font-sans sm:py-20">
+	<div class="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
+		{#if articleGroups.relatedArticles.length > 0}
+			<h2 class="max-w-[18ch] text-4xl font-medium tracking-tight text-balance sm:text-5xl">
+				Related articles
+			</h2>
+			<ul class="border-cream/20 divide-cream/15 mt-6 divide-y border-y" role="list">
+				{#each articleGroups.relatedArticles as article (article.slug)}
+					<li>
+						<a
+							class="hover:text-butter flex min-h-14 items-center py-3 text-lg"
+							href={`/blog/${article.slug}`}
+						>
 							{article.title}
 						</a>
 					</li>
 				{/each}
 			</ul>
-		</div>
-	{/if}
+		{/if}
+
+		{#if articleGroups.otherArticles.length > 0}
+			<div class:mt-12={articleGroups.relatedArticles.length > 0}>
+				<h2 class="max-w-[18ch] text-4xl font-medium tracking-tight text-balance sm:text-5xl">
+					More from the blog
+				</h2>
+				<ul
+					class="border-cream/20 divide-cream/15 mt-6 grid divide-y border-y lg:grid-cols-2 lg:gap-x-12 lg:divide-y-0"
+					role="list"
+				>
+					{#each articleGroups.otherArticles as article (article.slug)}
+						<li class="border-cream/15 border-b lg:nth-[1]:border-t lg:nth-[2]:border-t">
+							<a
+								class="hover:text-butter flex min-h-14 items-center py-3"
+								href={`/blog/${article.slug}`}
+							>
+								{article.title}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</div>
+		{/if}
+	</div>
 </aside>

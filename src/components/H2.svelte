@@ -9,6 +9,6 @@
 	let { children, id = undefined } = $props();
 </script>
 
-<h2 {id} class="pt-16 text-3xl dark:text-gray-50">
+<h2 {id} class="max-w-[18ch] pt-16 text-5xl font-medium tracking-tight text-balance sm:text-6xl">
 	{@render children?.()}
 </h2>

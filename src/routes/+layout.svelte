@@ -8,8 +8,7 @@
 	import { env } from '$env/dynamic/public';
 	import { partytownSnippet } from '@qwik.dev/partytown/integration';
 	import posthog from 'posthog-js';
-	import { onDestroy, onMount } from 'svelte';
-	import { classNames } from '../functions/classNames';
+	import { onMount } from 'svelte';
 	import { classes } from '../styles/classes';
 	import { resolve } from '$app/paths';
 	interface Props {
@@ -18,23 +17,13 @@
 
 	let { children }: Props = $props();
 
-	let interval: ReturnType<typeof setInterval>;
-
 	onMount(() => {
 		const meta = document.querySelector('meta[name="theme-color"]');
-		let hue = 208;
-
-		interval = setInterval(() => {
-			meta?.setAttribute('content', `hsl(${(hue -= 1)}, 50%, 30%)`);
-		}, 100);
+		meta?.setAttribute('content', 'oklch(0.65 0.205 33)');
 
 		document.querySelectorAll('link[rel="preload"]').forEach((link) => {
 			link.setAttribute('rel', 'stylesheet');
 		});
-	});
-
-	onDestroy(() => {
-		clearInterval(interval);
 	});
 
 	if (browser && env.PUBLIC_POSTHOG_ENABLED !== 'false' && env.PUBLIC_POSTHOG_API_KEY) {
@@ -54,8 +43,8 @@
 </script>
 
 <svelte:head>
-	<meta name="theme-color" content="#264f73" />
-	<meta name="color-scheme" content="dark light" />
+	<meta name="theme-color" content="oklch(0.65 0.205 33)" />
+	<meta name="color-scheme" content="light" />
 	<meta property="og:url" content={`https://michaelbonner.dev${page.url.pathname}`} />
 	<meta property="og:locale" content="en_US" />
 	<meta name="author" content="Michael Bonner" />
@@ -233,32 +222,50 @@
 	</script>
 </svelte:head>
 
-<div
-	class={classNames(
-		'bg-opacity-80 min-h-screen bg-gray-200 font-serif text-gray-800',
-		'dark:bg-opacity-70 dark:bg-gray-800 dark:text-gray-200'
-	)}
->
+<div class="bg-paper text-ink isolate min-h-dvh font-serif antialiased">
 	<header
-		class="container mx-auto flex flex-col items-start justify-between gap-4 px-8 pt-12 sm:flex-row"
+		class="bg-paper text-ink border-ink/15 mx-auto flex max-w-[90rem] items-center justify-between gap-4 border-b px-5 py-5 font-sans sm:px-8 lg:px-12"
 	>
 		<a
+			aria-label="Homepage"
 			href={resolve('/')}
-			class={classNames(
-				'origin-left scale-150',
-				'hover:scale-150',
-				'sm:scale-100 sm:text-3xl',
-				'sm:hover:scale-105',
-				classes.menuItem
-			)}
+			class="hover:text-tomato focus-visible:text-tomato text-xl font-semibold tracking-tight outline-none sm:text-lg"
 		>
 			Michael Bonner
 		</a>
-		<nav class="flex justify-end space-x-6 text-xl" aria-label="Main">
-			<a href={resolve('/')} class={classes.menuItem}>Home</a>
-			<a href={resolve('/blog')} class={classes.menuItem}>Blog</a>
-			<a href={resolve('/contact')} class={classes.menuItem}>Contact</a>
+		<nav class="hidden items-center gap-6 font-sans lg:flex" aria-label="Main">
+			<a href={resolve('/')} class={page.url.pathname === '/' ? 'text-tomato' : 'hover:text-tomato'}
+				>Home</a
+			>
+			<a
+				href={resolve('/blog')}
+				class={page.url.pathname.startsWith('/blog') ? 'text-tomato' : 'hover:text-tomato'}>Blog</a
+			>
+			<a
+				href={resolve('/restaurants')}
+				class={page.url.pathname === '/restaurants' ? 'text-tomato' : 'hover:text-tomato'}
+				>Restaurants</a
+			>
+			<a
+				href={resolve('/contact')}
+				class={page.url.pathname === '/contact' ? 'text-tomato' : 'hover:text-tomato'}>Contact</a
+			>
 		</nav>
+		<details class="relative font-sans lg:hidden">
+			<summary
+				class="cursor-pointer list-none px-3 py-2 text-base font-semibold ring-1 ring-current"
+				>Menu</summary
+			>
+			<nav
+				class="bg-cream text-ink absolute top-12 right-0 z-50 grid min-w-48 gap-1 p-3 shadow-xl ring-1 ring-black/10"
+				aria-label="Mobile"
+			>
+				<a class="px-3 py-2" href={resolve('/')}>Home</a>
+				<a class="px-3 py-2" href={resolve('/blog')}>Blog</a>
+				<a class="px-3 py-2" href={resolve('/restaurants')}>Restaurants</a>
+				<a class="px-3 py-2" href={resolve('/contact')}>Contact</a>
+			</nav>
+		</details>
 	</header>
 
 	<main>
@@ -266,10 +273,10 @@
 	</main>
 
 	<footer
-		class="container mx-auto justify-between gap-8 p-8 lg:flex lg:flex-row-reverse lg:items-center"
+		class="bg-paper text-ink border-ink/15 mx-auto max-w-[90rem] justify-between gap-8 border-t p-8 font-sans lg:flex lg:flex-row-reverse lg:items-center lg:px-12"
 	>
 		<nav
-			class="flex flex-wrap justify-center gap-6 pb-8 text-xl lg:justify-end lg:py-0"
+			class="flex flex-wrap justify-center gap-6 pb-8 text-base sm:text-sm lg:justify-end lg:py-0"
 			aria-label="Footer"
 		>
 			<a href={resolve('/')} class={classes.menuItem}>Home</a>

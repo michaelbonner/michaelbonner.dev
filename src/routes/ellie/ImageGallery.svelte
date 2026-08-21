@@ -30,7 +30,7 @@
 			<enhanced:img
 				alt={image.altText}
 				class={clsx(
-					'my-0 aspect-square h-full w-full rounded-md object-cover py-0',
+					'my-0 aspect-square h-full w-full object-cover py-0 outline-1 -outline-offset-1 outline-black/10',
 					image.objectPosition
 				)}
 				loading="lazy"

@@ -51,10 +51,15 @@
 	<link rel="canonical" href="https://michaelbonner.dev/patents" />
 </svelte:head>
 
-<div class="container mx-auto grid gap-8 px-8 py-12">
-	<div class="prose dark:prose-invert max-w-3xl">
-		<h1>Patents</h1>
-		<p class="text-lg">
+<section class="py-16 sm:py-20 lg:py-28">
+	<div class="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
+		<p class="text-tomato font-sans text-base font-medium sm:text-sm">Inventor, apparently</p>
+		<h1
+			class="mt-3 max-w-[13ch] text-6xl font-medium tracking-tight text-balance sm:text-7xl lg:text-8xl"
+		>
+			Patents
+		</h1>
+		<p class="text-ink-muted mt-6 max-w-[65ch] font-sans text-xl text-pretty sm:text-lg/8">
 			I'm lucky enough to have my name listed on a few patents for work I did with <a
 				class={classes.bodyLink}
 				target="_blank"
@@ -65,47 +70,56 @@
 			helped build. You can
 			<a class={classes.bodyLink} href="/#projects">view more of my projects on the homepage</a>.
 		</p>
-	</div>
 
-	<div class="mt-12 grid gap-24">
-		{#if grantedPatents.length > 0}
-			<div
-				class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
-			>
-				<div class="text-xl">Granted Patents</div>
-				<div class="grid gap-8 md:col-span-2 xl:col-span-5">
-					{#each grantedPatents as patent (patent.patentNumber)}
-						<div>
-							<h2 class="mb-2 text-2xl font-bold">{patent.title}</h2>
-							<div class="mb-2 text-base text-gray-600 dark:text-gray-400">
-								Patent Number: {patent.patentNumber}
-							</div>
-							<div class="mb-2 text-sm text-gray-600 dark:text-gray-400">
-								<strong>Inventors:</strong>
-								{patent.inventors.join(', ')}
-							</div>
-							<div class="mb-2 text-sm text-gray-600 dark:text-gray-400">
-								<strong>Filed:</strong>
-								{patent.filingDate} | <strong>Issued:</strong>
-								{patent.issueDate}
-							</div>
-							<div class="mb-2 text-sm text-gray-600 dark:text-gray-400">
-								<strong>Assignee:</strong>
-								{patent.assignee}
-							</div>
-							<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">
-								{patent.description}
-							</p>
-							<div class="mt-2">
-								<A href={patent.googlePatentUrl} className="text-base">
-									<Link />
-									<span>View on Google Patents</span>
-								</A>
-							</div>
-						</div>
-					{/each}
+		<div class="border-ink/20 mt-14 grid gap-24 border-t pt-10 lg:mt-20">
+			{#if grantedPatents.length > 0}
+				<div class="grid gap-8 lg:grid-cols-[7fr_15fr] lg:gap-16">
+					<h2 class="max-w-[12ch] text-4xl font-medium tracking-tight text-balance sm:text-5xl">
+						Granted patents
+					</h2>
+					<ol class="divide-ink/15 border-ink/20 divide-y border-y" role="list">
+						{#each grantedPatents as patent, index (patent.patentNumber)}
+							<li class="py-8">
+								<p class="text-tomato font-sans text-base font-medium tabular-nums sm:text-sm">
+									0{index + 1} · {patent.patentNumber}
+								</p>
+								<h3
+									class="mt-2 max-w-[28ch] text-3xl font-medium tracking-tight text-balance sm:text-4xl"
+								>
+									{patent.title}
+								</h3>
+								<dl class="text-ink-soft mt-5 grid gap-2 font-sans text-base sm:text-sm">
+									<div>
+										<dt class="text-ink inline font-semibold">Inventors:</dt>
+										<dd class="inline">{patent.inventors.join(', ')}</dd>
+									</div>
+									<div>
+										<dt class="text-ink inline font-semibold">Filed:</dt>
+										<dd class="inline">{patent.filingDate}</dd>
+									</div>
+									<div>
+										<dt class="text-ink inline font-semibold">Issued:</dt>
+										<dd class="inline">{patent.issueDate}</dd>
+									</div>
+									<div>
+										<dt class="text-ink inline font-semibold">Assignee:</dt>
+										<dd class="inline">{patent.assignee}</dd>
+									</div>
+								</dl>
+								<p class="text-ink-muted mt-5 max-w-[65ch] font-sans text-base/7 text-pretty">
+									{patent.description}
+								</p>
+								<div class="mt-5">
+									<A href={patent.googlePatentUrl} className="text-base">
+										<Link />
+										<span>View on Google Patents</span>
+									</A>
+								</div>
+							</li>
+						{/each}
+					</ol>
 				</div>
-			</div>
-		{/if}
+			{/if}
+		</div>
 	</div>
-</div>
+</section>

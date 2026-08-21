@@ -263,13 +263,13 @@
 <div class="relative">
 	<div
 		bind:this={container}
-		class="h-[22rem] w-full rounded-lg border border-gray-300 bg-gray-100 xl:h-[38rem] dark:border-gray-600 dark:bg-gray-900"
+		class="bg-screen border-ink/20 h-[22rem] w-full border shadow-[8px_8px_0_var(--color-ink)] xl:h-[38rem]"
 		role="region"
 		aria-label="Map of favorite Salt Lake restaurants"
 	></div>
 
 	<div
-		class="pointer-events-none absolute top-3 right-3 z-500 rounded-md border border-gray-300 bg-white/95 px-3 py-2 text-gray-900 shadow-md backdrop-blur-sm"
+		class="bg-cream text-ink border-ink/20 pointer-events-none absolute top-3 right-3 z-500 border px-3 py-2 font-sans shadow-md"
 		aria-label="Pin colors by rating"
 	>
 		<p class="text-xs font-semibold tracking-wide uppercase">Rating</p>
@@ -283,7 +283,7 @@
 				9
 			</li>
 			<li class="flex items-center gap-1.5">
-				<span class="size-2.5 rounded-full bg-blue-700" aria-hidden="true"></span>
+				<span class="bg-blueprint size-2.5 rounded-full" aria-hidden="true"></span>
 				8
 			</li>
 		</ul>
@@ -291,7 +291,7 @@
 
 	{#if mappable.length === 0}
 		<p
-			class="pointer-events-none absolute inset-x-4 top-1/2 -translate-y-1/2 rounded-md bg-gray-200/95 p-4 text-center dark:bg-gray-800/95"
+			class="bg-cream text-ink pointer-events-none absolute inset-x-4 top-1/2 -translate-y-1/2 p-4 text-center font-sans"
 		>
 			No restaurants to show on the map.
 		</p>
@@ -299,7 +299,7 @@
 </div>
 
 {#if missingCoordinates > 0}
-	<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+	<p class="text-ink-soft mt-2 font-sans text-base sm:text-sm">
 		{missingCoordinates}
 		{missingCoordinates === 1 ? 'restaurant is' : 'restaurants are'} missing coordinates and only appear
 		in the table.
@@ -316,10 +316,10 @@
 		place-items: center;
 		width: 1.75rem;
 		height: 1.75rem;
-		border: 2px solid white;
+		border: 2px solid var(--color-cream);
 		border-radius: 9999px;
 		box-shadow: 0 1px 4px rgb(0 0 0 / 0.4);
-		color: white;
+		color: var(--color-cream);
 		font-size: 0.8125rem;
 		font-weight: 600;
 		transition: transform 150ms ease;
@@ -335,7 +335,7 @@
 	}
 
 	:global(.restaurant-pin__dot--good) {
-		background-color: var(--color-blue-700);
+		background-color: var(--color-blueprint);
 	}
 
 	:global(.restaurant-pin:hover .restaurant-pin__dot) {
@@ -344,8 +344,8 @@
 
 	:global(.restaurant-pin__dot--active) {
 		box-shadow:
-			0 0 0 3px white,
-			0 0 0 6px var(--color-gray-900),
+			0 0 0 3px var(--color-cream),
+			0 0 0 6px var(--color-ink),
 			0 1px 4px rgb(0 0 0 / 0.4);
 		transform: scale(1.25);
 	}
@@ -360,14 +360,13 @@
 		overflow: hidden;
 		padding: 0;
 		white-space: normal;
-		border: 1px solid var(--color-gray-300);
-		border-radius: 0.5rem;
+		border: 1px solid color-mix(in oklab, var(--color-ink) 20%, transparent);
 		background: var(--popover-surface);
 		-webkit-backdrop-filter: var(--popover-backdrop);
 		backdrop-filter: var(--popover-backdrop);
 		box-shadow: 0 0.5rem 1.5rem rgb(15 23 42 / 0.22);
-		color: var(--color-gray-900);
-		font-family: inherit;
+		color: var(--color-ink);
+		font-family: var(--font-sans);
 	}
 
 	:global(.restaurant-preview.leaflet-tooltip::before) {
@@ -391,7 +390,6 @@
 		flex: none;
 		width: 3rem;
 		height: 3rem;
-		border-radius: 0.375rem;
 	}
 
 	:global(.restaurant-preview__image) {
@@ -399,7 +397,7 @@
 	}
 
 	:global(.restaurant-preview__missing) {
-		background: var(--color-gray-200);
+		background: var(--color-screen);
 	}
 
 	:global(.restaurant-preview__content) {
@@ -421,10 +419,9 @@
 	}
 
 	:global(.restaurant-preview__tag) {
-		border-radius: 9999px;
-		background: var(--color-blue-100);
+		background: var(--color-butter);
 		padding: 0.125rem 0.5rem;
-		color: var(--color-blue-900);
+		color: var(--color-ink);
 		font-size: 0.75rem;
 		line-height: 1.4;
 	}
@@ -437,8 +434,8 @@
 		   blurred backdrop, so the streets under them still read as streets. Kept
 		   here, on the one ancestor both the tooltip and the popup panes inherit
 		   from, so light and dark each set the surface in a single place. */
-		--popover-surface: color-mix(in oklab, var(--color-gray-50) 85%, transparent);
-		--popover-backdrop: blur(0.5rem);
+		--popover-surface: color-mix(in oklab, var(--color-cream) 94%, transparent);
+		--popover-backdrop: blur(0.25rem);
 	}
 
 	/* The tip is the little arrow under the popup, and it is a separate box, so it
@@ -455,7 +452,7 @@
 		gap: 0.25rem;
 		width: 15rem !important;
 		margin: 0.75rem;
-		font-family: inherit;
+		font-family: var(--font-sans);
 	}
 
 	:global(.restaurant-popup__picture),
@@ -464,7 +461,6 @@
 		display: block;
 		width: 100%;
 		margin-bottom: 0.375rem;
-		border-radius: 0.375rem;
 		aspect-ratio: 16 / 9;
 	}
 
@@ -477,8 +473,8 @@
 	:global(.restaurant-popup__missing) {
 		display: grid;
 		place-items: center;
-		background: var(--color-gray-200);
-		color: var(--color-gray-600);
+		background: var(--color-screen);
+		color: var(--color-ink-soft);
 		font-size: 0.8125rem;
 	}
 
@@ -488,7 +484,7 @@
 
 	:global(.restaurant-popup__meta),
 	:global(.restaurant-popup__address) {
-		color: #4b5563;
+		color: var(--color-ink-muted);
 	}
 
 	:global(.restaurant-popup__order) {
@@ -499,47 +495,5 @@
 		justify-self: start;
 		margin-top: 0.25rem;
 		border-bottom: 1px solid currentColor;
-	}
-
-	/* Popups are the one piece of Leaflet chrome big enough to clash in dark mode. */
-	@media (prefers-color-scheme: dark) {
-		:global(.leaflet-container) {
-			--popover-surface: color-mix(in oklab, var(--color-gray-800) 85%, transparent);
-		}
-
-		:global(.restaurant-preview.leaflet-tooltip) {
-			border-color: var(--color-gray-600);
-			box-shadow: none;
-			color: var(--color-gray-100);
-		}
-
-		:global(.restaurant-preview__missing) {
-			background: var(--color-gray-700);
-			color: var(--color-gray-300);
-		}
-
-		:global(.restaurant-popup__missing) {
-			background: var(--color-gray-700);
-			color: var(--color-gray-300);
-		}
-
-		:global(.restaurant-preview__tag) {
-			background: var(--color-blue-950);
-			color: var(--color-blue-200);
-		}
-
-		:global(.restaurant-popup .leaflet-popup-content-wrapper),
-		:global(.restaurant-popup .leaflet-popup-tip) {
-			color: #e5e7eb;
-		}
-
-		:global(.restaurant-popup__meta),
-		:global(.restaurant-popup__address) {
-			color: #9ca3af;
-		}
-
-		:global(.restaurant-popup .leaflet-popup-close-button) {
-			color: #9ca3af;
-		}
 	}
 </style>

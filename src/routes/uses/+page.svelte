@@ -133,6 +133,12 @@
 			isAffiliateLink: true
 		}
 	];
+
+	const sections = [
+		{ title: 'Workstation', items: workstationItems },
+		{ title: 'Development tools', items: developmentItems },
+		{ title: 'Productivity tools', items: productivityItems }
+	];
 </script>
 
 <Seo
@@ -145,89 +151,51 @@
 	<link rel="canonical" href="https://michaelbonner.dev/uses" />
 </svelte:head>
 
-<div class="container mx-auto grid gap-8 px-8 py-12">
-	<div class="prose dark:prose-invert max-w-3xl">
-		<h1>Software and other things I recommend.</h1>
-		<p class="max-w-xl text-lg">
-			I sometimes get asked about the things I use to build software and stay productive. Here’s a
+<section class="py-16 sm:py-20 lg:py-28">
+	<div class="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
+		<p class="text-tomato font-sans text-base font-medium sm:text-sm">The working set</p>
+		<h1
+			class="mt-3 max-w-[16ch] text-6xl font-medium tracking-tight text-balance sm:text-7xl lg:text-8xl"
+		>
+			Software and other things I recommend.
+		</h1>
+		<p class="text-ink-muted mt-6 max-w-[58ch] font-sans text-xl text-pretty sm:text-lg/8">
+			I sometimes get asked about the things I use to build software and stay productive. Here's a
 			list of some of my favorite stuff.
 		</p>
-	</div>
 
-	<div class="mt-12 grid gap-24">
-		<div
-			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
-		>
-			<h2 class="text-xl">Workstation</h2>
-			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
-				{#each workstationItems as item (item.title)}
+		<div class="border-ink/20 mt-14 grid gap-20 border-t pt-10 lg:mt-20 lg:gap-28">
+			{#each sections as section, sectionIndex (section.title)}
+				<section class="grid gap-8 lg:grid-cols-[7fr_15fr] lg:gap-16">
 					<div>
-						<span class="inline-block text-xl">
-							<A href={item.href}>
-								<Link />
-								<span>{item.title}</span>
-							</A>
-						</span>
-						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
-						{#if item.isAffiliateLink}
-							<p class="text-sm text-gray-600 dark:text-gray-300">
-								*This is an affiliate link. I may receive a commission if you purchase through this
-								link.
-							</p>
-						{/if}
+						<p class="text-tomato font-sans text-base font-medium tabular-nums sm:text-sm">
+							0{sectionIndex + 1}
+						</p>
+						<h2
+							class="mt-2 max-w-[14ch] text-4xl font-medium tracking-tight text-balance sm:text-5xl"
+						>
+							{section.title}
+						</h2>
 					</div>
-				{/each}
-			</div>
-		</div>
-
-		<div
-			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
-		>
-			<h2 class="text-xl">Development Tools</h2>
-			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
-				{#each developmentItems as item (item.title)}
-					<div>
-						<span class="inline-block text-xl">
-							<A href={item.href}>
-								<Link />
-								<span>{item.title}</span>
-							</A>
-						</span>
-						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
-						{#if item.isAffiliateLink}
-							<p class="text-sm text-gray-600 dark:text-gray-300">
-								*This is an affiliate link. I may receive a commission if you purchase through this
-								link.
-							</p>
-						{/if}
-					</div>
-				{/each}
-			</div>
-		</div>
-
-		<div
-			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
-		>
-			<h2 class="text-xl">Productivity Tools</h2>
-			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
-				{#each productivityItems as item (item.title)}
-					<div>
-						<span class="inline-block text-xl">
-							<A href={item.href}>
-								<Link />
-								<span>{item.title}</span>
-							</A>
-						</span>
-						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
-						{#if item.isAffiliateLink}
-							<p class="text-sm text-gray-600 dark:text-gray-300">
-								*This is an affiliate link. I may receive a commission if you purchase through this
-								link.
-							</p>
-						{/if}
-					</div>
-				{/each}
-			</div>
+					<ul class="divide-ink/15 border-ink/20 divide-y border-y" role="list">
+						{#each section.items as item (item.title)}
+							<li class="py-6">
+								<h3 class="font-sans text-xl font-semibold sm:text-lg">
+									<A href={item.href}><Link /><span>{item.title}</span></A>
+								</h3>
+								<p class="text-ink-muted mt-2 max-w-[65ch] font-sans text-base/7 text-pretty">
+									{item.description}
+								</p>
+								{#if item.isAffiliateLink}
+									<p class="text-ink-soft mt-2 font-sans text-base sm:text-sm">
+										Affiliate link. I may receive a commission if you purchase through this link.
+									</p>
+								{/if}
+							</li>
+						{/each}
+					</ul>
+				</section>
+			{/each}
 		</div>
 	</div>
-</div>
+</section>

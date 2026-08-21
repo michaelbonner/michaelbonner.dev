@@ -2,18 +2,15 @@ import { classNames } from '../functions/classNames';
 
 export const classes = {
 	menuItem: classNames(
-		'text-xl border-b-2 border-gray-400 transition-transform',
-		'hover:text-blue-800 hover:border-blue-400 hover:scale-105 hover:rotate-1',
-		'dark:border-gray-500 dark:hover:text-blue-300 dark:hover:border-blue-100'
+		'border-ink/25 hover:text-tomato hover:border-tomato border-b font-sans outline-none',
+		'focus-visible:text-tomato focus-visible:border-tomato'
 	),
 	largeBodyLink: classNames(
-		'inline-flex gap-x-1 items-center text-lg border-b-2 border-gray-400 transition-transform',
-		'hover:text-blue-800 hover:border-blue-400 hover:scale-105 hover:rotate-1',
-		'dark:border-gray-500 dark:hover:text-blue-300 dark:hover:border-blue-100'
+		'border-ink/25 hover:text-tomato hover:border-tomato inline-flex items-center gap-x-1 border-b font-sans outline-none',
+		'focus-visible:text-tomato focus-visible:border-tomato'
 	),
 	bodyLink: classNames(
-		'inline-flex border-b border-gray-400 transition-transform break-words no-underline',
-		'hover:text-blue-800 hover:border-blue-400 hover:scale-105 hover:rotate-1',
-		'dark:border-gray-500 dark:hover:text-blue-300 dark:hover:border-blue-100'
+		'border-tomato/50 text-tomato hover:border-tomato inline-flex break-words border-b font-sans no-underline outline-none',
+		'focus-visible:border-tomato'
 	)
 };

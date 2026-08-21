@@ -30,8 +30,8 @@
 	<link rel="canonical" href="https://michaelbonner.dev/blog/git-branch-name-raycast-extension" />
 </svelte:head>
 
-<div class="container mx-auto flex items-center px-8 py-12">
-	<div class="prose dark:prose-invert w-full max-w-3xl">
+<div class="mx-auto flex max-w-[90rem] items-center px-5 py-12 sm:px-8 lg:px-12 lg:py-20">
+	<div class="prose prose-lg w-full max-w-3xl">
 		<div class="pt-8">
 			<div class="lg:pt-24">
 				<div>

@@ -12,8 +12,8 @@
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
-<div class="container mx-auto grid gap-8 px-8 py-12">
-	<div class="prose dark:prose-invert mt-12">
+<div class="mx-auto grid max-w-[90rem] gap-8 px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+	<div class="prose mt-8 max-w-3xl">
 		<h1>Happy Mother's Day Mom!</h1>
 
 		<p>I wanted to take a moment to let you know just how much I appreciate and love you.</p>

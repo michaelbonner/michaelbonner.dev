@@ -291,12 +291,11 @@
 		}))
 	});
 
-	const labelClasses = 'text-sm text-gray-700 dark:text-gray-300';
+	const labelClasses = 'font-sans text-base font-medium text-ink sm:text-sm';
 
 	const inputClasses = classNames(
-		'w-full rounded-md border border-gray-400 bg-white px-3 py-2 text-lg',
-		'focus:border-blue-600 focus:ring-2 focus:ring-blue-600/40 focus:outline-none',
-		'dark:border-gray-600 dark:bg-gray-900'
+		'bg-cream border-ink/25 w-full border px-3 py-2.5 font-sans text-lg sm:text-base',
+		'focus:border-tomato focus:ring-tomato/20 focus:ring-4 focus:outline-none'
 	);
 </script>
 
@@ -313,283 +312,286 @@
 	{@html `<${'script'} type="application/ld+json">${itemListSchema}</${'script'}>`}
 </svelte:head>
 
-<div class="container mx-auto px-8 py-12">
-	<h1 class="text-4xl lg:text-6xl">Favorite Restaurants in Salt Lake</h1>
-	<p class="mt-6 max-w-2xl text-xl text-gray-700 dark:text-gray-300">
-		People ask me where to eat in Salt Lake often enough that I started keeping a list. Sort it,
-		filter it, or find something near you on the map.
-	</p>
+<section class="py-16 sm:py-20 lg:py-28">
+	<div class="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
+		<p class="text-tomato font-sans text-base font-medium sm:text-sm">Michael's field notes</p>
+		<h1
+			class="mt-3 max-w-[16ch] text-6xl font-medium tracking-tight text-balance sm:text-7xl lg:text-8xl"
+		>
+			Favorite restaurants in Salt Lake
+		</h1>
+		<p class="text-ink-muted mt-6 max-w-[58ch] font-sans text-xl text-pretty sm:text-lg/8">
+			People ask me where to eat in Salt Lake often enough that I started keeping a list. Sort it,
+			filter it, or find something near you on the map.
+		</p>
 
-	<div class="mt-12 grid gap-8 xl:grid-cols-5">
-		<!-- The map sticks alongside the list on wide screens and sits above it otherwise. -->
-		<div class="xl:order-2 xl:col-span-2">
-			<div class="xl:sticky xl:top-8">
-				<RestaurantMap restaurants={visible} {activeName} onSelect={select} />
+		<div class="border-ink/20 mt-14 grid gap-10 border-t pt-10 xl:grid-cols-5 xl:gap-16">
+			<!-- The map sticks alongside the list on wide screens and sits above it otherwise. -->
+			<div class="xl:order-2 xl:col-span-2">
+				<div class="xl:sticky xl:top-8">
+					<RestaurantMap restaurants={visible} {activeName} onSelect={select} />
+				</div>
 			</div>
-		</div>
 
-		<div class="xl:col-span-3">
-			<div class="grid gap-4">
-				<div class="grid gap-4 sm:grid-cols-2">
-					<!--
+			<div class="font-sans xl:col-span-3">
+				<div class="grid gap-4">
+					<div class="grid gap-4 sm:grid-cols-2">
+						<!--
 						Labels sit beside their control rather than wrapping it: a <label> that
 						wraps a <select> pulls every option into its accessible name.
 					-->
-					<div class="grid gap-1">
-						<label for="restaurant-search" class={labelClasses}>Search</label>
-						<input
-							id="restaurant-search"
-							type="search"
-							bind:value={search}
-							placeholder="Name, tag, location&hellip;"
+						<div class="grid gap-1">
+							<label for="restaurant-search" class={labelClasses}>Search</label>
+							<input
+								id="restaurant-search"
+								type="search"
+								bind:value={search}
+								placeholder="Name, tag, location&hellip;"
+								class={inputClasses}
+							/>
+						</div>
+
+						<div class="grid gap-1">
+							<label for="restaurant-tag" class={labelClasses}>Tag</label>
+							<select id="restaurant-tag" bind:value={tag} class={inputClasses}>
+								<option value="">Any tag</option>
+								{#each restaurantTags as option (option)}
+									<option value={option}>{option}</option>
+								{/each}
+							</select>
+						</div>
+
+						<div class="grid gap-1">
+							<label for="restaurant-location" class={labelClasses}>Location</label>
+							<select id="restaurant-location" bind:value={location} class={inputClasses}>
+								<option value="">Any location</option>
+								{#each locations as option (option)}
+									<option value={option}>{option}</option>
+								{/each}
+							</select>
+						</div>
+
+						<div class="grid grid-cols-2 gap-4">
+							<div class="grid gap-1">
+								<label for="restaurant-price" class={labelClasses}>Price/person</label>
+								<select id="restaurant-price" bind:value={pricePerPerson} class={inputClasses}>
+									<option value={0}>Any</option>
+									{#each pricesPerPerson as pricePoint (pricePoint)}
+										<option value={pricePoint}>${pricePoint}</option>
+									{/each}
+								</select>
+							</div>
+
+							<div class="grid gap-1">
+								<label for="restaurant-rating" class={labelClasses}>Rating</label>
+								<select id="restaurant-rating" bind:value={minRating} class={inputClasses}>
+									<option value={0}>Any</option>
+									{#each ratingOptions as level (level)}
+										<option value={level}>{level}{level !== 10 ? '+' : ''}</option>
+									{/each}
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="flex flex-wrap items-center justify-between gap-4">
+						<p aria-live="polite" class="text-ink-muted">
+							Showing {visible.length} of {restaurants.length} restaurants
+						</p>
+						{#if hasFilters}
+							<button type="button" onclick={clearFilters} class={classes.bodyLink}>
+								Clear filters
+							</button>
+						{/if}
+					</div>
+
+					<!-- Sorting on small screens, where there are no table headers to click. -->
+					<div class="grid gap-1 md:hidden">
+						<label for="restaurant-sort" class={labelClasses}>Sort by</label>
+						<select
+							id="restaurant-sort"
 							class={inputClasses}
-						/>
-					</div>
-
-					<div class="grid gap-1">
-						<label for="restaurant-tag" class={labelClasses}>Tag</label>
-						<select id="restaurant-tag" bind:value={tag} class={inputClasses}>
-							<option value="">Any tag</option>
-							{#each restaurantTags as option (option)}
-								<option value={option}>{option}</option>
-							{/each}
+							value={`${sortKey}:${sortDirection}`}
+							onchange={(event) => {
+								const [key, direction] = event.currentTarget.value.split(':');
+								sortKey = key as SortKey;
+								sortDirection = direction === 'asc' ? 'asc' : 'desc';
+							}}
+						>
+							<option value="rating:desc">Rating, high to low</option>
+							<option value="rating:asc">Rating, low to high</option>
+							<option value="pricePerPerson:asc">Price, low to high</option>
+							<option value="pricePerPerson:desc">Price, high to low</option>
+							<option value="name:asc">Name, A to Z</option>
+							<option value="name:desc">Name, Z to A</option>
+							<option value="tags:asc">Tags, A to Z</option>
+							<option value="locations:asc">Location, A to Z</option>
 						</select>
 					</div>
-
-					<div class="grid gap-1">
-						<label for="restaurant-location" class={labelClasses}>Location</label>
-						<select id="restaurant-location" bind:value={location} class={inputClasses}>
-							<option value="">Any location</option>
-							{#each locations as option (option)}
-								<option value={option}>{option}</option>
-							{/each}
-						</select>
-					</div>
-
-					<div class="grid grid-cols-2 gap-4">
-						<div class="grid gap-1">
-							<label for="restaurant-price" class={labelClasses}>Price/person</label>
-							<select id="restaurant-price" bind:value={pricePerPerson} class={inputClasses}>
-								<option value={0}>Any</option>
-								{#each pricesPerPerson as pricePoint (pricePoint)}
-									<option value={pricePoint}>${pricePoint}</option>
-								{/each}
-							</select>
-						</div>
-
-						<div class="grid gap-1">
-							<label for="restaurant-rating" class={labelClasses}>Rating</label>
-							<select id="restaurant-rating" bind:value={minRating} class={inputClasses}>
-								<option value={0}>Any</option>
-								{#each ratingOptions as level (level)}
-									<option value={level}>{level}{level !== 10 ? '+' : ''}</option>
-								{/each}
-							</select>
-						</div>
-					</div>
 				</div>
 
-				<div class="flex flex-wrap items-center justify-between gap-4">
-					<p aria-live="polite" class="text-gray-700 dark:text-gray-300">
-						Showing {visible.length} of {restaurants.length} restaurants
-					</p>
-					{#if hasFilters}
-						<button type="button" onclick={clearFilters} class={classes.bodyLink}>
-							Clear filters
-						</button>
-					{/if}
-				</div>
-
-				<!-- Sorting on small screens, where there are no table headers to click. -->
-				<div class="grid gap-1 md:hidden">
-					<label for="restaurant-sort" class={labelClasses}>Sort by</label>
-					<select
-						id="restaurant-sort"
-						class={inputClasses}
-						value={`${sortKey}:${sortDirection}`}
-						onchange={(event) => {
-							const [key, direction] = event.currentTarget.value.split(':');
-							sortKey = key as SortKey;
-							sortDirection = direction === 'asc' ? 'asc' : 'desc';
-						}}
-					>
-						<option value="rating:desc">Rating, high to low</option>
-						<option value="rating:asc">Rating, low to high</option>
-						<option value="pricePerPerson:asc">Price, low to high</option>
-						<option value="pricePerPerson:desc">Price, high to low</option>
-						<option value="name:asc">Name, A to Z</option>
-						<option value="name:desc">Name, Z to A</option>
-						<option value="tags:asc">Tags, A to Z</option>
-						<option value="locations:asc">Location, A to Z</option>
-					</select>
-				</div>
-			</div>
-
-			<div bind:this={listElement} class="mt-8">
-				{#if visible.length === 0}
-					<p class="rounded-lg border border-gray-300 p-8 text-center text-xl dark:border-gray-600">
-						No restaurants match those filters.
-					</p>
-				{:else}
-					<!-- Table on md and up, cards below, so the columns never squeeze. -->
-					<table class="hidden w-full border-collapse text-left md:table">
-						<thead>
-							<tr class="border-b-2 border-gray-400 dark:border-gray-600">
-								{#each columns as column (column.key)}
-									{@const isSorted = sortKey === column.key}
-									<th
-										scope="col"
-										class={classNames('py-2', column.alignRight ? 'text-right' : '')}
-										aria-sort={isSorted
-											? sortDirection === 'asc'
-												? 'ascending'
-												: 'descending'
-											: 'none'}
-									>
-										<button
-											type="button"
-											onclick={() => toggleSort(column.key)}
-											class={classNames(
-												'inline-flex items-center gap-1 font-semibold',
-												'hover:text-blue-800 dark:hover:text-blue-300'
-											)}
+				<div bind:this={listElement} class="mt-8">
+					{#if visible.length === 0}
+						<p class="border-ink/25 border p-8 text-center text-xl">
+							No restaurants match those filters.
+						</p>
+					{:else}
+						<!-- Table on md and up, cards below, so the columns never squeeze. -->
+						<table class="hidden w-full border-collapse text-left md:table">
+							<thead>
+								<tr class="border-ink/30 border-b">
+									{#each columns as column (column.key)}
+										{@const isSorted = sortKey === column.key}
+										<th
+											scope="col"
+											class={classNames('py-2', column.alignRight ? 'text-right' : '')}
+											aria-sort={isSorted
+												? sortDirection === 'asc'
+													? 'ascending'
+													: 'descending'
+												: 'none'}
 										>
-											<span>{column.label}</span>
-											<span aria-hidden="true" class={isSorted ? '' : 'opacity-30'}>
-												{isSorted && sortDirection === 'asc' ? '▲' : '▼'}
-											</span>
-										</button>
-									</th>
-								{/each}
-							</tr>
-						</thead>
-						<tbody>
-							{#each visible as restaurant (restaurant.name)}
-								{@const isActive = activeName === restaurant.name}
-								<tr
-									data-restaurant={restaurant.name}
-									onclick={() => select(restaurant.name)}
-									class={classNames(
-										'cursor-pointer border-b border-gray-300 align-top dark:border-gray-700',
-										isActive
-											? 'bg-blue-100 dark:bg-blue-950'
-											: 'hover:bg-gray-300/50 dark:hover:bg-gray-700/50'
-									)}
-								>
-									<td class="py-3 pr-4">
-										<div class="flex items-start gap-3">
-											<!--
+											<button
+												type="button"
+												onclick={() => toggleSort(column.key)}
+												class={classNames(
+													'inline-flex items-center gap-1 font-semibold',
+													'hover:text-tomato focus-visible:text-tomato'
+												)}
+											>
+												<span>{column.label}</span>
+												<span aria-hidden="true" class={isSorted ? '' : 'opacity-30'}>
+													{isSorted && sortDirection === 'asc' ? '▲' : '▼'}
+												</span>
+											</button>
+										</th>
+									{/each}
+								</tr>
+							</thead>
+							<tbody>
+								{#each visible as restaurant (restaurant.name)}
+									{@const isActive = activeName === restaurant.name}
+									<tr
+										data-restaurant={restaurant.name}
+										onclick={() => select(restaurant.name)}
+										class={classNames(
+											'border-ink/15 cursor-pointer border-b align-top',
+											isActive ? 'bg-butter/50' : 'hover:bg-cream/70'
+										)}
+									>
+										<td class="py-3 pr-4">
+											<div class="flex items-start gap-3">
+												<!--
 												Kept small deliberately. The table shares its row with the map, so
 												every pixel the thumbnail takes comes out of the name column and
 												wraps more of the longer names onto a second line.
 											-->
-											<RestaurantThumbnail name={restaurant.name} size={40} />
+												<RestaurantThumbnail name={restaurant.name} size={40} />
 
-											<div>
-												<!--
+												<div>
+													<!--
 													The row is clickable for the mouse, but the name is a real button so
 													the same selection is reachable by keyboard and announced to screen
 													readers. It stops propagation so the row handler cannot undo it.
 												-->
-												<button
-													type="button"
-													aria-pressed={isActive}
-													onclick={(event) => {
-														event.stopPropagation();
-														select(restaurant.name);
-													}}
-													class="text-left text-lg hover:text-blue-800 dark:hover:text-blue-300"
-												>
-													{restaurant.name}
-												</button>
-												{#if restaurant.notes}
-													<span class="block text-sm text-gray-600 dark:text-gray-400">
-														{restaurant.notes}
-													</span>
-												{/if}
-												<span class="mt-1 flex flex-wrap gap-x-3 text-sm">
-													<a
-														href={directionsUrl(restaurant)}
-														target="_blank"
-														rel="noopener noreferrer"
-														class={classes.bodyLink}
-														onclick={(event) => event.stopPropagation()}
+													<button
+														type="button"
+														aria-pressed={isActive}
+														onclick={(event) => {
+															event.stopPropagation();
+															select(restaurant.name);
+														}}
+														class="hover:text-tomato text-left text-lg"
 													>
-														Directions
-													</a>
-												</span>
+														{restaurant.name}
+													</button>
+													{#if restaurant.notes}
+														<p class="text-ink-soft text-sm">
+															{restaurant.notes}
+														</p>
+													{/if}
+													<p class="mt-1 flex flex-wrap gap-x-3 text-sm">
+														<a
+															href={directionsUrl(restaurant)}
+															target="_blank"
+															rel="noopener noreferrer"
+															class={classes.bodyLink}
+															onclick={(event) => event.stopPropagation()}
+														>
+															Directions
+														</a>
+													</p>
+												</div>
 											</div>
-										</div>
-									</td>
-									<td class="py-3 pr-4">{restaurant.tags.join(', ')}</td>
-									<td class="py-3 pr-4">{locationLabel(restaurant)}</td>
-									<td class="py-3 pr-4 text-right whitespace-nowrap">
-										${restaurant.pricePerPerson}
-									</td>
-									<td class="py-3 text-right whitespace-nowrap">{restaurant.rating}/10</td>
-								</tr>
-							{/each}
-						</tbody>
-					</table>
+										</td>
+										<td class="py-3 pr-4">{restaurant.tags.join(', ')}</td>
+										<td class="py-3 pr-4">{locationLabel(restaurant)}</td>
+										<td class="py-3 pr-4 text-right whitespace-nowrap">
+											${restaurant.pricePerPerson}
+										</td>
+										<td class="py-3 text-right whitespace-nowrap">{restaurant.rating}/10</td>
+									</tr>
+								{/each}
+							</tbody>
+						</table>
 
-					<ul class="grid gap-4 md:hidden">
-						{#each visible as restaurant (restaurant.name)}
-							{@const isActive = activeName === restaurant.name}
-							<li
-								data-restaurant={restaurant.name}
-								class={classNames(
-									'rounded-lg border p-4',
-									isActive
-										? 'border-blue-800 bg-blue-100 dark:border-blue-300 dark:bg-blue-950'
-										: 'border-gray-300 dark:border-gray-700'
-								)}
-							>
-								<div class="flex items-start gap-4">
-									<!--
+						<ul class="grid gap-4 md:hidden">
+							{#each visible as restaurant (restaurant.name)}
+								{@const isActive = activeName === restaurant.name}
+								<li
+									data-restaurant={restaurant.name}
+									class={classNames(
+										'border p-4',
+										isActive ? 'border-tomato bg-butter/50' : 'border-ink/20'
+									)}
+								>
+									<div class="flex items-start gap-4">
+										<!--
 										Bigger than the table's thumbnail: a card has the full width to
 										itself, so the photo is not competing with four other columns.
 									-->
-									<RestaurantThumbnail name={restaurant.name} size={64} />
+										<RestaurantThumbnail name={restaurant.name} size={64} />
 
-									<!-- min-w-0 so a long name wraps instead of stretching the card. -->
-									<div class="min-w-0">
-										<button
-											type="button"
-											onclick={() => select(restaurant.name)}
-											class="w-full text-left text-xl"
-										>
-											{restaurant.name}
-										</button>
-										<!--
+										<!-- min-w-0 so a long name wraps instead of stretching the card. -->
+										<div class="min-w-0">
+											<button
+												type="button"
+												onclick={() => select(restaurant.name)}
+												class="w-full text-left text-xl"
+											>
+												{restaurant.name}
+											</button>
+											<!--
 											wrap-anywhere because a slashed location list ("Downtown/Sugarhouse/
 											Midvale") is one unbreakable word to the browser. With the thumbnail
 											beside it, that word set the card's minimum width and pushed the whole
 											page into a horizontal scroll on a 320px screen.
 										-->
-										<p class="wrap-anywhere text-gray-700 dark:text-gray-300">
-											{restaurant.tags.join(', ')} &middot; {locationLabel(restaurant)} &middot; ${restaurant.pricePerPerson}/person
-											&middot; {restaurant.rating}/10
-										</p>
-										{#if restaurant.notes}
-											<p class="text-sm text-gray-600 dark:text-gray-400">{restaurant.notes}</p>
-										{/if}
-										<p class="mt-2 flex flex-wrap gap-x-4">
-											<a
-												href={directionsUrl(restaurant)}
-												target="_blank"
-												rel="noopener noreferrer"
-												class={classes.bodyLink}
-											>
-												Directions
-											</a>
-										</p>
+											<p class="text-ink-muted wrap-anywhere">
+												{restaurant.tags.join(', ')} &middot; {locationLabel(restaurant)} &middot; ${restaurant.pricePerPerson}/person
+												&middot; {restaurant.rating}/10
+											</p>
+											{#if restaurant.notes}
+												<p class="text-ink-soft text-sm">{restaurant.notes}</p>
+											{/if}
+											<p class="mt-2 flex flex-wrap gap-x-4">
+												<a
+													href={directionsUrl(restaurant)}
+													target="_blank"
+													rel="noopener noreferrer"
+													class={classes.bodyLink}
+												>
+													Directions
+												</a>
+											</p>
+										</div>
 									</div>
-								</div>
-							</li>
-						{/each}
-					</ul>
-				{/if}
+								</li>
+							{/each}
+						</ul>
+					{/if}
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</section>

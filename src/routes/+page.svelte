@@ -1,16 +1,11 @@
 <script lang="ts">
 	import { blogArticles } from '$lib/data/blogArticles';
-	import clsx from 'clsx';
 	import type { Picture } from 'vite-imagetools';
-	import H2 from '../components/H2.svelte';
 	import OrganizationSchema from '../components/OrganizationSchema.svelte';
 	import Seo from '../components/Seo.svelte';
-	import { classNames } from '../functions/classNames';
 	import Github from '../icons/Github.svelte';
 	import Instagram from '../icons/Instagram.svelte';
-	import Link from '../icons/Link.svelte';
 	import LinkedIn from '../icons/LinkedIn.svelte';
-	import { classes } from '../styles/classes';
 	// images
 	import mainImage from '$lib/images/on-the-beach-600.jpg?enhanced';
 	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced';
@@ -142,7 +137,7 @@
 		{
 			title: 'OfficeLunch',
 			description:
-				'A lunch coordination app for busy admins. Collect opt-ins, organize orders, and keep multiple organizations in sync — so Friday lunch runs itself instead of eating up your week.',
+				'A lunch coordination app for busy admins. Collect opt-ins, organize orders, and keep multiple organizations in sync, so Friday lunch runs itself instead of eating up your week.',
 			url: 'https://officelunch.app/',
 			image: officelunch
 		},
@@ -156,7 +151,7 @@
 		{
 			title: 'Festival Things',
 			description:
-				'A festival lineup companion for music fans. Sort every artist into must-see, want-to-see, maybe, or pass, discover new acts, and connect your Spotify to see who you already love — then share it all with your group so you never miss a set.',
+				'A festival lineup companion for music fans. Sort every artist into must-see, want-to-see, maybe, or pass, discover new acts, and connect your Spotify to see who you already love. Then share it with your group so you never miss a set.',
 			url: 'https://festival-things.com/',
 			image: festivalThings
 		},
@@ -436,6 +431,9 @@
 		'WordPress',
 		'Shopify'
 	];
+
+	const featuredProjects = projects.slice(0, 4);
+	const projectArchive = [...projects.slice(4), ...otherThings];
 </script>
 
 <Seo
@@ -450,269 +448,288 @@
 	<link rel="canonical" href="https://michaelbonner.dev/" />
 </svelte:head>
 
-<div class="container mx-auto flex items-center px-8 py-12">
-	<div class="sm:pt-8">
-		<div class="lg:flex lg:flex-row-reverse lg:pt-16">
-			<div class="mt-8 w-full lg:mt-0 lg:w-1/3">
+<div class="home-page bg-paper text-ink">
+	<section class="bg-tomato overflow-hidden py-10 sm:py-14 lg:py-20">
+		<div
+			class="mx-auto grid max-w-[90rem] gap-10 px-5 sm:px-8 lg:grid-cols-[13fr_9fr] lg:items-end lg:gap-16 lg:px-12"
+		>
+			<div class="min-w-0">
+				<p class="text-ink-warm font-sans text-base font-medium tracking-wide sm:text-sm">
+					Web developer · Salt Lake City
+				</p>
+				<h1
+					class="text-cream mt-5 max-w-[14ch] text-6xl font-medium tracking-tight text-balance sm:text-7xl lg:text-8xl xl:text-9xl"
+				>
+					I make useful things for the web.
+				</h1>
+				<p
+					class="text-ink-warm mt-8 max-w-[58ch] font-sans text-xl text-pretty sm:text-lg/8 lg:text-xl/8"
+				>
+					I&apos;m Michael Bonner. I&apos;ve built websites, apps, and odd little tools since 2003.
+					These days I run
+					<a
+						class="font-semibold underline decoration-2 underline-offset-4"
+						href="https://bootpackdigital.com/">Bootpack Digital</a
+					>
+					with friends.
+				</p>
+				<div class="mt-8 flex flex-wrap gap-3 font-sans text-base font-semibold sm:text-sm">
+					<a
+						class="bg-ink text-cream focus-visible:outline-cream inline-flex min-h-12 items-center px-5 py-3 outline-none hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:transition-transform"
+						href="#work">See selected work</a
+					>
+					<a
+						class="text-ink-warm ring-ink-warm focus-visible:outline-cream inline-flex min-h-12 items-center px-5 py-3 ring-1 outline-none hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:transition-transform"
+						href="/contact">Start a conversation</a
+					>
+				</div>
+			</div>
+
+			<div class="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
+				<div
+					class="bg-butter text-ink-warm absolute -top-5 -right-3 z-10 rotate-3 px-4 py-2 font-sans text-base font-semibold shadow-[4px_4px_0_var(--color-ink)] sm:text-sm"
+				>
+					Still curious after 20+ years
+				</div>
 				<enhanced:img
-					alt=""
-					class="bg-opacity-100 h-auto w-full rounded-lg mix-blend-luminosity transition-transform hover:scale-105 hover:rotate-1 hover:bg-blend-darken"
+					alt="Michael Bonner smiling on a beach"
+					class="aspect-[4/5] w-full rotate-[-1.5deg] object-cover shadow-[12px_12px_0_var(--color-ink)] outline-1 -outline-offset-1 outline-black/10"
 					fetchpriority="high"
 					src={mainImage}
+					sizes="(min-width: 1024px) 38vw, 90vw"
 				/>
 			</div>
-			<div class="mt-8 w-full lg:mt-0 lg:w-2/3 lg:pr-8">
-				<h1 class="text-3xl leading-relaxed tracking-wide lg:pr-8 lg:text-4xl">
-					Hi! I&apos;m <span class="font-medium whitespace-nowrap"> Michael Bonner</span>, a web
-					developer in Salt Lake City, Utah. I run a small agency with some friends called
-					<span class="whitespace-nowrap">
-						<a
-							class={classNames(
-								'!lg:text-4xl inline-block! text-3xl!',
-								'font-medium lg:inline-block lg:leading-none',
-								classes.largeBodyLink
-							)}
-							href="https://bootpackdigital.com/">Bootpack Digital</a
-						>.
-					</span>
-				</h1>
-				<div class="my-8 inline-block lg:my-0">
-					<a
-						class={classNames('text-2xl lg:flex', classes.largeBodyLink, 'my-4 lg:my-8')}
-						href="https://github.com/michaelbonner"
-					>
-						<span>See what I&apos;m up to on GitHub</span>
-						<Github className="hidden lg:inline-block" />
-					</a>
-				</div>
-				<div class="text-xl leading-relaxed">
-					<p class="mt-4">
-						I started making websites in high school back in 2003. I actually found a copy of my
-						first site and <a class={classes.bodyLink} href="https://tuff.michaelbonner.dev/">
-							put it up here
-						</a>
-						. Epic, right? I don&apos;t miss the days of GeoCities. From there I made websites for people
-						I knew, then people they knew, and so on. Making websites was definitely my thing. Since then
-						I have worked at a handful of places making websites, web apps, and mobile apps. I was also
-						a director at a digital agency for several years, and taught a boot camp for the University
-						of Utah. I love what I do, and I&apos;m always down to chat about it.
-					</p>
-					<p class="mt-4">
-						I really like podcasts, so I made a site to share the podcasts I listen to. You can <a
-							class={classes.bodyLink}
-							href="https://podcasts.michaelbonner.dev/">check that out here</a
-						>.
-					</p>
-				</div>
-			</div>
 		</div>
+	</section>
 
-		<div class="max-w-7xl lg:mt-32">
-			<H2 id="projects">Projects I&apos;m proud of</H2>
-			<ul class="mt-8 grid gap-x-24 gap-y-12 text-lg lg:mt-16 lg:grid-cols-2 lg:gap-y-24">
-				{#each projects as project, projectIndex (project.title)}
-					<li class="mt-8 grid gap-y-4 lg:mt-0 lg:ml-8">
-						<a
-							aria-label={`View ${project.title}`}
-							class="transition-transform hover:scale-105 hover:rotate-1"
-							href={project.url}
-						>
-							<enhanced:img
-								alt=""
-								class="rounded-lg border border-gray-100 shadow-sm md:max-w-md dark:border-gray-900/40"
-								loading={projectIndex <= 1 ? 'eager' : 'lazy'}
-								src={project.image}
-								sizes="(min-width:768px) 448px, 100vw"
-							/>
-						</a>
-						<p>
-							<a class={classNames('text-2xl!', classes.largeBodyLink)} href={project.url}>
-								{project.title}
-							</a>
-						</p>
-						<p>{project.description}</p>
-						<div class="flex justify-start space-x-4">
-							{#if project.url}
-								<p>
-									<a class={classes.largeBodyLink} href={project.url}>
-										<Link className="text-xl" />
-										<span>View Project</span>
-									</a>
-								</p>
-							{/if}
-							{#if project.github}
-								<p>
-									<a class={classes.largeBodyLink} href={project.github}>
-										<Github className="text-xl" />
-										<span>Source</span>
-									</a>
-								</p>
-							{/if}
-							{#if project.blogPost}
-								<p>
-									<a class={classes.largeBodyLink} href={project.blogPost}>
-										<svg
-											class="inline-block size-5"
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												stroke-width="2"
-												d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-											/>
-										</svg>
-										<span>Read more about {project.title}</span>
-									</a>
-								</p>
-							{/if}
-						</div>
-					</li>
-				{/each}
-			</ul>
-		</div>
-		<div class="max-w-7xl lg:mt-32">
-			<H2>Things I&apos;ve built for fun</H2>
-			<ul class="mt-8 grid gap-x-24 gap-y-12 text-lg lg:mt-16 lg:grid-cols-2 lg:gap-y-24">
-				{#each otherThings as project (project.title)}
-					<li class="mt-8 grid gap-y-4 lg:mt-0 lg:ml-8">
-						{#if project.image}
-							<a
-								aria-label={`View ${project.title}`}
-								class="transition-transform hover:scale-105 hover:rotate-1"
-								href={project.url}
+	<section id="work" class="py-20 sm:py-24 lg:py-32">
+		<div class="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
+			<div class="border-ink/20 grid gap-6 border-b pb-8 lg:grid-cols-[13fr_9fr] lg:items-end">
+				<h2
+					class="max-w-[18ch] text-5xl font-medium tracking-tight text-balance sm:text-6xl lg:text-7xl"
+				>
+					Selected work
+				</h2>
+				<p
+					class="text-ink-muted max-w-[48ch] font-sans text-lg text-pretty sm:text-base/7 lg:justify-self-end"
+				>
+					Client work with a clear job to do, built to be fast, maintainable, and easy for real
+					people to use.
+				</p>
+			</div>
+
+			<ul class="mt-12 grid gap-14 lg:grid-cols-2 lg:gap-16" role="list">
+				{#each featuredProjects as project, projectIndex (project.title)}
+					<li class:lg:translate-y-20={projectIndex % 2 === 1}>
+						<a class="group outline-none" href={project.url} aria-label={`View ${project.title}`}>
+							<div
+								class="bg-screen overflow-hidden shadow-[8px_8px_0_var(--color-ink)] outline-1 -outline-offset-1 outline-black/10"
 							>
 								<enhanced:img
 									alt=""
-									class="rounded-lg border border-gray-100 shadow-sm md:max-w-md dark:border-gray-900/40"
-									loading="lazy"
+									class="aspect-[16/10] w-full object-cover group-hover:scale-[1.02] group-focus-visible:scale-[1.02] motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out"
+									loading={projectIndex <= 1 ? 'eager' : 'lazy'}
 									src={project.image}
-									sizes="(min-width:768px) 448px, 100vw"
+									sizes="(min-width: 1024px) 44vw, 92vw"
 								/>
-							</a>
-						{/if}
-						<p>
-							<a class={classNames('text-2xl!', classes.largeBodyLink)} href={project.url}>
-								{project.title}
-							</a>
-						</p>
-						<p>{project.description}</p>
-						<div class="flex justify-start space-x-4">
-							{#if project.url}
-								<p>
-									<a class={classes.largeBodyLink} href={project.url}>
-										<Link className="text-xl" />
-										<span>View Project</span>
-									</a>
+							</div>
+							<div class="border-ink/20 mt-6 flex items-start justify-between gap-6 border-t pt-4">
+								<div class="min-w-0">
+									<p class="text-tomato font-sans text-base font-medium sm:text-sm">
+										0{projectIndex + 1}
+									</p>
+									<h3
+										class="mt-1 max-w-[24ch] text-3xl font-medium tracking-tight text-balance sm:text-4xl"
+									>
+										{project.title}
+									</h3>
+								</div>
+								<p
+									class="shrink-0 font-sans text-3xl group-hover:translate-x-1 group-focus-visible:translate-x-1 motion-safe:transition-transform"
+									aria-hidden="true"
+								>
+									↗
 								</p>
-							{/if}
-							{#if project.github}
-								<p>
-									<a class={classes.largeBodyLink} href={project.github}>
-										<Github className="text-xl" />
-										<span>Source</span>
-									</a>
-								</p>
-							{/if}
-							{#if project.blogPost}
-								<p>
-									<a class={classes.largeBodyLink} href={project.blogPost}>
-										<svg
-											class="inline-block size-5"
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												stroke-width="2"
-												d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-											/>
-										</svg>
-										<span>Read more about {project.title}</span>
-									</a>
-								</p>
-							{/if}
-						</div>
+							</div>
+							<p class="text-ink-muted mt-4 max-w-[65ch] font-sans text-base/7 text-pretty">
+								{project.description}
+							</p>
+						</a>
 					</li>
 				{/each}
 			</ul>
 		</div>
+	</section>
 
-		<div class="max-w-7xl lg:mt-32">
-			<H2>Some Other Sites</H2>
-			<ul class="mt-8 grid grid-cols-2 gap-x-4 gap-y-6 lg:ml-8 lg:grid-cols-3 xl:grid-cols-4">
-				{#each otherSites as otherSite (otherSite.name)}
+	<section class="bg-ink text-cream mt-16 py-20 sm:py-24 lg:mt-24 lg:py-28">
+		<div
+			class="mx-auto grid max-w-[90rem] gap-12 px-5 sm:px-8 lg:grid-cols-[9fr_13fr] lg:gap-16 lg:px-12"
+		>
+			<div>
+				<p class="text-butter font-sans text-base font-medium sm:text-sm">The side-project shelf</p>
+				<h2 class="mt-3 max-w-[13ch] text-5xl font-medium tracking-tight text-balance sm:text-6xl">
+					Small ideas, fully built.
+				</h2>
+				<p class="text-cream/80 mt-6 max-w-[46ch] font-sans text-lg text-pretty sm:text-base/7">
+					Sometimes I build a tool because I need it. Sometimes I just want to see if an idea works.
+				</p>
+			</div>
+			<ul class="divide-cream/20 border-cream/20 divide-y border-y" role="list">
+				{#each projectArchive as project, index (project.title)}
 					<li>
 						<a
-							class="inline-flex items-center gap-4 transition hover:scale-105 hover:rotate-1"
-							href={otherSite.url}
-							target="_blank"
-							rel="noreferrer"
+							class="group hover:text-butter focus-visible:text-butter grid grid-cols-[auto_1fr_auto] items-baseline gap-4 py-4 font-sans text-base outline-none sm:text-sm"
+							href={project.url}
 						>
-							<enhanced:img class="size-7" alt="" src={otherSite.imgSrc} loading="lazy" />
-							<span
-								class={clsx(
-									'sm:border-b sm:border-gray-400',
-									'dark:border-gray-500',
-									'hover:border-blue-400',
-									'dark:hover:border-blue-100'
-								)}>{otherSite.name}</span
+							<p class="text-ink-soft tabular-nums">{String(index + 1).padStart(2, '0')}</p>
+							<h3 class="min-w-0 text-xl font-medium sm:text-lg">{project.title}</h3>
+							<p
+								class="shrink-0 group-hover:translate-x-1 group-focus-visible:translate-x-1 motion-safe:transition-transform"
+								aria-hidden="true"
 							>
+								↗
+							</p>
 						</a>
 					</li>
 				{/each}
 			</ul>
 		</div>
+	</section>
 
-		<div class="max-w-7xl lg:mt-32">
-			<H2>Recent Blog Articles</H2>
-			<ul class="mt-8 ml-12 list-outside list-disc">
-				{#each blogArticles as article (article.slug)}
-					<li class="py-1">
-						<a class={clsx(classes.bodyLink, 'w-full md:w-auto')} href={`/blog/${article.slug}`}>
-							{article.title}
-						</a>
-					</li>
-				{/each}
-			</ul>
-		</div>
+	<section class="py-20 sm:py-24 lg:py-32">
+		<div class="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
+			<div class="grid gap-12 lg:grid-cols-[13fr_9fr] lg:gap-16">
+				<div>
+					<div class="border-ink/20 flex items-end justify-between gap-5 border-b pb-5">
+						<h2 class="max-w-[15ch] text-5xl font-medium tracking-tight text-balance sm:text-6xl">
+							Recent writing
+						</h2>
+						<a
+							class="shrink-0 font-sans text-base font-semibold underline decoration-2 underline-offset-4 sm:text-sm"
+							href="/blog">All posts</a
+						>
+					</div>
+					<ul class="divide-ink/15 divide-y" role="list">
+						{#each blogArticles.slice(0, 5) as article (article.slug)}
+							<li>
+								<a
+									class="group grid gap-2 py-6 font-sans outline-none sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-6"
+									href={`/blog/${article.slug}`}
+								>
+									<h3
+										class="group-hover:text-tomato group-focus-visible:text-tomato text-2xl font-medium tracking-tight text-balance sm:text-xl"
+									>
+										{article.title}
+									</h3>
+									<p class="text-ink-soft text-base sm:text-sm">{article.readingTime}</p>
+									<p class="text-ink-muted max-w-[65ch] text-base/7 text-pretty sm:col-span-2">
+										{article.teaser}.
+									</p>
+								</a>
+							</li>
+						{/each}
+					</ul>
+				</div>
 
-		<div class="lg:mt-32">
-			<H2>Tools I use</H2>
-			<ul class="mt-4 list-outside list-disc gap-x-4 gap-y-2 pl-12 text-lg lg:grid lg:grid-cols-4">
-				{#each tools as tool (tool)}
-					<li>{tool}</li>
-				{/each}
-			</ul>
+				<aside class="bg-butter p-6 shadow-[8px_8px_0_var(--color-ink)] sm:p-8 lg:self-start">
+					<p class="font-sans text-base font-semibold sm:text-sm">Working set</p>
+					<h2 class="mt-3 max-w-[16ch] text-4xl font-medium tracking-tight text-balance">
+						Tools I reach for
+					</h2>
+					<ul class="mt-8 flex flex-wrap gap-2 font-sans text-base sm:text-sm" role="list">
+						{#each tools as tool (tool)}
+							<li class="border-ink/25 bg-cream border px-3 py-2">{tool}</li>
+						{/each}
+					</ul>
+					<a
+						class="bg-ink text-cream focus-visible:outline-ink mt-8 inline-flex min-h-12 items-center px-5 py-3 font-sans text-base font-semibold outline-none hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:transition-transform sm:text-sm"
+						href="/uses">See my full setup</a
+					>
+				</aside>
+			</div>
 		</div>
-		<div class="lg:mt-32">
-			<H2>Get in touch</H2>
-			<ul class="mt-6 gap-x-4 gap-y-2 pl-4 text-lg lg:grid lg:grid-cols-4">
-				<li>
-					<div class="flex">
-						<a class={classes.largeBodyLink} href="https://www.linkedin.com/in/michaelbonner/">
-							<LinkedIn />
-							<span class="pt-1">LinkedIn</span>
-						</a>
-						<span class="flex-1"></span>
-					</div>
-				</li>
-				<li>
-					<div class="flex">
-						<a class={classes.largeBodyLink} href="https://www.instagram.com/michael__bonner">
-							<Instagram />
-							<span class="pt-1">Instagram</span>
-						</a>
-						<span class="flex-1"></span>
-					</div>
-				</li>
-			</ul>
+	</section>
+
+	<section class="bg-blueprint text-cream py-20 sm:py-24">
+		<div
+			class="mx-auto grid max-w-[90rem] gap-10 px-5 sm:px-8 lg:grid-cols-[13fr_9fr] lg:items-end lg:gap-16 lg:px-12"
+		>
+			<div>
+				<p class="text-butter font-sans text-base font-medium sm:text-sm">
+					A lot of sites, over a lot of years
+				</p>
+				<h2
+					class="mt-3 max-w-[15ch] text-5xl font-medium tracking-tight text-balance sm:text-6xl lg:text-7xl"
+				>
+					Still shipping.
+				</h2>
+				<p class="text-cream/90 mt-6 max-w-[58ch] font-sans text-lg text-pretty sm:text-base/7">
+					A running directory of client sites, experiments, and projects that are still out in the
+					world.
+				</p>
+			</div>
+			<div class="font-sans">
+				<p class="text-7xl font-semibold tracking-tight tabular-nums sm:text-8xl">
+					{otherSites.length}+
+				</p>
+				<p class="mt-2 text-lg sm:text-base">more sites in the archive.</p>
+				<details class="border-cream/30 mt-6 border-t pt-5">
+					<summary
+						class="cursor-pointer text-lg font-semibold underline decoration-2 underline-offset-4 sm:text-base"
+						>Open the site directory</summary
+					>
+					<ul class="mt-6 grid gap-x-6 gap-y-3 sm:grid-cols-2" role="list">
+						{#each otherSites as otherSite (otherSite.name)}
+							<li>
+								<a
+									class="decoration-cream/40 hover:decoration-butter underline underline-offset-4"
+									href={otherSite.url}
+									target="_blank"
+									rel="noreferrer">{otherSite.name}</a
+								>
+							</li>
+						{/each}
+					</ul>
+				</details>
+			</div>
 		</div>
-	</div>
+	</section>
+
+	<section class="py-20 sm:py-24 lg:py-28">
+		<div
+			class="mx-auto grid max-w-[90rem] gap-10 px-5 sm:px-8 lg:grid-cols-[13fr_9fr] lg:items-end lg:gap-16 lg:px-12"
+		>
+			<div>
+				<h2
+					class="max-w-[12ch] text-5xl font-medium tracking-tight text-balance sm:text-6xl lg:text-7xl"
+				>
+					Have a useful idea?
+				</h2>
+				<p class="text-ink-muted mt-6 max-w-[52ch] font-sans text-lg text-pretty sm:text-base/7">
+					I&apos;m always up for talking through a hard problem, a new product, or a website that
+					needs to work better.
+				</p>
+			</div>
+			<div class="flex flex-wrap gap-3 font-sans text-base font-semibold sm:text-sm lg:justify-end">
+				<a
+					class="bg-tomato text-cream focus-visible:outline-tomato inline-flex min-h-12 items-center px-5 py-3 outline-none hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:transition-transform"
+					href="/contact">Get in touch</a
+				>
+				<a
+					class="ring-ink focus-visible:outline-ink inline-flex min-h-12 items-center gap-2 px-5 py-3 ring-1 outline-none hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:transition-transform"
+					href="https://github.com/michaelbonner"><Github className="size-5 shrink-0" />GitHub</a
+				>
+				<a
+					class="ring-ink focus-visible:outline-ink inline-flex min-h-12 items-center gap-2 px-5 py-3 ring-1 outline-none hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:transition-transform"
+					href="https://www.linkedin.com/in/michaelbonner/"
+					><LinkedIn className="size-5 shrink-0" />LinkedIn</a
+				>
+				<a
+					class="ring-ink focus-visible:outline-ink inline-flex min-h-12 items-center gap-2 px-5 py-3 ring-1 outline-none hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 motion-safe:transition-transform"
+					href="https://www.instagram.com/michael__bonner"
+					><Instagram className="size-5 shrink-0" />Instagram</a
+				>
+			</div>
+		</div>
+	</section>
 </div>

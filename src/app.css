@@ -2,10 +2,22 @@
 
 @plugin '@tailwindcss/typography';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
 	--font-*: initial;
-	--font-sans: Graphik, sans-serif;
+	--font-sans: ui-sans-serif, system-ui, sans-serif;
 	--font-serif: 'Newsreader Variable', serif;
+	--color-paper: oklch(0.944 0.021 85);
+	--color-cream: oklch(0.977 0.025 82);
+	--color-ink: oklch(0.235 0.022 145);
+	--color-ink-warm: oklch(0.245 0.026 55);
+	--color-ink-muted: oklch(0.42 0.02 145);
+	--color-ink-soft: oklch(0.52 0.018 145);
+	--color-tomato: oklch(0.65 0.205 33);
+	--color-butter: oklch(0.91 0.14 95);
+	--color-blueprint: oklch(0.57 0.23 264);
+	--color-screen: oklch(0.87 0.02 83);
 }
 
 /*
@@ -26,13 +38,8 @@
 	}
 
 	html {
-		@apply bg-linear-to-tr from-indigo-100 to-gray-400 bg-fixed;
-	}
-
-	@media screen and (prefers-color-scheme: dark) {
-		html {
-			@apply bg-linear-to-tr from-gray-700 to-gray-900 bg-fixed;
-		}
+		@apply bg-paper;
+		scroll-behavior: smooth;
 	}
 
 	.mb-scrollable::-webkit-scrollbar {
@@ -54,18 +61,41 @@
 	}
 }
 
+.prose {
+	--tw-prose-body: var(--color-ink-muted);
+	--tw-prose-headings: var(--color-ink);
+	--tw-prose-lead: var(--color-ink-muted);
+	--tw-prose-links: var(--color-tomato);
+	--tw-prose-bold: var(--color-ink);
+	--tw-prose-counters: var(--color-ink-soft);
+	--tw-prose-bullets: var(--color-tomato);
+	--tw-prose-hr: color-mix(in oklab, var(--color-ink) 20%, transparent);
+	--tw-prose-quotes: var(--color-ink);
+	--tw-prose-quote-borders: var(--color-tomato);
+	--tw-prose-captions: var(--color-ink-soft);
+	--tw-prose-code: var(--color-ink);
+	--tw-prose-pre-code: var(--color-cream);
+	--tw-prose-pre-bg: var(--color-ink);
+	--tw-prose-th-borders: color-mix(in oklab, var(--color-ink) 25%, transparent);
+	--tw-prose-td-borders: color-mix(in oklab, var(--color-ink) 15%, transparent);
+}
+
+.prose :where(h1, h2, h3, h4) {
+	font-family: var(--font-serif);
+	font-weight: 500;
+	letter-spacing: -0.025em;
+}
+
 .prose h1 {
-	font-weight: 600;
+	font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+.prose :where(p, li, figcaption) {
+	font-family: var(--font-sans);
 }
 
 .prose figcaption {
 	color: var(--color-gray-600);
-}
-
-@media screen and (prefers-color-scheme: dark) {
-	.prose figcaption {
-		color: var(--color-gray-300);
-	}
 }
 
 pre code.hljs {

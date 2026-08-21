@@ -400,19 +400,19 @@
 	<link rel="canonical" href="https://michaelbonner.dev/ellie" />
 </svelte:head>
 
-<div class="container mx-auto grid gap-8 px-8 py-12">
-	<div class="prose prose-xl dark:prose-invert mx-auto mt-12 max-w-3xl">
+<div class="mx-auto grid max-w-[90rem] gap-8 px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+	<div class="prose prose-xl mx-auto mt-8 max-w-3xl">
 		<p>
 			<strong>Warning</strong>: This post is about my dog Ellie. She passed away on January 30th,
 			2023. I'm writing this to help me remember her. If you don't want to read about my feelings
 			about a dog
 			<a href="https://reasonstobecheerful.world/">you can leave now, no hard feelings</a>.
 		</p>
-		<hr class="border-gray-300 dark:border-gray-700" />
+		<hr class="border-ink/20" />
 		<figure>
 			<enhanced:img
 				alt="Ellie"
-				class="aspect-6/8 w-full rounded-xl shadow-lg lg:max-w-[600px]"
+				class="aspect-6/8 w-full shadow-[8px_8px_0_var(--color-ink)] outline-1 -outline-offset-1 outline-black/10 lg:max-w-[600px]"
 				fetchpriority="high"
 				sizes="min(600px, 100vw)"
 				src={ellieMain}
@@ -450,7 +450,7 @@
 
 		<p>I'm realizing that only way to heal is to forget parts of you. And that fucking sucks.</p>
 
-		<hr class="border-gray-300 dark:border-gray-700" />
+		<hr class="border-ink/20" />
 
 		<p>
 			I was 24 when I first met you, I was newly married, and I was so naive. My then wife
@@ -494,14 +494,14 @@
 	</div>
 
 	<div
-		class="mb-scrollable mx-auto grid max-h-[80vh] max-w-7xl gap-2 overflow-auto rounded-2xl bg-gray-300 p-8 dark:bg-gray-700"
+		class="mb-scrollable bg-ink mx-auto grid max-h-[80vh] max-w-7xl gap-2 overflow-auto p-4 sm:p-8"
 	>
 		<ImageGallery galleryID="ellie-puppy" images={puppyImages} />
 
 		<div class="grid gap-2 lg:grid-cols-2">
 			<figure>
 				<video
-					class="aspect-video w-full rounded-lg p-0"
+					class="aspect-video w-full p-0"
 					controls
 					controlsList="nodownload"
 					playsinline
@@ -530,7 +530,7 @@
 
 			<figure>
 				<video
-					class="aspect-video w-full rounded-lg p-0"
+					class="aspect-video w-full p-0"
 					controls
 					controlsList="nodownload"
 					playsinline
@@ -559,7 +559,7 @@
 		</div>
 	</div>
 
-	<div class="prose prose-xl dark:prose-invert mx-auto mt-12 max-w-3xl">
+	<div class="prose prose-xl mx-auto mt-12 max-w-3xl">
 		<p>
 			I learned I could take you almost anywhere, so I did. We went on so many adventures together.
 			You loved camping and hiking. That first summer we took you to Tanner Park to see if you would
@@ -648,13 +648,11 @@
 		</p>
 	</div>
 
-	<div
-		class="mb-scrollable mx-auto max-h-[80vh] max-w-7xl overflow-auto rounded-2xl bg-gray-300 p-8 dark:bg-gray-700"
-	>
+	<div class="mb-scrollable bg-ink mx-auto max-h-[80vh] max-w-7xl overflow-auto p-4 sm:p-8">
 		<ImageGallery galleryID="ellie-adult" images={adultImages} />
 	</div>
 
-	<div class="prose prose-xl dark:prose-invert mx-auto mt-12 max-w-3xl">
+	<div class="prose prose-xl mx-auto mt-12 max-w-3xl">
 		<p>
 			I told you that you would need to tell me when you were ready. I will forever be grateful that
 			you told me so clearly. When your back legs quit working for the last few days, I helped you
@@ -692,7 +690,7 @@
 		<figure>
 			<enhanced:img
 				alt="Ellie swimming off to get a ball"
-				class="w-full rounded-xl shadow-lg"
+				class="w-full shadow-[8px_8px_0_var(--color-ink)] outline-1 -outline-offset-1 outline-black/10"
 				decoding="async"
 				loading="lazy"
 				sizes="min(600px, 100vw)"
@@ -700,11 +698,11 @@
 			/>
 		</figure>
 
-		<div class="mt-8 aspect-video w-full rounded-xl border-8 border-gray-300 dark:border-gray-700">
+		<div class="border-ink mt-8 aspect-video w-full border-8">
 			<iframe
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen
-				class="rounded-sm bg-gray-500"
+				class="bg-ink-muted"
 				frameborder="0"
 				height="100%"
 				loading="lazy"
@@ -715,7 +713,7 @@
 			></iframe>
 		</div>
 
-		<hr class="border-gray-300 dark:border-gray-700" />
+		<hr class="border-ink/20" />
 
 		<p>Posted 08 Aug 2023</p>
 	</div>
