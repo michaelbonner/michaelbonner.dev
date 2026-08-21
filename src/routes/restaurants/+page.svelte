@@ -562,30 +562,62 @@
 										: 'border-gray-300 dark:border-gray-700'
 								)}
 							>
-								<button
-									type="button"
-									onclick={() => select(restaurant.name)}
-									class="w-full text-left text-xl"
-								>
-									{restaurant.name}
-								</button>
-								<p class="text-gray-700 dark:text-gray-300">
-									{restaurant.tags.join(', ')} &middot; {locationLabel(restaurant)} &middot; ${restaurant.pricePerPerson}/person
-									&middot; {restaurant.rating}/10
-								</p>
-								{#if restaurant.notes}
-									<p class="text-sm text-gray-600 dark:text-gray-400">{restaurant.notes}</p>
-								{/if}
-								<p class="mt-2 flex flex-wrap gap-x-4">
-									<a
-										href={directionsUrl(restaurant)}
-										target="_blank"
-										rel="noopener noreferrer"
-										class={classes.bodyLink}
-									>
-										Directions
-									</a>
-								</p>
+								<div class="flex items-start gap-4">
+									<!--
+										Bigger than the table's thumbnail: a card has the full width to
+										itself, so the photo is not competing with four other columns.
+										Decorative for the same reason as in the table.
+									-->
+									{#if restaurantImage(restaurant.name)}
+										<img
+											src={restaurantImage(restaurant.name)}
+											alt=""
+											loading="lazy"
+											width="64"
+											height="64"
+											class="size-16 shrink-0 rounded-md object-cover"
+										/>
+									{:else}
+										<span
+											class="size-16 shrink-0 rounded-md bg-gray-200 dark:bg-gray-700"
+											aria-hidden="true"
+										></span>
+									{/if}
+
+									<!-- min-w-0 so a long name wraps instead of stretching the card. -->
+									<div class="min-w-0">
+										<button
+											type="button"
+											onclick={() => select(restaurant.name)}
+											class="w-full text-left text-xl"
+										>
+											{restaurant.name}
+										</button>
+										<!--
+											wrap-anywhere because a slashed location list ("Downtown/Sugarhouse/
+											Midvale") is one unbreakable word to the browser. With the thumbnail
+											beside it, that word set the card's minimum width and pushed the whole
+											page into a horizontal scroll on a 320px screen.
+										-->
+										<p class="wrap-anywhere text-gray-700 dark:text-gray-300">
+											{restaurant.tags.join(', ')} &middot; {locationLabel(restaurant)} &middot; ${restaurant.pricePerPerson}/person
+											&middot; {restaurant.rating}/10
+										</p>
+										{#if restaurant.notes}
+											<p class="text-sm text-gray-600 dark:text-gray-400">{restaurant.notes}</p>
+										{/if}
+										<p class="mt-2 flex flex-wrap gap-x-4">
+											<a
+												href={directionsUrl(restaurant)}
+												target="_blank"
+												rel="noopener noreferrer"
+												class={classes.bodyLink}
+											>
+												Directions
+											</a>
+										</p>
+									</div>
+								</div>
 							</li>
 						{/each}
 					</ul>

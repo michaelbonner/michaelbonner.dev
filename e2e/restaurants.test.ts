@@ -131,6 +131,30 @@ test.describe('Restaurants page', () => {
 		await expect(thumbnails.first()).toHaveAttribute('loading', 'lazy');
 	});
 
+	test('shows a thumbnail on every card at mobile widths', async ({ page }) => {
+		// The card list only replaces the table below md, so the viewport has to
+		// shrink before the cards are the thing actually being looked at.
+		await page.setViewportSize({ width: 390, height: 844 });
+
+		const cards = page.locator('ul li[data-restaurant]');
+		await expect(cards.first()).toBeVisible();
+		await expect(page.locator('table')).toBeHidden();
+		await expect(cards.locator('img')).toHaveCount(restaurants.length);
+	});
+
+	test('does not scroll sideways on a narrow screen', async ({ page }) => {
+		// The thumbnail leaves the card's text less room, so a location list with no
+		// break opportunity ("Downtown/Sugarhouse/Midvale") is what pushes this over.
+		await page.setViewportSize({ width: 320, height: 844 });
+		await expect(page.locator('ul li[data-restaurant] img').first()).toBeVisible();
+
+		const { scrollWidth, clientWidth } = await page.evaluate(() => ({
+			scrollWidth: document.documentElement.scrollWidth,
+			clientWidth: document.documentElement.clientWidth
+		}));
+		expect(scrollWidth).toBeLessThanOrEqual(clientWidth);
+	});
+
 	test('renders the map with a pin for every geocoded restaurant', async ({ page }) => {
 		const geocoded = restaurants.filter((r) => r.lat != null && r.lng != null);
 
