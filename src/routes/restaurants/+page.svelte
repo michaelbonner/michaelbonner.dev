@@ -291,13 +291,8 @@
 		}))
 	});
 
-	const labelClasses = 'text-sm text-gray-700 dark:text-gray-300';
-
-	const inputClasses = classNames(
-		'w-full rounded-md border border-gray-400 bg-white px-3 py-2 text-lg',
-		'focus:border-blue-600 focus:ring-2 focus:ring-blue-600/40 focus:outline-none',
-		'dark:border-gray-600 dark:bg-gray-900'
-	);
+	const labelClasses = classes.label;
+	const inputClasses = classes.input;
 </script>
 
 <Seo
@@ -313,14 +308,17 @@
 	{@html `<${'script'} type="application/ld+json">${itemListSchema}</${'script'}>`}
 </svelte:head>
 
-<div class="container mx-auto px-8 py-12">
-	<h1 class="text-4xl lg:text-6xl">Favorite Restaurants in Salt Lake</h1>
-	<p class="mt-6 max-w-2xl text-xl text-gray-700 dark:text-gray-300">
-		People ask me where to eat in Salt Lake often enough that I started keeping a list. Sort it,
-		filter it, or find something near you on the map.
-	</p>
+<div class="container mx-auto px-6 sm:px-8">
+	<header class="grid max-w-[58ch] gap-5 py-16 lg:py-24">
+		<p class={classes.eyebrow}>Salt Lake City, Utah</p>
+		<h1 class="text-h1 text-ink font-serif font-semibold">Favorite Restaurants in Salt Lake</h1>
+		<p class="text-lead text-ink-muted font-serif">
+			People ask me where to eat in Salt Lake often enough that I started keeping a list. Sort it,
+			filter it, or find something near you on the map.
+		</p>
+	</header>
 
-	<div class="mt-12 grid gap-8 xl:grid-cols-5">
+	<div class="border-rule grid gap-8 border-t pt-10 pb-8 xl:grid-cols-5">
 		<!-- The map sticks alongside the list on wide screens and sits above it otherwise. -->
 		<div class="xl:order-2 xl:col-span-2">
 			<div class="xl:sticky xl:top-8">
@@ -329,7 +327,7 @@
 		</div>
 
 		<div class="xl:col-span-3">
-			<div class="grid gap-4">
+			<div class={classNames(classes.surface, 'grid gap-4 p-5')}>
 				<div class="grid gap-4 sm:grid-cols-2">
 					<!--
 						Labels sit beside their control rather than wrapping it: a <label> that
@@ -389,12 +387,16 @@
 					</div>
 				</div>
 
-				<div class="flex flex-wrap items-center justify-between gap-4">
-					<p aria-live="polite" class="text-gray-700 dark:text-gray-300">
+				<div class="border-rule flex flex-wrap items-center justify-between gap-4 border-t pt-4">
+					<p aria-live="polite" class={classNames(classes.label, 'tabular-nums')}>
 						Showing {visible.length} of {restaurants.length} restaurants
 					</p>
 					{#if hasFilters}
-						<button type="button" onclick={clearFilters} class={classes.bodyLink}>
+						<button
+							type="button"
+							onclick={clearFilters}
+							class={classNames(classes.label, 'hover:text-accent cursor-pointer')}
+						>
 							Clear filters
 						</button>
 					{/if}
@@ -427,14 +429,19 @@
 
 			<div bind:this={listElement} class="mt-8">
 				{#if visible.length === 0}
-					<p class="rounded-lg border border-gray-300 p-8 text-center text-xl dark:border-gray-600">
+					<p
+						class={classNames(
+							classes.surface,
+							'text-lead text-ink-muted p-10 text-center font-serif'
+						)}
+					>
 						No restaurants match those filters.
 					</p>
 				{:else}
 					<!-- Table on md and up, cards below, so the columns never squeeze. -->
 					<table class="hidden w-full border-collapse text-left md:table">
 						<thead>
-							<tr class="border-b-2 border-gray-400 dark:border-gray-600">
+							<tr class="border-rule-strong border-b">
 								{#each columns as column (column.key)}
 									{@const isSorted = sortKey === column.key}
 									<th
@@ -450,12 +457,16 @@
 											type="button"
 											onclick={() => toggleSort(column.key)}
 											class={classNames(
-												'inline-flex items-center gap-1 font-semibold',
-												'hover:text-blue-800 dark:hover:text-blue-300'
+												classes.label,
+												'hover:text-accent inline-flex cursor-pointer items-center gap-1',
+												isSorted ? 'text-ink' : ''
 											)}
 										>
 											<span>{column.label}</span>
-											<span aria-hidden="true" class={isSorted ? '' : 'opacity-30'}>
+											<span
+												aria-hidden="true"
+												class={classNames('text-[0.7em]', isSorted ? 'text-accent' : 'opacity-25')}
+											>
 												{isSorted && sortDirection === 'asc' ? '▲' : '▼'}
 											</span>
 										</button>
@@ -470,10 +481,8 @@
 									data-restaurant={restaurant.name}
 									onclick={() => select(restaurant.name)}
 									class={classNames(
-										'cursor-pointer border-b border-gray-300 align-top dark:border-gray-700',
-										isActive
-											? 'bg-blue-100 dark:bg-blue-950'
-											: 'hover:bg-gray-300/50 dark:hover:bg-gray-700/50'
+										'border-rule cursor-pointer border-b align-top transition-colors duration-150',
+										isActive ? 'bg-accent-soft' : 'hover:bg-ground-sunken'
 									)}
 								>
 									<td class="py-3 pr-4">
@@ -498,21 +507,25 @@
 														event.stopPropagation();
 														select(restaurant.name);
 													}}
-													class="text-left text-lg hover:text-blue-800 dark:hover:text-blue-300"
+													class={classNames(
+														'cursor-pointer text-left font-serif text-[1.0625rem] font-medium',
+														'hover:text-accent transition-colors duration-150',
+														isActive ? 'text-accent' : 'text-ink'
+													)}
 												>
 													{restaurant.name}
 												</button>
 												{#if restaurant.notes}
-													<span class="block text-sm text-gray-600 dark:text-gray-400">
+													<span class={classNames(classes.label, 'block')}>
 														{restaurant.notes}
 													</span>
 												{/if}
-												<span class="mt-1 flex flex-wrap gap-x-3 text-sm">
+												<span class="mt-1 flex flex-wrap gap-x-3">
 													<a
 														href={directionsUrl(restaurant)}
 														target="_blank"
 														rel="noopener noreferrer"
-														class={classes.bodyLink}
+														class={classNames(classes.label, 'hover:text-accent')}
 														onclick={(event) => event.stopPropagation()}
 													>
 														Directions
@@ -521,12 +534,20 @@
 											</div>
 										</div>
 									</td>
-									<td class="py-3 pr-4">{restaurant.tags.join(', ')}</td>
-									<td class="py-3 pr-4">{locationLabel(restaurant)}</td>
-									<td class="py-3 pr-4 text-right whitespace-nowrap">
+									<td class="text-ui text-ink-muted py-3 pr-4 font-sans">
+										{restaurant.tags.join(', ')}
+									</td>
+									<td class="text-ui text-ink-muted py-3 pr-4 font-sans">
+										{locationLabel(restaurant)}
+									</td>
+									<td class="text-ui py-3 pr-4 text-right font-sans whitespace-nowrap tabular-nums">
 										${restaurant.pricePerPerson}
 									</td>
-									<td class="py-3 text-right whitespace-nowrap">{restaurant.rating}/10</td>
+									<td
+										class="text-ui py-3 text-right font-sans font-medium whitespace-nowrap tabular-nums"
+									>
+										{restaurant.rating}/10
+									</td>
 								</tr>
 							{/each}
 						</tbody>
@@ -538,10 +559,8 @@
 							<li
 								data-restaurant={restaurant.name}
 								class={classNames(
-									'rounded-lg border p-4',
-									isActive
-										? 'border-blue-800 bg-blue-100 dark:border-blue-300 dark:bg-blue-950'
-										: 'border-gray-300 dark:border-gray-700'
+									'rounded-xl border p-4 transition-colors duration-150',
+									isActive ? 'border-accent-bright bg-accent-soft' : 'border-rule bg-surface'
 								)}
 							>
 								<div class="flex items-start gap-4">
@@ -556,7 +575,7 @@
 										<button
 											type="button"
 											onclick={() => select(restaurant.name)}
-											class="w-full text-left text-xl"
+											class="text-h3 text-ink w-full cursor-pointer text-left font-serif font-medium"
 										>
 											{restaurant.name}
 										</button>
@@ -566,19 +585,19 @@
 											beside it, that word set the card's minimum width and pushed the whole
 											page into a horizontal scroll on a 320px screen.
 										-->
-										<p class="wrap-anywhere text-gray-700 dark:text-gray-300">
+										<p class="text-ui text-ink-muted font-sans wrap-anywhere">
 											{restaurant.tags.join(', ')} &middot; {locationLabel(restaurant)} &middot; ${restaurant.pricePerPerson}/person
 											&middot; {restaurant.rating}/10
 										</p>
 										{#if restaurant.notes}
-											<p class="text-sm text-gray-600 dark:text-gray-400">{restaurant.notes}</p>
+											<p class={classes.label}>{restaurant.notes}</p>
 										{/if}
 										<p class="mt-2 flex flex-wrap gap-x-4">
 											<a
 												href={directionsUrl(restaurant)}
 												target="_blank"
 												rel="noopener noreferrer"
-												class={classes.bodyLink}
+												class={classNames(classes.label, 'hover:text-accent')}
 											>
 												Directions
 											</a>

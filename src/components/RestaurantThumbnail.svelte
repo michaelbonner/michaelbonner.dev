@@ -56,7 +56,7 @@
 		size === 40 ? 'size-10' : 'size-16',
 		// The <picture> that enhanced:img renders is what sits in the flex row, so
 		// the box has to be on this wrapper. Left to itself the picture collapses.
-		'shrink-0 rounded-md bg-gray-200 *:size-full dark:bg-gray-700'
+		'bg-ground-sunken shrink-0 rounded-md *:size-full'
 	)}
 >
 	{#if near && image}
