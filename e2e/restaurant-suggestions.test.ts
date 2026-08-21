@@ -33,6 +33,12 @@ const interceptSuggest = async (page: Page, response: ReturnType<typeof actionRe
 	return posted;
 };
 
+/** Whether the browser is holding a required field back as empty. */
+const valueMissing = (field: Locator) =>
+	field.evaluate(
+		(element: HTMLInputElement | HTMLTextAreaElement) => element.validity.valueMissing
+	);
+
 const openDialog = async (page: Page) => {
 	await page.getByRole('button', { name: 'Suggest a restaurant' }).first().click();
 
@@ -84,25 +90,28 @@ test.describe('Suggest a restaurant', () => {
 	});
 
 	test('will not submit without a restaurant and a reason', async ({ page }) => {
-		let posts = 0;
-		page.on('request', (request) => {
-			if (request.method() === 'POST') posts++;
-		});
+		// Scoped to the action rather than counting every POST on the page: the
+		// site's analytics beacons are POSTs too, and they fire here.
+		const posted = await interceptSuggest(page, saved);
 
 		const dialog = await openDialog(page);
+		const name = dialog.getByRole('textbox', { name: 'Restaurant' });
+		const why = dialog.getByRole('textbox', { name: 'Why it belongs on the list' });
+
 		await dialog.getByRole('button', { name: 'Send suggestion' }).click();
 
-		// The required fields hold the submission, so the dialog is still open and
-		// nothing reached the server.
-		await expect(dialog).toBeVisible();
-		await expect(dialog.getByRole('textbox', { name: 'Restaurant' })).toBeVisible();
-		expect(posts).toBe(0);
+		// The empty restaurant field is what holds the submission back, so the
+		// dialog is still on the form and nothing reached the action.
+		await expect(name).toBeVisible();
+		expect(await valueMissing(name)).toBe(true);
+		expect(posted).toHaveLength(0);
 
-		// A name alone is not enough either.
-		await dialog.getByRole('textbox', { name: 'Restaurant' }).fill('Test Kitchen');
+		// A name alone is not enough either; now the reason is the one holding it.
+		await name.fill('Test Kitchen');
 		await dialog.getByRole('button', { name: 'Send suggestion' }).click();
-		await expect(dialog).toBeVisible();
-		expect(posts).toBe(0);
+		await expect(why).toBeVisible();
+		expect(await valueMissing(why)).toBe(true);
+		expect(posted).toHaveLength(0);
 	});
 
 	test('sends every field to the suggest action and confirms it was saved', async ({ page }) => {
