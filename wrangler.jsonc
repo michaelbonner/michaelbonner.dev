@@ -31,5 +31,11 @@
 		"PUBLIC_POSTHOG_ENABLED": "true",
 		"PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAACfvRumOPoxj99HQ",
 		"TELEGRAM_CHAT_ID": "5298372807"
-	}
+	},
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
+  }
 }
