@@ -381,7 +381,7 @@
 							<select id="restaurant-rating" bind:value={minRating} class={inputClasses}>
 								<option value={0}>Any</option>
 								{#each ratingOptions as level (level)}
-									<option value={level}>{level}+</option>
+									<option value={level}>{level}{level !== 10 ? "+" : ""}</option>
 								{/each}
 							</select>
 						</div>
