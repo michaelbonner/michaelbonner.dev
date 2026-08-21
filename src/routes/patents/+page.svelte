@@ -3,6 +3,7 @@
 	import A from '../../components/A.svelte';
 	import Seo from '../../components/Seo.svelte';
 	import { classes } from '../../styles/classes';
+	import { classNames } from '../../functions/classNames';
 
 	type Patent = {
 		title: string;
@@ -51,61 +52,82 @@
 	<link rel="canonical" href="https://michaelbonner.dev/patents" />
 </svelte:head>
 
-<div class="container mx-auto grid gap-8 px-8 py-12">
-	<div class="prose dark:prose-invert max-w-3xl">
-		<h1>Patents</h1>
-		<p class="text-lg">
-			I'm lucky enough to have my name listed on a few patents for work I did with <a
+<div class="container mx-auto px-6 sm:px-8">
+	<header class="grid max-w-[62ch] gap-5 py-16 lg:py-24">
+		<p class={classes.eyebrow}>Patents</p>
+		<h1 class="text-h1 text-ink font-serif font-semibold">Patents</h1>
+		<p class="text-lead text-ink-muted font-serif">
+			I&apos;m lucky enough to have my name listed on a few patents for work I did with <a
 				class={classes.bodyLink}
 				target="_blank"
 				rel="noreferrer"
 				href="https://www.blackthornsoftware.com">Blackthorn Software</a
 			>. These patents are related to the construction project management platform
-			<a target="_blank" rel="noreferrer" href="https://www.crewview.com">CrewView</a>, which I
-			helped build. You can
+			<a class={classes.bodyLink} target="_blank" rel="noreferrer" href="https://www.crewview.com"
+				>CrewView</a
+			>, which I helped build. You can
 			<a class={classes.bodyLink} href="/#projects">view more of my projects on the homepage</a>.
 		</p>
-	</div>
+	</header>
 
-	<div class="mt-12 grid gap-24">
-		{#if grantedPatents.length > 0}
-			<div
-				class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
-			>
-				<div class="text-xl">Granted Patents</div>
-				<div class="grid gap-8 md:col-span-2 xl:col-span-5">
-					{#each grantedPatents as patent (patent.patentNumber)}
-						<div>
-							<h2 class="mb-2 text-2xl font-bold">{patent.title}</h2>
-							<div class="mb-2 text-base text-gray-600 dark:text-gray-400">
-								Patent Number: {patent.patentNumber}
-							</div>
-							<div class="mb-2 text-sm text-gray-600 dark:text-gray-400">
-								<strong>Inventors:</strong>
-								{patent.inventors.join(', ')}
-							</div>
-							<div class="mb-2 text-sm text-gray-600 dark:text-gray-400">
-								<strong>Filed:</strong>
-								{patent.filingDate} | <strong>Issued:</strong>
-								{patent.issueDate}
-							</div>
-							<div class="mb-2 text-sm text-gray-600 dark:text-gray-400">
-								<strong>Assignee:</strong>
-								{patent.assignee}
-							</div>
-							<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">
-								{patent.description}
-							</p>
-							<div class="mt-2">
-								<A href={patent.googlePatentUrl} className="text-base">
-									<Link />
-									<span>View on Google Patents</span>
-								</A>
-							</div>
-						</div>
-					{/each}
-				</div>
+	{#if grantedPatents.length > 0}
+		<section class="border-rule border-t pt-8 pb-8">
+			<div class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+				<h2 class={classes.sectionHeading}>Granted patents</h2>
+				<p class={classes.label}>
+					{grantedPatents.length}
+					{grantedPatents.length === 1 ? 'patent' : 'patents'}
+				</p>
 			</div>
-		{/if}
-	</div>
+
+			<ul class="mt-8 grid gap-6 lg:mt-12">
+				{#each grantedPatents as patent (patent.patentNumber)}
+					<li class={classNames(classes.surface, 'grid gap-5 p-6 lg:p-8')}>
+						<div class="grid gap-2">
+							<p class={classNames(classes.label, 'text-accent tabular-nums')}>
+								{patent.patentNumber}
+							</p>
+							<h3 class="text-h2 text-ink max-w-[45ch] font-serif font-semibold">{patent.title}</h3>
+						</div>
+
+						<p class="text-ink-muted max-w-[68ch] font-serif text-[1.0625rem] leading-relaxed">
+							{patent.description}
+						</p>
+
+						<!--
+							The filing details are a small record, so they sit in a definition
+							list in the sans rather than as four bolded sentences of body copy.
+						-->
+						<dl
+							class="border-rule grid gap-x-8 gap-y-3 border-t pt-5 sm:grid-cols-2 lg:grid-cols-4"
+						>
+							<div class="grid gap-0.5">
+								<dt class={classes.label}>Filed</dt>
+								<dd class="text-ui text-ink font-sans">{patent.filingDate}</dd>
+							</div>
+							<div class="grid gap-0.5">
+								<dt class={classes.label}>Issued</dt>
+								<dd class="text-ui text-ink font-sans">{patent.issueDate}</dd>
+							</div>
+							<div class="grid gap-0.5">
+								<dt class={classes.label}>Assignee</dt>
+								<dd class="text-ui text-ink font-sans">{patent.assignee}</dd>
+							</div>
+							<div class="grid gap-0.5">
+								<dt class={classes.label}>Inventors</dt>
+								<dd class="text-ui text-ink font-sans">{patent.inventors.join(', ')}</dd>
+							</div>
+						</dl>
+
+						<div>
+							<A href={patent.googlePatentUrl} className="font-sans text-ui">
+								<Link className="size-4" />
+								<span>View on Google Patents</span>
+							</A>
+						</div>
+					</li>
+				{/each}
+			</ul>
+		</section>
+	{/if}
 </div>

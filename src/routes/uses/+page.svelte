@@ -2,6 +2,7 @@
 	import Link from '../../icons/Link.svelte';
 	import A from '../../components/A.svelte';
 	import Seo from '../../components/Seo.svelte';
+	import { classes } from '../../styles/classes';
 
 	type UsesItem = {
 		description: string;
@@ -128,6 +129,11 @@
 			isAffiliateLink: true
 		}
 	];
+	const groups = [
+		{ title: 'Workstation', items: workstationItems },
+		{ title: 'Development tools', items: developmentItems },
+		{ title: 'Productivity tools', items: productivityItems }
+	];
 </script>
 
 <Seo
@@ -140,89 +146,60 @@
 	<link rel="canonical" href="https://michaelbonner.dev/uses" />
 </svelte:head>
 
-<div class="container mx-auto grid gap-8 px-8 py-12">
-	<div class="prose dark:prose-invert max-w-3xl">
-		<h1>Software and other things I recommend.</h1>
-		<p class="max-w-xl text-lg">
-			I sometimes get asked about the things I use to build software and stay productive. Here’s a
-			list of some of my favorite stuff.
+<div class="container mx-auto px-6 sm:px-8">
+	<header class="grid max-w-[60ch] gap-5 py-16 lg:py-24">
+		<p class={classes.eyebrow}>Uses</p>
+		<h1 class="text-h1 text-ink font-serif font-semibold">Software and other things I recommend</h1>
+		<p class="text-lead text-ink-muted font-serif">
+			I sometimes get asked about the things I use to build software and stay productive.
+			Here&rsquo;s a list of some of my favorite stuff.
 		</p>
-	</div>
+	</header>
 
-	<div class="mt-12 grid gap-24">
-		<div
-			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
-		>
-			<h2 class="text-xl">Workstation</h2>
-			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
-				{#each workstationItems as item (item.title)}
-					<div>
-						<span class="inline-block text-xl">
-							<A href={item.href}>
-								<Link />
-								<span>{item.title}</span>
-							</A>
-						</span>
-						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
-						{#if item.isAffiliateLink}
-							<p class="text-sm text-gray-600 dark:text-gray-300">
-								*This is an affiliate link. I may receive a commission if you purchase through this
-								link.
-							</p>
-						{/if}
-					</div>
-				{/each}
-			</div>
-		</div>
+	<!--
+		A two-column layout with the category name in the left rail: the heading
+		stays visible beside its items instead of sitting on a decorative left
+		border, and the items get a ruled list of their own.
+	-->
+	<div class="grid gap-16 pb-8 lg:gap-24">
+		{#each groups as group (group.title)}
+			<section
+				class="border-rule grid gap-8 border-t pt-8 lg:grid-cols-[minmax(0,14rem)_1fr] lg:gap-16"
+			>
+				<div class="grid content-start gap-2 lg:sticky lg:top-24 lg:self-start">
+					<h2 class="text-h3 text-ink font-serif font-semibold">{group.title}</h2>
+					<p class={classes.label}>{group.items.length} items</p>
+				</div>
 
-		<div
-			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
-		>
-			<h2 class="text-xl">Development Tools</h2>
-			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
-				{#each developmentItems as item (item.title)}
-					<div>
-						<span class="inline-block text-xl">
-							<A href={item.href}>
-								<Link />
-								<span>{item.title}</span>
-							</A>
-						</span>
-						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
-						{#if item.isAffiliateLink}
-							<p class="text-sm text-gray-600 dark:text-gray-300">
-								*This is an affiliate link. I may receive a commission if you purchase through this
-								link.
+				<ul class="grid">
+					{#each group.items as item (item.title)}
+						<li class="border-rule grid gap-1.5 border-b py-6 first:pt-0">
+							<h3 class="text-h3 font-serif font-medium">
+								<!--
+									Quiet at rest: an underline beneath every h3-sized serif title
+									turned the list into stripes. The icon carries the external cue,
+									and the underline returns on hover.
+								-->
+								<A
+									href={item.href}
+									className="text-ink hover:text-accent no-underline hover:underline"
+								>
+									<span>{item.title}</span>
+									<Link className="size-4 shrink-0 opacity-60" />
+								</A>
+							</h3>
+							<p class="text-ink-muted max-w-[65ch] font-serif text-[1.0625rem] leading-relaxed">
+								{item.description}
 							</p>
-						{/if}
-					</div>
-				{/each}
-			</div>
-		</div>
-
-		<div
-			class="grid border-l border-gray-300 pl-4 md:grid-cols-3 md:pl-8 xl:grid-cols-6 dark:border-gray-600"
-		>
-			<h2 class="text-xl">Productivity Tools</h2>
-			<div class="grid gap-8 md:col-span-2 xl:col-span-5">
-				{#each productivityItems as item (item.title)}
-					<div>
-						<span class="inline-block text-xl">
-							<A href={item.href}>
-								<Link />
-								<span>{item.title}</span>
-							</A>
-						</span>
-						<p class="max-w-xl text-lg text-gray-700 dark:text-gray-400">{item.description}</p>
-						{#if item.isAffiliateLink}
-							<p class="text-sm text-gray-600 dark:text-gray-300">
-								*This is an affiliate link. I may receive a commission if you purchase through this
-								link.
-							</p>
-						{/if}
-					</div>
-				{/each}
-			</div>
-		</div>
+							{#if item.isAffiliateLink}
+								<p class={classes.label}>
+									Affiliate link. I may receive a commission if you purchase through it.
+								</p>
+							{/if}
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/each}
 	</div>
 </div>

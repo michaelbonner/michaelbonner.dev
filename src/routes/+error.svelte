@@ -1,15 +1,19 @@
 <script>
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
+	import { classes } from '../styles/classes';
 </script>
 
-<div class="container mx-auto flex justify-between px-8 py-16">
-	<div class="prose dark:prose-invert grid gap-4">
-		<h1>{page.error?.message}</h1>
-		<p>
-			Looks like you've hit a dead end. <a class="underline underline-offset-4" href={resolve('/')}
-				>Go back home</a
-			>
+<div class="container mx-auto grid place-items-start px-6 py-24 sm:px-8 lg:py-32">
+	<div class="grid max-w-[52ch] gap-5">
+		<p class={classes.eyebrow}>
+			Error {page.status}
 		</p>
+		<h1 class="text-h1 text-ink font-serif font-semibold">{page.error?.message}</h1>
+		<p class="text-lead text-ink-muted font-serif">Looks like you&apos;ve hit a dead end.</p>
+		<div class="mt-2 flex flex-wrap gap-3">
+			<a class={classes.button} href={resolve('/')}>Go back home</a>
+			<a class={classes.buttonQuiet} href={resolve('/blog')}>Read the blog</a>
+		</div>
 	</div>
 </div>

@@ -12,8 +12,8 @@
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
-<div class="container mx-auto grid gap-8 px-8 py-12">
-	<div class="prose dark:prose-invert mt-12">
+<div class="container mx-auto grid gap-8 px-6 py-16 sm:px-8 lg:py-24">
+	<div class="prose max-w-[68ch]">
 		<h1>Happy Mother's Day Mom!</h1>
 
 		<p>I wanted to take a moment to let you know just how much I appreciate and love you.</p>
@@ -55,22 +55,23 @@
 				/>
 				Your browser does not support the audio element.
 			</audio>
-			<div class="mt-0 flex items-center justify-center gap-3">
-				<p>
-					<a
-						href="https://mbonner-general-web.s3.us-west-2.amazonaws.com/Come-Thou-Fount.mp3"
-						download="Come Thou Fount.mp3"
-					>
-						Download
-					</a>
-				</p>
+			<div class="not-prose mt-0 flex items-center justify-center gap-2">
+				<a
+					class="text-ui text-accent inline-flex items-center gap-2 font-sans font-medium no-underline hover:underline"
+					href="https://mbonner-general-web.s3.us-west-2.amazonaws.com/Come-Thou-Fount.mp3"
+					download="Come Thou Fount.mp3"
+				>
+					Download
+				</a>
 				<svg
 					stroke="currentColor"
 					fill="currentColor"
 					stroke-width="0"
 					viewBox="0 0 16 16"
-					height="1.4em"
-					width="1.4em"
+					height="1.2em"
+					width="1.2em"
+					aria-hidden="true"
+					class="text-ink-faint"
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<path
