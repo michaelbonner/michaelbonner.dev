@@ -38,11 +38,6 @@
 
 	const developmentItems: UsesItem[] = [
 		{
-			title: `Cursor`,
-			href: 'https://cursor.com/en',
-			description: `Cursor is a pretty neat AI code editor. I've been using it for a few months now and it's pretty cool.`
-		},
-		{
 			title: 'TablePlus',
 			href: 'https://tableplus.com/',
 			description: 'Great software for working with databases.'
@@ -77,8 +72,8 @@
 			description: 'The best password manager I have used'
 		},
 		{
-			href: 'https://arc.net/',
-			title: 'Arc Browser',
+			href: 'https://www.diabrowser.com/',
+			title: 'Dia',
 			description: 'A great browser for Mac'
 		},
 		{
