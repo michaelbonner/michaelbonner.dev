@@ -2,12 +2,13 @@
 	"name": "michaelbonner-dev",
 	"main": "./.svelte-kit/cloudflare/_worker.js",
 	"compatibility_date": "2026-02-12",
-	"compatibility_flags": ["nodejs_compat"],
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
 	"assets": {
 		"directory": "./.svelte-kit/cloudflare",
 		"binding": "ASSETS"
 	},
-
 	// Restaurant suggestions submitted from /restaurants, stored in D1.
 	//
 	// Left commented out because a build fails outright on a `database_id` that
@@ -25,17 +26,24 @@
 	// 		"migrations_dir": "migrations"
 	// 	}
 	// ],
-
 	"vars": {
 		"PUBLIC_POSTHOG_API_KEY": "phc_CR48D5k9rHyRASc1LcsP2vkacYA7WnCTRmV7lsuDULf",
 		"PUBLIC_POSTHOG_ENABLED": "true",
 		"PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAACfvRumOPoxj99HQ",
 		"TELEGRAM_CHAT_ID": "5298372807"
 	},
-  "observability": {
-    "logs": {
-      "enabled": true,
-      "invocation_logs": true
-    }
-  }
+	"observability": {
+		"logs": {
+			"enabled": true,
+			"invocation_logs": true
+		}
+	},
+	"d1_databases": [
+		{
+			"binding": "michaelbonner_dev",
+			"database_name": "michaelbonner-dev",
+			"database_id": "00a7df3a-1fce-499a-ac03-df4f46336958",
+			"remote": true
+		}
+	]
 }
