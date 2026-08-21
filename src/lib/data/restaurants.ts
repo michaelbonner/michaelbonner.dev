@@ -34,7 +34,7 @@ const entries = [
 		tags: ['Italian'],
 		rating: 9,
 		pricePerPerson: 50,
-		locations: ['Sugarhouse']
+		locations: ['Millcreek']
 	},
 	{
 		name: 'Blacksmith Ice Cream',
