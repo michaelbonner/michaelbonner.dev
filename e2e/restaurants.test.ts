@@ -240,7 +240,17 @@ test.describe('Restaurants page', () => {
 		await pin.hover();
 		await expect(page.locator('.restaurant-preview')).toContainText('Antica Sicilia');
 		await expect(page.locator('.restaurant-preview')).toContainText('Italian');
-		await expect(page.locator('.restaurant-preview__image')).toBeVisible();
+
+		// The hover is a glance: a small photo to the left of the name. The full-size
+		// photo belongs to the popup, which is what clicking the pin opens.
+		const photo = page.locator('.restaurant-preview__image');
+		await expect(photo).toBeVisible();
+		expect(await thumbnailSizes(photo)).toEqual(['48x48']);
+		const [photoBox, nameBox] = await Promise.all([
+			photo.boundingBox(),
+			page.locator('.restaurant-preview__name').boundingBox()
+		]);
+		expect(photoBox!.x + photoBox!.width).toBeLessThanOrEqual(nameBox!.x);
 
 		await page.mouse.move(0, 0);
 		await expect(page.locator('.restaurant-preview')).toHaveCount(0);

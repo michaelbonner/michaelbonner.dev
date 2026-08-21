@@ -68,16 +68,24 @@
 	 * Leaflet takes its popups and tooltips as HTML strings, so `<enhanced:img>` is not
 	 * available here. This builds the same `<picture>` markup it would compile to, from
 	 * the `Picture` the photo lookup hands back.
+	 *
+	 * `sizes` is how wide the photo actually renders, so the browser can take the small
+	 * end of the srcset for the preview's thumbnail. `missingLabel` is empty there too:
+	 * the thumbnail has no room for words.
 	 */
-	const buildImage = (restaurant: Restaurant, blockClass: string) => {
+	const buildImage = (
+		restaurant: Restaurant,
+		blockClass: string,
+		sizes: string,
+		missingLabel: string
+	) => {
 		const picture = restaurantImage(restaurant.name);
-		if (!picture) return `<span class="${blockClass}__missing">Photo coming soon</span>`;
+		if (!picture) return `<span class="${blockClass}__missing">${missingLabel}</span>`;
 
-		// Both the popup and the preview are a fixed 15rem wide.
 		const sources = Object.entries(picture.sources)
 			.map(
 				([format, srcset]) =>
-					`<source srcset="${escapeHtml(srcset)}" sizes="240px" type="image/${format}">`
+					`<source srcset="${escapeHtml(srcset)}" sizes="${sizes}" type="image/${format}">`
 			)
 			.join('');
 
@@ -88,7 +96,8 @@
 		const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
 			`${restaurant.name}, ${restaurant.locations[0]}, Utah`
 		)}`;
-		const image = buildImage(restaurant, 'restaurant-popup');
+		// The popup is the deliberate look, so it keeps the full-width photo.
+		const image = buildImage(restaurant, 'restaurant-popup', '240px', 'Photo coming soon');
 
 		return `
 			${image}
@@ -100,7 +109,7 @@
 	};
 
 	const buildPreview = (restaurant: Restaurant) => {
-		const image = buildImage(restaurant, 'restaurant-preview');
+		const image = buildImage(restaurant, 'restaurant-preview', '48px', '');
 		const tags = restaurant.tags
 			.map((tag) => `<span class="restaurant-preview__tag">${escapeHtml(tag)}</span>`)
 			.join('');
@@ -342,9 +351,15 @@
 	}
 
 	:global(.restaurant-preview.leaflet-tooltip) {
-		width: 15rem;
+		/* Shrink-wraps a short name and wraps a long one, rather than always taking
+		   the full 15rem of map the popup does. Leaflet's own tooltips never wrap.
+		   max-content, not auto: the tooltip pane it sits in is zero-wide, so auto
+		   would leave every name broken onto its own line. */
+		width: max-content;
+		max-width: 15rem;
 		overflow: hidden;
 		padding: 0;
+		white-space: normal;
 		border: 1px solid var(--color-gray-300);
 		border-radius: 0.5rem;
 		background: var(--color-gray-50);
@@ -357,16 +372,24 @@
 		display: none;
 	}
 
+	/* Hovering is a glance, so the preview is a chip: a thumbnail on the left with
+	   the name beside it. Clicking the pin is the deliberate act, and that popup is
+	   where the photo gets the room to be looked at. */
 	:global(.restaurant-preview__card) {
-		display: grid;
+		display: flex;
+		align-items: center;
+		gap: 0.625rem;
+		padding: 0.5rem;
 	}
 
 	:global(.restaurant-preview__picture),
 	:global(.restaurant-preview__image),
 	:global(.restaurant-preview__missing) {
 		display: block;
-		width: 100%;
-		aspect-ratio: 16 / 9;
+		flex: none;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 0.375rem;
 	}
 
 	:global(.restaurant-preview__image) {
@@ -374,17 +397,14 @@
 	}
 
 	:global(.restaurant-preview__missing) {
-		display: grid;
-		place-items: center;
 		background: var(--color-gray-200);
-		color: var(--color-gray-600);
-		font-size: 0.8125rem;
 	}
 
 	:global(.restaurant-preview__content) {
 		display: grid;
-		gap: 0.5rem;
-		padding: 0.75rem;
+		gap: 0.375rem;
+		/* So a long name wraps instead of pushing past the tooltip's max width. */
+		min-width: 0;
 	}
 
 	:global(.restaurant-preview__name) {
