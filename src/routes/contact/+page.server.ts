@@ -13,7 +13,9 @@ export const actions: Actions = {
 
 		if (missingEnvVars.length > 0) {
 			console.error(`Missing required contact env vars: ${missingEnvVars.join(', ')}`);
-			return fail(500, { error: 'Contact form is temporarily unavailable. Please try again later.' });
+			return fail(500, {
+				error: 'Contact form is temporarily unavailable. Please try again later.'
+			});
 		}
 
 		const data = await request.formData();
@@ -50,16 +52,19 @@ export const actions: Actions = {
 		// Send Telegram notification
 		const text = `New contact form submission!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
 
-		const telegramRes = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				chat_id: env.TELEGRAM_CHAT_ID,
-				text: text
-			})
-		});
+		const telegramRes = await fetch(
+			`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`,
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					chat_id: env.TELEGRAM_CHAT_ID,
+					text: text
+				})
+			}
+		);
 
 		if (!telegramRes.ok) {
 			console.error('Failed to send Telegram message:', await telegramRes.text());

@@ -1,14 +1,36 @@
 <script lang="ts">
-	import { Turnstile } from 'svelte-turnstile';
-	import { env } from '$env/dynamic/public';
 	import { enhance } from '$app/forms';
+	import { env } from '$env/dynamic/public';
+	import { Turnstile } from 'svelte-turnstile';
+	import Seo from '../../components/Seo.svelte';
+	import { classNames } from '../../functions/classNames';
 	import Github from '../../icons/Github.svelte';
 	import Instagram from '../../icons/Instagram.svelte';
 	import LinkedIn from '../../icons/LinkedIn.svelte';
-	import Seo from '../../components/Seo.svelte';
-	import clsx from 'clsx';
+	import { classes } from '../../styles/classes';
 
 	let { form } = $props();
+
+	const socials = [
+		{
+			label: 'LinkedIn',
+			handle: 'in/michaelbonner',
+			href: 'https://www.linkedin.com/in/michaelbonner/',
+			icon: LinkedIn
+		},
+		{
+			label: 'GitHub',
+			handle: 'michaelbonner',
+			href: 'https://github.com/michaelbonner',
+			icon: Github
+		},
+		{
+			label: 'Instagram',
+			handle: 'michael__bonner',
+			href: 'https://www.instagram.com/michael__bonner',
+			icon: Instagram
+		}
+	];
 </script>
 
 <Seo
@@ -21,139 +43,113 @@
 	<link rel="canonical" href="https://michaelbonner.dev/contact" />
 </svelte:head>
 
-<div class="container mx-auto my-20 px-8 sm:my-36">
-	<h1 class="mb-12 text-4xl font-semibold">Get In Touch</h1>
+<div class="container mx-auto px-6 sm:px-8">
+	<header class="grid max-w-[52ch] gap-5 py-16 lg:py-24">
+		<p class={classes.eyebrow}>Contact</p>
+		<h1 class="text-h1 text-ink font-serif font-semibold">Get in touch</h1>
+		<p class="text-lead text-ink-muted font-serif">
+			Send a message and I&apos;ll get back to you, or find me on one of these platforms.
+		</p>
+	</header>
 
-	<div class="grid gap-16 md:grid-cols-2">
-		<!-- Contact Form -->
-		<div>
-			<h2 class="mb-6 text-2xl font-semibold">Send a Message</h2>
-
+	<!--
+		The form is the primary action, so it gets the wide column and the panel;
+		the social links are a quieter fallback beside it.
+	-->
+	<div
+		class="border-rule grid gap-12 border-t pt-12 pb-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-16"
+	>
+		<div class="min-w-0">
 			{#if form?.success}
-				<div
-					class="mb-6 rounded-lg border border-green-200 bg-green-100 p-6 text-green-900 dark:border-green-800 dark:bg-green-900/40 dark:text-green-100"
-				>
-					<p class="text-lg font-medium">Thanks for reaching out!</p>
-					<p class="mt-2 text-green-800 dark:text-green-200">
-						I've received your message and will get back to you soon.
+				<div class={classNames(classes.surface, 'grid gap-2 p-6')}>
+					<p class="text-h3 text-ink font-serif font-semibold">Thanks for reaching out</p>
+					<p class="text-ink-muted font-serif text-[1.0625rem]">
+						I&apos;ve received your message and will get back to you soon.
 					</p>
 				</div>
 			{:else if !env.PUBLIC_TURNSTILE_SITE_KEY}
-				<div
-					class="mb-6 rounded-lg border border-yellow-200 bg-yellow-50 p-6 text-yellow-900 dark:border-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-100"
-				>
-					<p class="text-lg font-medium">Contact Form Unavailable</p>
-					<p class="mt-2 text-yellow-800 dark:text-yellow-200">
-						The contact form is currently unavailable. Please use one of the social links below to get in touch.
+				<div class={classNames(classes.surface, 'grid gap-2 p-6')}>
+					<p class="text-h3 text-ink font-serif font-semibold">Contact form unavailable</p>
+					<p class="text-ink-muted font-serif text-[1.0625rem]">
+						The contact form is currently unavailable. Please use one of the links to the side to
+						get in touch.
 					</p>
 				</div>
 			{:else}
-				<form method="POST" use:enhance class="grid gap-6">
+				<form
+					method="POST"
+					use:enhance
+					class={classNames(classes.surface, 'grid min-w-0 gap-5 p-4 sm:p-6 lg:p-8')}
+				>
 					{#if form?.error}
-						<div
-							class="rounded-lg border border-red-200 bg-red-50 p-4 text-red-800 dark:border-red-800 dark:bg-red-900/30 dark:text-red-200"
+						<!--
+							The error is announced rather than only coloured, and it carries an
+							icon-free text label, so it does not depend on colour alone.
+						-->
+						<p
+							role="alert"
+							class="border-accent-bright bg-accent-soft text-ui text-ink rounded-lg border px-4 py-3 font-sans"
 						>
 							{form.error}
-						</div>
+						</p>
 					{/if}
 
-					<div>
-						<label for="name" class="mb-2 block text-lg font-medium">Name</label>
-						<input
-							type="text"
-							id="name"
-							name="name"
-							required
-							class="w-full rounded-lg border border-gray-300 bg-white/50 px-4 py-3 text-lg transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-900/50"
-						/>
+					<div class="grid gap-1.5">
+						<label for="name" class={classes.label}>Name</label>
+						<input type="text" id="name" name="name" required class={classes.input} />
 					</div>
 
-					<div>
-						<label for="email" class="mb-2 block text-lg font-medium">Email</label>
-						<input
-							type="email"
-							id="email"
-							name="email"
-							required
-							class="w-full rounded-lg border border-gray-300 bg-white/50 px-4 py-3 text-lg transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-900/50"
-						/>
+					<div class="grid gap-1.5">
+						<label for="email" class={classes.label}>Email</label>
+						<input type="email" id="email" name="email" required class={classes.input} />
 					</div>
 
-					<div>
-						<label for="message" class="mb-2 block text-lg font-medium">Message</label>
+					<div class="grid gap-1.5">
+						<label for="message" class={classes.label}>Message</label>
 						<textarea
 							id="message"
 							name="message"
-							rows="5"
+							rows="6"
 							required
-							class="w-full rounded-lg border border-gray-300 bg-white/50 px-4 py-3 text-lg transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-900/50"
-						></textarea>
+							class={classNames(classes.input, 'resize-y')}></textarea>
 					</div>
 
 					{#if env.PUBLIC_TURNSTILE_SITE_KEY}
-						<Turnstile siteKey={env.PUBLIC_TURNSTILE_SITE_KEY} />
+						<div class="max-w-full min-w-0 overflow-x-auto">
+							<Turnstile siteKey={env.PUBLIC_TURNSTILE_SITE_KEY} />
+						</div>
 					{/if}
 
-					<button
-						type="submit"
-						class={clsx(
-							'w-fit cursor-pointer rounded-lg bg-blue-600 px-8 py-3 text-lg font-medium text-white transition-colors',
-							'hover:scale-105 hover:rotate-1 hover:bg-blue-700'
-						)}
-					>
-						Send Message
-					</button>
+					<div class="border-rule border-t pt-5">
+						<button type="submit" class={classes.button}>Send message</button>
+					</div>
 				</form>
 			{/if}
 		</div>
 
-		<!-- Social Links -->
-		<div>
-			<h2 class="mb-6 text-2xl font-semibold">Connect</h2>
-			<p class="mb-8 text-lg leading-relaxed">
-				You can also find me on these platforms. Feel free to connect or send a message there!
-			</p>
-
-			<ul class="grid gap-4">
-				<li>
-					<a
-						href="https://www.linkedin.com/in/michaelbonner/"
-						class={clsx(
-							'flex items-center gap-4 rounded-lg border border-gray-300 p-4 transition',
-							'dark:border-gray-700 dark:hover:bg-white/10',
-							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 dark:hover:bg-white/50'
-						)}
-					>
-						<span class="text-blue-700 dark:text-blue-400"><LinkedIn /></span>
-						<span class="text-xl font-medium">LinkedIn</span>
-					</a>
-				</li>
-				<li>
-					<a
-						href="https://github.com/michaelbonner"
-						class={clsx(
-							'flex items-center gap-4 rounded-lg border border-gray-300 p-4 transition',
-							'dark:border-gray-700 dark:hover:bg-white/10',
-							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 dark:hover:bg-white/50'
-						)}
-					>
-						<span class="text-gray-900 dark:text-white"><Github /></span>
-						<span class="text-xl font-medium">GitHub</span>
-					</a>
-				</li>
-				<li>
-					<a
-						href="https://www.instagram.com/michael__bonner"
-						class={clsx(
-							'flex items-center gap-4 rounded-lg border border-gray-300 p-4 transition',
-							'dark:border-gray-700 dark:hover:bg-white/10',
-							'hover:scale-105 hover:rotate-1 hover:bg-blue-700 dark:hover:bg-white/50'
-						)}
-					>
-						<span class="text-pink-600 dark:text-pink-400"><Instagram /></span>
-						<span class="text-xl font-medium">Instagram</span>
-					</a>
-				</li>
+		<div class="grid content-start gap-5">
+			<h2 class={classes.eyebrow}>Elsewhere</h2>
+			<ul class="border-rule grid border-t">
+				{#each socials as social (social.label)}
+					{@const Icon = social.icon}
+					<li class="border-rule border-b">
+						<a
+							href={social.href}
+							class="group flex items-center gap-3 py-4 no-underline transition-colors duration-150 ease-out"
+						>
+							<span class="text-ink-faint group-hover:text-accent transition-colors">
+								<Icon />
+							</span>
+							<span class="grid">
+								<span
+									class="text-ui text-ink group-hover:text-accent font-sans font-medium transition-colors"
+									>{social.label}</span
+								>
+								<span class={classes.label}>{social.handle}</span>
+							</span>
+						</a>
+					</li>
+				{/each}
 			</ul>
 		</div>
 	</div>
