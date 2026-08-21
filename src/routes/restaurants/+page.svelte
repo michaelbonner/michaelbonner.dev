@@ -1,4 +1,8 @@
 <script lang="ts">
+	import { replaceState } from '$app/navigation';
+	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
+	import type { ResolvedPathname } from '$app/types';
 	import Seo from '../../components/Seo.svelte';
 	import RestaurantMap from '../../components/RestaurantMap.svelte';
 	import { classNames } from '../../functions/classNames';
@@ -31,13 +35,88 @@
 		rating: 'desc'
 	};
 
-	let search = $state('');
-	let tag = $state('');
-	let location = $state('');
-	let pricePerPerson = $state(0);
-	let minRating = $state(0);
-	let sortKey = $state<SortKey>('rating');
-	let sortDirection = $state<SortDirection>('desc');
+	const ratingOptions = [10, 9, 8];
+
+	type Filters = {
+		search: string;
+		tag: string;
+		location: string;
+		pricePerPerson: number;
+		minRating: number;
+		sortKey: SortKey;
+		sortDirection: SortDirection;
+	};
+
+	const defaults: Filters = {
+		search: '',
+		tag: '',
+		location: '',
+		pricePerPerson: 0,
+		minRating: 0,
+		sortKey: 'rating',
+		sortDirection: 'desc'
+	};
+
+	/** Query-string names for the sort columns, so shared links stay readable. */
+	const sortParams: Record<SortKey, string> = {
+		name: 'name',
+		tags: 'tags',
+		locations: 'location',
+		pricePerPerson: 'price',
+		rating: 'rating'
+	};
+
+	// A hand-edited or stale link should fall back to the default rather than filter
+	// the list down to nothing, so every value has to be one the controls can produce.
+	const oneOf = <T,>(options: readonly T[], value: T, fallback: T) =>
+		options.includes(value) ? value : fallback;
+
+	const readFilters = (url: URL): Filters => {
+		const params = url.searchParams;
+		const [sortName, direction] = (params.get('sort') ?? '').split('-');
+		const sortKey =
+			(Object.keys(sortParams) as SortKey[]).find((key) => sortParams[key] === sortName) ??
+			defaults.sortKey;
+
+		return {
+			search: params.get('q') ?? defaults.search,
+			tag: oneOf(restaurantTags, params.get('tag') ?? '', defaults.tag),
+			location: oneOf(locations, params.get('location') ?? '', defaults.location),
+			pricePerPerson: oneOf(pricesPerPerson, Number(params.get('price')), defaults.pricePerPerson),
+			minRating: oneOf(ratingOptions, Number(params.get('rating')), defaults.minRating),
+			sortKey,
+			sortDirection:
+				direction === 'asc' || direction === 'desc' ? direction : defaultDirection[sortKey]
+		};
+	};
+
+	// Defaults are left out so an unfiltered page keeps a clean `/restaurants` URL.
+	const toQuery = (filters: Filters) => {
+		const params: [string, string][] = [];
+
+		if (filters.search) params.push(['q', filters.search]);
+		if (filters.tag) params.push(['tag', filters.tag]);
+		if (filters.location) params.push(['location', filters.location]);
+		if (filters.pricePerPerson) params.push(['price', String(filters.pricePerPerson)]);
+		if (filters.minRating) params.push(['rating', String(filters.minRating)]);
+		if (filters.sortKey !== defaults.sortKey || filters.sortDirection !== defaults.sortDirection) {
+			params.push(['sort', `${sortParams[filters.sortKey]}-${filters.sortDirection}`]);
+		}
+
+		return params.map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+	};
+
+	// The initial read happens during render, so a shared link is already filtered in
+	// the server-rendered HTML instead of snapping into place after hydration.
+	const initial = readFilters(page.url);
+
+	let search = $state(initial.search);
+	let tag = $state(initial.tag);
+	let location = $state(initial.location);
+	let pricePerPerson = $state(initial.pricePerPerson);
+	let minRating = $state(initial.minRating);
+	let sortKey = $state<SortKey>(initial.sortKey);
+	let sortDirection = $state<SortDirection>(initial.sortDirection);
 	let activeName = $state<string | null>(null);
 
 	let listElement: HTMLDivElement | undefined = $state();
@@ -98,12 +177,58 @@
 	};
 
 	const clearFilters = () => {
-		search = '';
-		tag = '';
-		location = '';
-		pricePerPerson = 0;
-		minRating = 0;
+		search = defaults.search;
+		tag = defaults.tag;
+		location = defaults.location;
+		pricePerPerson = defaults.pricePerPerson;
+		minRating = defaults.minRating;
 	};
+
+	// The URL is the shareable record of the current view: the controls write to it, and
+	// a navigation (a pasted link, the back button) writes back into the controls.
+	$effect(() => {
+		const filters = readFilters(page.url);
+
+		search = filters.search;
+		tag = filters.tag;
+		location = filters.location;
+		pricePerPerson = filters.pricePerPerson;
+		minRating = filters.minRating;
+		sortKey = filters.sortKey;
+		sortDirection = filters.sortDirection;
+	});
+
+	let urlSynced = false;
+
+	$effect(() => {
+		const query = toQuery({
+			search,
+			tag,
+			location,
+			pricePerPerson,
+			minRating,
+			sortKey,
+			sortDirection
+		});
+
+		// Nothing to write on the first run, since the controls came from this URL.
+		// Skipping it also keeps us clear of replaceState before the router is ready.
+		if (!urlSynced) {
+			urlSynced = true;
+			return;
+		}
+
+		// `location` is the filter above, not the browser's, hence `window.location`.
+		if (query === window.location.search.replace(/^\?/, '')) return;
+
+		// replaceState rather than pushState: the back button should leave the page
+		// rather than walk back through every keystroke. `resolve()` keeps the path
+		// correct under a base path; the cast just re-attaches the type a query
+		// string strips off.
+		const target = `${resolve('/restaurants')}${query ? `?${query}` : ''}` as ResolvedPathname;
+
+		replaceState(target, {});
+	});
 
 	const select = (name: string | null) => {
 		activeName = activeName === name ? null : name;
@@ -255,7 +380,7 @@
 							<label for="restaurant-rating" class={labelClasses}>Rating</label>
 							<select id="restaurant-rating" bind:value={minRating} class={inputClasses}>
 								<option value={0}>Any</option>
-								{#each [10, 9, 8] as level (level)}
+								{#each ratingOptions as level (level)}
 									<option value={level}>{level}+</option>
 								{/each}
 							</select>
