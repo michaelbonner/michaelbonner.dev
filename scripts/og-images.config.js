@@ -78,7 +78,7 @@ export const cards = [
 		route: '/policies',
 		eyebrow: 'Policies',
 		title: 'Privacy Policy and Terms of Service',
-		description: "How this site handles your data, and the terms that go with using it."
+		description: 'How this site handles your data, and the terms that go with using it.'
 	},
 	{
 		name: 'mothers-day-2023',

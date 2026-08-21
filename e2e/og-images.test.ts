@@ -11,13 +11,14 @@ const routes = (cards as { name: string; route: string }[])
 
 test.describe.parallel('Open Graph images', () => {
 	for (const { route, ogPath } of routes) {
-		test(`${route} points at ${ogPath}`, async ({ page, baseURL }) => {
+		test(`${route} points at ${ogPath}`, async ({ page }) => {
 			await page.goto(route);
 
 			const ogImage = await page.locator('meta[property="og:image"]').getAttribute('content');
 			const twitterImage = await page.locator('meta[name="twitter:image"]').getAttribute('content');
 
-			expect(ogImage).toBe(`${baseURL}${ogPath}`);
+			// <Seo> absolutizes against PUBLIC_SITE_URL, so only the path is predictable here
+			expect(ogImage).toMatch(new RegExp(`^https?://[^/]+${ogPath}$`));
 			expect(twitterImage).toBe(ogImage);
 
 			// The card has to actually exist, or the share preview falls back to nothing

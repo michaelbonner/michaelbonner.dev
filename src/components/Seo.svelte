@@ -1,12 +1,7 @@
 <script lang="ts">
 	import { env } from '$env/dynamic/public';
 
-	let {
-		title = '',
-		description = '',
-		ogImage = '/og/default.jpg',
-		ogType = 'website'
-	} = $props();
+	let { title = '', description = '', ogImage = '/og/default.jpg', ogType = 'website' } = $props();
 
 	const getOgImageWithHost = (ogImage: string) => {
 		if (ogImage.startsWith('http')) {

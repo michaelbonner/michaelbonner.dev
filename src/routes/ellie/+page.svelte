@@ -394,11 +394,7 @@
 	];
 </script>
 
-<Seo
-	title="Ellie"
-	description="Some of my favorite memories with Ellie"
-	ogImage="/og/ellie.jpg"
-/>
+<Seo title="Ellie" description="Some of my favorite memories with Ellie" ogImage="/og/ellie.jpg" />
 
 <svelte:head>
 	<link rel="canonical" href="https://michaelbonner.dev/ellie" />

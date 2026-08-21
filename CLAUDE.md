@@ -23,6 +23,10 @@ bun test                 # Run test setup + E2E tests
 bun test:setup           # Update test data validation
 bun test:e2e            # Run Playwright E2E tests only
 
+# Open Graph images
+bun run og               # Regenerate all OG cards into static/og/
+bun run og home blog     # Regenerate only the named cards
+
 # Code Quality
 bun run check            # Type check with svelte-check
 bun run check:watch      # Type check in watch mode
@@ -60,6 +64,32 @@ The blog uses a **static, file-based architecture** without a CMS:
    - Contains inline HTML/Svelte content (not markdown)
 
 3. **Test data synchronization**: E2E tests use `e2e/validate-test-data.js` to ensure test data in `e2e/test-data/blog-articles.ts` stays in sync with actual blog routes. Run `bun test:setup` to validate/update.
+
+#### Open Graph Images
+
+Every page gets its own branded 1200x630 OG card, generated at authoring time (not at
+request time) and committed to `static/og/`:
+
+1. `scripts/og-images.config.js` is the manifest — one entry per page with `name`, `route`,
+   `eyebrow`, `title`, `description`, optional `meta` (blog date/reading time), and an
+   optional `image`.
+2. `scripts/generate-og-images.js` renders an HTML template in headless Chromium (via the
+   Playwright already used for E2E) and writes `static/og/<name>.jpg`. Fonts and photos are
+   inlined as data URIs, so output only depends on files in this repo — no network, no extra
+   dependencies.
+3. Pages reference their card with `<Seo ogImage="/og/<name>.jpg" />`. `Seo.svelte`
+   absolutizes the path and defaults to `/og/default.jpg`.
+
+Two image treatments, picked with `imageStyle`:
+
+- `panel` (default) — full-bleed photo on the right, dissolved into the background. For
+  photographs (headshot, Ellie, food).
+- `thumb` — rounded, slightly tilted card. For screenshots, which would be destroyed by a
+  full-bleed crop.
+
+Long titles are auto-shrunk to fit; the script warns if copy still overflows.
+`e2e/og-images.test.ts` asserts every route's `og:image`/`twitter:image` points at an
+existing 1200x630 JPEG.
 
 #### Image Handling
 
@@ -140,8 +170,11 @@ src/
    - Use `<Seo>` and `<BlogPostSchema>` components
    - Add canonical link and article meta tags
 3. Add entry to `src/lib/data/blogArticles.ts`
-4. Run `bun test:setup` to update test data
-5. Run `bun test` to verify
+4. Add an entry to `scripts/og-images.config.js` (name it `blog-[slug]`) and run
+   `bun run og blog-[slug]`, then point the page's `<Seo ogImage="/og/blog-[slug].jpg" />`
+   at it
+5. Run `bun test:setup` to update test data
+6. Run `bun run test` to verify
 
 ## Environment Variables
 
