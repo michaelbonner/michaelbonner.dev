@@ -93,7 +93,7 @@
 
 	const buildPopup = (restaurant: Restaurant) => {
 		const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-			`${restaurant.name}, ${restaurant.location}, Utah`
+			`${restaurant.name}, ${restaurant.locations[0]}, Utah`
 		)}`;
 		const imageUrl = restaurantImages[normalizeRestaurantName(restaurant.name)];
 		const image = imageUrl
@@ -104,7 +104,7 @@
 			${image}
 			<strong class="restaurant-popup__name">${escapeHtml(restaurant.name)}</strong>
 			<span class="restaurant-popup__meta">${escapeHtml(restaurant.tags.join(', '))} &middot; $${restaurant.pricePerPerson}/person &middot; ${restaurant.rating}/10</span>
-			<span class="restaurant-popup__address">${escapeHtml(restaurant.location)}</span>
+			<span class="restaurant-popup__address">${escapeHtml(restaurant.locations.join('/'))}</span>
 			<a class="restaurant-popup__link" href="${escapeHtml(mapsUrl)}" target="_blank" rel="noopener noreferrer">Directions</a>
 		`;
 	};

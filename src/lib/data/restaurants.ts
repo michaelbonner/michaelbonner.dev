@@ -12,38 +12,16 @@ export type RestaurantEntry = {
 	notes?: string;
 	/** Approximate cost in dollars for one person. */
 	pricePerPerson: number;
-	/** Neighborhood or city listed in the source data. */
-	location: string;
+	/** Neighborhoods or cities where the restaurant has a location. */
+	locations: [string, ...string[]];
 };
 
 /** A restaurant with its geocoded position merged in, as consumed by the page. */
 export type Restaurant = RestaurantEntry & {
-	/**
-	 * `location` split into its individual neighborhoods, so a place listed as
-	 * "Downtown/Sugarhouse/Midvale" matches a filter for any one of them.
-	 */
-	locationParts: string[];
 	/** Filled in by `bun run geocode`. Restaurants without coordinates are hidden from the map. */
 	lat?: number;
 	lng?: number;
 };
-
-/**
- * The source list writes several branches as one slash-separated string, and
- * writes Sugarhouse loosely ("Sugarhouse-", "Sugarhouse-ish"). Both are kept
- * verbatim for display and normalized here so the filter has one clean option
- * per neighborhood.
- */
-const toLocationParts = (location: string) =>
-	location
-		.split('/')
-		.map((part) =>
-			part
-				.trim()
-				.replace(/-(?:ish)?$/, '')
-				.trim()
-		)
-		.filter(Boolean);
 
 /**
  * The source of truth for the list. Coordinates deliberately live in
@@ -56,7 +34,7 @@ const entries = [
 		tags: ['Italian'],
 		rating: 9,
 		pricePerPerson: 50,
-		location: 'Sugarhouse'
+		locations: ['Sugarhouse']
 	},
 	{
 		name: 'Bricks Corner',
@@ -64,28 +42,28 @@ const entries = [
 		rating: 9,
 		notes: 'Detroit style',
 		pricePerPerson: 20,
-		location: 'Downtown'
+		locations: ['Downtown']
 	},
 	{
 		name: 'Chanon Thai Cafe',
 		tags: ['Thai'],
 		rating: 9,
 		pricePerPerson: 20,
-		location: 'Downtown'
+		locations: ['Downtown']
 	},
 	{
 		name: "Dave's Hot Chicken",
 		tags: ['Chicken'],
 		rating: 8,
 		pricePerPerson: 15,
-		location: 'Midvale'
+		locations: ['Midvale']
 	},
 	{
 		name: 'Dolcetti Gelato',
 		tags: ['Ice Cream'],
 		rating: 9,
 		pricePerPerson: 10,
-		location: 'Sugarhouse'
+		locations: ['Sugarhouse']
 	},
 	{
 		name: 'Frankies',
@@ -93,105 +71,105 @@ const entries = [
 		rating: 10,
 		notes: 'New York style',
 		pricePerPerson: 10,
-		location: 'Murray'
+		locations: ['Murray']
 	},
 	{
 		name: 'Ganesh',
 		tags: ['Indian'],
 		rating: 9,
 		pricePerPerson: 20,
-		location: 'Midvale'
+		locations: ['Midvale']
 	},
 	{
 		name: 'Grove Market and Deli',
 		tags: ['Sandwich'],
 		rating: 8,
 		pricePerPerson: 10,
-		location: 'South Salt Lake'
+		locations: ['South Salt Lake']
 	},
 	{
 		name: 'Honolulu Grill',
 		tags: ['Hawaiian'],
 		rating: 8,
 		pricePerPerson: 15,
-		location: 'West Jordan'
+		locations: ['West Jordan']
 	},
 	{
 		name: 'Jinya',
 		tags: ['Ramen'],
 		rating: 8,
 		pricePerPerson: 15,
-		location: 'Sugarhouse/Murray'
+		locations: ['Sugarhouse', 'Murray']
 	},
 	{
 		name: 'La Yaquesita',
 		tags: ['Mexican'],
 		rating: 8,
 		pricePerPerson: 10,
-		location: 'Midvale'
+		locations: ['Midvale']
 	},
 	{
 		name: 'Laziz Kitchen',
 		tags: ['Mediterranean'],
 		rating: 8,
 		pricePerPerson: 20,
-		location: 'Downtown/Midvale'
+		locations: ['Downtown', 'Midvale']
 	},
 	{
 		name: 'Lucky 13',
 		tags: ['Burger'],
 		rating: 8,
 		pricePerPerson: 15,
-		location: 'South Salt Lake'
+		locations: ['South Salt Lake']
 	},
 	{
 		name: 'Nomad East',
 		tags: ['Pizza'],
 		rating: 8,
 		pricePerPerson: 20,
-		location: 'Sugarhouse'
+		locations: ['Sugarhouse']
 	},
 	{
 		name: 'Osteria Amore',
 		tags: ['Italian'],
 		rating: 9,
 		pricePerPerson: 50,
-		location: 'Downtown'
+		locations: ['Downtown']
 	},
 	{
 		name: 'Paradise Biryani Pointe',
 		tags: ['Indian'],
 		rating: 9,
 		pricePerPerson: 20,
-		location: 'Draper'
+		locations: ['Draper']
 	},
 	{
 		name: 'Phở 777',
 		tags: ['Vietnamese'],
 		rating: 8,
 		pricePerPerson: 15,
-		location: 'West Valley'
+		locations: ['West Valley']
 	},
 	{
 		name: 'Pretty Bird',
 		tags: ['Chicken'],
 		rating: 9,
 		pricePerPerson: 20,
-		location: 'Downtown/Sugarhouse/Midvale'
+		locations: ['Downtown', 'Sugarhouse', 'Midvale']
 	},
 	{
 		name: 'Proper Burger',
 		tags: ['Burger'],
 		rating: 8,
 		pricePerPerson: 15,
-		location: 'Downtown'
+		locations: ['Downtown']
 	},
 	{
 		name: 'Red Iguana',
 		tags: ['Mexican'],
 		rating: 8,
 		pricePerPerson: 20,
-		location: 'Downtown'
+		locations: ['Downtown']
 	},
 	{
 		name: 'Sauce Boss Southern Kitchen',
@@ -199,14 +177,14 @@ const entries = [
 		rating: 9,
 		notes: 'So good!',
 		pricePerPerson: 20,
-		location: 'Draper'
+		locations: ['Draper']
 	},
 	{
 		name: 'Sawadee',
 		tags: ['Thai'],
 		rating: 8,
 		pricePerPerson: 20,
-		location: 'Downtown'
+		locations: ['Downtown']
 	},
 	{
 		name: 'Settebello',
@@ -214,35 +192,35 @@ const entries = [
 		rating: 9,
 		notes: 'My favorite pizza in Utah',
 		pricePerPerson: 20,
-		location: 'Downtown'
+		locations: ['Downtown']
 	},
 	{
 		name: 'Takashi',
 		tags: ['Sushi'],
 		rating: 9,
 		pricePerPerson: 50,
-		location: 'Downtown'
+		locations: ['Downtown']
 	},
 	{
 		name: 'Vertical diner',
 		tags: ['Diner', 'Vegan'],
 		rating: 8,
 		pricePerPerson: 20,
-		location: 'Downtown'
+		locations: ['Downtown']
 	},
 	{
 		name: "Victor's pizza co",
 		tags: ['Pizza'],
 		rating: 8,
 		pricePerPerson: 20,
-		location: 'South Salt Lake'
+		locations: ['South Salt Lake']
 	},
 	{
 		name: 'Zhu Ting Ji 竹亭记',
 		tags: ['Chinese'],
 		rating: 8,
 		pricePerPerson: 20,
-		location: 'Murray'
+		locations: ['Murray']
 	}
 ] satisfies RestaurantEntry[];
 
@@ -250,7 +228,6 @@ const coordinatesByName: Record<string, { lat: number; lng: number }> = coordina
 
 export const restaurants: Restaurant[] = entries.map((entry) => ({
 	...entry,
-	locationParts: toLocationParts(entry.location),
 	...coordinatesByName[entry.name]
 }));
 
@@ -261,7 +238,7 @@ export const restaurantTags = [
 
 /** Sorted, de-duplicated list of every location present in the data. */
 export const locations = [
-	...new Set(restaurants.flatMap((restaurant) => restaurant.locationParts))
+	...new Set(restaurants.flatMap((restaurant) => restaurant.locations))
 ].sort();
 
 /** Sorted, de-duplicated list of the source data's per-person price points. */

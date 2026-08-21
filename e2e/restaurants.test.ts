@@ -49,12 +49,8 @@ test.describe('Restaurants page', () => {
 	});
 
 	test('filters by location, including places listed in several', async ({ page }) => {
-		// Midvale covers single-location places and multi-location ones such as
-		// Laziz Kitchen ("Downtown/Midvale") and Pretty Bird.
-		const expected = restaurants.filter((restaurant) =>
-			restaurant.locationParts.includes('Midvale')
-		);
-		const multiple = expected.filter((restaurant) => restaurant.locationParts.length > 1);
+		const expected = restaurants.filter((restaurant) => restaurant.locations.includes('Midvale'));
+		const multiple = expected.filter((restaurant) => restaurant.locations.length > 1);
 		expect(multiple.length).toBeGreaterThan(0);
 
 		await page.getByLabel('Location', { exact: true }).selectOption('Midvale');

@@ -11,13 +11,13 @@
 		type Restaurant
 	} from '$lib/data/restaurants';
 
-	type SortKey = 'name' | 'tags' | 'location' | 'pricePerPerson' | 'rating';
+	type SortKey = 'name' | 'tags' | 'locations' | 'pricePerPerson' | 'rating';
 	type SortDirection = 'asc' | 'desc';
 
 	const columns: { key: SortKey; label: string; alignRight: boolean }[] = [
 		{ key: 'name', label: 'Restaurant', alignRight: false },
 		{ key: 'tags', label: 'Tags', alignRight: false },
-		{ key: 'location', label: 'Location', alignRight: false },
+		{ key: 'locations', label: 'Location', alignRight: false },
 		{ key: 'pricePerPerson', label: 'Price/person', alignRight: true },
 		{ key: 'rating', label: 'Rating', alignRight: true }
 	];
@@ -26,7 +26,7 @@
 	const defaultDirection: Record<SortKey, SortDirection> = {
 		name: 'asc',
 		tags: 'asc',
-		location: 'asc',
+		locations: 'asc',
 		pricePerPerson: 'desc',
 		rating: 'desc'
 	};
@@ -45,7 +45,12 @@
 	const hasFilters = $derived(Boolean(search || tag || location || pricePerPerson || minRating));
 
 	const matchesSearch = (restaurant: Restaurant, query: string) => {
-		const haystack = [restaurant.name, restaurant.location, restaurant.notes, ...restaurant.tags]
+		const haystack = [
+			restaurant.name,
+			restaurant.notes,
+			...restaurant.tags,
+			...restaurant.locations
+		]
 			.filter(Boolean)
 			.join(' ')
 			.toLowerCase();
@@ -59,9 +64,7 @@
 		return restaurants.filter((restaurant) => {
 			if (query && !matchesSearch(restaurant, query)) return false;
 			if (tag && !restaurant.tags.includes(tag)) return false;
-			// Match on the split parts so a place listed in several neighborhoods
-			// still turns up when filtering for any one of them.
-			if (location && !restaurant.locationParts.includes(location)) return false;
+			if (location && !restaurant.locations.includes(location)) return false;
 			if (pricePerPerson && restaurant.pricePerPerson !== pricePerPerson) return false;
 			if (minRating && restaurant.rating < minRating) return false;
 			return true;
@@ -106,9 +109,11 @@
 		activeName = activeName === name ? null : name;
 	};
 
+	const locationLabel = (restaurant: Restaurant) => restaurant.locations.join('/');
+
 	const directionsUrl = (restaurant: Restaurant) =>
 		`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-			`${restaurant.name}, ${restaurant.location}, Utah`
+			`${restaurant.name}, ${restaurant.locations[0]}, Utah`
 		)}`;
 
 	// When a map pin is clicked, bring its row into view.
@@ -144,7 +149,7 @@
 				priceRange: `$${restaurant.pricePerPerson} per person`,
 				address: {
 					'@type': 'PostalAddress',
-					addressLocality: restaurant.location,
+					addressLocality: restaurant.locations[0],
 					addressRegion: 'UT'
 				},
 				...(restaurant.lat != null && restaurant.lng != null
@@ -288,7 +293,7 @@
 						<option value="name:asc">Name, A to Z</option>
 						<option value="name:desc">Name, Z to A</option>
 						<option value="tags:asc">Tags, A to Z</option>
-						<option value="location:asc">Location, A to Z</option>
+						<option value="locations:asc">Location, A to Z</option>
 					</select>
 				</div>
 			</div>
@@ -379,7 +384,7 @@
 										</span>
 									</td>
 									<td class="py-3 pr-4">{restaurant.tags.join(', ')}</td>
-									<td class="py-3 pr-4">{restaurant.location}</td>
+									<td class="py-3 pr-4">{locationLabel(restaurant)}</td>
 									<td class="py-3 pr-4 text-right whitespace-nowrap">
 										${restaurant.pricePerPerson}
 									</td>
@@ -409,7 +414,7 @@
 									{restaurant.name}
 								</button>
 								<p class="text-gray-700 dark:text-gray-300">
-									{restaurant.tags.join(', ')} &middot; {restaurant.location} &middot; ${restaurant.pricePerPerson}/person
+									{restaurant.tags.join(', ')} &middot; {locationLabel(restaurant)} &middot; ${restaurant.pricePerPerson}/person
 									&middot; {restaurant.rating}/10
 								</p>
 								{#if restaurant.notes}
