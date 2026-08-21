@@ -45,6 +45,13 @@ const entries = [
 		locations: ['Downtown']
 	},
 	{
+		name: "Caffe d'Bolla",
+		tags: ['Coffee'],
+		rating: 10,
+		pricePerPerson: 10,
+		locations: ['Downtown']
+	},
+	{
 		name: 'Chanon Thai Cafe',
 		tags: ['Thai'],
 		rating: 9,
