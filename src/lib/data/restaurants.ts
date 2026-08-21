@@ -151,6 +151,13 @@ const entries = [
 		locations: ['Draper']
 	},
 	{
+		name: 'Patty Shack',
+		tags: ['Burger'],
+		rating: 9,
+		pricePerPerson: 15,
+		locations: ['Murray']
+	},
+	{
 		name: 'Phở 777',
 		tags: ['Vietnamese'],
 		rating: 8,
