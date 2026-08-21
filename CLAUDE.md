@@ -44,7 +44,7 @@ bun up                   # Update dependencies
 ### Framework & Deployment
 
 - **SvelteKit 2.x** with Svelte 5 (uses Svelte 5 runes syntax: `$props`, `$derived`, `$state`)
-- Deployed on **Vercel** using `@sveltejs/adapter-vercel`
+- Deployed on **Cloudflare Workers** using `@sveltejs/adapter-cloudflare`, configured in `wrangler.jsonc`
 - Uses **file-based routing** in `src/routes/`
 
 ### Key Architectural Patterns
@@ -91,6 +91,31 @@ Two image treatments, picked with `imageStyle`:
 Long titles are auto-shrunk to fit; the script warns if copy still overflows.
 `e2e/og-images.test.ts` asserts every route's `og:image`/`twitter:image` points at an
 existing 1200x630 JPEG.
+
+#### Restaurant Suggestions
+
+`/restaurants` has a "Suggest a restaurant" dialog, and it is the only page with a
+database behind it:
+
+1. `src/components/SuggestRestaurantDialog.svelte` is a native `<dialog>` opened
+   with `showModal()` (top layer, so it clears the sticky header and the map),
+   controlled by a `bind:open` prop. It owns its own submit state instead of the
+   page's `form` prop, so a suggestion never touches the page's filters or URL.
+2. The `suggest` action in `src/routes/restaurants/+page.server.ts` verifies
+   Turnstile, writes the row to **Cloudflare D1**, then sends the Telegram
+   notification. It stores first and notifies second: a saved-but-unannounced
+   suggestion is recoverable, an announced-but-lost one is not.
+3. The schema lives in `migrations/`, applied with
+   `bunx wrangler d1 migrations apply`. The `DB` binding is declared in
+   `wrangler.jsonc` and typed in `src/app.d.ts`.
+4. It reuses the contact form's `TURNSTILE_SECRET_KEY`, `TELEGRAM_BOT_TOKEN`, and
+   `TELEGRAM_CHAT_ID`. Without any of those, or without the binding, the action
+   fails with a visitor-facing "temporarily unavailable" message rather than
+   accepting a submission it would drop. `vite dev`/`vite preview` have no
+   binding; use `bunx wrangler dev` to exercise the whole path.
+
+`e2e/restaurant-suggestions.test.ts` intercepts the action, so the tests do not
+need Telegram, D1, or Turnstile configured.
 
 #### Image Handling
 
@@ -211,6 +236,9 @@ Required for production:
 
 - `PUBLIC_POSTHOG_API_KEY` - PostHog analytics key
 - `PUBLIC_POSTHOG_ENABLED` - Toggle analytics (set to "false" to disable)
+- `PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` - Turnstile, used by the
+  contact form and the restaurant suggestion dialog
+- `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` - Where both of those forms notify
 
 See `.env.example` for reference.
 

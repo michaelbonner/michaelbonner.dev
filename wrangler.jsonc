@@ -8,6 +8,18 @@
 		"binding": "ASSETS"
 	},
 
+	// Restaurant suggestions submitted from /restaurants. Create the database
+	// once with `bunx wrangler d1 create michaelbonner-dev` and paste the id it
+	// prints in below, then apply `migrations/` (see the README).
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "michaelbonner-dev",
+			"database_id": "REPLACE_WITH_D1_DATABASE_ID",
+			"migrations_dir": "migrations"
+		}
+	],
+
 	"vars": {
 		"PUBLIC_POSTHOG_API_KEY": "phc_CR48D5k9rHyRASc1LcsP2vkacYA7WnCTRmV7lsuDULf",
 		"PUBLIC_POSTHOG_ENABLED": "true",
