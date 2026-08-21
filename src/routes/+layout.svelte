@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import '@fontsource-variable/newsreader';
+	import '@fontsource-variable/public-sans';
 
 	import { browser } from '$app/environment';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
@@ -8,7 +9,7 @@
 	import { env } from '$env/dynamic/public';
 	import { partytownSnippet } from '@qwik.dev/partytown/integration';
 	import posthog from 'posthog-js';
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import { classNames } from '../functions/classNames';
 	import { classes } from '../styles/classes';
 	import { resolve } from '$app/paths';
@@ -18,23 +19,31 @@
 
 	let { children }: Props = $props();
 
-	let interval: ReturnType<typeof setInterval>;
+	const mainNav = [
+		{ label: 'Home', href: resolve('/') },
+		{ label: 'Blog', href: resolve('/blog') },
+		{ label: 'Contact', href: resolve('/contact') }
+	];
+
+	const footerNav = [
+		{ label: 'Home', href: resolve('/') },
+		{ label: 'Blog', href: resolve('/blog') },
+		{ label: 'Uses', href: resolve('/uses') },
+		{ label: 'Favorite Restaurants', href: resolve('/restaurants') },
+		{ label: 'Patents', href: resolve('/patents') },
+		{ label: 'Policies', href: resolve('/policies') },
+		{ label: 'Contact', href: resolve('/contact') }
+	];
+
+	// The home link should only light up on home itself; every other section
+	// link also covers its child routes, so a blog post still marks "Blog".
+	const isCurrent = (href: string) =>
+		href === resolve('/') ? page.url.pathname === href : page.url.pathname.startsWith(href);
 
 	onMount(() => {
-		const meta = document.querySelector('meta[name="theme-color"]');
-		let hue = 208;
-
-		interval = setInterval(() => {
-			meta?.setAttribute('content', `hsl(${(hue -= 1)}, 50%, 30%)`);
-		}, 100);
-
 		document.querySelectorAll('link[rel="preload"]').forEach((link) => {
 			link.setAttribute('rel', 'stylesheet');
 		});
-	});
-
-	onDestroy(() => {
-		clearInterval(interval);
 	});
 
 	if (browser && env.PUBLIC_POSTHOG_ENABLED !== 'false' && env.PUBLIC_POSTHOG_API_KEY) {
@@ -54,8 +63,8 @@
 </script>
 
 <svelte:head>
-	<meta name="theme-color" content="#264f73" />
-	<meta name="color-scheme" content="dark light" />
+	<meta name="theme-color" content="#faf6f2" />
+	<meta name="color-scheme" content="light" />
 	<meta property="og:url" content={`https://michaelbonner.dev${page.url.pathname}`} />
 	<meta property="og:locale" content="en_US" />
 	<meta name="author" content="Michael Bonner" />
@@ -233,57 +242,78 @@
 	</script>
 </svelte:head>
 
-<div
-	class={classNames(
-		'bg-opacity-80 min-h-screen bg-gray-200 font-serif text-gray-800',
-		'dark:bg-opacity-70 dark:bg-gray-800 dark:text-gray-200'
-	)}
->
+<div class="bg-ground text-ink flex min-h-screen flex-col">
+	<!--
+		A hairline under the header is the only separation it needs; the old version
+		floated the wordmark and nav on the same field as the page content with no
+		edge at all. Sticky with a translucent ground so long pages keep the nav.
+	-->
 	<header
-		class="container mx-auto flex flex-col items-start justify-between gap-4 px-8 pt-12 sm:flex-row"
+		class={classNames(
+			'border-rule sticky top-0 z-30 border-b',
+			'bg-ground/85 supports-[not(backdrop-filter:blur(0))]:bg-ground backdrop-blur-sm'
+		)}
 	>
-		<a
-			href={resolve('/')}
-			class={classNames(
-				'origin-left scale-150',
-				'hover:scale-150',
-				'sm:scale-100 sm:text-3xl',
-				'sm:hover:scale-105',
-				classes.menuItem
-			)}
-		>
-			Michael Bonner
-		</a>
-		<nav class="flex justify-end space-x-6 text-xl" aria-label="Main">
-			<a href={resolve('/')} class={classes.menuItem}>Home</a>
-			<a href={resolve('/blog')} class={classes.menuItem}>Blog</a>
-			<a href={resolve('/contact')} class={classes.menuItem}>Contact</a>
-		</nav>
+		<div class="container mx-auto flex items-baseline justify-between gap-6 px-6 py-4 sm:px-8">
+			<a
+				href={resolve('/')}
+				class={classNames(
+					'text-ink font-serif text-xl font-semibold tracking-tight no-underline sm:text-2xl',
+					'hover:text-accent transition-colors duration-150 ease-out'
+				)}
+			>
+				Michael Bonner
+			</a>
+			<nav class="flex items-baseline gap-5 sm:gap-7" aria-label="Main">
+				{#each mainNav as item (item.href)}
+					<a
+						href={item.href}
+						class={classes.menuItem}
+						aria-current={isCurrent(item.href) ? 'page' : undefined}
+					>
+						{item.label}
+					</a>
+				{/each}
+			</nav>
+		</div>
 	</header>
 
-	<main>
+	<main class="flex-1">
 		{@render children_render?.()}
 	</main>
 
-	<footer
-		class="container mx-auto justify-between gap-8 p-8 lg:flex lg:flex-row-reverse lg:items-center"
-	>
-		<nav
-			class="flex flex-wrap justify-center gap-6 pb-8 text-xl lg:justify-end lg:py-0"
-			aria-label="Footer"
-		>
-			<a href={resolve('/')} class={classes.menuItem}>Home</a>
-			<a href={resolve('/blog')} class={classes.menuItem}>Blog</a>
-			<a href={resolve('/uses')} class={classes.menuItem}>Uses</a>
-			<a href={resolve('/restaurants')} class={classes.menuItem}>Favorite Restaurants</a>
-			<a href={resolve('/patents')} class={classes.menuItem}>Patents</a>
-			<a href={resolve('/policies')} class={classes.menuItem}>Policies</a>
-			<a href={resolve('/contact')} class={classes.menuItem}>Contact</a>
-		</nav>
-		<p class="flex flex-wrap items-end justify-center gap-x-4 gap-y-6 md:gap-y-2 lg:justify-start">
-			<span>
-				&copy; 2021&ndash;{new Date().getFullYear()} Michael Bonner.
-			</span>
-		</p>
+	<footer class="border-rule bg-ground-sunken mt-24 border-t">
+		<div class="container mx-auto grid gap-10 px-6 py-14 sm:px-8 lg:grid-cols-[1fr_auto]">
+			<div class="grid max-w-md gap-3">
+				<p class="text-h3 text-ink font-serif font-semibold">Michael Bonner</p>
+				<p class="text-ui text-ink-muted font-sans">
+					Web developer in Salt Lake City, Utah. Building websites, web apps, and mobile apps since
+					2003.
+				</p>
+			</div>
+
+			<nav
+				class="grid gap-x-10 gap-y-3 self-start sm:grid-cols-2 lg:justify-items-end"
+				aria-label="Footer"
+			>
+				{#each footerNav as item (item.href)}
+					<a
+						href={item.href}
+						class={classes.menuItem}
+						aria-current={isCurrent(item.href) ? 'page' : undefined}
+					>
+						{item.label}
+					</a>
+				{/each}
+			</nav>
+		</div>
+
+		<div class="border-rule border-t">
+			<div class="container mx-auto px-6 py-6 sm:px-8">
+				<p class="text-ui-sm text-ink-faint font-sans">
+					&copy; 2021&ndash;{new Date().getFullYear()} Michael Bonner
+				</p>
+			</div>
+		</div>
 	</footer>
 </div>
