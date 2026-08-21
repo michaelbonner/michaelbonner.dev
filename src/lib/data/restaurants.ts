@@ -66,13 +66,6 @@ const entries = [
 		locations: ['Downtown']
 	},
 	{
-		name: "Dave's Hot Chicken",
-		tags: ['Chicken'],
-		rating: 8,
-		pricePerPerson: 15,
-		locations: ['Midvale']
-	},
-	{
 		name: 'Dolcetti Gelato',
 		tags: ['Ice Cream'],
 		rating: 9,
