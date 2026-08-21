@@ -400,15 +400,15 @@
 	<link rel="canonical" href="https://michaelbonner.dev/ellie" />
 </svelte:head>
 
-<div class="container mx-auto grid gap-8 px-8 py-12">
-	<div class="prose prose-xl dark:prose-invert mx-auto mt-12 max-w-3xl">
+<div class="container mx-auto grid gap-8 px-6 py-16 sm:px-8 lg:py-24">
+	<div class="prose prose-xl mx-auto mt-12 max-w-[68ch]">
 		<p>
 			<strong>Warning</strong>: This post is about my dog Ellie. She passed away on January 30th,
 			2023. I'm writing this to help me remember her. If you don't want to read about my feelings
 			about a dog
 			<a href="https://reasonstobecheerful.world/">you can leave now, no hard feelings</a>.
 		</p>
-		<hr class="border-gray-300 dark:border-gray-700" />
+		<hr class="border-rule" />
 		<figure>
 			<enhanced:img
 				alt="Ellie"
@@ -450,7 +450,7 @@
 
 		<p>I'm realizing that only way to heal is to forget parts of you. And that fucking sucks.</p>
 
-		<hr class="border-gray-300 dark:border-gray-700" />
+		<hr class="border-rule" />
 
 		<p>
 			I was 24 when I first met you, I was newly married, and I was so naive. My then wife
@@ -494,7 +494,7 @@
 	</div>
 
 	<div
-		class="mb-scrollable mx-auto grid max-h-[80vh] max-w-7xl gap-2 overflow-auto rounded-2xl bg-gray-300 p-8 dark:bg-gray-700"
+		class="mb-scrollable border-rule bg-ground-sunken mx-auto grid max-h-[80vh] max-w-7xl gap-2 overflow-auto rounded-2xl border p-4 sm:p-6"
 	>
 		<ImageGallery galleryID="ellie-puppy" images={puppyImages} />
 
@@ -559,7 +559,7 @@
 		</div>
 	</div>
 
-	<div class="prose prose-xl dark:prose-invert mx-auto mt-12 max-w-3xl">
+	<div class="prose prose-xl mx-auto mt-12 max-w-[68ch]">
 		<p>
 			I learned I could take you almost anywhere, so I did. We went on so many adventures together.
 			You loved camping and hiking. That first summer we took you to Tanner Park to see if you would
@@ -649,12 +649,12 @@
 	</div>
 
 	<div
-		class="mb-scrollable mx-auto max-h-[80vh] max-w-7xl overflow-auto rounded-2xl bg-gray-300 p-8 dark:bg-gray-700"
+		class="mb-scrollable border-rule bg-ground-sunken mx-auto max-h-[80vh] max-w-7xl overflow-auto rounded-2xl border p-4 sm:p-6"
 	>
 		<ImageGallery galleryID="ellie-adult" images={adultImages} />
 	</div>
 
-	<div class="prose prose-xl dark:prose-invert mx-auto mt-12 max-w-3xl">
+	<div class="prose prose-xl mx-auto mt-12 max-w-[68ch]">
 		<p>
 			I told you that you would need to tell me when you were ready. I will forever be grateful that
 			you told me so clearly. When your back legs quit working for the last few days, I helped you
@@ -700,11 +700,13 @@
 			/>
 		</figure>
 
-		<div class="mt-8 aspect-video w-full rounded-xl border-8 border-gray-300 dark:border-gray-700">
+		<div
+			class="not-prose border-rule bg-ground-sunken mt-8 aspect-video w-full overflow-hidden rounded-xl border"
+		>
 			<iframe
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen
-				class="rounded-sm bg-gray-500"
+				class="bg-ground-sunken"
 				frameborder="0"
 				height="100%"
 				loading="lazy"
@@ -715,7 +717,7 @@
 			></iframe>
 		</div>
 
-		<hr class="border-gray-300 dark:border-gray-700" />
+		<hr class="border-rule" />
 
 		<p>Posted 08 Aug 2023</p>
 	</div>

@@ -1,14 +1,14 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { blogArticles } from '$lib/data/blogArticles';
-	import clsx from 'clsx';
 	import type { Picture } from 'vite-imagetools';
-	import H2 from '../components/H2.svelte';
 	import OrganizationSchema from '../components/OrganizationSchema.svelte';
+	import ProjectCard from '../components/ProjectCard.svelte';
+	import Section from '../components/Section.svelte';
 	import Seo from '../components/Seo.svelte';
 	import { classNames } from '../functions/classNames';
 	import Github from '../icons/Github.svelte';
 	import Instagram from '../icons/Instagram.svelte';
-	import Link from '../icons/Link.svelte';
 	import LinkedIn from '../icons/LinkedIn.svelte';
 	import { classes } from '../styles/classes';
 	// images
@@ -436,6 +436,18 @@
 		'WordPress',
 		'Shopify'
 	];
+	// Shown under the hero photo, where the column previously ran empty.
+	const facts = [
+		{ label: 'Based in', value: 'Salt Lake City, UT' },
+		{ label: 'Building since', value: '2003' },
+		{ label: 'Agency', value: 'Bootpack Digital' },
+		{ label: 'Focus', value: 'Apps, APIs, integrations' }
+	];
+
+	const socials = [
+		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/michaelbonner/' },
+		{ label: 'Instagram', href: 'https://www.instagram.com/michael__bonner' }
+	];
 </script>
 
 <Seo
@@ -450,269 +462,212 @@
 	<link rel="canonical" href="https://michaelbonner.dev/" />
 </svelte:head>
 
-<div class="container mx-auto flex items-center px-8 py-12">
-	<div class="sm:pt-8">
-		<div class="lg:flex lg:flex-row-reverse lg:pt-16">
-			<div class="mt-8 w-full lg:mt-0 lg:w-1/3">
-				<enhanced:img
-					alt=""
-					class="bg-opacity-100 h-auto w-full rounded-lg mix-blend-luminosity transition-transform hover:scale-105 hover:rotate-1 hover:bg-blend-darken"
-					fetchpriority="high"
-					src={mainImage}
-				/>
+<!--
+	The hero is deliberately asymmetric: the sentence gets the wide column and the
+	photo the narrow one, with the photo's caption block filling what used to be a
+	tall empty gap underneath it.
+-->
+<div class="container mx-auto px-6 sm:px-8">
+	<header class="grid gap-12 py-16 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)] lg:gap-20 lg:py-24">
+		<div class="grid content-start gap-8">
+			<p class={classes.eyebrow}>Web developer &middot; Salt Lake City, Utah</p>
+
+			<h1 class="text-h1 text-ink max-w-[30ch] font-serif font-semibold">
+				Hi! I&apos;m Michael Bonner, a web developer in Salt Lake City, Utah. I run a small agency
+				with some friends called <a
+					href="https://bootpackdigital.com/"
+					class="text-accent decoration-accent/40 hover:decoration-accent underline decoration-1 underline-offset-[6px] transition-[text-decoration-color] duration-150 ease-out"
+					>Bootpack Digital</a
+				>.
+			</h1>
+
+			<div class="text-lead text-ink-muted grid max-w-[65ch] gap-4 font-serif">
+				<p>
+					I started making websites in high school back in 2003. I actually found a copy of my first
+					site and <a class={classes.bodyLink} href="https://tuff.michaelbonner.dev/"
+						>put it up here</a
+					>. Epic, right? I don&apos;t miss the days of GeoCities. From there I made websites for
+					people I knew, then people they knew, and so on. Making websites was definitely my thing.
+					Since then I have worked at a handful of places making websites, web apps, and mobile
+					apps. I was also a director at a digital agency for several years, and taught a boot camp
+					for the University of Utah. I love what I do, and I&apos;m always down to chat about it.
+				</p>
+				<p>
+					I really like podcasts, so I made a site to share the podcasts I listen to. You can <a
+						class={classes.bodyLink}
+						href="https://podcasts.michaelbonner.dev/">check that out here</a
+					>.
+				</p>
 			</div>
-			<div class="mt-8 w-full lg:mt-0 lg:w-2/3 lg:pr-8">
-				<h1 class="text-3xl leading-relaxed tracking-wide lg:pr-8 lg:text-4xl">
-					Hi! I&apos;m <span class="font-medium whitespace-nowrap"> Michael Bonner</span>, a web
-					developer in Salt Lake City, Utah. I run a small agency with some friends called
-					<span class="whitespace-nowrap">
-						<a
-							class={classNames(
-								'!lg:text-4xl inline-block! text-3xl!',
-								'font-medium lg:inline-block lg:leading-none',
-								classes.largeBodyLink
-							)}
-							href="https://bootpackdigital.com/">Bootpack Digital</a
-						>.
-					</span>
-				</h1>
-				<div class="my-8 inline-block lg:my-0">
-					<a
-						class={classNames('text-2xl lg:flex', classes.largeBodyLink, 'my-4 lg:my-8')}
-						href="https://github.com/michaelbonner"
-					>
-						<span>See what I&apos;m up to on GitHub</span>
-						<Github className="hidden lg:inline-block" />
-					</a>
-				</div>
-				<div class="text-xl leading-relaxed">
-					<p class="mt-4">
-						I started making websites in high school back in 2003. I actually found a copy of my
-						first site and <a class={classes.bodyLink} href="https://tuff.michaelbonner.dev/">
-							put it up here
-						</a>
-						. Epic, right? I don&apos;t miss the days of GeoCities. From there I made websites for people
-						I knew, then people they knew, and so on. Making websites was definitely my thing. Since then
-						I have worked at a handful of places making websites, web apps, and mobile apps. I was also
-						a director at a digital agency for several years, and taught a boot camp for the University
-						of Utah. I love what I do, and I&apos;m always down to chat about it.
-					</p>
-					<p class="mt-4">
-						I really like podcasts, so I made a site to share the podcasts I listen to. You can <a
-							class={classes.bodyLink}
-							href="https://podcasts.michaelbonner.dev/">check that out here</a
-						>.
-					</p>
-				</div>
+
+			<div class="flex flex-wrap items-center gap-3">
+				<a class={classes.button} href="https://github.com/michaelbonner">
+					<Github className="size-[1.1em]" />
+					<span>See what I&apos;m up to on GitHub</span>
+				</a>
+				<a class={classes.buttonQuiet} href={resolve('/contact')}>Get in touch</a>
 			</div>
 		</div>
 
-		<div class="max-w-7xl lg:mt-32">
-			<H2 id="projects">Projects I&apos;m proud of</H2>
-			<ul class="mt-8 grid gap-x-24 gap-y-12 text-lg lg:mt-16 lg:grid-cols-2 lg:gap-y-24">
+		<div class="grid content-start gap-6">
+			<enhanced:img
+				alt="Michael Bonner on the beach"
+				class="border-rule shadow-lift h-auto w-full rounded-xl border object-cover"
+				fetchpriority="high"
+				src={mainImage}
+				sizes="(min-width: 1024px) 420px, 100vw"
+			/>
+
+			<!--
+				Fills the column under the photo, which previously ran empty for the
+				full height of the intro copy.
+			-->
+			<dl class="border-rule grid gap-3 border-t pt-6">
+				{#each facts as fact (fact.label)}
+					<div class="flex items-baseline justify-between gap-4">
+						<dt class={classes.label}>{fact.label}</dt>
+						<dd class="text-ui text-ink text-right font-sans">{fact.value}</dd>
+					</div>
+				{/each}
+			</dl>
+		</div>
+	</header>
+
+	<div class="grid gap-20 pb-8 lg:gap-28">
+		<Section
+			id="projects"
+			eyebrow="Client work"
+			heading="Projects I'm proud of"
+			meta={`${projects.length} projects`}
+		>
+			<ul class="grid gap-8 lg:grid-cols-2 lg:gap-10">
 				{#each projects as project, projectIndex (project.title)}
-					<li class="mt-8 grid gap-y-4 lg:mt-0 lg:ml-8">
-						<a
-							aria-label={`View ${project.title}`}
-							class="transition-transform hover:scale-105 hover:rotate-1"
-							href={project.url}
-						>
-							<enhanced:img
-								alt=""
-								class="rounded-lg border border-gray-100 shadow-sm md:max-w-md dark:border-gray-900/40"
-								loading={projectIndex <= 1 ? 'eager' : 'lazy'}
-								src={project.image}
-								sizes="(min-width:768px) 448px, 100vw"
-							/>
-						</a>
-						<p>
-							<a class={classNames('text-2xl!', classes.largeBodyLink)} href={project.url}>
-								{project.title}
-							</a>
-						</p>
-						<p>{project.description}</p>
-						<div class="flex justify-start space-x-4">
-							{#if project.url}
-								<p>
-									<a class={classes.largeBodyLink} href={project.url}>
-										<Link className="text-xl" />
-										<span>View Project</span>
-									</a>
-								</p>
-							{/if}
-							{#if project.github}
-								<p>
-									<a class={classes.largeBodyLink} href={project.github}>
-										<Github className="text-xl" />
-										<span>Source</span>
-									</a>
-								</p>
-							{/if}
-							{#if project.blogPost}
-								<p>
-									<a class={classes.largeBodyLink} href={project.blogPost}>
-										<svg
-											class="inline-block size-5"
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												stroke-width="2"
-												d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-											/>
-										</svg>
-										<span>Read more about {project.title}</span>
-									</a>
-								</p>
-							{/if}
-						</div>
+					<li class="grid">
+						<ProjectCard {...project} eager={projectIndex <= 1} />
 					</li>
 				{/each}
 			</ul>
-		</div>
-		<div class="max-w-7xl lg:mt-32">
-			<H2>Things I&apos;ve built for fun</H2>
-			<ul class="mt-8 grid gap-x-24 gap-y-12 text-lg lg:mt-16 lg:grid-cols-2 lg:gap-y-24">
-				{#each otherThings as project (project.title)}
-					<li class="mt-8 grid gap-y-4 lg:mt-0 lg:ml-8">
-						{#if project.image}
-							<a
-								aria-label={`View ${project.title}`}
-								class="transition-transform hover:scale-105 hover:rotate-1"
-								href={project.url}
-							>
-								<enhanced:img
-									alt=""
-									class="rounded-lg border border-gray-100 shadow-sm md:max-w-md dark:border-gray-900/40"
-									loading="lazy"
-									src={project.image}
-									sizes="(min-width:768px) 448px, 100vw"
-								/>
-							</a>
-						{/if}
-						<p>
-							<a class={classNames('text-2xl!', classes.largeBodyLink)} href={project.url}>
-								{project.title}
-							</a>
-						</p>
-						<p>{project.description}</p>
-						<div class="flex justify-start space-x-4">
-							{#if project.url}
-								<p>
-									<a class={classes.largeBodyLink} href={project.url}>
-										<Link className="text-xl" />
-										<span>View Project</span>
-									</a>
-								</p>
-							{/if}
-							{#if project.github}
-								<p>
-									<a class={classes.largeBodyLink} href={project.github}>
-										<Github className="text-xl" />
-										<span>Source</span>
-									</a>
-								</p>
-							{/if}
-							{#if project.blogPost}
-								<p>
-									<a class={classes.largeBodyLink} href={project.blogPost}>
-										<svg
-											class="inline-block size-5"
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												stroke-width="2"
-												d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-											/>
-										</svg>
-										<span>Read more about {project.title}</span>
-									</a>
-								</p>
-							{/if}
-						</div>
-					</li>
-				{/each}
-			</ul>
-		</div>
+		</Section>
 
-		<div class="max-w-7xl lg:mt-32">
-			<H2>Some Other Sites</H2>
-			<ul class="mt-8 grid grid-cols-2 gap-x-4 gap-y-6 lg:ml-8 lg:grid-cols-3 xl:grid-cols-4">
+		<Section
+			eyebrow="Side projects"
+			heading="Things I've built for fun"
+			meta={`${otherThings.length} projects`}
+		>
+			<ul class="grid gap-8 lg:grid-cols-2 lg:gap-10">
+				{#each otherThings as project (project.title)}
+					<li class="grid">
+						<ProjectCard {...project} />
+					</li>
+				{/each}
+			</ul>
+		</Section>
+
+		<Section
+			eyebrow="Archive"
+			heading="Some other sites"
+			description="Sites I've built or helped build over the years."
+			meta={`${otherSites.length} sites`}
+		>
+			<!--
+				A quiet list rather than another card grid: these are links with a
+				favicon, not projects with a story, and three card grids in a row would
+				flatten the page into one texture.
+			-->
+			<ul class="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
 				{#each otherSites as otherSite (otherSite.name)}
-					<li>
+					<li class="border-rule border-b">
 						<a
-							class="inline-flex items-center gap-4 transition hover:scale-105 hover:rotate-1"
+							class="group hover:text-accent flex items-center gap-3 py-3 no-underline transition-colors duration-150 ease-out"
 							href={otherSite.url}
 							target="_blank"
 							rel="noreferrer"
 						>
-							<enhanced:img class="size-7" alt="" src={otherSite.imgSrc} loading="lazy" />
-							<span
-								class={clsx(
-									'sm:border-b sm:border-gray-400',
-									'dark:border-gray-500',
-									'hover:border-blue-400',
-									'dark:hover:border-blue-100'
-								)}>{otherSite.name}</span
+							<enhanced:img
+								class="size-6 shrink-0 rounded-sm"
+								alt=""
+								src={otherSite.imgSrc}
+								loading="lazy"
+							/>
+							<span class="text-ui text-ink group-hover:text-accent font-sans transition-colors"
+								>{otherSite.name}</span
 							>
 						</a>
 					</li>
 				{/each}
 			</ul>
-		</div>
+		</Section>
 
-		<div class="max-w-7xl lg:mt-32">
-			<H2>Recent Blog Articles</H2>
-			<ul class="mt-8 ml-12 list-outside list-disc">
+		<Section eyebrow="Writing" heading="Recent blog articles" meta={`${blogArticles.length} posts`}>
+			<!--
+				Dates matter for judging whether writing is current, so each entry
+				carries one rather than sitting in an undated bulleted list.
+			-->
+			<ul class="border-rule grid border-t">
 				{#each blogArticles as article (article.slug)}
-					<li class="py-1">
-						<a class={clsx(classes.bodyLink, 'w-full md:w-auto')} href={`/blog/${article.slug}`}>
-							{article.title}
+					<li class="border-rule border-b">
+						<a
+							class="group flex flex-col gap-1 py-4 no-underline sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+							href={`/blog/${article.slug}`}
+						>
+							<span
+								class="text-h3 text-ink group-hover:text-accent font-serif font-medium transition-colors duration-150 ease-out"
+							>
+								{article.title}
+							</span>
+							<span class={classNames(classes.label, 'shrink-0 tabular-nums')}>
+								<time datetime={article.publishedAt.toISOString()}>
+									{article.publishedAt.toLocaleDateString('en-US', {
+										month: 'short',
+										day: 'numeric',
+										year: 'numeric'
+									})}
+								</time>
+								<span aria-hidden="true"> &middot; </span>
+								{article.readingTime}
+							</span>
 						</a>
 					</li>
 				{/each}
 			</ul>
-		</div>
+		</Section>
 
-		<div class="lg:mt-32">
-			<H2>Tools I use</H2>
-			<ul class="mt-4 list-outside list-disc gap-x-4 gap-y-2 pl-12 text-lg lg:grid lg:grid-cols-4">
+		<Section eyebrow="Stack" heading="Tools I use">
+			<!-- Chips read as a set at a glance; a four-column bulleted list read as a form. -->
+			<ul class="flex flex-wrap gap-2">
 				{#each tools as tool (tool)}
-					<li>{tool}</li>
+					<li
+						class="border-rule bg-surface text-ui text-ink-muted rounded-full border px-3.5 py-1.5 font-sans"
+					>
+						{tool}
+					</li>
 				{/each}
 			</ul>
-		</div>
-		<div class="lg:mt-32">
-			<H2>Get in touch</H2>
-			<ul class="mt-6 gap-x-4 gap-y-2 pl-4 text-lg lg:grid lg:grid-cols-4">
-				<li>
-					<div class="flex">
-						<a class={classes.largeBodyLink} href="https://www.linkedin.com/in/michaelbonner/">
-							<LinkedIn />
-							<span class="pt-1">LinkedIn</span>
+		</Section>
+
+		<Section eyebrow="Contact" heading="Get in touch">
+			<ul class="grid gap-3 sm:grid-cols-2 lg:max-w-2xl">
+				{#each socials as social (social.label)}
+					<li>
+						<a
+							href={social.href}
+							class={classNames(
+								classes.surfaceInteractive,
+								'flex items-center gap-3 p-4 no-underline'
+							)}
+						>
+							<span class="text-accent">
+								{#if social.label === 'LinkedIn'}
+									<LinkedIn />
+								{:else}
+									<Instagram />
+								{/if}
+							</span>
+							<span class="text-ui text-ink font-sans font-medium">{social.label}</span>
 						</a>
-						<span class="flex-1"></span>
-					</div>
-				</li>
-				<li>
-					<div class="flex">
-						<a class={classes.largeBodyLink} href="https://www.instagram.com/michael__bonner">
-							<Instagram />
-							<span class="pt-1">Instagram</span>
-						</a>
-						<span class="flex-1"></span>
-					</div>
-				</li>
+					</li>
+				{/each}
 			</ul>
-		</div>
+		</Section>
 	</div>
 </div>

@@ -13,9 +13,14 @@
 	<link rel="canonical" href="https://michaelbonner.dev/policies" />
 </svelte:head>
 
-<div class="container mx-auto flex items-center px-8 py-12">
-	<div class="prose dark:prose-invert mt-16">
-		<h1>Privacy Policy and Terms of Service</h1>
+<div class="container mx-auto px-6 py-16 sm:px-8 lg:py-24">
+	<div class="prose max-w-[68ch]">
+		<p
+			class="not-prose text-ui-sm text-accent mb-4 font-sans font-semibold tracking-[0.14em] uppercase"
+		>
+			Legal
+		</p>
+		<h1 class="!mt-0">Privacy Policy and Terms of Service</h1>
 		<h2>Privacy Policy</h2>
 		<div>
 			<p>

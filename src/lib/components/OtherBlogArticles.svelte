@@ -1,8 +1,7 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/state';
 	import { blogArticles } from '$lib/data/blogArticles';
-	import clsx from 'clsx';
-	import H2 from '../../components/H2.svelte';
+	import { classNames } from '../../functions/classNames';
 	import { classes } from '../../styles/classes';
 
 	// Compute related and other articles when page.route.id changes
@@ -19,34 +18,46 @@
 
 		return { relatedArticles, otherArticles };
 	});
+
+	const groups = $derived(
+		[
+			{ heading: 'Related articles', articles: articleGroups.relatedArticles },
+			{ heading: 'More writing', articles: articleGroups.otherArticles }
+		].filter((group) => group.articles.length > 0)
+	);
 </script>
 
-<aside class="container mx-auto px-8 py-12">
-	{#if articleGroups.relatedArticles.length > 0}
-		<H2>Related Articles</H2>
-		<ul class="mt-4 ml-12 list-outside list-disc">
-			{#each articleGroups.relatedArticles as article (article.slug)}
-				<li class="py-1">
-					<a class={clsx(classes.bodyLink, 'w-full md:w-auto')} href={`/blog/${article.slug}`}>
-						{article.title}
-					</a>
-				</li>
+<!--
+	Post footer navigation. Titles are links in a ruled list rather than bulleted
+	body copy, so the reader can scan them without them competing with the article.
+-->
+{#if groups.length > 0}
+	<aside class="border-rule bg-ground-sunken mt-20 border-t">
+		<div class="container mx-auto grid gap-12 px-6 py-16 sm:px-8 lg:grid-cols-2 lg:gap-16">
+			{#each groups as group (group.heading)}
+				<div class="grid content-start gap-5">
+					<h2 class={classes.eyebrow}>{group.heading}</h2>
+					<ul class="border-rule grid border-t">
+						{#each group.articles as article (article.slug)}
+							<li class="border-rule border-b">
+								<a
+									class="group flex flex-col gap-1 py-3.5 no-underline sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
+									href={`/blog/${article.slug}`}
+								>
+									<span
+										class="text-ink group-hover:text-accent font-serif text-[1.0625rem] font-medium transition-colors duration-150 ease-out"
+									>
+										{article.title}
+									</span>
+									<span class={classNames(classes.label, 'shrink-0 tabular-nums')}>
+										{article.readingTime}
+									</span>
+								</a>
+							</li>
+						{/each}
+					</ul>
+				</div>
 			{/each}
-		</ul>
-	{/if}
-
-	{#if articleGroups.otherArticles.length > 0}
-		<div class:mt-8={articleGroups.relatedArticles.length > 0}>
-			<H2>Other Articles</H2>
-			<ul class="mt-4 ml-12 list-outside list-disc">
-				{#each articleGroups.otherArticles as article (article.slug)}
-					<li class="py-1">
-						<a class={clsx(classes.bodyLink, 'w-full md:w-auto')} href={`/blog/${article.slug}`}>
-							{article.title}
-						</a>
-					</li>
-				{/each}
-			</ul>
 		</div>
-	{/if}
-</aside>
+	</aside>
+{/if}
