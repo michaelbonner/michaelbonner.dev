@@ -81,6 +81,13 @@ const entries = [
 		locations: ['Murray']
 	},
 	{
+		name: 'Fresh Donuts & Deli',
+		tags: ['Donuts'],
+		rating: 9,
+		pricePerPerson: 3,
+		locations: ['South Salt Lake']
+	},
+	{
 		name: 'Ganesh',
 		tags: ['Indian'],
 		rating: 9,
