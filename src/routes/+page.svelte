@@ -41,6 +41,7 @@
 	import eightOneOneContest from '$lib/images/sites/811contest-org.webp?enhanced';
 	import acceleratedEquityPlans from '$lib/images/sites/acceleratedep-com.webp?enhanced';
 	import artistAmyBonner from '$lib/images/sites/amy-bonner-com.webp?enhanced';
+	import andrewPollardCreative from '$lib/images/sites/andrewpollardcreative-com.webp?enhanced';
 	import blackThornSoftware from '$lib/images/sites/blackthornsoftware-com.webp?enhanced';
 	import cosgriffSchool from '$lib/images/sites/cosgriff-org.webp?enhanced';
 	import denverWindowWellCovers from '$lib/images/sites/denverwindowwellcovers-com.webp?enhanced';
@@ -412,6 +413,12 @@
 			url: 'https://lostcreekcontracting.com',
 			host: 'lostcreekcontracting.com',
 			imgSrc: lostCreekContracting
+		},
+		{
+			name: 'Andrew Pollard Creative',
+			url: 'https://andrewpollardcreative.com',
+			host: 'andrewpollardcreative.com',
+			imgSrc: andrewPollardCreative
 		}
 	].sort((a, b) => a.name.localeCompare(b.name));
 
