@@ -45,6 +45,7 @@
 	import andrewPollardCreative from '$lib/images/sites/andrewpollardcreative-com.webp?enhanced';
 	import blackThornSoftware from '$lib/images/sites/blackthornsoftware-com.webp?enhanced';
 	import cosgriffSchool from '$lib/images/sites/cosgriff-org.webp?enhanced';
+	import crewView from '$lib/images/sites/crewview-com.webp?enhanced';
 	import denverWindowWellCovers from '$lib/images/sites/denverwindowwellcovers-com.webp?enhanced';
 	import energySafeLeaders from '$lib/images/sites/energysafeleaders-org.webp?enhanced';
 	import waterColoringGame from '$lib/images/sites/games-nef1-org.webp?enhanced';
@@ -289,6 +290,12 @@
 			url: 'https://www.pathwaysenergy.org/',
 			host: 'pathwaysenergy.org',
 			imgSrc: pathwaysEnergy
+		},
+		{
+			name: 'CrewView',
+			url: 'https://www.crewview.com/',
+			host: 'crewview.com',
+			imgSrc: crewView
 		},
 		{
 			name: 'Heritage of Preston',
