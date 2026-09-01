@@ -115,14 +115,20 @@ ends, so hierarchy never flattens on small screens. Body measure is capped at
 - Cards are used where a screenshot is the reason to stop (projects, blog index)
   and avoided elsewhere. Three card grids in a row would flatten the homepage
   into one texture, so the archive and writing lists are ruled lists instead.
-- **The project grids have no panel.** Every screenshot already carries its own
-  browser chrome, so a bordered, shadowed, rounded card framed a frame, and the
-  repeated furniture read louder than the work inside it. `ProjectCard` now sets
-  the screenshot directly on the ground behind a hairline, with the type as a
-  quiet caption underneath. The hairline and the sunken well behind it stay:
-  these screenshots are mostly near-white at the edges and would otherwise bleed
-  into the page with no telling where the image stops. The blog index still uses
-  `surfaceInteractive`, and is the obvious next thing to bring across.
+- **The project grids and the blog index have no panel.** Every screenshot
+  already carries its own browser chrome, so a bordered, shadowed, rounded card
+  framed a frame, and the repeated furniture read louder than the work inside it.
+  `ProjectCard` and the blog index now set the screenshot directly on the ground
+  behind a hairline, with the type as a quiet caption underneath. The hairline
+  and the sunken well behind it stay: these screenshots are mostly near-white at
+  the edges and would otherwise bleed into the page with no telling where the
+  image stops. Hover moves the hairline and the shadow, never the panel.
+- Without a panel there is no box keeping an entry's parts in line, so the grids
+  do it themselves: a `1fr` row on the description or teaser absorbs a tall row's
+  slack, which leaves the screenshots at a uniform crop and drops the footer
+  (project links, post tags) onto a shared baseline. The blog index weights its
+  lead post toward the photo rather than splitting it evenly, because those
+  teasers run a line or two and an even split stranded the copy.
 - Client work runs two to a row; side projects run four, clamp their teaser to
   three lines, and show two rows behind a "Show all" toggle. The density is the
   point: a paying client keeps the wide card you stop on, weekend projects read

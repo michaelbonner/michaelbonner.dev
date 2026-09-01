@@ -36,25 +36,40 @@
 	<!--
 		The first post gets a wide row of its own so the index has a focal point;
 		the rest fall into an even grid below it.
+
+		No panel, matching the project grids on the homepage: the screenshot sits on
+		the page behind a hairline and the type reads as a caption under it, rather
+		than both being boxed inside a bordered card. See `DESIGN.md`.
 	-->
-	<ul class="border-rule grid gap-8 border-t pt-10 lg:grid-cols-3 lg:gap-10">
+	<ul id="posts" class="border-rule grid gap-x-10 gap-y-12 border-t pt-10 lg:grid-cols-3">
 		{#each articles as article, index (article.slug)}
 			<li class={classNames('grid', index === 0 ? 'lg:col-span-3' : '')}>
 				<a
 					href={`/blog/${article.slug}`}
 					class={classNames(
-						classes.surfaceInteractive,
-						'group grid overflow-hidden no-underline',
-						index === 0 ? 'lg:grid-cols-2' : ''
+						'group grid gap-x-10 gap-y-4 no-underline',
+						/*
+							The lead post sets its photo beside the copy, weighted toward the
+							photo: teasers here run a line or two, so an even split left the
+							copy stranded in a half-empty column. The rest stack, with
+							`auto 1fr` so a short teaser still leaves its tags on the bottom
+							edge and the row does not go ragged.
+						*/
+						index === 0 ? 'lg:grid-cols-[1.6fr_1fr] lg:items-center' : 'grid-rows-[auto_1fr]'
 					)}
 				>
-					<div class="overflow-hidden">
+					<div
+						class={classNames(
+							'border-rule bg-ground-sunken overflow-hidden rounded-lg border',
+							'transition-[border-color,box-shadow] duration-200 ease-out',
+							'group-hover:border-rule-strong group-hover:shadow-lift'
+						)}
+					>
 						<enhanced:img
 							alt=""
 							class={classNames(
-								'bg-ground-sunken w-full object-cover object-top',
-								'transition-transform duration-500 ease-out group-hover:scale-[1.02]',
-								index === 0 ? 'aspect-16/10 lg:h-full' : 'aspect-16/10'
+								'aspect-16/10 w-full object-cover object-top',
+								'transition-transform duration-500 ease-out group-hover:scale-[1.02]'
 							)}
 							loading={index === 0 ? 'eager' : 'lazy'}
 							src={article.image}
@@ -64,7 +79,7 @@
 						/>
 					</div>
 
-					<div class="grid content-start gap-3 p-6 lg:p-8">
+					<div class="grid grid-rows-[auto_auto_1fr_auto] gap-3">
 						<p class={classNames(classes.label, 'tabular-nums')}>
 							<time datetime={article.publishedAt.toISOString()}>
 								{formatDate(article.publishedAt)}
@@ -87,7 +102,7 @@
 						</p>
 
 						{#if article.tags?.length}
-							<ul class="mt-1 flex flex-wrap gap-1.5">
+							<ul class="flex flex-wrap gap-1.5">
 								{#each article.tags as tag (tag)}
 									<li
 										class="border-rule text-ui-sm text-ink-faint rounded-full border px-2.5 py-0.5 font-sans"
