@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { tick } from 'svelte';
 	import { blogArticles } from '$lib/data/blogArticles';
 	import type { Picture } from 'vite-imagetools';
 	import OrganizationSchema from '../components/OrganizationSchema.svelte';
@@ -58,12 +57,13 @@
 	import lifeOrDeathDocumentary from '$lib/images/sites/lifeordeathdoc-com.webp?enhanced';
 	import lostCreekContracting from '$lib/images/sites/lostcreekcontracting-com.webp?enhanced';
 	import metacensus from '$lib/images/sites/metacensus-org.webp?enhanced';
-	import mp4Compressor from '$lib/images/sites/mp4-compressor-bootpack-dev.webp?enhanced';
+	import mp4Compressor from '$lib/images/projects/mp4-compressor.jpg?enhanced';
+	import mp4ToOgvConverter from '$lib/images/projects/mp4-to-ogv.jpg?enhanced';
 	import nef1Org from '$lib/images/sites/nef1-org.webp?enhanced';
 	import pathwaysEnergy from '$lib/images/sites/pathwaysenergy-org.webp?enhanced';
 	import pizzaSizePriceCalculator from '$lib/images/sites/pizza-michaelbonner-dev.webp?enhanced';
 	import ravensFilmWorks from '$lib/images/sites/ravensfilmworks-com.webp?enhanced';
-	import redirectsWizard from '$lib/images/sites/redirects-bootpack-dev.webp?enhanced';
+	import redirectsWizard from '$lib/images/projects/redirects-wizard.jpg?enhanced';
 	import swiftManager from '$lib/images/sites/swift-manager-com.webp?enhanced';
 
 	type Project = {
@@ -269,8 +269,53 @@
 			url: 'https://random-string-generator.michaelbonner.dev/',
 			github: 'https://github.com/michaelbonner/random-string-generator',
 			image: randomStringGenerator
+		},
+		{
+			title: 'Redirects Wizard',
+			description:
+				'A straightforward tool for creating and managing redirects without digging through configuration files.',
+			url: 'https://redirectswizard.com',
+			image: redirectsWizard
+		},
+		{
+			title: 'MP4 Compressor',
+			description:
+				'A simple browser-based utility for compressing MP4 videos so they are easier to share and publish.',
+			url: 'https://mp4-compressor.bootpack.dev',
+			image: mp4Compressor
+		},
+		{
+			title: 'MP4 to OGV Converter',
+			description:
+				'A browser-based utility for converting MP4 videos to OGV files with a simple drag-and-drop upload.',
+			url: 'https://mp4-to-ogv.bootpack.dev',
+			image: mp4ToOgvConverter
 		}
 	];
+
+	const developerToolTitles = new Set([
+		'Screenshot Maker',
+		'GitHub Repository Collaborators Viewer',
+		'PageSpeed Testing',
+		'date-fns Format Helper',
+		'Cookie Parser',
+		'OCR Reader',
+		'Random String Generator',
+		'Redirects Wizard',
+		'MP4 Compressor',
+		'MP4 to OGV Converter'
+	]);
+	const justForFunTitles = new Set([
+		'Podcasts I Listen To',
+		'Days Until',
+		'NHL Arenas To Visit',
+		'Which Route Is Faster'
+	]);
+	const saasProjects = otherThings.filter(
+		(project) => !developerToolTitles.has(project.title) && !justForFunTitles.has(project.title)
+	);
+	const developerTools = otherThings.filter((project) => developerToolTitles.has(project.title));
+	const justForFunProjects = otherThings.filter((project) => justForFunTitles.has(project.title));
 
 	const otherSites = [
 		{
@@ -394,22 +439,10 @@
 			imgSrc: knowYourForce
 		},
 		{
-			name: 'Redirects Wizard',
-			url: 'https://redirectswizard.com',
-			host: 'redirectswizard.com',
-			imgSrc: redirectsWizard
-		},
-		{
 			name: 'Water coloring game',
 			url: 'https://games.nef1.org/title/water',
 			host: 'games.nef1.org',
 			imgSrc: waterColoringGame
-		},
-		{
-			name: 'MP4 Compressor',
-			url: 'https://mp4-compressor.bootpack.dev',
-			host: 'mp4-compressor.bootpack.dev',
-			imgSrc: mp4Compressor
 		},
 		{
 			name: '811 Contest',
@@ -447,6 +480,7 @@
 		'AWS',
 		'Serverless',
 		'Next.js',
+		'Astro',
 		'Gatsby',
 		'GraphQL',
 		'Prisma',
@@ -456,7 +490,8 @@
 		'MySQL',
 		'PostgreSQL',
 		'WordPress',
-		'Shopify'
+		'Shopify',
+		'Cloudflare'
 	];
 	// Shown under the hero photo, where the column previously ran empty.
 	const facts = [
@@ -470,40 +505,6 @@
 		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/michaelbonner/' },
 		{ label: 'Instagram', href: 'https://www.instagram.com/michael__bonner' }
 	];
-
-	/*
-	 * Side projects are the single tallest thing on the page — seventeen cards was
-	 * half the document height on its own. Two rows are shown up front and the
-	 * rest are revealed on request. Every card still renders into the HTML; the
-	 * overflow is only hidden visually, so crawlers and in-page find still see it.
-	 *
-	 * Eight fills two clean rows of the four-column grid. Six would leave the
-	 * widest layout showing a row of four above a half-empty row of two.
-	 */
-	const initialSideProjectCount = 8;
-	let showAllSideProjects = $state(false);
-	let sideProjectsToggle = $state<HTMLButtonElement | undefined>();
-
-	const toggleSideProjects = async () => {
-		const collapsing = showAllSideProjects;
-		const button = sideProjectsToggle;
-		const buttonTopBefore = button?.getBoundingClientRect().top;
-
-		showAllSideProjects = !showAllSideProjects;
-
-		/*
-		 * Expanding inserts rows above the button, which pushes it down and lets the
-		 * new cards flow into view — that is what you want. Collapsing removes those
-		 * same rows, which would yank the reader down near the footer, so the button
-		 * is pinned to the spot it was just clicked in and the cards vanish above it.
-		 * This has to wait for the DOM to shrink; scrolling before the update means
-		 * measuring a layout that is about to change.
-		 */
-		if (collapsing && button && buttonTopBefore !== undefined) {
-			await tick();
-			window.scrollBy({ top: button.getBoundingClientRect().top - buttonTopBefore });
-		}
-	};
 </script>
 
 <Seo
@@ -606,46 +607,54 @@
 		</Section>
 
 		<Section
-			id="side-projects"
-			eyebrow="Side projects"
-			heading="Things I've built for fun"
-			meta={`${otherThings.length} projects`}
+			id="my-saas"
+			eyebrow="Products"
+			heading="My SaaS"
+			meta={`${saasProjects.length} projects`}
 		>
-			<!--
-				Four across where there is room, against two for client work. These are
-				weekend projects: the grid should read as a contact sheet you scan,
-				while a paying client keeps the wide card you actually stop on.
-			-->
 			<ul class="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-				{#each otherThings as project, projectIndex (project.title)}
-					<li
-						class={showAllSideProjects || projectIndex < initialSideProjectCount
-							? 'grid'
-							: 'hidden'}
-					>
+				{#each saasProjects as project (project.title)}
+					<li class="grid">
 						<ProjectCard {...project} compact />
 					</li>
 				{/each}
 			</ul>
-
-			{#if otherThings.length > initialSideProjectCount}
-				<div class="mt-8 flex justify-center">
-					<button
-						type="button"
-						bind:this={sideProjectsToggle}
-						class={classes.buttonQuiet}
-						aria-expanded={showAllSideProjects}
-						onclick={toggleSideProjects}
-					>
-						{showAllSideProjects ? 'Show fewer' : `Show all ${otherThings.length} side projects`}
-					</button>
-				</div>
-			{/if}
 		</Section>
 
 		<Section
-			eyebrow="Archive"
-			heading="Some other sites"
+			id="just-for-fun"
+			eyebrow="Side projects"
+			heading="Just for fun"
+			meta={`${justForFunProjects.length} projects`}
+		>
+			<ul class="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+				{#each justForFunProjects as project (project.title)}
+					<li class="grid">
+						<ProjectCard {...project} compact />
+					</li>
+				{/each}
+			</ul>
+		</Section>
+
+		<Section
+			id="developer-tools"
+			eyebrow="Utilities"
+			heading="Developer tools"
+			meta={`${developerTools.length} tools`}
+		>
+			<ul class="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+				{#each developerTools as project (project.title)}
+					<li class="grid">
+						<ProjectCard {...project} compact />
+					</li>
+				{/each}
+			</ul>
+		</Section>
+
+		<Section
+			id="other-client-sites"
+			eyebrow="Client work"
+			heading="Other client sites"
 			description="Sites I've built or helped build over the years."
 			meta={`${otherSites.length} sites`}
 		>

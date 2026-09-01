@@ -1,73 +1,59 @@
 import { expect, test } from '@playwright/test';
 
-/**
- * Side projects are the tallest thing on the homepage, so only the first two
- * rows are shown until the reader asks for the rest. The cards are hidden with
- * CSS rather than removed, which is what keeps the section crawlable — these
- * tests pin both halves of that bargain.
- */
-const INITIAL_COUNT = 8;
+const sectionCards = (page: import('@playwright/test').Page, id: string) =>
+	page.locator(`#${id} li`);
 
-const sideProjects = (page: import('@playwright/test').Page) => page.locator('#side-projects li');
-
-const toggle = (page: import('@playwright/test').Page) =>
-	page.locator('#side-projects').getByRole('button');
-
-test.describe('Homepage side projects', () => {
+test.describe('Homepage project groups', () => {
 	test.beforeEach(async ({ page }) => {
 		await page.goto('/');
 		await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
 	});
 
-	test('shows two rows up front and reveals the rest on request', async ({ page }) => {
-		const cards = sideProjects(page);
-		const total = await cards.count();
-		expect(total).toBeGreaterThan(INITIAL_COUNT);
+	test('keeps the featured projects and separates the remaining work by type', async ({ page }) => {
+		await expect(page.locator('#projects')).toContainText("Projects I'm proud of");
+		await expect(page.locator('#my-saas')).toContainText('My SaaS');
+		await expect(page.locator('#just-for-fun')).toContainText('Just for fun');
+		await expect(page.locator('#developer-tools')).toContainText('Developer tools');
+		await expect(page.locator('#other-client-sites')).toContainText('Other client sites');
 
-		const button = toggle(page);
-		await expect(button).toHaveAttribute('aria-expanded', 'false');
-		await expect(button).toHaveText(`Show all ${total} side projects`);
-		await expect(cards.filter({ visible: true })).toHaveCount(INITIAL_COUNT);
-
-		await button.click();
-
-		await expect(button).toHaveAttribute('aria-expanded', 'true');
-		await expect(button).toHaveText('Show fewer');
-		await expect(cards.filter({ visible: true })).toHaveCount(total);
+		await expect(page.locator('#my-saas')).toContainText('OfficeLunch');
+		await expect(page.locator('#just-for-fun')).toContainText('Podcasts I Listen To');
+		await expect(page.locator('#just-for-fun')).toContainText('Days Until');
+		await expect(page.locator('#just-for-fun')).toContainText('NHL Arenas To Visit');
+		await expect(page.locator('#just-for-fun')).toContainText('Which Route Is Faster');
+		await expect(page.locator('#developer-tools')).toContainText('Screenshot Maker');
+		await expect(page.locator('#developer-tools')).toContainText('Redirects Wizard');
+		await expect(page.locator('#developer-tools')).toContainText('MP4 Compressor');
+		await expect(page.locator('#developer-tools')).toContainText('MP4 to OGV Converter');
+		await expect(page.locator('#other-client-sites')).toContainText('MetaCensus');
 	});
 
-	test('keeps every project in the DOM so the section stays crawlable', async ({ page }) => {
-		// The concern is the server-rendered HTML, not what hydration does to it, so
-		// this reads the response body rather than the live DOM.
-		const html = await (await page.request.get('/')).text();
-		const titles = await sideProjects(page).locator('h3').allTextContents();
+	test('renders every project group without a show-more control', async ({ page }) => {
+		const saasCards = sectionCards(page, 'my-saas');
+		const justForFunCards = sectionCards(page, 'just-for-fun');
+		const developerToolCards = sectionCards(page, 'developer-tools');
 
-		expect(titles.length).toBeGreaterThan(INITIAL_COUNT);
+		await expect(saasCards).toHaveCount(6);
+		await expect(justForFunCards).toHaveCount(4);
+		await expect(developerToolCards).toHaveCount(10);
+		await expect(saasCards.filter({ visible: true })).toHaveCount(6);
+		await expect(justForFunCards.filter({ visible: true })).toHaveCount(4);
+		await expect(developerToolCards.filter({ visible: true })).toHaveCount(10);
+		await expect(page.getByRole('button', { name: /show all|show fewer/i })).toHaveCount(0);
+	});
+
+	test('keeps grouped projects in the server-rendered HTML', async ({ page }) => {
+		const html = await (await page.request.get('/')).text();
+		const titles = await page
+			.locator('#my-saas h3, #just-for-fun h3, #developer-tools h3')
+			.allTextContents();
+
 		for (const title of titles) {
 			expect(html).toContain(title.trim());
 		}
 	});
 
-	test('collapsing leaves the reader where they clicked', async ({ page }) => {
-		const button = toggle(page);
-		await button.click();
-		await expect(button).toHaveAttribute('aria-expanded', 'true');
-
-		await button.scrollIntoViewIfNeeded();
-		const before = await button.evaluate((node) => node.getBoundingClientRect().top);
-
-		await button.click();
-		await expect(button).toHaveAttribute('aria-expanded', 'false');
-
-		// Without pinning the button, collapsing the extra rows out from above it
-		// dumps the reader roughly two thousand pixels further down the page.
-		const after = await button.evaluate((node) => node.getBoundingClientRect().top);
-		expect(Math.abs(after - before)).toBeLessThan(5);
-	});
-
 	test('screenshots in a row are cropped to the same height', async ({ page }) => {
-		// The cards are grid items, so a tall row would otherwise stretch each
-		// card's image by a different amount and leave the row visibly ragged.
 		const heights = await page
 			.locator('#projects article img')
 			.evaluateAll((images) => [
@@ -77,33 +63,9 @@ test.describe('Homepage side projects', () => {
 		expect(heights).toHaveLength(1);
 	});
 
-	test('lines up the Visit links along the bottom of each row', async ({ page }) => {
-		// A two-line teaser next to a three-line one used to leave one card's links
-		// floating mid-card. The bottom row of the card grid pins them instead.
-		const tops = await page
-			.locator('#side-projects li:visible article > div:last-child')
-			.evaluateAll((rows) => rows.map((row) => Math.round(row.getBoundingClientRect().top)));
-
-		expect(tops.length).toBe(INITIAL_COUNT);
-		// Two rows of four, so exactly two distinct baselines.
-		expect(new Set(tops).size).toBe(2);
-	});
-
-	test('clamps the dense teasers visually without shortening them', async ({ page }) => {
-		// The four-column grid clamps to three lines. That has to stay a CSS clamp:
-		// truncating the strings themselves would take the copy away from search and
-		// from screen readers too.
-		const teaser = sideProjects(page).first().locator('p');
-
-		await expect(teaser).toHaveCSS('-webkit-line-clamp', '3');
-		const rendered = (await teaser.textContent())?.trim() ?? '';
-		expect(rendered).not.toMatch(/[.…]{3}$/);
-		expect(rendered.length).toBeGreaterThan(120);
-	});
-
 	test('does not scroll sideways on a narrow screen', async ({ page }) => {
 		await page.setViewportSize({ width: 320, height: 844 });
-		await sideProjects(page).first().scrollIntoViewIfNeeded();
+		await sectionCards(page, 'my-saas').first().scrollIntoViewIfNeeded();
 
 		const { scrollWidth, clientWidth } = await page.evaluate(() => ({
 			scrollWidth: document.documentElement.scrollWidth,
