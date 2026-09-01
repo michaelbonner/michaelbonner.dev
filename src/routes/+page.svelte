@@ -30,6 +30,7 @@
 	import ocr from '$lib/images/projects/ocr.jpg?enhanced';
 	import officelunch from '$lib/images/projects/officelunch.jpg?enhanced';
 	import pagespeed from '$lib/images/projects/pagespeed.jpg?enhanced';
+	import pizza from '$lib/images/projects/pizza.jpg?enhanced';
 	import podcasts from '$lib/images/projects/podcasts.jpg?enhanced';
 	import randomStringGenerator from '$lib/images/projects/random-string-generator.jpg?enhanced';
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced';
@@ -61,7 +62,6 @@
 	import mp4ToOgvConverter from '$lib/images/projects/mp4-to-ogv.jpg?enhanced';
 	import nef1Org from '$lib/images/sites/nef1-org.webp?enhanced';
 	import pathwaysEnergy from '$lib/images/sites/pathwaysenergy-org.webp?enhanced';
-	import pizzaSizePriceCalculator from '$lib/images/sites/pizza-michaelbonner-dev.webp?enhanced';
 	import ravensFilmWorks from '$lib/images/sites/ravensfilmworks-com.webp?enhanced';
 	import redirectsWizard from '$lib/images/projects/redirects-wizard.jpg?enhanced';
 	import swiftManager from '$lib/images/sites/swift-manager-com.webp?enhanced';
@@ -231,6 +231,13 @@
 			image: nhlArenas
 		},
 		{
+			title: 'Pizza Size Price Calculator',
+			description:
+				"Is ordering two mediums cheaper than one large? Is the Costco pizza actually a good deal? Punch in the sizes and prices and this figures out the cost per square inch, per serving, and per person so you don't have to.",
+			url: 'https://pizza.michaelbonner.dev/',
+			image: pizza
+		},
+		{
 			title: 'Days Until',
 			description:
 				'Have you ever wanted a site to just tell you how many days until a specific date? Well, here you go. Really I just needed something easy to start building Svelte projects.',
@@ -306,9 +313,13 @@
 		'MP4 to OGV Converter'
 	]);
 	const justForFunTitles = new Set([
+		'What To Do In Salt Lake',
+		'Festival Things',
+		'Lazy Uncle',
 		'Podcasts I Listen To',
 		'Days Until',
 		'NHL Arenas To Visit',
+		'Pizza Size Price Calculator',
 		'Which Route Is Faster'
 	]);
 	const saasProjects = otherThings.filter(
@@ -401,12 +412,6 @@
 			url: 'https://www.swift-manager.com',
 			host: 'swift-manager.com',
 			imgSrc: swiftManager
-		},
-		{
-			name: 'Pizza Size Price Calculator',
-			url: 'https://pizza.michaelbonner.dev',
-			host: 'pizza.michaelbonner.dev',
-			imgSrc: pizzaSizePriceCalculator
 		},
 		{
 			name: 'Artist Amy Bonner',
