@@ -115,6 +115,20 @@ ends, so hierarchy never flattens on small screens. Body measure is capped at
 - Cards are used where a screenshot is the reason to stop (projects, blog index)
   and avoided elsewhere. Three card grids in a row would flatten the homepage
   into one texture, so the archive and writing lists are ruled lists instead.
+- **The project grids have no panel.** Every screenshot already carries its own
+  browser chrome, so a bordered, shadowed, rounded card framed a frame, and the
+  repeated furniture read louder than the work inside it. `ProjectCard` now sets
+  the screenshot directly on the ground behind a hairline, with the type as a
+  quiet caption underneath. The hairline and the sunken well behind it stay:
+  these screenshots are mostly near-white at the edges and would otherwise bleed
+  into the page with no telling where the image stops. The blog index still uses
+  `surfaceInteractive`, and is the obvious next thing to bring across.
+- Client work runs two to a row; side projects run four, clamp their teaser to
+  three lines, and show two rows behind a "Show all" toggle. The density is the
+  point: a paying client keeps the wide card you stop on, weekend projects read
+  as a contact sheet you scan. The toggle hides cards with CSS rather than
+  removing them, so the section stays crawlable, and it pins its own button in
+  place on collapse so the reader is not dumped near the footer.
 - Nothing may scroll the page horizontally. Wide content (tables, code, the
   Turnstile widget) scrolls inside its own container.
 

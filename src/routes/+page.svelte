@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { tick } from 'svelte';
 	import { blogArticles } from '$lib/data/blogArticles';
 	import type { Picture } from 'vite-imagetools';
 	import OrganizationSchema from '../components/OrganizationSchema.svelte';
@@ -455,6 +456,40 @@
 		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/michaelbonner/' },
 		{ label: 'Instagram', href: 'https://www.instagram.com/michael__bonner' }
 	];
+
+	/*
+	 * Side projects are the single tallest thing on the page — seventeen cards was
+	 * half the document height on its own. Two rows are shown up front and the
+	 * rest are revealed on request. Every card still renders into the HTML; the
+	 * overflow is only hidden visually, so crawlers and in-page find still see it.
+	 *
+	 * Eight fills two clean rows of the four-column grid. Six would leave the
+	 * widest layout showing a row of four above a half-empty row of two.
+	 */
+	const initialSideProjectCount = 8;
+	let showAllSideProjects = $state(false);
+	let sideProjectsToggle = $state<HTMLButtonElement | undefined>();
+
+	const toggleSideProjects = async () => {
+		const collapsing = showAllSideProjects;
+		const button = sideProjectsToggle;
+		const buttonTopBefore = button?.getBoundingClientRect().top;
+
+		showAllSideProjects = !showAllSideProjects;
+
+		/*
+		 * Expanding inserts rows above the button, which pushes it down and lets the
+		 * new cards flow into view — that is what you want. Collapsing removes those
+		 * same rows, which would yank the reader down near the footer, so the button
+		 * is pinned to the spot it was just clicked in and the cards vanish above it.
+		 * This has to wait for the DOM to shrink; scrolling before the update means
+		 * measuring a layout that is about to change.
+		 */
+		if (collapsing && button && buttonTopBefore !== undefined) {
+			await tick();
+			window.scrollBy({ top: button.getBoundingClientRect().top - buttonTopBefore });
+		}
+	};
 </script>
 
 <Seo
@@ -540,7 +575,7 @@
 		</div>
 	</header>
 
-	<div class="grid gap-20 pb-8 lg:gap-28">
+	<div class="grid gap-16 pb-8">
 		<Section
 			id="projects"
 			eyebrow="Client work"
@@ -557,17 +592,41 @@
 		</Section>
 
 		<Section
+			id="side-projects"
 			eyebrow="Side projects"
 			heading="Things I've built for fun"
 			meta={`${otherThings.length} projects`}
 		>
-			<ul class="grid gap-8 lg:grid-cols-2 lg:gap-10">
-				{#each otherThings as project (project.title)}
-					<li class="grid">
-						<ProjectCard {...project} />
+			<!--
+				Four across where there is room, against two for client work. These are
+				weekend projects: the grid should read as a contact sheet you scan,
+				while a paying client keeps the wide card you actually stop on.
+			-->
+			<ul class="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+				{#each otherThings as project, projectIndex (project.title)}
+					<li
+						class={showAllSideProjects || projectIndex < initialSideProjectCount
+							? 'grid'
+							: 'hidden'}
+					>
+						<ProjectCard {...project} compact />
 					</li>
 				{/each}
 			</ul>
+
+			{#if otherThings.length > initialSideProjectCount}
+				<div class="mt-8 flex justify-center">
+					<button
+						type="button"
+						bind:this={sideProjectsToggle}
+						class={classes.buttonQuiet}
+						aria-expanded={showAllSideProjects}
+						onclick={toggleSideProjects}
+					>
+						{showAllSideProjects ? 'Show fewer' : `Show all ${otherThings.length} side projects`}
+					</button>
+				</div>
+			{/if}
 		</Section>
 
 		<Section
