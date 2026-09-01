@@ -59,6 +59,7 @@
 	import metacensus from '$lib/images/sites/metacensus-org.webp?enhanced';
 	import mp4Compressor from '$lib/images/sites/mp4-compressor-bootpack-dev.webp?enhanced';
 	import nef1Org from '$lib/images/sites/nef1-org.webp?enhanced';
+	import pathwaysEnergy from '$lib/images/sites/pathwaysenergy-org.webp?enhanced';
 	import pizzaSizePriceCalculator from '$lib/images/sites/pizza-michaelbonner-dev.webp?enhanced';
 	import ravensFilmWorks from '$lib/images/sites/ravensfilmworks-com.webp?enhanced';
 	import redirectsWizard from '$lib/images/sites/redirects-bootpack-dev.webp?enhanced';
@@ -282,6 +283,12 @@
 			url: 'https://nef1.org',
 			host: 'nef1.org',
 			imgSrc: nef1Org
+		},
+		{
+			name: 'Pathways Energy',
+			url: 'https://www.pathwaysenergy.org/',
+			host: 'pathwaysenergy.org',
+			imgSrc: pathwaysEnergy
 		},
 		{
 			name: 'Heritage of Preston',
