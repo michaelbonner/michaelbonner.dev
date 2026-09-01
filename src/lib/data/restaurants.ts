@@ -54,7 +54,8 @@ const entries = [
 	{
 		name: "Caffe d'Bolla",
 		tags: ['Coffee'],
-		rating: 10,
+    rating: 10,
+		notes: 'The best espresso in Utah',
 		pricePerPerson: 10,
 		locations: ['Downtown']
 	},
@@ -68,7 +69,7 @@ const entries = [
 	{
 		name: 'Dolcetti Gelato',
 		tags: ['Ice Cream'],
-		rating: 9,
+		rating: 8,
 		pricePerPerson: 10,
 		locations: ['Sugarhouse']
 	},
@@ -76,14 +77,15 @@ const entries = [
 		name: "Frankie's Pizza and Pasta",
 		tags: ['Pizza'],
 		rating: 10,
-		notes: 'New York style',
+		notes: 'Best New York style in Utah, also don\'t skip the pasta',
 		pricePerPerson: 10,
 		locations: ['Murray']
 	},
 	{
 		name: 'Fresh Donuts & Deli',
 		tags: ['Donuts'],
-		rating: 9,
+    rating: 9,
+		notes: 'Try an apple fritter',
 		pricePerPerson: 3,
 		locations: ['South Salt Lake']
 	},
@@ -116,13 +118,6 @@ const entries = [
 		locations: ['Sugarhouse', 'Murray']
 	},
 	{
-		name: 'La Yaquesita',
-		tags: ['Mexican'],
-		rating: 8,
-		pricePerPerson: 10,
-		locations: ['Midvale']
-	},
-	{
 		name: 'Laziz Kitchen',
 		tags: ['Mediterranean'],
 		rating: 8,
@@ -135,13 +130,6 @@ const entries = [
 		rating: 8,
 		pricePerPerson: 15,
 		locations: ['South Salt Lake']
-	},
-	{
-		name: 'Nomad East',
-		tags: ['Pizza'],
-		rating: 8,
-		pricePerPerson: 20,
-		locations: ['Sugarhouse']
 	},
 	{
 		name: 'Osteria Amore',
@@ -160,7 +148,8 @@ const entries = [
 	{
 		name: 'Patty Shack',
 		tags: ['Burger'],
-		rating: 9,
+    rating: 9,
+		notes: 'Nothing fancy, just solid ingredients and a tasty burger',
 		pricePerPerson: 15,
 		locations: ['Murray']
 	},
@@ -196,7 +185,6 @@ const entries = [
 		name: 'Sauce Boss Southern Kitchen',
 		tags: ['Comfort Food'],
 		rating: 9,
-		notes: 'So good!',
 		pricePerPerson: 20,
 		locations: ['Draper']
 	},
@@ -223,13 +211,6 @@ const entries = [
 		locations: ['Downtown']
 	},
 	{
-		name: 'Vertical diner',
-		tags: ['Diner', 'Vegan'],
-		rating: 8,
-		pricePerPerson: 20,
-		locations: ['Downtown']
-	},
-	{
 		name: "Victor's pizza co",
 		tags: ['Pizza'],
 		rating: 8,
@@ -239,7 +220,8 @@ const entries = [
 	{
 		name: 'Zhu Ting Ji 竹亭记',
 		tags: ['Chinese'],
-		rating: 8,
+    rating: 8,
+		notes: 'Get the dumplings',
 		pricePerPerson: 20,
 		locations: ['Murray']
 	}
