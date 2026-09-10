@@ -125,13 +125,6 @@ const entries = [
 		locations: ['Downtown', 'Midvale']
 	},
 	{
-		name: 'Lucky 13',
-		tags: ['Burger'],
-		rating: 8,
-		pricePerPerson: 15,
-		locations: ['South Salt Lake']
-	},
-	{
 		name: 'Osteria Amore',
 		tags: ['Italian'],
 		rating: 9,
