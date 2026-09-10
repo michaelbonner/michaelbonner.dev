@@ -54,7 +54,7 @@ const entries = [
 	{
 		name: "Caffe d'Bolla",
 		tags: ['Coffee'],
-    rating: 10,
+		rating: 10,
 		notes: 'The best espresso in Utah',
 		pricePerPerson: 10,
 		locations: ['Downtown']
@@ -77,14 +77,14 @@ const entries = [
 		name: "Frankie's Pizza and Pasta",
 		tags: ['Pizza'],
 		rating: 10,
-		notes: 'Best New York style in Utah, also don\'t skip the pasta',
+		notes: "Best New York style in Utah, also don't skip the pasta",
 		pricePerPerson: 10,
 		locations: ['Murray']
 	},
 	{
 		name: 'Fresh Donuts & Deli',
 		tags: ['Donuts'],
-    rating: 9,
+		rating: 9,
 		notes: 'Try an apple fritter',
 		pricePerPerson: 3,
 		locations: ['South Salt Lake']
@@ -141,7 +141,7 @@ const entries = [
 	{
 		name: 'Patty Shack',
 		tags: ['Burger'],
-    rating: 9,
+		rating: 9,
 		notes: 'Nothing fancy, just solid ingredients and a tasty burger',
 		pricePerPerson: 15,
 		locations: ['Murray']
@@ -213,7 +213,7 @@ const entries = [
 	{
 		name: 'Zhu Ting Ji 竹亭记',
 		tags: ['Chinese'],
-    rating: 8,
+		rating: 8,
 		notes: 'Get the dumplings',
 		pricePerPerson: 20,
 		locations: ['Murray']
