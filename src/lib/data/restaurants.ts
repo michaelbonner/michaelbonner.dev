@@ -67,6 +67,13 @@ const entries = [
 		locations: ['Downtown']
 	},
 	{
+		name: 'Cosmica',
+		tags: ['Pizza', 'New American'],
+		rating: 9,
+		pricePerPerson: 50,
+		locations: ['Downtown']
+	},
+	{
 		name: 'Dolcetti Gelato',
 		tags: ['Ice Cream'],
 		rating: 8,
