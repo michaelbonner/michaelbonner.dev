@@ -13,6 +13,7 @@
 	import { classes } from '../styles/classes';
 	// images
 	import mainImage from '$lib/images/on-the-beach.jpg?enhanced';
+	import bookAMeetingTime from '$lib/images/projects/book-a-meeting-time.jpg?enhanced';
 	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced';
 	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced';
 	import daysUntil from '$lib/images/projects/days-until.jpg?enhanced';
@@ -136,6 +137,13 @@
 		}
 	];
 	const otherThings: Project[] = [
+		{
+			title: 'Book a Meeting Time',
+			description:
+				'A simple scheduling app for sharing your availability without the usual email back-and-forth. Connect your calendars, set your rules, and let guests book a time that works.',
+			url: 'https://bookameetingtime.com/',
+			image: bookAMeetingTime
+		},
 		{
 			title: 'What To Do In Salt Lake',
 			description:

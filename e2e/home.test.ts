@@ -16,6 +16,7 @@ test.describe('Homepage project groups', () => {
 		await expect(page.locator('#developer-tools')).toContainText('Developer tools');
 		await expect(page.locator('#other-client-sites')).toContainText('Other client sites');
 
+		await expect(page.locator('#my-saas')).toContainText('Book a Meeting Time');
 		await expect(page.locator('#my-saas')).toContainText('OfficeLunch');
 		await expect(page.locator('#just-for-fun')).toContainText('Podcasts I Listen To');
 		await expect(page.locator('#just-for-fun')).toContainText('Days Until');
@@ -37,10 +38,10 @@ test.describe('Homepage project groups', () => {
 		const justForFunCards = sectionCards(page, 'just-for-fun');
 		const developerToolCards = sectionCards(page, 'developer-tools');
 
-		await expect(saasCards).toHaveCount(3);
+		await expect(saasCards).toHaveCount(4);
 		await expect(justForFunCards).toHaveCount(8);
 		await expect(developerToolCards).toHaveCount(10);
-		await expect(saasCards.filter({ visible: true })).toHaveCount(3);
+		await expect(saasCards.filter({ visible: true })).toHaveCount(4);
 		await expect(justForFunCards.filter({ visible: true })).toHaveCount(8);
 		await expect(developerToolCards.filter({ visible: true })).toHaveCount(10);
 		await expect(page.getByRole('button', { name: /show all|show fewer/i })).toHaveCount(0);
