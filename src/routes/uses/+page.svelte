@@ -98,6 +98,13 @@
 				'A productivity powerhouse for me. I use it for window snapping, keyboard shortcuts, and more.'
 		},
 		{
+			href: 'https://go.cleanshot.com/michael-bonner',
+			title: 'CleanShot X',
+			description:
+				'Screenshots and screen recordings done right. Annotations, scrolling capture, and a cloud link I can paste straight into a client thread.',
+			isAffiliateLink: true
+		},
+		{
 			href: 'https://savvycal.com/?via=michael-bonner',
 			title: 'SavvyCal',
 			description:
