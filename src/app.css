@@ -85,7 +85,7 @@
 		targets, a second sticky layer) reads this rather than hard-coding an
 		offset that drifts when the header's padding changes.
 	*/
-	--header-height: 5.5rem;
+	--header-height: 4.0625rem;
 
 	/*
 		Map pin scale, by rating band. Ordinal, so the three steps separate on
@@ -147,13 +147,6 @@
 		border-color: var(--rule);
 	}
 
-	/* Above `sm` the wordmark and nav share one line, so the header is shorter. */
-	@media (width >= 40rem) {
-		:root {
-			--header-height: 4.0625rem;
-		}
-	}
-
 	html {
 		background-color: var(--ground);
 		-webkit-text-size-adjust: 100%;
@@ -199,6 +192,23 @@
 
 	p {
 		text-wrap: pretty;
+	}
+
+	/*
+		The header's mobile nav panel, which is mounted on open rather than kept in
+		the DOM hidden, so it needs an entrance of its own. Movement is a few pixels
+		on one axis; `motion-safe:` on the element keeps it off when reduced motion
+		is asked for.
+	*/
+	@keyframes menu-in {
+		from {
+			opacity: 0;
+			transform: translateY(-0.375rem);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

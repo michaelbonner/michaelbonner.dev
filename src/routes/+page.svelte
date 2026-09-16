@@ -560,13 +560,19 @@
 					people I knew, then people they knew, and so on. Making websites was definitely my thing.
 					Since then I have worked at a handful of places making websites, web apps, and mobile
 					apps. I was also a director at a digital agency for several years, and taught a boot camp
-					for the University of Utah. I love what I do, and I&apos;m always down to chat about it.
+					for the University of Utah. Along the way I picked up a couple of
+					<a class={classes.bodyLink} href={resolve('/patents')}
+						>patents on data ingestion and linking</a
+					>. I love what I do, and I&apos;m always down to chat about it.
 				</p>
 				<p>
 					I really like podcasts, so I made a site to share the podcasts I listen to. You can <a
 						class={classes.bodyLink}
 						href="https://podcasts.michaelbonner.dev/">check that out here</a
-					>.
+					>. I also keep a running list of
+					<a class={classes.bodyLink} href={resolve('/restaurants')}
+						>my favorite restaurants around Salt Lake</a
+					>, mapped and rated, because people ask about that more than you&apos;d think.
 				</p>
 			</div>
 
@@ -745,6 +751,18 @@
 					</li>
 				{/each}
 			</ul>
+
+			<!--
+				These chips are the languages and frameworks; /uses is the editor, the
+				hardware, and the apps. The section is where someone curious about the
+				first is most likely to want the second.
+			-->
+			<p class="text-ui text-ink-muted mt-6 font-sans">
+				For the editor, hardware, and apps I reach for every day, see <a
+					class={classes.bodyLink}
+					href={resolve('/uses')}>the full list of things I use</a
+				>.
+			</p>
 		</Section>
 
 		<Section eyebrow="Contact" heading="Get in touch">

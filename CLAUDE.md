@@ -163,8 +163,15 @@ import image from '$lib/images/example.jpg?enhanced'; // Use: {image.img.src} fo
   hairline) and `src/components/ProjectCard.svelte`.
 - The header is sticky. `--header-height` is the single source of truth for its
   height; `html`'s `scroll-padding-top` and the restaurants map's sticky offset
-  both derive from it. Give any new high-`z-index` island `isolate` so it cannot
-  paint over the header.
+  both derive from it, and `e2e/navigation.test.ts` asserts the header measures
+  what the token claims at every width, so change the two together. Give any new
+  high-`z-index` island `isolate` so it cannot paint over the header.
+- **The header holds three links** (`mainNav` in `+layout.svelte`): Blog, Uses,
+  Contact. The wordmark is the home link. Everything else lives in the footer
+  (`footerNav`) and, below `sm`, in the mobile disclosure panel (`mobileNav`),
+  which carries the footer-only pages because a phone's footer is a long scroll
+  away. Do not add a "More" dropdown to the header; link a quiet page from the
+  body copy that is already about it instead.
 - Prose is wired to the same tokens, so `prose` alone is correct. Do **not** add
   `dark:prose-invert`. Those overrides are intentionally unlayered in `app.css`
   because `@tailwindcss/typography` defines `.prose` inside `@layer utilities`.

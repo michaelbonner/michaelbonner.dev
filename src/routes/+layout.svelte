@@ -11,6 +11,7 @@
 	import posthog from 'posthog-js';
 	import { onMount } from 'svelte';
 	import { classNames } from '../functions/classNames';
+	import Menu from '../icons/Menu.svelte';
 	import { classes } from '../styles/classes';
 	import { resolve } from '$app/paths';
 	interface Props {
@@ -19,9 +20,28 @@
 
 	let { children }: Props = $props();
 
+	/*
+	 * The header stays deliberately short. "Home" is not in it because the
+	 * wordmark to its left already goes there, which frees the slot for Uses —
+	 * the one footer-only page whose audience overlaps the blog's.
+	 */
 	const mainNav = [
+		{ label: 'Blog', href: resolve('/blog') },
+		{ label: 'Uses', href: resolve('/uses') },
+		{ label: 'Contact', href: resolve('/contact') }
+	];
+
+	/*
+	 * The mobile panel is vertical, so rows are free and it can carry the whole
+	 * site without crowding anything. That matters most here: on a phone the
+	 * footer is the longest possible scroll away.
+	 */
+	const mobileNav = [
 		{ label: 'Home', href: resolve('/') },
 		{ label: 'Blog', href: resolve('/blog') },
+		{ label: 'Uses', href: resolve('/uses') },
+		{ label: 'Favorite Restaurants', href: resolve('/restaurants') },
+		{ label: 'Patents', href: resolve('/patents') },
 		{ label: 'Contact', href: resolve('/contact') }
 	];
 
@@ -39,6 +59,23 @@
 	// link also covers its child routes, so a blog post still marks "Blog".
 	const isCurrent = (href: string) =>
 		href === resolve('/') ? page.url.pathname === href : page.url.pathname.startsWith(href);
+
+	let menuOpen = $state(false);
+	let headerEl = $state<HTMLElement>();
+	let menuButtonEl = $state<HTMLButtonElement>();
+
+	/*
+	 * Escape returns focus to the button that opened the panel; a pointer press
+	 * outside just dismisses it, because focus is already headed elsewhere.
+	 */
+	const closeMenu = (returnFocus = false) => {
+		if (!menuOpen) return;
+		menuOpen = false;
+		if (returnFocus) menuButtonEl?.focus();
+	};
+
+	// Following a link inside the panel should leave it closed behind you.
+	afterNavigate(() => closeMenu());
 
 	onMount(() => {
 		document.querySelectorAll('link[rel="preload"]').forEach((link) => {
@@ -242,6 +279,15 @@
 	</script>
 </svelte:head>
 
+<svelte:window
+	onkeydown={(event) => {
+		if (event.key === 'Escape') closeMenu(true);
+	}}
+	onpointerdown={(event) => {
+		if (menuOpen && !headerEl?.contains(event.target as Node)) closeMenu();
+	}}
+/>
+
 <div class="bg-ground text-ink flex min-h-screen flex-col">
 	<!--
 		A hairline under the header is the only separation it needs; the old version
@@ -249,12 +295,21 @@
 		edge at all. Sticky with a translucent ground so long pages keep the nav.
 	-->
 	<header
+		bind:this={headerEl}
 		class={classNames(
-			'border-rule sticky top-0 z-30 border-b',
+			'border-rule sticky top-0 isolate z-30 border-b',
 			'bg-ground/85 supports-[not(backdrop-filter:blur(0))]:bg-ground backdrop-blur-sm'
 		)}
 	>
-		<div class="container mx-auto flex items-baseline justify-between gap-6 px-6 py-4 sm:px-8">
+		<!--
+			`py-2.5` on mobile against `py-4` above it: the menu button is a 44px touch
+			target, taller than the wordmark it sits beside, so the row needs less
+			padding around it to land on the same 65px the desktop layout measures.
+			Both breakpoints matching is what lets `--header-height` be one value.
+		-->
+		<div
+			class="container mx-auto flex items-center justify-between gap-6 px-6 py-2.5 sm:px-8 sm:py-4"
+		>
 			<a
 				href={resolve('/')}
 				class={classNames(
@@ -264,7 +319,8 @@
 			>
 				Michael Bonner
 			</a>
-			<nav class="flex items-baseline gap-5 sm:gap-7" aria-label="Main">
+
+			<nav class="hidden items-baseline gap-7 sm:flex" aria-label="Main">
 				{#each mainNav as item (item.href)}
 					<a
 						href={item.href}
@@ -275,7 +331,65 @@
 					</a>
 				{/each}
 			</nav>
+
+			<!--
+				A labelled button rather than a bare glyph: "Menu" next to the bars
+				costs one word and removes any doubt about what the icon does.
+			-->
+			<button
+				bind:this={menuButtonEl}
+				type="button"
+				aria-controls="mobile-nav"
+				aria-expanded={menuOpen}
+				class={classNames(
+					'-mr-2 inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-lg px-2 sm:hidden',
+					'text-ui font-sans font-medium tracking-wide',
+					'transition-colors duration-150 ease-out',
+					menuOpen ? 'text-ink' : 'text-ink-muted hover:text-ink'
+				)}
+				onclick={() => (menuOpen = !menuOpen)}
+			>
+				Menu
+				<Menu className="size-[1.15em]" open={menuOpen} />
+			</button>
 		</div>
+
+		<!--
+			Positioned against the header rather than in its flow, so opening the
+			panel never changes the header's height and `--header-height` stays a
+			true measurement for anchor offsets.
+		-->
+		{#if menuOpen}
+			<nav
+				id="mobile-nav"
+				class={classNames(
+					'border-rule bg-ground shadow-lift absolute inset-x-0 top-full border-b sm:hidden',
+					'motion-safe:animate-[menu-in_150ms_ease-out]'
+				)}
+				aria-label="Main"
+			>
+				<div class="container mx-auto grid gap-1 px-6 py-3">
+					{#each mobileNav as item (item.href)}
+						<a
+							href={item.href}
+							class={classNames(
+								classes.menuItem,
+								/*
+									A full-width row with real padding: the underline treatment the
+									desktop nav uses is a poor touch target on its own.
+								*/
+								'hover:bg-ground-sunken rounded-lg px-2 py-2.5 after:hidden',
+								/* The wiping underline is hidden here, so the current page is marked with a fill. */
+								'aria-[current=page]:bg-accent-soft aria-[current=page]:text-accent'
+							)}
+							aria-current={isCurrent(item.href) ? 'page' : undefined}
+						>
+							{item.label}
+						</a>
+					{/each}
+				</div>
+			</nav>
+		{/if}
 	</header>
 
 	<main class="flex-1">

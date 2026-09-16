@@ -100,9 +100,24 @@ ends, so hierarchy never flattens on small screens. Body measure is capped at
   version separated sections with nothing but a large top margin.
 - The header is sticky with a hairline under it. Previously the wordmark and nav
   floated on the same undifferentiated field as the content.
-- **The sticky header has consequences.** Its height lives in `--header-height`
-  (taller below `sm`, where the row wraps). Anything that must clear it reads
-  that token: `html` sets `scroll-padding-top` from it so in-page anchors like
+- **The header carries three links, not the whole site.** Blog, Uses, Contact.
+  "Home" is not among them because the wordmark beside them already goes there.
+  Restaurants, Patents, and Policies stay in the footer: a dropdown labelled
+  "More" would have hidden three links behind a word that promises nothing, and
+  bought a focus trap, an outside-click handler, and a second stacking context
+  for the privilege. The pages are surfaced in body copy instead, where the
+  sentence around the link is already about the subject.
+- **Below `sm` the links collapse into a disclosure panel.** A labelled "Menu"
+  button, not a bare glyph. The panel is vertical, so rows are free and it lists
+  the footer-only pages too — on a phone the footer is the longest possible
+  scroll away, which is exactly the problem worth solving. It mounts on open
+  rather than hiding in the DOM, so its links are never focusable while closed,
+  and it is positioned against the header instead of sitting in its flow, so
+  opening it cannot change `--header-height`.
+- **The sticky header has consequences.** Its height lives in `--header-height`,
+  one value now that the row no longer wraps at any width — the mobile button's
+  44px touch target is absorbed by less vertical padding rather than a taller
+  bar. Anything that must clear it reads that token: `html` sets `scroll-padding-top` from it so in-page anchors like
   `/#projects` do not land under the header, and the restaurants map offsets its
   own `xl:sticky` position from it. Do not hard-code an offset.
 - **Only one sticky layer may compete with the header.** The map is given
