@@ -5,8 +5,20 @@ import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.jpg?en
 import pagespeed from '$lib/images/projects/pagespeed.jpg?enhanced';
 import screenshotMaker from '$lib/images/projects/screenshot-maker.webp?enhanced';
 import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.jpg?enhanced';
+import whatToDoInSaltLake from '$lib/images/projects/whattodoinsaltlake.jpg?enhanced';
 
 export const blogArticles = [
+	{
+		title: 'What To Do In Salt Lake',
+		slug: 'what-to-do-in-salt-lake',
+		teaser:
+			'I got tired of checking a dozen venue calendars to plan a weekend, so I built one calendar for all of Salt Lake',
+		publishedAt: new Date('2026-09-24T16:00:00.000Z'),
+		readingTime: '3 minute read',
+		image: whatToDoInSaltLake,
+		tags: ['projects', 'events', 'sveltekit'],
+		relatedSlugs: ['screenshot-maker', 'pagespeed-testing']
+	},
 	{
 		title: 'Screenshot Maker',
 		slug: 'screenshot-maker',
