@@ -91,6 +91,16 @@ export const cards = [
 
 	// Blog posts
 	{
+		name: 'blog-what-to-do-in-salt-lake',
+		route: '/blog/what-to-do-in-salt-lake',
+		eyebrow: 'Blog',
+		title: 'What To Do In Salt Lake',
+		description: 'One calendar for concerts, markets, and meetups around Salt Lake City.',
+		meta: 'September 24, 2026 · 3 minute read',
+		image: 'src/lib/images/projects/whattodoinsaltlake.jpg',
+		imageStyle: 'thumb'
+	},
+	{
 		name: 'blog-screenshot-maker',
 		route: '/blog/screenshot-maker',
 		eyebrow: 'Blog',

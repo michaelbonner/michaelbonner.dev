@@ -4,6 +4,10 @@
 
 export const blogArticlesTestData = [
 	{
+		title: 'What To Do In Salt Lake',
+		slug: 'what-to-do-in-salt-lake'
+	},
+	{
 		title: 'Screenshot Maker',
 		slug: 'screenshot-maker'
 	},
