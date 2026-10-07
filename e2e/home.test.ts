@@ -30,6 +30,7 @@ test.describe('Homepage project groups', () => {
 		await expect(page.locator('#developer-tools')).toContainText('Redirects Wizard');
 		await expect(page.locator('#developer-tools')).toContainText('MP4 Compressor');
 		await expect(page.locator('#developer-tools')).toContainText('MP4 to OGV Converter');
+		await expect(page.locator('#developer-tools')).toContainText('Trim Crop Marks');
 		await expect(page.locator('#other-client-sites')).toContainText('MetaCensus');
 	});
 
@@ -40,10 +41,10 @@ test.describe('Homepage project groups', () => {
 
 		await expect(saasCards).toHaveCount(4);
 		await expect(justForFunCards).toHaveCount(8);
-		await expect(developerToolCards).toHaveCount(10);
+		await expect(developerToolCards).toHaveCount(11);
 		await expect(saasCards.filter({ visible: true })).toHaveCount(4);
 		await expect(justForFunCards.filter({ visible: true })).toHaveCount(8);
-		await expect(developerToolCards.filter({ visible: true })).toHaveCount(10);
+		await expect(developerToolCards.filter({ visible: true })).toHaveCount(11);
 		await expect(page.getByRole('button', { name: /show all|show fewer/i })).toHaveCount(0);
 	});
 

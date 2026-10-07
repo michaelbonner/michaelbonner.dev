@@ -60,6 +60,7 @@
 	import lostCreekContracting from '$lib/images/sites/lostcreekcontracting-com.webp?enhanced';
 	import metacensus from '$lib/images/sites/metacensus-org.webp?enhanced';
 	import mp4Compressor from '$lib/images/projects/mp4-compressor.jpg?enhanced';
+	import trimCropMarks from '$lib/images/projects/trim-crop-marks.jpg?enhanced';
 	import mp4ToOgvConverter from '$lib/images/projects/mp4-to-ogv.jpg?enhanced';
 	import nef1Org from '$lib/images/sites/nef1-org.webp?enhanced';
 	import pathwaysEnergy from '$lib/images/sites/pathwaysenergy-org.webp?enhanced';
@@ -305,6 +306,13 @@
 				'A browser-based utility for converting MP4 videos to OGV files with a simple drag-and-drop upload.',
 			url: 'https://mp4-to-ogv.bootpack.dev',
 			image: mp4ToOgvConverter
+		},
+		{
+			title: 'Trim Crop Marks',
+			description:
+				'Drop in print-export PDFs and get clean copies back with the crop marks trimmed away. Everything runs in your browser, so your files never leave your device.',
+			url: 'https://trim-crop-marks.bootpack.work/',
+			image: trimCropMarks
 		}
 	];
 
@@ -318,7 +326,8 @@
 		'Random String Generator',
 		'Redirects Wizard',
 		'MP4 Compressor',
-		'MP4 to OGV Converter'
+		'MP4 to OGV Converter',
+		'Trim Crop Marks'
 	]);
 	const justForFunTitles = new Set([
 		'What To Do In Salt Lake',
