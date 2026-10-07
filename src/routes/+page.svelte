@@ -311,7 +311,7 @@
 			title: 'Trim Crop Marks',
 			description:
 				'Drop in print-export PDFs and get clean copies back with the crop marks trimmed away. Everything runs in your browser, so your files never leave your device.',
-			url: 'https://trim-crop-marks.bootpack.work/',
+			url: 'https://trim-crop-marks.bootpack.dev/',
 			image: trimCropMarks
 		}
 	];
