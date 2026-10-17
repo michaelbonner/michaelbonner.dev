@@ -34,12 +34,14 @@
 
 	/*
 	 * Client-work cards run two to a row and side projects four, so a single
-	 * `sizes` string would over-serve one grid and starve the other.
+	 * `sizes` string would over-serve one grid and starve the other. Below `sm`
+	 * the card is the page width less the container's px-6 gutters; `100vw`
+	 * there tips a 1.75x phone just past the 720w file onto the 960w one.
 	 */
 	const sizes = $derived(
 		compact
-			? '(min-width: 1280px) 300px, (min-width: 1024px) 400px, (min-width: 640px) 45vw, 100vw'
-			: '(min-width: 1024px) 560px, (min-width: 640px) 90vw, 100vw'
+			? '(min-width: 1280px) 300px, (min-width: 1024px) 400px, (min-width: 640px) 45vw, calc(100vw - 3rem)'
+			: '(min-width: 1024px) 560px, (min-width: 640px) 90vw, calc(100vw - 3rem)'
 	);
 </script>
 

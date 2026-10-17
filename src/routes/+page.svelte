@@ -12,21 +12,21 @@
 	import LinkedIn from '../icons/LinkedIn.svelte';
 	import { classes } from '../styles/classes';
 	// images
-	import mainImage from '$lib/images/on-the-beach.jpg?enhanced';
+	import mainImage from '$lib/images/on-the-beach.jpg?enhanced&w=1600;1200;960;720;480';
 	import bookAMeetingTime from '$lib/images/projects/book-a-meeting-time.jpg?enhanced';
 	import cookieParser from '$lib/images/projects/cookie-parser.jpg?enhanced';
 	import dateFnsFormat from '$lib/images/projects/date-fns-format.jpg?enhanced';
 	import daysUntil from '$lib/images/projects/days-until.jpg?enhanced';
-	import dkow from '$lib/images/projects/dkow.jpg?enhanced';
+	import dkow from '$lib/images/projects/dkow.jpg?enhanced&w=1600;1200;960;720;480';
 	import easyCustomerFeedback from '$lib/images/projects/easycustomerfeedback.jpg?enhanced';
-	import energySafeKids from '$lib/images/projects/energy-safe-kids.jpg?enhanced';
+	import energySafeKids from '$lib/images/projects/energy-safe-kids.jpg?enhanced&w=1600;1200;960;720;480';
 	import festivalThings from '$lib/images/projects/festival-things.jpg?enhanced';
 	import githubRepositoriesViewer from '$lib/images/projects/github-repositories-viewer.jpg?enhanced';
-	import hereKidsWin from '$lib/images/projects/here-kids-win.jpg?enhanced';
-	import jMillsEnt from '$lib/images/projects/jmillsent.jpg?enhanced';
+	import hereKidsWin from '$lib/images/projects/here-kids-win.jpg?enhanced&w=1600;1200;960;720;480';
+	import jMillsEnt from '$lib/images/projects/jmillsent.jpg?enhanced&w=1600;1200;960;720;480';
 	import jobListing from '$lib/images/projects/joblisting.jpg?enhanced';
 	import lazyUncle from '$lib/images/projects/lazy-uncle.jpg?enhanced';
-	import nefPas from '$lib/images/projects/nef-pas.jpg?enhanced';
+	import nefPas from '$lib/images/projects/nef-pas.jpg?enhanced&w=1600;1200;960;720;480';
 	import nhlArenas from '$lib/images/projects/nhl-arenas.jpg?enhanced';
 	import ocr from '$lib/images/projects/ocr.jpg?enhanced';
 	import officelunch from '$lib/images/projects/officelunch.jpg?enhanced';
@@ -37,10 +37,10 @@
 	import randomStringGenerator from '$lib/images/projects/random-string-generator.jpg?enhanced';
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced';
 	import screenshotMaker from '$lib/images/projects/screenshot-maker.jpg?enhanced';
-	import utahMountainAdventures from '$lib/images/projects/utah-mountain-adventures.jpg?enhanced';
-	import wasatchFabrication from '$lib/images/projects/wasatch-fabrication.jpg?enhanced';
-	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced';
-	import whatToDoInSaltLake from '$lib/images/projects/whattodoinsaltlake.jpg?enhanced';
+	import utahMountainAdventures from '$lib/images/projects/utah-mountain-adventures.jpg?enhanced&w=1600;1200;960;720;480';
+	import wasatchFabrication from '$lib/images/projects/wasatch-fabrication.jpg?enhanced&w=1600;1200;960;720;480';
+	import wasatchCovers from '$lib/images/projects/wasatchcovers.jpg?enhanced&w=1600;1200;960;720;480';
+	import whatToDoInSaltLake from '$lib/images/projects/whattodoinsaltlake.jpg?enhanced&w=1600;1200;960;720;480';
 	import eightOneOneContest from '$lib/images/sites/811contest-org.webp?enhanced';
 	import acceleratedEquityPlans from '$lib/images/sites/acceleratedep-com.webp?enhanced';
 	import artistAmyBonner from '$lib/images/sites/amy-bonner-com.webp?enhanced';
@@ -609,7 +609,7 @@
 				class="border-rule shadow-lift h-auto w-full rounded-xl border object-cover"
 				fetchpriority="high"
 				src={mainImage}
-				sizes="(min-width: 1024px) 420px, 100vw"
+				sizes="(min-width: 1024px) 420px, (min-width: 640px) calc(100vw - 4rem), calc(100vw - 3rem)"
 			/>
 
 			<!--
