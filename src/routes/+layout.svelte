@@ -2,6 +2,11 @@
 	import '../app.css';
 	import '@fontsource-variable/newsreader';
 	import '@fontsource-variable/public-sans';
+	// The Latin subsets are what nearly every page renders in. Preloading them
+	// starts the download alongside the CSS instead of after it, so the swap
+	// lands before first paint on most connections.
+	import newsreaderLatin from '@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url';
+	import publicSansLatin from '@fontsource-variable/public-sans/files/public-sans-latin-wght-normal.woff2?url';
 
 	import { browser } from '$app/environment';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
@@ -9,7 +14,6 @@
 	import { env } from '$env/dynamic/public';
 	import { partytownSnippet } from '@qwik.dev/partytown/integration';
 	import posthog from 'posthog-js';
-	import { onMount } from 'svelte';
 	import { classNames } from '../functions/classNames';
 	import Menu from '../icons/Menu.svelte';
 	import { classes } from '../styles/classes';
@@ -77,12 +81,6 @@
 	// Following a link inside the panel should leave it closed behind you.
 	afterNavigate(() => closeMenu());
 
-	onMount(() => {
-		document.querySelectorAll('link[rel="preload"]').forEach((link) => {
-			link.setAttribute('rel', 'stylesheet');
-		});
-	});
-
 	if (browser && env.PUBLIC_POSTHOG_ENABLED !== 'false' && env.PUBLIC_POSTHOG_API_KEY) {
 		posthog.init(env.PUBLIC_POSTHOG_API_KEY, {
 			api_host: 'https://g.michaelbonner.dev',
@@ -100,6 +98,8 @@
 </script>
 
 <svelte:head>
+	<link rel="preload" href={newsreaderLatin} as="font" type="font/woff2" crossorigin="anonymous" />
+	<link rel="preload" href={publicSansLatin} as="font" type="font/woff2" crossorigin="anonymous" />
 	<meta name="theme-color" content="#faf6f2" />
 	<meta name="color-scheme" content="light" />
 	<meta property="og:url" content={`https://michaelbonner.dev${page.url.pathname}`} />

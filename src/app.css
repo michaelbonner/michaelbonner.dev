@@ -3,6 +3,48 @@
 @plugin '@tailwindcss/typography';
 
 /*
+  Metric-matched stand-ins for the web fonts. Both families use font-display:
+  swap, so text first paints in a local font; without these overrides the swap
+  rewraps the home page's heading and shoves everything below it down (that was
+  Lighthouse's whole CLS score on mobile).
+
+  size-adjust is Newsreader's rendered width over Georgia's for the same run of
+  site copy; the ascent/descent overrides are Newsreader's own vertical metrics
+  divided by that size-adjust. Semibold gets its own face against Georgia Bold:
+  without one, Georgia renders 600 as plain regular, about 4% narrower than
+  Newsreader's semibold, and the h1 drops a line on swap. Remeasure if either
+  font is ever replaced.
+*/
+@font-face {
+	font-family: 'Newsreader Fallback';
+	font-weight: 200 500;
+	src: local('Georgia');
+	size-adjust: 95.21%;
+	ascent-override: 77.2%;
+	descent-override: 27.83%;
+	line-gap-override: 0%;
+}
+
+@font-face {
+	font-family: 'Newsreader Fallback';
+	font-weight: 600 800;
+	src: local('Georgia Bold'), local('Georgia-Bold');
+	size-adjust: 86.11%;
+	ascent-override: 85.36%;
+	descent-override: 30.77%;
+	line-gap-override: 0%;
+}
+
+@font-face {
+	font-family: 'Public Sans Fallback';
+	src: local('Arial'), local('Helvetica'), local('Liberation Sans');
+	size-adjust: 102.18%;
+	ascent-override: 92.98%;
+	descent-override: 22.02%;
+	line-gap-override: 0%;
+}
+
+/*
   Design tokens.
 
   Two families with distinct jobs: Newsreader carries display type and long-form
@@ -12,8 +54,8 @@
 */
 @theme {
 	--font-*: initial;
-	--font-sans: 'Public Sans Variable', ui-sans-serif, system-ui, sans-serif;
-	--font-serif: 'Newsreader Variable', Georgia, serif;
+	--font-sans: 'Public Sans Variable', 'Public Sans Fallback', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Newsreader Variable', 'Newsreader Fallback', Georgia, serif;
 	--font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace;
 
 	/*
