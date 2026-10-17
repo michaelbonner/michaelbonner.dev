@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { env } from '$env/dynamic/public';
+	import { PUBLIC_TURNSTILE_SITE_KEY } from '$app/env/public';
 	import { Turnstile } from 'svelte-turnstile';
 	import Seo from '../../components/Seo.svelte';
 	import { classNames } from '../../functions/classNames';
@@ -67,7 +67,7 @@
 						I&apos;ve received your message and will get back to you soon.
 					</p>
 				</div>
-			{:else if !env.PUBLIC_TURNSTILE_SITE_KEY}
+			{:else if !PUBLIC_TURNSTILE_SITE_KEY}
 				<div class={classNames(classes.surface, 'grid gap-2 p-6')}>
 					<p class="text-h3 text-ink font-serif font-semibold">Contact form unavailable</p>
 					<p class="text-ink-muted font-serif text-[1.0625rem]">
@@ -114,9 +114,9 @@
 							class={classNames(classes.input, 'resize-y')}></textarea>
 					</div>
 
-					{#if env.PUBLIC_TURNSTILE_SITE_KEY}
+					{#if PUBLIC_TURNSTILE_SITE_KEY}
 						<div class="max-w-full min-w-0 overflow-x-auto">
-							<Turnstile siteKey={env.PUBLIC_TURNSTILE_SITE_KEY} />
+							<Turnstile siteKey={PUBLIC_TURNSTILE_SITE_KEY} />
 						</div>
 					{/if}
 

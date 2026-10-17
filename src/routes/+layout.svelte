@@ -8,10 +8,10 @@
 	import newsreaderLatin from '@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url';
 	import publicSansLatin from '@fontsource-variable/public-sans/files/public-sans-latin-wght-normal.woff2?url';
 
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
-	import { env } from '$env/dynamic/public';
+	import { PUBLIC_POSTHOG_ENABLED, PUBLIC_POSTHOG_API_KEY } from '$app/env/public';
 	import { partytownSnippet } from '@qwik.dev/partytown/integration';
 	import { classNames } from '../functions/classNames';
 	import Menu from '../icons/Menu.svelte';
@@ -80,8 +80,8 @@
 	// Following a link inside the panel should leave it closed behind you.
 	afterNavigate(() => closeMenu());
 
-	if (browser && env.PUBLIC_POSTHOG_ENABLED !== 'false' && env.PUBLIC_POSTHOG_API_KEY) {
-		const apiKey = env.PUBLIC_POSTHOG_API_KEY;
+	if (browser && PUBLIC_POSTHOG_ENABLED !== 'false' && PUBLIC_POSTHOG_API_KEY) {
+		const apiKey = PUBLIC_POSTHOG_API_KEY;
 
 		/*
 		 * posthog-js is ~100 KB over the wire, the largest script on the site.
@@ -110,8 +110,14 @@
 				return posthog;
 			});
 
-		beforeNavigate(() => posthogReady.then((posthog) => posthog.capture('$pageleave')));
-		afterNavigate(() => posthogReady.then((posthog) => posthog.capture('$pageview')));
+		// Shallow navigations (the restaurant filters rewriting the query string)
+		// stay on the same page, so they are not pageviews.
+		beforeNavigate(({ shallow }) => {
+			if (!shallow) posthogReady.then((posthog) => posthog.capture('$pageleave'));
+		});
+		afterNavigate(({ shallow }) => {
+			if (!shallow) posthogReady.then((posthog) => posthog.capture('$pageview'));
+		});
 	}
 
 	const children_render = $derived(children);

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { env } from '$env/dynamic/public';
+	import { PUBLIC_SITE_URL } from '$app/env/public';
 
 	let {
 		title = '',
@@ -24,7 +24,7 @@
 			return `http://localhost:5173${image}`;
 		}
 
-		return `${env.PUBLIC_SITE_URL || 'https://michaelbonner.dev'}${image}`;
+		return `${PUBLIC_SITE_URL || 'https://michaelbonner.dev'}${image}`;
 	};
 
 	const schema = $derived({

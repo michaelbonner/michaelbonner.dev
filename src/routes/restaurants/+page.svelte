@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { replaceState } from '$app/navigation';
+	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import type { ResolvedPathname } from '$app/types';
@@ -15,7 +15,7 @@
 		restaurantTags,
 		restaurants,
 		type Restaurant
-	} from '$lib/data/restaurants';
+	} from '#lib/data/restaurants.js';
 
 	type SortKey = 'name' | 'tags' | 'locations' | 'pricePerPerson' | 'rating';
 	type SortDirection = 'asc' | 'desc';
@@ -73,7 +73,7 @@
 	const oneOf = <T,>(options: readonly T[], value: T, fallback: T) =>
 		options.includes(value) ? value : fallback;
 
-	const readFilters = (url: URL): Filters => {
+	const readFilters = (url: { searchParams: Pick<URLSearchParams, 'get'> }): Filters => {
 		const params = url.searchParams;
 		const [sortName, direction] = (params.get('sort') ?? '').split('-');
 		const sortKey =
@@ -215,7 +215,7 @@
 		});
 
 		// Nothing to write on the first run, since the controls came from this URL.
-		// Skipping it also keeps us clear of replaceState before the router is ready.
+		// Skipping it also keeps us clear of navigating before the router is ready.
 		if (!urlSynced) {
 			urlSynced = true;
 			return;
@@ -224,13 +224,13 @@
 		// `location` is the filter above, not the browser's, hence `window.location`.
 		if (query === window.location.search.replace(/^\?/, '')) return;
 
-		// replaceState rather than pushState: the back button should leave the page
+		// A shallow, replacing navigation: the back button should leave the page
 		// rather than walk back through every keystroke. `resolve()` keeps the path
 		// correct under a base path; the cast just re-attaches the type a query
 		// string strips off.
 		const target = `${resolve('/restaurants')}${query ? `?${query}` : ''}` as ResolvedPathname;
 
-		replaceState(target, {});
+		goto(target, { shallow: true, replace: true });
 	});
 
 	const select = (name: string | null) => {

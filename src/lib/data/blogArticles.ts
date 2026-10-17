@@ -1,11 +1,11 @@
-import chromeBasecampUiExtension from '$lib/images/chrome-basecamp-ui-extension.jpg?enhanced';
-import gitBranchNameGenerator3 from '$lib/images/git-branch-name-generator-3.jpg?enhanced';
-import githubRepositoriesViewer from '$lib/images/github-repositories-viewer.jpg?enhanced';
-import itermAliasesTrimmed600 from '$lib/images/iterm-aliases-trimmed-600.jpg?enhanced';
-import pagespeed from '$lib/images/projects/pagespeed.jpg?enhanced';
-import screenshotMaker from '$lib/images/projects/screenshot-maker.webp?enhanced';
-import tuffWebsiteScreenshotTrimmed600 from '$lib/images/tuff-website-screenshot-trimmed-600.jpg?enhanced';
-import whatToDoInSaltLake from '$lib/images/projects/whattodoinsaltlake.jpg?enhanced';
+import chromeBasecampUiExtension from '#lib/images/chrome-basecamp-ui-extension.jpg?enhanced';
+import gitBranchNameGenerator3 from '#lib/images/git-branch-name-generator-3.jpg?enhanced';
+import githubRepositoriesViewer from '#lib/images/github-repositories-viewer.jpg?enhanced';
+import itermAliasesTrimmed600 from '#lib/images/iterm-aliases-trimmed-600.jpg?enhanced';
+import pagespeed from '#lib/images/projects/pagespeed.jpg?enhanced';
+import screenshotMaker from '#lib/images/projects/screenshot-maker.webp?enhanced';
+import tuffWebsiteScreenshotTrimmed600 from '#lib/images/tuff-website-screenshot-trimmed-600.jpg?enhanced';
+import whatToDoInSaltLake from '#lib/images/projects/whattodoinsaltlake.jpg?enhanced';
 
 export const blogArticles = [
 	{

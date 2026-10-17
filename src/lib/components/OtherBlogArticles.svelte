@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { blogArticles } from '$lib/data/blogArticles';
+	import { blogArticles } from '#lib/data/blogArticles.js';
 	import { classNames } from '../../functions/classNames';
 	import { classes } from '../../styles/classes';
 

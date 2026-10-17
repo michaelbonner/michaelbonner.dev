@@ -1,5 +1,5 @@
-import { env } from '$env/dynamic/public';
-import type { Handle, HandleServerError } from '@sveltejs/kit';
+import type { Handle, HandleServerError } from '@sveltejs/kit/hooks';
+import { PUBLIC_POSTHOG_ENABLED, PUBLIC_POSTHOG_API_KEY } from '$app/env/public';
 
 export const handle: Handle = ({ event, resolve }) => {
 	const host = event.request.headers.get('host');
@@ -11,8 +11,12 @@ export const handle: Handle = ({ event, resolve }) => {
 	return resolve(event);
 };
 
-export const handleError: HandleServerError = async ({ error, status }) => {
-	if (status !== 404 && env.PUBLIC_POSTHOG_ENABLED !== 'false' && env.PUBLIC_POSTHOG_API_KEY) {
+// Every error reaches this hook, including 404s and error() calls. Only unexpected
+// ones are reported, and only they get the generic message; the rest keep their own.
+export const handleError: HandleServerError = async ({ kind, error }) => {
+	if (kind !== 'unknown') return;
+
+	if (PUBLIC_POSTHOG_ENABLED !== 'false' && PUBLIC_POSTHOG_API_KEY) {
 		const normalizedError = error instanceof Error ? error : new Error(String(error));
 
 		await fetch('https://us.i.posthog.com/capture/', {
@@ -21,13 +25,13 @@ export const handleError: HandleServerError = async ({ error, status }) => {
 				'content-type': 'application/json'
 			},
 			body: JSON.stringify({
-				api_key: env.PUBLIC_POSTHOG_API_KEY,
+				api_key: PUBLIC_POSTHOG_API_KEY,
 				event: '$exception',
 				distinct_id: 'server',
 				properties: {
 					$exception_message: normalizedError.message,
 					$exception_type: normalizedError.name,
-					status
+					status: 500
 				}
 			})
 		});

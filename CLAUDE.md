@@ -126,7 +126,7 @@ need Telegram, D1, or Turnstile configured.
 Uses **@sveltejs/enhanced-img** with the `?enhanced` query parameter:
 
 ```svelte
-import image from '$lib/images/example.jpg?enhanced'; // Use: {image.img.src} for src attribute
+import image from '#lib/images/example.jpg?enhanced'; // Use: {image.img.src} for src attribute
 ```
 
 #### Analytics & Performance

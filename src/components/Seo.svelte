@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { env } from '$env/dynamic/public';
+	import { PUBLIC_SITE_URL } from '$app/env/public';
 
 	let { title = '', description = '', ogImage = '/og/default.jpg', ogType = 'website' } = $props();
 
@@ -12,7 +12,7 @@
 			return `http://localhost:5173${ogImage}`;
 		}
 
-		return `${env.PUBLIC_SITE_URL || 'https://michaelbonner.dev'}${ogImage}`;
+		return `${PUBLIC_SITE_URL || 'https://michaelbonner.dev'}${ogImage}`;
 	};
 </script>
 

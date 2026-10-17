@@ -1,5 +1,5 @@
 import { fail } from '@sveltejs/kit';
-import { env } from '$env/dynamic/private';
+import { TURNSTILE_SECRET_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from '$app/env/private';
 import type { Actions } from './$types';
 
 /** Generous enough for a real suggestion, short enough to keep a Telegram message readable. */
@@ -16,9 +16,9 @@ const field = (data: FormData, key: string) => data.get(key)?.toString().trim() 
 
 export const actions: Actions = {
 	suggest: async ({ request, platform }) => {
-		const turnstileSecret = env.TURNSTILE_SECRET_KEY;
-		const telegramBotToken = env.TELEGRAM_BOT_TOKEN;
-		const telegramChatId = env.TELEGRAM_CHAT_ID;
+		const turnstileSecret = TURNSTILE_SECRET_KEY;
+		const telegramBotToken = TELEGRAM_BOT_TOKEN;
+		const telegramChatId = TELEGRAM_CHAT_ID;
 
 		// The suggestion has nowhere to go without the D1 binding, and no spam
 		// protection without the Turnstile secret, so refuse rather than accept a
@@ -140,13 +140,8 @@ export const actions: Actions = {
 				`https://api.telegram.org/bot${telegramBotToken}/sendMessage`,
 				{
 					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({
-						chat_id: telegramChatId,
-						text: text
-					})
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ chat_id: telegramChatId, text })
 				}
 			);
 
