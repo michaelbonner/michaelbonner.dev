@@ -33,6 +33,7 @@
 	import pagespeed from '$lib/images/projects/pagespeed.jpg?enhanced';
 	import pizza from '$lib/images/projects/pizza.jpg?enhanced';
 	import podcasts from '$lib/images/projects/podcasts.jpg?enhanced';
+	import reelLineup from '$lib/images/projects/reel-lineup.jpg?enhanced';
 	import randomStringGenerator from '$lib/images/projects/random-string-generator.jpg?enhanced';
 	import routePicker from '$lib/images/projects/route-picker.jpg?enhanced';
 	import screenshotMaker from '$lib/images/projects/screenshot-maker.jpg?enhanced';
@@ -172,6 +173,13 @@
 				'A festival lineup companion for music fans. Sort every artist into must-see, want-to-see, maybe, or pass, discover new acts, and connect your Spotify to see who you already love — then share it all with your group so you never miss a set.',
 			url: 'https://festival-things.com/',
 			image: festivalThings
+		},
+		{
+			title: 'Reel Lineup',
+			description:
+				"Turn your friends' movie recommendations into ranked lineups. Import your Letterboxd history, share your profile, and let the people who know you best pick what you watch next.",
+			url: 'https://reellineup.com/',
+			image: reelLineup
 		},
 		{
 			title: 'Job Listing',
@@ -332,6 +340,7 @@
 	const justForFunTitles = new Set([
 		'What To Do In Salt Lake',
 		'Festival Things',
+		'Reel Lineup',
 		'Lazy Uncle',
 		'Podcasts I Listen To',
 		'Days Until',
