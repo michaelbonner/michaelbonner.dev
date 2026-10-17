@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { classNames } from '../functions/classNames';
-	import { restaurantImage } from '$lib/data/restaurantImages';
+	import { restaurantImage } from '#lib/data/restaurantImages.js';
 	import { onMount } from 'svelte';
 
 	interface Props {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { blogArticles } from '$lib/data/blogArticles';
+	import { blogArticles } from '#lib/data/blogArticles.js';
 	import Seo from '../../components/Seo.svelte';
 	import { classNames } from '../../functions/classNames';
 	import { classes } from '../../styles/classes';

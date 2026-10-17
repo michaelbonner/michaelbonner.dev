@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { env } from '$env/dynamic/public';
+	import { PUBLIC_TURNSTILE_SITE_KEY } from '$app/env/public';
 	import { Turnstile } from 'svelte-turnstile';
 	import { classNames } from '../functions/classNames';
 	import { classes } from '../styles/classes';
@@ -269,10 +269,10 @@
 						</div>
 					</div>
 
-					{#if env.PUBLIC_TURNSTILE_SITE_KEY}
+					{#if PUBLIC_TURNSTILE_SITE_KEY}
 						{#key captchaAttempt}
 							<div class="max-w-full min-w-0 overflow-x-auto">
-								<Turnstile siteKey={env.PUBLIC_TURNSTILE_SITE_KEY} />
+								<Turnstile siteKey={PUBLIC_TURNSTILE_SITE_KEY} />
 							</div>
 						{/key}
 					{/if}

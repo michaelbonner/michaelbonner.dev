@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Restaurant } from '$lib/data/restaurants';
-	import { restaurantImage } from '$lib/data/restaurantImages';
+	import type { Restaurant } from '#lib/data/restaurants.js';
+	import { restaurantImage } from '#lib/data/restaurantImages.js';
 	import type * as Leaflet from 'leaflet';
 	import { onMount, untrack } from 'svelte';
 	// Vite extracts this at build time, so it is safe to import outside the browser guard.

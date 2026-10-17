@@ -1,5 +1,5 @@
 <script>
-	import whatToDoInSaltLake from '$lib/images/projects/whattodoinsaltlake.jpg?enhanced';
+	import whatToDoInSaltLake from '#lib/images/projects/whattodoinsaltlake.jpg?enhanced';
 	import A from '../../../components/A.svelte';
 	import Seo from '../../../components/Seo.svelte';
 	import BlogPostSchema from '../../../components/BlogPostSchema.svelte';

@@ -1,6 +1,8 @@
 import { fail } from '@sveltejs/kit';
-import { env } from '$env/dynamic/private';
+import { TURNSTILE_SECRET_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from '$app/env/private';
 import type { Actions } from './$types';
+
+const env = { TURNSTILE_SECRET_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID };
 
 export const actions: Actions = {
 	default: async ({ request }) => {
@@ -9,6 +11,7 @@ export const actions: Actions = {
 			'TELEGRAM_BOT_TOKEN',
 			'TELEGRAM_CHAT_ID'
 		] as const;
+
 		const missingEnvVars = requiredEnvVars.filter((key) => !env[key]);
 
 		if (missingEnvVars.length > 0) {
@@ -56,13 +59,8 @@ export const actions: Actions = {
 			`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`,
 			{
 				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					chat_id: env.TELEGRAM_CHAT_ID,
-					text: text
-				})
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ chat_id: env.TELEGRAM_CHAT_ID, text })
 			}
 		);
 

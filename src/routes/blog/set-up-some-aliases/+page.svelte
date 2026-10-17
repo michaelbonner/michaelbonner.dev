@@ -1,5 +1,5 @@
 <script lang="ts">
-	import itermAliases from '$lib/images/iterm-aliases-trimmed-600.jpg';
+	import itermAliases from '#lib/images/iterm-aliases-trimmed-600.jpg';
 	import { Highlight } from 'svelte-highlight';
 	import bash from 'svelte-highlight/languages/bash';
 	import Seo from '../../../components/Seo.svelte';

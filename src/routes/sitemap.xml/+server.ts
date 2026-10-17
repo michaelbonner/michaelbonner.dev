@@ -1,4 +1,4 @@
-import { blogArticles } from '$lib/data/blogArticles';
+import { blogArticles } from '#lib/data/blogArticles.js';
 
 type SitemapPage = {
 	url: string;
