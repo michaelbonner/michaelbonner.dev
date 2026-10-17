@@ -13,7 +13,6 @@
 	import { page } from '$app/state';
 	import { env } from '$env/dynamic/public';
 	import { partytownSnippet } from '@qwik.dev/partytown/integration';
-	import posthog from 'posthog-js';
 	import { classNames } from '../functions/classNames';
 	import Menu from '../icons/Menu.svelte';
 	import { classes } from '../styles/classes';
@@ -82,16 +81,37 @@
 	afterNavigate(() => closeMenu());
 
 	if (browser && env.PUBLIC_POSTHOG_ENABLED !== 'false' && env.PUBLIC_POSTHOG_API_KEY) {
-		posthog.init(env.PUBLIC_POSTHOG_API_KEY, {
-			api_host: 'https://g.michaelbonner.dev',
-			capture_pageleave: false,
-			capture_pageview: false,
-			defaults: '2026-05-30',
-			ui_host: 'https://us.posthog.com'
-		});
+		const apiKey = env.PUBLIC_POSTHOG_API_KEY;
 
-		beforeNavigate(() => posthog.capture('$pageleave'));
-		afterNavigate(() => posthog.capture('$pageview'));
+		/*
+		 * posthog-js is ~100 KB over the wire, the largest script on the site.
+		 * Imported statically it is modulepreloaded with the page and competes
+		 * with the CSS, fonts, and hero for the first paint on a phone, so it
+		 * waits for the load event and an idle moment instead. Navigation
+		 * events queue on the promise, so the first pageview is still sent.
+		 */
+		const posthogReady = new Promise<void>((resolve) => {
+			const whenIdle = () =>
+				'requestIdleCallback' in window
+					? requestIdleCallback(() => resolve(), { timeout: 3000 })
+					: setTimeout(resolve, 1);
+			if (document.readyState === 'complete') whenIdle();
+			else addEventListener('load', whenIdle, { once: true });
+		})
+			.then(() => import('posthog-js'))
+			.then(({ default: posthog }) => {
+				posthog.init(apiKey, {
+					api_host: 'https://g.michaelbonner.dev',
+					capture_pageleave: false,
+					capture_pageview: false,
+					defaults: '2026-05-30',
+					ui_host: 'https://us.posthog.com'
+				});
+				return posthog;
+			});
+
+		beforeNavigate(() => posthogReady.then((posthog) => posthog.capture('$pageleave')));
+		afterNavigate(() => posthogReady.then((posthog) => posthog.capture('$pageview')));
 	}
 
 	const children_render = $derived(children);
