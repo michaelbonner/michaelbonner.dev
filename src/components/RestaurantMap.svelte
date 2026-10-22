@@ -5,6 +5,7 @@
 	import { onMount, untrack } from 'svelte';
 	// Vite extracts this at build time, so it is safe to import outside the browser guard.
 	import 'leaflet/dist/leaflet.css';
+	import 'maplibre-gl/dist/maplibre-gl.css';
 
 	interface Props {
 		/** The currently visible (filtered) restaurants. Only those with coordinates get a pin. */
@@ -20,12 +21,14 @@
 	// Salt Lake City, used until there is something to fit the map to.
 	const SALT_LAKE_CITY: [number, number] = [40.7608, -111.891];
 
-	// Voyager stays light enough to read against the site's blue-gray dark theme.
-	// CARTO's dark tiles are nearly black and make the map feel disconnected from the page.
-	const TILE_URL = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+	// OpenFreeMap needs no API key (CARTO's basemaps started watermarking keyless
+	// tiles), and Positron is muted enough to sit quietly under the pins. It only
+	// serves vector tiles, so MapLibre draws them inside a Leaflet layer.
+	const STYLE_URL = 'https://tiles.openfreemap.org/styles/positron';
 	const TILE_ATTRIBUTION =
-		'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-		'&copy; <a href="https://carto.com/attributions">CARTO</a>';
+		'<a href="https://openfreemap.org">OpenFreeMap</a> ' +
+		'&copy; <a href="https://www.openmaptiles.org/">OpenMapTiles</a> ' +
+		'Data from <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 
 	let container: HTMLDivElement;
 	let L: typeof Leaflet | undefined = $state();
@@ -132,6 +135,7 @@
 		// Leaflet touches `window` at import time, so it can only be loaded in the browser.
 		(async () => {
 			const leaflet = (await import('leaflet')).default;
+			const { maplibreGL } = await import('@maplibre/maplibre-gl-leaflet');
 			if (disposed) return;
 
 			const instance = leaflet.map(container, {
@@ -140,12 +144,10 @@
 				scrollWheelZoom: false
 			});
 
-			leaflet
-				.tileLayer(TILE_URL, {
-					attribution: TILE_ATTRIBUTION,
-					maxZoom: 19
-				})
-				.addTo(instance);
+			maplibreGL({
+				style: STYLE_URL,
+				attributionControl: { customAttribution: TILE_ATTRIBUTION }
+			}).addTo(instance);
 
 			// Scroll zoom is off by default so the page still scrolls over the map;
 			// clicking the map opts into it.
@@ -444,7 +446,7 @@
 		line-height: 1.4;
 	}
 
-	/* Let the container's own background show through while tiles load. */
+	/* Let the container's own background show through while the basemap loads. */
 	:global(.leaflet-container) {
 		background: transparent;
 		font-family: var(--font-sans);
