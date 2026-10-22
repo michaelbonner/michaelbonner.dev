@@ -10,5 +10,13 @@ export default defineConfig({
 	},
 	testDir: 'e2e',
 	outputDir: 'playwright-report',
-	use: { baseURL: 'http://localhost:4173' }
+	use: {
+		baseURL: 'http://localhost:4173',
+		launchOptions: {
+			// Keep the restaurants map off OpenFreeMap. Rendering its vector tiles in
+			// the runner's software WebGL starves the other page under test of CPU,
+			// and no test should depend on a third-party tile server being up.
+			args: ['--host-resolver-rules=MAP tiles.openfreemap.org ~NOTFOUND']
+		}
+	}
 });
