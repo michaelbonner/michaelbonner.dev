@@ -35,6 +35,9 @@
 	let map: Leaflet.Map | undefined;
 	// Imperative Leaflet handles rather than reactive state, so a plain record is enough.
 	let markersByName: Record<string, Leaflet.Marker> = {};
+	// The first framing happens as the map appears, so it should not glide in from
+	// the default view: pins sliding under a resting cursor open the wrong preview.
+	let hasFramed = false;
 
 	const mappable = $derived(
 		restaurants.filter((restaurant) => restaurant.lat != null && restaurant.lng != null)
@@ -178,6 +181,7 @@
 			map?.remove();
 			map = undefined;
 			markersByName = {};
+			hasFramed = false;
 		};
 	});
 
@@ -226,8 +230,9 @@
 				instance.invalidateSize();
 				instance.fitBounds(
 					leaflet.latLngBounds(visible.map((r) => [r.lat!, r.lng!] as [number, number])),
-					{ padding: [40, 40], maxZoom: 15 }
+					{ padding: [40, 40], maxZoom: 15, animate: hasFramed }
 				);
+				hasFramed = true;
 			} else {
 				instance.setView(SALT_LAKE_CITY, 12);
 			}
