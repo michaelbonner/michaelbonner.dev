@@ -305,7 +305,7 @@
 
 <svelte:head>
 	<link rel="canonical" href="https://michaelbonner.dev/restaurants" />
-	<link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin="anonymous" />
+	<link rel="preconnect" href="https://tiles.openfreemap.org" crossorigin="anonymous" />
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html `<${'script'} type="application/ld+json">${itemListSchema}</${'script'}>`}
 </svelte:head>

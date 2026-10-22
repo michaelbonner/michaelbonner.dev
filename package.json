@@ -57,9 +57,11 @@
 	"dependencies": {
 		"@fontsource-variable/newsreader": "^5.3.0",
 		"@fontsource-variable/public-sans": "^5.3.0",
+		"@maplibre/maplibre-gl-leaflet": "^0.1.4",
 		"@qwik.dev/partytown": "^1.0.1",
 		"clsx": "^2.1.1",
 		"leaflet": "^1.9.4",
+		"maplibre-gl": "^6.15.0",
 		"photoswipe": "^5.4.4",
 		"posthog-js": "^1.438.12",
 		"svelte-turnstile": "^0.11.0"
