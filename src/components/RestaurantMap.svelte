@@ -135,7 +135,14 @@
 		// Leaflet touches `window` at import time, so it can only be loaded in the browser.
 		(async () => {
 			const leaflet = (await import('leaflet')).default;
-			const { maplibreGL } = await import('@maplibre/maplibre-gl-leaflet');
+			const [{ maplibreGL }, { setWorkerUrl }, { default: workerUrl }] = await Promise.all([
+				import('@maplibre/maplibre-gl-leaflet'),
+				import('maplibre-gl'),
+				// MapLibre looks for its worker next to its own module, which is not where
+				// Vite puts it, so point it at the copy Vite emits.
+				import('maplibre-gl/dist/maplibre-gl-worker.mjs?url')
+			]);
+			setWorkerUrl(workerUrl);
 			if (disposed) return;
 
 			const instance = leaflet.map(container, {
