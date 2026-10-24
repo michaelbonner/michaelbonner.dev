@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex" />
+		<link rel="icon" href="/favicon.png" />
+		<title>Error %sveltekit.status% | Michael Bonner</title>
+		<!--
+			Static fallback for errors SvelteKit cannot render through +error.svelte
+			(a throw in hooks.server.ts, the root layout, or the error page itself).
+			No build assets are available here, so the web fonts fall back to the
+			same local faces app.css uses as their stand-ins.
+		-->
+		<style>
+			:root {
+				color-scheme: light;
+				--ground: oklch(0.974 0.005 70);
+				--surface: oklch(0.995 0.003 70);
+				--ink: oklch(0.235 0.01 55);
+				--ink-muted: oklch(0.45 0.012 55);
+				--rule: oklch(0.895 0.006 70);
+				--rule-strong: oklch(0.82 0.008 70);
+				--accent: oklch(0.475 0.145 42);
+				--accent-bright: oklch(0.585 0.155 45);
+				--accent-soft: oklch(0.936 0.032 55);
+				--sans: 'Public Sans Variable', ui-sans-serif, system-ui, sans-serif;
+				--serif: 'Newsreader Variable', Georgia, serif;
+			}
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				background-color: var(--ground);
+				color: var(--ink);
+				font-family: var(--serif);
+				-webkit-font-smoothing: antialiased;
+				text-rendering: optimizeLegibility;
+			}
+			::selection {
+				background-color: var(--accent-soft);
+				color: var(--ink);
+			}
+			:focus-visible {
+				outline: 2px solid var(--accent-bright);
+				outline-offset: 2px;
+				border-radius: 2px;
+			}
+			.container {
+				width: 100%;
+				max-width: 80rem;
+				margin: 0 auto;
+				padding: 0 1.5rem;
+			}
+			header {
+				border-bottom: 1px solid var(--rule);
+			}
+			header .container {
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+			}
+			.wordmark {
+				color: var(--ink);
+				font-size: 1.25rem;
+				font-weight: 600;
+				letter-spacing: -0.025em;
+				text-decoration: none;
+				transition: color 150ms ease-out;
+			}
+			.wordmark:hover {
+				color: var(--accent);
+			}
+			main .container {
+				padding-top: 6rem;
+				padding-bottom: 6rem;
+			}
+			.content {
+				display: grid;
+				gap: 1.25rem;
+				max-width: 52ch;
+			}
+			.eyebrow {
+				margin: 0;
+				font-family: var(--sans);
+				font-size: 0.8125rem;
+				font-weight: 600;
+				letter-spacing: 0.14em;
+				text-transform: uppercase;
+				color: var(--accent);
+			}
+			h1 {
+				margin: 0;
+				font-size: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
+				line-height: 1.08;
+				letter-spacing: -0.02em;
+				font-weight: 600;
+				text-wrap: balance;
+			}
+			.lead {
+				margin: 0;
+				font-size: clamp(1.125rem, 1.06rem + 0.3vw, 1.3125rem);
+				line-height: 1.55;
+				color: var(--ink-muted);
+				text-wrap: pretty;
+			}
+			.actions {
+				margin-top: 0.5rem;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+			}
+			.button,
+			.button-quiet {
+				display: inline-flex;
+				align-items: center;
+				border-radius: 0.5rem;
+				font-family: var(--sans);
+				font-size: 0.9375rem;
+				line-height: 1.45;
+				text-decoration: none;
+				cursor: pointer;
+				transition:
+					color 150ms ease-out,
+					background-color 150ms ease-out,
+					border-color 150ms ease-out;
+			}
+			.button {
+				border: 0;
+				background: var(--accent);
+				padding: 0.625rem 1.25rem;
+				font-weight: 600;
+				color: var(--ground);
+			}
+			.button:hover {
+				background: var(--accent-bright);
+			}
+			.button-quiet {
+				border: 1px solid var(--rule);
+				background: var(--surface);
+				padding: 0.5rem 1rem;
+				font-weight: 500;
+				color: var(--ink-muted);
+			}
+			.button-quiet:hover {
+				border-color: var(--rule-strong);
+				color: var(--ink);
+			}
+			@media (min-width: 640px) {
+				.container {
+					padding-left: 2rem;
+					padding-right: 2rem;
+				}
+				.wordmark {
+					font-size: 1.5rem;
+				}
+			}
+			@media (min-width: 1024px) {
+				main .container {
+					padding-top: 8rem;
+					padding-bottom: 8rem;
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				* {
+					transition: none !important;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="container"><a class="wordmark" href="/">Michael Bonner</a></div>
+		</header>
+		<main>
+			<div class="container">
+				<div class="content">
+					<p class="eyebrow">Error %sveltekit.status%</p>
+					<h1>Something broke on my end.</h1>
+					<p class="lead">
+						It's not you. Something on the server tripped up while loading this page. Give it
+						another try in a moment.
+					</p>
+					<div class="actions">
+						<button type="button" class="button" onclick="location.reload()">Try again</button>
+						<a class="button-quiet" href="/">Go back home</a>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
