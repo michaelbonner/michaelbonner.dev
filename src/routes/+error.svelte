@@ -4,6 +4,11 @@
 	import { classes } from '../styles/classes';
 </script>
 
+<svelte:head>
+	<title>{page.status === 404 ? 'Page not found' : `Error ${page.status}`} | Michael Bonner</title>
+	<meta name="robots" content="noindex" />
+</svelte:head>
+
 <div class="container mx-auto grid place-items-start px-6 py-24 sm:px-8 lg:py-32">
 	<div class="grid max-w-[52ch] gap-5">
 		<p class={classes.eyebrow}>
