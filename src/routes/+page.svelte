@@ -348,9 +348,11 @@
 		'Pizza Size Price Calculator',
 		'Which Route Is Faster'
 	]);
-	const saasProjects = otherThings.filter(
-		(project) => !developerToolTitles.has(project.title) && !justForFunTitles.has(project.title)
-	);
+	const saasProjects = otherThings
+		.filter(
+			(project) => !developerToolTitles.has(project.title) && !justForFunTitles.has(project.title)
+		)
+		.sort((a, b) => a.title.localeCompare(b.title));
 	const developerTools = otherThings.filter((project) => developerToolTitles.has(project.title));
 	const justForFunProjects = otherThings.filter((project) => justForFunTitles.has(project.title));
 
