@@ -105,8 +105,8 @@
 			isAffiliateLink: true
 		},
 		{
-			href: 'https://savvycal.com/?via=michael-bonner',
-			title: 'SavvyCal',
+			href: 'https://bookameetingtime.com/',
+			title: 'Book a Meeting Time',
 			description:
 				'Makes it super easy to just send a URL to a client and let them pick a meeting time that works for them'
 		},
