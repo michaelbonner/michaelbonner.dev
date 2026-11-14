@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
+import { waitForHydration } from './hydration';
 
 const MOBILE = { width: 375, height: 800 };
 const DESKTOP = { width: 1280, height: 900 };
@@ -47,6 +48,7 @@ test.describe('Mobile navigation', () => {
 	test.beforeEach(async ({ page }) => {
 		await page.setViewportSize(MOBILE);
 		await page.goto('/');
+		await waitForHydration(page);
 	});
 
 	test('swaps the inline links for a labelled menu button', async ({ page }) => {

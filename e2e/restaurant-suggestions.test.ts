@@ -1,4 +1,5 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
+import { waitForHydration } from './hydration';
 
 /** The form action `use:enhance` posts to. */
 const isSuggestAction = (url: URL) => url.pathname === '/restaurants' && url.search === '?/suggest';
@@ -62,7 +63,7 @@ const fillSuggestion = async (dialog: Locator) => {
 test.describe('Suggest a restaurant', () => {
 	test.beforeEach(async ({ page }) => {
 		await page.goto('/restaurants');
-		await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+		await waitForHydration(page);
 	});
 
 	test('opens from the page and closes with Escape', async ({ page }) => {

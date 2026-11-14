@@ -12,7 +12,9 @@ export default defineConfig({
 		enhancedImages(),
 		sveltekit({
 			adapter: adapter({
-				platformProxy: process.env.CI
+				// Playwright sets E2E (see playwright.config.ts) so `vite preview` runs
+				// against local-only bindings instead of the remote D1 database.
+				platformProxy: process.env.E2E
 					? { configPath: 'wrangler.test.jsonc', persist: false }
 					: undefined
 			})

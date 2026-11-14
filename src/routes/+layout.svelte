@@ -24,6 +24,15 @@
 	let { children }: Props = $props();
 
 	/*
+	 * Marks the moment the app is interactive. Before this, the server-rendered
+	 * markup is on screen but has no event listeners, so the E2E tests wait for
+	 * it before typing or clicking (see e2e/hydration.ts).
+	 */
+	$effect(() => {
+		document.documentElement.dataset.hydrated = '';
+	});
+
+	/*
 	 * The header stays deliberately short. "Home" is not in it because the
 	 * wordmark to its left already goes there, which frees the slot for Uses —
 	 * the one footer-only page whose audience overlaps the blog's.

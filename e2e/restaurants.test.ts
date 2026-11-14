@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { restaurants } from '../src/lib/data/restaurants';
+import { waitForHydration } from './hydration';
 
 /** Names as they appear in the desktop table, in render order. */
 const renderedNames = (page: import('@playwright/test').Page) =>
@@ -30,7 +31,7 @@ const thumbnailSizes = (thumbnails: import('@playwright/test').Locator) =>
 test.describe('Restaurants page', () => {
 	test.beforeEach(async ({ page }) => {
 		await page.goto('/restaurants');
-		await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+		await waitForHydration(page);
 	});
 
 	test('lists every restaurant', async ({ page }) => {
