@@ -123,7 +123,7 @@
 			isAffiliateLink: true
 		},
 		{
-			href: 'https://referworkspace.app.goo.gl/iyUE',
+			href: 'https://sharegoogleworkspace.advocate.impact.com/mzZ00Yw',
 			title: 'Google Workspace',
 			description:
 				'Google Workspace has been the easiest and most reliable provider of email, calendar, and shared drive storage.',
