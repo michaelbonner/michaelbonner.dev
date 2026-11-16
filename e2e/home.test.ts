@@ -41,10 +41,10 @@ test.describe('Homepage project groups', () => {
 		const developerToolCards = sectionCards(page, 'developer-tools');
 
 		await expect(saasCards).toHaveCount(4);
-		await expect(justForFunCards).toHaveCount(9);
+		await expect(justForFunCards).toHaveCount(10);
 		await expect(developerToolCards).toHaveCount(11);
 		await expect(saasCards.filter({ visible: true })).toHaveCount(4);
-		await expect(justForFunCards.filter({ visible: true })).toHaveCount(9);
+		await expect(justForFunCards.filter({ visible: true })).toHaveCount(10);
 		await expect(developerToolCards.filter({ visible: true })).toHaveCount(11);
 		await expect(page.getByRole('button', { name: /show all|show fewer/i })).toHaveCount(0);
 	});

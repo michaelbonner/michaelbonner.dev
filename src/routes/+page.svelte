@@ -38,6 +38,7 @@
 	import routePicker from '#lib/images/projects/route-picker.jpg?enhanced';
 	import screenshotMaker from '#lib/images/projects/screenshot-maker.jpg?enhanced';
 	import utahMountainAdventures from '#lib/images/projects/utah-mountain-adventures.jpg?enhanced&w=1600;1200;960;720;480';
+	import vote from '#lib/images/projects/vote.jpg?enhanced';
 	import wasatchFabrication from '#lib/images/projects/wasatch-fabrication.jpg?enhanced&w=1600;1200;960;720;480';
 	import wasatchCovers from '#lib/images/projects/wasatchcovers.jpg?enhanced&w=1600;1200;960;720;480';
 	import whatToDoInSaltLake from '#lib/images/projects/whattodoinsaltlake.jpg?enhanced&w=1600;1200;960;720;480';
@@ -255,6 +256,13 @@
 			image: pizza
 		},
 		{
+			title: 'Live Vote',
+			description:
+				'Ask the room and see the answer instantly. Create a poll, put the QR code on screen, and watch the votes come in live as your audience answers from their phones.',
+			url: 'https://vote.michaelbonner.dev/',
+			image: vote
+		},
+		{
 			title: 'Days Until',
 			description:
 				'Have you ever wanted a site to just tell you how many days until a specific date? Well, here you go. Really I just needed something easy to start building Svelte projects.',
@@ -346,6 +354,7 @@
 		'Days Until',
 		'NHL Arenas To Visit',
 		'Pizza Size Price Calculator',
+		'Live Vote',
 		'Which Route Is Faster'
 	]);
 	const saasProjects = otherThings
