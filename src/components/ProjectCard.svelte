@@ -4,6 +4,7 @@
 	import { classes } from '../styles/classes';
 	import Github from '../icons/Github.svelte';
 	import Link from '../icons/Link.svelte';
+	import Phone from '../icons/Phone.svelte';
 
 	interface Props {
 		title: string;
@@ -12,6 +13,8 @@
 		image: Picture;
 		github?: string;
 		blogPost?: string;
+		appStore?: string;
+		playStore?: string;
 		/** The first couple of cards are above the fold and load eagerly. */
 		eager?: boolean;
 		/**
@@ -28,6 +31,8 @@
 		image,
 		github = undefined,
 		blogPost = undefined,
+		appStore = undefined,
+		playStore = undefined,
 		eager = false,
 		compact = false
 	}: Props = $props();
@@ -124,6 +129,24 @@
 			>
 				<Github className="size-4" />
 				<span>Source</span>
+			</a>
+		{/if}
+		{#if appStore}
+			<a
+				href={appStore}
+				class={classNames(classes.label, 'hover:text-accent inline-flex items-center gap-1.5')}
+			>
+				<Phone className="size-4" />
+				<span>App Store<span class="sr-only"> listing for {title}</span></span>
+			</a>
+		{/if}
+		{#if playStore}
+			<a
+				href={playStore}
+				class={classNames(classes.label, 'hover:text-accent inline-flex items-center gap-1.5')}
+			>
+				<Phone className="size-4" />
+				<span>Google Play<span class="sr-only"> listing for {title}</span></span>
 			</a>
 		{/if}
 		{#if blogPost}

@@ -111,6 +111,19 @@
 				good as what's in it, and I'd much rather hear about the thing I'm missing.
 			</p>
 
+			<p>
+				It's also on your phone: get it from the <A
+					className="inline"
+					href="https://apps.apple.com/app/what-to-do-in-salt-lake/id6835025601">App Store</A
+				>
+				for iPhone or from
+				<A
+					className="inline"
+					href="https://play.google.com/store/apps/details?id=com.bootpackdigital.whattodoinsaltlake"
+					>Google Play</A
+				> for Android.
+			</p>
+
 			<p
 				class="not-prose border-rule text-ui-sm text-ink-faint mt-16 flex flex-wrap gap-x-2 border-t pt-6 font-sans tracking-wide"
 			>
