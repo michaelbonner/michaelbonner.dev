@@ -78,6 +78,8 @@
 		image: Picture;
 		github?: string;
 		blogPost?: string;
+		appStore?: string;
+		playStore?: string;
 	};
 
 	const projects: Project[] = [
@@ -153,6 +155,9 @@
 			description:
 				'A curated guide to upcoming events, venues, and things to do around Salt Lake City. Search by category, browse by date, and find your next night out without digging through a dozen different sites.',
 			url: 'https://whattodoinsaltlake.com/',
+			appStore: 'https://apps.apple.com/app/what-to-do-in-salt-lake/id6835025601',
+			playStore:
+				'https://play.google.com/store/apps/details?id=com.bootpackdigital.whattodoinsaltlake',
 			image: whatToDoInSaltLake
 		},
 		{
